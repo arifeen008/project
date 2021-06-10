@@ -132,12 +132,12 @@
                                 <div class="form-label-group">
                                     <input type="text" name="user_id" id="inputID" placeholder="รหัสบัตรประชาชน" class="form-control form-group">
                                     <label for="inputID">ชื่อผู้ใช้</label>
-                                    <span class="fr"><?php echo form_error('user_id'); ?></span>
+                                    <!-- <span class="fr"><?php echo form_error('user_id'); ?></span> -->
                                 </div>
                                 <div class="form-label-group">
                                     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
                                     <label for="inputPassword">รหัสผ่าน</label>
-                                    <span class="fr"><?php echo form_error('password'); ?></span>
+                                    <!-- <span class="fr"><?php echo form_error('password'); ?></span> -->
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input type="checkbox" class="custom-control-input" id="customCheck">

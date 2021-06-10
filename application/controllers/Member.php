@@ -16,34 +16,11 @@ class Member extends CI_Controller
 
 	public function check_member()
 	{
-		$this->form_validation->set_rules('user_id', 'user_id', 'required', array('required' => 'กรุณาใส่ชื่อผู้ใช้'));
-		$this->form_validation->set_rules('password', 'password', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
-		if ($this->form_validation->run() == false) {
-			$this->load->view("containner/head");
-			$this->load->view("login_member");
-			$this->load->view("containner/script");
+		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));	
+		if (password_verify($this->input->post('password'), $result->PASSWORD)) {	
+			echo true;
 		} else {
-			$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
-			if (password_verify($this->input->post("password"), $result->PASSWORD)) {
-				$login = $this->member->getdata_member($result->BR_NO, $result->MEM_ID);
-				$session = array(
-					'ID_CARD' => $login->ID_CARD, 'MEM_ID' => $login->MEM_ID, 'BR_NO' => $login->BR_NO, 'FNAME' => $login->FNAME, 'LNAME' => $login->LNAME
-				);
-				$this->session->set_userdata($session);
-				$ID_CARD = $this->session->userdata("ID_CARD");
-				$data = $this->member_model->data_member($ID_CARD);
-				$this->load->view("containner/head");
-				$this->load->view("containner/headermember", $data);
-				$this->load->view("containner/sidebarmember", $data);
-				$this->load->view("data_member", $data);
-				// $this->load->view("containner/footermember");
-				$this->load->view("containner/script");
-			} else {
-				$this->load->view("containner/head");
-				$this->load->view("login_member");
-				$this->load->view("containner/script");
-				echo "<script>alert('กรุณาใส่รหัสผ่านให้ถูกต้อง');</script>";
-			}
+			echo "<script>alert('กรุณาใส่รหัสผ่านให้ถูกต้อง');</script>";
 		}
 	}
 

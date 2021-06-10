@@ -13,6 +13,7 @@ class Member_model extends CI_Model
 
     public function fetch_user_login($user_id)
     {
+        $this->db->select('BR_NO,MEM_ID,USER_ID,PASSWORD');
         $this->db->where('USER_ID', $user_id);
         $query = $this->db->get('WEB_H_MEMBER');
         return $query->row();
