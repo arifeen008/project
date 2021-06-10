@@ -25,9 +25,9 @@ class Member extends CI_Controller
 		} else {
 			$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
 			if (password_verify($this->input->post("password"), $result->PASSWORD)) {
-				$result = $this->member->getdata_member($result->BR_NO, $result->MEM_ID);
+				$login = $this->member->getdata_member($result->BR_NO, $result->MEM_ID);
 				$session = array(
-					'ID_CARD' => $result->ID_CARD, 'MEM_ID' => $result->MEM_ID, 'BR_NO' => $result->BR_NO, 'FNAME' => $result->FNAME, 'LNAME' => $result->LNAME
+					'ID_CARD' => $login->ID_CARD, 'MEM_ID' => $login->MEM_ID, 'BR_NO' => $login->BR_NO, 'FNAME' => $login->FNAME, 'LNAME' => $login->LNAME
 				);
 				$this->session->set_userdata($session);
 				$ID_CARD = $this->session->userdata("ID_CARD");
