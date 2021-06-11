@@ -37,7 +37,7 @@ class Member_model extends CI_Model
         return $result;
     }
 
-    public function getdata_member($BR_NO,$MEM_ID)
+    public function getdata_member($BR_NO, $MEM_ID)
     {
         $this->db->where('BR_NO', $BR_NO);
         $this->db->where('MEM_ID', $MEM_ID);
@@ -47,7 +47,7 @@ class Member_model extends CI_Model
 
     public function data_member($ID_CARD)
     {
-        // $this->db->select('ID_CARD,MEM_ID,BR_NO,FNAME,LNAME');
+        $this->db->select('MEM_ID,BR_NO,MEM_ID');
         $this->db->where('ID_CARD', $ID_CARD);
         $query = $this->db->get('MEM_H_MEMBER');
         return $query->row();
@@ -73,57 +73,49 @@ class Member_model extends CI_Model
         return $result;
     }
 
-    public function share_member($ID_CARD, $BR_NO, $MEM_ID)
+    public function share_member($BR_NO, $MEM_ID)
     {
         $this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
-        $this->db->where('MEM_H_MEMBER.ID_CARD', $ID_CARD);
-        $this->db->where('MEM_H_MEMBER.MEM_ID', $MEM_ID);
+        $this->db->where('SHR_MEM.MEM_ID', $MEM_ID);
         $this->db->where('SHR_MEM.BR_NO', $BR_NO);
         $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_MEM.MEM_ID');
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_MEM.BR_NO');
-        $query = $this->db->get($this->tbl_name2);
+        $query = $this->db->get('SHR_MEM');
         return $query->row();
     }
 
-    public function share_member_detail($ID_CARD, $BR_NO, $MEM_ID)
+    public function share_member_detail($BR_NO, $MEM_ID)
     {
         $this->db->select('SLIP_NO,SHR_NA,TMP_DATE_TODAY,SHR_SUM_BTH,TMP_SHARE_QTY,TMP_SHARE_BHT');
-        $this->db->where('MEM_H_MEMBER.ID_CARD', $ID_CARD);
         $this->db->where('SHR_T_SHARE.BR_NO', $BR_NO);
         $this->db->where('SHR_T_SHARE.MEM_ID', $MEM_ID);
-        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_T_SHARE.MEM_ID');
         $this->db->join('SHR_TBL', 'SHR_TBL.SHR_NO = SHR_T_SHARE.SHR_NO');
-        $this->db->order_by('SHR_T_SHARE.TMP_YEAR', 'ASC');
-        // $this->db->limit('5');
+        $this->db->order_by('SHR_T_SHARE.TMP_DATE_TODAY', 'ASC');
         $result = $this->db->get($this->tbl_name8);
         return $result;
     }
 
-    public function deposit_member($ID_CARD, $BR_NO)
+    public function deposit_member($br_no, $mem_id)
     {
-        $this->db->select('ACCOUNT_NAME,ACCOUNT_NO,ACC_DESC,BR_NAME,BALANCE');
-        $this->db->where('MEM_H_MEMBER.ID_CARD', $ID_CARD);
-        $this->db->where('BK_H_SAVINGACCOUNT.BR_NO', $BR_NO);
-        $this->db->join('MEM_H_MEMBER', ' MEM_H_MEMBER.MEM_ID = BK_H_SAVINGACCOUNT.MEM_ID ');
-        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $this->db->select('BK_H_SAVINGACCOUNT.ACCOUNT_NAME, BK_H_SAVINGACCOUNT.ACCOUNT_NO, BK_M_ACC_TYPE.ACC_DESC, BK_M_BRANCH.BR_NAME, BK_H_SAVINGACCOUNT.BALANCE, BK_H_SAVINGACCOUNT.ACCOUNT_NO');
+        $this->db->where('BK_H_SAVINGACCOUNT.MEM_ID', $mem_id);
+        $this->db->where('BK_H_SAVINGACCOUNT.BR_NO', $br_no);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
         $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-        $result = $this->db->get($this->tbl_name3);
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result;
     }
 
-    public function credit_member($MEM_ID, $ID_CARD, $BR_NO)
+    public function credit_member($br_no, $mem_id)
     {
         $this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_CONTACT.CODE,LOAN_M_REGISTER.END_PAYDEPT');
-        $this->db->where('MEM_H_MEMBER.ID_CARD', $ID_CARD);
-        $this->db->where('MEM_H_MEMBER.MEM_ID', $MEM_ID);
-        $this->db->where('LOAN_M_CONTACT.BR_NO', $BR_NO);
-        $this->db->where('LOAN_M_REGISTER.BR_NO', $BR_NO);
+        $this->db->where('LOAN_M_CONTACT.BR_NO', $br_no);
+        $this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
         $this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
-        $this->db->join('MEM_H_MEMBER', ' MEM_H_MEMBER.MEM_ID = LOAN_M_CONTACT.MEM_ID ');
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
         $this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 
-        $result = $this->db->get($this->tbl_name4);
+        $result = $this->db->get('LOAN_M_CONTACT');
         return $result;
     }
 
@@ -212,14 +204,13 @@ class Member_model extends CI_Model
         return $result;
     }
 
-    public function welfare_member($MEM_ID, $ID_CARD, $BR_NO)
+    public function welfare_member($mem_id, $br_no)
     {
-        $this->db->where('MEM_H_MEMBER.ID_CARD', $ID_CARD);
-        $this->db->where('MEM_H_MEMBER.MEM_ID', $MEM_ID);
-        $this->db->where('WEL_H_MEMBER.BR_NO', $BR_NO);
-        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = WEL_H_MEMBER.MEM_ID');
-        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
-        $result = $this->db->get($this->tbl_name5);
+        $this->db->select('WEL_H_MEMBER.MEM_ID,BK_M_BRANCH.BR_NAME,WEL_H_MEMBER.EXCHG_DATE');
+        $this->db->where('WEL_H_MEMBER.MEM_ID', $mem_id);
+        $this->db->where('WEL_H_MEMBER.BR_NO', $br_no);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = WEL_H_MEMBER.BR_NO');
+        $result = $this->db->get('WEL_H_MEMBER');
         return $result;
     }
 
@@ -233,6 +224,4 @@ class Member_model extends CI_Model
         $result = $this->db->get($this->tbl_name5);
         return $result;
     }
-
- 
 }

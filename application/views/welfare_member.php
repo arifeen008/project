@@ -18,6 +18,9 @@ include_once("application/libraries/Thaidate.php");
                                 <td>วันครบกำหนดต่อตะกาฟุล</td>
                             </tr>
                         </thead>
+                        <?php if ($result->result() == null) { ?>
+                            <td colspan="3" align="center">ไม่มีข้อมูลสวัสดิการสมาชิก</td>
+                        <?php  } ?>
                         <?php foreach ($result->result() as $row) { ?>
                             <tr align="center">
                                 <td><?= $row->MEM_ID ?></td>

@@ -16,10 +16,25 @@ class Member extends CI_Controller
 
 	public function check_member()
 	{
-		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));	
-		if (password_verify($this->input->post('password'), $result->PASSWORD)) {	
-			echo true;
+		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
+		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
+			$login_result = $this->member_model->getdata_member($result->BR_NO, $result->MEM_ID);
+			$session = array(
+				'MEM_ID' => $login_result->MEM_ID,
+				'BR_NO' => $login_result->BR_NO,
+				'FNAME' => $login_result->FNAME,
+				'LNAME' => $login_result->LNAME,
+				'ID_CARD' => $login_result->ID_CARD
+			);
+			$this->session->set_userdata($session);
+			$this->load->view("containner/head");
+			$this->load->view("containner/headermember", $login_result);
+			$this->load->view("containner/sidebarmember");
+			$this->load->view("data_member", $login_result);
+			$this->load->view("containner/script");
 		} else {
+			$this->load->view("containner/head");
+			$this->load->view("login_member");
 			echo "<script>alert('กรุณาใส่รหัสผ่านให้ถูกต้อง');</script>";
 		}
 	}
@@ -102,8 +117,9 @@ class Member extends CI_Controller
 
 	public function data_member()
 	{
-		$ID_CARD = $this->session->userdata("ID_CARD");
-		$data = $this->member_model->data_member($ID_CARD);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember", $data);
@@ -113,8 +129,9 @@ class Member extends CI_Controller
 
 	public function editdata_member()
 	{
-		$ID_CARD = $this->session->userdata("ID_CARD");
-		$data = $this->member_model->data_member($ID_CARD);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember", $data);
@@ -142,28 +159,26 @@ class Member extends CI_Controller
 
 	public function share_member()
 	{
-		$MEM_ID = $this->session->userdata("MEM_ID");
-		$ID_CARD = $this->session->userdata("ID_CARD");
-		$BR_NO = $this->session->userdata("BR_NO");
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->share_member($ID_CARD, $BR_NO, $MEM_ID);
-		$data2['detail'] = $this->member_model->share_member_detail($ID_CARD, $BR_NO, $MEM_ID);
-		// echo "MEM_ID = ". $MEM_ID ."ID_CARD = ". $ID_CARD;
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->share_member($br_no, $mem_id);
+		$data2['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember");
 		$this->load->view("share_member", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function deposit_member()
 	{
-		$ID_CARD = $this->session->userdata("ID_CARD");
-		$BR_NO = $this->session->userdata("BR_NO");
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->deposit_member($ID_CARD, $BR_NO);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->deposit_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
+		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember");
 		$this->load->view("deposit_member", $data2);
 		$this->load->view("containner/script");
@@ -211,86 +226,84 @@ class Member extends CI_Controller
 
 	public function credit_member()
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MEM_ID = $this->session->userdata('MEM_ID');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->credit_member($MEM_ID, $ID_CARD, $BR_NO);
+		$id_card = $this->session->userdata('ID_CARD');
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->credit_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember", $data);
 		$this->load->view("credit_member", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function credit_member_detail($code)
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->credit_member_detail($BR_NO, $code);
-		$data2['select'] = $this->member_model->credit_member_select($BR_NO, $code);
-
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
+		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember", $data);
 		$this->load->view("credit_member_detail", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function checkcredit_member()
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MEM_ID = $this->session->userdata('MEM_ID');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->checkcredit_member($MEM_ID, $ID_CARD, $BR_NO);
+		$id_card = $this->session->userdata('ID_CARD');
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->checkcredit_member($mem_id, $id_card, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember", $data);
 		$this->load->view("checkcredit_member", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function checkcredit_member_detail($code)
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MEM_ID = $this->session->userdata('MEM_ID');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->credit_member_detail($BR_NO, $code);
-		$data2['select'] = $this->member_model->credit_member_select($BR_NO, $code);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
+		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember", $data);
 		$this->load->view("checkcredit_member_detail", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function welfare_member()
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MEM_ID = $this->session->userdata('MEM_ID');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->welfare_member($MEM_ID, $ID_CARD, $BR_NO);
+		$id_card = $this->session->userdata('ID_CARD');
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->welfare_member($mem_id, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember");
 		$this->load->view("welfare_member", $data2);
 		$this->load->view("containner/script");
 	}
 
 	public function requestwelfare_member()
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MEM_ID = $this->session->userdata('MEM_ID');
-		$BR_NO = $this->session->userdata('BR_NO');
-		$data1 = $this->member_model->data_member($ID_CARD);
-		$data2['result'] = $this->member_model->welfare_member($MEM_ID, $ID_CARD, $BR_NO);
+		$id_card = $this->session->userdata('ID_CARD');
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
+		$data2['result'] = $this->member_model->welfare_member($mem_id, $id_card, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
-		$this->load->view("containner/sidebarmember", $data1);
+		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/sidebarmember");
 		$this->load->view("requestwelfare_member", $data2);
 		$this->load->view("containner/script");
 	}
