@@ -51,22 +51,6 @@ class Officer_model extends CI_Model
         return $result;
     }
 
-    // public function depositreport_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
-    // {
-    //     $this->db->select('BK_T_FINANCE.F_DATE,BK_H_SAVINGACCOUNT.ACCOUNT_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NAME,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL');
-    //     $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-    //     $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-    //     $this->db->where('BK_T_FINANCE.F_DATE >=', "TO_DATE('$startdate','YYYY-MM-DD')", false);
-    //     $this->db->where('BK_T_FINANCE.F_DATE <=', "TO_DATE('$enddate','YYYY-MM-DD')", false);
-    //     $this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-    //     $this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-    //     $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-    //     $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-    //     $this->db->group_by('BK_T_FINANCE.F_DATE,BK_H_SAVINGACCOUNT.ACCOUNT_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NAME,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL');
-    //     $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-    //     $result = $this->db->get($this->tbl_name1);
-    //     return $result;
-    // }
 
     public function depositreport_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
     {
@@ -81,7 +65,7 @@ class Officer_model extends CI_Model
         $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
         $this->db->group_by('BK_T_FINANCE.F_DATE,BK_H_SAVINGACCOUNT.ACCOUNT_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NAME,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL');
         $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name1);
+        $result = $this->db->get('BK_H_TELLER_CONTROL');
         return $result;
     }
 

@@ -1,4 +1,4 @@
-<div class="col-lg-9">
+<!-- <div class="col-lg-9">
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h1">ระบบทะเบียนสมาชิก</h1>
     </div>
@@ -40,5 +40,4 @@
         <button type="submit" class="btn btn-success mb-2">ดึงข้อมูล</button>
     </form>
 
-</div>
-</div>
+</div> -->

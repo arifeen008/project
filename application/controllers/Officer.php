@@ -53,7 +53,8 @@ class Officer extends CI_Controller
 					$this->load->view("containner/head");
 					$this->load->view("containner/headerofficer", $data);
 					$this->load->view("containner/sidebarofficer");
-					$this->load->view("data_officer");
+					$data2['result'] = $this->officer_model->pullbranch();
+					$this->load->view("depositsystem", $data2);
 					$this->load->view("containner/script");
 				} elseif ($LEVEL_CODE === 'D') {
 					$this->load->view("containner/head");
@@ -113,6 +114,18 @@ class Officer extends CI_Controller
 	}
 
 	public function depositsystem()
+	{
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data1 = $this->officer_model->data_officer($USER_ID);
+		$data2['result'] = $this->officer_model->pullbranch();
+		$this->load->view("containner/head");
+		$this->load->view("containner/headerofficer", $data1);
+		$this->load->view("containner/sidebarofficer");
+		$this->load->view("depositsystem", $data2);
+		$this->load->view("containner/script");
+	}
+
+	public function depositreport_summary()
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data1 = $this->officer_model->data_officer($USER_ID);

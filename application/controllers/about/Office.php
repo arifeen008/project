@@ -11,22 +11,22 @@ class Office extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view("containner/head");		
-		$this->load->view("containner/header");	
-		$this->load->view("about/office");	
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("about/office");
 		// $this->load->view("containner/footer");
-		$this->load->view("containner/script");		
+		$this->load->view("containner/script");
 	}
 
 	public function indexmember()
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$data = $this->member_model->data_member($ID_CARD);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headermember", $data);
-		$this->load->view("about/office");	
+		$this->load->view("about/office");
 		// $this->load->view("containner/footermember");
-		$this->load->view("containner/script");		
+		$this->load->view("containner/script");
 	}
-
 }
