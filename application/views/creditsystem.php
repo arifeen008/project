@@ -6,13 +6,13 @@
         <div class="form-group">
             <div class="row">
                 <div class="col">
-                    <label for="mem_id">เลขที่สมาชิก</label>
-                    <input class="form-control" type="text" id="mem_id" placeholder="เลขที่สมาชิก..." name="mem_id" maxlength="5" required>
+                    <label for="mem_id">รหัสบัตรประชาชน</label>
+                    <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="id_card" maxlength="13" required>
 
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <div class="row">
                 <div class="col">
                     <label for="branch_number">เลือกสาขา</label>
@@ -23,7 +23,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-success mb-2">ดึงข้อมูล</button>
     </form>
 </div>

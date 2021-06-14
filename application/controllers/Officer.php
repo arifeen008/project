@@ -167,12 +167,13 @@ class Officer extends CI_Controller
 
 	public function credit_officer()
 	{
-		$mem_id = $this->input->post('mem_id');
-		$branch_number = $this->input->post('branch_number');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
-		$data['result'] = $this->officer_model->credit_officer($mem_id, $branch_number);
+		$id_card = $this->input->post('id_card');
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['name'] = $this->officer_model->getname_member($id_card);
+		$mem_id = $data['name']->MEM_ID;
+		$br_no = $data['name']->BR_NO;
+		$data['result'] = $this->officer_model->credit_officer($mem_id,$br_no);
 		if ($data['name'] != NULL && $data['result'] != NULL) {
 			$this->load->view("containner/head");
 			$this->load->view("containner/headerofficer", $data_officer);
@@ -224,22 +225,10 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function documentsystem()
-	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$document_file['result'] = $this->officer_model->getdocument_file();
-		$this->load->view("containner/head");
-		$this->load->view("containner/headerofficer", $data_officer);
-		$this->load->view("containner/sidebarofficer");
-		$this->load->view("documentsystem", $document_file);
-		$this->load->view("containner/script");
-	}
-
 	public function memberandshare()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headerofficer", $data_officer);
 		$this->load->view("containner/sidebarofficer");

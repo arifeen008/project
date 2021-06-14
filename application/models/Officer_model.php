@@ -43,6 +43,22 @@ class Officer_model extends CI_Model
         }
     }
 
+    public function getname_member($id_card)
+    {
+        $this->db->select('FNAME,LNAME,MEM_ID,BR_NO');
+        $this->db->where('ID_CARD', $id_card);
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result->row();
+    }
+
+    public function getid($id_card)
+    {
+        $this->db->select('MEM_ID,BR_NO');
+        $this->db->where('ID_CARD', $id_card);
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result->row();
+    }
+
     public function pullbranch()
     {
         $this->db->select('BR_NO,BR_NAME');
@@ -74,7 +90,7 @@ class Officer_model extends CI_Model
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
         // $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.LCONT_ID = LOAN_M_CONTACT.LCONT_ID ');
         $this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name7);
+        $result = $this->db->get('LOAN_M_CONTACT');
         if ($result == NULL) {
             return NULL;
         } else {
