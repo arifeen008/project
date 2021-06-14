@@ -127,13 +127,29 @@ class Officer extends CI_Controller
 
 	public function depositreport_summary()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data1 = $this->officer_model->data_officer($USER_ID);
-		$data2['result'] = $this->officer_model->pullbranch();
+		$user_id = $this->session->userdata('USER_ID');
+		$startdate = $this->input->post('startdate');
+		$enddate = $this->input->post('enddate');
+		$data1 = $this->officer_model->data_officer($user_id);
+		$data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headerofficer", $data1);
 		$this->load->view("containner/sidebarofficer");
-		$this->load->view("depositsystem", $data2);
+		$this->load->view("depositreport_summary", $data2);
+		$this->load->view("containner/script");
+	}
+
+	public function account_book_balance()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$mem_id = $this->input->post('mem_id');
+		$branch_number = $this->input->post('branch_number');
+		$data = $this->officer_model->data_officer($user_id);
+		$data2['result'] = $this->officer_model->account_book_balance($mem_id,$branch_number);
+		$this->load->view("containner/head");
+		$this->load->view("containner/headerofficer", $data);
+		$this->load->view("containner/sidebarofficer");
+		$this->load->view("account_book_balance", $data2);
 		$this->load->view("containner/script");
 	}
 
@@ -146,19 +162,6 @@ class Officer extends CI_Controller
 		$this->load->view("containner/headerofficer", $data1);
 		$this->load->view("containner/sidebarofficer");
 		$this->load->view("creditsystem", $data2);
-		$this->load->view("containner/script");
-	}
-
-	public function pullbranch()
-	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data1 = $this->officer_model->data_officer($USER_ID);
-		$data2['result'] = $this->officer_model->pullbranch();
-		$this->load->view("containner/head");
-		$this->load->view("containner/headerofficer", $data1);
-		$this->load->view("containner/sidebarofficer");
-		$this->load->view("depositsystem");
-		$this->load->view("wordpage", $data2);
 		$this->load->view("containner/script");
 	}
 

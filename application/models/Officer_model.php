@@ -52,20 +52,15 @@ class Officer_model extends CI_Model
     }
 
 
-    public function depositreport_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
+    public function depositreport_summary($startdate, $enddate, $user_id)
     {
-        $this->db->select('BK_T_FINANCE.F_DATE,BK_H_SAVINGACCOUNT.ACCOUNT_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NAME,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL');
-        $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-        $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-        $this->db->where('BK_T_FINANCE.F_DATE >=', $startdate);
-        $this->db->where('BK_T_FINANCE.F_DATE <=', $enddate);
-        $this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-        $this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-        $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-        $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-        $this->db->group_by('BK_T_FINANCE.F_DATE,BK_H_SAVINGACCOUNT.ACCOUNT_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NAME,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL');
-        $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-        $result = $this->db->get('BK_H_TELLER_CONTROL');
+        $this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
+        $this->db->where('USER_ID', $user_id);
+        $this->db->where('F_DATE >=', $startdate);
+        $this->db->where('F_DATE <=', $enddate);
+        $this->db->group_by('F_DATE');
+        $this->db->order_by('F_DATE', 'ASC');
+        $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
 
@@ -150,22 +145,6 @@ class Officer_model extends CI_Model
         return $result;
     }
 
-    // public function sum_deposit_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
-    // {
-    //     $this->db->select_sum('BK_T_FINANCE.F_DEP');
-    //     $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-    //     $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-    //     $this->db->where('BK_T_FINANCE.F_DATE >=', "TO_DATE('$startdate','YYYY-MM-DD')", false);
-    //     $this->db->where('BK_T_FINANCE.F_DATE <=', "TO_DATE('$enddate','YYYY-MM-DD')", false);
-    //     $this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-    //     $this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-    //     $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-    //     $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-    //     $this->db->order_by('BK_T_FINANCE.F_DATE', 'asc');
-    //     $result = $this->db->get($this->tbl_name1);
-    //     return $result->row();
-    // }
-
     public function sum_deposit_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
     {
         $this->db->select_sum('BK_T_FINANCE.F_DEP');
@@ -182,22 +161,6 @@ class Officer_model extends CI_Model
         return $result->row();
     }
 
-    // public function sum_withdraw_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
-    // {
-    //     $this->db->select_sum('BK_T_FINANCE.F_WDL');
-    //     $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-    //     $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-    //     $this->db->where('BK_T_FINANCE.F_DATE >=', "TO_DATE('$startdate','YYYY-MM-DD')", false);
-    //     $this->db->where('BK_T_FINANCE.F_DATE <=', "TO_DATE('$enddate','YYYY-MM-DD')", false);
-    //     $this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-    //     $this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-    //     $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-    //     $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-    //     $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-    //     $result = $this->db->get($this->tbl_name1);
-    //     return $result->row();
-    // }
-
     public function sum_withdraw_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
     {
         $this->db->select_sum('BK_T_FINANCE.F_WDL');
@@ -213,17 +176,6 @@ class Officer_model extends CI_Model
         $result = $this->db->get($this->tbl_name1);
         return $result->row();
     }
-
-    // public function print_datebook($account_number, $startdate_print)
-    // {
-    //     $this->db->select('BK_T_FINANCE.F_DATE,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL,BK_T_FINANCE.F_BALANCE');
-    //     $this->db->where('BK_T_FINANCE.F_FROM_ACC', $account_number);
-    //     $this->db->where('BK_T_FINANCE.F_DATE >=', "TO_DATE('$startdate_print','YYYY-MM-DD')", false);
-    //     $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-    //     $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-    //     $result = $this->db->get($this->tbl_name4);
-    //     return $result;
-    // }
 
     public function print_datebook($account_number, $startdate_print)
     {
@@ -251,26 +203,7 @@ class Officer_model extends CI_Model
         $this->db->where('BR_NO', $branch_number);
         $this->db->group_by('ACCOUNT_NO,ACCOUNT_NAME,BALANCE,AVAILABLE');
         $this->db->order_by('ACCOUNT_NO', 'ASC');
-        $result = $this->db->get($this->tbl_name3);
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result;
     }
-
-    public function sum_account_book_balance($mem_id, $branch_number)
-    {
-        $this->db->select_sum('BALANCE');
-        $this->db->where('MEM_ID', $mem_id);
-        $this->db->where('BR_NO', $branch_number);
-        $result = $this->db->get($this->tbl_name3);
-        return $result->row();
-    }
-
-    public function sum_account_book_available($mem_id, $branch_number)
-    {
-        $this->db->select_sum('AVAILABLE');
-        $this->db->where('MEM_ID', $mem_id);
-        $this->db->where('BR_NO', $branch_number);
-        $result = $this->db->get($this->tbl_name3);
-        return $result->row();
-    }
-
 }
