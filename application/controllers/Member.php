@@ -186,10 +186,10 @@ class Member extends CI_Controller
 
 	public function deposit_member_seedata($ACCOUNT_NO)
 	{
-		$ID_CARD = $this->session->userdata("ID_CARD");
-		$account_number = $this->input->get('ACCOUNT_NO');
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$dataaccount['result'] = $this->member_model->getaccount_member($ACCOUNT_NO);
-		$data = $this->member_model->data_member($ID_CARD);
 		$this->load->view("containner/head");
 		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember");
@@ -199,14 +199,16 @@ class Member extends CI_Controller
 
 	public function deposit_member_seeaccount()
 	{
-		$ID_CARD = $this->session->userdata("ID_CARD");
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$account_number = $this->input->post("account_number");
 		$startdate = $this->input->post('startdate');
 		$enddate = $this->input->post('enddate');
-		$data1 = $this->member_model->data_member($ID_CARD);
+
 		$data2['result'] = $this->member_model->deposit_member_seeaccount($account_number, $startdate, $enddate);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
+		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember");
 		$this->load->view("deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");
@@ -214,11 +216,12 @@ class Member extends CI_Controller
 
 	public function deposit_member_seeaccount_allday($ACCOUNT_NO)
 	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$data1 = $this->member_model->data_member($ID_CARD);
+		$br_no = $this->session->userdata("BR_NO");
+		$mem_id = $this->session->userdata("MEM_ID");
+		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->deposit_member_seeaccount_allday($ACCOUNT_NO);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data1);
+		$this->load->view("containner/headermember", $data);
 		$this->load->view("containner/sidebarmember");
 		$this->load->view("deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");

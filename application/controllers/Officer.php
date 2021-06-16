@@ -37,38 +37,14 @@ class Officer extends CI_Controller
 				$USER_ID = $this->session->userdata('USER_ID');
 				$LEVEL_CODE = $this->session->userdata('LEVEL_CODE');
 				$data = $this->officer_model->data_officer($USER_ID);
-				if ($LEVEL_CODE === 'A') {
-					$this->load->view("containner/head");
-					$this->load->view("containner/headerofficer", $data);
-					$this->load->view("containner/sidebarofficer");
-					$this->load->view("data_officer");
-					$this->load->view("containner/script");
-				} elseif ($LEVEL_CODE === 'B') {
-					$this->load->view("containner/head");
-					$this->load->view("containner/headerofficer", $data);
-					$this->load->view("containner/sidebarofficer");
-					$this->load->view("data_officer");
-					$this->load->view("containner/script");
-				} elseif ($LEVEL_CODE === 'C') {
+				if ($LEVEL_CODE === 'C') {
 					$this->load->view("containner/head");
 					$this->load->view("containner/headerofficer", $data);
 					$this->load->view("containner/sidebarofficer");
 					$data2['result'] = $this->officer_model->pullbranch();
 					$this->load->view("depositsystem", $data2);
 					$this->load->view("containner/script");
-				} elseif ($LEVEL_CODE === 'D') {
-					$this->load->view("containner/head");
-					$this->load->view("containner/headerofficer", $data);
-					$this->load->view("containner/sidebarofficer_D");
-					$this->load->view("data_officer");
-					$this->load->view("containner/script");
-				} elseif ($LEVEL_CODE === 'E') {
-					$this->load->view("containner/head");
-					$this->load->view("containner/headerofficer", $data);
-					$this->load->view("containner/sidebarofficer");
-					$this->load->view("data_officer");
-					$this->load->view("containner/script");
-				} elseif ($LEVEL_CODE === 'F') {
+				} else {
 					$this->load->view("containner/head");
 					$this->load->view("containner/headerofficer", $data);
 					$this->load->view("containner/sidebarofficer");
@@ -142,14 +118,14 @@ class Officer extends CI_Controller
 	public function account_book_balance()
 	{
 		$user_id = $this->session->userdata('USER_ID');
-		$mem_id = $this->input->post('mem_id');
-		$branch_number = $this->input->post('branch_number');
-		$data = $this->officer_model->data_officer($user_id);
-		$data2['result'] = $this->officer_model->account_book_balance($mem_id,$branch_number);
+		$account_number = $this->input->post('account_number');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->account_book_balance($account_number);
+		$data['detail'] = $this->officer_model->detail_deposit($account_number);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headerofficer", $data);
+		$this->load->view("containner/headerofficer", $data_officer);
 		$this->load->view("containner/sidebarofficer");
-		$this->load->view("account_book_balance", $data2);
+		$this->load->view("account_book_balance", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -173,7 +149,7 @@ class Officer extends CI_Controller
 		$data['name'] = $this->officer_model->getname_member($id_card);
 		$mem_id = $data['name']->MEM_ID;
 		$br_no = $data['name']->BR_NO;
-		$data['result'] = $this->officer_model->credit_officer($mem_id,$br_no);
+		$data['result'] = $this->officer_model->credit_officer($mem_id, $br_no);
 		if ($data['name'] != NULL && $data['result'] != NULL) {
 			$this->load->view("containner/head");
 			$this->load->view("containner/headerofficer", $data_officer);

@@ -200,7 +200,7 @@ class Member_model extends CI_Model
         $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
         $this->db->where('F_FROM_ACC', $account_number);
         $this->db->order_by('F_TIME', 'ASC');
-        $result = $this->db->get($this->tbl_name6);
+        $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
 

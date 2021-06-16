@@ -91,21 +91,17 @@ class Officer_model extends CI_Model
         // $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.LCONT_ID = LOAN_M_CONTACT.LCONT_ID ');
         $this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
         $result = $this->db->get('LOAN_M_CONTACT');
-        if ($result == NULL) {
-            return NULL;
-        } else {
-            return $result;
-        }
+        return $result;
     }
 
-    public function credit_officer_detail($code, $BR_NO)
+    public function credit_officer_detail($code, $branch_number)
     {
         $this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
         $this->db->where('LOAN_M_PAYDEPT.CODE', $code);
-        $this->db->where('LOAN_M_PAYDEPT.BR_NO', $BR_NO);
+        $this->db->where('LOAN_M_PAYDEPT.BR_NO', $branch_number);
         $this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
         $this->db->order_by('LPD_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name8);
+        $result = $this->db->get('LOAN_M_PAYDEPT');
         return $result;
     }
 
@@ -116,7 +112,7 @@ class Officer_model extends CI_Model
         $this->db->where('LOAN_M_REGISTER.BR_NO', $BR_NO);
         $this->db->where('LOAN_M_REGISTER.CODE', $code);
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-        $query = $this->db->get($this->tbl_name7);
+        $query = $this->db->get('LOAN_M_CONTACT');
         return $query->row();
     }
 
@@ -127,7 +123,7 @@ class Officer_model extends CI_Model
         $this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
         $this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '4');
         $this->db->order_by('LCONT_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name7);
+        $result = $this->db->get('LOAN_M_CONTACT');
         return $result;
     }
 
@@ -138,7 +134,7 @@ class Officer_model extends CI_Model
         $this->db->where('LOAN_M_REGISTER.BR_NO', $branch_number);
         $this->db->where('LOAN_M_REGISTER.CODE', $code);
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-        $query = $this->db->get($this->tbl_name7);
+        $query = $this->db->get('LOAN_M_CONTACT');
         return $query->row();
     }
 
@@ -193,33 +189,22 @@ class Officer_model extends CI_Model
         return $result->row();
     }
 
-    public function print_datebook($account_number, $startdate_print)
-    {
-        $this->db->select('BK_T_FINANCE.F_DATE,BK_M_TRANSCODE.TRANS_SHORT,BK_T_FINANCE.F_DEP,BK_T_FINANCE.F_WDL,BK_T_FINANCE.F_BALANCE');
-        $this->db->where('BK_T_FINANCE.F_FROM_ACC', $account_number);
-        $this->db->where('BK_T_FINANCE.F_DATE >=', $startdate_print);
-        $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-        $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name4);
-        return $result;
-    }
-
-    public function get_nameaccount($account_number)
-    {
-        $this->db->select('ACCOUNT_NAME');
-        $this->db->where('ACCOUNT_NO', $account_number);
-        $result = $this->db->get($this->tbl_name3);
-        return $result->row();
-    }
-
-    public function account_book_balance($mem_id, $branch_number)
+    public function account_book_balance($account_number)
     {
         $this->db->select('ACCOUNT_NO,ACCOUNT_NAME,BALANCE,AVAILABLE');
-        $this->db->where('MEM_ID', $mem_id);
-        $this->db->where('BR_NO', $branch_number);
+        $this->db->where('ACCOUNT_NO', $account_number);
         $this->db->group_by('ACCOUNT_NO,ACCOUNT_NAME,BALANCE,AVAILABLE');
         $this->db->order_by('ACCOUNT_NO', 'ASC');
         $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result->row();
+    }
+
+    public function detail_deposit($account_number)
+    {
+        $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
+        $this->db->where('F_FROM_ACC', $account_number);
+        $this->db->order_by('F_TIME', 'ASC');
+        $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
 }
