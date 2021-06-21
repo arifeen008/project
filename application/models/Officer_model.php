@@ -2,22 +2,11 @@
 
 class Officer_model extends CI_Model
 {
-    private $tbl_name1 = 'BK_H_TELLER_CONTROL';
-    private $tbl_name2 = 'BK_M_BRANCH';
-    private $tbl_name3 = 'BK_H_SAVINGACCOUNT';
-    private $tbl_name4 = 'BK_T_FINANCE';
-    private $tbl_name5 = 'MEM_H_MEMBER';
-    private $tbl_name6 = 'BK_M_ACC_TYPE';
-    private $tbl_name7 = 'LOAN_M_CONTACT';
-    private $tbl_name8 = 'LOAN_M_PAYDEPT';
-    private $tbl_name9 = 'uploadfile';
-
-
     public function fetch_user_login($USER_ID, $PASSWORD)
     {
         $this->db->where('USER_ID', $USER_ID);
         $this->db->where('PASSWORD', $PASSWORD);
-        $query = $this->db->get($this->tbl_name1);
+        $query = $this->db->get('BK_H_TELLER_CONTROL');
         return $query->row();
     }
 
@@ -26,7 +15,7 @@ class Officer_model extends CI_Model
         // $this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
         $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_TELLER_CONTROL.BR_NO');
-        $query = $this->db->get($this->tbl_name1);
+        $query = $this->db->get('BK_H_TELLER_CONTROL');
         return $query->row();
     }
 
@@ -35,12 +24,8 @@ class Officer_model extends CI_Model
         $this->db->select('MEM_ID,BR_NO,FNAME,LNAME');
         $this->db->where('MEM_ID', $mem_id);
         $this->db->where('BR_NO', $branch_number);
-        $query = $this->db->get($this->tbl_name5);
-        if ($query == null) {
-            return null;
-        } else {
-            return $query->row();
-        }
+        $query = $this->db->get('MEM_H_MEMBER');
+        return $query->row();
     }
 
     public function getname_member($id_card)
@@ -63,7 +48,7 @@ class Officer_model extends CI_Model
     {
         $this->db->select('BR_NO,BR_NAME');
         $this->db->order_by('BR_NO', 'ASC');
-        $result = $this->db->get($this->tbl_name2);
+        $result = $this->db->get('BK_M_BRANCH');
         return $result;
     }
 
@@ -145,7 +130,7 @@ class Officer_model extends CI_Model
         $this->db->where('LOAN_M_PAYDEPT.BR_NO', $branch_number);
         $this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
         $this->db->order_by('LPD_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name8);
+        $result = $this->db->get('LOAN_M_PAYDEPT');
         return $result;
     }
 
@@ -153,7 +138,7 @@ class Officer_model extends CI_Model
     {
         $this->db->select('ACC_TYPE,ACC_DESC');
         $this->db->order_by('ACC_TYPE', 'ASC');
-        $result = $this->db->get($this->tbl_name6);
+        $result = $this->db->get('BK_M_ACC_TYPE');
         return $result;
     }
 
@@ -169,7 +154,7 @@ class Officer_model extends CI_Model
         $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
         $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
         $this->db->order_by('BK_T_FINANCE.F_DATE', 'asc');
-        $result = $this->db->get($this->tbl_name1);
+        $result = $this->db->get('BK_H_TELLER_CONTROL');
         return $result->row();
     }
 
@@ -185,7 +170,7 @@ class Officer_model extends CI_Model
         $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
         $this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
         $this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name1);
+        $result = $this->db->get('BK_H_TELLER_CONTROL');
         return $result->row();
     }
 
@@ -205,6 +190,45 @@ class Officer_model extends CI_Model
         $this->db->where('F_FROM_ACC', $account_number);
         $this->db->order_by('F_TIME', 'ASC');
         $result = $this->db->get('BK_T_FINANCE');
+        return $result;
+    }
+
+    public function datashare_member($mem_id,$branch_number){
+        $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
+        $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
+        $this->db->where('SHR_T_SHARE.BR_NO', $branch_number);
+        $this->db->join('SHR_TBL','SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
+        $this->db->order_by('TMP_DATE_TODAY', 'DESC');
+        $result = $this->db->get('SHR_T_SHARE');
+        return $result;
+    }
+
+    public function share_member($mem_id,$branch_number)
+    {
+        $this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
+        $this->db->where('SHR_MEM.MEM_ID', $mem_id);
+        $this->db->where('SHR_MEM.BR_NO', $branch_number);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_MEM.BR_NO');
+        $query = $this->db->get('SHR_MEM');
+        return $query->row();
+    }
+
+    public function seedata_member($mem_id,$branch_number)
+    {
+        $this->db->select('FNAME,LNAME,ID_CARD,DMY_BIRTH,SEX,FATHER,MOTHER,MARRIAGE_STATUS,BLO_GROUP,ADDRESS,MOO_ADDR,TUMBOL,LINE_ID,EMAIL,MOBILE_TEL');
+        $this->db->where('MEM_ID', $mem_id);
+        $this->db->where('BR_NO', $branch_number);
+        $query = $this->db->get('MEM_H_MEMBER');
+        return $query->row();
+    }
+
+    public function welfare_member($mem_id, $br_no)
+    {
+        $this->db->select('WEL_H_MEMBER.MEM_ID,BK_M_BRANCH.BR_NAME,WEL_H_MEMBER.EXCHG_DATE');
+        $this->db->where('WEL_H_MEMBER.MEM_ID', $mem_id);
+        $this->db->where('WEL_H_MEMBER.BR_NO', $br_no);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = WEL_H_MEMBER.BR_NO');
+        $result = $this->db->get('WEL_H_MEMBER');
         return $result;
     }
 }

@@ -28,8 +28,8 @@ class Member extends CI_Controller
 			);
 			$this->session->set_userdata($session);
 			$this->load->view("containner/head");
-			$this->load->view("containner/headermember", $login_result);
-			$this->load->view("containner/sidebarmember");
+			$this->load->view("containner/header_member", $login_result);
+			$this->load->view("containner/sidebar_member");
 			$this->load->view("data_member", $login_result);
 			$this->load->view("containner/script");
 		} else {
@@ -121,8 +121,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("data_member", $data);
 		$this->load->view("containner/script");
 	}
@@ -133,8 +133,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("editdata_member", $data);
 		$this->load->view("containner/script");
 	}
@@ -165,8 +165,8 @@ class Member extends CI_Controller
 		$data2['result'] = $this->member_model->share_member($br_no, $mem_id);
 		$data2['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("share_member", $data2);
 		$this->load->view("containner/script");
 	}
@@ -178,8 +178,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->deposit_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("deposit_member", $data2);
 		$this->load->view("containner/script");
 	}
@@ -191,8 +191,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$dataaccount['result'] = $this->member_model->getaccount_member($ACCOUNT_NO);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("deposit_member_seedata", $dataaccount);
 		$this->load->view("containner/script");
 	}
@@ -208,8 +208,8 @@ class Member extends CI_Controller
 
 		$data2['result'] = $this->member_model->deposit_member_seeaccount($account_number, $startdate, $enddate);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");
 	}
@@ -221,8 +221,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->deposit_member_seeaccount_allday($ACCOUNT_NO);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");
 	}
@@ -235,8 +235,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->credit_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("credit_member", $data2);
 		$this->load->view("containner/script");
 	}
@@ -249,8 +249,8 @@ class Member extends CI_Controller
 		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
 		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("credit_member_detail", $data2);
 		$this->load->view("containner/script");
 	}
@@ -263,8 +263,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->checkcredit_member($mem_id, $id_card, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("checkcredit_member", $data2);
 		$this->load->view("containner/script");
 	}
@@ -277,8 +277,8 @@ class Member extends CI_Controller
 		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
 		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember", $data);
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("checkcredit_member_detail", $data2);
 		$this->load->view("containner/script");
 	}
@@ -291,8 +291,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->welfare_member($mem_id, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("welfare_member", $data2);
 		$this->load->view("containner/script");
 	}
@@ -305,8 +305,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->welfare_member($mem_id, $id_card, $br_no);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
-		$this->load->view("containner/sidebarmember");
+		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/sidebar_member");
 		$this->load->view("requestwelfare_member", $data2);
 		$this->load->view("containner/script");
 	}
