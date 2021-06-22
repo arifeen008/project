@@ -16,14 +16,14 @@ class Officer extends CI_Controller
 
 	public function check_officer()
 	{
-		$this->form_validation->set_rules('USER_ID', 'USER_ID', 'required', array('required' => 'กรุณาใส่ ID เจ้าหน้าที่'));
-		$this->form_validation->set_rules('PASSWORD', 'PASSWORD', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
+		$this->form_validation->set_rules('user_id', 'user_id', 'required', array('required' => 'กรุณาใส่ ID เจ้าหน้าที่'));
+		$this->form_validation->set_rules('password', 'password', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
 		if ($this->form_validation->run() == false) {
 			$this->load->view("containner/head");
 			$this->load->view("login_officer");
 			$this->load->view("containner/script");
 		} else {
-			$result = $this->officer_model->fetch_user_login($this->input->post('USER_ID'), $this->input->post('PASSWORD'));
+			$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
 			if (!empty($result)) {
 				$session = array(
 					'USER_ID' => $result->USER_ID,
@@ -33,24 +33,13 @@ class Officer extends CI_Controller
 				);
 
 				$this->session->set_userdata($session);
-
 				$USER_ID = $this->session->userdata('USER_ID');
-				$LEVEL_CODE = $this->session->userdata('LEVEL_CODE');
 				$data = $this->officer_model->data_officer($USER_ID);
-				if ($LEVEL_CODE === 'C') {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_officer");
-					$data2['result'] = $this->officer_model->pullbranch();
-					$this->load->view("depositsystem", $data2);
-					$this->load->view("containner/script");
-				} else {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_officer");
-					$this->load->view("data_officer");
-					$this->load->view("containner/script");
-				}
+				$this->load->view("containner/head");
+				$this->load->view("containner/header_officer", $data);
+				$this->load->view("containner/sidebar_officer");
+				$this->load->view("memberandshare");
+				$this->load->view("containner/script");
 			} else {
 				$this->session->unset_userdata(array('USER_ID', 'LEVEL_CODE', 'USER_NAME', 'BR_NO'));
 				$this->load->view("containner/head");

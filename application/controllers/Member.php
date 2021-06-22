@@ -16,6 +16,13 @@ class Member extends CI_Controller
 
 	public function check_member()
 	{
+		$this->form_validation->set_rules('user_id', 'user_id', 'required', array('required' => 'กรุณาใส่ username'));
+		$this->form_validation->set_rules('password', 'password', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
+		if ($this->form_validation->run() == false) {
+			$this->load->view("containner/head");
+			$this->load->view("login_member");
+			$this->load->view("containner/script");
+		}
 		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
 		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
 			$login_result = $this->member_model->getdata_member($result->BR_NO, $result->MEM_ID);
@@ -110,7 +117,7 @@ class Member extends CI_Controller
 				$this->load->view("containner/head");
 				$this->load->view("register_form");
 				$this->load->view("containner/script");
-				echo "<script>alert('สมัครสมาชิกไม่สำเร็จ');</script>";
+				echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
 			}
 		}
 	}

@@ -23,33 +23,27 @@
 
                         <div class="form-group">
                             <label for="id_card">เลขบัตรประชาชน</label>
-                            <input type="text" class="form-control" name="id_card" id="id_card" placeholder="เลขบัตรประชาชน">
+                            <input type="text" class="form-control" name="id_card" id="id_card" placeholder="เลขบัตรประชาชน..." maxlength="13" required>
                             <span class="fr"><?php echo form_error('id_card'); ?></span>
                         </div>
 
                         <div class="form-group">
                             <label for="id_card">ชื่อผู้ใช้</label>
-                            <input type="text" class="form-control" name="user_id" id="user_id" placeholder="ชื่อผู้ใช้">
+                            <input type="text" class="form-control" name="user_id" id="user_id" placeholder="ชื่อผู้ใช้..." required>
                             <span class="fr"><?php echo form_error('user_id'); ?></span>
                         </div>
 
                         <div class="form-group">
                             <label for="password">รหัสผ่าน</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน..." required>
                             <span class="fr"><?php echo form_error('password'); ?></span>
                         </div>
 
                         <div class="form-group">
                             <label for="confirm_password">ยืนยันรหัสผ่าน</label>
-                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="ยืนยันรหัสผ่าน">
+                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="ยืนยันรหัสผ่าน..." required>
                             <span class="fr"><?php echo form_error('confirm_password'); ?></span>
                         </div>
-
-                        <!-- <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" aria-describedby="emailHelp">
-                            <span class="fr"><?php echo form_error('email'); ?></span>
-                        </div> -->
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">สมัครสมาชิก</button>
