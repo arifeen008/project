@@ -17,6 +17,9 @@ include_once("application/libraries/Thaidate.php");
                     <td>คะแนนสะสมคงเหลือ</td>
                 </tr>
             </thead>
+            <?php if ($result->result() == null) { ?>
+                <td colspan="4" align="center">ไม่มีข้อมูลหุ้น</td>
+            <?php  } ?>
             <tr align="center">
                 <td><?= $resume->MEM_ID ?></td>
                 <td><?= $resume->BR_NAME ?></td>

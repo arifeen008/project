@@ -2,18 +2,18 @@
 
 class Officer_model extends CI_Model
 {
-    public function fetch_user_login($USER_ID, $PASSWORD)
+    public function fetch_user_login($user_id, $password)
     {
-        $this->db->where('USER_ID', $USER_ID);
-        $this->db->where('PASSWORD', $PASSWORD);
+        $this->db->where('USER_ID', $user_id);
+        $this->db->where('PASSWORD', $password);
         $query = $this->db->get('BK_H_TELLER_CONTROL');
         return $query->row();
     }
 
-    public function data_officer($USER_ID)
+    public function data_officer($user_id)
     {
         // $this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
-        $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
+        $this->db->where('BK_H_TELLER_CONTROL.USER_ID', $user_id);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_TELLER_CONTROL.BR_NO');
         $query = $this->db->get('BK_H_TELLER_CONTROL');
         return $query->row();
@@ -44,22 +44,14 @@ class Officer_model extends CI_Model
         return $result->row();
     }
 
-    public function pullbranch()
-    {
-        $this->db->select('BR_NO,BR_NAME');
-        $this->db->order_by('BR_NO', 'ASC');
-        $result = $this->db->get('BK_M_BRANCH');
-        return $result;
-    }
-
-
-    public function depositreport_summary($startdate, $enddate, $user_id)
+    public function depositreport_summary($startdate, $enddate, $user_id, $branch_number)
     {
         $this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
         $this->db->where('USER_ID', $user_id);
+        $this->db->where('F_BRNO', $branch_number);
         $this->db->where('F_DATE >=', $startdate);
         $this->db->where('F_DATE <=', $enddate);
-        $this->db->group_by('F_DATE');
+        $this->db->group_by('F_DATE,F_DEP,F_WDL,F_BALANCE');
         $this->db->order_by('F_DATE', 'ASC');
         $result = $this->db->get('BK_T_FINANCE');
         return $result;
@@ -193,17 +185,46 @@ class Officer_model extends CI_Model
         return $result;
     }
 
-    public function datashare_member($mem_id,$branch_number){
-        $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
-        $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
-        $this->db->where('SHR_T_SHARE.BR_NO', $branch_number);
-        $this->db->join('SHR_TBL','SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
+    public function listdatashare_member($fname, $lname, $branch_number)
+    {
+        $this->db->select('FNAME,LNAME,BR_NAME');
+        $this->db->like('MEM_H_MEMBER.FNAME', $fname);
+        $this->db->like('MEM_H_MEMBER.LNAME', $lname);
+        $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result;
+    }
+
+    // public function datashare_member($mem_id, $branch_number)
+    // {
+    //     $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
+    //     $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
+    //     $this->db->where('SHR_T_SHARE.BR_NO', $branch_number);
+    //     $this->db->join('SHR_TBL', 'SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
+    //     $this->db->order_by('TMP_DATE_TODAY', 'DESC');
+    //     $result = $this->db->get('SHR_T_SHARE');
+    //     return $result;
+    // }
+
+    public function datashare_member($slip_number, $mem_id, $account_number, $fname, $lname, $branch_number)
+    {
+        // $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
+        $this->db->like('SHR_T_SHARE.SLIP_NO', $slip_number);
+        // $this->db->like('SHR_T_SHARE.MEM_ID', $mem_id);
+        // $this->db->where('SHR_T_SHARE.SLIP_NO', $account_number);
+        // $this->db->like('MEM_H_MEMBER.FNAME', $fname);
+        // $this->db->like('MEM_H_MEMBER.LNAME', $lname);
+        // $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->join('SHR_TBL', 'SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
+        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_T_SHARE.MEM_ID');
+        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.BR_NO = SHR_T_SHARE.BR_NO');
         $this->db->order_by('TMP_DATE_TODAY', 'DESC');
         $result = $this->db->get('SHR_T_SHARE');
         return $result;
     }
 
-    public function share_member($mem_id,$branch_number)
+    public function share_member($mem_id, $branch_number)
     {
         $this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
         $this->db->where('SHR_MEM.MEM_ID', $mem_id);
@@ -213,13 +234,29 @@ class Officer_model extends CI_Model
         return $query->row();
     }
 
-    public function seedata_member($mem_id,$branch_number)
+    public function seedata_member($mem_id, $branch_number)
     {
         $this->db->select('FNAME,LNAME,ID_CARD,DMY_BIRTH,SEX,FATHER,MOTHER,MARRIAGE_STATUS,BLO_GROUP,ADDRESS,MOO_ADDR,TUMBOL,LINE_ID,EMAIL,MOBILE_TEL');
         $this->db->where('MEM_ID', $mem_id);
         $this->db->where('BR_NO', $branch_number);
         $query = $this->db->get('MEM_H_MEMBER');
         return $query->row();
+    }
+
+    public function listdata_member($fname, $lname, $branch_number)
+    {
+        $this->db->select('MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME,MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO');
+        $this->db->like('MEM_H_MEMBER.FNAME', $fname);
+        $this->db->like('MEM_H_MEMBER.LNAME', $lname);
+        $this->db->where('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $query = $this->db->get('MEM_H_MEMBER');
+        $num_rows = mysqli_num_rows($query);
+        if ($num_rows >= 10) {
+            return NULL;
+        } else {
+            return $query;
+        }
     }
 
     public function welfare_member($mem_id, $br_no)

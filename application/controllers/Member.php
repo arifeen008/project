@@ -168,13 +168,13 @@ class Member extends CI_Controller
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
-		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data2['result'] = $this->member_model->share_member($br_no, $mem_id);
-		$data2['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
+		$data_member = $this->member_model->getdata_member($br_no, $mem_id);
+		$data['result'] = $this->member_model->share_member($br_no, $mem_id);
+		$data['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/header_member", $data);
+		$this->load->view("containner/header_member", $data_member);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("share_member", $data2);
+		$this->load->view("share_member", $data);
 		$this->load->view("containner/script");
 	}
 

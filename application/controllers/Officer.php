@@ -34,12 +34,22 @@ class Officer extends CI_Controller
 
 				$this->session->set_userdata($session);
 				$USER_ID = $this->session->userdata('USER_ID');
+				$LEVEL_CODE = $this->session->userdata('LEVEL_CODE');
+				// print_r($LEVEL_CODE);
 				$data = $this->officer_model->data_officer($USER_ID);
-				$this->load->view("containner/head");
-				$this->load->view("containner/header_officer", $data);
-				$this->load->view("containner/sidebar_officer");
-				$this->load->view("memberandshare");
-				$this->load->view("containner/script");
+				if ($LEVEL_CODE != 'A') {
+					$this->load->view("containner/head");
+					$this->load->view("containner/header_officer", $data);
+					$this->load->view("containner/sidebar_manager");
+					$this->load->view("memberandshare");
+					$this->load->view("containner/script");
+				} else {
+					$this->load->view("containner/head");
+					$this->load->view("containner/header_officer", $data);
+					$this->load->view("containner/sidebar_officer");
+					$this->load->view("memberandshare");
+					$this->load->view("containner/script");
+				}
 			} else {
 				$this->session->unset_userdata(array('USER_ID', 'LEVEL_CODE', 'USER_NAME', 'BR_NO'));
 				$this->load->view("containner/head");
@@ -81,22 +91,22 @@ class Officer extends CI_Controller
 	public function depositsystem()
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
-		$data1 = $this->officer_model->data_officer($USER_ID);
-		$data2['result'] = $this->officer_model->pullbranch();
+		$data = $this->officer_model->data_officer($USER_ID);
 		$this->load->view("containner/head");
-		$this->load->view("containner/header_officer", $data1);
+		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("depositsystem", $data2);
+		$this->load->view("depositsystem");
 		$this->load->view("containner/script");
 	}
 
 	public function depositreport_summary()
 	{
 		$user_id = $this->session->userdata('USER_ID');
+		$branch_number = $this->session->userdata('BR_NO');
 		$startdate = $this->input->post('startdate');
 		$enddate = $this->input->post('enddate');
 		$data1 = $this->officer_model->data_officer($user_id);
-		$data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id);
+		$data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
@@ -108,6 +118,8 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$account_number = $this->input->post('account_number');
+		$id_card = $this->input->post('id_card');
+		// $data_member = $this->officer_model->getid($id_card);
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->account_book_balance($account_number);
 		$data['detail'] = $this->officer_model->detail_deposit($account_number);
@@ -122,11 +134,10 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data1 = $this->officer_model->data_officer($USER_ID);
-		$data2['result'] = $this->officer_model->pullbranch();
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("creditsystem", $data2);
+		$this->load->view("creditsystem");
 		$this->load->view("containner/script");
 	}
 
@@ -201,13 +212,11 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function seedata_member()
+	public function seedata_member($mem_id, $branch_number)
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$id_card = $this->input->post('id_card');
-		$data_member = $this->officer_model->getid($id_card);
-		$data['result'] = $this->officer_model->seedata_member($data_member->MEM_ID, $data_member->BR_NO);
+		$data['result'] = $this->officer_model->seedata_member($mem_id, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
@@ -215,14 +224,49 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
+	public function listdata_member()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$branch_number = $this->input->post('branch_number');
+		$data['result'] = $this->officer_model->listdata_member($fname, $lname, $branch_number);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("listdata_member", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function listdatashare_member()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$branch_number = $this->input->post('branch_number');
+		$data['result'] = $this->officer_model->listdatashare_member($fname, $lname, $branch_number);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("listdatashare_member", $data);
+		$this->load->view("containner/script");
+	}
+
 	public function datashare_member()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$id_card = $this->input->post('id_card');
-		$data_member = $this->officer_model->getid($id_card);
-		$data['resume'] = $this->officer_model->share_member($data_member->MEM_ID, $data_member->BR_NO);
-		$data['result'] = $this->officer_model->datashare_member($data_member->MEM_ID, $data_member->BR_NO);
+		$slip_number = $this->input->post('slip_number');
+		$mem_id = $this->input->post('mem_id');
+		$account_number = $this->input->post('account_number');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$branch_number = $this->input->post('branch_number');
+		$data['resume'] = $this->officer_model->share_member($mem_id, $branch_number);
+		$data['result'] = $this->officer_model->datashare_member($slip_number, $mem_id, $account_number, $fname, $lname, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
@@ -254,4 +298,8 @@ class Officer extends CI_Controller
 		$this->load->view("seewelfare_member", $data);
 		$this->load->view("containner/script");
 	}
+
+	// =========================================================================================================================================================================
+
+
 }
