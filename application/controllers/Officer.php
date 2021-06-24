@@ -255,18 +255,12 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function datashare_member()
+	public function datashare_member($mem_id, $branch_number)
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$slip_number = $this->input->post('slip_number');
-		$mem_id = $this->input->post('mem_id');
-		$account_number = $this->input->post('account_number');
-		$fname = $this->input->post('fname');
-		$lname = $this->input->post('lname');
-		$branch_number = $this->input->post('branch_number');
 		$data['resume'] = $this->officer_model->share_member($mem_id, $branch_number);
-		$data['result'] = $this->officer_model->datashare_member($slip_number, $mem_id, $account_number, $fname, $lname, $branch_number);
+		$data['result'] = $this->officer_model->datashare_member($mem_id, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");

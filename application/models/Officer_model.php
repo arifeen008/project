@@ -187,38 +187,21 @@ class Officer_model extends CI_Model
 
     public function listdatashare_member($fname, $lname, $branch_number)
     {
-        $this->db->select('FNAME,LNAME,BR_NAME');
+        $this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
         $this->db->like('MEM_H_MEMBER.FNAME', $fname);
         $this->db->like('MEM_H_MEMBER.LNAME', $lname);
-        $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->where('MEM_H_MEMBER.BR_NO', $branch_number);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
         $result = $this->db->get('MEM_H_MEMBER');
         return $result;
     }
 
-    // public function datashare_member($mem_id, $branch_number)
-    // {
-    //     $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
-    //     $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
-    //     $this->db->where('SHR_T_SHARE.BR_NO', $branch_number);
-    //     $this->db->join('SHR_TBL', 'SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
-    //     $this->db->order_by('TMP_DATE_TODAY', 'DESC');
-    //     $result = $this->db->get('SHR_T_SHARE');
-    //     return $result;
-    // }
-
-    public function datashare_member($slip_number, $mem_id, $account_number, $fname, $lname, $branch_number)
+    public function datashare_member($mem_id, $branch_number)
     {
-        // $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
-        $this->db->like('SHR_T_SHARE.SLIP_NO', $slip_number);
-        // $this->db->like('SHR_T_SHARE.MEM_ID', $mem_id);
-        // $this->db->where('SHR_T_SHARE.SLIP_NO', $account_number);
-        // $this->db->like('MEM_H_MEMBER.FNAME', $fname);
-        // $this->db->like('MEM_H_MEMBER.LNAME', $lname);
-        // $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
+        $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
+        $this->db->where('SHR_T_SHARE.BR_NO', $branch_number);
         $this->db->join('SHR_TBL', 'SHR_T_SHARE.SHR_NO = SHR_TBL.SHR_NO');
-        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_T_SHARE.MEM_ID');
-        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.BR_NO = SHR_T_SHARE.BR_NO');
         $this->db->order_by('TMP_DATE_TODAY', 'DESC');
         $result = $this->db->get('SHR_T_SHARE');
         return $result;
