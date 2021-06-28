@@ -1,7 +1,7 @@
 <div class="col-lg-9">
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สมาชิกเข้าใหม่ - ลาออกประจำปี</h1>
+        <h1>สมาชิกเข้าใหม่ - ลาออกประจำปี</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -24,7 +24,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สมาชิกเข้าใหม่ - ลาออกใหม่ประจำปี สรุปรายปี</h1>
+        <h1>สมาชิกเข้าใหม่ - ลาออกใหม่ประจำปี สรุปรายปี</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -63,7 +63,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ทุนเรือนหุ้นประจำปี</h1>
+        <h1>ทุนเรือนหุ้นประจำปี</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -86,7 +86,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำปี(เลือกประเภท)</h1>
+        <h1>บัญชีเงินฝากประจำปี(เลือกประเภท)</h1>
     </div>
 
     <form action="#" method="post">
@@ -130,7 +130,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำปี(เลือกสาขา)</h1>
+        <h1>บัญชีเงินฝากประจำปี(เลือกสาขา)</h1>
     </div>
 
     <form action="#" method="post">
@@ -172,7 +172,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อประจำปี (เลือกประเภท)</h1>
+        <h1>สินเชื่อประจำปี (เลือกประเภท)</h1>
     </div>
 
     <form action="#" method="post">
@@ -224,7 +224,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อทุกสาขาประจำปี </h1>
+        <h1>สินเชื่อทุกสาขาประจำปี </h1>
     </div>
 
     <form action="#" method="post">
@@ -250,7 +250,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ตารางวิเคราะห์รายได้สินเชื่อควรเข้ามา</h1>
+        <h1>ตารางวิเคราะห์รายได้สินเชื่อควรเข้ามา</h1>
     </div>
 
     <form action="#" method="post">
@@ -301,7 +301,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รับ - จ่ายประจำปี</h1>
+        <h1>รับ - จ่ายประจำปี</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -322,7 +322,7 @@
             <button type="submit" class="btn btn-success mb-2">ค้นหา</button>
     </form>
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายงานหุ้นและเงินฝากทุกสาขาประจำปี</h1>
+        <h1>รายงานหุ้นและเงินฝากทุกสาขาประจำปี</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">

@@ -1,7 +1,7 @@
 <div class="col-lg-9">
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายงานสมาชิกประจำวัน</h1>
+        <h1>รายงานสมาชิกประจำวัน</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -20,7 +20,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ทุนเรือนหุ้นประจำวัน</h1>
+        <h1>ทุนเรือนหุ้นประจำวัน</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -39,7 +39,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำวัน(เลือกประเภท)</h1>
+        <h1>บัญชีเงินฝากประจำวัน(เลือกประเภท)</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -78,7 +78,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำวัน(เลือกสาขา)</h1>
+        <h1>บัญชีเงินฝากประจำวัน(เลือกสาขา)</h1>
     </div>
 
     <form action="#" method="post">
@@ -118,7 +118,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อประจำวัน</h1>
+        <h1>สินเชื่อประจำวัน</h1>
     </div>
 
     <form action="#" method="post">
@@ -168,7 +168,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อประจำวัน(รวมสาขา)</h1>
+        <h1>สินเชื่อประจำวัน(รวมสาขา)</h1>
     </div>
 
     <form action="#" method="post">
@@ -189,7 +189,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รับ-จ่ายประจำวัน</h1>
+        <h1>รับ-จ่ายประจำวัน</h1>
     </div>
 
     <form action="#" method="post">
@@ -211,7 +211,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">หุ้นและเงินฝากทุกสาขาประจำวัน</h1>
+        <h1>หุ้นและเงินฝากทุกสาขาประจำวัน</h1>
     </div>
 
     <form action="#" method="post">

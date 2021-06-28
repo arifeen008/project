@@ -5,7 +5,7 @@ include_once("application/libraries/Thaidate.php");
 <div class="col-lg-9">
     <div class="col-12" id="main">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">สินเชื่อ</h1>
+            <h1>สินเชื่อ</h1>
         </div>
         <a href="<?php echo site_url('member/checkcredit_member') ?>" class="btn btn-success btn-sm">สัญญาสินเชื่อที่ปิดไปแล้ว</a>
         <div class="col">

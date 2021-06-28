@@ -1,7 +1,7 @@
 <div class="col-lg-9">
     <div class="col-12" id="main">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">แก้ไขประวัติสมาชิก</h1>
+            <h1>แก้ไขประวัติสมาชิก</h1>
         </div>
         <div class="card-body">
             <form action="<?php echo site_url('member/updateeditdata_member') ?>" method="post">

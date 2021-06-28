@@ -1,6 +1,6 @@
 <div class="col-lg-9">
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายละเอียดสมาชิกกองทุน</h1>
+        <h1>รายละเอียดสมาชิกกองทุน</h1>
     </div>
     <div class="card border-success">
         <form action="<?php echo site_url('manager/welfare_member') ?>" method="post">

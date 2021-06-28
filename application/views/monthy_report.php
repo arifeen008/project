@@ -1,7 +1,7 @@
 <div class="col-lg-9">
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สมาชิกเข้าใหม่ - ลาออกประจำเดือน</h1>
+        <h1>สมาชิกเข้าใหม่ - ลาออกประจำเดือน</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -42,7 +42,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ทุนเรือนหุ้นประจำเดือน</h1>
+        <h1>ทุนเรือนหุ้นประจำเดือน</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -84,7 +84,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำเดือน(เลือกประเภท)</h1>
+        <h1>บัญชีเงินฝากประจำเดือน(เลือกประเภท)</h1>
     </div>
     <form action="#" method="post">
         <div class="form-group">
@@ -146,7 +146,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">บัญชีเงินฝากประจำเดือน(เลือกสาขา)</h1>
+        <h1>บัญชีเงินฝากประจำเดือน(เลือกสาขา)</h1>
     </div>
 
     <form action="#" method="post">
@@ -209,7 +209,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อรับจ่ายประจำเดือน</h1>
+        <h1>สินเชื่อรับจ่ายประจำเดือน</h1>
     </div>
 
     <form action="#" method="post">
@@ -281,7 +281,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อรับจ่ายประจำเดือน (รวมสาขา)</h1>
+        <h1>สินเชื่อรับจ่ายประจำเดือน (รวมสาขา)</h1>
     </div>
 
     <form action="#" method="post">
@@ -325,7 +325,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">สินเชื่อประจำเดือน</h1>
+        <h1>สินเชื่อประจำเดือน</h1>
     </div>
     <div class="card">
         <div class="card-body">
@@ -459,7 +459,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ตารางวิเคราะห์รายได้สินเชื่อควรเข้ามา</h1>
+        <h1>ตารางวิเคราะห์รายได้สินเชื่อควรเข้ามา</h1>
     </div>
 
     <form action="#" method="post">
@@ -529,7 +529,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายงานแยกชั้นลูกหนี้</h1>
+        <h1>รายงานแยกชั้นลูกหนี้</h1>
     </div>
     <div class="card">
         <div class="card-body">
@@ -662,7 +662,7 @@
     </div>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายงานรับ-จ่าย อื่นๆ ประจำเดือน</h1>
+        <h1>รายงานรับ-จ่าย อื่นๆ ประจำเดือน</h1>
     </div>
 
     <form action="#" method="post">
@@ -705,7 +705,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">รายงานหุ้นและเงินฝากทุกสาขาประจำเดือน</h1>
+        <h1>รายงานหุ้นและเงินฝากทุกสาขาประจำเดือน</h1>
     </div>
 
     <form action="#" method="post">

@@ -1,7 +1,7 @@
 <div class="col-lg-9">
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">ระบบทะเบียนสมาชิกและหุ้น</h1>
+        <h1>ระบบทะเบียนสมาชิกและหุ้น</h1>
     </div>
     <h4>ข้อมูลสมาชิก</h4>
     <div class="card border-success">
@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col">
                             <label>ชื่อ :</label>
-                            <input type="text" name="fname" class="form-control" >
+                            <input type="text" name="fname" class="form-control">
                         </div>
                         <div class="col">
                             <label>นามสกุล :</label>

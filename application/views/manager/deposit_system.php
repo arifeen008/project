@@ -1,6 +1,6 @@
 <div class="col-lg-9">
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">เงินฝากพนักงานประจำวัน</h1>
+        <h1>เงินฝากพนักงานประจำวัน</h1>
     </div>
     <div class="card border-success">
         <form action="<?php echo site_url('manager/depositreport_summary') ?>" method="post">
@@ -25,7 +25,7 @@
 
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h1">เงินฝากในบัญชีสมาชิก</h1>
+        <h1>เงินฝากในบัญชีสมาชิก</h1>
     </div>
     <div class="card border-success">
         <form action="<?php echo site_url('manager/account_book_balance') ?>" method="post">
