@@ -15,7 +15,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("data_officer");
+        $this->load->view("memberandshare");
         $this->load->view("containner/script");
     }
 
@@ -59,7 +59,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("credit_system");
+        $this->load->view("daily_report");
         $this->load->view("containner/script");
     }
     public function monthy_report()
@@ -69,7 +69,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("credit_system");
+        $this->load->view("monthy_report");
         $this->load->view("containner/script");
     }
     public function yearly_report()
@@ -79,7 +79,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("credit_system");
+        $this->load->view("yearly_report");
         $this->load->view("containner/script");
     }
 }
