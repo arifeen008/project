@@ -27,17 +27,16 @@ class Officer extends CI_Controller
 			if (!empty($result)) {
 				$session = array(
 					'USER_ID' => $result->USER_ID,
-					'BR_NO' => $result->BR_NO,
 					'LEVEL_CODE' => $result->LEVEL_CODE,
+					'BR_NO' => $result->BR_NO,
 					'USER_NAME' => $result->USER_NAME
 				);
 
 				$this->session->set_userdata($session);
 				$USER_ID = $this->session->userdata('USER_ID');
 				$LEVEL_CODE = $this->session->userdata('LEVEL_CODE');
-				// print_r($LEVEL_CODE);
 				$data = $this->officer_model->data_officer($USER_ID);
-				if ($LEVEL_CODE != 'A') {
+				if ($LEVEL_CODE === "A") {
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_manager");
@@ -51,7 +50,7 @@ class Officer extends CI_Controller
 					$this->load->view("containner/script");
 				}
 			} else {
-				$this->session->unset_userdata(array('USER_ID', 'LEVEL_CODE', 'USER_NAME', 'BR_NO'));
+				$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
 				$this->load->view("containner/head");
 				$this->load->view("login_officer");
 				$this->load->view("containner/script");
@@ -88,14 +87,14 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function depositsystem()
+	public function deposit_system()
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("depositsystem");
+		$this->load->view("deposit_system");
 		$this->load->view("containner/script");
 	}
 
@@ -130,14 +129,14 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function creditsystem()
+	public function credit_system()
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data1 = $this->officer_model->data_officer($USER_ID);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("creditsystem");
+		$this->load->view("credit_system");
 		$this->load->view("containner/script");
 	}
 
@@ -158,7 +157,7 @@ class Officer extends CI_Controller
 			$this->load->view("containner/script");
 		} else {
 			echo "<script>alert('ไม่มียอดข้อมูลสินเชื่อสมาชิกดังกล่าว');</script>";
-			redirect('officer/creditsystem', 'refresh');
+			redirect('officer/credit_system', 'refresh');
 		}
 	}
 
@@ -268,14 +267,14 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function welfaresystem()
+	public function welfare_system()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("welfaresystem");
+		$this->load->view("welfare_system");
 		$this->load->view("containner/script");
 	}
 
