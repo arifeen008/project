@@ -3,7 +3,7 @@
         <h1 class="h1">สอบถามยอดสินเชื่อในสมุดของบัญชี</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/credit_officer') ?>" method="post">
+        <form action="<?php echo site_url('manager/credit_officer') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
