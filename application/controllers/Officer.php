@@ -40,13 +40,13 @@ class Officer extends CI_Controller
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_manager");
-					$this->load->view("memberandshare");
+					$this->load->view("memberandshare_system");
 					$this->load->view("containner/script");
 				} else {
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_officer");
-					$this->load->view("memberandshare");
+					$this->load->view("memberandshare_system");
 					$this->load->view("containner/script");
 				}
 			} else {
@@ -200,14 +200,14 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function memberandshare()
+	public function memberandshare_system()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("memberandshare");
+		$this->load->view("memberandshare_system");
 		$this->load->view("containner/script");
 	}
 
