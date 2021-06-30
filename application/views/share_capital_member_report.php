@@ -28,21 +28,22 @@ include_once("application/libraries/Thaidate.php");
                             <tr align="center">
                                 <td><?= $row->BR_NO ?></td>
                                 <td><?= $row->BR_NAME ?></td>
-                                <td><?= number_format($row->num1+3) ?></td>
-                                <td><?= number_format($row->num1) ?></td>
-                                <td><?= number_format($row->num1) ?></td>
-                                <td><?= number_format($row->num1) ?></td>
-                                <td><?= number_format($row->num1) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                            </tr>
+
+                            <tr align="center">
+                                <td colspan="2">รวม</td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
+                                <td><?= number_format($row->mem_number) ?></td>
                             </tr>
                         <?php } ?>
-                        <tr align="center">
-                            <td colspan="2">รวม</td>
-                            <td><?= number_format($row->num1) ?></td>
-                            <td><?= number_format($row->num1) ?></td>
-                            <td><?= number_format($row->num1) ?></td>
-                            <td><?= number_format($row->num1) ?></td>
-                            <td><?= number_format($row->num1) ?></td>
-                        </tr>
                     </table>
                 </div>
             </div>

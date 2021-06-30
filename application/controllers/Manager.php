@@ -256,4 +256,20 @@ class Manager extends CI_Controller
         $this->load->view("share_capital_member_report", $data);
         $this->load->view("containner/script");
     }
+
+    public function daily_share_capital()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_share_capital($startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_share_capital($startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily_share_capital", $data);
+        $this->load->view("containner/script");
+    }
+
 }
