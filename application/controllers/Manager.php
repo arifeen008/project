@@ -6,6 +6,7 @@ class Manager extends CI_Controller
     {
         parent::__construct();
         $this->load->model('officer_model');
+        $this->load->model('manager_model');
     }
 
     public function memberandshare_system()
@@ -239,6 +240,20 @@ class Manager extends CI_Controller
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
         $this->load->view("yearly_report");
+        $this->load->view("containner/script");
+    }
+
+    public function share_capital_member_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->share_capital_member_report($startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("share_capital_member_report", $data);
         $this->load->view("containner/script");
     }
 }
