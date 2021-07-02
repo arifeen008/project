@@ -32,7 +32,7 @@ class Manager_model extends CI_Model
         return $result->row();
     }
 
-    public function daily_deposit_account($account_type, $startdate, $enddate)
+    public function daily_deposit_account_type($account_type, $startdate, $enddate)
     {
         $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,sum(BK_H_SAVINGACCOUNT.LAST_DEP) as deposit_money');
         $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $account_type);
@@ -45,7 +45,7 @@ class Manager_model extends CI_Model
         return $result;
     }
 
-    public function sum_daily_deposit_account($account_type, $startdate, $enddate)
+    public function sum_daily_deposit_account_type($account_type, $startdate, $enddate)
     {
         $this->db->select('sum(BK_H_SAVINGACCOUNT.LAST_DEP) as deposit_money');
         $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $account_type);
@@ -53,8 +53,80 @@ class Manager_model extends CI_Model
         $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE <=', $enddate);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
         $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
-        // $this->db->group_by('BK_M_BRANCH.BR_NO');
         $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result->row();
+    }
+
+    public function daily_deposit_account_branch($branch_number, $startdate, $enddate)
+    {
+        $this->db->select('BK_M_ACC_TYPE.ACC_TYPE,BK_M_ACC_TYPE.ACC_DESC,sum(BK_H_SAVINGACCOUNT.LAST_DEP) as sum_dast_dep');
+        $this->db->where('BK_H_SAVINGACCOUNT.BR_NO', $branch_number);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE >=', $startdate);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $this->db->group_by('BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result;
+    }
+
+    public function sum_daily_deposit_account_branch($branch_number, $startdate, $enddate)
+    {
+        $this->db->select('BK_M_ACC_TYPE.ACC_TYPE,BK_M_ACC_TYPE.ACC_DESC,sum(BK_H_SAVINGACCOUNT.LAST_DEP) as sum_dast_dep');
+        $this->db->where('BK_H_SAVINGACCOUNT.BR_NO', $branch_number);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE >=', $startdate);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result->row();
+    }
+
+    public function daily_credit($main_type, $sub_type, $startdate, $enddate)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('LOAN_M_CONTACT.L_TYPE_CODE', $main_type);
+        $this->db->where('LOAN_M_CONTACT.LSUB_CODE', $sub_type);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE >=', $startdate);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('LOAN_M_CONTACT');
+        return $result;
+    }
+
+    public function sum_daily_credit($main_type, $sub_type, $startdate, $enddate)
+    {
+        $this->db->select('count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('LOAN_M_CONTACT.L_TYPE_CODE', $main_type);
+        $this->db->where('LOAN_M_CONTACT.LSUB_CODE', $sub_type);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE >=', $startdate);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $result = $this->db->get('LOAN_M_CONTACT');
+        return $result->row();
+    }
+
+    public function daily_credit_allbranch($startdate, $enddate)
+    {
+        $this->db->select('LOAN_M_SUB_NAME.LSUB_NAME,count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE >=', $startdate);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $this->db->join('LOAN_M_SUB_NAME', 'LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_CONTACT.LSUB_CODE = LOAN_M_SUB_NAME.LSUB_CODE');
+        $this->db->group_by('LOAN_M_SUB_NAME.LSUB_NAME');
+        $result = $this->db->get('LOAN_M_CONTACT');
+        return $result;
+    }
+
+    public function sum_daily_credit_allbranch($startdate, $enddate)
+    {
+        $this->db->select('count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE >=', $startdate);
+        $this->db->where('LOAN_M_CONTACT.LCONT_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $this->db->join('LOAN_M_SUB_NAME', 'LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_CONTACT.LSUB_CODE = LOAN_M_SUB_NAME.LSUB_CODE');
+        $result = $this->db->get('LOAN_M_CONTACT');
         return $result->row();
     }
 }

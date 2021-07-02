@@ -41,7 +41,7 @@
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>บัญชีเงินฝากประจำวัน(เลือกประเภท)</h1>
     </div>
-    <form action="<?php echo site_url('manager/daily_deposit_account') ?>" method="post">
+    <form action="<?php echo site_url('manager/daily_deposit_account_type') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">
@@ -81,7 +81,7 @@
         <h1>บัญชีเงินฝากประจำวัน(เลือกสาขา)</h1>
     </div>
 
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_deposit_account_branch') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">
@@ -121,7 +121,7 @@
         <h1>สินเชื่อประจำวัน</h1>
     </div>
 
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_credit') ?>" method="post">
 
         <div class="form-group">
             <div class="row">
@@ -129,10 +129,10 @@
                     <div class="form-group">
                         <label for="main_type">ประเภทหลัก</label>
                         <select class="form-control" id="main_type" name="main_type">
-                            <option value="">ฉุกเฉิน</option>
-                            <option value="">สามัญ</option>
-                            <option value="">พิเศษ</option>
-                            <option value="">สวัสดิการ</option>
+                            <option value="1">ฉุกเฉิน</option>
+                            <option value="2">สามัญ</option>
+                            <option value="3">พิเศษ</option>
+                            <option value="4">สวัสดิการ</option>
 
                         </select>
                     </div>
@@ -141,13 +141,13 @@
                     <div class="form-group">
                         <label for="sub_type">ประเภทย่อย</label>
                         <select class="form-control" id="sub_type" name="sub_type">
-                            <option value="">1 - พิเศษ</option>
-                            <option value="">1 - ฉุกเฉิน</option>
-                            <option value="">1 - สามัญ</option>
-                            <option value="">1 - เจ้าหน้าที่</option>
-                            <option value="">2 - สามัญฉุกเฉิน</option>
-                            <option value="">2 - โครงการ</option>
-                            <option value="">3 - โครงการสินทรัพย์</option>
+                            <option value="1">1 - พิเศษ</option>
+                            <option value="1">1 - ฉุกเฉิน</option>
+                            <option value="1">1 - สามัญ</option>
+                            <option value="1">1 - เจ้าหน้าที่</option>
+                            <option value="2">2 - สามัญฉุกเฉิน</option>
+                            <option value="2">2 - โครงการ</option>
+                            <option value="3">3 - โครงการสินทรัพย์</option>
                         </select>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
         <h1>สินเชื่อประจำวัน(รวมสาขา)</h1>
     </div>
 
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_credit_allbranch') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">

@@ -272,19 +272,67 @@ class Manager extends CI_Controller
         $this->load->view("containner/script");
     }
 
-    public function daily_deposit_account()
+    public function daily_deposit_account_type()
     {
         $user_id = $this->session->userdata('USER_ID');
         $data_officer = $this->officer_model->data_officer($user_id);
         $account_type = $this->input->post('account_type');
         $startdate = $this->input->post('startdate');
         $enddate = $this->input->post('enddate');
-        $data['result'] = $this->manager_model->daily_deposit_account($account_type, $startdate, $enddate);
-        $data['summary'] = $this->manager_model->sum_daily_deposit_account($account_type, $startdate, $enddate);
+        $data['result'] = $this->manager_model->daily_deposit_account_type($account_type, $startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_deposit_account_type($account_type, $startdate, $enddate);
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_deposit_account", $data);
+        $this->load->view("daily_deposit_account_type", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function daily_deposit_account_branch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $branch_number = $this->input->post('branch_number');
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_deposit_account_branch($branch_number, $startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_deposit_account_branch($branch_number, $startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily_deposit_account_branch", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function daily_credit()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $main_type = $this->input->post('main_type');
+        $sub_type = $this->input->post('sub_type');
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_credit($main_type, $sub_type, $startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_credit($main_type, $sub_type, $startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily_credit", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function daily_credit_allbranch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_credit_allbranch($startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_credit_allbranch($startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
 }
