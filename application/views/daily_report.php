@@ -41,24 +41,24 @@
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>บัญชีเงินฝากประจำวัน(เลือกประเภท)</h1>
     </div>
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_deposit_account') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="account_type">ประเภทบัญชี</label>
                         <select class="form-control" id="account_type" name="account_type">
-                            <option value="">เพื่อการศึกษา</option>
-                            <option value="">วาดีอะห์</option>
-                            <option value="">มูฏอรอบะห์</option>
-                            <option value="">กองทุนฮัจญ์</option>
-                            <option value="">อิสติกอมะฮ 3</option>
-                            <option value="">อิสติกอมะฮ 12</option>
-                            <option value="">ยุวษะกอฟะฮ</option>
-                            <option value="">กุรบาน</option>
-                            <option value="">วาดีอะห์ ATM</option>
-                            <option value="">อิสติกอมะฮ 24</option>
-                            <option value="">อิสติกอมะฮ 6</option>
+                            <option value="04">เพื่อการศึกษา</option>
+                            <option value="02">วาดีอะห์</option>
+                            <option value="03">มูฏอรอบะห์</option>
+                            <option value="05">กองทุนฮัจญ์</option>
+                            <option value="06">อิสติกอมะฮ 3</option>
+                            <option value="07">อิสติกอมะฮ 12</option>
+                            <option value="08">ยุวษะกอฟะฮ</option>
+                            <option value="10">กุรบาน</option>
+                            <option value="11">วาดีอะห์ ATM</option>
+                            <option value="12">อิสติกอมะฮ 24</option>
+                            <option value="09">อิสติกอมะฮ 6</option>
                         </select>
                     </div>
                 </div>

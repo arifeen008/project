@@ -272,4 +272,19 @@ class Manager extends CI_Controller
         $this->load->view("containner/script");
     }
 
+    public function daily_deposit_account()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $account_type = $this->input->post('account_type');
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_deposit_account($account_type, $startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_deposit_account($account_type, $startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily_deposit_account", $data);
+        $this->load->view("containner/script");
+    }
 }

@@ -10,10 +10,10 @@ include_once("application/libraries/Thaidate.php");
         <div class="col">
             <div class="card border-success">
                 <div class="card-body">
-                    <table class="table table-bordered border-success">
+                    <table class="table table-bordered border border-success">
                         <tr>
-                            <td align="center" rowspan="2">รหัสสาขา</td>
-                            <td align="center" rowspan="2">สาขา</td>
+                            <td align="center" rowspan="2"><br>รหัสสาขา</td>
+                            <td align="center" rowspan="2"><br>สาขา</td>
                             <td align="center" colspan="5">ข้อมูลสมาชิก</td>
                         </tr>
                         <tr align="center">

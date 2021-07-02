@@ -5,9 +5,9 @@ class Manager_model extends CI_Model
     public function share_capital_member_report($startdate, $enddate)
     {
         $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,count(MEM_H_MEMBER.MEM_ID) as mem_number');
-        $this->db->where('MEM_H_MEMBER.MEM_DATE >=' ,$startdate);
-        $this->db->where('MEM_H_MEMBER.MEM_DATE <=' ,$enddate);
-        $this->db->join('BK_M_BRANCH','BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $this->db->where('MEM_H_MEMBER.MEM_DATE >=', $startdate);
+        $this->db->where('MEM_H_MEMBER.MEM_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
         $result = $this->db->get('MEM_H_MEMBER');
         return $result;
     }
@@ -15,9 +15,9 @@ class Manager_model extends CI_Model
     public function daily_share_capital($startdate, $enddate)
     {
         $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,sum(SHR_T_SHARE.TMP_SHARE_BHT) as share_money');
-        $this->db->where('SHR_T_SHARE.TEMP_TODAY >=' ,$startdate);
-        $this->db->where('SHR_T_SHARE.TEMP_TODAY <=' ,$enddate);
-        $this->db->join('BK_M_BRANCH','BK_M_BRANCH.BR_NO = SHR_T_SHARE.BR_NO');
+        $this->db->where('SHR_T_SHARE.TEMP_TODAY >=', $startdate);
+        $this->db->where('SHR_T_SHARE.TEMP_TODAY <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_T_SHARE.BR_NO');
         $this->db->group_by('BK_M_BRANCH.BR_NO');
         $result = $this->db->get('SHR_T_SHARE');
         return $result;
@@ -26,9 +26,35 @@ class Manager_model extends CI_Model
     public function sum_daily_share_capital($startdate, $enddate)
     {
         $this->db->select('sum(SHR_T_SHARE.TMP_SHARE_BHT) as share_money');
-        $this->db->where('SHR_T_SHARE.TEMP_TODAY >=' ,$startdate);
-        $this->db->where('SHR_T_SHARE.TEMP_TODAY <=' ,$enddate);
+        $this->db->where('SHR_T_SHARE.TEMP_TODAY >=', $startdate);
+        $this->db->where('SHR_T_SHARE.TEMP_TODAY <=', $enddate);
         $result = $this->db->get('SHR_T_SHARE');
+        return $result->row();
+    }
+
+    public function daily_deposit_account($account_type, $startdate, $enddate)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,sum(BK_H_SAVINGACCOUNT.LAST_DEP) as deposit_money');
+        $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $account_type);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE >=', $startdate);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result;
+    }
+
+    public function sum_daily_deposit_account($account_type, $startdate, $enddate)
+    {
+        $this->db->select('sum(BK_H_SAVINGACCOUNT.LAST_DEP) as deposit_money');
+        $this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $account_type);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE >=', $startdate);
+        $this->db->where('BK_H_SAVINGACCOUNT.LAST_DATE <=', $enddate);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        // $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result->row();
     }
 }
