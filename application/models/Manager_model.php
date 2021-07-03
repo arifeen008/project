@@ -115,6 +115,7 @@ class Manager_model extends CI_Model
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
         $this->db->join('LOAN_M_SUB_NAME', 'LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_CONTACT.LSUB_CODE = LOAN_M_SUB_NAME.LSUB_CODE');
         $this->db->group_by('LOAN_M_SUB_NAME.LSUB_NAME');
+        $this->db->order_by('LOAN_M_SUB_NAME.L_TYPE_CODE,LOAN_M_SUB_NAME.LSUB_CODE', 'ASC');
         $result = $this->db->get('LOAN_M_CONTACT');
         return $result;
     }
