@@ -253,7 +253,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("share_capital_member_report", $data);
+        $this->load->view("daily/share_capital_member_report", $data);
         $this->load->view("containner/script");
     }
 
@@ -268,7 +268,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_share_capital", $data);
+        $this->load->view("daily/daily_share_capital", $data);
         $this->load->view("containner/script");
     }
 
@@ -284,7 +284,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_deposit_account_type", $data);
+        $this->load->view("daily/daily_deposit_account_type", $data);
         $this->load->view("containner/script");
     }
 
@@ -300,7 +300,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_deposit_account_branch", $data);
+        $this->load->view("daily/daily_deposit_account_branch", $data);
         $this->load->view("containner/script");
     }
 
@@ -317,7 +317,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_credit", $data);
+        $this->load->view("daily/daily_credit", $data);
         $this->load->view("containner/script");
     }
 
@@ -332,7 +332,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_credit_allbranch", $data);
+        $this->load->view("daily/daily_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
 }
