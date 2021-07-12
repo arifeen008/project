@@ -193,7 +193,6 @@
     </div>
 
     <form action="<?php echo site_url('manager/daily_payment') ?>" method="post">
-
         <div class="form-group">
             <div class="row">
                 <div class="col">
@@ -215,7 +214,6 @@
     </div>
 
     <form action="<?php echo site_url('manager/daily_share_deposit') ?>" method="post">
-
         <div class="form-group">
             <div class="row">
                 <div class="col">
@@ -230,5 +228,4 @@
         </div>
         <button type="submit" class="btn btn-success mb-2">ค้นหา</button>
     </form>
-
 </div>
