@@ -192,7 +192,7 @@
         <h1>รับ-จ่ายประจำวัน</h1>
     </div>
 
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_payment') ?>" method="post">
 
         <div class="form-group">
             <div class="row">
@@ -214,7 +214,7 @@
         <h1>หุ้นและเงินฝากทุกสาขาประจำวัน</h1>
     </div>
 
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/daily_share_deposit') ?>" method="post">
 
         <div class="form-group">
             <div class="row">

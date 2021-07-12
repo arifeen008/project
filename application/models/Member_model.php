@@ -73,12 +73,12 @@ class Member_model extends CI_Model
         return $result;
     }
 
-    public function share_member($BR_NO, $MEM_ID)
+    public function share_member($br_no, $mem_id)
     {
         $this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
-        $this->db->where('SHR_MEM.MEM_ID', $MEM_ID);
-        $this->db->where('SHR_MEM.BR_NO', $BR_NO);
-        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_MEM.MEM_ID');
+        $this->db->where('SHR_MEM.MEM_ID', $mem_id);
+        $this->db->where('SHR_MEM.BR_NO', $br_no);
+        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = SHR_MEM.MEM_ID AND MEM_H_MEMBER.BR_NO = SHR_MEM.BR_NO');
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_MEM.BR_NO');
         $query = $this->db->get('SHR_MEM');
         return $query->row();
@@ -171,17 +171,6 @@ class Member_model extends CI_Model
         $result = $this->db->get($this->tbl_name3);
         return $result->row();
     }
-
-    // public function deposit_member_seeaccount($account_number, $startdate, $enddate)
-    // {
-    //     $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
-    //     $this->db->where('F_FROM_ACC', $account_number);
-    //     $this->db->where('F_TIME >=', "TO_DATE('$startdate','YYYY-MM-DD')", false);
-    //     $this->db->where('F_TIME <=', "TO_DATE('$enddate','YYYY-MM-DD')", false);
-    //     $this->db->order_by('F_TIME', 'ASC');
-    //     $result = $this->db->get($this->tbl_name6);
-    //     return $result;
-    // }
 
     public function deposit_member_seeaccount($account_number, $startdate, $enddate)
     {

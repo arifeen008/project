@@ -335,4 +335,34 @@ class Manager extends CI_Controller
         $this->load->view("daily/daily_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
+
+    public function daily_payment()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_payment($startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_payment($startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily/daily_payment", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function daily_share_deposit()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $data['result'] = $this->manager_model->daily_share_deposit($startdate, $enddate);
+        $data['summary'] = $this->manager_model->sum_daily_share_deposit($startdate, $enddate);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("daily/daily_share_deposit", $data);
+        $this->load->view("containner/script");
+    }
 }
