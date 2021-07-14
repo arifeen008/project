@@ -365,4 +365,37 @@ class Manager extends CI_Controller
         $this->load->view("daily/daily_share_deposit", $data);
         $this->load->view("containner/script");
     }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    public function monthly_inout()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_inout($select_month, $select_year);
+        // $data['summary'] = $this->manager_model->sum_monthy_inout($select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthy_inout", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function monthly_share_capital()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_share_capital($select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_share_capital($select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_share_capital", $data);
+        $this->load->view("containner/script");
+    }
+
 }

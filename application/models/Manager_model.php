@@ -173,4 +173,48 @@ class Manager_model extends CI_Model
         $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result->row();
     }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    public function monthly_inout($select_month, $select_year)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,count(MEM_H_MEMBER.MEM_ID) as mem_number');
+        $this->db->where('MONTH(MEM_H_MEMBER.MEM_DATE)', $select_month);
+        $this->db->where('YEAR(MEM_H_MEMBER.MEM_DATE)', $select_year);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result;
+    }
+
+    public function sum_monthly_inout($select_month, $select_year)
+    {
+        $this->db->select('SUM(COUNT(MEM_H_MEMBER.MEM_ID) as sum_member)');
+        $this->db->where('MONTH(MEM_H_MEMBER.MEM_DATE)', $select_month);
+        $this->db->where('YEAR(MEM_H_MEMBER.MEM_DATE)', $select_year);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result->row();
+    }
+
+    public function monthly_share_capital($select_month, $select_year)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,sum(SHR_T_SHARE.TMP_SHARE_BHT) as share_money');
+        $this->db->where('TMP_MONTH', $select_month);
+        $this->db->where('TMP_YEAR', $select_year);
+        $this->db->join('BK_M_BRANCH', 'SHR_T_SHARE.BR_NO = BK_M_BRANCH.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('SHR_T_SHARE');
+        return $result;
+    }
+
+    public function sum_monthly_share_capital($select_month, $select_year)
+    {
+        $this->db->select('sum(TMP_SHARE_BHT) as share_money');
+        $this->db->where('TMP_MONTH', $select_month);
+        $this->db->where('TMP_YEAR', $select_year);
+        $result = $this->db->get('SHR_T_SHARE');
+        return $result->row();
+    }
 }

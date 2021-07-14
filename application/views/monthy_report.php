@@ -1,27 +1,26 @@
 <div class="col-lg-9">
-
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>สมาชิกเข้าใหม่ - ลาออกประจำเดือน</h1>
     </div>
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/monthly_inout') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="select_month">เดือน</label>
                         <select class="form-control" id="select_month" name="select_month">
-                            <option value="">มกราคม</option>
-                            <option value="">กุมภาพันธ์</option>
-                            <option value="">มีนาคม</option>
-                            <option value="">เมษายน</option>
-                            <option value="">พฤษภาคม</option>
-                            <option value="">มิถุนาคม</option>
-                            <option value="">กรกฏาคม</option>
-                            <option value="">สิงหาคม</option>
-                            <option value="">กันยายน</option>
-                            <option value="">ตุลาคม</option>
-                            <option value="">พฤษจิกายน</option>
-                            <option value="">ธันวาคม</option>
+                            <option value="1">มกราคม</option>
+                            <option value="2">กุมภาพันธ์</option>
+                            <option value="3">มีนาคม</option>
+                            <option value="4">เมษายน</option>
+                            <option value="5">พฤษภาคม</option>
+                            <option value="6">มิถุนาคม</option>
+                            <option value="7">กรกฏาคม</option>
+                            <option value="8">สิงหาคม</option>
+                            <option value="9">กันยายน</option>
+                            <option value="10">ตุลาคม</option>
+                            <option value="11">พฤษจิกายน</option>
+                            <option value="12">ธันวาคม</option>
                         </select>
                     </div>
                 </div>
@@ -29,10 +28,10 @@
                     <div class="form-group">
                         <label for="select_year">ปี</label>
                         <select class="form-control" id="select_year" name="select_year">
-                            <option value="">2564</option>
-                            <option value="">2563</option>
-                            <option value="">2562</option>
-                            <option value="">2561</option>
+                            <option value="2021">2564</option>
+                            <option value="2020">2563</option>
+                            <option value="2019">2562</option>
+                            <option value="2018">2561</option>
                         </select>
                     </div>
                 </div>
@@ -44,25 +43,25 @@
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>ทุนเรือนหุ้นประจำเดือน</h1>
     </div>
-    <form action="#" method="post">
+    <form action="<?php echo site_url('manager/monthly_share_capital') ?>" method="post">
         <div class="form-group">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="select_month">เดือน</label>
                         <select class="form-control" id="select_month" name="select_month">
-                            <option value="">มกราคม</option>
-                            <option value="">กุมภาพันธ์</option>
-                            <option value="">มีนาคม</option>
-                            <option value="">เมษายน</option>
-                            <option value="">พฤษภาคม</option>
-                            <option value="">มิถุนาคม</option>
-                            <option value="">กรกฏาคม</option>
-                            <option value="">สิงหาคม</option>
-                            <option value="">กันยายน</option>
-                            <option value="">ตุลาคม</option>
-                            <option value="">พฤษจิกายน</option>
-                            <option value="">ธันวาคม</option>
+                            <option value="01">มกราคม</option>
+                            <option value="02">กุมภาพันธ์</option>
+                            <option value="03">มีนาคม</option>
+                            <option value="04">เมษายน</option>
+                            <option value="05">พฤษภาคม</option>
+                            <option value="06">มิถุนาคม</option>
+                            <option value="07">กรกฏาคม</option>
+                            <option value="08">สิงหาคม</option>
+                            <option value="09">กันยายน</option>
+                            <option value="10">ตุลาคม</option>
+                            <option value="11">พฤษจิกายน</option>
+                            <option value="12">ธันวาคม</option>
                         </select>
                     </div>
                 </div>
@@ -70,11 +69,10 @@
                     <div class="form-group">
                         <label for="select_year">ปี</label>
                         <select class="form-control" id="select_year" name="select_year">
-                            <option value="">2565</option>
-                            <option value="">2564</option>
-                            <option value="">2563</option>
-                            <option value="">2562</option>
-                            <option value="">2561</option>
+                            <option value="2021">2564</option>
+                            <option value="2020">2563</option>
+                            <option value="2019">2562</option>
+                            <option value="2018">2561</option>
                         </select>
                     </div>
                 </div>

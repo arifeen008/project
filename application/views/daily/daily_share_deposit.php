@@ -24,9 +24,9 @@ include_once("application/libraries/Thaidate.php");
                             <td>ผลต่าง รับ-จ่าย</td>
                         </tr>
                         <?php foreach ($result->result() as $row) { ?>
-                            <tr align="center">
-                                <td><?= $row->ACC_DESC ?></td>
-                                <td><?= number_format(($row->last_dep), 2) ?></td>
+                            <tr>
+                                <td>บัญชี <?= $row->ACC_DESC ?></td>
+                                <td align="center"><?= number_format(($row->last_dep), 2) ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

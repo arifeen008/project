@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col">
                     <label for="start">จาก :</label>
-                    <input type="date" class="form-control" id="start" name="startdate" value="<?php echo date("Y-m-d"); ?>">
+                    <input type="date" class="form-control" id="startdate" name="startdate" value="<?php echo date("Y-m-d"); ?>">
                 </div>
                 <div class="col">
                     <label for="end">ถึง :</label>
-                    <input type="date" class="form-control" id="end" name="enddate" value="<?php echo date("Y-m-d"); ?>">
+                    <input type="date" class="form-control" id="enddate" name="enddate" value="<?php echo date("Y-m-d"); ?>">
                 </div>
             </div>
         </div>
@@ -27,11 +27,11 @@
             <div class="row">
                 <div class="col">
                     <label for="start">จาก :</label>
-                    <input type="date" class="form-control" id="start" name="startdate" value="<?php echo date("Y-m-d"); ?>">
+                    <input type="date" class="form-control" id="startdate" name="startdate" value="<?php echo date("Y-m-d"); ?>">
                 </div>
                 <div class="col">
                     <label for="end">ถึง :</label>
-                    <input type="date" class="form-control" id="end" name="enddate" value="<?php echo date("Y-m-d"); ?>">
+                    <input type="date" class="form-control" id="enddate" name="enddate" value="<?php echo date("Y-m-d"); ?>">
                 </div>
             </div>
         </div>
