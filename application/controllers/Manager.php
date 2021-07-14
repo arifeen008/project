@@ -375,7 +375,7 @@ class Manager extends CI_Controller
         $select_month = $this->input->post('select_month');
         $select_year = $this->input->post('select_year');
         $data['result'] = $this->manager_model->monthly_inout($select_month, $select_year);
-        // $data['summary'] = $this->manager_model->sum_monthy_inout($select_month, $select_year);
+        // $data['summary'] = $this->manager_model->sum_monthy_inout($select_month, $select_year); ใช้ไม่ได้
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
@@ -398,4 +398,67 @@ class Manager extends CI_Controller
         $this->load->view("containner/script");
     }
 
+    public function monthly_deposit_account_type()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $account_type = $this->input->post('account_type');
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_deposit_account_type($account_type, $select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_deposit_account_type($account_type, $select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_deposit_account_type", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function monthly_deposit_account_branch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $branch_number = $this->input->post('branch_number');
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_deposit_account_branch($branch_number, $select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_deposit_account_branch($branch_number, $select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_deposit_account_branch", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function monthly_credit()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $main_type = $this->input->post('main_type');
+        $sub_type = $this->input->post('sub_type');
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_credit($main_type, $sub_type, $select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_credit($main_type, $sub_type, $select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_credit", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function monthly_credit_allbranch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_credit_allbranch($select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_credit_allbranch($select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_credit_allbranch", $data);
+        $this->load->view("containner/script");
+    }
 }
