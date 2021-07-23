@@ -461,4 +461,49 @@ class Manager extends CI_Controller
         $this->load->view("monthly/monthly_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
+
+    public function credit_branch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $branch_number = $this->input->post('branch_number');
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->credit_branch($branch_number, $select_month);
+        // $data['summary'] = $this->manager_model->sum_credit_branch($branch_number, $select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/credit_branch");
+        $this->load->view("containner/script");
+    }
+
+    public function credit_allbranch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->credit_allbranch($select_month);
+        // $data['summary'] = $this->manager_model->sum_credit_allbranch($select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/credit_allbranch");
+        $this->load->view("containner/script");
+    }
+
+    public function credit_type_allbranch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $main_type = $this->input->post('main_type');
+        $sub_type = $this->input->post('sub_type');
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->credit_type_allbranch($main_type,$sub_type,$select_month);
+        // $data['summary'] = $this->manager_model->sum_credit_type_allbranch($main_type,$sub_type,$select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/credit_type_allbranch");
+        $this->load->view("containner/script");
+    }
 }
