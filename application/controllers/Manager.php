@@ -506,4 +506,49 @@ class Manager extends CI_Controller
         $this->load->view("monthly/credit_type_allbranch");
         $this->load->view("containner/script");
     }
+
+    public function deptor_branch_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $branch_number = $this->input->post('branch_number');
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->deptor_branch_report($branch_number, $select_month);
+        // $data['summary'] = $this->manager_model->sum_deptor_branch_report($branch_number, $select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/deptor_branch_report");
+        $this->load->view("containner/script");
+    }
+
+    public function deptor_allbranch_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->deptor_allbranch_report($select_month);
+        // $data['summary'] = $this->manager_model->sum_deptor_allbranch_report($select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/deptor_branch_report");
+        $this->load->view("containner/script");
+    }
+
+    public function deptor_typeallbranch_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $main_type = $this->input->post('main_type');
+        $sub_type = $this->input->post('sub_type');
+        $select_month = $this->input->post('select_month');
+        // $data['result'] = $this->manager_model->deptor_typeallbranch_report($main_type, $sub_type, $select_month);
+        // $data['summary'] = $this->manager_model->sum_deptor_typeallbranch_report($main_type, $sub_type, $select_month);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/deptor_typeallbranch_report");
+        $this->load->view("containner/script");
+    }
 }

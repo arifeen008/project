@@ -387,4 +387,76 @@ class Manager_model extends CI_Model
         $result = $this->db->get('');
         return $result->row();
     }
+
+    public function deptor_branch_report($branch_number, $select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $branch_number);
+        $this->db->where('', $select_month);
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $this->db->join('');
+        $this->db->group_by('');
+        $this->db->order_by('');
+        $result = $this->db->get('');
+        return $result;
+    }
+
+    public function sum_deptor_branch_report($branch_number, $select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $branch_number);
+        $this->db->where('', $select_month);
+        $this->db->join('');
+        $this->db->join('');
+        $result = $this->db->get('');
+        return $result->row();
+    }
+
+    public function deptor_allbranch_report($select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $select_month);
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $this->db->join('');
+        $this->db->group_by('');
+        $this->db->order_by('');
+        $result = $this->db->get('');
+        return $result;
+    }
+
+    public function sum_deptor_allbranch_report($select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $select_month);
+        $this->db->join('');
+        $this->db->join('');
+        $result = $this->db->get('');
+        return $result->row();
+    }
+
+    public function deptor_typeallbranch_report($main_type, $sub_type, $select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $main_type);
+        $this->db->where('', $sub_type);
+        $this->db->where('', $select_month);
+        $this->db->join('BK_M_ACC_TYPE', 'BK_M_ACC_TYPE.ACC_TYPE = BK_H_SAVINGACCOUNT.ACC_TYPE');
+        $this->db->join('');
+        $this->db->group_by('');
+        $this->db->order_by('');
+        $result = $this->db->get('');
+        return $result;
+    }
+
+    public function sum_deptor_typeallbranch_report($main_type, $sub_type, $select_month)
+    {
+        $this->db->select('');
+        $this->db->where('', $main_type);
+        $this->db->where('', $sub_type);
+        $this->db->where('', $select_month);
+        $this->db->join('');
+        $this->db->join('');
+        $result = $this->db->get('');
+        return $result->row();
+    }
 }

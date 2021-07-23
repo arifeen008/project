@@ -444,8 +444,7 @@
         </div>
     </div>
 
-
-    <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <!-- <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>ตารางวิเคราะห์รายได้สินเชื่อควรเข้ามา</h1>
     </div>
 
@@ -513,14 +512,14 @@
             </div>
         </div>
         <button type="submit" class="btn btn-success mb-2">ค้นหา</button>
-    </form>
+    </form> -->
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1>รายงานแยกชั้นลูกหนี้</h1>
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="#" method="post">
+            <form action="<?php echo site_url('manager/deptor_branch_report') ?>" method="post">
                 <div class="form-group">
                     <h3>แยกสาขา ทุกประเภท</h3>
                     <div class="row">
@@ -544,18 +543,18 @@
                             <div class="form-group">
                                 <label for="select_month">เดือน</label>
                                 <select class="form-control" id="select_month" name="select_month">
-                                    <option value="">มกราคม</option>
-                                    <option value="">กุมภาพันธ์</option>
-                                    <option value="">มีนาคม</option>
-                                    <option value="">เมษายน</option>
-                                    <option value="">พฤษภาคม</option>
-                                    <option value="">มิถุนาคม</option>
-                                    <option value="">กรกฏาคม</option>
-                                    <option value="">สิงหาคม</option>
-                                    <option value="">กันยายน</option>
-                                    <option value="">ตุลาคม</option>
-                                    <option value="">พฤษจิกายน</option>
-                                    <option value="">ธันวาคม</option>
+                                    <option value="01">มกราคม</option>
+                                    <option value="02">กุมภาพันธ์</option>
+                                    <option value="03">มีนาคม</option>
+                                    <option value="04">เมษายน</option>
+                                    <option value="05">พฤษภาคม</option>
+                                    <option value="06">มิถุนาคม</option>
+                                    <option value="07">กรกฏาคม</option>
+                                    <option value="08">สิงหาคม</option>
+                                    <option value="09">กันยายน</option>
+                                    <option value="10">ตุลาคม</option>
+                                    <option value="11">พฤษจิกายน</option>
+                                    <option value="12">ธันวาคม</option>
                                 </select>
                             </div>
                         </div>
@@ -563,7 +562,7 @@
                 </div>
                 <button type="submit" class="btn btn-success mb-2">ค้นหา</button>
             </form>
-            <form action="#" method="post">
+            <form action="<?php echo site_url('manager/deptor_allbranch_report') ?>" method="post">
                 <h3>รวมสาขา ทุกประเภท</h3>
                 <div class="form-group">
                     <div class="row">
@@ -571,18 +570,18 @@
                             <div class="form-group">
                                 <label for="select_month">เดือน</label>
                                 <select class="form-control" id="select_month" name="select_month">
-                                    <option value="">มกราคม</option>
-                                    <option value="">กุมภาพันธ์</option>
-                                    <option value="">มีนาคม</option>
-                                    <option value="">เมษายน</option>
-                                    <option value="">พฤษภาคม</option>
-                                    <option value="">มิถุนาคม</option>
-                                    <option value="">กรกฏาคม</option>
-                                    <option value="">สิงหาคม</option>
-                                    <option value="">กันยายน</option>
-                                    <option value="">ตุลาคม</option>
-                                    <option value="">พฤษจิกายน</option>
-                                    <option value="">ธันวาคม</option>
+                                    <option value="01">มกราคม</option>
+                                    <option value="02">กุมภาพันธ์</option>
+                                    <option value="03">มีนาคม</option>
+                                    <option value="04">เมษายน</option>
+                                    <option value="05">พฤษภาคม</option>
+                                    <option value="06">มิถุนาคม</option>
+                                    <option value="07">กรกฏาคม</option>
+                                    <option value="08">สิงหาคม</option>
+                                    <option value="09">กันยายน</option>
+                                    <option value="10">ตุลาคม</option>
+                                    <option value="11">พฤษจิกายน</option>
+                                    <option value="12">ธันวาคม</option>
                                 </select>
                             </div>
                         </div>
@@ -590,7 +589,7 @@
                 </div>
                 <button type="submit" class="btn btn-success mb-2">ค้นหา</button>
             </form>
-            <form action="#" method="post">
+            <form action="<?php echo site_url('manager/deptor_typeallbranch_report') ?>" method="post">
                 <h3>แยกประเภททุกสาขา</h3>
                 <div class="form-group">
                     <div class="row">
@@ -598,11 +597,10 @@
                             <div class="form-group">
                                 <label for="main_type">ประเภทหลัก</label>
                                 <select class="form-control" id="main_type" name="main_type">
-                                    <option value="">ฉุกเฉิน</option>
-                                    <option value="">สามัญ</option>
-                                    <option value="">พิเศษ</option>
-                                    <option value="">สวัสดิการ</option>
-
+                                    <option value="1">ฉุกเฉิน</option>
+                                    <option value="2">สามัญ</option>
+                                    <option value="3">พิเศษ</option>
+                                    <option value="4">สวัสดิการ</option>
                                 </select>
                             </div>
                         </div>
@@ -610,13 +608,13 @@
                             <div class="form-group">
                                 <label for="sub_type">ประเภทย่อย</label>
                                 <select class="form-control" id="sub_type" name="sub_type">
-                                    <option value="">ฉุกเฉิน</option>
-                                    <option value="">สามัญ</option>
-                                    <option value="">พิเศษ</option>
-                                    <option value="">โครงการ</option>
-                                    <option value="">สามัญฉุกเฉิน</option>
-                                    <option value="">โครงการสินทรัพย์</option>
-                                    <option value="">เจ้าหน้าที่</option>
+                                    <option value="1">พิเศษ</option>
+                                    <option value="1">ฉุกเฉิน</option>
+                                    <option value="1">สามัญ</option>
+                                    <option value="1">เจ้าหน้าที่</option>
+                                    <option value="2">สามัญฉุกเฉิน</option>
+                                    <option value="2">โครงการ</option>
+                                    <option value="3">โครงการสินทรัพย์</option>
                                 </select>
                             </div>
                         </div>
@@ -626,18 +624,18 @@
                             <div class="form-group">
                                 <label for="select_month">เดือน</label>
                                 <select class="form-control" id="select_month" name="select_month">
-                                    <option value="">มกราคม</option>
-                                    <option value="">กุมภาพันธ์</option>
-                                    <option value="">มีนาคม</option>
-                                    <option value="">เมษายน</option>
-                                    <option value="">พฤษภาคม</option>
-                                    <option value="">มิถุนาคม</option>
-                                    <option value="">กรกฏาคม</option>
-                                    <option value="">สิงหาคม</option>
-                                    <option value="">กันยายน</option>
-                                    <option value="">ตุลาคม</option>
-                                    <option value="">พฤษจิกายน</option>
-                                    <option value="">ธันวาคม</option>
+                                    <option value="01">มกราคม</option>
+                                    <option value="02">กุมภาพันธ์</option>
+                                    <option value="03">มีนาคม</option>
+                                    <option value="04">เมษายน</option>
+                                    <option value="05">พฤษภาคม</option>
+                                    <option value="06">มิถุนาคม</option>
+                                    <option value="07">กรกฏาคม</option>
+                                    <option value="08">สิงหาคม</option>
+                                    <option value="09">กันยายน</option>
+                                    <option value="10">ตุลาคม</option>
+                                    <option value="11">พฤษจิกายน</option>
+                                    <option value="12">ธันวาคม</option>
                                 </select>
                             </div>
                         </div>
