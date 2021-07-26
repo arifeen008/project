@@ -362,7 +362,7 @@ class Manager_model extends CI_Model
         return $result->row();
     }
 
-    public function credit_type_allbranch($main_type,$sub_type,$select_month)
+    public function credit_type_allbranch($main_type, $sub_type, $select_month)
     {
         $this->db->select('');
         $this->db->where('', $main_type);
@@ -376,7 +376,7 @@ class Manager_model extends CI_Model
         return $result;
     }
 
-    public function sum_credit_type_allbranch($main_type,$sub_type,$select_month)
+    public function sum_credit_type_allbranch($main_type, $sub_type, $select_month)
     {
         $this->db->select('');
         $this->db->where('', $main_type);
@@ -457,6 +457,49 @@ class Manager_model extends CI_Model
         $this->db->join('');
         $this->db->join('');
         $result = $this->db->get('');
+        return $result->row();
+    }
+
+    public function monthly_payment($select_month, $select_year)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('MONTH(LOAN_M_CONTACT.LCONT_DATE)', $select_month);
+        $this->db->where('YEAR(LOAN_M_CONTACT.LCONT_DATE)', $select_year);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('LOAN_M_CONTACT');
+        return $result;
+    }
+
+    public function sum_monthly_payment($select_month, $select_year)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME,count(LOAN_M_CONTACT.LCONT_ID) as LCONT_ID ,sum(LOAN_M_CONTACT.LCONT_APPROVE_SAL) as LCONT_APPROVE_SAL');
+        $this->db->where('MONTH(LOAN_M_CONTACT.LCONT_DATE)', $select_month);
+        $this->db->where('YEAR(LOAN_M_CONTACT.LCONT_DATE)', $select_year);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = LOAN_M_CONTACT.BR_NO');
+        $this->db->group_by('BK_M_BRANCH.BR_NO');
+        $result = $this->db->get('LOAN_M_CONTACT');
+        return $result->row();
+    }
+
+    public function shared_deposit_report($select_month, $select_year)
+    {
+        $this->db->select('BK_M_ACC_TYPE.ACC_DESC,sum(BK_H_SAVINGACCOUNT.LAST_DEP) as last_dep');
+        $this->db->where('MONTH(BK_H_SAVINGACCOUNT.LAST_DATE)', $select_month);
+        $this->db->where('YEAR(BK_H_SAVINGACCOUNT.LAST_DATE)', $select_year);
+        $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
+        $this->db->group_by('BK_M_ACC_TYPE.ACC_TYPE');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
+        return $result;
+    }
+
+    public function sum_shared_deposit_report($select_month, $select_year)
+    {
+        $this->db->select('sum(BK_H_SAVINGACCOUNT.LAST_DEP) as last_dep');
+        $this->db->where('MONTH(BK_H_SAVINGACCOUNT.LAST_DATE)', $select_month);
+        $this->db->where('YEAR(BK_H_SAVINGACCOUNT.LAST_DATE)', $select_year);
+        $this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result->row();
     }
 }

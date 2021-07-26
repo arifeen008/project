@@ -551,4 +551,36 @@ class Manager extends CI_Controller
         $this->load->view("monthly/deptor_typeallbranch_report");
         $this->load->view("containner/script");
     }
+
+    public function monthly_payment()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->monthly_payment($select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_monthly_payment($select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/monthly_payment", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function shared_deposit_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_month = $this->input->post('select_month');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->shared_deposit_report($select_month, $select_year);
+        $data['summary'] = $this->manager_model->sum_shared_deposit_report($select_month, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("monthly/shared_deposit_report", $data);
+        $this->load->view("containner/script");
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------//
 }
