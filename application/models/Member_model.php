@@ -199,7 +199,7 @@ class Member_model extends CI_Model
         $this->db->where('WEL_H_MEMBER.BR_NO', $br_no);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = WEL_H_MEMBER.BR_NO');
         $result = $this->db->get('WEL_H_MEMBER');
-        return $result;
+        return $result->row();
     }
 
     public function requestwelfare_member($MEM_ID, $ID_CARD, $BR_NO)

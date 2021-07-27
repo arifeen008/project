@@ -203,7 +203,7 @@
     </form>
 
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1>สินเชื่อรับจ่ายประจำเดือน</h1>
+        <h1>สินเชื่อรับจ่ายประจำเดือน(เลือกประเภท)</h1>
     </div>
     <form action="<?php echo site_url('manager/monthly_credit') ?>" method="post">
         <div class="form-group">

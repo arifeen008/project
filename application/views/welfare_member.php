@@ -18,16 +18,14 @@ include_once("application/libraries/Thaidate.php");
                                 <td>วันครบกำหนดต่อตะกาฟุล</td>
                             </tr>
                         </thead>
-                        <?php if ($result->result() == null) { ?>
+                        <?php if ($result == null) { ?>
                             <td colspan="3" align="center">ไม่มีข้อมูลสวัสดิการสมาชิก</td>
                         <?php  } ?>
-                        <?php foreach ($result->result() as $row) { ?>
-                            <tr align="center">
-                                <td><?= $row->MEM_ID ?></td>
-                                <td><?= $row->BR_NAME ?></td>
-                                <td><?php echo thaidate('j M Y', strtotime($row->EXCHG_DATE))  ?> </td>
-                            </tr>
-                        <?php } ?>
+                        <tr align="center">
+                            <td><?= $result->MEM_ID ?></td>
+                            <td><?= $result->BR_NAME ?></td>
+                            <td><?php echo thaidate('j M Y', strtotime($result->EXCHG_DATE))  ?> </td>
+                        </tr>
                     </table>
                 </div>
             </div>

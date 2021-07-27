@@ -292,15 +292,14 @@ class Member extends CI_Controller
 
 	public function welfare_member()
 	{
-		$id_card = $this->session->userdata('ID_CARD');
-		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
+		$br_no = $this->session->userdata("BR_NO");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data2['result'] = $this->member_model->welfare_member($mem_id, $br_no);
+		$data_welfare['result'] = $this->member_model->welfare_member($mem_id, $br_no);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("welfare_member", $data2);
+		$this->load->view("welfare_member", $data_welfare);
 		$this->load->view("containner/script");
 	}
 

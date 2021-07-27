@@ -581,6 +581,136 @@ class Manager extends CI_Controller
         $this->load->view("monthly/shared_deposit_report", $data);
         $this->load->view("containner/script");
     }
-
     //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    public function yearly_inout()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_inout($select_year);
+        // $data['summary'] = $this->manager_model->sum_yearly_inout($select_year); // ใช้ไม่ได้
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_inout", $data);
+        $this->load->view("containner/script");
+    }
+
+    // public function yearly_summarymember()
+    // {
+    //     $user_id = $this->session->userdata('USER_ID');
+    //     $data_officer = $this->officer_model->data_officer($user_id);
+    //     $branch_number = $this->input->post('branch_number');
+    //     $select_year = $this->input->post('select_year');
+    //     $data['result'] = $this->manager_model->yearly_summarymember($branch_number, $select_year);
+    //     $data['summary'] = $this->manager_model->sum_yearly_summarymember($branch_number, $select_year);
+    //     $this->load->view("containner/head");
+    //     $this->load->view("containner/header_officer", $data_officer);
+    //     $this->load->view("containner/sidebar_manager");
+    //     $this->load->view("yearly/yearly_summarymember", $data);
+    //     $this->load->view("containner/script");
+    // }
+
+    public function yearly_share_capital()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_share_capital($select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_share_capital($select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_share_capital", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_deposit_account_type()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $account_type = $this->input->post('account_type');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_deposit_account_type($account_type, $select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_deposit_account_type($account_type, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_deposit_account_type", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_deposit_account_branch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $branch_number = $this->input->post('branch_number');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_deposit_account_branch($branch_number, $select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_deposit_account_branch($branch_number, $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_deposit_account_branch", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_credit()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $main_type = $this->input->post('main_type');
+        $sub_type = $this->input->post('sub_type');
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_credit($main_type, $sub_type,  $select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_credit($main_type, $sub_type,  $select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_credit", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_credit_allbranch()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_credit_allbranch($select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_credit_allbranch($select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_credit_allbranch", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_payment()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_payment($select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_payment($select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_payment", $data);
+        $this->load->view("containner/script");
+    }
+
+    public function yearly_shared_deposit_report()
+    {
+        $user_id = $this->session->userdata('USER_ID');
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $select_year = $this->input->post('select_year');
+        $data['result'] = $this->manager_model->yearly_shared_deposit_report($select_year);
+        $data['summary'] = $this->manager_model->sum_yearly_shared_deposit_report($select_year);
+        $this->load->view("containner/head");
+        $this->load->view("containner/header_officer", $data_officer);
+        $this->load->view("containner/sidebar_manager");
+        $this->load->view("yearly/yearly_shared_deposit_report", $data);
+        $this->load->view("containner/script");
+    }
 }
