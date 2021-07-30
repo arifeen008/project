@@ -25,6 +25,7 @@ class Member extends CI_Controller
 		}
 		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
 		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
+			setcookie($this->input->post('user_id'), $this->input->post('password'), time() + (86400 * 30), "/");
 			$login_result = $this->member_model->getdata_member($result->BR_NO, $result->MEM_ID);
 			$session = array(
 				'MEM_ID' => $login_result->MEM_ID,

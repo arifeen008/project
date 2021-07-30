@@ -61,6 +61,5 @@ include_once("application/libraries/Thaidate.php");
                 </div>
             </div>
         </div>
-        <a href="<?php echo site_url('officer/checkcredit_officer/' . $name->MEM_ID . '/' . $name->BR_NO) ?>" class="btn btn-success btn-sm">สัญญาสินเชื่อที่ปิดไปแล้ว</a>
     </div>
 </div>

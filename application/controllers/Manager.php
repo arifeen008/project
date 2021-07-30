@@ -186,20 +186,21 @@ class Manager extends CI_Controller
         $this->load->view("containner/script");
     }
 
-    public function checkcredit_officer($mem_id, $branch_number)
+    public function closed_credit_officer()
     {
         $USER_ID = $this->session->userdata('USER_ID');
         $data_officer = $this->officer_model->data_officer($USER_ID);
-        $data['member'] = $this->officer_model->data_member($mem_id, $branch_number);
-        $data['result'] = $this->officer_model->checkcredit_officer($mem_id, $branch_number);
+        $id_card = $this->input->post('id_card');
+        $data['member'] = $this->officer_model->getname_member($id_card);
+        $data['result'] = $this->officer_model->checkcredit_officer($data['member']->MEM_ID, $data['member']->BR_NO);
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("checkcredit_officer", $data);
+        $this->load->view("closed_checkcredit_officer", $data);
         $this->load->view("containner/script");
     }
 
-    public function checkcredit_officer_detail($code, $branch_number)
+    public function closed_credit_officer_detail($code, $branch_number)
     {
         $USER_ID = $this->session->userdata('USER_ID');
         $data_officer = $this->officer_model->data_officer($USER_ID);
@@ -208,7 +209,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("checkcredit_officer_detail", $data);
+        $this->load->view("closed_checkcredit_officer_detail", $data);
         $this->load->view("containner/script");
     }
 

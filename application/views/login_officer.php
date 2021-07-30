@@ -39,7 +39,7 @@
         border-radius: 2rem;
     }
 
-    .fr{
+    .fr {
         color: red;
     }
 
@@ -129,21 +129,16 @@
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <h3 class="login-heading mb-4">เข้าสู่ระบบ</h3>
                             <form action="<?php echo site_url('officer/check_officer') ?>" method="post">
-                                <div class="form-label-group">               
+                                <div class="form-label-group">
                                     <input type="text" name="user_id" class="form-control" placeholder="ใส่ ID เจ้าหน้าที่..." id="user_id" autofocus>
                                     <label for="user_id">ใส่ ID เจ้าหน้าที่...</label>
-                                    <span class="fr"><?php echo form_error('user_id'); ?></span> 
+                                    <span class="fr"><?php echo form_error('user_id'); ?></span>
                                 </div>
 
-                                <div class="form-label-group">                                    
+                                <div class="form-label-group">
                                     <input type="password" name="password" class="form-control" placeholder="Password" id="inputPassword">
                                     <label for="password">รหัสผ่าน</label>
-                                    <span class="fr"><?php echo form_error('password'); ?></span> 
-                                </div>
-
-                                <div class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">จดจำรหัสผ่าน</label>
+                                    <span class="fr"><?php echo form_error('password'); ?></span>
                                 </div>
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">เข้าสู่ระบบ</button>
                                 <div class="text-center">

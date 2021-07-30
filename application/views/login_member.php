@@ -139,10 +139,6 @@
                                     <label for="password">รหัสผ่าน</label>
                                     <span class="fr"><?php echo form_error('password'); ?></span>
                                 </div>
-                                <div class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck">
-                                    <label class="custom-control-label" for="customCheck">จดจำรหัสผ่าน</label>
-                                </div>
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-3" type="submit">เข้าสู่ระบบ</button>
                                 <div class="row">
                                     <div class="col">
