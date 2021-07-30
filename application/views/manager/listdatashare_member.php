@@ -9,7 +9,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr align="center">
-                                <td>ที่</td>
+                                <td>ลำดับ</td>
                                 <td>ชื่อ</td>
                                 <td>นามสกุล</td>
                                 <td>สาขา</td>
@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <?php if ($result->result() == null) { ?>
-                            <td colspan="4" align="center">ไม่มีข้อมูล</td>
+                            <td colspan="5" align="center">ไม่มีข้อมูล</td>
                         <?php  } ?>
                         <?php $i = 1 ?>
                         <?php foreach ($result->result() as $row) { ?>

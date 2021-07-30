@@ -24,7 +24,7 @@ class Activity extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/headermember", $data);
+		$this->load->view("containner/header_member", $data);
 		$this->load->view("news/activity");	
 		// $this->load->view("containner/footermember");
 		$this->load->view("containner/script");		
