@@ -18,8 +18,8 @@ include_once("application/libraries/Thaidate.php");
                     </tr>
                 </thead>
                 <?php if ($result->result() == null) { ?>
-                            <td colspan="4" align="center">ไม่มีข้อมูลในช่วงเวลาดังกล่าว</td>
-                        <?php  } ?>
+                    <td colspan="4" align="center">ไม่มีข้อมูลในช่วงเวลาดังกล่าว</td>
+                <?php  } ?>
                 <?php foreach ($result->result() as $row) { ?>
                     <tr align="center">
                         <td><?= thaidate('j M Y ', strtotime($row->F_DATE)) ?></td>

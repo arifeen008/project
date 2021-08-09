@@ -51,7 +51,7 @@ class Officer_model extends CI_Model
         $this->db->where('F_BRNO', $branch_number);
         $this->db->where('F_DATE >=', $startdate);
         $this->db->where('F_DATE <=', $enddate);
-        $this->db->group_by('F_DATE,F_DEP,F_WDL,F_BALANCE');
+        $this->db->group_by('F_DATE');
         $this->db->order_by('F_DATE', 'ASC');
         $result = $this->db->get('BK_T_FINANCE');
         return $result;
