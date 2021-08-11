@@ -1,4 +1,4 @@
-<div class="containner">
+<div class="containner-fluid">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -140,4 +140,47 @@
 			<!-- <h2>Heading</h2> -->
 		</div>
 	</div>
+
+	<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+
+					<div id="myCarouselModal" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselModal" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarouselModal" data-slide-to="1"></li>
+							<li data-target="#myCarouselModal" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img width="100%" height="100%" src="<?php echo base_url('picture/259.jpeg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+							</div>
+							<div class="carousel-item">
+								<img width="100%" height="100%" src="<?php echo base_url('picture/1456.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+							</div>
+							<div class="carousel-item">
+								<img width="100%" height="100%" src="<?php echo base_url('picture/176.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#myCarouselModal" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#myCarouselModal" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
+
+<script>
+	$(function() {
+		$('#exampleModal').modal('toggle');
+	});
+</script>
