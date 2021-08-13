@@ -140,12 +140,11 @@
 			<!-- <h2>Heading</h2> -->
 		</div>
 	</div>
-
+	<!-- mordal popup page -->
 	<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
-
 					<div id="myCarouselModal" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#myCarouselModal" data-slide-to="0" class="active"></li>
@@ -176,7 +175,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- mordal popup page -->
 </div>
 
 <script>
