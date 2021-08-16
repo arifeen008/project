@@ -8,8 +8,28 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
-                            <label for="mem_id">รหัสบัตรประชาชน</label>
-                            <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="id_card" maxlength="13" required>
+                            <label for="mem_id">เลขที่สมาชิก</label>
+                            <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="mem_id" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form-group">
+                                <label for="branch_number">สาขา</label>
+                                <select class="form-control" id="branch_number" name="branch_number">
+                                    <option value="000">สาขาสำนักงานใหญ่</option>
+                                    <option value="001">สาขากระบี่</option>
+                                    <option value="002">สาขาคลองยาง</option>
+                                    <option value="003">สาขาอ่าวลึก</option>
+                                    <option value="004">สาขากาญจนดิษฐ์</option>
+                                    <option value="005">สาขาคลองท่อม</option>
+                                    <option value="006">สาขาอ่าวนาง</option>
+                                    <option value="007">สาขาห้วยลึก</option>
+                                    <option value="008">สาขาเกาะลันตา</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -27,8 +47,27 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
-                            <label for="mem_id">รหัสบัตรประชาชน</label>
-                            <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="id_card" maxlength="13" required>
+                            <label for="mem_id">เลขที่สมาชิก</label>
+                            <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="mem_id" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="branch_number">สาขา</label>
+                                <select class="form-control" id="branch_number" name="branch_number">
+                                    <option value="000">สาขาสำนักงานใหญ่</option>
+                                    <option value="001">สาขากระบี่</option>
+                                    <option value="002">สาขาคลองยาง</option>
+                                    <option value="003">สาขาอ่าวลึก</option>
+                                    <option value="004">สาขากาญจนดิษฐ์</option>
+                                    <option value="005">สาขาคลองท่อม</option>
+                                    <option value="006">สาขาอ่าวนาง</option>
+                                    <option value="007">สาขาห้วยลึก</option>
+                                    <option value="008">สาขาเกาะลันตา</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

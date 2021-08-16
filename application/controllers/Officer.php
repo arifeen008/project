@@ -142,14 +142,13 @@ class Officer extends CI_Controller
 
 	public function credit_officer()
 	{
-		$id_card = $this->input->post('id_card');
+		$mem_id = $this->input->post('mem_id');
+		$branch_number = $this->input->post('branch_number');
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['name'] = $this->officer_model->getname_member($id_card);
-		$mem_id = $data['name']->MEM_ID;
-		$br_no = $data['name']->BR_NO;
-		$data['result'] = $this->officer_model->credit_officer($mem_id, $br_no);
-		if ($data['name'] != NULL && $data['result'] != NULL) {
+		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
+		$data['result'] = $this->officer_model->credit_officer($mem_id, $branch_number);
+		if ($data['result'] != NULL) {
 			$this->load->view("containner/head");
 			$this->load->view("containner/header_officer", $data_officer);
 			$this->load->view("containner/sidebar_officer");
@@ -176,16 +175,22 @@ class Officer extends CI_Controller
 
 	public function closed_credit_officer()
 	{
+		$mem_id = $this->input->post('mem_id');
+		$branch_number = $this->input->post('branch_number');
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$id_card = $this->input->post('id_card');
-		$data['member'] = $this->officer_model->getname_member($id_card);
-		$data['result'] = $this->officer_model->checkcredit_officer($data['member']->MEM_ID, $data['member']->BR_NO);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer");
-		$this->load->view("closed_credit_officer", $data);
-		$this->load->view("containner/script");
+		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
+		$data['result'] = $this->officer_model->checkcredit_officer($mem_id, $branch_number);
+		if ($data['result'] != NULL) {
+			$this->load->view("containner/head");
+			$this->load->view("containner/header_officer", $data_officer);
+			$this->load->view("containner/sidebar_officer");
+			$this->load->view("closed_credit_officer", $data);
+			$this->load->view("containner/script");
+		} else {
+			echo "<script>alert('ไม่มียอดข้อมูลสินเชื่อสมาชิกดังกล่าว');</script>";
+			redirect('officer/credit_system', 'refresh');
+		}
 	}
 
 	public function closedcredit_officer_detail($code, $branch_number)
@@ -201,14 +206,14 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function memberandshare_system()
+	public function member_share_system()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("memberandshare_system");
+		$this->load->view("member_share_system");
 		$this->load->view("containner/script");
 	}
 

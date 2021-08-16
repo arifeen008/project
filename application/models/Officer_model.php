@@ -65,7 +65,6 @@ class Officer_model extends CI_Model
         $this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
         $this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-        // $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.LCONT_ID = LOAN_M_CONTACT.LCONT_ID ');
         $this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
         $result = $this->db->get('LOAN_M_CONTACT');
         return $result;
