@@ -117,8 +117,6 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$account_number = $this->input->post('account_number');
-		$id_card = $this->input->post('id_card');
-		// $data_member = $this->officer_model->getid($id_card);
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->account_book_balance($account_number);
 		$data['detail'] = $this->officer_model->detail_deposit($account_number);
@@ -287,10 +285,11 @@ class Officer extends CI_Controller
 	public function welfare_member()
 	{
 		$user_id = $this->session->userdata('USER_ID');
+		$mem_id = $this->input->post('mem_id');
+		$branch_number = $this->input->post('branch_number');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$id_card = $this->input->post('id_card');
-		$data_member = $this->officer_model->getid($id_card);
-		$data['result'] = $this->officer_model->welfare_member($data_member->MEM_ID, $data_member->BR_NO);
+		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
+		$data['result'] = $this->officer_model->welfare_member($mem_id, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");

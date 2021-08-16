@@ -130,15 +130,16 @@ class Manager extends CI_Controller
     public function welfare_member()
     {
         $user_id = $this->session->userdata('USER_ID');
-        $data_officer = $this->officer_model->data_officer($user_id);
-        $id_card = $this->input->post('id_card');
-        $data_member = $this->officer_model->getid($id_card);
-        $data['result'] = $this->officer_model->welfare_member($data_member->MEM_ID, $data_member->BR_NO);
-        $this->load->view("containner/head");
-        $this->load->view("containner/header_officer", $data_officer);
-        $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/seewelfare_member", $data);
-        $this->load->view("containner/script");
+		$mem_id = $this->input->post('mem_id');
+		$branch_number = $this->input->post('branch_number');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
+		$data['result'] = $this->officer_model->welfare_member($mem_id, $branch_number);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("manager/data_welfare_member", $data);
+		$this->load->view("containner/script");
     }
 
     public function credit_system()

@@ -28,22 +28,6 @@ class Officer_model extends CI_Model
         return $query->row();
     }
 
-    public function getname_member($id_card)
-    {
-        $this->db->select('FNAME,LNAME,MEM_ID,BR_NO');
-        $this->db->where('ID_CARD', $id_card);
-        $result = $this->db->get('MEM_H_MEMBER');
-        return $result->row();
-    }
-
-    public function getid($id_card)
-    {
-        $this->db->select('MEM_ID,BR_NO');
-        $this->db->where('ID_CARD', $id_card);
-        $result = $this->db->get('MEM_H_MEMBER');
-        return $result->row();
-    }
-
     public function depositreport_summary($startdate, $enddate, $user_id, $branch_number)
     {
         $this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
