@@ -1,4 +1,5 @@
-<div class="container">
+<br>
+<div class="container-fluid">
     <div class="card border-success">
         <div class="row">
             <div class="col">
