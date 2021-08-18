@@ -26,8 +26,7 @@
 		</a>
 	</div>
 
-	<img src="<?php echo base_url('picture/150164.jpg') ?>" class="img-thumbnail mx-auto d-block" alt="...">
-	<img src="<?php echo base_url('picture/176.jpg') ?>" class="img-thumbnail mx-auto d-block" alt="...">
+
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 		<div class="col-md-5 p-lg-5 mx-auto my-5">
 			<h1 class="display-4 font-weight-normal">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h1>
@@ -150,6 +149,8 @@
 							<li data-target="#myCarouselModal" data-slide-to="0" class="active"></li>
 							<li data-target="#myCarouselModal" data-slide-to="1"></li>
 							<li data-target="#myCarouselModal" data-slide-to="2"></li>
+							<li data-target="#myCarouselModal" data-slide-to="3"></li>
+							<li data-target="#myCarouselModal" data-slide-to="4"></li>
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
@@ -157,6 +158,12 @@
 							</div>
 							<div class="carousel-item">
 								<img width="100%" height="100%" src="<?php echo base_url('picture/1456.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+							</div>
+							<div class="carousel-item">
+								<img width="100%" height="100%" src="<?php echo base_url('picture/176.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+							</div>
+							<div class="carousel-item">
+								<img width="100%" height="100%" src="<?php echo base_url('picture/150164.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
 							</div>
 							<div class="carousel-item">
 								<img width="100%" height="100%" src="<?php echo base_url('picture/176.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">

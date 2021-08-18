@@ -40,13 +40,13 @@ class Officer extends CI_Controller
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_manager");
-					$this->load->view("memberandshare_system");
+					$this->load->view("member_share_system");
 					$this->load->view("containner/script");
 				} else {
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_officer");
-					$this->load->view("memberandshare_system");
+					$this->load->view("member_share_system");
 					$this->load->view("containner/script");
 				}
 			} else {

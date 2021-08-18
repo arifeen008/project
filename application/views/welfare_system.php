@@ -9,13 +9,12 @@
                     <div class="row">
                         <div class="col">
                             <label for="mem_id">เลขที่สมาชิก</label>
-                            <input class="form-control" type="text" id="id_card" placeholder="รหัสบัตรประชาชน..." name="mem_id" required>
+                            <input class="form-control" type="text" id="id_card" name="mem_id" required>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col">
-
                             <div class="form-group">
                                 <label for="branch_number">สาขา</label>
                                 <select class="form-control" id="branch_number" name="branch_number">
