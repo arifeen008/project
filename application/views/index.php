@@ -64,11 +64,16 @@
 
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+				<h3 class="featurette-heading">วันที่ 18 สิงหาคม 2564 สหกรณ์อิสลามษะกอฟะฮ จำกัด (เกาะลันตา) ได้สนับสนุนเครื่องดื่มในโครงการษะกอฟะฮลันตาจิตอาสาร่วมหน่วยงานภาครัฐและชาวบ้านที่มีจิตอาสา ร่วมพัฒนาพื้นที่บาลาย 4 เลน หมู่ที่ 3 ต.ศาลาด่าน</h3>
+				<p class="h4">รับโดย..</p>
+				<p>นายอุสแมน ทิ้งอีด สมาชิกสภาองค์การบริหารส่วนจังหวัดกระบี่</p>
+				<p>นายพงศ์สวัสดิ์ ดำรงอ่องตระกูลนายกเทศมนตรีตำบลศาลาด่าน</p>
+				<p>นายสัมฤทธิ์ ปานะ ประธานสภาเทศบาลตำบลศาลาด่าน พร้อมสมาชิกสภาเทศบาล</p>
+				<p class="h4">มอบโดย..</p>
+				<p>นายนพดล ไบบาว อนุกรรมการสาขาเกาะลันตาพร้อมเจ้าหน้าที่สหกรณ์</p>	
 			</div>
 			<div class="col-md-5">
-				<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" style="width: 100%;" src="<?php echo base_url('picture/48142.jpg') ?>">
+				<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" style="width: 100%;" src="<?php echo base_url('picture/121452.jpg') ?>">
 			</div>
 		</div>
 
