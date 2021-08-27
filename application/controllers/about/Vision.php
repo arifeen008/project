@@ -18,7 +18,7 @@ class Vision extends CI_Controller
 		$this->load->view("containner/script");	
 	}
 
-	public function indexmember()
+	public function vision()
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
