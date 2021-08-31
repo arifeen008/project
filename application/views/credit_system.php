@@ -3,13 +3,27 @@
         <h1>สอบถามยอดสินเชื่อในสมุดของบัญชี</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/credit_officer') ?>" method="post">
+        <form action="<?php echo site_url('officer/listcredit_member') ?>" method="post">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <h6>เลขที่สมาชิก</h6>
-                            <input class="form-control" type="text" name="mem_id" required>
+                            <input class="form-control" type="text" name="mem_id">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <h6>ชื่อ :</h6>
+                            <input class="form-control" type="text" name="fname">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <h6>นามสกุล</h6>
+                            <input class="form-control" type="text" name="lname">
                         </div>
                     </div>
                 </div>
@@ -40,13 +54,27 @@
         <h1>สอบถามยอดสินเชื่อที่ปิดแล้วในสมุดของบัญชี</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/closed_credit_officer') ?>" method="post">
+        <form action="<?php echo site_url('officer/listclosedcredit_member') ?>" method="post">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <h6>เลขที่สมาชิก</h6>
-                            <input class="form-control" type="text" name="mem_id" required>
+                            <input class="form-control" type="text" name="mem_id">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <h6>ชื่อ :</h6>
+                            <input class="form-control" type="text" name="fname">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <h6>นามสกุล</h6>
+                            <input class="form-control" type="text" name="lname">
                         </div>
                     </div>
                 </div>

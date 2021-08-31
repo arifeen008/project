@@ -138,24 +138,33 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function credit_officer()
+	public function listcredit_member()
 	{
 		$mem_id = $this->input->post('mem_id');
 		$branch_number = $this->input->post('branch_number');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("listdatacredit_member", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function credit_officer($mem_id, $branch_number)
+	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
 		$data['result'] = $this->officer_model->credit_officer($mem_id, $branch_number);
-		if ($data['result'] != NULL) {
-			$this->load->view("containner/head");
-			$this->load->view("containner/header_officer", $data_officer);
-			$this->load->view("containner/sidebar_officer");
-			$this->load->view("credit_officer", $data);
-			$this->load->view("containner/script");
-		} else {
-			echo "<script>alert('ไม่มียอดข้อมูลสินเชื่อสมาชิกดังกล่าว');</script>";
-			redirect('officer/credit_system', 'refresh');
-		}
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("credit_officer", $data);
+		$this->load->view("containner/script");
 	}
 
 	public function credit_officer_detail($code, $br_no)
@@ -171,24 +180,33 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function closed_credit_officer()
+	public function listclosedcredit_member()
 	{
 		$mem_id = $this->input->post('mem_id');
 		$branch_number = $this->input->post('branch_number');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("listclosedcredit_member", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function closed_credit_officer($mem_id, $branch_number)
+	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
 		$data['result'] = $this->officer_model->checkcredit_officer($mem_id, $branch_number);
-		if ($data['result'] != NULL) {
-			$this->load->view("containner/head");
-			$this->load->view("containner/header_officer", $data_officer);
-			$this->load->view("containner/sidebar_officer");
-			$this->load->view("closed_credit_officer", $data);
-			$this->load->view("containner/script");
-		} else {
-			echo "<script>alert('ไม่มียอดข้อมูลสินเชื่อสมาชิกดังกล่าว');</script>";
-			redirect('officer/credit_system', 'refresh');
-		}
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("closed_credit_officer", $data);
+		$this->load->view("containner/script");
 	}
 
 	public function closedcredit_officer_detail($code, $branch_number)

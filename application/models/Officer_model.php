@@ -41,6 +41,19 @@ class Officer_model extends CI_Model
         return $result;
     }
 
+    public function listcredit_member($mem_id, $branch_number, $fname, $lname)
+    {
+        $this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
+        $this->db->like('MEM_H_MEMBER.MEM_ID', $mem_id);
+        $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->like('MEM_H_MEMBER.FNAME', $fname);
+        $this->db->like('MEM_H_MEMBER.LNAME', $lname);
+        $this->db->join('BK_M_BRANCH', 'MEM_H_MEMBER.BR_NO = BK_M_BRANCH.BR_NO');
+        $this->db->order_by('MEM_H_MEMBER.FNAME', 'ASC');
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result;
+    }
+
     public function credit_officer($mem_id, $branch_number)
     {
         $this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');

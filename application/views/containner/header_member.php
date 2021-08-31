@@ -6,7 +6,7 @@
         </button>
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <a href="<?php echo site_url('index/indexmember') ?>" class="nav-link">Home</a>
+                <a href="<?php echo site_url('index/index') ?>" class="nav-link">Home</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item dropdown">
                         <div class="dropdown">

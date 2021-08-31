@@ -1,15 +1,14 @@
 <div class="col-lg-9">
-    <div class="col-12" id="main">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-            <h1>เงินหุ้น</h1>
-        </div>
+    <div class="col-12">
+        <br><br>
         <div class="col">
             <table class="table table-hover">
                 <thead>
                     <tr align="center">
+                        <td>รหัสสมาชิก</td>
                         <td>ชื่อ</td>
-                        <td>นามสกุล :</td>
-                        <td>สาขา </td>
+                        <td>นามสกุล</td>
+                        <td>สาขา</td>
                         <td></td>
                     </tr>
                 </thead>
@@ -18,10 +17,11 @@
                 <?php  } ?>
                 <?php foreach ($result->result() as $row) { ?>
                     <tr align="center">
+                        <td><?= $row->MEM_ID ?></td>
                         <td><?= $row->FNAME ?></td>
                         <td><?= $row->LNAME ?></td>
                         <td><?= $row->BR_NAME; ?></td>
-                        <td><a href="<?php echo site_url('officer/seedata_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
+                        <td><a href="<?php echo site_url('officer/closed_credit_officer/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
                     </tr>
                 <?php } ?>
             </table>
