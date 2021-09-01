@@ -77,7 +77,6 @@ include_once("application/libraries/Thaidate.php");
                             <td><?= $row->LPD_NUM_INST ?></td>
                             <td><?= number_format($row->SUM_SAL, 2) ?></td>
                             <td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
-
                         </tr>
                     <?php } ?>
                 </table>
