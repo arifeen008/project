@@ -247,4 +247,17 @@ class Officer_model extends CI_Model
         $result = $this->db->get('WEL_H_MEMBER');
         return $result;
     }
+
+    public function searchreport_member($branch_number, $start, $to)
+    {
+        $this->db->select('BK_M_BRANCH.BR_NAME,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,MEM_H_MEMBER.MOBILE_TEL,SHR_MEM.SHR_SUM_BTH,BK_H_SAVINGACCOUNT.BALANCE');
+        $this->db->where('SHR_MEM.BR_NO', $branch_number);
+        $this->db->where('SHR_MEM.SHR_SUM_BTH >=', $start);
+        $this->db->where('SHR_MEM.SHR_SUM_BTH <=', $to);
+        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_MEM.BR_NO');
+        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.BR_NO = SHR_MEM.BR_NO AND MEM_H_MEMBER.MEM_ID = SHR_MEM.MEM_ID');
+        $this->db->join('BK_H_SAVINGACCOUNT', 'BK_H_SAVINGACCOUNT.BR_NO = SHR_MEM.BR_NO AND BK_H_SAVINGACCOUNT.MEM_ID = SHR_MEM.MEM_ID');
+        $result = $this->db->get('SHR_MEM');
+        return $result;
+    }
 }

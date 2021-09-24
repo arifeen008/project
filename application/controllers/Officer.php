@@ -317,5 +317,29 @@ class Officer extends CI_Controller
 
 	// =========================================================================================================================================================================
 
+	public function reportmember_system()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("reportmember_system");
+		$this->load->view("containner/script");
+	}
 
+	public function searchreport_member()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$branch_number = $this->input->post('branch_number');
+		$start = $this->input->post('start');
+		$to = $this->input->post('to');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->searchreport_member($branch_number, $start, $to);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("searchreport_member", $data);
+		$this->load->view("containner/script");
+	}
 }

@@ -2,15 +2,6 @@
 
 class Member_model extends CI_Model
 {
-    private $tbl_name1 = 'MEM_H_MEMBER';
-    private $tbl_name2 = 'SHR_MEM';
-    private $tbl_name3 = 'BK_H_SAVINGACCOUNT';
-    private $tbl_name4 = 'LOAN_M_CONTACT';
-    private $tbl_name5 = 'WEL_H_MEMBER';
-    private $tbl_name6 = 'BK_T_FINANCE';
-    private $tbl_name7 = 'LOAN_M_PAYDEPT';
-    private $tbl_name8 = 'SHR_T_SHARE';
-
     public function fetch_user_login($user_id)
     {
         $this->db->select('BR_NO,MEM_ID,USER_ID,PASSWORD');
@@ -53,13 +44,12 @@ class Member_model extends CI_Model
         return $query->row();
     }
 
-    public function data_member2($ID_CARD)
-    {
-        // $this->db->select('ID_CARD,MEM_ID,BR_NO,FNAME,LNAME');
-        $this->db->where('ID_CARD', $ID_CARD);
-        $query = $this->db->get('MEM_H_MEMBER');
-        return $query->row();
-    }
+    // public function data_member2($ID_CARD)
+    // {
+    //     $this->db->where('ID_CARD', $ID_CARD);
+    //     $query = $this->db->get('MEM_H_MEMBER');
+    //     return $query->row();
+    // }
 
     public function updatephone_member($MOBILE_TEL, $LINE_ID, $EMAIL, $ID_CARD)
     {
@@ -69,7 +59,7 @@ class Member_model extends CI_Model
             'EMAIL' => $EMAIL
         );
         $this->db->where('ID_CARD', $ID_CARD);
-        $result = $this->db->update($this->tbl_name1, $data);
+        $result = $this->db->update('MEM_H_MEMBER', $data);
         return $result;
     }
 
@@ -91,7 +81,7 @@ class Member_model extends CI_Model
         $this->db->where('SHR_T_SHARE.MEM_ID', $MEM_ID);
         $this->db->join('SHR_TBL', 'SHR_TBL.SHR_NO = SHR_T_SHARE.SHR_NO');
         $this->db->order_by('SHR_T_SHARE.TMP_DATE_TODAY', 'ASC');
-        $result = $this->db->get($this->tbl_name8);
+        $result = $this->db->get('SHR_T_SHARE');
         return $result;
     }
 
@@ -125,7 +115,7 @@ class Member_model extends CI_Model
         $this->db->where('LOAN_M_PAYDEPT.BR_NO', $BR_NO);
         $this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
         $this->db->order_by('LPD_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name7);
+        $result = $this->db->get('LOAN_M_PAYDEPT');
         return $result;
     }
 
@@ -136,7 +126,7 @@ class Member_model extends CI_Model
         $this->db->where('LOAN_M_REGISTER.BR_NO', $BR_NO);
         $this->db->where('LOAN_M_REGISTER.CODE', $code);
         $this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-        $query = $this->db->get($this->tbl_name4);
+        $query = $this->db->get('LOAN_M_CONTACT');
         return $query->row();
     }
 
@@ -149,7 +139,7 @@ class Member_model extends CI_Model
         $this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '4');
         $this->db->join('MEM_H_MEMBER', ' MEM_H_MEMBER.MEM_ID = LOAN_M_CONTACT.MEM_ID ');
         $this->db->order_by('LCONT_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name4);
+        $result = $this->db->get('LOAN_M_CONTACT');
         return $result;
     }
 
@@ -160,7 +150,7 @@ class Member_model extends CI_Model
         $this->db->where('LOAN_M_PAYDEPT.BR_NO', $BR_NO);
         $this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
         $this->db->order_by('LPD_DATE', 'ASC');
-        $result = $this->db->get($this->tbl_name7);
+        $result = $this->db->get('LOAN_M_PAYDEPT');
         return $result;
     }
 
@@ -168,7 +158,7 @@ class Member_model extends CI_Model
     {
         $this->db->select('ACCOUNT_NO');
         $this->db->where('ACCOUNT_NO', $account_number);
-        $result = $this->db->get($this->tbl_name3);
+        $result = $this->db->get('BK_H_SAVINGACCOUNT');
         return $result->row();
     }
 
@@ -179,7 +169,7 @@ class Member_model extends CI_Model
         $this->db->where('F_TIME >=', $startdate);
         $this->db->where('F_TIME <=', $enddate);
         $this->db->order_by('F_TIME', 'ASC');
-        $result = $this->db->get($this->tbl_name6);
+        $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
 
@@ -209,7 +199,7 @@ class Member_model extends CI_Model
         $this->db->where('WEL_H_MEMBER.BR_NO', $BR_NO);
         $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = WEL_H_MEMBER.MEM_ID');
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
-        $result = $this->db->get($this->tbl_name5);
+        $result = $this->db->get('WEL_H_MEMBER');
         return $result;
     }
 }

@@ -27,7 +27,7 @@
         border-radius: 2rem;
     }
 
-    .fr{
+    .fr {
         color: red;
     }
 
@@ -142,9 +142,7 @@
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-3" type="submit">เข้าสู่ระบบ</button>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="text-center">
-                                            <a class="small" href="#">ลืมรหัสผ่าน ?</a>
-                                        </div>
+                                        <div></div>
                                     </div>
                                     <div class="col">
                                         <div class="text-center">

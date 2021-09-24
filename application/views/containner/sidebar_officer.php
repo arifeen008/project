@@ -7,5 +7,6 @@
                 <a href="<?php echo site_url('officer/deposit_system') ?>" class="list-group-item border border-success list-group-item-action">ระบบเงินฝาก</a>
                 <a href="<?php echo site_url('officer/welfare_system') ?>" class="list-group-item border border-success list-group-item-action">ระบบกองทุนตะกาฟุล</a>
                 <a href="<?php echo site_url('officer/credit_system') ?>" class="list-group-item border border-success list-group-item-action">ระบบงานสินเชื่อ</a>
+                <a href="<?php echo site_url('officer/reportmember_system') ?>" class="list-group-item border border-success list-group-item-action">ระบบรายงานสมาชิกหุ้น</a>
             </div>
         </div>
