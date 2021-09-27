@@ -7,16 +7,19 @@
             <thead>
                 <tr align="center">
                     <td>สาขา</td>
-                    <td>ชื่อ - สกุล</td>
+                    <td>ชื่อ</td>
+                    <td>สกุล</td>
                     <td>จำนวนเงินหุ้น</td>
                     <td>จำนวนเงินฝาก</td>
                     <td>เบอร์โทร</td>
                 </tr>
             </thead>
+            <p align="right"><?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
             <?php foreach ($result->result() as $row) { ?>
                 <tr align="center">
                     <td><?= $row->BR_NAME ?></td>
-                    <td><?= $row->FNAME ?>&nbsp;&nbsp; <?= $row->LNAME ?></td>
+                    <td><?= $row->FNAME ?></td>
+                    <td><?= $row->LNAME ?></td>
                     <td><?= number_format($row->SHR_SUM_BTH, 2) ?></td>
                     <td><?= number_format($row->BALANCE, 2) ?></td>
                     <td><?= $row->MOBILE_TEL ?></td>

@@ -1,6 +1,6 @@
 <div class="col-lg-9">
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1>รายงานสมาชิกหุ้น</h1>
+        <h1>รายงานสมาชิกหุ้นเลือกสาขา</h1>
     </div>
     <div class="card border-success">
         <form action="<?php echo site_url('officer/searchreport_member') ?>" method="post">
@@ -39,7 +39,38 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success mb-2">ดึงข้อมูล</button>
+                <button type="submit" class="btn btn-primary mb-2">ดึงข้อมูล</button>
+                <a href="<?php echo site_url('officer/reportpdf_member')?>" class="btn btn-danger mb-2">ดูไฟล์ PDF</a>
+                <a href="<?php echo site_url('officer/reportexcel_member')?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>รายงานสมาชิกหุ้นทุกสาขา</h1>
+    </div>
+    <div class="card border-success">
+        <form action="<?php echo site_url('officer/searchreport_member_allbranch') ?>" method="post">
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="start">จาก</label>
+                                <input class="form-control" type="number" id="start" name="start" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="to">ถึง</label>
+                                <input class="form-control" type="number" id="to" name="to" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">ดึงข้อมูล</button>
+                <a href="<?php echo site_url('officer/reportpdf_member')?>" class="btn btn-danger mb-2">ดูไฟล์ PDF</a>
+                <a href="<?php echo site_url('officer/reportexcel_member')?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a>
             </div>
         </form>
     </div>

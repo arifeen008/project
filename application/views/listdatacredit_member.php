@@ -20,7 +20,7 @@
                         <td><?= $row->MEM_ID ?></td>
                         <td><?= $row->FNAME ?></td>
                         <td><?= $row->LNAME ?></td>
-                        <td><?= $row->BR_NAME; ?></td>
+                        <td><?= $row->BR_NAME ?></td>
                         <td><a href="<?php echo site_url('officer/credit_officer/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
                     </tr>
                 <?php } ?>

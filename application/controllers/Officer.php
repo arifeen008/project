@@ -342,4 +342,38 @@ class Officer extends CI_Controller
 		$this->load->view("searchreport_member", $data);
 		$this->load->view("containner/script");
 	}
+
+	// public function reportpdf_member()
+	// {
+	// 	define('FPDF_FONTPATH', 'font/');
+	// 	require('libraries/fpdf.php');
+	// 	$pdf = new FPDF();
+	// 	$pdf->AliasNbPages();
+	// 	$pdf->AddPage('L', 'A4', 0);
+	// 	$pdf->Output('F');
+	// }
+
+	public function reportexcel_member()
+	{	
+		$branch_number = $this->input->post('branch_number');
+		$start = $this->input->post('start');
+		$to = $this->input->post('to');
+		$data['result'] = $this->officer_model->searchreport_member($branch_number, $start, $to);
+		$this->load->view('excel', $data);
+	}
+
+	public function searchreport_member_allbranch()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$branch_number = $this->input->post('branch_number');
+		$start = $this->input->post('start');
+		$to = $this->input->post('to');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->searchreport_member_allbranch($start, $to);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("searchreport_member", $data);
+		$this->load->view("containner/script");
+	}
 }
