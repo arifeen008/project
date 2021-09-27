@@ -15,7 +15,7 @@ header("Expires: 0");
 </head>
 
 <body>
-    <strong>รายงานสมาชิก วันที่ <?php echo $numrows; ?></strong><br>
+    <strong>ผลการค้นหา <?php echo $numrows; ?></strong><br>
     <div id="SiXhEaD_Excel" align=center x:publishsource="Excel">
         <table x:str border=1 cellpadding=0 cellspacing=1 width=100% style="border-collapse:collapse">
             <tr>
