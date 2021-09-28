@@ -40,8 +40,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">ดึงข้อมูล</button>
-                <a href="<?php echo site_url('officer/reportpdf_member')?>" class="btn btn-danger mb-2">ดูไฟล์ PDF</a>
-                <a href="<?php echo site_url('officer/reportexcel_member')?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a>
+               
             </div>
         </form>
     </div>
@@ -69,8 +68,6 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">ดึงข้อมูล</button>
-                <a href="<?php echo site_url('officer/reportpdf_member')?>" class="btn btn-danger mb-2">ดูไฟล์ PDF</a>
-                <a href="<?php echo site_url('officer/reportexcel_member')?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a>
             </div>
         </form>
     </div>

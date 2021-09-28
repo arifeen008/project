@@ -334,8 +334,14 @@ class Officer extends CI_Controller
 		$branch_number = $this->input->post('branch_number');
 		$start = $this->input->post('start');
 		$to = $this->input->post('to');
+
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->searchreport_member($branch_number, $start, $to);
+		$data['variable'] = array(
+			'branch_number' => $branch_number,
+			'start' => $start,
+			'to' => $to
+		);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
@@ -353,27 +359,79 @@ class Officer extends CI_Controller
 	// 	$pdf->Output('F');
 	// }
 
-	public function reportexcel_member()
-	{	
-		$branch_number = $this->input->post('branch_number');
-		$start = $this->input->post('start');
-		$to = $this->input->post('to');
-		$data['result'] = $this->officer_model->searchreport_member($branch_number, $start, $to);
-		$this->load->view('excel', $data);
+	public function reportexcel_member($branch_number,$start,$to)
+	{
+		$this->load->library('excel');
+		$object = new PHPExcel();
+		$object->setActiveSheetIndex(0);
+		$table_columns = array("สาขา", "ชื่อ", "สกุล", "จำนวนเงินหุ้น", "จำนวนเงินฝาก", "เบอร์โทร");
+		$column = 0;
+		foreach ($table_columns as $field) {
+			$object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
+			$column++;
+		}
+		$data = $this->officer_model->searchreport_member($branch_number, $start, $to);
+		$excel_row = 2;
+
+		foreach ($data->result() as $row) {
+			$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->BR_NAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->FNAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->LNAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, number_format($row->SHR_SUM_BTH, 2));
+			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, number_format($row->BALANCE, 2));
+			$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->MOBILE_TEL);
+			$excel_row++;
+		}
+		$object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="Export Data.xls"');
+		$object_writer->save('php://output');
 	}
 
 	public function searchreport_member_allbranch()
 	{
 		$user_id = $this->session->userdata('USER_ID');
-		$branch_number = $this->input->post('branch_number');
 		$start = $this->input->post('start');
 		$to = $this->input->post('to');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->searchreport_member_allbranch($start, $to);
+		$data['variable'] = array(
+			'start' => $start,
+			'to' => $to
+		);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("searchreport_member", $data);
+		$this->load->view("searchreport_member_allbranch", $data);
 		$this->load->view("containner/script");
+	}
+
+	public function reportexcel_member_allbranch($start,$to)
+	{
+		$this->load->library('excel');
+		$object = new PHPExcel();
+		$object->setActiveSheetIndex(0);
+		$table_columns = array("สาขา", "ชื่อ", "สกุล", "จำนวนเงินหุ้น", "จำนวนเงินฝาก", "เบอร์โทร");
+		$column = 0;
+		foreach ($table_columns as $field) {
+			$object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
+			$column++;
+		}
+		$data = $this->officer_model->searchreport_member_allbranch($start, $to);
+		$excel_row = 2;
+
+		foreach ($data->result() as $row) {
+			$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->BR_NAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->FNAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->LNAME);
+			$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, number_format($row->SHR_SUM_BTH, 2));
+			$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, number_format($row->BALANCE, 2));
+			$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->MOBILE_TEL);
+			$excel_row++;
+		}
+		$object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="Export Data.xls"');
+		$object_writer->save('php://output');
 	}
 }

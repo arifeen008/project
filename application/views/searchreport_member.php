@@ -1,8 +1,9 @@
 <div class="col-lg-9">
     <div class="col-12">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1>สวัสดิการสมาชิก</h1>
+            <h1>รายงานสมาชิกหุ้น</h1>
         </div>
+        <p align="right"><a href="<?php echo site_url('officer/reportexcel_member/'.$variable['branch_number'].'/'.$variable['start'].'/'.$variable['to'])?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a> <?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
         <table class="table table-striped">
             <thead>
                 <tr align="center">
@@ -14,7 +15,7 @@
                     <td>เบอร์โทร</td>
                 </tr>
             </thead>
-            <p align="right"><?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
+            
             <?php foreach ($result->result() as $row) { ?>
                 <tr align="center">
                     <td><?= $row->BR_NAME ?></td>
