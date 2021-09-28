@@ -349,16 +349,6 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	// public function reportpdf_member()
-	// {
-	// 	define('FPDF_FONTPATH', 'font/');
-	// 	require('libraries/fpdf.php');
-	// 	$pdf = new FPDF();
-	// 	$pdf->AliasNbPages();
-	// 	$pdf->AddPage('L', 'A4', 0);
-	// 	$pdf->Output('F');
-	// }
-
 	public function reportexcel_member($branch_number,$start,$to)
 	{
 		$this->load->library('excel');
