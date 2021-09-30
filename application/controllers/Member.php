@@ -9,21 +9,14 @@ class Member extends CI_Controller
 		$this->load->model('member_model');
 	}
 
-	public function login_member()
+	public function login_member_page()
 	{
 		$this->load->view("containner/head");
 		$this->load->view("login_member");
 	}
 
-	public function check_member()
+	public function login_member()
 	{
-		$this->form_validation->set_rules('user_id', 'user_id', 'required', array('required' => 'กรุณาใส่ username'));
-		$this->form_validation->set_rules('password', 'password', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
-		if ($this->form_validation->run() == false) {
-			$this->load->view("containner/head");
-			$this->load->view("login_member");
-			$this->load->view("containner/script");
-		}
 		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
 		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
 			$login_result = $this->member_model->getdata_member($result->BR_NO, $result->MEM_ID);
@@ -133,36 +126,6 @@ class Member extends CI_Controller
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/data_member/data_member", $data);
 		$this->load->view("containner/script");
-	}
-
-	public function editdata_member()
-	{
-		$br_no = $this->session->userdata("BR_NO");
-		$mem_id = $this->session->userdata("MEM_ID");
-		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_member", $data);
-		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("editdata_member", $data);
-		$this->load->view("containner/script");
-	}
-
-	public function updateeditdata_member()
-	{
-		$ID_CARD = $this->session->userdata('ID_CARD');
-		$MOBILE_TEL = $this->input->post('MOBILE_TEL');
-		$LINE_ID = $this->input->post('LINE_ID');
-		$EMAIL = $this->input->post('EMAIL');
-		$result = $this->member_model->updatephone_member($MOBILE_TEL, $LINE_ID, $EMAIL, $ID_CARD);
-		if ($result) {
-			$data = $this->member_model->data_member($ID_CARD);
-			echo "<script>alert('แก้ไขสำเร็จ')</script>";
-			redirect('member/data_member', 'refresh');
-		} else {
-			$data = $this->member_model->data_member($ID_CARD);
-			echo "<script>alert('แก้ไขไม่สำเร็จ')</script>";
-			redirect('member/data_member', 'refresh');
-		}
 	}
 
 	public function share_member()

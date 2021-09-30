@@ -502,7 +502,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/script");
     }
 
-    //-------------------------------------------------------------------------------------------------------------------------------------------------//
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public function monthly_inout()
     {
@@ -511,7 +511,7 @@ class Manager extends CI_Controller
         $select_month = $this->input->post('select_month');
         $select_year = $this->input->post('select_year');
         $data['result'] = $this->manager_model->monthly_inout($select_month, $select_year);
-        // $data['summary'] = $this->manager_model->sum_monthy_inout($select_month, $select_year); ใช้ไม่ได้
+        //// $data['summary'] = $this->manager_model->sum_monthy_inout($select_month, $select_year); ใช้ไม่ได้
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");

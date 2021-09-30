@@ -9,54 +9,45 @@ class Officer extends CI_Controller
 		$this->load->model('officer_model');
 	}
 
-	public function login_officer()
+	public function login_officer_page()
 	{
 		$this->load->view("containner/head");
 		$this->load->view("login_officer");
 	}
 
-	public function check_officer()
+	public function login_officer()
 	{
-		$this->form_validation->set_rules('user_id', 'user_id', 'required', array('required' => 'กรุณาใส่ ID เจ้าหน้าที่'));
-		$this->form_validation->set_rules('password', 'password', 'required', array('required' => 'กรุณาใส่รหัสผ่าน'));
-		if ($this->form_validation->run() == false) {
+		$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
+		if (!empty($result)) {
+			$session = array(
+				'USER_ID' => $result->USER_ID,
+				'LEVEL_CODE' => $result->LEVEL_CODE,
+				'BR_NO' => $result->BR_NO,
+				'USER_NAME' => $result->USER_NAME
+			);
+			$this->session->set_userdata($session);
+			$user_id = $this->session->userdata('USER_ID');
+			$level_code = $this->session->userdata('LEVEL_CODE');
+			$data = $this->officer_model->data_officer($user_id);
+			if ($level_code === "A") {
+				$this->load->view("containner/head");
+				$this->load->view("containner/header_officer", $data);
+				$this->load->view("containner/sidebar_manager");
+				$this->load->view("officer/member_share_system/member_share_system");
+				$this->load->view("containner/script");
+			} else {
+				$this->load->view("containner/head");
+				$this->load->view("containner/header_officer", $data);
+				$this->load->view("containner/sidebar_officer");
+				$this->load->view("officer/member_share_system/member_share_system");
+				$this->load->view("containner/script");
+			}
+		} else {
+			$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
 			$this->load->view("containner/head");
 			$this->load->view("login_officer");
 			$this->load->view("containner/script");
-		} else {
-			$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
-			if (!empty($result)) {
-				$session = array(
-					'USER_ID' => $result->USER_ID,
-					'LEVEL_CODE' => $result->LEVEL_CODE,
-					'BR_NO' => $result->BR_NO,
-					'USER_NAME' => $result->USER_NAME
-				);
-
-				$this->session->set_userdata($session);
-				$USER_ID = $this->session->userdata('USER_ID');
-				$LEVEL_CODE = $this->session->userdata('LEVEL_CODE');
-				$data = $this->officer_model->data_officer($USER_ID);
-				if ($LEVEL_CODE === "A") {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_manager");
-					$this->load->view("officer/member_share_system/member_share_system");
-					$this->load->view("containner/script");
-				} else {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_officer");
-					$this->load->view("officer/member_share_system/member_share_system");
-					$this->load->view("containner/script");
-				}
-			} else {
-				$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
-				$this->load->view("containner/head");
-				$this->load->view("login_officer");
-				$this->load->view("containner/script");
-				echo "<script>alert('คุณใส่ Usename หรือ Password ไม่ถูกต้อง');</script>";
-			}
+			echo "<script>alert('คุณใส่ Usename หรือ Password ไม่ถูกต้อง');</script>";
 		}
 	}
 

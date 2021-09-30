@@ -99,7 +99,7 @@
 
         </ul>
         <ul class="nav navbar-nav ml-auto">
-            <a href="<?php echo site_url('member/login_member') ?>" class="btn btn-light btn-sm text-dark">เข้าสู่ระบบสมาชิก</a>&nbsp;<a href="<?php echo site_url('officer/login_officer') ?>" class="btn btn-light btn-sm text-dark">เข้าสู่ระบบเจ้าหน้าที่</a>
+            <a href="<?php echo site_url('member/login_member_page') ?>" class="btn btn-light btn-sm text-dark">เข้าสู่ระบบสมาชิก</a>&nbsp;<a href="<?php echo site_url('officer/login_officer_page') ?>" class="btn btn-light btn-sm text-dark">เข้าสู่ระบบเจ้าหน้าที่</a>
         </ul>
     </div>
 </nav>

@@ -39,10 +39,6 @@
         border-radius: 2rem;
     }
 
-    .fr {
-        color: red;
-    }
-
     .form-label-group>label {
         position: absolute;
         top: 0;
@@ -128,17 +124,14 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <h3 class="login-heading mb-4">เข้าสู่ระบบ</h3>
-                            <form action="<?php echo site_url('officer/check_officer') ?>" method="post">
+                            <form action="<?php echo site_url('officer/login_officer') ?>" method="post">
                                 <div class="form-label-group">
-                                    <input type="text" name="user_id" class="form-control" placeholder="ใส่ ID เจ้าหน้าที่..." id="user_id" autofocus>
-                                    <label for="user_id">ใส่ ID เจ้าหน้าที่...</label>
-                                    <span class="fr"><?php echo form_error('user_id'); ?></span>
+                                    <input type="text" name="user_id" class="form-control" placeholder="ใส่ ID เจ้าหน้าที่..." id="user_id" required>
+                                    <label for="user_id">กรุณาใส่ชื่อผู้ใช้</label>
                                 </div>
-
                                 <div class="form-label-group">
-                                    <input type="password" name="password" class="form-control" placeholder="Password" id="inputPassword">
-                                    <label for="password">รหัสผ่าน</label>
-                                    <span class="fr"><?php echo form_error('password'); ?></span>
+                                    <input type="password" name="password" class="form-control" placeholder="Password" id="inputPassword" required>
+                                    <label for="password">กรุณาใส่รหัสผ่าน</label>
                                 </div>
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">เข้าสู่ระบบ</button>
                                 <div class="text-center">

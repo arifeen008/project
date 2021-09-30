@@ -27,10 +27,6 @@
         border-radius: 2rem;
     }
 
-    .fr {
-        color: red;
-    }
-
     .form-label-group {
         position: relative;
         margin-bottom: 1rem;
@@ -128,16 +124,14 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <h3 class="login-heading mb-4">เข้าสู่ระบบ</h3>
-                            <form action="<?php echo site_url('member/check_member') ?>" method="post">
+                            <form action="<?php echo site_url('member/login_member') ?>" method="post">
                                 <div class="form-label-group">
                                     <input type="text" name="user_id" id="user_id" placeholder="รหัสบัตรประชาชน" class="form-control form-group">
-                                    <label for="user_id">ชื่อผู้ใช้</label>
-                                    <span class="fr"><?php echo form_error('user_id'); ?></span>
+                                    <label for="user_id">กรุณาใส่ชื่อผู้ใช้</label>
                                 </div>
                                 <div class="form-label-group">
                                     <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                                    <label for="password">รหัสผ่าน</label>
-                                    <span class="fr"><?php echo form_error('password'); ?></span>
+                                    <label for="password">กรุณาใส่รหัสผ่าน</label>
                                 </div>
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-3" type="submit">เข้าสู่ระบบ</button>
                                 <div class="row">
