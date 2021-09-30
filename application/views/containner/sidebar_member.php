@@ -5,11 +5,11 @@
             <div class="list-group border border-success">
                 <a href="<?php echo site_url('member/data_member') ?>" class="list-group-item border border-success  list-group-item-action">ประวัติสมาชิก</a>
                 <a href="<?php echo site_url('member/welfare_member') ?>" class="list-group-item border border-success  list-group-item-action">สวัสดิการสมาชิก</a>
-                <a href="<?php echo site_url('member/requestwelfare_member') ?>" class="list-group-item border border-success  list-group-item-action">ยื่นขอรับสวัสดิการ</a>
+                <a href="<?php echo site_url('member/welfare_member_request') ?>" class="list-group-item border border-success  list-group-item-action">ยื่นขอรับสวัสดิการ</a>
                 <a href="#" class="list-group-item border border-success  list-group-item-action">ประวัติการยื่นขอรับสวัสดิการ</a>
                 <a href="<?php echo site_url('member/share_member') ?>" class="list-group-item border border-success  list-group-item-action">เงินหุ้น</a>
                 <a href="<?php echo site_url('member/deposit_member') ?>" class="list-group-item border border-success  list-group-item-action">เงินฝาก</a>
-                <a href="<?php echo site_url('member/credit_member') ?>" class="list-group-item border border-success  list-group-item-action">สินเชื่อ</a>
-                <a href="<?php echo site_url('member/checkcredit_member') ?>" class="list-group-item border border-success  list-group-item-action">สินเชื่อที่ปิดไปแล้ว</a>
+                <a href="<?php echo site_url('member/credit_member_open') ?>" class="list-group-item border border-success  list-group-item-action">สินเชื่อ</a>
+                <a href="<?php echo site_url('member/credit_member_close') ?>" class="list-group-item border border-success  list-group-item-action">สินเชื่อที่ปิดไปแล้ว</a>
             </div>
         </div>

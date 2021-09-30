@@ -5,6 +5,7 @@ class Manager extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        // $this->load->library('session');
         $this->load->model('officer_model');
         $this->load->model('manager_model');
     }
@@ -16,7 +17,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/member_share_system");
+        $this->load->view("manager/member_share_system/member_share_system");
         $this->load->view("containner/script");
     }
 
@@ -31,7 +32,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/listdata_member", $data);
+        $this->load->view("manager/member_share_system/listdata_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -43,7 +44,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("seedata_member", $data);
+        $this->load->view("manager/member_share_system/seedata_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -59,7 +60,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/listdatashare_member", $data);
+        $this->load->view("manager/member_share_system/listdatashare_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -72,7 +73,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/datashare_member", $data);
+        $this->load->view("manager/member_share_system/datashare_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -83,7 +84,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/deposit_system");
+        $this->load->view("manager/deposit_system/deposit_system");
         $this->load->view("containner/script");
     }
 
@@ -93,12 +94,12 @@ class Manager extends CI_Controller
         $branch_number = $this->session->userdata('BR_NO');
         $startdate = $this->input->post('startdate');
         $enddate = $this->input->post('enddate');
-        $data1 = $this->officer_model->data_officer($user_id);
-        $data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
+        $data_officer = $this->officer_model->data_officer($user_id);
+        $data['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
         $this->load->view("containner/head");
-        $this->load->view("containner/header_officer", $data1);
+        $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/depositreport_summary", $data2);
+        $this->load->view("manager/deposit_system/depositreport_summary", $data);
         $this->load->view("containner/script");
     }
 
@@ -112,22 +113,22 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/account_book_balance", $data);
+        $this->load->view("manager/deposit_system/account_book_balance", $data);
         $this->load->view("containner/script");
     }
 
-    public function welfare_system()
+    public function takaful_system()
     {
         $user_id = $this->session->userdata('USER_ID');
         $data = $this->officer_model->data_officer($user_id);
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/welfare_system");
+        $this->load->view("manager/takaful_system/takaful_system");
         $this->load->view("containner/script");
     }
 
-    public function welfare_member()
+    public function takaful_member()
     {
         $user_id = $this->session->userdata('USER_ID');
         $mem_id = $this->input->post('mem_id');
@@ -138,7 +139,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_officer");
-        $this->load->view("manager/data_welfare_member", $data);
+        $this->load->view("manager/takaful_system/takaful_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -149,7 +150,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/credit_system");
+        $this->load->view("manager/credit_system/credit_system");
         $this->load->view("containner/script");
     }
 
@@ -165,7 +166,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/listdatacredit_member", $data);
+        $this->load->view("manager/credit_system/listdatacredit_member", $data);
         $this->load->view("containner/script");
     }
 
@@ -178,7 +179,7 @@ class Manager extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_manager");
-		$this->load->view("manager/credit_officer", $data);
+		$this->load->view("manager/credit_system/credit_officer", $data);
 		$this->load->view("containner/script");
     }
 
@@ -191,7 +192,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("credit_officer_detail", $data);
+        $this->load->view("manager/credit_system/credit_officer_detail", $data);
         $this->load->view("containner/script");
     }
 
@@ -207,7 +208,7 @@ class Manager extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_manager");
-		$this->load->view("manager/listclosedcredit_member", $data);
+		$this->load->view("manager/credit_system/listclosedcredit_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -220,7 +221,7 @@ class Manager extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_manager");
-		$this->load->view("manager/closed_credit_officer", $data);
+		$this->load->view("manager/credit_system//closed_credit_officer", $data);
 		$this->load->view("containner/script");
     }
 
@@ -233,7 +234,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("manager/closed_credit_officer_detail", $data);
+        $this->load->view("manager/credit_system//closed_credit_officer_detail", $data);
         $this->load->view("containner/script");
     }
 
@@ -244,17 +245,17 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily_report");
+        $this->load->view("manager/daily/daily_report");
         $this->load->view("containner/script");
     }
-    public function monthy_report()
+    public function monthly_report()
     {
         $user_id = $this->session->userdata('USER_ID');
         $data = $this->officer_model->data_officer($user_id);
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthy_report");
+        $this->load->view("manager/monthly/monthy_report");
         $this->load->view("containner/script");
     }
     public function yearly_report()
@@ -264,7 +265,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly_report");
+        $this->load->view("manager/yearly/yearly_report");
         $this->load->view("containner/script");
     }
 
@@ -278,7 +279,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/share_capital_member_report", $data);
+        $this->load->view("manager/daily/share_capital_member_report", $data);
         $this->load->view("containner/script");
     }
 
@@ -293,7 +294,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_share_capital", $data);
+        $this->load->view("manager/daily/daily_share_capital", $data);
         $this->load->view("containner/script");
     }
 
@@ -309,7 +310,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_deposit_account_type", $data);
+        $this->load->view("manager/daily/daily_deposit_account_type", $data);
         $this->load->view("containner/script");
     }
 
@@ -325,7 +326,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_deposit_account_branch", $data);
+        $this->load->view("manager/daily/daily_deposit_account_branch", $data);
         $this->load->view("containner/script");
     }
 
@@ -342,7 +343,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_credit", $data);
+        $this->load->view("manager/daily/daily_credit", $data);
         $this->load->view("containner/script");
     }
 
@@ -357,7 +358,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_credit_allbranch", $data);
+        $this->load->view("manager/daily/daily_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
 
@@ -372,7 +373,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_payment", $data);
+        $this->load->view("manager/daily/daily_payment", $data);
         $this->load->view("containner/script");
     }
 
@@ -387,7 +388,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("daily/daily_share_deposit", $data);
+        $this->load->view("manager/daily/daily_share_deposit", $data);
         $this->load->view("containner/script");
     }
 
@@ -404,7 +405,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthy_inout", $data);
+        $this->load->view("manager/monthly/monthy_inout", $data);
         $this->load->view("containner/script");
     }
 
@@ -419,7 +420,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_share_capital", $data);
+        $this->load->view("manager/monthly/monthly_share_capital", $data);
         $this->load->view("containner/script");
     }
 
@@ -435,7 +436,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_deposit_account_type", $data);
+        $this->load->view("manager/monthly/monthly_deposit_account_type", $data);
         $this->load->view("containner/script");
     }
 
@@ -451,7 +452,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_deposit_account_branch", $data);
+        $this->load->view("manager/monthly/monthly_deposit_account_branch", $data);
         $this->load->view("containner/script");
     }
 
@@ -468,7 +469,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_credit", $data);
+        $this->load->view("manager/monthly/monthly_credit", $data);
         $this->load->view("containner/script");
     }
 
@@ -483,7 +484,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_credit_allbranch", $data);
+        $this->load->view("manager/monthly/monthly_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
 
@@ -498,7 +499,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/credit_branch");
+        $this->load->view("manager/monthly/credit_branch");
         $this->load->view("containner/script");
     }
 
@@ -512,7 +513,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/credit_allbranch");
+        $this->load->view("manager/monthly/credit_allbranch");
         $this->load->view("containner/script");
     }
 
@@ -528,7 +529,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/credit_type_allbranch");
+        $this->load->view("manager/monthly/credit_type_allbranch");
         $this->load->view("containner/script");
     }
 
@@ -543,7 +544,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/deptor_branch_report");
+        $this->load->view("manager/monthly/deptor_branch_report");
         $this->load->view("containner/script");
     }
 
@@ -557,7 +558,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/deptor_branch_report");
+        $this->load->view("manager/monthly/deptor_branch_report");
         $this->load->view("containner/script");
     }
 
@@ -573,7 +574,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/deptor_typeallbranch_report");
+        $this->load->view("manager/monthly/deptor_typeallbranch_report");
         $this->load->view("containner/script");
     }
 
@@ -588,7 +589,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/monthly_payment", $data);
+        $this->load->view("manager/monthly/monthly_payment", $data);
         $this->load->view("containner/script");
     }
 
@@ -603,7 +604,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("monthly/shared_deposit_report", $data);
+        $this->load->view("manager/monthly/shared_deposit_report", $data);
         $this->load->view("containner/script");
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -618,7 +619,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_inout", $data);
+        $this->load->view("manager/yearly/yearly_inout", $data);
         $this->load->view("containner/script");
     }
 
@@ -647,7 +648,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_share_capital", $data);
+        $this->load->view("manager/yearly/yearly_share_capital", $data);
         $this->load->view("containner/script");
     }
 
@@ -662,7 +663,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_deposit_account_type", $data);
+        $this->load->view("manager/yearly/yearly_deposit_account_type", $data);
         $this->load->view("containner/script");
     }
 
@@ -677,7 +678,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_deposit_account_branch", $data);
+        $this->load->view("manager/yearly/yearly_deposit_account_branch", $data);
         $this->load->view("containner/script");
     }
 
@@ -693,7 +694,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_credit", $data);
+        $this->load->view("manager/yearly/yearly_credit", $data);
         $this->load->view("containner/script");
     }
 
@@ -707,7 +708,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_credit_allbranch", $data);
+        $this->load->view("manager/yearly/yearly_credit_allbranch", $data);
         $this->load->view("containner/script");
     }
 
@@ -721,7 +722,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_payment", $data);
+        $this->load->view("manager/yearly/yearly_payment", $data);
         $this->load->view("containner/script");
     }
 
@@ -735,7 +736,7 @@ class Manager extends CI_Controller
         $this->load->view("containner/head");
         $this->load->view("containner/header_officer", $data_officer);
         $this->load->view("containner/sidebar_manager");
-        $this->load->view("yearly/yearly_shared_deposit_report", $data);
+        $this->load->view("manager/yearly/yearly_shared_deposit_report", $data);
         $this->load->view("containner/script");
     }
 }

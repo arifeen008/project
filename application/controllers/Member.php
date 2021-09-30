@@ -5,6 +5,7 @@ class Member extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		// $this->load->library('session');
 		$this->load->model('member_model');
 	}
 
@@ -37,7 +38,7 @@ class Member extends CI_Controller
 			$this->load->view("containner/head");
 			$this->load->view("containner/header_member", $login_result);
 			$this->load->view("containner/sidebar_member");
-			$this->load->view("data_member", $login_result);
+			$this->load->view("member/data_member/data_member", $login_result);
 			$this->load->view("containner/script");
 		} else {
 			$this->load->view("containner/head");
@@ -130,7 +131,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("data_member", $data);
+		$this->load->view("member/data_member/data_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -174,7 +175,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data_member);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("share_member", $data);
+		$this->load->view("member/share_member/share_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -187,7 +188,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("deposit_member", $data2);
+		$this->load->view("member/deposit_member/deposit_member", $data2);
 		$this->load->view("containner/script");
 	}
 
@@ -200,7 +201,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("deposit_member_seedata", $dataaccount);
+		$this->load->view("member/deposit_member/deposit_member_seedata", $dataaccount);
 		$this->load->view("containner/script");
 	}
 
@@ -217,7 +218,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("deposit_member_seeaccount", $data2);
+		$this->load->view("member/deposit_member/deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");
 	}
 
@@ -230,13 +231,12 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("deposit_member_seeaccount", $data2);
+		$this->load->view("member/deposit_member/deposit_member_seeaccount", $data2);
 		$this->load->view("containner/script");
 	}
 
-	public function credit_member()
+	public function credit_member_open()
 	{
-		$id_card = $this->session->userdata('ID_CARD');
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
@@ -244,11 +244,11 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("credit_member", $data2);
+		$this->load->view("member/credit_member_open/credit_member_open", $data2);
 		$this->load->view("containner/script");
 	}
 
-	public function credit_member_detail($code)
+	public function credit_member_open_detail($code)
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
@@ -258,11 +258,11 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("credit_member_detail", $data2);
+		$this->load->view("member/credit_member_open/credit_member_open_detail", $data2);
 		$this->load->view("containner/script");
 	}
 
-	public function checkcredit_member()
+	public function credit_member_close()
 	{
 		$id_card = $this->session->userdata('ID_CARD');
 		$br_no = $this->session->userdata("BR_NO");
@@ -272,11 +272,11 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("checkcredit_member", $data2);
+		$this->load->view("member/credit_member_close/credit_member_close", $data2);
 		$this->load->view("containner/script");
 	}
 
-	public function checkcredit_member_detail($code)
+	public function credit_member_close_detail($code)
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
@@ -286,7 +286,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("checkcredit_member_detail", $data2);
+		$this->load->view("member/credit_member/credit_member_close_detail", $data2);
 		$this->load->view("containner/script");
 	}
 
@@ -299,11 +299,11 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("welfare_member", $data_welfare);
+		$this->load->view("member/welfare_member/welfare_member", $data_welfare);
 		$this->load->view("containner/script");
 	}
 
-	public function requestwelfare_member()
+	public function welfare_member_request()
 	{
 		$id_card = $this->session->userdata('ID_CARD');
 		$br_no = $this->session->userdata("BR_NO");
@@ -313,7 +313,7 @@ class Member extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("requestwelfare_member", $data2);
+		$this->load->view("member/welfare_member_request/welfare_member_request", $data2);
 		$this->load->view("containner/script");
 	}
 }

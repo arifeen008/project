@@ -5,6 +5,7 @@ class Officer extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		// $this->load->library('session');
 		$this->load->model('officer_model');
 	}
 
@@ -40,13 +41,13 @@ class Officer extends CI_Controller
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_manager");
-					$this->load->view("member_share_system");
+					$this->load->view("officer/member_share_system/member_share_system");
 					$this->load->view("containner/script");
 				} else {
 					$this->load->view("containner/head");
 					$this->load->view("containner/header_officer", $data);
 					$this->load->view("containner/sidebar_officer");
-					$this->load->view("member_share_system");
+					$this->load->view("officer/member_share_system/member_share_system");
 					$this->load->view("containner/script");
 				}
 			} else {
@@ -65,25 +66,14 @@ class Officer extends CI_Controller
 		redirect('index', 'refresh');
 	}
 
-	public function data_officer()
+	public function member_share_system()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
-		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("data_officer");
-		$this->load->view("containner/script");
-	}
-
-	public function goto_data_officer()
-	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer");
-		$this->load->view("data_officer");
+		$this->load->view("officer/member_share_system/member_share_system");
 		$this->load->view("containner/script");
 	}
 
@@ -94,7 +84,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("deposit_system");
+		$this->load->view("officer/deposit_system/deposit_system");
 		$this->load->view("containner/script");
 	}
 
@@ -109,7 +99,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("depositreport_summary", $data2);
+		$this->load->view("officer/deposit_system/depositreport_summary", $data2);
 		$this->load->view("containner/script");
 	}
 
@@ -123,7 +113,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("account_book_balance", $data);
+		$this->load->view("officer/deposit_system/account_book_balance", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -134,7 +124,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("credit_system");
+		$this->load->view("officer/credit_system/credit_system");
 		$this->load->view("containner/script");
 	}
 
@@ -150,7 +140,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("listdatacredit_member", $data);
+		$this->load->view("officer/credit_system/listdatacredit_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -163,7 +153,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("credit_officer", $data);
+		$this->load->view("officer/credit_system/credit_officer", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -176,7 +166,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("credit_officer_detail", $data);
+		$this->load->view("officer/credit_system/credit_officer_detail", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -192,7 +182,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("listclosedcredit_member", $data);
+		$this->load->view("officer/credit_system/listclosedcredit_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -205,7 +195,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("closed_credit_officer", $data);
+		$this->load->view("officer/credit_system/closed_credit_officer", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -218,20 +208,11 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("closed_credit_officer_detail", $data);
+		$this->load->view("officer/credit_system/closed_credit_officer_detail", $data);
 		$this->load->view("containner/script");
 	}
 
-	public function member_share_system()
-	{
-		$user_id = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer");
-		$this->load->view("member_share_system");
-		$this->load->view("containner/script");
-	}
+
 
 	public function seedata_member($mem_id, $branch_number)
 	{
@@ -241,7 +222,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("seedata_member", $data);
+		$this->load->view("officer/member_share_system/seedata_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -256,7 +237,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("listdata_member", $data);
+		$this->load->view("officer/member_share_system/listdata_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -272,7 +253,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("listdatashare_member", $data);
+		$this->load->view("officer/member_share_system/listdatashare_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -285,22 +266,22 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("datashare_member", $data);
+		$this->load->view("officer/member_share_system/datashare_member", $data);
 		$this->load->view("containner/script");
 	}
 
-	public function welfare_system()
+	public function takaful_system()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("welfare_system");
+		$this->load->view("officer/takaful_system/takaful_system");
 		$this->load->view("containner/script");
 	}
 
-	public function welfare_member()
+	public function takaful_member()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$mem_id = $this->input->post('mem_id');
@@ -311,7 +292,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("seewelfare_member", $data);
+		$this->load->view("officer/takaful_system/takaful_member", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -324,7 +305,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("reportmember_system");
+		$this->load->view("officer/report_member_system/report_member_system");
 		$this->load->view("containner/script");
 	}
 
@@ -345,11 +326,11 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("searchreport_member", $data);
+		$this->load->view("officer/report_member_system/searchreport_member", $data);
 		$this->load->view("containner/script");
 	}
 
-	public function reportexcel_member($branch_number,$start,$to)
+	public function reportexcel_member($branch_number, $start, $to)
 	{
 		$this->load->library('excel');
 		$object = new PHPExcel();
@@ -392,11 +373,11 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("searchreport_member_allbranch", $data);
+		$this->load->view("officer/report_member_system/searchreport_member_allbranch", $data);
 		$this->load->view("containner/script");
 	}
 
-	public function reportexcel_member_allbranch($start,$to)
+	public function reportexcel_member_allbranch($start, $to)
 	{
 		$this->load->library('excel');
 		$object = new PHPExcel();
