@@ -3,7 +3,7 @@
         <h1>รายงานสมาชิกหุ้นเลือกสาขา</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/searchreport_member') ?>" method="post">
+        <form action="<?php echo site_url('manager/searchreport_member') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
@@ -49,7 +49,7 @@
         <h1>รายงานสมาชิกหุ้นทุกสาขา</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/searchreport_member_allbranch') ?>" method="post">
+        <form action="<?php echo site_url('manager/searchreport_member_allbranch') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
