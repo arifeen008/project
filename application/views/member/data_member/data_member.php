@@ -195,12 +195,6 @@ include_once("application/libraries/Thaidate.php");
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col">
-                    <p align="center"><a href="<?php echo site_url('member/editdata_member') ?>" class="btn btn-success btn-sm">แก้ไขข้อมูล</a></p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
