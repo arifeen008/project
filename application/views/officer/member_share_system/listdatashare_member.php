@@ -3,7 +3,8 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>รายชื่อสมาชิกที่ค้นหา</h1>
         </div>
-        <table class="table table-striped">
+        <p align="right"><?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
+        <table class="table table-hover">
             <thead>
                 <tr align="center">
                     <td>ลำดับ</td>
