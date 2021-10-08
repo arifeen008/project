@@ -44,13 +44,6 @@ class Member_model extends CI_Model
         return $query->row();
     }
 
-    // public function data_member2($ID_CARD)
-    // {
-    //     $this->db->where('ID_CARD', $ID_CARD);
-    //     $query = $this->db->get('MEM_H_MEMBER');
-    //     return $query->row();
-    // }
-
     public function updatephone_member($MOBILE_TEL, $LINE_ID, $EMAIL, $ID_CARD)
     {
         $data = array(
@@ -74,11 +67,11 @@ class Member_model extends CI_Model
         return $query->row();
     }
 
-    public function share_member_detail($BR_NO, $MEM_ID)
+    public function share_member_detail($br_no, $mem_id)
     {
-        $this->db->select('SLIP_NO,SHR_NA,TMP_DATE_TODAY,SHR_SUM_BTH,TMP_SHARE_QTY,TMP_SHARE_BHT');
-        $this->db->where('SHR_T_SHARE.BR_NO', $BR_NO);
-        $this->db->where('SHR_T_SHARE.MEM_ID', $MEM_ID);
+        $this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT');
+        $this->db->where('SHR_T_SHARE.BR_NO', $br_no);
+        $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
         $this->db->join('SHR_TBL', 'SHR_TBL.SHR_NO = SHR_T_SHARE.SHR_NO');
         $this->db->order_by('SHR_T_SHARE.TMP_DATE_TODAY', 'ASC');
         $result = $this->db->get('SHR_T_SHARE');
