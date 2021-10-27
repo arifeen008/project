@@ -4,7 +4,7 @@
             <h1>รายชื่อสมาชิกที่ค้นหา</h1>
         </div>
         <p align="right"><?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr align="center">
                     <td>ลำดับ</td>

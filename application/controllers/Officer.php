@@ -5,7 +5,7 @@ class Officer extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		// $this->load->library('session');
+		
 		$this->load->model('officer_model');
 	}
 
@@ -219,12 +219,29 @@ class Officer extends CI_Controller
 
 	public function listdata_member()
 	{
+		$this->load->library('pagination');
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');
-		$data['result'] = $this->officer_model->listdata_member($fname, $lname, $branch_number);
+
+		$config = array();
+		$config['base_url'] = base_url('Officer/listdata_member');
+		$config['total_rows'] = $this->officer_model->num_listdata_member($fname, $lname, $branch_number);
+		$config['per_page'] = 10;
+		$config['uri_segment'] = 3;
+		$choice = $config['total_rows'] / $config['per_page'];
+		$config['num_links'] = round($choice);
+
+		$this->pagination->initialize($config);
+
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$data['result'] = $this->officer_model->listdata_member($fname, $lname, $branch_number, $config['per_page'], $page);
+		$data['link'] = $this->pagination->create_links();
+		$data['total_rows'] = $config['total_rows'];
+		
+
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
@@ -236,7 +253,6 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');

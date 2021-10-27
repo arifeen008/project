@@ -8,7 +8,7 @@ include_once("application/libraries/Thaidate.php");
             <h1>ข้อมูลหุ้น</h1>
         </div>
 
-        <table class="table table-striped">
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr align="center">
                     <td>เลขที่สมาชิก</td>

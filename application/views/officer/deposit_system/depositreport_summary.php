@@ -8,7 +8,7 @@ include_once("application/libraries/Thaidate.php");
             <h1>เงินฝากพนักงานประจำวัน</h1>
         </div>
         <div class="col">
-            <table class="table table-striped">
+            <table class="table table-bordered table-hover">
                 <thead>
                     <tr align="center">
                         <td>วันที่</td>

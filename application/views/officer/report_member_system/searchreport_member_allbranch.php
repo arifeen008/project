@@ -5,7 +5,7 @@
         </div>
         <p align="right"><a href="<?php echo site_url('officer/reportexcel_member_allbranch/' . $variable['start'] . '/' . $variable['to']) ?>" class="btn btn-success mb-2">ดูไฟล์ Excel</a></p>
         <p align="right"><?php echo 'ผลการค้นหา  ' .  number_format($result->num_rows()) . ' รายการ' ?> </p>
-        <table class="table table-striped">
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr align="center">
                     <td>สาขา</td>

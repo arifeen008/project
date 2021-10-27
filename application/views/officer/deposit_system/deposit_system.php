@@ -13,7 +13,7 @@
                         </div>
                         <div class="col">
                             <label for="end">ถึง :</label>
-                            <input type="date" class="form-control" id="end" name="enddate" value="<?php echo date("Y-m-d", strtotime("+1 day")); ?>">
+                            <input type="date" class="form-control" id="end" name="enddate" value="<?php echo date("Y-m-d", strtotime("+1 day")); ?>" >
                         </div>
                     </div>
                 </div>
