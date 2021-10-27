@@ -14,7 +14,9 @@
                     <td></td>
                 </tr>
             </thead>
-           
+            <?php if ($result->result() == null) { ?>
+                <td colspan="5" align="center">ไม่มีข้อมูล</td>
+            <?php  } ?>
             <?php $i = 1 ?>
             <?php foreach ($result->result() as $row) { ?>
                 <tr align="center">
@@ -27,14 +29,14 @@
             <?php } ?>
         </table>
         <div class="row">
-        <div class="col-sm-2">
+            <!-- <div class="col-sm-2">
                 <div id="example_info" class="dataTables_info" role="status" aria-live="polite">
-            
+
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-4">
                 <div id="example_paginate" class="dataTables_paginate paging_simple_numbers">
-                    <?php echo $link; ?>
+                    <?php echo $link ?>
                 </div>
             </div>
         </div>

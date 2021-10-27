@@ -219,15 +219,12 @@ class Officer extends CI_Controller
 
 	public function listdata_member()
 	{
-		$this->load->library('pagination');
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');
-
-		$config = array();
-		$config['base_url'] = base_url('Officer/listdata_member');
+		$config['base_url'] = site_url('officer/listdata_member');
 		$config['total_rows'] = $this->officer_model->num_listdata_member($fname, $lname, $branch_number);
 		$config['per_page'] = 10;
 		$config['uri_segment'] = 3;
