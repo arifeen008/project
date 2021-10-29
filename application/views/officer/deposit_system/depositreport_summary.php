@@ -8,26 +8,25 @@ include_once("application/libraries/Thaidate.php");
             <h1>เงินฝากพนักงานประจำวัน</h1>
         </div>
         <div class="col">
-            <table class="table table-bordered table-hover">
+            <table class="table" id="myTable">
                 <thead>
-                    <tr align="center">
+                    <tr>
                         <td>วันที่</td>
                         <td>เงินฝาก</td>
                         <td>เงินถอน </td>
                         <td>ยอดคงเหลือ </td>
                     </tr>
                 </thead>
-                <?php if ($result->result() == null) { ?>
-                    <td colspan="4" align="center">ไม่มีข้อมูลในช่วงเวลาดังกล่าว</td>
-                <?php  } ?>
-                <?php foreach ($result->result() as $row) { ?>
-                    <tr align="center">
-                        <td><?= thaidate('j M Y ', strtotime($row->F_DATE)) ?></td>
-                        <td><?= number_format($row->F_DEP, 2) ?></td>
-                        <td><?= number_format($row->F_WDL, 2) ?></td>
-                        <td><?= number_format($row->F_BALANCE, 2) ?></td>
-                    </tr>
-                <?php } ?>
+                <tbody>
+                    <?php foreach ($result->result() as $row) { ?>
+                        <tr>
+                            <td><?= thaidate('j M Y ', strtotime($row->F_DATE)) ?></td>
+                            <td><?= number_format($row->F_DEP, 2) ?></td>
+                            <td><?= number_format($row->F_WDL, 2) ?></td>
+                            <td><?= number_format($row->F_BALANCE, 2) ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
         </div>
     </div>

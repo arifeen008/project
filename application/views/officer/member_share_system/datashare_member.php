@@ -8,7 +8,7 @@ include_once("application/libraries/Thaidate.php");
             <h1>ข้อมูลหุ้น</h1>
         </div>
 
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered">
             <thead>
                 <tr align="center">
                     <td>เลขที่สมาชิก</td>
@@ -28,7 +28,7 @@ include_once("application/libraries/Thaidate.php");
             </tr>
         </table>
         <br>
-        <table class="table table-success table-striped">
+        <table class="table table-hover" id="myTable">
             <thead>
                 <tr align="center">
                     <td>เลขที่ใบเสร็จ</td>
@@ -39,19 +39,18 @@ include_once("application/libraries/Thaidate.php");
                     <td>จำนวนเงินคงเหลือ</td>
                 </tr>
             </thead>
-            <?php if ($result->result() == null) { ?>
-                <td colspan="6" align="center">ไม่มีข้อมูลหุ้น</td>
-            <?php  } ?>
-            <?php foreach ($result->result() as $row) { ?>
-                <tr align="center">
-                    <td><?= $row->SLIP_NO ?></td>
-                    <td><?= $row->SHR_NA ?></td>
-                    <td><?= $row->TMP_SHARE_QTY ?></td>
-                    <td><?= $row->TMP_SHARE_BHT ?></td>
-                    <td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
-                    <td><?= $row->SHR_SUM_BTH ?></td>
-                </tr>
-            <?php } ?>
+            <tbody>
+                <?php foreach ($result->result() as $row) { ?>
+                    <tr align="center">
+                        <td><?= $row->SLIP_NO ?></td>
+                        <td><?= $row->SHR_NA ?></td>
+                        <td><?= $row->TMP_SHARE_QTY ?></td>
+                        <td><?= $row->TMP_SHARE_BHT ?></td>
+                        <td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
+                        <td><?= $row->SHR_SUM_BTH ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
         </table>
     </div>
 </div>

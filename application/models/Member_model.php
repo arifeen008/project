@@ -147,26 +147,7 @@ class Member_model extends CI_Model
         return $result;
     }
 
-    public function getaccount_member($account_number)
-    {
-        $this->db->select('ACCOUNT_NO');
-        $this->db->where('ACCOUNT_NO', $account_number);
-        $result = $this->db->get('BK_H_SAVINGACCOUNT');
-        return $result->row();
-    }
-
-    public function deposit_member_seeaccount($account_number, $startdate, $enddate)
-    {
-        $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
-        $this->db->where('F_FROM_ACC', $account_number);
-        $this->db->where('F_TIME >=', $startdate);
-        $this->db->where('F_TIME <=', $enddate);
-        $this->db->order_by('F_TIME', 'ASC');
-        $result = $this->db->get('BK_T_FINANCE');
-        return $result;
-    }
-
-    public function deposit_member_seeaccount_allday($account_number)
+    public function data_deposit_member($account_number)
     {
         $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
         $this->db->where('F_FROM_ACC', $account_number);

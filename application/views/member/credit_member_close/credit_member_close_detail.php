@@ -55,7 +55,7 @@ include_once("application/libraries/Thaidate.php");
         </tbody>
     </table>
 
-    <table class="table table-striped">
+    <table class="table table-hover" id="myTable">
         <thead>
             <tr align="center">
                 <td>วันที่</td>
@@ -65,18 +65,16 @@ include_once("application/libraries/Thaidate.php");
                 <td></td>
             </tr>
         </thead>
-        <?php if ($result->result() == null) { ?>
-            <td colspan="4" align="center">ไม่มีรายละเอียดในสินเชื่อที่ปิดไปแล้วนี้</td>
-        <?php  } ?>
-        <?php foreach ($result->result() as $row) { ?>
-            <tr align="center">
-                <td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
-                <td><?= $row->LPD_NUM_INST ?></td>
-                <td><?= number_format($row->SUM_SAL, 2) ?></td>
-                <td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
-
-            </tr>
-        <?php } ?>
+        <tbody>
+            <?php foreach ($result->result() as $row) { ?>
+                <tr align="center">
+                    <td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
+                    <td><?= $row->LPD_NUM_INST ?></td>
+                    <td><?= number_format($row->SUM_SAL, 2) ?></td>
+                    <td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
     </table>
 
 </div>

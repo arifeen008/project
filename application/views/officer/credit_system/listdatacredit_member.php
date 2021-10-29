@@ -2,28 +2,27 @@
     <div class="col-12">
         <br><br><br><br>
         <div class="col">
-            <table class="table table-hover">
+            <table class="table" id="myTable">
                 <thead>
-                    <tr align="center">
-                        <td>รหัสสมาชิก</td>
-                        <td>ชื่อ</td>
-                        <td>นามสกุล</td>
-                        <td>สาขา</td>
-                        <td></td>
+                    <tr>
+                        <th>รหัสสมาชิก</ะ>
+                        <th>ชื่อ</th>
+                        <th>นามสกุล</th>
+                        <th>สาขา</th>
+                        <th></th>
                     </tr>
                 </thead>
-                <?php if ($result->result() == null) { ?>
-                    <td colspan="4" align="center">ไม่มีข้อมูล</td>
-                <?php  } ?>
-                <?php foreach ($result->result() as $row) { ?>
-                    <tr align="center">
-                        <td><?= $row->MEM_ID ?></td>
-                        <td><?= $row->FNAME ?></td>
-                        <td><?= $row->LNAME ?></td>
-                        <td><?= $row->BR_NAME ?></td>
-                        <td><a href="<?php echo site_url('officer/credit_officer/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
-                    </tr>
-                <?php } ?>
+                <tbody>
+                    <?php foreach ($result->result() as $row) { ?>
+                        <tr>
+                            <td><?= $row->MEM_ID ?></td>
+                            <td><?= $row->FNAME ?></td>
+                            <td><?= $row->LNAME ?></td>
+                            <td><?= $row->BR_NAME ?></td>
+                            <td><a href="<?php echo site_url('officer/credit_officer/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
         </div>
     </div>

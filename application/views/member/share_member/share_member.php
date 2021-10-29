@@ -25,7 +25,7 @@ include_once("application/libraries/Thaidate.php");
 
     </table>
     <br>
-    <table class="table table-striped">
+    <table class="table table-hover" id="myTable">
         <thead>
             <tr align="center">
                 <td>เลขที่ใบเสร็จ</td>
@@ -36,15 +36,18 @@ include_once("application/libraries/Thaidate.php");
                 <td>เงินคงเหลือ </td>
             </tr>
         </thead>
-        <?php foreach ($detail->result() as $row) { ?>
-            <tr align="center">
-                <td><?= $row->SLIP_NO ?></td>
-                <td><?= $row->SHR_NA ?></td>
-                <td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
-                <td><?= $row->TMP_SHARE_QTY; ?></td>
-                <td><?= number_format($row->TMP_SHARE_BHT, 2)  ?></td>
-                <td><?= number_format($row->SHR_SUM_BTH, 2)  ?></td>
-            </tr>
-        <?php } ?>
+        <tbody>
+            <?php foreach ($detail->result() as $row) { ?>
+                <tr align="center">
+                    <td><?= $row->SLIP_NO ?></td>
+                    <td><?= $row->SHR_NA ?></td>
+                    <td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
+                    <td><?= $row->TMP_SHARE_QTY; ?></td>
+                    <td><?= number_format($row->TMP_SHARE_BHT, 2)  ?></td>
+                    <td><?= number_format($row->SHR_SUM_BTH, 2)  ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+
     </table>
 </div>

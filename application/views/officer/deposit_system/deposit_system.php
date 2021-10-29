@@ -27,25 +27,28 @@
         <h1>เงินฝากในบัญชีสมาชิก</h1>
     </div>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/account_book_balance') ?>" method="post">
+        <form action="<?php echo site_url('officer/list_deposit_member') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
                             <label for="mem_id">เลขบัญชี :</label>
-                            <input class="form-control" type="text" placeholder="เลขบัญชี..." name="account_number" required>
+                            <input class="form-control" type="text" placeholder="เลขบัญชี..." name="account_number">
                         </div>
-
+                        <div class="col">
+                            <label for="mem_id">เลขสมาชิก :</label>
+                            <input class="form-control" type="text" placeholder="เลขสมาชิก..." name="mem_id">
+                        </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col">
                             <label for="mem_id">ชื่อ :</label>
-                            <input class="form-control" type="text" name="">
+                            <input class="form-control" type="text" placeholder="กรุณาใส่ชื่อ" name="fname">
                         </div>
                         <div class="col">
                             <label for="mem_id">นามสกุล :</label>
-                            <input class="form-control" type="text" name="">
+                            <input class="form-control" type="text" placeholder="กรุณาใส่นามสกุล" name="lname">
                         </div>
                     </div>
                     <br>

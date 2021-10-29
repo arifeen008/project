@@ -94,17 +94,32 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function account_book_balance()
+	public function list_deposit_member()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$account_number = $this->input->post('account_number');
+		$mem_id = $this->input->post('mem_id');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$branch_number = $this->input->post('branch_number');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->officer_model->account_book_balance($account_number);
-		$data['detail'] = $this->officer_model->detail_deposit($account_number);
+		$data['result'] = $this->officer_model->list_deposit_member($account_number, $mem_id, $fname, $lname, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("officer/deposit_system/account_book_balance", $data);
+		$this->load->view("officer/deposit_system/list_deposit_member", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function deposit_member_detail($account_number)
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->deposit_member_detail($account_number);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/deposit_system/deposit_member_detail", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -232,18 +247,18 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function listdatashare_member()
+	public function list_datashare_member()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');
-		$data['result'] = $this->officer_model->listdatashare_member($fname, $lname, $branch_number);
+		$data['result'] = $this->officer_model->list_datashare_member($fname, $lname, $branch_number);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("officer/member_share_system/listdatashare_member", $data);
+		$this->load->view("officer/member_share_system/list_datashare_member", $data);
 		$this->load->view("containner/script");
 	}
 

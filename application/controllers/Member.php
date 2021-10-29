@@ -155,46 +155,16 @@ class Member extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function deposit_member_seedata($ACCOUNT_NO)
+	public function data_deposit_member($ACCOUNT_NO)
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$dataaccount['result'] = $this->member_model->getaccount_member($ACCOUNT_NO);
+		$data_account['result'] = $this->member_model->data_deposit_member($ACCOUNT_NO);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
-		$this->load->view("member/deposit_member/deposit_member_seedata", $dataaccount);
-		$this->load->view("containner/script");
-	}
-
-	public function deposit_member_seeaccount()
-	{
-		$br_no = $this->session->userdata("BR_NO");
-		$mem_id = $this->session->userdata("MEM_ID");
-		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$account_number = $this->input->post("account_number");
-		$startdate = $this->input->post('startdate');
-		$enddate = $this->input->post('enddate');
-
-		$data2['result'] = $this->member_model->deposit_member_seeaccount($account_number, $startdate, $enddate);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_member", $data);
-		$this->load->view("containner/sidebar_member");
-		$this->load->view("member/deposit_member/deposit_member_seeaccount", $data2);
-		$this->load->view("containner/script");
-	}
-
-	public function deposit_member_seeaccount_allday($ACCOUNT_NO)
-	{
-		$br_no = $this->session->userdata("BR_NO");
-		$mem_id = $this->session->userdata("MEM_ID");
-		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data2['result'] = $this->member_model->deposit_member_seeaccount_allday($ACCOUNT_NO);
-		$this->load->view("containner/head");
-		$this->load->view("containner/header_member", $data);
-		$this->load->view("containner/sidebar_member");
-		$this->load->view("member/deposit_member/deposit_member_seeaccount", $data2);
+		$this->load->view("member/deposit_member/data_deposit_member", $data_account);
 		$this->load->view("containner/script");
 	}
 

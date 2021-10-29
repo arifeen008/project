@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>ยอดเงินในบัญชี</h1>
         </div>
-        <table class="table table-striped">
+        <!-- <table class="table table-striped">
             <tr>
                 <td>เลขบัญชี</td>
                 <td><?= BankAccount($result->ACCOUNT_NO)   ?></td>
@@ -24,25 +24,27 @@ include_once("application/libraries/Thaidate.php");
                 <td>ยอดที่ถอนได้</td>
                 <td><?= number_format($result->AVAILABLE) ?> บาท</td>
             </tr>
-        </table>
-<br>
-        <table class="table table-success table-striped">
+        </table> -->
+        <br>
+        <table class="table" id="myTable">
             <thead>
                 <tr align="center">
-                    <td>วันที่</td>
-                    <td>เงินฝาก</td>
-                    <td>เงินถอน</td>
-                    <td>ยอดเงินคงเหลือ</td>
+                    <th>วันที่</th>
+                    <th>เงินฝาก</th>
+                    <th>เงินถอน</th>
+                    <th>ยอดเงินคงเหลือ</th>
                 </tr>
             </thead>
-            <?php foreach ($detail->result() as $row) { ?>
-                <tr align="center">
-                    <td><?= thaidate('j M Y ', strtotime($row->F_TIME)) ?></td>
-                    <td><?= number_format($row->F_DEP, 2) ?></td>
-                    <td><?= number_format($row->F_WDL, 2) ?></td>
-                    <td><?= number_format($row->F_BALANCE, 2) ?></td>
-                </tr>
-            <?php } ?>
+            <tbody>
+                <?php foreach ($result->result() as $row) { ?>
+                    <tr align="center">
+                        <td><?= thaidate('j M Y ', strtotime($row->F_TIME)) ?></td>
+                        <td><?= number_format($row->F_DEP, 2) ?></td>
+                        <td><?= number_format($row->F_WDL, 2) ?></td>
+                        <td><?= number_format($row->F_BALANCE, 2) ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
         </table>
     </div>
 </div>

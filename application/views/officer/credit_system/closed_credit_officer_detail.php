@@ -56,32 +56,28 @@ include_once("application/libraries/Thaidate.php");
             </tbody>
         </table>
 
-        <div class="col">
-            <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr align="center">
-                            <td>วันที่</td>
-                            <td>งวดที่</td>
-                            <td>ยอดชำระ</td>
-                            <td>ยอดคงเหลือ</td>
-                            <td></td>
-                        </tr>
-                    </thead>
-                    <?php if ($result->result() == null) { ?>
-                        <td colspan="4" align="center">ไม่มีรายละเอียดในสินเชื่อที่ปิดไปแล้วนี้</td>
-                    <?php  } ?>
-                    <?php foreach ($result->result() as $row) { ?>
-                        <tr align="center">
-                            <td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
-                            <td><?= $row->LPD_NUM_INST ?></td>
-                            <td><?= number_format($row->SUM_SAL, 2) ?></td>
-                            <td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
 
-                        </tr>
-                    <?php } ?>
-                </table>
-            </div>
-        </div>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>วันที่</th>
+                    <th>งวดที่</th>
+                    <th>ยอดชำระ</th>
+                    <th>ยอดคงเหลือ</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($result->result() as $row) { ?>
+                    <tr>
+                        <td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
+                        <td><?= $row->LPD_NUM_INST ?></td>
+                        <td><?= number_format($row->SUM_SAL, 2) ?></td>
+                        <td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+
     </div>
 </div>

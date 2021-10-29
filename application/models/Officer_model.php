@@ -162,17 +162,21 @@ class Officer_model extends CI_Model
         return $result->row();
     }
 
-    public function account_book_balance($account_number)
+    public function list_deposit_member($account_number, $mem_id, $fname, $lname, $branch_number)
     {
-        $this->db->select('ACCOUNT_NO,ACCOUNT_NAME,BALANCE,AVAILABLE');
-        $this->db->where('ACCOUNT_NO', $account_number);
-        $this->db->group_by('ACCOUNT_NO,ACCOUNT_NAME,BALANCE,AVAILABLE');
-        $this->db->order_by('ACCOUNT_NO', 'ASC');
+        $this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
+        $this->db->like('BK_H_SAVINGACCOUNT.ACCOUNT_NO', $account_number);
+        $this->db->like('MEM_H_MEMBER.MEM_ID', $mem_id);
+        $this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+        $this->db->like('MEM_H_MEMBER.FNAME', $fname);
+        $this->db->like('MEM_H_MEMBER.LNAME', $lname);
+        $this->db->join('BK_M_BRANCH', 'BK_H_SAVINGACCOUNT.BR_NO = BK_M_BRANCH.BR_NO');
+        $this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = BK_H_SAVINGACCOUNT.MEM_ID AND MEM_H_MEMBER.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
         $result = $this->db->get('BK_H_SAVINGACCOUNT');
-        return $result->row();
+        return $result;
     }
 
-    public function detail_deposit($account_number)
+    public function deposit_member_detail($account_number)
     {
         $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
         $this->db->where('F_FROM_ACC', $account_number);
@@ -181,7 +185,7 @@ class Officer_model extends CI_Model
         return $result;
     }
 
-    public function listdatashare_member($fname, $lname, $branch_number)
+    public function list_datashare_member($fname, $lname, $branch_number)
     {
         $this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
         $this->db->like('MEM_H_MEMBER.FNAME', $fname);
@@ -232,7 +236,7 @@ class Officer_model extends CI_Model
         $query = $this->db->get('MEM_H_MEMBER');
         return $query;
     }
-    
+
     public function numlistdata_member($fname, $lname, $branch_number)
     {
         $this->db->select('MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME,MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO');

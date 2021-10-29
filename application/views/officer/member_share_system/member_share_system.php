@@ -46,7 +46,7 @@
 
     <h4>ข้อมูลใบเสร็จหุ้นสมาชิก</h4>
     <div class="card border-success">
-        <form action="<?php echo site_url('officer/listdatashare_member') ?>" method="post">
+        <form action="<?php echo site_url('officer/list_datashare_member') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
