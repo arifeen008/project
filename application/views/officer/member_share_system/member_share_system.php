@@ -51,6 +51,13 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
+                            <label>เลขสมาชิก :</label>
+                            <input type="text" name="mem_id" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
                             <label>ชื่อ :</label>
                             <input type="text" name="fname" class="form-control">
                         </div>

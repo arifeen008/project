@@ -45,9 +45,9 @@ include_once("application/libraries/Thaidate.php");
                         <td><?= $row->SLIP_NO ?></td>
                         <td><?= $row->SHR_NA ?></td>
                         <td><?= $row->TMP_SHARE_QTY ?></td>
-                        <td><?= $row->TMP_SHARE_BHT ?></td>
+                        <td><?= number_format($row->TMP_SHARE_BHT, 2) ?></td>
                         <td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
-                        <td><?= $row->SHR_SUM_BTH ?></td>
+                        <td><?= number_format($row->SHR_SUM_BTH, 2) ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

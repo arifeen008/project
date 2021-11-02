@@ -136,7 +136,10 @@
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-3" type="submit">เข้าสู่ระบบ</button>
                                 <div class="row">
                                     <div class="col">
-                                        <div></div>
+                                        <div class="text-center">
+                                            <a class="small" href="<?php echo site_url('officer/login_officer_page') ?>">เข้าสู่ระบบเจ้าหน้าที่</a>
+                                        </div>
+
                                     </div>
                                     <div class="col">
                                         <div class="text-center">
@@ -144,7 +147,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>

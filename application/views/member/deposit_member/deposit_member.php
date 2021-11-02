@@ -8,7 +8,7 @@ include_once("application/libraries/Thaidate.php");
             <h1>เงินฝาก</h1>
         </div>
 
-        <table class="table table-hover" id="myTable">
+        <table class="table table-hover">
             <thead align="center">
                 <tr>
                     <th>ชื่อบัญชี</th>
@@ -16,7 +16,7 @@ include_once("application/libraries/Thaidate.php");
                     <th>ประเภทบัญชี</th>
                     <th>สาขา</th>
                     <th>ยอดเงินคงเหลือ</th>
-                    <th> </th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +27,8 @@ include_once("application/libraries/Thaidate.php");
                         <td><?= $row->ACC_DESC ?></td>
                         <td><?= $row->BR_NAME ?></td>
                         <td><?= number_format($row->BALANCE, 2) ?></td>
-                        <td><a href="<?php echo site_url('member/data_deposit_member/' . $row->ACCOUNT_NO)  ?>" class="btn btn-success">ดูข้อมูล</a><td>
+                        <td><a href="<?php echo site_url('member/data_deposit_member/' . $row->ACCOUNT_NO)  ?>" class="btn btn-success">ดูข้อมูล</a>
+                        <td>
                     </tr>
                 <?php } ?>
             </tbody>

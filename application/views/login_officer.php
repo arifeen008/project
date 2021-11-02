@@ -134,8 +134,18 @@
                                     <label for="password">กรุณาใส่รหัสผ่าน</label>
                                 </div>
                                 <button class="btn btn-lg btn-success btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">เข้าสู่ระบบ</button>
-                                <div class="text-center">
-                                    <a class="small" href="#">ลืมรหัสผ่าน ?</a>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="text-center">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="text-center">
+                                            <a class="small" href="#">ลืมรหัสผ่าน ?</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>

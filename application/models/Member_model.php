@@ -73,7 +73,7 @@ class Member_model extends CI_Model
         $this->db->where('SHR_T_SHARE.BR_NO', $br_no);
         $this->db->where('SHR_T_SHARE.MEM_ID', $mem_id);
         $this->db->join('SHR_TBL', 'SHR_TBL.SHR_NO = SHR_T_SHARE.SHR_NO');
-        $this->db->order_by('SHR_T_SHARE.TMP_DATE_TODAY', 'ASC');
+        $this->db->order_by('SHR_T_SHARE.TMP_DATE_TODAY', 'DESC');
         $result = $this->db->get('SHR_T_SHARE');
         return $result;
     }
@@ -151,7 +151,7 @@ class Member_model extends CI_Model
     {
         $this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
         $this->db->where('F_FROM_ACC', $account_number);
-        $this->db->order_by('F_TIME', 'ASC');
+        $this->db->order_by('F_TIME', 'DESC');
         $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
