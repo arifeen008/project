@@ -20,9 +20,7 @@ class Index extends CI_Controller
 	public function index()
 	{
 		$this->load->view("containner/zhead");
-		// $this->load->view("containner/header");
-		$this->load->view("index/template/zindex");
-		// $this->load->view("containner/footer_member");
+		$this->load->view("zindex");
 		$this->load->view("containner/zscript");
 	}
 
