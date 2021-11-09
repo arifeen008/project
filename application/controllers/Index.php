@@ -8,13 +8,22 @@ class Index extends CI_Controller
 		$this->load->model('member_model');
 	}
 
+	// public function index()
+	// {
+	// 	$this->load->view("containner/head");
+	// 	$this->load->view("containner/header");
+	// 	$this->load->view("index");
+	// 	// $this->load->view("containner/footer_member");
+	// 	$this->load->view("containner/script");
+	// }
+
 	public function index()
 	{
-		$this->load->view("containner/head");
-		$this->load->view("containner/header");
-		$this->load->view("index");
+		$this->load->view("containner/zhead");
+		// $this->load->view("containner/header");
+		$this->load->view("index/template/zindex");
 		// $this->load->view("containner/footer_member");
-		$this->load->view("containner/script");
+		$this->load->view("containner/zscript");
 	}
 
 	public function board()
