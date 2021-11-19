@@ -99,7 +99,7 @@
 
         </ul>
         <ul class="nav navbar-nav ml-auto">
-            <a href="<?php echo site_url('member/login_member_page') ?>" class="btn btn-light btn-sm text-dark">เข้าสู่ระบบ</a>
+            <a href="<?php echo site_url('member/login_member_page') ?>" class="btn btn-outline-success text-dark bg-light">เข้าสู่ระบบ</a>
         </ul>
     </div>
 </nav>
