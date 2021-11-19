@@ -82,7 +82,7 @@
                 <div class="card border-success mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="<?php echo base_url('picture/S__1776271481.jpg') ?>" style="width: 100%;">
+                            <img src="<?php echo base_url('picture/S__5791785.jpg') ?>" style="width: 100%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -101,7 +101,7 @@
                 <div class="card border-success mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="<?php echo base_url('picture/48142.jpg') ?>" style="width: 100%;">
+                            <img src="<?php echo base_url('picture/qwasd.jpg') ?>" style="width: 100%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -120,7 +120,7 @@
                 <div class="card border-success mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="<?php echo base_url('picture/S__18030647.jpg') ?>" style="width: 100%;">
+                            <img src="<?php echo base_url('picture/S__5791781.jpg') ?>" style="width: 100%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
