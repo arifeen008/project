@@ -9,11 +9,11 @@
                 <a href="<?php echo site_url('index/index') ?>" class="nav-link">Home</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 เกี่ยวกับเรา
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/history_member') ?>">ประวัติความเป็นมา</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/vision_member') ?>">วิสัยทัศน์ พันธกิจ วัตถุประสงค์</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/board_member') ?>">คณะกรรมการและผู้บริหาร</a>
@@ -22,11 +22,11 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 บริการของสหกรณ์
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/register_member') ?>">สมัครสมาชิก</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/deposit_member') ?>">บริการเงินฝาก</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/credit_member') ?>">บริการสินเชื่อ</a>
@@ -34,11 +34,11 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 สวัสดิการของสมาชิก
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/marry_member') ?>">สวัสดิการแต่งงาน</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/maternity_member') ?>">สวัสดิการคลอดบุตร</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/oldage_member') ?>">สวัสดิการเงินสมทบยามชรา</a>
@@ -48,11 +48,11 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ข่าวสาร/อัพเดต
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/promotion_member') ?>">โปรโมชั่น</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/activity_member') ?>">กิจกรรม</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/calendar_member') ?>">ปฏิทินสหกรณ์</a>
@@ -60,11 +60,11 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 โครงการของสหกรณ์
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/stadium_member') ?>">โครงการสนามหญ้าเทียม SKF Stadium</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/village_member') ?>">โครงการหมู่บ้านษะกอฟะฮ์</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/gasstation_member') ?>">โครงการปั้มน้ำมันเซลล์</a>
@@ -74,23 +74,23 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ดาวน์โหลด
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo site_url('index/document_member') ?>">เอกสารสำหรับสมาชิก</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/report_member') ?>">รายงานกิจการ</a>
 
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <div class="dropdown">
+                    <li class="nav-item dropdown sm-menu">
+                        <div class="dropdown dmenu">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ติดต่อเรา
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="https://docs.google.com/forms/d/1Ze7m2Q6Jr25YafvvBhpU9BiVXpwMNrWwvmWs6yJjTDY/viewform?edit_requested=true">แบบประเมินการให้บริการ</a>
                                 <a class="dropdown-item" href="<?php echo site_url('index/withus_member') ?>">ร่วมงานกับเรา</a>
                             </div>

@@ -237,17 +237,6 @@ class Officer_model extends CI_Model
         return $query;
     }
 
-    public function numlistdata_member($fname, $lname, $branch_number)
-    {
-        $this->db->select('MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME,MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO');
-        $this->db->like('MEM_H_MEMBER.FNAME', $fname);
-        $this->db->like('MEM_H_MEMBER.LNAME', $lname);
-        $this->db->where('MEM_H_MEMBER.BR_NO', $branch_number);
-        $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
-        $query = $this->db->get('MEM_H_MEMBER');
-        return $query;
-    }
-
     public function welfare_member($mem_id, $br_no)
     {
         $this->db->select('WEL_H_MEMBER.MEM_ID,BK_M_BRANCH.BR_NAME,WEL_H_MEMBER.EXCHG_DATE');
