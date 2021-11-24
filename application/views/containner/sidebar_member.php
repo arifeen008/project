@@ -3,7 +3,7 @@
         <div class="col-sm-3">
             <h1 class="my-2">สมาชิก</h1>
             <div class="list-group border border-success">
-                <a href="<?php echo site_url('member/data_member') ?>" class="list-group-item border border-success  list-group-item-action">ประวัติสมาชิก</a>
+                <a href="<?php echo site_url('member/data_member') ?>" class="list-group-item border border-success  list-group-item-action">ข้อมูลส่วนตัว</a>
                 <a href="<?php echo site_url('member/welfare_member') ?>" class="list-group-item border border-success  list-group-item-action">สวัสดิการสมาชิก</a>
                 <a href="<?php echo site_url('member/welfare_member_request') ?>" class="list-group-item border border-success  list-group-item-action">ยื่นขอรับสวัสดิการ</a>
                 <a href="#" class="list-group-item border border-success  list-group-item-action">ประวัติการยื่นขอรับสวัสดิการ</a>
