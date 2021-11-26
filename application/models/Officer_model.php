@@ -36,7 +36,7 @@ class Officer_model extends CI_Model
         $this->db->where('F_DATE >=', $startdate);
         $this->db->where('F_DATE <=', $enddate);
         $this->db->group_by('F_DATE');
-        $this->db->order_by('F_DATE', 'ASC');
+        $this->db->order_by('F_DATE', 'DESC');
         $result = $this->db->get('BK_T_FINANCE');
         return $result;
     }
@@ -233,8 +233,9 @@ class Officer_model extends CI_Model
         $this->db->like('MEM_H_MEMBER.LNAME', $lname);
         $this->db->where('MEM_H_MEMBER.BR_NO', $branch_number);
         $this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
-        $query = $this->db->get('MEM_H_MEMBER');
-        return $query;
+		$this->db->order_by('MEM_H_MEMBER.FNAME', 'ASC');
+        $result = $this->db->get('MEM_H_MEMBER');
+        return $result;
     }
 
     public function welfare_member($mem_id, $br_no)

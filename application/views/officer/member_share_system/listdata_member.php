@@ -3,10 +3,11 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
             <h1>รายชื่อสมาชิกที่ค้นหา</h1>
         </div>
-        <table class="table" id="myTable">
+        <table class="table table-borderless table-hover" id="myTable">
             <thead>
-                <tr>
+                <tr align="center">
                     <th>ที่</th>
+					<th>เลขที่สมาชิก</th>
                     <th>ชื่อ</th>
                     <th>นามสกุล</th>
                     <th>สาขา</th>
@@ -16,12 +17,13 @@
             <tbody>
                 <?php $i = 1 ?>
                 <?php foreach ($result->result() as $row) { ?>
-                    <tr>
+                    <tr align="center">
                         <td><?= $i++ ?></td>
+						<td><?= $row->MEM_ID ?></td>
                         <td><?= $row->FNAME ?></td>
                         <td><?= $row->LNAME ?></td>
                         <td><?= $row->BR_NAME; ?></td>
-                        <td><a href="<?php echo site_url('officer/seedata_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success">ดูข้อมูล</a></td>
+                        <td><a href="<?php echo site_url('officer/seedata_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success"><i class="fas fa-eye"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

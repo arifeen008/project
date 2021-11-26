@@ -8,9 +8,9 @@ include_once("application/libraries/Thaidate.php");
             <h1>เงินฝากพนักงานประจำวัน</h1>
         </div>
         <div class="col">
-            <table class="table" id="myTable">
+            <table class="table table-borderless table-hover" id="myTable">
                 <thead>
-                    <tr>
+                    <tr align="center">
                         <td>วันที่</td>
                         <td>เงินฝาก</td>
                         <td>เงินถอน </td>
@@ -19,7 +19,7 @@ include_once("application/libraries/Thaidate.php");
                 </thead>
                 <tbody>
                     <?php foreach ($result->result() as $row) { ?>
-                        <tr>
+                        <tr align="center">
                             <td><?= thaidate('j M Y ', strtotime($row->F_DATE)) ?></td>
                             <td><?= number_format($row->F_DEP, 2) ?></td>
                             <td><?= number_format($row->F_WDL, 2) ?></td>

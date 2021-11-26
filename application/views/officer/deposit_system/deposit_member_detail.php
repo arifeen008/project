@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1>ยอดเงินในบัญชี</h1>
         </div>
-        <!-- <table class="table table-striped">
+        <table class="table table-striped">
             <tr>
                 <td>เลขบัญชี</td>
                 <td><?= BankAccount($result->ACCOUNT_NO)   ?></td>
@@ -24,9 +24,9 @@ include_once("application/libraries/Thaidate.php");
                 <td>ยอดที่ถอนได้</td>
                 <td><?= number_format($result->AVAILABLE) ?> บาท</td>
             </tr>
-        </table> -->
+        </table>
         <br>
-        <table class="table" id="myTable">
+        <table class="table table-borderless table-hover" id="myTable">
             <thead>
                 <tr align="center">
                     <th>วันที่</th>

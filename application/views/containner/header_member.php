@@ -87,8 +87,8 @@
 						<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;<?php echo $FNAME ?> <?php echo $LNAME ?>&nbsp;&nbsp;&nbsp;
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-							<li><a class="dropdown-item" href="#"><i class="fas fa-key"></i>&nbsp;&nbsp;&nbsp; เปลี่ยนรหัสผ่าน</a></li>
 							<li><a class="dropdown-item" href="<?php echo site_url('member/data_member') ?>"><i class="far fa-eye"></i>&nbsp;&nbsp;&nbsp;ดูข้อมูลของผู้ใช้</a></li>
+							<li><a class="dropdown-item" href="#"><i class="fas fa-key"></i>&nbsp;&nbsp;&nbsp; เปลี่ยนรหัสผ่าน</a></li>
 							<div class="dropdown-divider"></div>
 							<li><a class="dropdown-item" href="<?php echo site_url('member/logout_member') ?>"><i class="fas fa-door-open"></i>&nbsp;&nbsp;&nbsp;ออกจากระบบ</a></li>
 						</ul>

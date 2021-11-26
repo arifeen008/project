@@ -15,17 +15,15 @@ include_once("application/libraries/Thaidate.php");
                 <td>คะแนนสะสมคงเหลือ</td>
             </tr>
         </thead>
-
         <tr align="center">
             <td><?= $result->MEM_ID ?></td>
             <td><?= $result->BR_NAME ?></td>
             <td><?= number_format($result->SHR_SUM_BTH, 2); ?></td>
             <td><?= $result->POINT_SHR ?></td>
         </tr>
-
     </table>
     <br>
-    <table class="table table-hover" id="myTable">
+    <table class="table table-borderless" id="myTable">
         <thead>
             <tr align="center">
                 <td>เลขที่ใบเสร็จ</td>

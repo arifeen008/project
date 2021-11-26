@@ -4,7 +4,7 @@
 		$('#myTable').dataTable({
 			"ordering": false,
 			"searching": false,
-			"paging": false,
+			"select": false,
 			"oLanguage": {
 				"sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
 				"sZeroRecords": "ไม่เจอข้อมูล",
