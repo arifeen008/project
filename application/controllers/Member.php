@@ -5,14 +5,13 @@ class Member extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		// $this->load->library('session');
 		$this->load->model('member_model');
 	}
 
-	public function login_member_page()
+	public function login_page()
 	{
 		$this->load->view("containner/head");
-		$this->load->view("login_member");
+		$this->load->view("login");
 	}
 
 	public function login_member()
@@ -34,9 +33,40 @@ class Member extends CI_Controller
 			$this->load->view("member/data_member/data_member", $login_result);
 			$this->load->view("containner/script");
 		} else {
-			$this->load->view("containner/head");
-			$this->load->view("login_member");
-			echo "<script>alert('กรุณาใส่รหัสผ่านให้ถูกต้อง');</script>";
+			$this->load->model('officer_model');
+			$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
+			if (!empty($result)) {
+				$session = array(
+					'USER_ID' => $result->USER_ID,
+					'LEVEL_CODE' => $result->LEVEL_CODE,
+					'BR_NO' => $result->BR_NO,
+					'USER_NAME' => $result->USER_NAME
+				);
+				$this->session->set_userdata($session);
+				$this->input->ip_address();
+				$user_id = $this->session->userdata('USER_ID');
+				$level_code = $this->session->userdata('LEVEL_CODE');
+				$data = $this->officer_model->data_officer($user_id);
+				if ($level_code === "A") {
+					$this->load->view("containner/head");
+					$this->load->view("containner/header_officer", $data);
+					$this->load->view("containner/sidebar_manager");
+					$this->load->view("officer/member_share_system/member_share_system");
+					$this->load->view("containner/script");
+				} else {
+					$this->load->view("containner/head");
+					$this->load->view("containner/header_officer", $data);
+					$this->load->view("containner/sidebar_officer");
+					$this->load->view("officer/member_share_system/member_share_system");
+					$this->load->view("containner/script");
+				}
+			} else {
+				$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
+				$this->load->view("containner/head");
+				$this->load->view("login");
+				$this->load->view("containner/script");
+				echo "<script>alert('คุณใส่ Usename หรือ Password ไม่ถูกต้อง');</script>";
+			}
 		}
 	}
 
@@ -132,7 +162,7 @@ class Member extends CI_Controller
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
-		$data_member = $this->member_model->getdata_member($br_no, $mem_id);	
+		$data_member = $this->member_model->getdata_member($br_no, $mem_id);
 		$data['result'] = $this->member_model->share_member($br_no, $mem_id);
 		$data['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
 		$this->load->view("containner/head");

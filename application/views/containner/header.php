@@ -97,7 +97,7 @@
 				</div>
 			</ul>
 			<span class="navbar-text">
-				<a href="<?php echo site_url('member/login_member_page') ?>" class="btn btn-outline-success"> <i class="fas fa-user"></i> เข้าสู่ระบบ</a>
+				<a href="<?php echo site_url('member/login_page') ?>" class="btn btn-outline-success"> <i class="fas fa-user"></i> เข้าสู่ระบบ</a>
 			</span>
 		</div>
 	</div>

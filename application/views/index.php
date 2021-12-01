@@ -1,29 +1,24 @@
 <div class="containner-fluid">
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-		</ol>
+	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" width="100%" height="100%" src="<?php echo base_url('picture/resize-1588050307116.png') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" width="100%" height="100%" src="<?php echo base_url('picture/90.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" width="100%" height="100%" src="<?php echo base_url('picture/013.jpg') ?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
 			</div>
 		</div>
-		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
+			<span class="visually-hidden">Next</span>
+		</button>
 	</div>
 
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
