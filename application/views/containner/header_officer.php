@@ -1,18 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #25d321;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">
-			<h4>เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+		<a class="navbar-brand" href="<?php echo site_url('index') ?>"><img src="<?php echo base_url('picture/lo.png'); ?>" width="300"></a>
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
 		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+			</ul>
+			<span class="navbar-text">
+				ภาษา <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
+			</span>
+		</div>
+	</div>
+</nav>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #25d321;">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse" id="navbarCenteredExample">
+			<!-- Left links -->
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<!-- <div class="row"></div> -->
+				<a class="navbar-brand" href="#">
+					<h4 class="text-dark">เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
+				</a>
+		</div>
+		<!-- Collapsible wrapper -->
 		<ul class="nav justify-content-end">
 			<span class="navbar-text">
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;<?php echo $USER_NAME ?>
+					<a class="nav-link dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;<?php echo $USER_NAME ?>
 					</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('officer/data_officer') ?>"><i class="far fa-eye"></i>&nbsp;&nbsp;&nbsp;ดูข้อมูลของผู้ใช้</a></li>
 						<li><a class="dropdown-item" href="#"><i class="fas fa-key"></i>&nbsp;&nbsp;&nbsp; เปลี่ยนรหัสผ่าน</a></li>
 						<div class="dropdown-divider"></div>
@@ -21,5 +43,7 @@
 				</li>
 			</span>
 		</ul>
+
 	</div>
+	<!-- Container wrapper -->
 </nav>
