@@ -13,7 +13,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index");
-		// $this->load->view("containner/footer_member");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -22,7 +22,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/board");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -31,7 +31,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/history");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -40,7 +40,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/office");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -49,7 +49,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/vision");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -58,7 +58,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/contact/evaluation");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -67,7 +67,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/contact/withus");
-		// $this->load->view("containner/footer");	
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -76,7 +76,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/download/document");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -85,7 +85,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/download/report");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -94,7 +94,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/news/activity");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -103,7 +103,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/news/calendar");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -112,7 +112,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/news/promotion");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -121,7 +121,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/project/gasstation");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -130,7 +130,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/project/orphan");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -139,7 +139,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/project/sakofahmarket");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -148,7 +148,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/project/stadium");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -157,7 +157,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/project/village");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -166,7 +166,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -175,6 +175,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/gordulhazan");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -183,6 +184,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/ordinary_emergency");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -191,6 +193,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/ordinary");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -199,6 +202,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/special");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -207,6 +211,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/project");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -215,6 +220,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit/project_asset");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -223,7 +229,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/deposit");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -232,7 +238,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/service/register");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -241,7 +247,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/dead");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -250,7 +256,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/marry");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -259,7 +265,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/maternity");
-		// $this->load->view("containner/footer");	
+		$this->load->view("containner/footer");	
 		$this->load->view("containner/script");
 	}
 
@@ -268,7 +274,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/medical");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
@@ -277,7 +283,7 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/oldage");
-		// $this->load->view("containner/footer");
+		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 

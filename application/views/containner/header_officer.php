@@ -15,26 +15,20 @@
 	</div>
 </nav>
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #25d321;">
-	<!-- Container wrapper -->
 	<div class="container-fluid">
-		<!-- Toggle button -->
-		<!-- Collapsible wrapper -->
 		<div class="collapse navbar-collapse" id="navbarCenteredExample">
-			<!-- Left links -->
 			<ul class="navbar-nav mb-2 mb-lg-0">
-				<!-- <div class="row"></div> -->
 				<a class="navbar-brand" href="#">
 					<h4 class="text-dark">เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
 				</a>
 		</div>
-		<!-- Collapsible wrapper -->
 		<ul class="nav justify-content-end">
 			<span class="navbar-text">
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;<?php echo $USER_NAME ?>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-end">
 						<li><a class="dropdown-item" href="<?php echo site_url('officer/data_officer') ?>"><i class="far fa-eye"></i>&nbsp;&nbsp;&nbsp;ดูข้อมูลของผู้ใช้</a></li>
 						<li><a class="dropdown-item" href="#"><i class="fas fa-key"></i>&nbsp;&nbsp;&nbsp; เปลี่ยนรหัสผ่าน</a></li>
 						<div class="dropdown-divider"></div>
@@ -45,5 +39,4 @@
 		</ul>
 
 	</div>
-	<!-- Container wrapper -->
 </nav>

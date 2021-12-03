@@ -1,33 +1,147 @@
 <div class="containner-fluid">
-	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
+				<img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="d-block w-100" alt="..." />
 			</div>
 			<div class="carousel-item">
-				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
+				<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" alt="..." />
 			</div>
 			<div class="carousel-item">
-				<img src="<?php echo base_url('picture/013.jpg') ?>" class="d-block w-100" width="100%" alt="...">
+				<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" alt="..." />
 			</div>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+		<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-
-	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-		<div class="col-md-5 p-lg-5 mx-auto my-5">
-			<h2 class="display-3 font-weight-normal">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h2>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="d-block w-100" alt="..." />
+							<div class="carousel-caption d-none d-md-block">
+								<h5>First slide label</h5>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" alt="..." />
+							<div class="carousel-caption d-none d-md-block">
+								<h5>Second slide label</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" alt="..." />
+							<div class="carousel-caption d-none d-md-block">
+								<h5>Third slide label</h5>
+								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">
+									Some quick example text to build on the card title and make up the bulk of the
+									card's content.
+								</p>
+								<button type="button" class="btn btn-primary">Button</button>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">
+									Some quick example text to build on the card title and make up the bulk of the
+									card's content.
+								</p>
+								<button type="button" class="btn btn-primary">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">
+									Some quick example text to build on the card title and make up the bulk of the
+									card's content.
+								</p>
+								<button type="button" class="btn btn-primary">Button</button>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">
+									Some quick example text to build on the card title and make up the bulk of the
+									card's content.
+								</p>
+								<button type="button" class="btn btn-primary">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="product-device shadow-sm d-none d-md-block"></div>
-		<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 	</div>
+	<br>
+	<header>
+		<!-- Background image -->
+		<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
+			<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+				<div class="d-flex justify-content-center align-items-center h-100">
+					<div class="text-white">
+						<h1 class="mb-3">Heading</h1>
+						<h4 class="mb-3">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h4>
+						<a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Background image -->
+	</header>
+	<br>
 
 	<div class="row">
 		<div class="col-lg">
@@ -62,3 +176,64 @@
 		</div>
 	</div>
 </div>
+<br>
+<footer class="text-center text-white" style="background-color: #caced1;">
+	<!-- Grid container -->
+	<div class="container p-4">
+		<!-- Section: Images -->
+		<section class="">
+			<div class="row">
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/111.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/112.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/114.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/115.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+						<img src="https://mdbootstrap.com/img/new/fluid/city/116.jpg" class="w-100" />
+						<a href="#!">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Section: Images -->
+	</div>
+	<!-- Grid container -->
+</footer>

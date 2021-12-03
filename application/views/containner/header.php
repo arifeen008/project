@@ -110,7 +110,7 @@
 			</ul>
 		</div>
 		<div class="justify-content-end">
-			<div class="d-inline-flex p-2 "><a href="<?php echo site_url('member/login_page') ?>" class="btn btn-outline text-light"> <i class="fas fa-user"></i> ลงทะเบียน&nbsp;|&nbsp;เข้าสู่ระบบ</a></div>
+			<div class="d-inline-flex p-2 "><a href="<?php echo site_url('member/login_page') ?>" class="btn btn-outline text-light"> <i class="fas fa-user"></i>&nbsp;&nbsp;ลงทะเบียน&nbsp;|&nbsp;เข้าสู่ระบบ</a></div>
 		</div>
 	</div>
 </nav>

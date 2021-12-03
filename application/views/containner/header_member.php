@@ -6,7 +6,6 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarText">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
 			</ul>
 			<span class="navbar-text">
 				ภาษา <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
@@ -15,14 +14,9 @@
 	</div>
 </nav>
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #25d321;">
-	<!-- Container wrapper -->
 	<div class="container-fluid">
-		<!-- Toggle button -->
-		<!-- Collapsible wrapper -->
 		<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
-			<!-- Left links -->
 			<ul class="navbar-nav mb-2 mb-lg-0">
-				<!-- <div class="row"></div> -->
 				<div class="row">
 					<div class="col">
 						<li class="nav-item dropdown">
@@ -113,9 +107,7 @@
 					</div>
 				</div>
 			</ul>
-			<!-- Left links -->
 		</div>
-		<!-- Collapsible wrapper -->
 		<ul class="nav justify-content-end">
 			<span class="navbar-text">
 				<div class="dropdown">

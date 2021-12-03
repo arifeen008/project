@@ -1,4 +1,3 @@
-<!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
@@ -20,16 +19,6 @@
 					"sLast": "หน้าสุดท้าย"
 				}
 			}
-		});
-	});
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.navbar-light .dmenu').hover(function() {
-			$(this).find('.sm-menu').first().stop(true, true).slideDown(150);
-		}, function() {
-			$(this).find('.sm-menu').first().stop(true, true).slideUp(105)
 		});
 	});
 </script>
