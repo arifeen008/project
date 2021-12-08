@@ -1,9 +1,4 @@
 <style>
-	body {
-		background-color: #25d321;
-		/* margin-top: 20px; */
-	}
-
 	.main-timeline {
 		position: relative
 	}
@@ -13,7 +8,7 @@
 		display: block;
 		width: 2px;
 		height: 100%;
-		background: #c6c6c6;
+		background: #00ff00;
 		margin: 0 auto;
 		position: absolute;
 		top: 0;
@@ -86,7 +81,7 @@
 		content: "";
 		width: 36.5%;
 		height: 2px;
-		background: #c6c6c6;
+		background: #00ff00;
 		margin: auto 0;
 		position: absolute;
 		top: 0;
@@ -124,7 +119,7 @@
 	}
 
 	.main-timeline .date-outer:after {
-		border: 2px solid #c6c6c6;
+		border: 2px solid #80ff00;
 		left: 6px
 	}
 
@@ -268,109 +263,90 @@
 		}
 	}
 </style>
-<br>
 
-<div class="container">
-<h1 align="center">ประวัติความเป็นมา</h1>
-	<div class="main-timeline">
-		<!-- start experience section-->
-		<div class="timeline">
-			<div class="icon"></div>
-			<div class="date-content">
-				<div class="date-outer">
-					<span class="date">
-						<span class="month">2 Years</span>
-						<span class="year">2535</span>
-					</span>
+	<div class="container">
+		<h1 class="mt-5 text-dark" align="center">ประวัติความเป็นมา</h1>
+		<div class="main-timeline">
+			<div class="timeline">
+				<div class="icon"></div>
+				<div class="date-content">
+					<div class="date-outer">
+						<span class="date">
+							<span class="month text-dark">พ.ศ.</span>
+							<span class="year text-dark">2535</span>
+						</span>
+					</div>
+				</div>
+				<div class="timeline-content">
+					<p class="description note note-success text-dark">
+						คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน
+					</p>
 				</div>
 			</div>
-			<div class="timeline-content">
-				<h5 class="title">Visual Art &amp; Design</h5>
-				<p class="description text-dark">
-					คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน
-				</p>
-			</div>
-		</div>
-		<!-- end experience section-->
-
-		<!-- start experience section-->
-		<div class="timeline">
-			<div class="icon"></div>
-			<div class="date-content">
-				<div class="date-outer">
-					<span class="date">
-						<span class="month">1 Years</span>
-						<span class="year">2538</span>
-					</span>
+			<div class="timeline">
+				<div class="icon"></div>
+				<div class="date-content">
+					<div class="date-outer">
+						<span class="date">
+							<span class="month text-dark">พ.ศ.</span>
+							<span class="year text-dark">2538</span>
+						</span>
+					</div>
+				</div>
+				<div class="timeline-content">
+					<p class="description note note-success text-dark">
+						หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538
+					</p>
 				</div>
 			</div>
-			<div class="timeline-content">
-				<h5 class="title">Product Designer</h5>
-				<p class="description text-dark">
-					หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538
-				</p>
-			</div>
-		</div>
-		<!-- end experience section-->
-
-		<!-- start experience section-->
-		<div class="timeline">
-			<div class="icon"></div>
-			<div class="date-content">
-				<div class="date-outer">
-					<span class="date">
-						<span class="month">2 Years</span>
-						<span class="year">2542</span>
-					</span>
+			<div class="timeline">
+				<div class="icon"></div>
+				<div class="date-content">
+					<div class="date-outer">
+						<span class="date">
+							<span class="month text-dark">พ.ศ.</span>
+							<span class="year text-dark">2542</span>
+						</span>
+					</div>
+				</div>
+				<div class="timeline-content">
+					<p class="description note note-success text-dark">
+						ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่
+					</p>
 				</div>
 			</div>
-			<div class="timeline-content">
-				<h5 class="title">Web Designer</h5>
-				<p class="description text-dark">
-					ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่
-				</p>
-			</div>
-		</div>
-		<!-- end experience section-->
-
-		<!-- start experience section-->
-		<div class="timeline">
-			<div class="icon"></div>
-			<div class="date-content">
-				<div class="date-outer">
-					<span class="date">
-						<span class="month">2 Years</span>
-						<span class="year">2552</span>
-					</span>
+			<div class="timeline">
+				<div class="icon"></div>
+				<div class="date-content">
+					<div class="date-outer">
+						<span class="date">
+							<span class="month text-dark">พ.ศ.</span>
+							<span class="year text-dark">2552</span>
+						</span>
+					</div>
+				</div>
+				<div class="timeline-content">
+					<p class="description note note-success text-dark">
+						ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)
+					</p>
 				</div>
 			</div>
-			<div class="timeline-content">
-				<h5 class="title">Graphic Designer</h5>
-				<p class="description text-dark">
-					ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br>(ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)
-				</p>
-			</div>
-		</div>
-		<!-- end experience section-->
-
-		<!-- start experience section-->
-		<div class="timeline">
-			<div class="icon"></div>
-			<div class="date-content">
-				<div class="date-outer">
-					<span class="date">
-						<span class="month">2 Years</span>
-						<span class="year">ปัจจุบัน</span>
-					</span>
+			<div class="timeline">
+				<div class="icon"></div>
+				<div class="date-content">
+					<div class="date-outer">
+						<span class="date">
+							<span class="month text-dark">พ.ศ.</span>
+							<span class="year text-dark">ปัจจุบัน</span>
+						</span>
+					</div>
+				</div>
+				<div class="timeline-content">
+					<p class="description note note-success text-dark">
+						สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่
+					</p>
 				</div>
 			</div>
-			<div class="timeline-content">
-				<h5 class="title">Web Designer</h5>
-				<p class="description text-dark">
-					สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่
-				</p>
-			</div>
 		</div>
-		<!-- end experience section-->
 	</div>
 </div>

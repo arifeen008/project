@@ -2,7 +2,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>สหกรณ์อิสลามษะกอฟะฮ จำกัด</title>
+	<title><?php echo $title ?></title>
 	<link rel="icon" href="<?php echo base_url('picture/sakofag-logo.png') ?>" type="image/gif" sizes="18x18">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />

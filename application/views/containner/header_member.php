@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="<?php echo site_url('index') ?>"><img src="<?php echo base_url('picture/lo.png'); ?>" width="300"></a>
+		<a class="navbar-brand" href="<?php echo site_url('index/index_member') ?>"><img src="<?php echo base_url('picture/lo.png'); ?>" width="300"></a>
 		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<i class="fas fa-bars"></i>
 		</button>
@@ -15,6 +15,9 @@
 </nav>
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #25d321;">
 	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
 		<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<div class="row">
@@ -24,10 +27,10 @@
 								เกี่ยวกับเรา
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/history') ?>">ประวัติความเป็นมา</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/vision') ?>">วิสัยทัศน์ พันธกิจ วัตถุประสงค์</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/board') ?>">คณะกรรมการและผู้บริหาร</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/office') ?>">สำนักงาน</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/history_member') ?>">ประวัติความเป็นมา</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/vision_member') ?>">วิสัยทัศน์ พันธกิจ วัตถุประสงค์</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/board_member') ?>">คณะกรรมการและผู้บริหาร</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/office_member') ?>">สำนักงาน</a></li>
 							</ul>
 						</li>
 					</div>
@@ -37,9 +40,9 @@
 								บริการของสหกรณ์
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/register') ?>">สมัครสมาชิก</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/deposit') ?>">บริการเงินฝาก</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/credit') ?>">บริการสินเชื่อ</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/register_member') ?>">สมัครสมาชิก</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/deposit_member') ?>">บริการเงินฝาก</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/credit_member') ?>">บริการสินเชื่อ</a></li>
 							</ul>
 						</li>
 					</div>
@@ -49,11 +52,11 @@
 								สวัสดิการของสมาชิก
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/marry') ?>">สวัสดิการแต่งงาน</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/maternity') ?>">สวัสดิการคลอดบุตร</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/oldage') ?>">สวัสดิการเงินสมทบยามชรา</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/medical') ?>">สวัสดิการช่วยเหลือค่ารักษาพยาบาล</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/dead') ?>">สวัสดิการเสียชีวิต</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/marry_member') ?>">สวัสดิการแต่งงาน</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/maternity_member') ?>">สวัสดิการคลอดบุตร</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/oldage_member') ?>">สวัสดิการเงินสมทบยามชรา</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/medical_member') ?>">สวัสดิการช่วยเหลือค่ารักษาพยาบาล</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/dead_member') ?>">สวัสดิการเสียชีวิต</a></li>
 							</ul>
 						</li>
 					</div>
@@ -63,9 +66,9 @@
 								ข่าวสาร/อัพเดต
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">กิจกรรม</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/calendar') ?>">ปฏิทินสหกรณ์</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/promotion_member') ?>">โปรโมชั่น</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/activity_member') ?>">กิจกรรม</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/calendar_member') ?>">ปฏิทินสหกรณ์</a></li>
 							</ul>
 						</li>
 					</div>
@@ -75,11 +78,11 @@
 								โครงการของสหกรณ์
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/stadium') ?>">โครงการสนามหญ้าเทียม SKF Stadium</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/village') ?>">โครงการหมู่บ้านษะกอฟะฮ์</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/gasstation') ?>">โครงการปั้มน้ำมันเซลล์</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/orphan') ?>">โครงการศูนย์อุปถัมภ์เลี้ยงดูเด็กกำพร้า</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/sakofahmarket') ?>">โครงการ Sakofah Market</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/stadium_member') ?>">โครงการสนามหญ้าเทียม SKF Stadium</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/village_member') ?>">โครงการหมู่บ้านษะกอฟะฮ์</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/gasstation_member') ?>">โครงการปั้มน้ำมันเซลล์</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/orphan_member') ?>">โครงการศูนย์อุปถัมภ์เลี้ยงดูเด็กกำพร้า</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/sakofahmarket_member') ?>">โครงการ Sakofah Market</a></li>
 							</ul>
 						</li>
 					</div>
@@ -89,8 +92,8 @@
 								ดาวน์โหลด
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<li><a class="dropdown-item" href="<?php echo site_url('index/document') ?>">เอกสารสำหรับสมาชิก</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/report') ?>">รายงานกิจการ</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/document_member') ?>">เอกสารสำหรับสมาชิก</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/report_member') ?>">รายงานกิจการ</a></li>
 							</ul>
 						</li>
 					</div>
@@ -101,7 +104,7 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 								<li><a class="dropdown-item" href="https://docs.google.com/forms/d/1Ze7m2Q6Jr25YafvvBhpU9BiVXpwMNrWwvmWs6yJjTDY/viewform?edit_requested=true">แบบประเมินการให้บริการ</a></li>
-								<li><a class="dropdown-item" href="<?php echo site_url('index/withus') ?>">ร่วมงานกับเรา</a></li>
+								<li><a class="dropdown-item" href="<?php echo site_url('index/withus_member') ?>">ร่วมงานกับเรา</a></li>
 							</ul>
 						</li>
 					</div>
