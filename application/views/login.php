@@ -24,7 +24,7 @@
 				<img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
 			</div>
 			<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-				<form action="<?php echo site_url('member/login_member') ?>" method="post">
+				<form action="<?php echo site_url('member/login') ?>" method="post">
 					<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
 						<p class="lead fw-normal mb-0 me-3">เข้าสู่ระบบ</p>
 					</div>
@@ -58,7 +58,7 @@
 
 					<div class="text-center text-lg-start mt-4 pt-2">
 						<button type="submit" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #25d321;">Login</button>
-						<p class="small fw-bold mt-2 pt-1 mb-0">ไม่มีบัญชี ? <a href="<?php echo site_url('member/register_member') ?>" class="link-danger">สมัครสมาชิก</a></p>
+						<p class="small fw-bold mt-2 pt-1 mb-0">ไม่มีบัญชี ? <a href="<?php echo site_url('member/register_page') ?>" class="link-danger">สมัครสมาชิก</a></p>
 					</div>
 				</form>
 			</div>

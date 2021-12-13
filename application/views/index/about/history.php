@@ -263,7 +263,7 @@
 		}
 	}
 </style>
-
+<div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
 	<div class="container">
 		<h1 class="mt-5 text-dark" align="center">ประวัติความเป็นมา</h1>
 		<div class="main-timeline">

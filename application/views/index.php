@@ -75,7 +75,7 @@
 						<div class="card-body">
 							<p class="card-text text-center text-dark">
 								<i class="fab fa-servicestack fa-8x"></i>
-							<h1 class="text-center text-success">สมัครสมาชิก</h1>
+							<h3 class="text-center text-success">สมัครสมาชิก</h3>
 							</p>
 						</div>
 					</div>
@@ -85,7 +85,7 @@
 						<div class="card-body">
 							<p class="card-text text-center text-dark">
 							<i class="fas fa-user-alt fa-8x"></i></i>
-							<h1 class="text-center text-success">บริการเงินฝาก</h1>
+							<h3 class="text-center text-success">บริการเงินฝาก</h3>
 							</p>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 						<div class="card-body">
 							<p class="card-text text-center text-dark">
 							<i class="fas fa-project-diagram fa-8x"></i>
-							<h1 class="text-center text-success">บริการสินเชื่อ</h1>
+							<h3 class="text-center text-success">บริการสินเชื่อ</h3>
 							</p>
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 						<div class="card-body">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file fa-8x"></i>
-							<h1 class="text-center text-success">เอกสาร</h1>
+							<h3 class="text-center text-success">เอกสาร</h3>
 							</p>
 						</div>
 					</div>

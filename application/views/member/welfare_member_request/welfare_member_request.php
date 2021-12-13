@@ -4,7 +4,7 @@
             <h1>ยื่นขอรับสวัสดิการ</h1>
         </div>
 
-        <form>
+        <form action="#" method="POST">
             <label>สาเหตุ : </label>
             <div class="form-group">
                 <div class="row">

@@ -10,11 +10,12 @@ class Member extends CI_Controller
 
 	public function login_page()
 	{
-		$this->load->view("containner/head");
+		$title['title'] = "เข้าสู่ระบบ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("login");
 	}
 
-	public function login_member()
+	public function login()
 	{
 		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
 		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
@@ -27,7 +28,8 @@ class Member extends CI_Controller
 				'ID_CARD' => $login_result->ID_CARD
 			);
 			$this->session->set_userdata($session);
-			$this->load->view("containner/head");
+			$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+			$this->load->view("containner/head", $title);
 			$this->load->view("containner/header_member", $login_result);
 			$this->load->view("containner/sidebar_member");
 			$this->load->view("member/data_member/data_member", $login_result);
@@ -61,11 +63,8 @@ class Member extends CI_Controller
 					$this->load->view("containner/script");
 				}
 			} else {
-				$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
-				$this->load->view("containner/head");
-				$this->load->view("login");
-				$this->load->view("containner/script");
-				echo "<script>alert('คุณใส่ Usename หรือ Password ไม่ถูกต้อง');</script>";
+				echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
+				redirect('member/login_page', 'refresh');
 			}
 		}
 	}
@@ -76,14 +75,14 @@ class Member extends CI_Controller
 		redirect('index', 'refresh');
 	}
 
-	public function register_member()
+	public function register_page()
 	{
 		$this->load->view("containner/head");
 		$this->load->view("register_form");
 		$this->load->view("containner/script");
 	}
 
-	public function register_form()
+	public function register()
 	{
 		$this->form_validation->set_rules(
 			'id_card',
@@ -151,7 +150,8 @@ class Member extends CI_Controller
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$this->load->view("containner/head");
+		$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/data_member/data_member", $data);
@@ -165,7 +165,8 @@ class Member extends CI_Controller
 		$data_member = $this->member_model->getdata_member($br_no, $mem_id);
 		$data['result'] = $this->member_model->share_member($br_no, $mem_id);
 		$data['detail'] = $this->member_model->share_member_detail($br_no, $mem_id);
-		$this->load->view("containner/head");
+		$title['title'] = "เงินหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data_member);
 		$this->load->view("containner/sidebar_member");
 		$this->load->view("member/share_member/share_member", $data);
@@ -178,7 +179,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->deposit_member($br_no, $mem_id);
-		$this->load->view("containner/head");
+		$title['title'] = "เงินฝาก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
 		$this->load->view("member/deposit_member/deposit_member", $data2);
@@ -191,7 +193,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data_account['result'] = $this->member_model->data_deposit_member($ACCOUNT_NO);
-		$this->load->view("containner/head");
+		$title['title'] = "เงินฝากในบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
 		$this->load->view("member/deposit_member/data_deposit_member", $data_account);
@@ -204,7 +207,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->credit_member($br_no, $mem_id);
-		$this->load->view("containner/head");
+		$title['title'] = "สินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/credit_member_open/credit_member_open", $data2);
@@ -218,7 +222,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
 		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
-		$this->load->view("containner/head");
+		$title['title'] = "รายละเอียดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/credit_member_open/credit_member_open_detail", $data2);
@@ -232,7 +237,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->checkcredit_member($mem_id, $id_card, $br_no);
-		$this->load->view("containner/head");
+		$title['title'] = "สินเชื่อที่ปิดไปแล้ว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/credit_member_close/credit_member_close", $data2);
@@ -246,7 +252,8 @@ class Member extends CI_Controller
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->credit_member_detail($br_no, $code);
 		$data2['select'] = $this->member_model->credit_member_select($br_no, $code);
-		$this->load->view("containner/head");
+		$title['title'] = "รายละเอียดสินเชื่อที่ปิดไปแล้ว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member", $data);
 		$this->load->view("member/credit_member/credit_member_close_detail", $data2);
@@ -259,7 +266,8 @@ class Member extends CI_Controller
 		$br_no = $this->session->userdata("BR_NO");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data_welfare['result'] = $this->member_model->welfare_member($mem_id, $br_no);
-		$this->load->view("containner/head");
+		$title['title'] = "สวัสดิการสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
 		$this->load->view("member/welfare_member/welfare_member", $data_welfare);
@@ -273,7 +281,8 @@ class Member extends CI_Controller
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
 		$data2['result'] = $this->member_model->welfare_member($mem_id, $id_card, $br_no);
-		$this->load->view("containner/head");
+		$title['title'] = "ยื่นขอรับสวัสดิการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
 		$this->load->view("containner/sidebar_member");
 		$this->load->view("member/welfare_member_request/welfare_member_request", $data2);
