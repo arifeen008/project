@@ -1,3 +1,8 @@
+<style>
+	.shadow-custom {
+		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .25), 0 3px 13px 4px rgba(0, 0, 0, 1) !important;
+	}
+</style>
 <div class="containner-fluid">
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
@@ -28,8 +33,8 @@
 </div>
 <div class="container my-3">
 	<div class="row">
-		<div class="col">
-			<div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+		<div class="col-lg-6">
+			<div id="carouselExampleCaptions" class="carousel slide my-3" data-mdb-ride="carousel">
 				<div class="carousel-indicators">
 					<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 					<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
@@ -68,46 +73,46 @@
 				</button>
 			</div>
 		</div>
-		<div class="col">
+		<div class="col-lg-6">
 			<div class="row">
 				<div class="col-md-6 mb-3">
-					<div class="card border border-primary shadow-0 ">
-						<div class="card-body">
+					<div class="card">
+						<a href="#" class="card-body shadow-custom">
 							<p class="card-text text-center text-dark">
-								<i class="fab fa-servicestack fa-8x"></i>
-							<h3 class="text-center text-success">สมัครสมาชิก</h3>
+								<i class="fab fa-servicestack fa-4x"></i>
+								<h3 class="text-center text-success">สมัครสมาชิก</h3>
 							</p>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-6 mb-3">
-					<div class="card border border-primary shadow-0 ">
-						<div class="card-body">
+					<div class="card">
+						<a href="#" class="card-body shadow-custom">
 							<p class="card-text text-center text-dark">
-							<i class="fas fa-user-alt fa-8x"></i></i>
-							<h3 class="text-center text-success">บริการเงินฝาก</h3>
+								<i class="fas fa-user-alt fa-4x"></i></i>
+								<h3 class="text-center text-success">บริการเงินฝาก</h3>
 							</p>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-6 mb-3">
-					<div class="card border border-primary shadow-0 ">
-						<div class="card-body">
+					<div class="card">
+						<a href="#" class="card-body shadow-custom">
 							<p class="card-text text-center text-dark">
-							<i class="fas fa-project-diagram fa-8x"></i>
-							<h3 class="text-center text-success">บริการสินเชื่อ</h3>
+								<i class="fas fa-project-diagram fa-4x"></i>
+								<h3 class="text-center text-success">บริการสินเชื่อ</h3>
 							</p>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-6 mb-3">
-					<div class="card border border-primary shadow-0 ">
-						<div class="card-body">
+					<div class="card">
+						<a href="#" class="card-body shadow-custom">
 							<p class="card-text text-center text-dark">
-								<i class="fas fa-file fa-8x"></i>
-							<h3 class="text-center text-success">เอกสาร</h3>
+								<i class="fas fa-file fa-4x"></i>
+								<h3 class="text-center text-success">เอกสาร</h3>
 							</p>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -128,41 +133,6 @@
 	</div>
 </header>
 
-
-<div class="row my-3">
-	<div class="col-lg">
-		<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
-		</a>
-	</div>
-	<div class="col-lg">
-		<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
-		</a>
-	</div>
-	<div class="col-lg">
-		<a href="https://www.facebook.com/Jiraphat1705/">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
-		</a>
-	</div>
-	<div class="col-lg">
-		<a href="https://www.facebook.com/%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%A5%E0%B9%8C-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-110341583984620/?modal=admin_todo_tour">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051697985.jpg') ?>">
-		</a>
-	</div>
-	<div class="col-lg">
-		<a href="https://www.youtube.com/channel/UCffHrfpeGIw4dlLCs-IEGDg">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
-		</a>
-	</div>
-	<div class="col-lg">
-		<a href="https://www.facebook.com/Sakofah.Islam.Savings/">
-			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
-		</a>
-	</div>
-</div>
-</div>
-<br>
 <footer class="text-center text-white" style="background-color: #caced1;">
 	<!-- Grid container -->
 	<div class="container p-4">
@@ -223,3 +193,36 @@
 	</div>
 	<!-- Grid container -->
 </footer>
+
+<div class="row my-3">
+	<div class="col-lg">
+		<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/Jiraphat1705/">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%A5%E0%B9%8C-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-110341583984620/?modal=admin_todo_tour">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051697985.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.youtube.com/channel/UCffHrfpeGIw4dlLCs-IEGDg">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/Sakofah.Islam.Savings/">
+			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
+		</a>
+	</div>
+</div>
