@@ -119,6 +119,222 @@
 		</div>
 	</div>
 </div>
+
+<div class="container my-2">
+	<h2 class="text-dark text-center">ภาพกิจกรรม</h2>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>		
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>				
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>				
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>				
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card my-2">
+				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the bulk of the
+						card's content.
+					</p>
+					<small class="text-mute">26 มิถุนายน 2564</small>				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container my-2">
+	<h2 class="text-dark text-center">ข่าวประชาสัมพันธ์</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a wider card with supporting text below as a natural lead-in to
+								additional content. This content is a little bit longer.
+							</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <header>
 	<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
 		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
