@@ -145,7 +145,7 @@
 						Some quick example text to build on the card title and make up the bulk of the
 						card's content.
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>		
+					<small class="text-mute">26 มิถุนายน 2564</small>
 				</div>
 			</div>
 		</div>
@@ -158,7 +158,7 @@
 						Some quick example text to build on the card title and make up the bulk of the
 						card's content.
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>				
+					<small class="text-mute">26 มิถุนายน 2564</small>
 				</div>
 			</div>
 		</div>
@@ -171,7 +171,7 @@
 						Some quick example text to build on the card title and make up the bulk of the
 						card's content.
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>				
+					<small class="text-mute">26 มิถุนายน 2564</small>
 				</div>
 			</div>
 		</div>
@@ -184,7 +184,7 @@
 						Some quick example text to build on the card title and make up the bulk of the
 						card's content.
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>				
+					<small class="text-mute">26 มิถุนายน 2564</small>
 				</div>
 			</div>
 		</div>
@@ -197,7 +197,7 @@
 						Some quick example text to build on the card title and make up the bulk of the
 						card's content.
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>				
+					<small class="text-mute">26 มิถุนายน 2564</small>
 				</div>
 			</div>
 		</div>
@@ -335,6 +335,35 @@
 		</div>
 	</div>
 </div>
+
+<div class="container my-3">
+	<div class="card">
+		<div class="card-body">
+			<p class="text-center h1 my-3">สถานะการเงิน</p>
+			<p class="text-center h5 text-mute my-3">ข้อมูล ณ พฤศจิกายน 2564 </p>
+			<div class="row text-center">
+				<div class="col-md-3">
+					<b class="text-success h1">1,081.59</b>
+					<p>ทุนเรือนหุ้น (ล้านบาท)</p>
+				</div>
+				<div class="col-md-3">
+					<b class="text-success h1">1,156.98</b>
+					<p>เงินฝาก (ล้านบาท)</p>
+				</div>
+				<div class="col-md-3">
+					<b class="text-success h1">1,788.52</b>
+					<p>จำนวนสินเชื่อ (ล้านบาท)</p>
+				</div>
+				<div class="col-md-3">
+					<b class="text-success h1">32,801</b>
+					<p>จำนวนสมาชิก (คน)</p>
+				</div>
+			</div>
+			<center><a href="#" class="btn btn-success btn-rounded">ดูสถิติย้อนหลัง</a></center>
+		</div>		
+	</div>
+</div>
+
 <header>
 	<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
 		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
