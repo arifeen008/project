@@ -44,7 +44,7 @@
 				</div>
 				<div class="col text-dark">
 					<h5 class="text-dark fw-bold">
-						Contact
+						ติดต่อ
 					</h5>
 					<p><i class="fas fa-home me-3"></i> เลขที่ 291 หมู่ที่ 1 ตำบลคลองยาง อำเภอเกาะลันตา จังหวัดกระบี่ 81120</p>
 					<p>
