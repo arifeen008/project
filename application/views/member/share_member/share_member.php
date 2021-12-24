@@ -23,30 +23,32 @@ include_once("application/libraries/Thaidate.php");
 				</tr>
 			</table>
 			<hr>
-			<table class="table table-bordered border-success border-top table-hover text-center my-4" id="myTable">
-				<thead>
-					<tr>
-						<td>เลขที่ใบเสร็จ</td>
-						<td>ประเภทหุ้น</td>
-						<td>วันที่ทำรายการ </td>
-						<td>จำนวนหุ้น</td>
-						<td>จำนวนเงิน</td>
-						<td>เงินคงเหลือ </td>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($detail->result() as $row) { ?>
+			<div class="datatable">
+				<table class="table table-bordered border-success table-hover text-center my-4">
+					<thead>
 						<tr>
-							<td><?= $row->SLIP_NO ?></td>
-							<td><?= $row->SHR_NA ?></td>
-							<td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
-							<td><?= $row->TMP_SHARE_QTY; ?></td>
-							<td><?= number_format($row->TMP_SHARE_BHT, 2)  ?></td>
-							<td><?= number_format($row->SHR_SUM_BTH, 2)  ?></td>
+							<td>เลขที่ใบเสร็จ</td>
+							<td>ประเภทหุ้น</td>
+							<td>วันที่ทำรายการ </td>
+							<td>จำนวนหุ้น</td>
+							<td>จำนวนเงิน</td>
+							<td>เงินคงเหลือ </td>
 						</tr>
-					<?php } ?>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<?php foreach ($detail->result() as $row) { ?>
+							<tr>
+								<td><?= $row->SLIP_NO ?></td>
+								<td><?= $row->SHR_NA ?></td>
+								<td><?= thaidate('j M Y ', strtotime($row->TMP_DATE_TODAY)) ?></td>
+								<td><?= $row->TMP_SHARE_QTY; ?></td>
+								<td><?= number_format($row->TMP_SHARE_BHT, 2)  ?></td>
+								<td><?= number_format($row->SHR_SUM_BTH, 2)  ?></td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>

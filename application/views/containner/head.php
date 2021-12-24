@@ -4,11 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $title ?></title>
 	<link rel="icon" href="<?php echo base_url('picture/sakofag-logo.png') ?>" type="image/gif" sizes="18x18">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+	<link rel="stylesheet" type="text/css" href="mdb5pro/css/mdb.min.css"  />
 	<?php header("Cache-Control: public, max-age=60, s-maxage=60"); ?>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-	<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 </head>
