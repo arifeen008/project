@@ -72,7 +72,7 @@
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body shadow-custom">
+						<a href="#" class="card-body shadow-custom" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fab fa-servicestack fa-4x"></i>
 								<h3 class="text-center text-success">สมัครสมาชิก</h3>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body shadow-custom">
+						<a href="#" class="card-body shadow-custom" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-user-alt fa-4x"></i></i>
 								<h3 class="text-center text-success">บริการเงินฝาก</h3>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body shadow-custom">
+						<a href="#" class="card-body shadow-custom" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-project-diagram fa-4x"></i>
 								<h3 class="text-center text-success">บริการสินเชื่อ</h3>
@@ -102,7 +102,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body shadow-custom">
+						<a href="#" class="card-body shadow-custom" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file fa-4x"></i>
 								<h3 class="text-center text-success">เอกสาร</h3>
@@ -115,11 +115,11 @@
 	</div>
 </div>
 
-<div class="container my-2 animation onScroll-repeat slide-in-right">
+<div class="container my-2">
 	<h2 class="text-dark text-center">ภาพกิจกรรม</h2>
 	<div class="row">
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -145,7 +145,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -158,7 +158,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -171,7 +171,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -184,7 +184,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card my-2">
+			<div class="card my-2" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="slide-in-left">
 				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -199,7 +199,7 @@
 	</div>
 </div>
 
-<div class="container my-2 animation onScroll-repeat slide-in-left">
+<div class="container my-2">
 	<h2 class="text-dark text-center">ข่าวประชาสัมพันธ์</h2>
 	<div class="row">
 		<div class="col-md-6">
