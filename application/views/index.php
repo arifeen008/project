@@ -71,8 +71,8 @@
 		<div class="col-lg-6">
 			<div class="row">
 				<div class="col-md-6 mb-3">
-					<div class="card" ata-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="slide-right">
-						<a href="#" class="card-body">
+					<div class="card">
+						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fab fa-servicestack fa-4x"></i>
 								<h3 class="text-center text-success">สมัครสมาชิก</h3>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body">
+						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-user-alt fa-4x"></i></i>
 								<h3 class="text-center text-success">บริการเงินฝาก</h3>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body">
+						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-project-diagram fa-4x"></i>
 								<h3 class="text-center text-success">บริการสินเชื่อ</h3>
@@ -102,7 +102,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body">
+						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file fa-4x"></i>
 								<h3 class="text-center text-success">เอกสาร</h3>
@@ -116,7 +116,7 @@
 </div>
 
 <div class="container my-2">
-	<h2 class="text-dark text-center">ภาพกิจกรรม</h2>
+	<h2 class="text-dark text-center" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="tada">ภาพกิจกรรม</h2>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="card my-2">
