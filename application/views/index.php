@@ -354,8 +354,6 @@
 					<p>จำนวนสมาชิก (คน)</p>
 				</div>
 			</div>
-			<canvas id="chart-mixed-example"></canvas>
-
 		</div>
 	</div>
 </div>
