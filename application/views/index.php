@@ -71,10 +71,10 @@
 		<div class="col-lg-6">
 			<div class="row">
 				<div class="col-md-6 mb-3">
-					<div class="card">
+					<div class="card" ata-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="slide-right">
 						<a href="#" class="card-body">
 							<p class="card-text text-center text-dark">
-								<i  class="fab fa-servicestack fa-4x"></i>
+								<i class="fab fa-servicestack fa-4x"></i>
 								<h3 class="text-center text-success">สมัครสมาชิก</h3>
 							</p>
 						</a>
