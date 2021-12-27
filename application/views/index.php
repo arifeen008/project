@@ -1,8 +1,3 @@
-<style>
-	.shadow-custom {
-		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .25), 0 3px 13px 4px rgba(0, 0, 0, 1) !important;
-	}
-</style>
 <div class="containner-fluid">
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
@@ -120,7 +115,7 @@
 	</div>
 </div>
 
-<div class="container my-2">
+<div class="container my-2 animation onScroll-repeat slide-in-right">
 	<h2 class="text-dark text-center">ภาพกิจกรรม</h2>
 	<div class="row">
 		<div class="col-md-4">
@@ -204,7 +199,7 @@
 	</div>
 </div>
 
-<div class="container my-2">
+<div class="container my-2 animation onScroll-repeat slide-in-left">
 	<h2 class="text-dark text-center">ข่าวประชาสัมพันธ์</h2>
 	<div class="row">
 		<div class="col-md-6">
@@ -359,8 +354,9 @@
 					<p>จำนวนสมาชิก (คน)</p>
 				</div>
 			</div>
-			<center><a href="#" class="btn btn-success btn-rounded">ดูสถิติย้อนหลัง</a></center>
-		</div>		
+			<canvas id="chart-mixed-example"></canvas>
+
+		</div>
 	</div>
 </div>
 

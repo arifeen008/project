@@ -24,15 +24,15 @@ include_once("application/libraries/Thaidate.php");
 			</table>
 			<hr>
 			<div class="datatable">
-				<table class="table table-bordered border-success table-hover text-center my-4">
+				<table>
 					<thead>
 						<tr>
-							<td>เลขที่ใบเสร็จ</td>
-							<td>ประเภทหุ้น</td>
-							<td>วันที่ทำรายการ </td>
-							<td>จำนวนหุ้น</td>
-							<td>จำนวนเงิน</td>
-							<td>เงินคงเหลือ </td>
+							<th data-mdb-sort="false" class="th-sm">เลขที่ใบเสร็จ</th>
+							<th data-mdb-sort="false" class="th-sm">ประเภทหุ้น</td>
+							<th data-mdb-sort="false" class="th-sm">วันที่ทำรายการ </th>
+							<th data-mdb-sort="false" class="th-sm">จำนวนหุ้น</th>
+							<th data-mdb-sort="false" class="th-sm">จำนวนเงิน</td>
+							<th data-mdb-sort="false" class="th-sm">เงินคงเหลือ </th>
 						</tr>
 					</thead>
 					<tbody>
