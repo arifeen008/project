@@ -90,66 +90,6 @@ class Index extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function gordulhazan()
-	{
-		$title['title'] = "สินเชื่อฉุกเฉิน (ก็อรดุลหะซัน) สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/gordulhazan");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
-	public function ordinary_emergency()
-	{
-		$title['title'] = "สินเชื่อสามัญฉุกเฉิน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/ordinary_emergency");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
-	public function ordinary()
-	{
-		$title['title'] = "สินเชื่อสามัญ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/ordinary");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
-	public function special()
-	{
-		$title['title'] = "สินเชื่อพิเศษ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/special");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
-	public function project()
-	{
-		$title['title'] = "สินเชื่อโครงการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/project");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
-	public function project_asset()
-	{
-		$title['title'] = "สินเชื่อโครงการสินทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
-		$this->load->view("index/service/credit/project_asset");
-		$this->load->view("containner/footer");
-		$this->load->view("containner/script");
-	}
-
 	public function marry()
 	{
 		$title['title'] = "สวัสดิการแต่งงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด";

@@ -1,2 +1,2 @@
-<img src="<?php echo base_url('picture/123456.jpg') ?>" alt="" style="width: 100%;">
-<img src="<?php echo base_url('picture/แต่ง1.jpg') ?>" alt="" style="width: 100%;">
+<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="fade-in-up" src="<?php echo base_url('picture/123456.jpg') ?>" alt="" style="width: 100%;">
+<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="fade-in-up" src="<?php echo base_url('picture/แต่ง1.jpg') ?>" alt="" style="width: 100%;">

@@ -35,37 +35,8 @@ class Member extends CI_Controller
 			$this->load->view("member/data_member/data_member", $login_result);
 			$this->load->view("containner/script");
 		} else {
-			$this->load->model('officer_model');
-			$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
-			if (!empty($result)) {
-				$session = array(
-					'USER_ID' => $result->USER_ID,
-					'LEVEL_CODE' => $result->LEVEL_CODE,
-					'BR_NO' => $result->BR_NO,
-					'USER_NAME' => $result->USER_NAME
-				);
-				$this->session->set_userdata($session);
-				$this->input->ip_address();
-				$user_id = $this->session->userdata('USER_ID');
-				$level_code = $this->session->userdata('LEVEL_CODE');
-				$data = $this->officer_model->data_officer($user_id);
-				if ($level_code === "A") {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_manager");
-					$this->load->view("officer/member_share_system/member_share_system");
-					$this->load->view("containner/script");
-				} else {
-					$this->load->view("containner/head");
-					$this->load->view("containner/header_officer", $data);
-					$this->load->view("containner/sidebar_officer");
-					$this->load->view("officer/member_share_system/member_share_system");
-					$this->load->view("containner/script");
-				}
-			} else {
-				echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
-				redirect('member/login_page', 'refresh');
-			}
+			echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
+			redirect('member/login_page', 'refresh');
 		}
 	}
 

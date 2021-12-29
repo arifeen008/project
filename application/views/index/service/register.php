@@ -1,1 +1,1 @@
-<img src="<?php echo base_url('picture/register_member.jpg') ?>" style="width: 100%;">
+<img src="<?php echo base_url('picture/register_member.jpg') ?>" style="width: 100%;" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="zoom-in">

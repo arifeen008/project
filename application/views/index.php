@@ -7,7 +7,7 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="d-block w-100" alt="..." />
+				<img src="<?php echo base_url('picture_promotion/305-1.jpg') ?>" class="d-block w-100" alt="..." />
 			</div>
 			<div class="carousel-item">
 				<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" alt="..." />
@@ -37,10 +37,10 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="d-block w-100" alt="..." />
+						<img src="<?php echo base_url('picture_promotion/305-1.jpg') ?>" class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h5 class="text-dark">ฉลองครบรอบ 27 ปี ษะกอฟะฮ</h5>
+							<p class="text-dark">เปิกบัญชีใหม่ หุ้นสมาชิก + วาดีอะฮ เริ่มต้น 500 บาท </p>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -116,20 +116,20 @@
 </div>
 
 <div class="container my-2">
-	<h2 class="text-dark text-center" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="tada">ภาพกิจกรรม</h2>
+	<h2 class="text-dark text-center">ภาพกิจกรรม</h2>
 	<div class="row">
 		<div class="col-md-4">
-			<div class="card my-2">
-				<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone" />
+			<a class="card my-2" href="<?php echo site_url('news/news001') ?>">
+				<img src="<?php echo base_url('picture_activity\001\S__999477.jpg')?>" class="card-img-top" alt="Fissure in Sandstone" />
 				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">
-						Some quick example text to build on the card title and make up the bulk of the
-						card's content.
+					<h5 class="card-title text-dark text-truncate">เข้าร่วมประชุมใหญ่วิสามัญ ในวันที่ 28 ธันวาคม 2564</h5>
+					<p class="card-text text-dark text-truncate">
+						วันศุกร์ ที่ 24 ธันวาคม 2564 นายอภินันท์ แสล่หมัน ผู้จัดการใหญ่สหกรณ์อิสลามษะกอฟะฮ จำกัด พร้อมรองผู้จัดการใหญ่ฝ่ายบัญชี ไปร่วมแสดงความยินดีกับ นายสุทยุต พูนสมบัติ ที่ได้รับตำแหน่งใหม่ เป็น สกจ.พังงา และเรียนเชิญ นางสาวสาวดี รักษ์ศิริ สหกรณ์จังหวัดกระบี่ เป็นประธานในพิธีการประชุมวิสามัญ และไปพบปะเยี่ยมเยียนพร้อมมอบของขวัญและเรียนเชิญท่าน ผอ.จาตุรนต์ หลงขาว ผู้อำนวยการกลุ่มส่งเสริมสหกรณ์ 2
+						นางสาว สุมา หลีกภัย ผู้อำนวยการกลุ่มส่งเสริมสหกรณ์ 3 เข้าร่วมประชุมใหญ่วิสามัญ ในวันที่ 28 ธันวาคม 2564
 					</p>
-					<small class="text-mute">26 มิถุนายน 2564</small>
+					<small class="text-dark text-mute">24 ธันวาคม 2564</small>
 				</div>
-			</div>
+			</a>
 		</div>
 		<div class="col-md-4">
 			<div class="card my-2">
@@ -199,7 +199,7 @@
 	</div>
 </div>
 
-<div class="container my-2">
+<!-- <div class="container my-2">
 	<h2 class="text-dark text-center">ข่าวประชาสัมพันธ์</h2>
 	<div class="row">
 		<div class="col-md-6">
@@ -329,7 +329,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="container my-3">
 	<div class="card">
@@ -373,9 +373,7 @@
 </header>
 
 <footer class="text-center text-white" style="background-color: #caced1;">
-	<!-- Grid container -->
 	<div class="container p-4">
-		<!-- Section: Images -->
 		<section class="">
 			<div class="row">
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
@@ -428,9 +426,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- Section: Images -->
 	</div>
-	<!-- Grid container -->
 </footer>
 
 <div class="row my-3">

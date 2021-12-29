@@ -28,35 +28,27 @@
 					<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
 						<p class="lead fw-normal mb-0 me-3">เข้าสู่ระบบ</p>
 					</div>
-
 					<div class="divider d-flex align-items-center my-4">
 						<p class="text-center fw-bold mx-3 mb-0"></p>
 					</div>
-
-					<!-- Email input -->
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="floatingInput" name="user_id" placeholder="name@example.com">
 						<label for="floatingInput">อีเมล์</label>
 					</div>
-
-					<!-- Password input -->
 					<div class="form-floating">
 						<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
 						<label for="floatingPassword">รหัสผ่าน</label>
 					</div>
-<br>
-					<div class="d-flex justify-content-between align-items-center">
-						<!-- Checkbox -->
+					<div class="d-flex justify-content-between align-items-center mt-3">
 						<div class="form-check mb-0">
-							<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+							<input class="form-check-input bg-success me-2" type="checkbox" value="" id="form2Example3" checked />
 							<label class="form-check-label" for="form2Example3">
 								จดจำฉัน
 							</label>
 						</div>
 						<a href="#!" class="text-body">ลืมรหัสผ่าน</a>
 					</div>
-
-					<div class="text-center text-lg-start mt-4 pt-2">
+					<div class="text-center text-lg-start mt-2 pt-2">
 						<button type="submit" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #25d321;">Login</button>
 						<p class="small fw-bold mt-2 pt-1 mb-0">ไม่มีบัญชี ? <a href="<?php echo site_url('member/register_page') ?>" class="link-danger">สมัครสมาชิก</a></p>
 					</div>
