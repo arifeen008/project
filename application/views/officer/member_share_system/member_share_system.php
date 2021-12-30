@@ -1,5 +1,5 @@
-<div class="col-lg-9"><br>
-	<div class="card">
+<div class="col-lg-9 text-dark">
+	<div class="card my-3">
 		<div class="card-body">
 			<h5 class="card-title">ข้อมูลสมาชิก</h5>
 			<form action="<?php echo site_url('officer/listdata_member') ?>" method="post" class="row g-3">
@@ -32,8 +32,7 @@
 		</div>
 	</div>
 
-	<br>
-	<div class="card">
+	<div class="card my-3">
 		<div class="card-body">
 			<h5 class="card-title">ข้อมูลใบเสร็จหุ้นสมาชิก</h5>
 			<form action="<?php echo site_url('officer/list_datashare_member') ?>" method="post" class="row g-3">

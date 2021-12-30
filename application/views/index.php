@@ -37,24 +37,18 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="<?php echo base_url('picture_promotion/305-1.jpg') ?>" class="d-block w-100" alt="..." />
+						<img src="<?php echo base_url('picture_promotion/305-1.jpg') ?>" class="d-block w-100"/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="text-dark">ฉลองครบรอบ 27 ปี ษะกอฟะฮ</h5>
-							<p class="text-dark">เปิกบัญชีใหม่ หุ้นสมาชิก + วาดีอะฮ เริ่มต้น 500 บาท </p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" alt="..." />
+						<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100"/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5>Second slide label</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" alt="..." />
+						<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100"/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5>Third slide label</h5>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
 						</div>
 					</div>
 				</div>

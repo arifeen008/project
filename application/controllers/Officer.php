@@ -23,24 +23,23 @@ class Officer extends CI_Controller
 			$level_code = $this->session->userdata('LEVEL_CODE');
 			$data = $this->officer_model->data_officer($user_id);
 			if ($level_code === "A") {
-				$this->load->view("containner/head");
+				$title['title'] = "ระบบผู้จัดการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+				$this->load->view("containner/head", $title);
 				$this->load->view("containner/header_officer", $data);
 				$this->load->view("containner/sidebar_manager");
 				$this->load->view("officer/member_share_system/member_share_system");
 				$this->load->view("containner/script");
 			} else {
-				$this->load->view("containner/head");
+				$title['title'] = "ระบบเจ้าหน้าที่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+				$this->load->view("containner/head", $title);
 				$this->load->view("containner/header_officer", $data);
 				$this->load->view("containner/sidebar_officer");
 				$this->load->view("officer/member_share_system/member_share_system");
 				$this->load->view("containner/script");
 			}
 		} else {
-			$this->session->unset_userdata(array('USER_ID', 'BR_NO', 'LEVEL_CODE', 'USER_NAME'));
-			$this->load->view("containner/head");
-			$this->load->view("login_officer");
-			$this->load->view("containner/script");
-			echo "<script>alert('คุณใส่ Usename หรือ Password ไม่ถูกต้อง');</script>";
+			echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
+			redirect('index/index', 'refresh');
 		}
 	}
 
@@ -54,7 +53,8 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$this->load->view("containner/head");
+		$title['title'] = "ระบบทะเบียนสมาชิกและหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/member_share_system/member_share_system");
@@ -65,7 +65,8 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
-		$this->load->view("containner/head");
+		$title['title'] = "ระบบเงินฝาก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/deposit_system");
@@ -80,7 +81,8 @@ class Officer extends CI_Controller
 		$enddate = $this->input->post('enddate');
 		$data1 = $this->officer_model->data_officer($user_id);
 		$data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "เงินฝากพนักงานประจำวัน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/depositreport_summary", $data2);
@@ -97,7 +99,8 @@ class Officer extends CI_Controller
 		$branch_number = $this->input->post('branch_number');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->list_deposit_member($account_number, $mem_id, $fname, $lname, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "ค้นหาเงินฝากในบัญชีสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/list_deposit_member", $data);
@@ -109,7 +112,8 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->deposit_member_detail($account_number);
-		$this->load->view("containner/head");
+		$title['title'] = "เงินฝากในบัญชีสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/deposit_member_detail", $data);
@@ -120,7 +124,8 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data1 = $this->officer_model->data_officer($USER_ID);
-		$this->load->view("containner/head");
+		$title['title'] = "ระบบงานสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data1);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/credit_system");
@@ -136,7 +141,8 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
-		$this->load->view("containner/head");
+		$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/listdatacredit_member", $data);
@@ -149,7 +155,8 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
 		$data['result'] = $this->officer_model->credit_officer($mem_id, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "สินเชื่อคุณ" . $data['name']->FNAME . " " . $data['name']->FNAME . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/credit_officer", $data);
@@ -162,7 +169,8 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['select'] = $this->officer_model->credit_officer_select($code, $br_no);
 		$data['result'] = $this->officer_model->credit_officer_detail($code, $br_no);
-		$this->load->view("containner/head");
+		$title['title'] = "รายละเอียดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/credit_officer_detail", $data);
@@ -178,7 +186,8 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
-		$this->load->view("containner/head");
+		$title['title'] = "ค้นหายอดสินเชื่อที่ปิดแล้วในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/listclosedcredit_member", $data);
@@ -191,7 +200,8 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
 		$data['result'] = $this->officer_model->checkcredit_officer($mem_id, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "สินเชื่อคุณ" . $data['name']->FNAME . " " . $data['name']->FNAME . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/closed_credit_officer", $data);
@@ -204,7 +214,8 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['select'] = $this->officer_model->checkcredit_officer_select($code, $branch_number);
 		$data['result'] = $this->officer_model->checkcredit_officer_detail($code, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "รายละเอียดสินเชื่อที่ปิดแล้ว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/credit_system/closed_credit_officer_detail", $data);
@@ -300,7 +311,8 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$this->load->view("containner/head");
+		$title['title'] = "ระบบรายงานสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/report_member_system/report_member_system");
@@ -321,7 +333,8 @@ class Officer extends CI_Controller
 			'start' => $start,
 			'to' => $to
 		);
-		$this->load->view("containner/head");
+		$title['title'] = "รายงานสมาชิกหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/report_member_system/searchreport_member", $data);
@@ -368,7 +381,8 @@ class Officer extends CI_Controller
 			'start' => $start,
 			'to' => $to
 		);
-		$this->load->view("containner/head");
+		$title['title'] = "รายงานสมาชิกหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/report_member_system/searchreport_member_allbranch", $data);

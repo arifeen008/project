@@ -71,11 +71,11 @@ include_once("application/libraries/Thaidate.php");
 				<table>
 					<thead>
 						<tr>
-							<td>วันที่</td>
-							<td>งวดที่</td>
-							<td>ยอดชำระ</td>
-							<td>ยอดคงเหลือ</td>
-							<td></td>
+							<th>วันที่</th>
+							<th>งวดที่</th>
+							<th>ยอดชำระ</th>
+							<th>ยอดคงเหลือ</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>

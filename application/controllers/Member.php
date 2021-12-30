@@ -48,71 +48,38 @@ class Member extends CI_Controller
 
 	public function register_page()
 	{
-		$this->load->view("containner/head");
+		$title['title'] = "สมัครสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head_register", $title);
 		$this->load->view("register_form");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_register");
 	}
 
 	public function register()
 	{
-		$this->form_validation->set_rules(
-			'id_card',
-			'id_card',
-			'required|min_length[13]|max_length[13]',
-			array(
-				'required' => '*กรุณาใส่รหัสบัตรประชาชน',
-				'min_length' => '*กรุณาใส่รหัสบัตรประชาชน 13 หลัก',
-				'max_length' => '*กรุณาใส่รหัสบัตรประชาชน 13 หลัก'
-			)
-		);
-		$this->form_validation->set_rules(
-			'user_id',
-			'user_id',
-			'required|min_length[5]|max_length[13]',
-			array(
-				'required' => '*กรุณาใส่ชื่อผู้ใช้',
-				'min_length' => '*กรุณาใส่ชื่อผู้ใช้อย่างน้อย 5 ตัวขึ้นไป',
-				'max_length' => '*กรุณาใส่ชื่อผู้ใช้ไม่เกิน 13 ตัว'
-			)
-		);
-		$this->form_validation->set_rules(
-			'password',
-			'password',
-			'required|min_length[6]',
-			array(
-				'required' => '*กรุณาใส่รหัสผ่าน',
-				'min_length' => '*กรุณาใส่รหัสผ่านอย่างต่ำ 6 ตัวขึ้นไป'
-			)
-		);
-		$this->form_validation->set_rules(
-			'confirm_password',
-			'confirm_password',
-			'required|matches[password]',
-			array(
-				'required' => '*กรุณาใส่ยืนยันรหัสผ่าน',
-				'matches' => '*กรุณาใส่รหัสผ่านที่ตรงกัน'
-			)
-		);
-		if ($this->form_validation->run() == false) {
-			$this->load->view("containner/head");
-			$this->load->view("register_form");
-			$this->load->view("containner/script");
-		} else {
-			$id_card = $this->input->post('id_card');
-			$user_id = $this->input->post('user_id');
-			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-			$result = $this->member_model->insert_register_form($id_card, $user_id, $password);
-			if ($result == true) {
-				$this->load->view("containner/head");
-				$this->load->view("login_member");
-				$this->load->view("containner/script");
-				echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
-			} else {
-				$this->load->view("containner/head");
-				$this->load->view("register_form");
-				$this->load->view("containner/script");
-				echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
+		if (isset($_POST['submit']) && $_POST['g-recaptcha-response'] != "") {
+			$secret = '6LcD-NkdAAAAAJUtMJS0ZvOzcsyTm6yyTePbk6Pr';
+			$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+			$responseData = json_decode($verifyResponse);
+
+			if ($responseData->success) {
+				$id_card = $this->input->post('id_card');
+				$user_id = $this->input->post('user_id');
+				$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+				$result = $this->member_model->insert_register_form($id_card, $user_id, $password);
+				if ($result == true) {
+					$this->load->view("containner/head");
+					$this->load->view("login_member");
+					$this->load->view("containner/script");
+					echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
+				} else {
+					$this->load->view("containner/head");
+					$this->load->view("register_form");
+					$this->load->view("containner/script");
+					echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
+				}
 			}
+		} else {
+			echo "<script>alert('กรุณาติ้ก Recapcha');</script>";
 		}
 	}
 
