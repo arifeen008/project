@@ -24,7 +24,7 @@ include_once("application/libraries/Thaidate.php");
 			</table>
 			<hr>
 			<div class="datatable">
-				<table>
+				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th data-mdb-sort="false" class="th-sm">เลขที่ใบเสร็จ</th>

@@ -6,7 +6,7 @@ include_once("application/libraries/Thaidate.php");
 	<div class="card mt-3">
 		<div class="card-body text-dark">
 			<h3 class="card-title border-bottom">เงินฝาก</h3>
-			<table class="table table-bordered border-success table-hover text-center my-4">
+			<table class="table text-center my-4">
 				<thead>
 					<tr>
 						<th>ชื่อบัญชี</th>

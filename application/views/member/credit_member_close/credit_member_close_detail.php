@@ -67,27 +67,29 @@ include_once("application/libraries/Thaidate.php");
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover text-center my-4" id="myTable">
-				<thead>
-					<tr>
-						<td>วันที่</td>
-						<td>งวดที่</td>
-						<td>ยอดชำระ</td>
-						<td>ยอดคงเหลือ</td>
-						<td></td>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($result->result() as $row) { ?>
+			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+				<table>
+					<thead>
 						<tr>
-							<td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
-							<td><?= $row->LPD_NUM_INST ?></td>
-							<td><?= number_format($row->SUM_SAL, 2) ?></td>
-							<td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
+							<td>วันที่</td>
+							<td>งวดที่</td>
+							<td>ยอดชำระ</td>
+							<td>ยอดคงเหลือ</td>
+							<td></td>
 						</tr>
-					<?php } ?>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<?php foreach ($result->result() as $row) { ?>
+							<tr>
+								<td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
+								<td><?= $row->LPD_NUM_INST ?></td>
+								<td><?= number_format($row->SUM_SAL, 2) ?></td>
+								<td><?= number_format($row->LCONT_BAL_AMOUNT, 2) ?></td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>

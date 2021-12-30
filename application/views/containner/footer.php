@@ -14,7 +14,6 @@
 		</div>
 	</div>
 </footer>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog mx-0 mx-sm-auto">
 		<div class="modal-content">
@@ -44,15 +43,14 @@
 							</div>
 						</div>
 						<div class="col">
-							<a href="#!">ลืมรหัสผ่าน</a>
+							<a href="#">ลืมรหัสผ่าน</a>
 						</div>
 					</div>
 					<button type="submit" class="btn btn-success btn-block mb-4">
 						เข้าสู่ระบบ
 					</button>
 					<div class="text-center">
-						<p>ลืมสมัคร ? <a href="#!">สมัครสมาชิกเจ้าหน้าที่</a></p>
-						
+						<p>ลืมสมัคร ? <a href="#">สมัครสมาชิกเจ้าหน้าที่</a></p>	
 					</div>
 				</form>
 			</div>
