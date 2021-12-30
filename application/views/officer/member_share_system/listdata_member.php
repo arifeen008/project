@@ -2,7 +2,7 @@
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h1 class="card-title border-bottom">รายชื่อสมาชิกที่ค้นหา</h1>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true" data-mdb-fixed-header="true" data-mdb-bordered="true">
+			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
 				<table>
 					<thead>
 						<tr>
@@ -11,7 +11,7 @@
 							<th>ชื่อ</th>
 							<th>นามสกุล</th>
 							<th>สาขา</th>
-							<th>ดูข้อมูล</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>

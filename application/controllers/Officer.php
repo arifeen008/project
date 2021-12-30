@@ -229,7 +229,8 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->officer_model->seedata_member($mem_id, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "สมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/member_share_system/seedata_member", $data);
@@ -244,7 +245,8 @@ class Officer extends CI_Controller
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');
 		$data['result'] = $this->officer_model->listdata_member($fname, $lname, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "รายชื่อสมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/member_share_system/listdata_member", $data);
@@ -259,7 +261,8 @@ class Officer extends CI_Controller
 		$lname = $this->input->post('lname');
 		$branch_number = $this->input->post('branch_number');
 		$data['result'] = $this->officer_model->list_datashare_member($fname, $lname, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "รายชื่อสมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/member_share_system/list_datashare_member", $data);
@@ -272,7 +275,8 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['resume'] = $this->officer_model->share_member($mem_id, $branch_number);
 		$data['result'] = $this->officer_model->datashare_member($mem_id, $branch_number);
-		$this->load->view("containner/head");
+		$title['title'] = "ข้อมูลหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/member_share_system/datashare_member", $data);
