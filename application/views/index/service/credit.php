@@ -1,6 +1,6 @@
 <div class="container-fluid mt-2">
 	<h2 class="text-center text-dark mt-3">บริการสินเชื่อสหกรณ์</h2>
-	<ul class="nav nav-pills nav-justified sticky-top mb-3" id="ex1">
+	<ul class="nav nav-pills nav-justified mb-3">
 		<li class="nav-item" role="presentation">
 			<a class="nav-link active" style="background-color: #25d321;" id="ex3-tab-1" data-mdb-toggle="pill" href="#ex3-pills-1" role="tab" aria-controls="ex3-pills-1" aria-selected="true">สินเชื่อ</a>
 		</li>
@@ -15,9 +15,6 @@
 		</li>
 		<li class="nav-item" role="presentation">
 			<a class="nav-link" style="background-color: #25d321;" id="ex3-tab-5" data-mdb-toggle="pill" href="#ex3-pills-5" role="tab" aria-controls="ex3-pills-5" aria-selected="false">สินเชื่อพิเศษ</a>
-		</li>
-		<li class="nav-item" role="presentation">
-			<a class="nav-link" style="background-color: #25d321;" id="ex3-tab-6" data-mdb-toggle="pill" href="#ex3-pills-6" role="tab" aria-controls="ex3-pills-6" aria-selected="false">สินเชื่อโครงการ</a>
 		</li>
 		<li class="nav-item" role="presentation">
 			<a class="nav-link" style="background-color: #25d321;" id="ex3-tab-7" data-mdb-toggle="pill" href="#ex3-pills-7" role="tab" aria-controls="ex3-pills-7" aria-selected="false">สินเชื่อโครงการ สินทรัพย์</a>
@@ -38,8 +35,6 @@
 		</div>
 		<div class="tab-pane fade" id="ex3-pills-5" role="tabpanel" aria-labelledby="ex3-tab-5">
 			<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="slide-in-left" src="<?php echo base_url('picture/สินเชื่อพิเศษ_1.jpg') ?>" alt="สินเชื่อพิเศษ" style="width: 100%;">
-		</div>
-		<div class="tab-pane fade" id="ex3-pills-6" role="tabpanel" aria-labelledby="ex3-tab-6">
 		</div>
 		<div class="tab-pane fade" id="ex3-pills-7" role="tabpanel" aria-labelledby="ex3-tab-7">
 			<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="slide-in-left" src="<?php echo base_url('picture/สินเชื่อโครงการสินทรัพย์.jpg') ?>" alt="สินเชื่อโครงการสินทรัพย์" style="width: 100%;">

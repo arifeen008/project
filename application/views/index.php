@@ -72,7 +72,7 @@
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('member/register_page') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fab fa-servicestack fa-4x"></i>
 								<h3 class="text-center text-success">สมัครสมาชิก</h3>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-user-alt fa-4x"></i></i>
 								<h3 class="text-center text-success">บริการเงินฝาก</h3>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-project-diagram fa-4x"></i>
 								<h3 class="text-center text-success">บริการสินเชื่อ</h3>
@@ -102,7 +102,7 @@
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card">
-						<a href="#" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file fa-4x"></i>
 								<h3 class="text-center text-success">เอกสาร</h3>
@@ -120,7 +120,7 @@
 	<div class="row">
 		<div class="col-md-4">
 			<a class="card my-2" href="<?php echo site_url('news/news001') ?>">
-				<img src="<?php echo base_url('picture_activity\001\S__999477.jpg')?>" class="card-img-top" alt="Fissure in Sandstone" />
+				<img src="<?php echo base_url('picture_activity\001\S__999477.jpg')?>" class="card-img-top"/>
 				<div class="card-body">
 					<h5 class="card-title text-dark text-truncate">เข้าร่วมประชุมใหญ่วิสามัญ ในวันที่ 28 ธันวาคม 2564</h5>
 					<p class="card-text text-dark text-truncate">
@@ -198,138 +198,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- <div class="container my-2">
-	<h2 class="text-dark text-center">ข่าวประชาสัมพันธ์</h2>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start" />
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 <div class="container my-3">
 	<div class="card">
