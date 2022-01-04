@@ -42,7 +42,7 @@
 											ฉันยอมรับข้อความทั้งหมดในเงื่อนไขการให้บริการ
 										</label>
 									</div>
-									<div class="g-recaptcha d-flex justify-content-center my-3" data-sitekey="6LcD-NkdAAAAAPssp1x0XTdbMtJr7TDc2A8Nh8_5" data-callback='onSubmit' data-action='submit'></div>
+									<!-- <div class="g-recaptcha d-flex justify-content-center my-3" data-sitekey="6LcD-NkdAAAAAPssp1x0XTdbMtJr7TDc2A8Nh8_5" data-callback='onSubmit' data-action='submit'></div> -->
 
 									<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 										<button type="submit" class="btn btn-outline-success" data-mdb-ripple-color="dark">สมัครสมาชิก</button>&nbsp; &nbsp;

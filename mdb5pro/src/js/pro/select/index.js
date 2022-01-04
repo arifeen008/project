@@ -1270,12 +1270,6 @@ class Select {
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
   }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
-  }
 }
 
 export default Select;

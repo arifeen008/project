@@ -1,48 +1,58 @@
 <div class="col-lg-9">
-	<br>
 	<div class="card">
 		<div class="card-body">
 			<h5 class="card-title">เงินฝากพนักงานประจำวัน</h5>
 			<form action="<?php echo site_url('officer/depositreport_summary') ?>" method="post" class="row g-3">
 				<div class="col-md-6">
-					<label class="form-label">จาก :</label>
-					<input type="date" class="form-control" name="startdate" value="<?php echo date("Y-m-d"); ?>">
+					<div class="form-outline datepicker">
+						<input type="text" class="form-control datepicker" name="startdate" id="exampleDatepickerStart" />
+						<label for="exampleDatepickerStart" class="form-label">จาก</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">ถึง :</label>
-					<input type="date" class="form-control" name="enddate" value="<?php echo date("Y-m-d", strtotime("+1 day")); ?>">
+					<div class="form-outline datepicker">
+						<input type="text" class="form-control datepicker" name="enddate" id="exampleDatepickerEnd" />
+						<label for="exampleDatepickerEnd" class="form-label">ถึง</label>
+					</div>
 				</div>
-
 				<div class="col-12">
-					<button type="submit" class="btn btn-success mb-2"><i class="far fa-eye"></i>&nbsp;&nbsp;&nbsp;ดูข้อมูล</button>
+					<button type="submit" class="btn btn-success mb-2"><i class="far fa-eye me-2"></i>ดูข้อมูล</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	<br>
+
 	<div class="card">
 		<div class="card-body">
 			<h5 class="card-title">เงินฝากในบัญชีสมาชิก</h5>
 			<form action="<?php echo site_url('officer/list_deposit_member') ?>" method="post" class="row g-3">
 				<div class="col-md-6">
-					<label class="form-label">เลขบัญชี :</label>
-					<input class="form-control" type="text" name="account_number">
+					<div class="form-outline">
+						<input type="text" name="account_number" id="form7Example1" class="form-control" />
+						<label class="form-label" for="form7Example1">เลขบัญชี</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">เลขสมาชิก :</label>
-					<input class="form-control" type="text" name="mem_id">
+					<div class="form-outline">
+						<input type="text" name="mem_id" id="form7Example1" class="form-control" />
+						<label class="form-label" for="form7Example1">เลขสมาชิก</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label for="mem_id">ชื่อ :</label>
-					<input class="form-control" type="text" name="fname">
+					<div class="form-outline">
+						<input type="text" name="fname" id="form7Example1" class="form-control" />
+						<label class="form-label" for="form7Example1">ชื่อ</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label for="mem_id">นามสกุล :</label>
-					<input class="form-control" type="text" name="lname">
+					<div class="form-outline">
+						<input type="text" name="lname" id="form7Example1" class="form-control" />
+						<label class="form-label" for="form7Example1">นามสกุล</label>
+					</div>
 				</div>
-				<div class="col-md-6">
-					<label for="inputState" class="form-label">สาขา</label>
-					<select class="form-select" id="branch_number" name="branch_number">
+				<div class="col-md-12">
+					<label class="form-label select-label" for="exampleFormControlSelect1">สาขา</label>
+					<select class="form-control" id="exampleFormControlSelect1" name="branch_number">
 						<option value="000">สาขาสำนักงานใหญ่</option>
 						<option value="001">สาขากระบี่</option>
 						<option value="002">สาขาคลองยาง</option>
@@ -54,8 +64,9 @@
 						<option value="008">สาขาเกาะลันตา</option>
 					</select>
 				</div>
+
 				<div class="col-12">
-					<button type="submit" class="btn btn-success mb-2"><i class="fas fa-search"></i>&nbsp;&nbsp;&nbsp;ค้นหา</button>
+					<button type="submit" class="btn btn-success mb-2"><i class="fas fa-search me-2"></i>ค้นหา</button>
 				</div>
 			</form>
 		</div>

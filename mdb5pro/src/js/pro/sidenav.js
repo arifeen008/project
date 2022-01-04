@@ -30,7 +30,6 @@ const ARROW_CLASS = 'rotate-icon';
 const BACKDROP_CLASS = 'sidenav-backdrop';
 const SELECTOR_SIDENAV = '.sidenav';
 const SELECTOR_TOGGLE = '[data-mdb-toggle="sidenav"]';
-const SELECTOR_TOGGLE_COLLAPSE = '[data-mdb-toggle="collapse"]';
 const SELECTOR_SHOW_SLIM = '[data-mdb-slim="true"]';
 const SELECTOR_HIDE_SLIM = '[data-mdb-slim="false"]';
 const SELECTOR_NAVIGATION = '.sidenav-menu';
@@ -376,14 +375,6 @@ class Sidenav {
     return false;
   }
 
-  _isAllToBeCollapsed() {
-    const collapseElements = SelectorEngine.find(SELECTOR_TOGGLE_COLLAPSE, this._element);
-    const collapseElementsExpanded = collapseElements.filter(
-      (collapsible) => collapsible.getAttribute('aria-expanded') === 'true'
-    );
-    return collapseElementsExpanded.length === 0;
-  }
-
   _isAllCollapsed() {
     return (
       SelectorEngine.find(SELECTOR_COLLAPSE, this._element).filter((el) => isVisible(el)).length ===
@@ -507,18 +498,7 @@ class Sidenav {
 
     // Event listeners
 
-    EventHandler.on(toggler, 'click', (e) => {
-      this._toggleCategory(e, instance, list);
-      if (this._tempSlim && this._isAllToBeCollapsed()) {
-        this._setSlim(true);
-
-        this._tempSlim = false;
-      }
-
-      if (this.options.mode === 'over' && this._focusTrap) {
-        this._focusTrap.update();
-      }
-    });
+    EventHandler.on(toggler, 'click', (e) => this._toggleCategory(e, instance, list));
 
     EventHandler.on(list, 'show.bs.collapse', () => this._rotateArrow(toggler, 180));
 
@@ -536,6 +516,7 @@ class Sidenav {
 
         this._tempSlim = false;
       }
+
       if (this.options.mode === 'over' && this._focusTrap) {
         this._focusTrap.update();
       }
@@ -545,8 +526,13 @@ class Sidenav {
   _setupContent() {
     this._content = SelectorEngine.find(this.options.content);
     this._initialContentStyle = this._content.map((el) => {
-      const { paddingLeft, paddingRight, marginLeft, marginRight, transition } =
-        window.getComputedStyle(el);
+      const {
+        paddingLeft,
+        paddingRight,
+        marginLeft,
+        marginRight,
+        transition,
+      } = window.getComputedStyle(el);
       return { paddingLeft, paddingRight, marginLeft, marginRight, transition };
     });
   }
@@ -972,12 +958,6 @@ class Sidenav {
 
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
-  }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
   }
 }
 

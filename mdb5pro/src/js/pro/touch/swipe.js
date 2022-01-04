@@ -1,3 +1,4 @@
+import TouchUtil from './touchUtil';
 import EventHandler from '../../mdb/dom/event-handler';
 
 const DEFAULT_OPTIONS = {
@@ -5,8 +6,13 @@ const DEFAULT_OPTIONS = {
   direction: 'all',
 };
 
-class Swipe {
+const EVENT = 'swipe';
+const LEFT = 'left';
+const RIGHT = 'right';
+
+class Swipe extends TouchUtil {
   constructor(element, options) {
+    super();
     this._element = element;
     this._startPosition = null;
     this._options = {
@@ -20,61 +26,44 @@ class Swipe {
   }
 
   handleTouchMove(e) {
+    // eslint-disable-next-line no-unused-expressions
+    e.type === 'touchmove' && e.preventDefault();
+
     if (!this._startPosition) return;
+
+    const { direction, threshold } = this._options;
 
     const position = this._getCoordinates(e);
     const displacement = {
       x: position.x - this._startPosition.x,
       y: position.y - this._startPosition.y,
     };
-
     const swipe = this._getDirection(displacement);
+    const { x, y } = swipe;
 
-    if (this._options.direction === 'all') {
-      if (swipe.y.value < this._options.threshold && swipe.x.value < this._options.threshold) {
+    if (direction === 'all') {
+      if (y.value < threshold && x.value < threshold) {
         return;
       }
-      const direction = swipe.y.value > swipe.x.value ? swipe.y.direction : swipe.x.direction;
-      EventHandler.trigger(this._element, `swipe${direction}`);
-      EventHandler.trigger(this._element, 'swipe', { direction });
+
+      const direction = y.value > x.value ? y.direction : x.direction;
+
+      EventHandler.trigger(this._element, `${EVENT}${direction}`);
+      EventHandler.trigger(this._element, EVENT, { direction });
       this._startPosition = null;
       return;
     }
 
-    const axis = this._options.direction === 'left' || this._options === 'right' ? 'x' : 'y';
+    const axis = direction === LEFT || direction === RIGHT ? 'x' : 'y';
 
-    if (
-      swipe[axis].direction === this._options.direction &&
-      swipe[axis].value > this._options.threshold
-    ) {
-      EventHandler.trigger(this._element, `swipe${swipe[axis].direction}`);
+    if (swipe[axis].direction === direction && swipe[axis].value > threshold) {
+      EventHandler.trigger(this._element, `${EVENT}${swipe[axis].direction}`);
       this._startPosition = null;
     }
   }
 
   handleTouchEnd() {
     this._startPosition = null;
-  }
-
-  _getCoordinates(e) {
-    const [touch] = e.touches;
-    return {
-      x: touch.clientX,
-      y: touch.clientY,
-    };
-  }
-
-  _getDirection(displacement) {
-    return {
-      x: {
-        direction: displacement.x < 0 ? 'left' : 'right',
-        value: Math.abs(displacement.x),
-      },
-      y: {
-        direction: displacement.y < 0 ? 'up' : 'down',
-        value: Math.abs(displacement.y),
-      },
-    };
   }
 }
 

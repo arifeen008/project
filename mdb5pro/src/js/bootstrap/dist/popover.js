@@ -1,29 +1,29 @@
 /*!
- * Bootstrap popover.js v5.1.3 (https://getbootstrap.com/)
+ * Bootstrap popover.js v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined'
-    ? (module.exports = factory(require('./tooltip.js')))
+    ? (module.exports = factory(
+        require('./dom/selector-engine.js'),
+        require('./dom/data.js'),
+        require('./tooltip.js')
+      ))
     : typeof define === 'function' && define.amd
-    ? define(['./tooltip'], factory)
+    ? define(['./dom/selector-engine', './dom/data', './tooltip'], factory)
     : ((global = typeof globalThis !== 'undefined' ? globalThis : global || self),
-      (global.Popover = factory(global.Tooltip)));
-})(this, function (Tooltip) {
+      (global.Popover = factory(global.SelectorEngine, global.Data, global.Tooltip)));
+})(this, function (SelectorEngine, Data, Tooltip) {
   'use strict';
 
-  const _interopDefaultLegacy = (e) =>
-    e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  function _interopDefaultLegacy(e) {
+    return e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  }
 
-  const Tooltip__default = /*#__PURE__*/ _interopDefaultLegacy(Tooltip);
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.3): util/index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+  var SelectorEngine__default = /*#__PURE__*/ _interopDefaultLegacy(SelectorEngine);
+  var Data__default = /*#__PURE__*/ _interopDefaultLegacy(Data);
+  var Tooltip__default = /*#__PURE__*/ _interopDefaultLegacy(Tooltip);
 
   const getjQuery = () => {
     const { jQuery } = window;
@@ -35,18 +35,9 @@
     return null;
   };
 
-  const DOMContentLoadedCallbacks = [];
-
   const onDOMContentLoaded = (callback) => {
     if (document.readyState === 'loading') {
-      // add listener on the first call when the document is in loading state
-      if (!DOMContentLoadedCallbacks.length) {
-        document.addEventListener('DOMContentLoaded', () => {
-          DOMContentLoadedCallbacks.forEach((callback) => callback());
-        });
-      }
-
-      DOMContentLoadedCallbacks.push(callback);
+      document.addEventListener('DOMContentLoaded', callback);
     } else {
       callback();
     }
@@ -73,7 +64,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.3): popover.js
+   * Bootstrap (v5.0.1): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -87,8 +78,9 @@
   const DATA_KEY = 'bs.popover';
   const EVENT_KEY = `.${DATA_KEY}`;
   const CLASS_PREFIX = 'bs-popover';
+  const BSCLS_PREFIX_REGEX = new RegExp(`(^|\\s)${CLASS_PREFIX}\\S+`, 'g');
   const Default = {
-    ...Tooltip__default.default.Default,
+    ...Tooltip__default['default'].Default,
     placement: 'right',
     offset: [0, 8],
     trigger: 'click',
@@ -101,7 +93,7 @@
       '</div>',
   };
   const DefaultType = {
-    ...Tooltip__default.default.DefaultType,
+    ...Tooltip__default['default'].DefaultType,
     content: '(string|element|function)',
   };
   const Event = {
@@ -116,6 +108,8 @@
     MOUSEENTER: `mouseenter${EVENT_KEY}`,
     MOUSELEAVE: `mouseleave${EVENT_KEY}`,
   };
+  const CLASS_NAME_FADE = 'fade';
+  const CLASS_NAME_SHOW = 'show';
   const SELECTOR_TITLE = '.popover-header';
   const SELECTOR_CONTENT = '.popover-body';
   /**
@@ -124,7 +118,7 @@
    * ------------------------------------------------------------------------
    */
 
-  class Popover extends Tooltip__default.default {
+  class Popover extends Tooltip__default['default'] {
     // Getters
     static get Default() {
       return Default;
@@ -146,23 +140,58 @@
       return this.getTitle() || this._getContent();
     }
 
-    setContent(tip) {
-      this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TITLE);
+    setContent() {
+      const tip = this.getTipElement(); // we use append for html objects to maintain js events
 
-      this._sanitizeAndSetContent(tip, this._getContent(), SELECTOR_CONTENT);
+      this.setElementContent(
+        SelectorEngine__default['default'].findOne(SELECTOR_TITLE, tip),
+        this.getTitle()
+      );
+
+      let content = this._getContent();
+
+      if (typeof content === 'function') {
+        content = content.call(this._element);
+      }
+
+      this.setElementContent(
+        SelectorEngine__default['default'].findOne(SELECTOR_CONTENT, tip),
+        content
+      );
+      tip.classList.remove(CLASS_NAME_FADE, CLASS_NAME_SHOW);
     } // Private
 
-    _getContent() {
-      return this._resolvePossibleFunction(this._config.content);
+    _addAttachmentClass(attachment) {
+      this.getTipElement().classList.add(`${CLASS_PREFIX}-${this.updateAttachment(attachment)}`);
     }
 
-    _getBasicClassPrefix() {
-      return CLASS_PREFIX;
+    _getContent() {
+      return this._element.getAttribute('data-bs-content') || this._config.content;
+    }
+
+    _cleanTipClass() {
+      const tip = this.getTipElement();
+      const tabClass = tip.getAttribute('class').match(BSCLS_PREFIX_REGEX);
+
+      if (tabClass !== null && tabClass.length > 0) {
+        tabClass.map((token) => token.trim()).forEach((tClass) => tip.classList.remove(tClass));
+      }
     } // Static
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Popover.getOrCreateInstance(this, config);
+        let data = Data__default['default'].get(this, DATA_KEY);
+
+        const _config = typeof config === 'object' ? config : null;
+
+        if (!data && /dispose|hide/.test(config)) {
+          return;
+        }
+
+        if (!data) {
+          data = new Popover(this, _config);
+          Data__default['default'].set(this, DATA_KEY, data);
+        }
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {

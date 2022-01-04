@@ -5,12 +5,11 @@ include_once("application/libraries/Thaidate.php");
 <div class="col-lg-9">
 	<div class="card my-3">
 		<div class="card-body text-dark">
-			<h1 class="card-title border-bottom">ผลการค้นหา</h1>
+			<h1 class="card-title border-bottom mb-3">ผลการค้นหา</h1>
 			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
-				<table class="table table-borderless table-hover" id="myTable">
+				<table>
 					<thead>
-						<tr align="center">
-							<th>ที่</th>
+						<tr>		
 							<th>สาขา</th>
 							<th>เลขสมาชิก</th>
 							<th>เลขบัญชี</th>
@@ -22,8 +21,7 @@ include_once("application/libraries/Thaidate.php");
 					<tbody>
 						<?php $i = 1 ?>
 						<?php foreach ($result->result() as $row) { ?>
-							<tr align="center">
-								<td><?= $i++ ?></td>
+							<tr>						
 								<td><?= $row->BR_NAME ?></td>
 								<td><?= $row->MEM_ID ?></td>
 								<td><?= BankAccount($row->ACCOUNT_NO) ?></td>

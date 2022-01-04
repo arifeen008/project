@@ -9,12 +9,12 @@ select.select-initialized {
 }
 
 .select-arrow {
-  color: $form-outline-select-arrow-color;
+  color: #000;
   text-align: center;
-  font-size: $form-outline-select-arrow-font-size;
+  font-size: 0.8rem;
   position: absolute;
-  top: $form-outline-select-arrow-top;
-  right: $form-outline-select-arrow-right;
+  right: 9px;
+  top: 9px;
 
   &:before {
     content: '\25BC';
@@ -22,77 +22,77 @@ select.select-initialized {
 }
 
 .was-validated .form-control:valid ~ .select-arrow {
-  color: $form-outline-select-valid-color;
+  color: #00b74a;
 }
 
 .was-validated .form-control:invalid ~ .select-arrow {
-  color: $form-outline-select-invalid-color;
+  color: #f93154;
 }
 
 .select-clear-btn {
-  color: $form-outline-select-clear-btn-color;
-  font-size: $form-outline-select-clear-btn-font-size;
+  color: black;
+  font-size: 1rem;
   position: absolute;
-  top: $form-outline-select-clear-btn-top;
-  right: $form-outline-select-clear-btn-right;
+  top: 7px;
+  right: 27px;
   cursor: pointer;
 
   &:focus {
-    color: $form-outline-select-clear-btn-focus-color;
+    color: $blue-accent-400;
     outline: none;
   }
 }
 
 .form-control-sm ~ .select-clear-btn {
-  font-size: $form-outline-select-sm-clear-btn-font-size;
-  top: $form-outline-select-sm-clear-btn-top;
+  font-size: 0.8rem;
+  top: 4px;
 }
 
 .form-control-lg ~ .select-clear-btn {
-  top: $form-outline-select-lg-clear-btn-top;
+  top: 11px;
 }
 
 .select-dropdown-container {
-  z-index: $form-outline-select-dropdown-container-z-index;
+  z-index: 1070;
 }
 
 .select-dropdown {
-  background-color: $form-outline-select-dropdown-bgc;
-  box-shadow: $form-outline-select-dropdown-box-shadow;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 0;
-  min-width: $form-outline-select-dropdown-min-width;
+  min-width: 100px;
   outline: 0;
   position: relative;
-  transform: $form-outline-select-dropdown-transform;
+  transform: scaleY(0.8);
   opacity: 0;
-  transition: $form-outline-select-dropdown-transition;
+  transition: all 0.2s;
 
   &.open {
-    transform: $form-outline-select-dropdown-open-transform;
+    transform: scaleY(1);
     opacity: 1;
   }
 }
 
 .select-dropdown > .input-group {
-  padding: $form-outline-select-dropdown-input-group-padding;
+  padding: 10px;
 }
 
 .select-label {
-  max-width: $form-outline-select-label-max-width;
+  max-width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   &.active {
-    transform: $form-outline-select-label-active-transform;
+    transform: translateY(-1rem) translateY(0.1rem) scale(0.8);
   }
 }
 
 .form-control-lg ~ .select-label.active {
-  transform: $form-outline-select-lg-label-active-transform;
+  transform: translateY(-1.25rem) translateY(0.1rem) scale(0.8);
 }
 
 .form-control-sm ~ .select-label.active {
-  transform: $form-outline-select-sm-label-active-transform;
+  transform: translateY(-0.83rem) translateY(0.1rem) scale(0.8);
 }
 
 .form-outline .select-label.active ~ .form-notch .form-notch-middle {
@@ -110,11 +110,11 @@ select.select-initialized {
 }
 
 .select-input.focused {
-  color: $form-outline-select-input-focused-color;
+  color: #616161;
   outline: 0;
 
   & ~ .select-label {
-    color: $form-outline-select-label-color;
+    color: #1266f1;
   }
 
   &::placeholder {
@@ -122,60 +122,57 @@ select.select-initialized {
   }
 
   & ~ .form-notch .form-notch-leading {
-    border-top: $form-outline-select-notch-border-width solid
-      $form-outline-select-notch-border-color;
-    border-bottom: $form-outline-select-notch-border-width solid
-      $form-outline-select-notch-border-color;
-    border-left: $form-outline-select-notch-border-width solid
-      $form-outline-select-notch-border-color;
-    transition: $form-outline-select-notch-transition;
+    border-top: 2px solid #1266f1;
+    border-bottom: 2px solid #1266f1;
+    border-left: 2px solid #1266f1;
+    transition: all 0.2s linear;
   }
 
   & ~ .form-notch .form-notch-middle {
-    border-bottom: $form-outline-select-notch-border-width solid;
-    border-color: $form-outline-select-notch-border-color;
-    transition: $form-outline-select-notch-transition;
+    border-bottom: 2px solid;
+    border-color: #1266f1;
+    transition: all 0.2s linear;
   }
 
   & ~ .form-notch .form-notch-trailing {
-    border-top: $form-outline-select-notch-border-width solid;
-    border-bottom: $form-outline-select-notch-border-width solid;
-    border-right: $form-outline-select-notch-border-width solid;
-    border-color: $form-outline-select-notch-border-color;
-    transition: $form-outline-select-notch-transition;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-color: #1266f1;
+    transition: all 0.2s linear;
   }
 }
 
 .select-input.focused ~ .select-arrow {
-  color: $form-outline-select-input-focused-arrow-color;
+  color: #4285f4;
 }
 
 .form-white .select-input:focus ~ .select-arrow {
-  color: $form-outline-select-white-focus-arrow-color;
+  color: #fff;
 }
 
 .form-white .select-arrow {
-  color: $form-outline-select-white-arrow-color;
+  color: #fff;
 }
 
 .form-white .select-clear-btn {
-  color: $form-outline-select-white-clear-btn;
+  color: #fff;
 }
 
 .form-control-sm ~ .select-arrow {
-  top: $form-outline-select-sm-arrow-top;
+  top: 3px;
 }
 
 .form-control-lg ~ .select-arrow {
-  top: $form-outline-select-lg-arrow-top;
+  top: 13px;
 }
 
 .select-options-wrapper {
   overflow-y: auto;
 
   &::-webkit-scrollbar {
-    width: $form-outline-select-options-wrapper-scrollbar-width;
-    height: $form-outline-select-options-wrapper-scrollbar-height;
+    width: 4px;
+    height: 4px;
   }
 
   &::-webkit-scrollbar-button {
@@ -190,14 +187,14 @@ select.select-initialized {
   &::-webkit-scrollbar-track-piece {
     background-color: transparent;
     border-radius: 0;
-    border-bottom-right-radius: $form-outline-select-options-wrapper-scrollbar-border-bottom-right-radius;
-    border-bottom-left-radius: $form-outline-select-options-wrapper-scrollbar-border-bottom-left-radius;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb:vertical {
-    height: $form-outline-select-options-wrapper-scrollbar-thumb-height;
-    background-color: $form-outline-select-options-wrapper-scrollbar-thumb-bgc;
-    border-radius: $form-outline-select-options-wrapper-scrollbar-thumb-border-radius;
+    height: 50px;
+    background-color: #999;
+    border-radius: 4px;
   }
 }
 
@@ -215,17 +212,17 @@ select.select-initialized {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: $form-outline-select-option-group-label-pl;
-  padding-right: $form-outline-select-option-group-label-pr;
-  font-size: $form-outline-select-option-group-label-font-size;
-  font-weight: $form-outline-select-option-group-label-font-weight;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 1rem;
+  font-weight: 400;
   background-color: transparent;
-  color: $form-outline-select-option-group-label-color;
+  color: rgba(0, 0, 0, 0.54);
   user-select: none;
 }
 
 .select-option-group > .select-option {
-  padding-left: $form-outline-select-option-group-select-option-pl;
+  padding-left: 26px;
 }
 
 .select-option {
@@ -238,72 +235,67 @@ select.select-initialized {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: $form-outline-select-option-color;
-  padding-left: $form-outline-select-option-pl;
-  padding-right: $form-outline-select-option-pr;
-  font-size: $form-outline-select-option-font-size;
-  font-weight: $form-outline-select-option-font-weight;
+  color: rgba(0, 0, 0, 0.87);
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 1rem;
+  font-weight: 400;
   background-color: transparent;
   user-select: none;
 
   &:hover:not(.disabled) {
-    background-color: $form-outline-select-option-hover-not-disabled-bgc;
+    background-color: #ddd;
   }
 
   &.active {
-    background-color: $form-outline-select-option-active-bgc;
+    background-color: #ddd;
   }
 
   &.selected.active {
-    background-color: $form-outline-select-option-selected-active-bgc;
+    background-color: #ddd;
   }
 
   &.selected.disabled {
     cursor: default;
-    color: $form-outline-select-option-selected-disabled-color;
+    color: #9e9e9e;
     background-color: transparent;
   }
 
   &.selected {
-    background-color: $form-outline-select-option-selected-bgc;
+    background-color: #eee;
   }
 
   &.disabled {
     cursor: default;
-    color: $form-outline-select-option-disabled-color;
+    color: #9e9e9e;
   }
 }
 
 .select-option-text {
   & .form-check-input {
-    margin-right: $form-outline-select-option-text-form-check-input-mr;
+    margin-right: 10px;
   }
 }
 
 .select-option-secondary-text {
-  font-size: $form-outline-select-option-secondary-text-font-size;
-  color: $form-outline-select-option-secondary-text-color;
+  font-size: 0.8rem;
+  color: #6c757d;
   display: block;
   line-height: normal;
 }
 
 .select-option-icon {
-  width: $form-outline-select-option-icon-width;
-  height: $form-outline-select-option-icon-height;
+  width: 28px;
+  height: 28px;
 }
 
 .select-custom-content {
-  padding: $form-outline-select-custom-content-padding;
+  padding: 16px;
 }
 
 .select-no-results {
-  padding-left: $form-outline-select-no-results-pl;
-  padding-right: $form-outline-select-no-results-pr;
+  padding-left: 16px;
+  padding-right: 16px;
   display: flex;
   align-items: center;
-}
-
-// Select white
-.form-white .select-input.focused ~ .select-arrow {
-  color: $form-outline-select-white-arrow;
 }

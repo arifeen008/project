@@ -159,6 +159,7 @@ class MultiRangeSlider {
 
   _handleClickEventOnHand() {
     const { max, min } = this._options;
+
     this.hands.forEach((hand, index) => {
       EventHandlerMulti.on(hand, 'mousedown touchstart', (ev) => {
         this._mousemove = true;
@@ -264,17 +265,17 @@ class MultiRangeSlider {
         const maxValue =
           ((getEventTypeClientX(ev) - this.leftConnectRect) / this.connect.offsetWidth) * max;
         let value =
-          (((getEventTypeClientX(ev) - this.leftConnectRect) /
+          ((getEventTypeClientX(ev) - this.leftConnectRect) /
             (this.connect.offsetWidth / (max - min))) %
-            (max - min)) +
-          min;
+          (max - min);
 
         let translation = getEventTypeClientX(ev) - this.leftConnectRect - hand.offsetWidth / 2;
 
         const handActiveHandle = Manipulator.getDataAttribute(this.handActive, 'handle');
         const handActiveTranslation = Manipulator.getDataAttribute(this.handActive, 'translation');
+
         if (value < min) {
-          translation = min - hand.offsetWidth;
+          translation = min - hand.offsetWidth / 2;
           value = min;
         } else if (maxValue >= max) {
           return;
@@ -445,6 +446,7 @@ class MultiRangeSlider {
     EventHandlerMulti.on(this.connect, 'mousemove', (ev) => {
       const value = (getEventTypeClientX(ev) - this.leftConnectRect) / ev.target.offsetWidth;
       const percent = `${Math.round(value * 100)}%`;
+
       EventHandler.trigger(this._element, 'movetooltip', {
         percents: { value, percent },
       });
@@ -486,12 +488,6 @@ class MultiRangeSlider {
 
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
-  }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
   }
 }
 

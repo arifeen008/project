@@ -1,30 +1,40 @@
 /*!
- * Bootstrap button.js v5.1.3 (https://getbootstrap.com/)
+ * Bootstrap button.js v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined'
-    ? (module.exports = factory(require('./dom/event-handler.js'), require('./base-component.js')))
+    ? (module.exports = factory(
+        require('./dom/selector-engine.js'),
+        require('./dom/data.js'),
+        require('./dom/event-handler.js'),
+        require('./base-component.js')
+      ))
     : typeof define === 'function' && define.amd
-    ? define(['./dom/event-handler', './base-component'], factory)
+    ? define([
+        './dom/selector-engine',
+        './dom/data',
+        './dom/event-handler',
+        './base-component',
+      ], factory)
     : ((global = typeof globalThis !== 'undefined' ? globalThis : global || self),
-      (global.Button = factory(global.EventHandler, global.Base)));
-})(this, function (EventHandler, BaseComponent) {
+      (global.Button = factory(
+        global.SelectorEngine,
+        global.Data,
+        global.EventHandler,
+        global.Base
+      )));
+})(this, function (SelectorEngine, Data, EventHandler, BaseComponent) {
   'use strict';
 
-  const _interopDefaultLegacy = (e) =>
-    e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  function _interopDefaultLegacy(e) {
+    return e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  }
 
-  const EventHandler__default = /*#__PURE__*/ _interopDefaultLegacy(EventHandler);
-  const BaseComponent__default = /*#__PURE__*/ _interopDefaultLegacy(BaseComponent);
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.3): util/index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+  var Data__default = /*#__PURE__*/ _interopDefaultLegacy(Data);
+  var EventHandler__default = /*#__PURE__*/ _interopDefaultLegacy(EventHandler);
+  var BaseComponent__default = /*#__PURE__*/ _interopDefaultLegacy(BaseComponent);
 
   const getjQuery = () => {
     const { jQuery } = window;
@@ -36,18 +46,9 @@
     return null;
   };
 
-  const DOMContentLoadedCallbacks = [];
-
   const onDOMContentLoaded = (callback) => {
     if (document.readyState === 'loading') {
-      // add listener on the first call when the document is in loading state
-      if (!DOMContentLoadedCallbacks.length) {
-        document.addEventListener('DOMContentLoaded', () => {
-          DOMContentLoadedCallbacks.forEach((callback) => callback());
-        });
-      }
-
-      DOMContentLoadedCallbacks.push(callback);
+      document.addEventListener('DOMContentLoaded', callback);
     } else {
       callback();
     }
@@ -74,7 +75,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.3): button.js
+   * Bootstrap (v5.0.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -97,7 +98,7 @@
    * ------------------------------------------------------------------------
    */
 
-  class Button extends BaseComponent__default.default {
+  class Button extends BaseComponent__default['default'] {
     // Getters
     static get NAME() {
       return NAME;
@@ -110,7 +111,11 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Button.getOrCreateInstance(this);
+        let data = Data__default['default'].get(this, DATA_KEY);
+
+        if (!data) {
+          data = new Button(this);
+        }
 
         if (config === 'toggle') {
           data[config]();
@@ -124,14 +129,19 @@
    * ------------------------------------------------------------------------
    */
 
-  EventHandler__default.default.on(
+  EventHandler__default['default'].on(
     document,
     EVENT_CLICK_DATA_API,
     SELECTOR_DATA_TOGGLE,
     (event) => {
       event.preventDefault();
       const button = event.target.closest(SELECTOR_DATA_TOGGLE);
-      const data = Button.getOrCreateInstance(button);
+      let data = Data__default['default'].get(button, DATA_KEY);
+
+      if (!data) {
+        data = new Button(button);
+      }
+
       data.toggle();
     }
   );

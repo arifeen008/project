@@ -93,10 +93,6 @@ class Alert extends BSAlert {
   }
 
   hide() {
-    if (!this._element) {
-      return;
-    }
-
     if (this._element.classList.contains('show')) {
       Manipulator.toggleClass(this._element, 'show');
       const handler = (e) => {

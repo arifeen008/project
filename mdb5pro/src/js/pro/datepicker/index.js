@@ -79,8 +79,6 @@ const BACKDROP_CLOSE_ANIMATION_CLASS = 'fade-out';
 const CONTAINER_OPEN_ANIMATION_CLASS = 'fade-in';
 const CONTAINER_CLOSE_ANIMATION_CLASS = 'fade-out';
 
-const CLASS_FORM_ICON_TRAILING = 'form-icon-trailing';
-
 const SELECTOR_DATEPICKER = '.datepicker';
 const SELECTOR_DATA_TOGGLE = '[data-mdb-toggle="datepicker"]';
 const SELECTOR_MODAL_CONTAINER = '.datepicker-modal-container';
@@ -228,8 +226,8 @@ class Datepicker {
 
   get container() {
     return (
-      SelectorEngine.findOne(`${SELECTOR_MODAL_CONTAINER}-${this._toggleButtonId}`) ||
-      SelectorEngine.findOne(`${SELECTOR_DROPDOWN_CONTAINER}-${this._toggleButtonId}`)
+      SelectorEngine.findOne(SELECTOR_MODAL_CONTAINER) ||
+      SelectorEngine.findOne(SELECTOR_DROPDOWN_CONTAINER)
     );
   }
 
@@ -276,27 +274,27 @@ class Datepicker {
   }
 
   get viewChangeButton() {
-    return SelectorEngine.findOne(SELECTOR_VIEW_CHANGE_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_VIEW_CHANGE_BUTTON);
   }
 
   get previousButton() {
-    return SelectorEngine.findOne(SELECTOR_PREVIOUS_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_PREVIOUS_BUTTON);
   }
 
   get nextButton() {
-    return SelectorEngine.findOne(SELECTOR_NEXT_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_NEXT_BUTTON);
   }
 
   get okButton() {
-    return SelectorEngine.findOne(SELECTOR_OK_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_OK_BUTTON);
   }
 
   get cancelButton() {
-    return SelectorEngine.findOne(SELECTOR_CANCEL_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_CANCEL_BUTTON);
   }
 
   get clearButton() {
-    return SelectorEngine.findOne(SELECTOR_CLEAR_BUTTON, this.container);
+    return SelectorEngine.findOne(SELECTOR_CLEAR_BUTTON);
   }
 
   get datesContainer() {
@@ -359,7 +357,6 @@ class Datepicker {
   _appendToggleButton() {
     const toggleButton = getToggleButtonTemplate(this._toggleButtonId);
     this._element.insertAdjacentHTML('beforeend', toggleButton);
-    Manipulator.addClass(this._input, CLASS_FORM_ICON_TRAILING);
   }
 
   open() {
@@ -383,8 +380,7 @@ class Datepicker {
       this._options,
       MONTHS_IN_ROW,
       YEARS_IN_VIEW,
-      YEARS_IN_VIEW,
-      this._toggleButtonId
+      YEARS_IN_VIEW
     );
 
     if (this._options.inline) {
@@ -395,11 +391,9 @@ class Datepicker {
 
     Manipulator.addClass(this.container, 'animation');
     Manipulator.addClass(this.container, CONTAINER_OPEN_ANIMATION_CLASS);
-    this.container.style.animationDuration = '300ms';
 
     Manipulator.addClass(backdrop, 'animation');
     Manipulator.addClass(backdrop, BACKDROP_OPEN_ANIMATION_CLASS);
-    backdrop.style.animationDuration = '150ms';
 
     this._setFocusTrap(this.container);
 
@@ -505,7 +499,7 @@ class Datepicker {
   }
 
   _updateHeaderDate(date, monthNames, dayNames) {
-    const headerDateEl = SelectorEngine.findOne('.datepicker-date-text', this.container);
+    const headerDateEl = SelectorEngine.findOne('.datepicker-date-text');
     const month = getMonth(date);
     const day = getDate(date);
     const dayNumber = getDayNumber(date);
@@ -876,7 +870,7 @@ class Datepicker {
 
   _closeDropdown() {
     const datepicker = SelectorEngine.findOne('.datepicker-dropdown-container');
-    datepicker.addEventListener('animationend', () => {
+    setTimeout(() => {
       if (datepicker) {
         document.body.removeChild(datepicker);
       }
@@ -884,7 +878,7 @@ class Datepicker {
       if (this._popper) {
         this._popper.destroy();
       }
-    });
+    }, 150);
     this._removeFocusTrap();
   }
 
@@ -896,12 +890,12 @@ class Datepicker {
     Manipulator.addClass(backdrop, BACKDROP_CLOSE_ANIMATION_CLASS);
 
     if (datepicker && backdrop) {
-      backdrop.addEventListener('animationend', () => {
+      setTimeout(() => {
         document.body.removeChild(backdrop);
         document.body.removeChild(datepicker);
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
-      });
+      }, 150);
     }
   }
 
@@ -1303,9 +1297,7 @@ class Datepicker {
         this._view,
         YEARS_IN_VIEW,
         this._options.min,
-        this._options.max,
-        this.lastYearInView,
-        this.firstYearInView
+        this._options.max
       )
     ) {
       this.nextButton.disabled = true;
@@ -1320,8 +1312,7 @@ class Datepicker {
         YEARS_IN_VIEW,
         this._options.min,
         this._options.max,
-        this.lastYearInView,
-        this.firstYearInView
+        this.lastYearInView
       )
     ) {
       this.previousButton.disabled = true;
@@ -1424,12 +1415,6 @@ class Datepicker {
 
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
-  }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
   }
 }
 

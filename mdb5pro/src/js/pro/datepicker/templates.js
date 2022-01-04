@@ -27,8 +27,7 @@ export function getDatepickerTemplate(
   options,
   monthsInRow,
   yearsInView,
-  yearsInRow,
-  id
+  yearsInRow
 ) {
   const month = getMonth(date);
   const year = getYear(date);
@@ -67,13 +66,9 @@ export function getDatepickerTemplate(
 
   if (options.inline) {
     Manipulator.addClass(template, 'datepicker-dropdown-container');
-    Manipulator.addClass(template, `datepicker-dropdown-container-${id}`);
-
     template.innerHTML = inlineContent;
   } else {
     Manipulator.addClass(template, 'datepicker-modal-container');
-    Manipulator.addClass(template, `datepicker-modal-container-${id}`);
-
     template.innerHTML = modalContent;
   }
 

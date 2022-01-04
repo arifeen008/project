@@ -66,12 +66,6 @@ class Navbar {
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
   }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
-  }
 }
 // auto-init
 SelectorEngine.find(`.${CLASSNAME_WRAPPER}`).forEach((element) => {

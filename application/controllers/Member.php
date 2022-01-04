@@ -67,14 +67,10 @@ class Member extends CI_Controller
 				$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 				$result = $this->member_model->insert_register_form($id_card, $user_id, $password);
 				if ($result == true) {
-					$this->load->view("containner/head");
-					$this->load->view("login_member");
-					$this->load->view("containner/script");
+					redirect('member/login_page', 'refresh');
 					echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
 				} else {
-					$this->load->view("containner/head");
-					$this->load->view("register_form");
-					$this->load->view("containner/script");
+					redirect('member/register_page', 'refresh');
 					echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
 				}
 			}

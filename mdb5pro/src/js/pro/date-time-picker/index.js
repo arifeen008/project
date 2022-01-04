@@ -17,7 +17,6 @@ const CLASSNAME_TIMEPICKER = 'timepicker';
 const CLASSNAME_TOGGLE_BUTTON = `${NAME}-toggle-button`;
 const CLASSNAME_INVALID_FEEDBACK = 'invalid-feedback';
 const CLASSNAME_IS_INVALID = 'is-invalid';
-const CLASSNAME_DATETIMEPICKER_OPEN = 'dateTimepicker-open';
 
 const SELECTOR_DATETIMEPICKER = `.${NAME}`;
 const SELECTOR_TIMEPICKER = `.${CLASSNAME_TIMEPICKER}`;
@@ -220,7 +219,6 @@ class Datetimepicker {
     );
 
     EventHandler.one(DATEPICKER_CANCEL_BTN, 'mousedown', () => {
-      Manipulator.removeClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
       this._cancel = true;
       EventHandler.off(DATEPICKER_CANCEL_BTN, 'mousedown');
     });
@@ -317,10 +315,6 @@ class Datetimepicker {
 
     this._datepicker.open();
 
-    if (!this._options.inline) {
-      Manipulator.addClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
-    }
-
     if (this._options.inline) {
       this._openDropdownDate();
     }
@@ -344,12 +338,7 @@ class Datetimepicker {
       EventHandler.on(this._datepicker.container, 'click', () => {
         this._openTimePicker();
       });
-      setTimeout(() => {
-        const timepicker = SelectorEngine.findOne(`${SELECTOR_TIMEPICKER}-wrapper`, document.body);
-        if (!timepicker) {
-          Manipulator.removeClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
-        }
-      }, 10);
+
       if (this._options.inline) {
         this.toggleButton.style.pointerEvents = 'auto';
       }
@@ -362,24 +351,6 @@ class Datetimepicker {
     });
   }
 
-  _handleEscapeKey() {
-    EventHandler.one(document.body, 'keyup', () => {
-      setTimeout(() => {
-        const timepicker = SelectorEngine.findOne(`${SELECTOR_TIMEPICKER}-wrapper`, document.body);
-        if (!timepicker) {
-          Manipulator.removeClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
-        }
-      }, 250);
-    });
-  }
-
-  _handleCancelButton() {
-    const CANCEL_BTN = SelectorEngine.findOne(`${SELECTOR_TIMEPICKER}-cancel`, document.body);
-    EventHandler.one(CANCEL_BTN, 'mousedown', () => {
-      Manipulator.removeClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
-    });
-  }
-
   _openDropdownDate() {
     const datePopper = this._datepicker._popper;
     datePopper.state.elements.reference = this._input;
@@ -387,25 +358,17 @@ class Datetimepicker {
 
   _openTimePicker() {
     EventHandler.trigger(this._timepicker.elementToggle, 'click');
+
     setTimeout(() => {
       this._addIconButtons();
 
       if (this._options.inline) {
         this._openDropdownTime();
       }
+
       if (this._timepicker._modal) {
         const CANCEL_BTN = SelectorEngine.findOne(`${SELECTOR_TIMEPICKER}-cancel`, document.body);
-        this._handleEscapeKey();
-        this._handleCancelButton();
         EventHandler.on(this._timepicker._modal, 'click', (e) => {
-          if (
-            e.target.classList.contains(`${CLASSNAME_TIMEPICKER}-wrapper`) ||
-            e.target.classList.contains(`${CLASSNAME_TIMEPICKER}-submit`)
-          ) {
-            setTimeout(() => {
-              Manipulator.removeClass(document.body, CLASSNAME_DATETIMEPICKER_OPEN);
-            }, 200);
-          }
           if (e.target.classList.contains(`${CLASSNAME_TIMEPICKER}-clear`)) {
             EventHandler.trigger(this._timepicker._element, EVENT_INPUT_TIMEPICKER);
           }
@@ -413,7 +376,7 @@ class Datetimepicker {
             EventHandler.trigger(CANCEL_BTN, 'click');
             setTimeout(() => {
               this._openDatePicker();
-            }, 200);
+            }, 400);
           }
         });
       }
@@ -422,6 +385,7 @@ class Datetimepicker {
     EventHandler.one(this._timepicker._element, EVENT_INPUT_TIMEPICKER, () => {
       this._timeValue = this._timepicker.input.value;
       this._updateInputValue();
+
       EventHandler.trigger(this._element, EVENT_CLOSE);
     });
   }
@@ -483,12 +447,6 @@ class Datetimepicker {
 
   static getInstance(element) {
     return Data.getData(element, DATA_KEY);
-  }
-
-  static getOrCreateInstance(element, config = {}) {
-    return (
-      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
-    );
   }
 }
 
