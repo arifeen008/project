@@ -46,7 +46,7 @@
 								จดจำฉัน
 							</label>
 						</div>
-						<a href="#!" class="text-body">ลืมรหัสผ่าน</a>
+						<a href="<?php echo site_url('member/forgotpassword_page') ?>" class="text-body">ลืมรหัสผ่าน</a>
 					</div>
 					<div class="text-center text-lg-start mt-2 pt-2">
 						<button type="submit" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #25d321;">Login</button>

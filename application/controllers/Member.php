@@ -54,6 +54,22 @@ class Member extends CI_Controller
 		$this->load->view("containner/script_register");
 	}
 
+	public function changepassword_page()
+	{
+		$title['title'] = "เปลี่ยนรหัสผ่าน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head_register", $title);
+		$this->load->view("change_password");
+		$this->load->view("containner/script");
+	}
+
+	public function forgotpassword_page()
+	{
+		$title['title'] = "ลืมรหัสผ่าน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head_register", $title);
+		$this->load->view("forgot_password");
+		$this->load->view("containner/script");
+	}
+
 	// public function register()
 	// {
 	// 	if (isset($_POST['submit']) && $_POST['g-recaptcha-response'] != "") {

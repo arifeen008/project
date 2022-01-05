@@ -46,7 +46,7 @@
 
 									<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 										<button type="submit" class="btn btn-outline-success" data-mdb-ripple-color="dark">สมัครสมาชิก</button>&nbsp; &nbsp;
-										<button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark">ยกเลิก</button>
+										<button type="clear" class="btn btn-outline-danger" data-mdb-ripple-color="dark">ยกเลิก</button>
 									</div>
 								</form>
 							</div>
