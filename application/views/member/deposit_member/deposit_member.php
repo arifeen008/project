@@ -5,7 +5,7 @@ include_once("application/libraries/Thaidate.php");
 <div class="col-lg-9">
 	<div class="card mt-3">
 		<div class="card-body text-dark">
-			<h3 class="card-title border-bottom">เงินฝาก</h3>
+			<h3 class="card-title border-bottom mb-3">เงินฝาก</h3>
 			<table class="table text-center my-4">
 				<thead>
 					<tr>

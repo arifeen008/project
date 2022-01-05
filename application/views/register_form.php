@@ -11,7 +11,7 @@
 									<div class="d-flex flex-row align-items-center mb-4">
 										<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
 										<div class="form-outline form-floating flex-fill mb-2">
-											<input type="text" class="form-control" id="floatingInput" name="">
+											<input type="text" class="form-control" id="floatingInput" name="email">
 											<label for="floatingInput">อีเมล์</label>
 										</div>
 									</div>
@@ -32,7 +32,7 @@
 									<div class="d-flex flex-row align-items-center mb-4">
 										<i class="fas fa-user fa-lg me-3 fa-fw"></i>
 										<div class="form-outline form-floating flex-fill mb-2">
-											<input type="text" class="form-control" id="floatingInput" name="" maxlength="13">
+											<input type="text" class="form-control" id="floatingInput" name="id_card" minlength="13" maxlength="13">
 											<label for="floatingInput">เลขบัตรประชาชน</label>
 										</div>
 									</div>

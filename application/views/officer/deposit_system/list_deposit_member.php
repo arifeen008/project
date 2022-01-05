@@ -19,7 +19,6 @@ include_once("application/libraries/Thaidate.php");
 						</tr>
 					</thead>
 					<tbody>
-						<?php $i = 1 ?>
 						<?php foreach ($result->result() as $row) { ?>
 							<tr>						
 								<td><?= $row->BR_NAME ?></td>

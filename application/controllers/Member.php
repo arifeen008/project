@@ -54,28 +54,49 @@ class Member extends CI_Controller
 		$this->load->view("containner/script_register");
 	}
 
+	// public function register()
+	// {
+	// 	if (isset($_POST['submit']) && $_POST['g-recaptcha-response'] != "") {
+	// 		$secret = '6LcD-NkdAAAAAJUtMJS0ZvOzcsyTm6yyTePbk6Pr';
+	// 		$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+	// 		$responseData = json_decode($verifyResponse);
+
+	// 		if ($responseData->success) {
+	// 			$id_card = $this->input->post('id_card');
+	// 			$user_id = $this->input->post('user_id');
+	// 			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+	// 			$result = $this->member_model->insert_register_form($id_card, $user_id, $password);
+	// 			if ($result == true) {
+	// 				redirect('member/login_page', 'refresh');
+	// 				echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
+	// 			} else {
+	// 				redirect('member/register_page', 'refresh');
+	// 				echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
+	// 			}
+	// 		}
+	// 	} else {
+	// 		echo "<script>alert('กรุณาติ้ก Recapcha');</script>";
+	// 	}
+	// }
+
 	public function register()
 	{
-		if (isset($_POST['submit']) && $_POST['g-recaptcha-response'] != "") {
-			$secret = '6LcD-NkdAAAAAJUtMJS0ZvOzcsyTm6yyTePbk6Pr';
-			$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
-			$responseData = json_decode($verifyResponse);
-
-			if ($responseData->success) {
-				$id_card = $this->input->post('id_card');
-				$user_id = $this->input->post('user_id');
-				$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-				$result = $this->member_model->insert_register_form($id_card, $user_id, $password);
-				if ($result == true) {
-					redirect('member/login_page', 'refresh');
-					echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
-				} else {
-					redirect('member/register_page', 'refresh');
-					echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
-				}
+		$email = $this->input->post('email');
+		$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+		$id_card = $this->input->post('id_card');
+		$result = $this->member_model->insert_register_form($email, $password, $id_card);
+		if ($result) {
+			$result = $this->member_model->insert_email($email, $id_card);
+			if ($result) {
+				echo "<script>alert('สมัครสมาชิกเสร็จสิ้น');</script>";
+				redirect('member/login_page', 'refresh');
+			} else {
+				echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
+				redirect('member/register_page', 'refresh');
 			}
 		} else {
-			echo "<script>alert('กรุณาติ้ก Recapcha');</script>";
+			echo "<script>alert('สมัครสมาชิกไม่สำเร็จ กรณีเคยสมัครแล้วลืมรหัสผ่านโปรดแจ้งทางสหกรณ์');</script>";
+			redirect('member/register_page', 'refresh');
 		}
 	}
 

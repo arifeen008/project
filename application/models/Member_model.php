@@ -10,13 +10,13 @@ class Member_model extends CI_Model
         return $query->row();
     }
 
-    public function insert_register_form($id_card, $user_id, $password)
+    public function insert_register_form($email, $password, $id_card)
     {
         $userdata = $this->data_member($id_card);
         $data = array(
             'BR_NO' => $userdata->BR_NO,
             'MEM_ID' => $userdata->MEM_ID,
-            'USER_ID' => $user_id,
+            'USER_ID' => $email,
             'PASSWORD' => $password,
             'MEMBER_STATUS' => 'Y',
             'LAST_UPDATE' => date("Y-m-d"),
@@ -25,6 +25,18 @@ class Member_model extends CI_Model
             'LOGIN_NUM' => 1
         );
         $result = $this->db->insert('WEB_H_MEMBER', $data);
+        return $result;
+    }
+
+	public function insert_email($email,$id_card)
+    {
+        $userdata = $this->data_member($id_card);
+        $data = array(       
+            'USER_ID' => $email,    
+        );
+		$this->db->where('MEM_ID',$userdata->MEM_ID);
+		$this->db->where('BR_NO',$userdata->BR_NO);
+        $result = $this->db->update('WEB_H_MEMBER', $data);
         return $result;
     }
 
