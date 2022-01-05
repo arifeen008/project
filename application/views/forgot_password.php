@@ -7,7 +7,7 @@
 						<div class="card">
 							<div class="card-body">
 								<h5>ลืมรหัสผ่าน</h5>
-								<p class="text-muted mb-4">กรุณากรอก E-mail เพื่อจำดำเนินการส่งลิงก์ในการดำเนินการเปลี่ยนรหัสผ่านใหม่</p>
+								<p class="text-muted mb-4">กรุณากรอก E-mail เพื่อดำเนินการส่งลิงก์ในการดำเนินการเปลี่ยนรหัสผ่านใหม่</p>
 								<div class="row">
 									<div class="col-xl-7 col-lg-8 col-md-10 d-md-flex flex-row">
 										<div class="form-outline flex-fill me-1 mb-3 mb-md-0">

@@ -17,7 +17,7 @@ class Member extends CI_Controller
 
 	public function login()
 	{
-		$result = $this->member_model->fetch_user_login($this->input->post("user_id"));
+		$result = $this->member_model->fetch_user_login($this->input->post('user_id'));
 		if (password_verify($this->input->post('password'), $result->PASSWORD)) {
 			$login_result = $this->member_model->getdata_member($result->BR_NO, $result->MEM_ID);
 			$session = array(
@@ -158,12 +158,12 @@ class Member extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function data_deposit_member($ACCOUNT_NO)
+	public function data_deposit_member($account_number)
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data_account['result'] = $this->member_model->data_deposit_member($ACCOUNT_NO);
+		$data_account['result'] = $this->member_model->data_deposit_member($account_number);
 		$title['title'] = "เงินฝากในบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
@@ -172,17 +172,17 @@ class Member extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function credit_member_open()
+	public function open_credit_member()
 	{
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data2['result'] = $this->member_model->credit_member($br_no, $mem_id);
+		$data_member['result'] = $this->member_model->open_credit_member($br_no, $mem_id);
 		$title['title'] = "สินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
-		$this->load->view("containner/sidebar_member", $data);
-		$this->load->view("member/credit_member_open/credit_member_open", $data2);
+		$this->load->view("containner/sidebar_member");
+		$this->load->view("member/credit_member_open/credit_member_open", $data_member);
 		$this->load->view("containner/script");
 	}
 
@@ -201,13 +201,13 @@ class Member extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function credit_member_close()
+	public function close_credit_member()
 	{
 		$id_card = $this->session->userdata('ID_CARD');
 		$br_no = $this->session->userdata("BR_NO");
 		$mem_id = $this->session->userdata("MEM_ID");
 		$data = $this->member_model->getdata_member($br_no, $mem_id);
-		$data2['result'] = $this->member_model->checkcredit_member($mem_id, $id_card, $br_no);
+		$data2['result'] = $this->member_model->close_credit_member($mem_id, $id_card, $br_no);
 		$title['title'] = "สินเชื่อที่ปิดไปแล้ว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_member", $data);
