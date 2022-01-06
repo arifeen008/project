@@ -70,7 +70,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/deposit_system");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_deposit");
 	}
 
 	public function depositreport_summary()
@@ -420,5 +420,59 @@ class Officer extends CI_Controller
 		header('Content-Type: application/vnd.ms-excel');
 		header('Content-Disposition: attachment;filename="Export Data.xls"');
 		$object_writer->save('php://output');
+	}
+
+	public function newsupload_system()
+	{
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/newsupload_system/newsupload_system");
+		$this->load->view("containner/script");
+	}
+
+	public function uploadnews()
+	{
+		$title = $this->input->post('title');
+		$date = $this->input->post('date');
+		$description = $this->input->post('description');
+		$name_folder = rand(10, 1000);
+		while (is_dir('newslist/' . $name_folder)) {
+			$name_folder = rand(10, 1000);
+		}
+		mkdir('./newslist/' . $name_folder, 0777, TRUE);
+
+		$config['upload_path'] = './newslist/' . $name_folder;
+		$config['allowed_types'] = 'jpg|png';
+		$config['max_size'] = 5024;
+		$config['encrypt_name'] = true;
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('userfile')) {
+			$error = array('error' => $this->upload->display_errors());
+			$USER_ID = $this->session->userdata('USER_ID');
+			$data = $this->officer_model->data_officer($USER_ID);
+			$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+			$this->load->view("containner/head", $title);
+			$this->load->view("containner/header_officer", $data);
+			$this->load->view("containner/sidebar_officer");
+			$this->load->view("officer/newsupload_system/newsupload_system", $error);
+			$this->load->view("containner/script");
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			// $this->load->view('upload_success', $data);
+			$USER_ID = $this->session->userdata('USER_ID');
+			$data1 = $this->officer_model->data_officer($USER_ID);
+			$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+			$this->load->view("containner/head", $title);
+			$this->load->view("containner/header_officer", $data1);
+			$this->load->view("containner/sidebar_officer");
+			$this->load->view("officer/newsupload_system/newsupload_system", $data);
+			$this->load->view("containner/script");
+		}
 	}
 }

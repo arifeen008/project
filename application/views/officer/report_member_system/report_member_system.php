@@ -1,12 +1,10 @@
-<div class="col-lg-9">
-	<br>
-	<div class="card">
+<div class="col-lg-9 my-3">
+	<div class="card my-3">
 		<div class="card-body">
 			<h5 class="card-title">รายงานสมาชิกหุ้นเลือกสาขา</h5>
 			<form action="<?php echo site_url('officer/searchreport_member') ?>" method="post" class="row g-3">
 				<div class="col-md-12">
-					<label class="form-label">สาขา</label>
-					<select id="inputState" class="form-select" name="branch_number">
+					<select class="select" name="branch_number">
 						<option value="000">สาขาสำนักงานใหญ่</option>
 						<option value="001">สาขากระบี่</option>
 						<option value="002">สาขาคลองยาง</option>
@@ -17,40 +15,47 @@
 						<option value="007">สาขาห้วยลึก</option>
 						<option value="008">สาขาเกาะลันตา</option>
 					</select>
+					<label class="form-label select-label">สาขา</label>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">จาก</label>
-					<input class="form-control" type="number" id="start" name="start" required>
+					<div class="form-outline">
+						<input type="number" id="typeNumber" class="form-control" name="start" required />
+						<label class="form-label" for="typeNumber">จาก</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">ถึง</label>
-					<input class="form-control" type="number" id="to" name="to" required>
+					<div class="form-outline">
+						<input type="number" id="typeNumber" class="form-control" name="to" required />
+						<label class="form-label" for="typeNumber">ถึง</label>
+					</div>
 				</div>
 				<div class="col-12">
-					<button type="submit" class="btn btn-success"><i class="fas fa-search"></i>&nbsp;&nbsp;&nbsp;ค้นหา</button>
+					<button type="submit" class="btn btn-success"><i class="fas fa-search me-2"></i>ค้นหา</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	<br>
-	<div class="card">
+	<div class="card my-3">
 		<div class="card-body">
 			<h5 class="card-title">รายงานสมาชิกหุ้นทุกสาขา</h5>
 
 			<form action="<?php echo site_url('officer/searchreport_member_allbranch') ?>" method="post" class="row g-3">
 				<div class="col-md-6">
-					<label class="form-label">จาก</label>
-					<input class="form-control" type="number" id="start" name="start" required>
+					<div class="form-outline">
+						<input type="number" id="typeNumber" class="form-control" name="start" required />
+						<label class="form-label" for="typeNumber">จาก</label>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">ถึง</label>
-					<input class="form-control" type="number" id="to" name="to" required>
+					<div class="form-outline">
+						<input type="number" id="typeNumber" class="form-control" name="to" required />
+						<label class="form-label" for="typeNumber">ถึง</label>
+					</div>
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-success"><i class="fas fa-search"></i>&nbsp;&nbsp;&nbsp;ค้นหา</button>
 				</div>
 			</form>
 		</div>
-
 	</div>
 </div>
