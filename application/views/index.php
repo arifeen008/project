@@ -1,3 +1,6 @@
+<?php include_once("application/libraries/thaidate-functions.php");
+include_once("application/libraries/Thaidate.php");
+?>
 <div class="containner-fluid">
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
@@ -37,17 +40,17 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="<?php echo base_url('picture\305-1.jpg') ?>" class="d-block w-100"/>
+						<img src="<?php echo base_url('picture\305-1.jpg') ?>" class="d-block w-100" />
 						<div class="carousel-caption d-none d-md-block">
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100"/>
+						<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" />
 						<div class="carousel-caption d-none d-md-block">
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100"/>
+						<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" />
 						<div class="carousel-caption d-none d-md-block">
 						</div>
 					</div>
@@ -108,7 +111,33 @@
 		</div>
 	</div>
 </div>
-
+<div class="container my-3">
+	<div class="card">
+		<div class="card-body">
+			<p class="text-center text-dark h1">
+				ข่าวประชาสัมพันธ์
+			</p>
+			<div class="row">
+				<?php foreach ($result->result() as $row) { ?>
+					<div class="col-md-4">
+						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
+							<img src="<?php echo base_url('uploads/images') ?>/<?= $row->picturename ?>" width="100" class="card-img-top" />
+							<div class="card-body">
+								<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
+								<p class="card-text text-dark text-truncate">
+									<?= $row->description ?>
+								</p>
+								<p class="card-text">
+									<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
+								</p>
+							</div>
+						</a>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="container my-3">
 	<div class="card">
 		<div class="card-body">

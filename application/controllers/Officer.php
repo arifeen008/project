@@ -434,45 +434,61 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function uploadnews()
+	function upload()
 	{
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
 		$description = $this->input->post('description');
-		$name_folder = rand(10, 1000);
-		while (is_dir('newslist/' . $name_folder)) {
-			$name_folder = rand(10, 1000);
-		}
-		mkdir('./newslist/' . $name_folder, 0777, TRUE);
 
-		$config['upload_path'] = './newslist/' . $name_folder;
-		$config['allowed_types'] = 'jpg|png';
-		$config['max_size'] = 5024;
-		$config['encrypt_name'] = true;
+		do {
+			$newsnumber = rand(10, 10000);
+			$result = $this->officer_model->checknewsnumber($newsnumber);
+			$num = $result->num_rows();
+		} while ($num > 0);
+
+		$countFiles = count($_FILES['uploadedFiles']['name']);
+		$countUploadedFiles = 0;
+		$countErrorUploadFiles = 0;
+		for ($i = 0; $i < $countFiles; $i++) {
+			$_FILES['uploadFile']['name'] = $_FILES['uploadedFiles']['name'][$i];
+			$_FILES['uploadFile']['type'] = $_FILES['uploadedFiles']['type'][$i];
+			$_FILES['uploadFile']['size'] = $_FILES['uploadedFiles']['size'][$i];
+			$_FILES['uploadFile']['tmp_name'] = $_FILES['uploadedFiles']['tmp_name'][$i];
+			$_FILES['uploadFile']['error'] = $_FILES['uploadedFiles']['error'][$i];
+
+			$uploadStatus = $this->uploadFile('uploadFile');
+			if ($uploadStatus != false) {
+				$countUploadedFiles++;
+				$this->officer_model->uploadpicture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
+			} else {
+				$countErrorUploadFiles++;
+			}
+		}
+
+		$this->officer_model->uploadnews($newsnumber, $title, $description, date('Y-m-d H:i:s'), $date);
+
+		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
+		redirect('officer/newsupload_system', 'refresh');
+	}
+
+	function uploadFile($name)
+	{
+		$uploadPath = 'uploads/images/';
+		if (!is_dir($uploadPath)) {
+			mkdir($uploadPath, 0777, TRUE);
+		}
+
+		$config['upload_path'] = $uploadPath;
+		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
+		$config['encrypt_name'] = TRUE;
 
 		$this->load->library('upload', $config);
-		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
-			$USER_ID = $this->session->userdata('USER_ID');
-			$data = $this->officer_model->data_officer($USER_ID);
-			$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-			$this->load->view("containner/head", $title);
-			$this->load->view("containner/header_officer", $data);
-			$this->load->view("containner/sidebar_officer");
-			$this->load->view("officer/newsupload_system/newsupload_system", $error);
-			$this->load->view("containner/script");
+		$this->upload->initialize($config);
+		if ($this->upload->do_upload($name)) {
+			$fileData = $this->upload->data();
+			return $fileData['file_name'];
 		} else {
-			$data = array('upload_data' => $this->upload->data());
-
-			// $this->load->view('upload_success', $data);
-			$USER_ID = $this->session->userdata('USER_ID');
-			$data1 = $this->officer_model->data_officer($USER_ID);
-			$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-			$this->load->view("containner/head", $title);
-			$this->load->view("containner/header_officer", $data1);
-			$this->load->view("containner/sidebar_officer");
-			$this->load->view("officer/newsupload_system/newsupload_system", $data);
-			$this->load->view("containner/script");
+			return false;
 		}
 	}
 }
