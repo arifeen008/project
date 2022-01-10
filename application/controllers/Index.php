@@ -23,7 +23,7 @@ class Index extends CI_Controller
 	{
 		$data['data'] = $this->officer_model->get_news_data($newsnumber);
 		$data['picture'] = $this->officer_model->get_newspicture($newsnumber);
-		$title['title'] = $data['data']->title ." สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = $data['data']->title . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
 		$this->load->view("news", $data);
@@ -262,5 +262,4 @@ class Index extends CI_Controller
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
-
 }
