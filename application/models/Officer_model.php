@@ -287,8 +287,7 @@ class Officer_model extends CI_Model
 			'picturename' => $uploadStatus,
 			'date' => $date
 		);
-		$result = $db2->insert('picture', $data);
-		return $result;
+		$db2->insert('picture', $data);
 	}
 
 	public function uploadnews($newsnumber, $title, $description, $date, $dateupload)
@@ -302,8 +301,7 @@ class Officer_model extends CI_Model
 			'dateupload' => $dateupload
 		);
 
-		$result = $db2->insert('news', $data);
-		return $result;
+		$db2->insert('news', $data);
 	}
 
 	public function checknewsnumber($newsnumber)

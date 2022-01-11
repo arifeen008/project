@@ -12,7 +12,7 @@
 				<div class="col-md-6">
 					<div class="form-outline">
 						<input type="date" class="form-control" name="date" id="exampleDatepicker11" required />
-						<!-- <label for="exampleDatepicker11" class="form-label">Select a date</label> -->
+						<label for="exampleDatepicker11" class="form-label">Select a date</label>
 					</div>
 				</div>
 				<div class="col-md-12">

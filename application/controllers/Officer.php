@@ -460,8 +460,7 @@ class Officer extends CI_Controller
 		} while ($num > 0);
 
 		$countFiles = count($_FILES['uploadedFiles']['name']);
-		$countUploadedFiles = 0;
-		$countErrorUploadFiles = 0;
+	
 		for ($i = 0; $i < $countFiles; $i++) {
 			$_FILES['uploadFile']['name'] = $_FILES['uploadedFiles']['name'][$i];
 			$_FILES['uploadFile']['type'] = $_FILES['uploadedFiles']['type'][$i];
@@ -471,11 +470,8 @@ class Officer extends CI_Controller
 
 			$uploadStatus = $this->uploadFile('uploadFile', $newsnumber);
 			if ($uploadStatus != false) {
-				$countUploadedFiles++;
 				$this->officer_model->uploadpicture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
-			} else {
-				$countErrorUploadFiles++;
-			}
+			} 
 		}
 
 		$this->officer_model->uploadnews($newsnumber, $title, $description, date('Y-m-d H:i:s'), $date);
