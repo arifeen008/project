@@ -318,10 +318,17 @@ class Officer_model extends CI_Model
 	public function get_list_news()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload');
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->limit(6);
+		$result = $db2->get('news');
+		return $result;
+	}
+	public function get_all_news()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload');
 		$result = $db2->get('news');
 		return $result;
 	}
@@ -344,10 +351,24 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function get_list_newsdata(){
+	public function get_list_newsdata()
+	{
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->select('newsnumber,picturename');
 		$result = $db2->get('picture');
 		return $result;
+	}
+
+	public function deletenews($newsnumber)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where("newsnumber", $newsnumber);
+		$db2->delete("news");
+	}
+	public function deletepicture($newsnumber)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where("newsnumber", $newsnumber);
+		$db2->delete("picture");
 	}
 }

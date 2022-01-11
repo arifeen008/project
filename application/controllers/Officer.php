@@ -426,6 +426,19 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
+		$listnews['result'] = $this->officer_model->get_all_news();
+		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/newsupload_system/listnews", $listnews);
+		$this->load->view("containner/script");
+	}
+
+	public function uploadnews_system()
+	{
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -434,7 +447,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	function upload()
+	public function upload()
 	{
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
@@ -456,7 +469,7 @@ class Officer extends CI_Controller
 			$_FILES['uploadFile']['tmp_name'] = $_FILES['uploadedFiles']['tmp_name'][$i];
 			$_FILES['uploadFile']['error'] = $_FILES['uploadedFiles']['error'][$i];
 
-			$uploadStatus = $this->uploadFile('uploadFile');
+			$uploadStatus = $this->uploadFile('uploadFile', $newsnumber);
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
 				$this->officer_model->uploadpicture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
@@ -471,9 +484,9 @@ class Officer extends CI_Controller
 		redirect('officer/newsupload_system', 'refresh');
 	}
 
-	function uploadFile($name)
+	function uploadFile($name, $newsnumber)
 	{
-		$uploadPath = 'uploads/images/';
+		$uploadPath = 'uploads/' . $newsnumber;
 		if (!is_dir($uploadPath)) {
 			mkdir($uploadPath, 0777, TRUE);
 		}
@@ -489,6 +502,25 @@ class Officer extends CI_Controller
 			return $fileData['file_name'];
 		} else {
 			return false;
+		}
+	}
+
+	public function deletenews($newsnumber)
+	{
+		$result = $this->officer_model->deletenews($newsnumber);
+		if ($result) {
+			$result = $this->officer_model->deletepicture($newsnumber);
+			if ($result) {
+				unlink('uploads/' . $newsnumber);
+				echo "<script>alert('ลบข่าวสำเร็จ');</script>";
+				redirect('officer/newsupload_system', 'refresh');
+			} else {
+				echo "<script>alert('ลบข่าวไม่สำเร็จ');</script>";
+				redirect('officer/newsupload_system', 'refresh');
+			}
+		} else {
+			echo "<script>alert('ลบข่าวไม่สำเร็จ');</script>";
+			redirect('officer/newsupload_system', 'refresh');
 		}
 	}
 }
