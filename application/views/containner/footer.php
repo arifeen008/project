@@ -27,11 +27,11 @@
 				<form action="<?php echo site_url('officer/login_officer') ?>" method="post">
 					<div class="form-outline mb-4">
 						<input type="text" id="form2Example1" name="user_id" class="form-control" />
-						<label class="form-label" for="form2Example1">Email address</label>
+						<label class="form-label" for="form2Example1">รหัสเจ้าหน้าที่</label>
 					</div>
 					<div class="form-outline mb-4">
 						<input type="password" id="form2Example2" name="password" class="form-control" />
-						<label class="form-label" for="form2Example2">Password</label>
+						<label class="form-label" for="form2Example2">รหัสผ่าน</label>
 					</div>
 					<div class="row mb-4">
 						<div class="col d-flex justify-content-center">
@@ -42,16 +42,16 @@
 								</label>
 							</div>
 						</div>
-						<div class="col">
+						<!-- <div class="col">
 							<a href="#">ลืมรหัสผ่าน</a>
-						</div>
+						</div> -->
 					</div>
 					<button type="submit" class="btn btn-success btn-block mb-4">
 						เข้าสู่ระบบ
 					</button>
-					<div class="text-center">
+					<!-- <div class="text-center">
 						<p>ลืมสมัคร ? <a href="#">สมัครสมาชิกเจ้าหน้าที่</a></p>	
-					</div>
+					</div> -->
 				</form>
 			</div>
 		</div>

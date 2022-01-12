@@ -31,82 +31,44 @@ include_once("application/libraries/Thaidate.php");
 </div>
 <div class="container my-3">
 	<div class="row">
-		<div class="col-lg-6">
-			<div id="carouselExampleCaptions" class="carousel slide my-3" data-mdb-ride="carousel">
-				<div class="carousel-indicators">
-					<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="<?php echo base_url('picture\305-1.jpg') ?>" class="d-block w-100" />
-						<div class="carousel-caption d-none d-md-block">
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" />
-						<div class="carousel-caption d-none d-md-block">
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" />
-						<div class="carousel-caption d-none d-md-block">
-						</div>
-					</div>
-				</div>
-				<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+		<div class="col-md-6 mb-3">
+			<div class="card">
+				<a href="<?php echo site_url('index/register') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+					<p class="card-text text-center text-dark">
+						<i class="fab fa-servicestack fa-4x"></i>
+						<h3 class="text-center text-success">สมัครสมาชิก</h3>
+					</p>
+				</a>
 			</div>
 		</div>
-		<div class="col-lg-6">
-			<div class="row">
-				<div class="col-md-6 mb-3">
-					<div class="card">
-						<a href="<?php echo site_url('member/register_page') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
-							<p class="card-text text-center text-dark">
-								<i class="fab fa-servicestack fa-4x"></i>
-								<h3 class="text-center text-success">สมัครสมาชิก</h3>
-							</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6 mb-3">
-					<div class="card">
-						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
-							<p class="card-text text-center text-dark">
-								<i class="fas fa-user-alt fa-4x"></i></i>
-								<h3 class="text-center text-success">บริการเงินฝาก</h3>
-							</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6 mb-3">
-					<div class="card">
-						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
-							<p class="card-text text-center text-dark">
-								<i class="fas fa-project-diagram fa-4x"></i>
-								<h3 class="text-center text-success">บริการสินเชื่อ</h3>
-							</p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6 mb-3">
-					<div class="card">
-						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
-							<p class="card-text text-center text-dark">
-								<i class="fas fa-file fa-4x"></i>
-								<h3 class="text-center text-success">เอกสาร</h3>
-							</p>
-						</a>
-					</div>
-				</div>
+		<div class="col-md-6 mb-3">
+			<div class="card">
+				<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+					<p class="card-text text-center text-dark">
+						<i class="fas fa-user-alt fa-4x"></i></i>
+						<h3 class="text-center text-success">บริการเงินฝาก</h3>
+					</p>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 mb-3">
+			<div class="card">
+				<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+					<p class="card-text text-center text-dark">
+						<i class="fas fa-project-diagram fa-4x"></i>
+						<h3 class="text-center text-success">บริการสินเชื่อ</h3>
+					</p>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 mb-3">
+			<div class="card">
+				<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+					<p class="card-text text-center text-dark">
+						<i class="fas fa-file fa-4x"></i>
+						<h3 class="text-center text-success">เอกสาร</h3>
+					</p>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -141,7 +103,7 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-3">
 	<div class="card">
 		<div class="card-body">
-			<p class="text-center h1 my-3">สถานะการเงิน</p>
+			<p class="text-center text-dark h1 my-3">สถานะการเงิน</p>
 			<p class="text-center h5 text-mute my-3">ข้อมูล ณ พฤศจิกายน 2564 </p>
 			<div class="row text-center">
 				<div class="col-md-3">

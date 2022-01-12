@@ -13,7 +13,7 @@
 				</a>
 				<a href="<?php echo site_url('officer/reportmember_system') ?>" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center">ระบบรายงานสมาชิกหุ้น<span class="badge bg-success"><i class="fixed-right fas fa-angle-right"></i></span>
 				</a>
-				<a href="<?php echo site_url('officer/newsupload_system') ?>" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center">ระบบอัพโหลดข่าวสาร<span class="badge bg-success"><i class="fixed-right fas fa-angle-right"></i></span>
+				<a href="<?php echo site_url('officer/uploadnews_system') ?>" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center">ระบบอัพโหลดข่าวสาร<span class="badge bg-success"><i class="fixed-right fas fa-angle-right"></i></span>
 				</a>
 			</div>
 		</div>

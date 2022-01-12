@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-session_start();
+
 class Index extends CI_Controller
 {
 	function __construct()
@@ -165,10 +165,11 @@ class Index extends CI_Controller
 
 	public function activity()
 	{
-		$title['title'] = "กิจกรรม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['result'] = $this->officer_model->get_list_activity();
+		$title['title'] = "ข่าวสาร/กิจกรรมความเคลื่อนไหว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
-		$this->load->view("index/news/activity");
+		$this->load->view("index/news/activity", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}

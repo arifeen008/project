@@ -155,8 +155,28 @@ export function isYearDisabled(year, minDate, maxDate) {
   return isAfterMax || isBeforeMin;
 }
 
-export function isNextDateDisabled(activeDate, view, yearsInView, minDate, maxDate) {
-  return maxDate && areDatesInSameView(activeDate, maxDate, view, yearsInView, minDate, maxDate);
+export function isNextDateDisabled(
+  activeDate,
+  view,
+  yearsInView,
+  minDate,
+  maxDate,
+  lastYearInView,
+  firstYearInView
+) {
+  return (
+    maxDate &&
+    areDatesInSameView(
+      activeDate,
+      maxDate,
+      view,
+      yearsInView,
+      minDate,
+      maxDate,
+      lastYearInView,
+      firstYearInView
+    )
+  );
 }
 
 export function isPreviousDateDisabled(
@@ -165,11 +185,21 @@ export function isPreviousDateDisabled(
   yearsInView,
   minDate,
   maxDate,
-  lastYearInView
+  lastYearInView,
+  firstYearInView
 ) {
   return (
     minDate &&
-    areDatesInSameView(activeDate, minDate, view, yearsInView, minDate, maxDate, lastYearInView)
+    areDatesInSameView(
+      activeDate,
+      minDate,
+      view,
+      yearsInView,
+      minDate,
+      maxDate,
+      lastYearInView,
+      firstYearInView
+    )
   );
 }
 
@@ -180,7 +210,8 @@ export function areDatesInSameView(
   yearsInView,
   minDate,
   maxDate,
-  lastYearInView
+  lastYearInView,
+  firstYearInView
 ) {
   if (view === 'days') {
     return getYear(date1) === getYear(date2) && getMonth(date1) === getMonth(date2);
@@ -191,21 +222,7 @@ export function areDatesInSameView(
   }
 
   if (view === 'years') {
-    let startYear = getStartYear(yearsInView, minDate, maxDate);
-    let result;
-
-    if (lastYearInView) {
-      startYear = getStartYear(yearsInView, minDate);
-      result =
-        Math.floor((lastYearInView - startYear) / yearsInView) ===
-        Math.floor((getYear(date2) - startYear) / yearsInView);
-    } else {
-      result =
-        Math.floor((getYear(date1) - startYear) / yearsInView) ===
-        Math.floor((getYear(date2) - startYear) / yearsInView);
-    }
-
-    return result;
+    return getYear(date2) >= firstYearInView && getYear(date2) <= lastYearInView;
   }
 
   return false;

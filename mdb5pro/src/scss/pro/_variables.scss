@@ -531,3 +531,103 @@ $chips-input-height: $chip-height !default;
 $chips-input-margin-right: 20px !default;
 $chips-input-line-height: $chip-height !default;
 $chips-input-width: 120px !default;
+
+// Select
+$form-outline-select-arrow-color: #000 !default;
+$form-outline-select-arrow-font-size: 0.8rem !default;
+$form-outline-select-arrow-top: 9px !default;
+$form-outline-select-arrow-right: 9px !default;
+
+$form-outline-select-valid-color: #00b74a !default;
+$form-outline-select-invalid-color: #f93154 !default;
+
+$form-outline-select-clear-btn-color: #000 !default;
+$form-outline-select-clear-btn-font-size: 1rem !default;
+$form-outline-select-clear-btn-top: 7px !default;
+$form-outline-select-clear-btn-right: 27px !default;
+$form-outline-select-clear-btn-focus-color: $primary !default;
+
+$form-outline-select-sm-clear-btn-font-size: 0.8rem !default;
+$form-outline-select-sm-clear-btn-top: 4px !default;
+
+$form-outline-select-lg-clear-btn-top: 11px !default;
+
+$form-outline-select-dropdown-container-z-index: $zindex-popconfirm-backdrop !default;
+
+$form-outline-select-dropdown-bgc: #fff !default;
+$form-outline-select-dropdown-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12) !default;
+$form-outline-select-dropdown-min-width: 100px !default;
+$form-outline-select-dropdown-transform: scaleY(0.8) !default;
+$form-outline-select-dropdown-transition: all 0.2s !default;
+
+$form-outline-select-dropdown-open-transform: scaleY(1) !default;
+
+$form-outline-select-dropdown-input-group-padding: 10px !default;
+
+$form-outline-select-label-max-width: 80% !default;
+$form-outline-select-label-active-transform: translateY(-1rem) translateY(0.1rem) scale(0.8) !default;
+
+$form-outline-select-lg-label-active-transform: translateY(-1.25rem) translateY(0.1rem) scale(0.8) !default;
+$form-outline-select-sm-label-active-transform: translateY(-0.83rem) translateY(0.1rem) scale(0.8) !default;
+
+$form-outline-select-input-focused-color: #616161 !default;
+
+$form-outline-select-label-color: $primary !default;
+
+$form-outline-select-notch-border-width: 2px !default;
+$form-outline-select-notch-border-color: $primary !default;
+$form-outline-select-notch-transition: all 0.2s linear !default;
+
+$form-outline-select-input-focused-arrow-color: $primary !default;
+
+$form-outline-select-white-focus-arrow-color: #fff !default;
+$form-outline-select-white-arrow-color: #fff !default;
+$form-outline-select-white-clear-btn: #fff !default;
+
+$form-outline-select-sm-arrow-top: 3px !default;
+$form-outline-select-lg-arrow-top: 13px !default;
+
+$form-outline-select-options-wrapper-scrollbar-width: 4px !default;
+$form-outline-select-options-wrapper-scrollbar-height: 4px !default;
+$form-outline-select-options-wrapper-scrollbar-border-bottom-right-radius: 4px !default;
+$form-outline-select-options-wrapper-scrollbar-border-bottom-left-radius: 4px !default;
+$form-outline-select-options-wrapper-scrollbar-thumb-height: 50px !default;
+$form-outline-select-options-wrapper-scrollbar-thumb-bgc: #999 !default;
+$form-outline-select-options-wrapper-scrollbar-thumb-border-radius: 4px !default;
+
+$form-outline-select-option-group-label-pl: 16px !default;
+$form-outline-select-option-group-label-pr: 16px !default;
+$form-outline-select-option-group-label-font-size: 1rem !default;
+$form-outline-select-option-group-label-font-weight: 400 !default;
+$form-outline-select-option-group-label-color: rgba(0, 0, 0, 0.54) !default;
+
+$form-outline-select-option-group-select-option-pl: 26px !default;
+
+$form-outline-select-option-color: rgba(0, 0, 0, 0.87) !default;
+$form-outline-select-option-pl: 16px !default;
+$form-outline-select-option-pr: 16px !default;
+$form-outline-select-option-font-size: 1rem !default;
+$form-outline-select-option-font-weight: 400 !default;
+
+$form-outline-select-option-hover-not-disabled-bgc: #ddd !default;
+$form-outline-select-option-active-bgc: #ddd !default;
+$form-outline-select-option-selected-active-bgc: #ddd !default;
+$form-outline-select-option-selected-disabled-color: #9e9e9e !default;
+$form-outline-select-option-selected-bgc: #eee !default;
+$form-outline-select-option-disabled-color: #9e9e9e !default;
+
+$form-outline-select-option-text-form-check-input-mr: 10px !default;
+
+$form-outline-select-option-secondary-text-font-size: 0.8rem !default;
+$form-outline-select-option-secondary-text-color: #6c757d !default;
+
+$form-outline-select-option-icon-width: 28px !default;
+$form-outline-select-option-icon-height: 28px !default;
+
+$form-outline-select-custom-content-padding: 16px !default;
+
+$form-outline-select-no-results-pl: 16px !default;
+$form-outline-select-no-results-pr: 16px !default;
+
+$form-outline-select-white-arrow: #fff !default;

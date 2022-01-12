@@ -5,7 +5,7 @@ include_once("application/libraries/Thaidate.php");
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h5 class="card-title border-bottom">รายการข่าวสาร</h5>
-			<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/uploadnews_system') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
+			<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/newsupload') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
 			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
 				<table>
 					<thead>
@@ -24,7 +24,7 @@ include_once("application/libraries/Thaidate.php");
 								<td><?= $row->title  ?></td>
 								<td><?= $row->description  ?></td>
 								<td><?= thaidate('j M Y ', strtotime($row->dateupload))   ?></td>
-								<td><a href="<?php echo site_url('officer/deletenews/' . $row->newsnumber) ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+								<td><a href="#" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a><a href="<?php echo site_url('officer/deletenews/' . $row->newsnumber) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>

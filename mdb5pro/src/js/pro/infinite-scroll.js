@@ -97,6 +97,12 @@ class InfiniteScroll {
     return Data.getData(element, DATA_KEY);
   }
 
+  static getOrCreateInstance(element, config = {}) {
+    return (
+      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
+    );
+  }
+
   static jQueryInterface(config) {
     return this.each(function () {
       let data = Data.getData(this, DATA_KEY);

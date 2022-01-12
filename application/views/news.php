@@ -1,6 +1,15 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
+<style>
+	.prewrap {
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		word-wrap: break-word;
+	}
+</style>
 <div class="container my-3">
 	<div class="card">
 		<p class="text-dark text-center h1"><?php echo $data->title ?></p>
@@ -14,7 +23,7 @@ include_once("application/libraries/Thaidate.php");
 					<?php } ?>
 				</div>
 			</div>
-			<p class="text-dark my-2 h2"><?php echo $data->description ?></p>
+			<p class="text-dark text-break prewrap my-2" id=""><?php echo $data->description ?></p>
 			<p class="text-left text-mute"><?php echo thaidate('j F Y ', strtotime($data->dateupload))  ?></p>
 		</div>
 	</div>

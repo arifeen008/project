@@ -43,3 +43,8 @@
     color: $datepicker-toggle-focus-color;
   }
 }
+
+.dateTimepicker-open {
+  overflow: hidden;
+  padding-right: 15px;
+}

@@ -972,6 +972,12 @@ class Lightbox {
     return Data.getData(element, DATA_KEY);
   }
 
+  static getOrCreateInstance(element, config = {}) {
+    return (
+      this.getInstance(element) || new this(element, typeof config === 'object' ? config : null)
+    );
+  }
+
   static toggle() {
     return function (event) {
       const lightbox = SelectorEngine.closest(event.target, `.${CLASSNAME_LIGHTBOX}`);

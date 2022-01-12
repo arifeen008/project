@@ -285,7 +285,7 @@ class Officer_model extends CI_Model
 		$data = array(
 			'newsnumber' => $newsnumber,
 			'picturename' => $uploadStatus,
-			'date' => $date
+			'dateupload' => $date
 		);
 		$db2->insert('picture', $data);
 	}
@@ -300,7 +300,6 @@ class Officer_model extends CI_Model
 			'date' => $date,
 			'dateupload' => $dateupload
 		);
-
 		$db2->insert('news', $data);
 	}
 
@@ -316,17 +315,11 @@ class Officer_model extends CI_Model
 	public function get_list_news()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('news.newsnumber,news.title,news.description,news.dateupload');
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'DESC');
 		$db2->limit(6);
-		$result = $db2->get('news');
-		return $result;
-	}
-	public function get_all_news()
-	{
-		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('news.newsnumber,news.title,news.description,news.dateupload');
 		$result = $db2->get('news');
 		return $result;
 	}
@@ -340,6 +333,14 @@ class Officer_model extends CI_Model
 		return $result->row();
 	}
 
+	public function get_news_upload()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('newsnumber,title,description,date,dateupload');
+		$result = $db2->get('news');
+		return $result;
+	}
+
 	public function get_newspicture($newsnumber)
 	{
 		$db2 = $this->load->database('db2', TRUE);
@@ -349,24 +350,39 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function get_list_newsdata()
+	public function deletenews($newsnumber)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('newsnumber,picturename');
+		$db2->where('newsnumber', $newsnumber);
+		$result = $db2->delete('news');
+		return $result;
+	}
+
+	public function selectpicture($newsnumber)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('picturename');
+		$db2->where('newsnumber', $newsnumber);
 		$result = $db2->get('picture');
 		return $result;
 	}
 
-	public function deletenews($newsnumber)
-	{
-		$db2 = $this->load->database('db2', TRUE);
-		$db2->where("newsnumber", $newsnumber);
-		$db2->delete("news");
-	}
 	public function deletepicture($newsnumber)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->where("newsnumber", $newsnumber);
-		$db2->delete("picture");
+		$db2->where('newsnumber', $newsnumber);
+		$result = $db2->delete('picture');
+		return $result;
+	}
+
+	public function get_list_activity()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
+		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'DESC');
+		$result = $db2->get('news');
+		return $result;
 	}
 }

@@ -58,8 +58,8 @@
 						ข่าวสาร/อัพเดต
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						<li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li>
-						<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">กิจกรรม</a></li>
+						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
+						<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">ข่าวสาร/กิจกรรมความเคลื่อนไหว</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/calendar') ?>">ปฏิทินสหกรณ์</a></li>
 					</ul>
 				</li>
