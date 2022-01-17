@@ -488,7 +488,7 @@ class Officer extends CI_Controller
 
 	function uploadFile($name)
 	{
-		$uploadPath = 'uploads/images/';
+		$uploadPath = 'uploads/';
 		if (!is_dir($uploadPath)) {
 			mkdir($uploadPath, 0777, TRUE);
 		}

@@ -18,7 +18,7 @@ include_once("application/libraries/Thaidate.php");
 				<div class="row">
 					<?php foreach ($picture->result() as $row) { ?>
 						<div class="col-lg-4">
-							<img src="<?php echo base_url('uploads/images') ?>/<?= $row->picturename ?>" data-mdb-img="<?php echo base_url('uploads/images') ?>/<?= $row->picturename ?>" class="w-100 shadow-1-strong my-2 rounded" />
+							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" data-mdb-img="<?php echo base_url('uploads') ?>/<?= $row->picturename ?>" class="w-100 shadow-1-strong my-2 rounded" />
 						</div>
 					<?php } ?>
 				</div>

@@ -10,7 +10,7 @@ include_once("application/libraries/Thaidate.php");
 					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>">
 						<div class="card">
 							<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-								<img src="<?php echo base_url('uploads/images') ?>/<?= $row->picturename ?>" class="img-fluid" />	
+								<img src="<?php echo base_url('uploads') ?>/<?= $row->picturename ?>" class="img-fluid" />	
 									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 							</div>
 							<div class="card-body">

@@ -84,7 +84,7 @@ include_once("application/libraries/Thaidate.php");
 					<?php foreach ($result->result() as $row) { ?>
 						<div class="col-md-4">
 							<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
-								<img src="<?php echo base_url('uploads/images') ?>/<?= $row->picturename ?>" width="100" class="card-img-top" />
+								<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="100" class="card-img-top" />
 								<div class="card-body">
 									<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
 									<p class="card-text text-dark text-truncate">
