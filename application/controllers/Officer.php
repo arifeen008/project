@@ -79,13 +79,13 @@ class Officer extends CI_Controller
 		$branch_number = $this->session->userdata('BR_NO');
 		$startdate = $this->input->post('startdate');
 		$enddate = $this->input->post('enddate');
-		$data1 = $this->officer_model->data_officer($user_id);
-		$data2['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
 		$title['title'] = "เงินฝากพนักงานประจำวัน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data1);
+		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("officer/deposit_system/depositreport_summary", $data2);
+		$this->load->view("officer/deposit_system/depositreport_summary", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -287,6 +287,8 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "ระบบกองทุนตะกาฟุล สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
@@ -523,6 +525,35 @@ class Officer extends CI_Controller
 		} else {
 			echo "<script>alert('ไม่ลบสำเร็จ');</script>";
 			redirect('officer/uploadnews_system', 'refresh');
+		}
+	}
+
+	public function editnews($newsnumber)
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($user_id);
+		$news = $this->officer_model->selectnews($newsnumber);
+		$title['title'] = "แก้ไขข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/newsupload_system/editnews", $news);
+		$this->load->view("containner/script");
+	}
+
+	public function updatenews()
+	{
+		$newsnumber = $this->input->post('newsnumber');
+		$title = $this->input->post('title');
+		$date = $this->input->post('date');
+		$description = $this->input->post('description');
+		$result = $this->officer_model->updatenews($newsnumber, $title, $date, $description);
+		if ($result) {
+			echo "<script>alert('แก้ไขเรียบร้อย');</script>";
+			redirect('officer/uploadnews_system', 'refresh');
+		} else {
+			echo "<script>alert('แก้ไขไม่สำเร็จ');</script>";
+			redirect('officer/editnews/' . $newsnumber, 'refresh');
 		}
 	}
 }

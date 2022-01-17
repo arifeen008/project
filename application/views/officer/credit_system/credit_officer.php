@@ -47,7 +47,7 @@ include_once("application/libraries/Thaidate.php");
 								<td><?= number_format($row->LCONT_APPROVE_SAL, 2); ?> </td>
 								<td><?= $row->LCONT_AMOUNT_INST ?></td>
 								<td><?= number_format($row->LCONT_AMOUNT_SAL, 2);  ?></td>
-								<td><a href="<?php echo site_url('officer/credit_officer_detail/' . $row->CODE . '/' . $row->BR_NO)  ?>" class="btn btn-success">ดูข้อมูล</a></td>
+								<td><a href="<?php echo site_url('officer/credit_officer_detail/' . $row->CODE . '/' . $row->BR_NO)  ?>" class="btn btn-success"><i class="far fa-file-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>

@@ -27,29 +27,16 @@ include_once("application/libraries/Thaidate.php");
 							} ?>
 				</div>
 				<div class="col-md-6 my-2">
-					ชื่อบิดา : <?php if ($result->FATHER == null) {
-									echo "ไม่มีข้อมูล";
-								} ?>
+					ชื่อบิดา : <?php echo $result->FATHER ?>
 				</div>
 				<div class="col-md-6 my-2">
-					ชื่อมารดา : <?php if ($result->MOTHER == null) {
-									echo "ไม่มีข้อมูล";
-								} ?>
+					ชื่อมารดา : <?php echo $result->MOTHER ?>
 				</div>
 				<div class="col-md-6 my-2">
-					สถานะ : <?php if ($result->MARRIAGE_STATUS == null) {
-								echo "โสด";
-							} else {
-								echo $result->MARRIAGE_STATUS;
-							}
-							?>
+					สถานะ : <?php echo $result->MARRIAGE_STATUS ?>
 				</div>
 				<div class="col-md-6 my-2">
-					กรุ๊ปเลือด : <?php if ($result->BLO_GROUP == null) {
-										echo "ไม่มีข้อมูล";
-									} else {
-										echo $result->BLO_GROUP;
-									} ?>
+					กรุ๊ปเลือด : <?php echo $result->BLO_GROUP ?> 
 				</div>
 				<div class="col-md-6 my-2">
 					เลขที่บ้าน : <?php echo $result->ADDRESS ?>
@@ -61,26 +48,13 @@ include_once("application/libraries/Thaidate.php");
 					ตำบล : <?php echo $result->TUMBOL ?>
 				</div>
 				<div class="col-md-6 my-2">
-					LINE ID : <?php if ($result->LINE_ID == null) {
-									echo "ไม่มีข้อมูล";
-								} else {
-									echo $result->LINE_ID;
-								} ?>
+					LINE ID : <?php echo $result->LINE_ID ?>
 				</div>
 				<div class="col-md-6 my-2">
-					EMAIL : <?php if ($result->EMAIL == null) {
-								echo "ไม่มีข้อมูล";
-							} else {
-								echo $result->EMAIL;
-							} ?>
+					EMAIL : <?php echo $result->EMAIL ?> 
 				</div>
 				<div class="col-md-6 my-2">
-					โทรศัพท์ : <?php if ($result->MOBILE_TEL == null) {
-									echo "ไม่มีข้อมูล";
-								} else {
-									echo $result->MOBILE_TEL;
-								}
-								?>
+					โทรศัพท์ : <?php echo $result->MOBILE_TEL ?>  
 				</div>
 			</div>
 			</p>

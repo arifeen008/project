@@ -12,7 +12,7 @@ class Officer_model extends CI_Model
 
 	public function data_officer($user_id)
 	{
-		// $this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
+		$this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
 		$this->db->where('BK_H_TELLER_CONTROL.USER_ID', $user_id);
 		$this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_TELLER_CONTROL.BR_NO');
 		$query = $this->db->get('BK_H_TELLER_CONTROL');
@@ -113,7 +113,7 @@ class Officer_model extends CI_Model
 
 	public function checkcredit_officer_detail($code, $branch_number)
 	{
-		// $this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
+		$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
 		$this->db->where('LOAN_M_PAYDEPT.CODE', $code);
 		$this->db->where('LOAN_M_PAYDEPT.BR_NO', $branch_number);
 		$this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
@@ -355,6 +355,29 @@ class Officer_model extends CI_Model
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->where('newsnumber', $newsnumber);
 		$result = $db2->delete('news');
+		return $result;
+	}
+
+	public function selectnews($newsnumber)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('newsnumber,title,description,date,dateupload');
+		$db2->where('newsnumber', $newsnumber);
+		$result = $db2->get('news');
+		return $result->row();
+	}
+
+	public function updatenews($newsnumber, $title, $date, $description)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'title' => $title,
+			'description' => $description,
+			'dateupload' => $date
+		);
+
+		$db2->where('newsnumber', $newsnumber);
+		$result = $db2->update('news', $data);
 		return $result;
 	}
 

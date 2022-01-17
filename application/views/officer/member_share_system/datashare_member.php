@@ -2,7 +2,6 @@
 include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-
 <div class="col-lg-9">
 	<div class="card my-3">
 		<div class="card-body text-dark">

@@ -4,15 +4,15 @@
 			<h5 class="card-title">เงินฝากพนักงานประจำวัน</h5>
 			<form action="<?php echo site_url('officer/depositreport_summary') ?>" method="post" class="row g-3">
 				<div class="col-md-6">
-					<label class="form-label text-dark">จาก</label>
-					<div class="form-outline" id="datepicker1">
-						<input type="date" name="startdate" class="form-control" id="exampleDatepicker1" required />
+					<div class="form-outline">
+						<input type="date" class="form-control" name="startdate" id="exampleDatepicker11" required />
+						<label for="exampleDatepicker11" class="form-label">จาก</label>
 					</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label text-dark">ถึง</label>
-					<div class="form-outline" id="datepicker2">
-						<input type="date" name="enddate" class="form-control" id="exampleDatepicker2" required />
+					<div class="form-outline">
+						<input type="date" class="form-control" name="enddate" id="exampleDatepicker11" required />
+						<label for="exampleDatepicker11" class="form-label">ถึง</label>
 					</div>
 				</div>
 				<div class="col-12">

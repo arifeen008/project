@@ -2,11 +2,11 @@
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h1 class="card-title border-bottom">รายชื่อสมาชิกที่ค้นหา</h1>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true" data-mdb-fixed-header="true" data-mdb-bordered="true">
+			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
 				<table>
 					<thead>
-						<tr align="center">
-							<th>ลำดับ</ะ>
+						<tr>
+							<th>รหัสสมาชิก</th>
 							<th>ชื่อ</th>
 							<th>นามสกุล</th>
 							<th>สาขา</th>
@@ -16,12 +16,12 @@
 					<tbody>
 						<?php $i = 1 ?>
 						<?php foreach ($result->result() as $row) { ?>
-							<tr align="center">
-								<td><?= $i++ ?></td>
+							<tr>
+								<td><?= $row->MEM_ID ?></td>		
 								<td><?= $row->FNAME ?></td>
 								<td><?= $row->LNAME ?></td>
 								<td><?= $row->BR_NAME; ?></td>
-								<td><a href="<?php echo site_url('officer/datashare_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-success"><i class="fas fa-eye"></i></a></td>
+								<td><a href="<?php echo site_url('officer/datashare_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>
