@@ -1,6 +1,5 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
-
 ?>
 <div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
 	<div class="containner-fluid">
@@ -79,175 +78,207 @@ include_once("application/libraries/Thaidate.php");
 			</div>
 			<div class="col">
 				<div class="row">
-					<div class="col-md-12 mb-2">
-						<div class="card">
-							<?php echo $user_data->new_case ?>
-						</div>
-					</div>
 					<div class="col-md-12">
 						<div class="card">
-							<?php echo json_decode($covid_data) ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3">
-		<div class="card">
-			<div class="card-body">
-				<p class="text-center text-dark h1">
-					ข่าวประชาสัมพันธ์
-				</p>
-				<div class="row">
-					<?php foreach ($result->result() as $row) { ?>
-						<div class="col-md-4">
-							<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
-								<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="100" class="card-img-top" />
-								<div class="card-body">
-									<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
-									<p class="card-text text-dark text-truncate">
-										<?= $row->description ?>
-									</p>
-									<p class="card-text">
-										<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
-									</p>
+							<div class="card-body">
+								<h5 class="card-title">รายงานสถานการณ์ COVID-19 ประจำวัน</h5>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
+									<p class="card-text"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
 								</div>
-							</a>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-hospital-alt me-3"></i>จำนวนผู้ป่วยรายใหม่(ไม่นับมาจํากต่างประเทศ)</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['new_case_excludeabroad']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-h-square me-3"></i>จำนวนผู้ป่วยสะสม(ไม่นับมาจํากต่างประเทศ)</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['total_case_excludeabroad']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="card-text"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
+									<p class="card-text"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
+								</div>
+							</div>
 						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3">
-		<div class="card">
-			<div class="card-body">
-				<p class="text-center text-dark h1 my-3">สถานะการเงิน</p>
-				<p class="text-center h5 text-mute my-3">ข้อมูล ณ พฤศจิกายน 2564 </p>
-				<div class="row text-center">
-					<div class="col-md-3">
-						<b class="text-success h1">1,081.59</b>
-						<p>ทุนเรือนหุ้น (ล้านบาท)</p>
-					</div>
-					<div class="col-md-3">
-						<b class="text-success h1">1,156.98</b>
-						<p>เงินฝาก (ล้านบาท)</p>
-					</div>
-					<div class="col-md-3">
-						<b class="text-success h1">1,788.52</b>
-						<p>จำนวนสินเชื่อ (ล้านบาท)</p>
-					</div>
-					<div class="col-md-3">
-						<b class="text-success h1">32,801</b>
-						<p>จำนวนสมาชิก (คน)</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<header>
-		<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
-			<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-				<div class="d-flex justify-content-center align-items-center h-100">
-					<div class="text-white">
-						<h1 class="mb-3">Heading</h1>
-						<h4 class="mb-3">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h4>
-						<a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
-
-	<footer class="text-center text-white" style="background-color: #caced1;">
-		<div class="container p-4">
-			<section class="">
-				<div class="row">
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
-						</div>
+		<div class="container my-3">
+			<div class="card">
+				<div class="card-body">
+					<p class="text-center text-dark h1">
+						ข่าวประชาสัมพันธ์
+					</p>
+					<div class="row">
+						<?php foreach ($result->result() as $row) { ?>
+							<div class="col-md-4">
+								<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
+									<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="100" class="card-img-top" />
+									<div class="card-body">
+										<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
+										<p class="card-text text-dark text-truncate">
+											<?= $row->description ?>
+										</p>
+										<p class="card-text">
+											<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
+										</p>
+									</div>
+								</a>
+							</div>
+						<?php } ?>
 					</div>
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/111.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
+				</div>
+			</div>
+		</div>
+		<div class="container my-3">
+			<div class="card">
+				<div class="card-body">
+					<p class="text-center text-dark h1 my-3">สถานะการเงิน</p>
+					<p class="text-center h5 text-mute my-3">ข้อมูล ณ พฤศจิกายน 2564 </p>
+					<div class="row text-center">
+						<div class="col-md-3">
+							<b class="text-success h1">1,081.59</b>
+							<p>ทุนเรือนหุ้น (ล้านบาท)</p>
 						</div>
-					</div>
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/112.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
+						<div class="col-md-3">
+							<b class="text-success h1">1,156.98</b>
+							<p>เงินฝาก (ล้านบาท)</p>
 						</div>
-					</div>
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/114.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
+						<div class="col-md-3">
+							<b class="text-success h1">1,788.52</b>
+							<p>จำนวนสินเชื่อ (ล้านบาท)</p>
 						</div>
-					</div>
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/115.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-						<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-							<img src="https://mdbootstrap.com/img/new/fluid/city/116.jpg" class="w-100" />
-							<a href="#!">
-								<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-							</a>
+						<div class="col-md-3">
+							<b class="text-success h1">32,801</b>
+							<p>จำนวนสมาชิก (คน)</p>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</div>
-	</footer>
 
-	<div class="row my-3">
-		<div class="col-lg">
-			<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
-			</a>
-		</div>
-		<div class="col-lg">
-			<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
-			</a>
-		</div>
-		<div class="col-lg">
-			<a href="https://www.facebook.com/Jiraphat1705/">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
-			</a>
-		</div>
-		<div class="col-lg">
-			<a href="https://www.facebook.com/%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%A5%E0%B9%8C-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-110341583984620/?modal=admin_todo_tour">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051697985.jpg') ?>">
-			</a>
-		</div>
-		<div class="col-lg">
-			<a href="https://www.youtube.com/channel/UCffHrfpeGIw4dlLCs-IEGDg">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
-			</a>
-		</div>
-		<div class="col-lg">
-			<a href="https://www.facebook.com/Sakofah.Islam.Savings/">
-				<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
-			</a>
+		<header>
+			<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
+				<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<div class="text-white">
+							<h1 class="mb-3">Heading</h1>
+							<h4 class="mb-3">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h4>
+							<a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<footer class="text-center text-white" style="background-color: #caced1;">
+			<div class="container p-4">
+				<section class="">
+					<div class="row">
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/111.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/112.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/114.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/115.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+							<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+								<img src="https://mdbootstrap.com/img/new/fluid/city/116.jpg" class="w-100" />
+								<a href="#!">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</footer>
+
+		<div class="row my-3">
+			<div class="col-lg">
+				<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
+				</a>
+			</div>
+			<div class="col-lg">
+				<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
+				</a>
+			</div>
+			<div class="col-lg">
+				<a href="https://www.facebook.com/Jiraphat1705/">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
+				</a>
+			</div>
+			<div class="col-lg">
+				<a href="https://www.facebook.com/%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%A5%E0%B9%8C-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-110341583984620/?modal=admin_todo_tour">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051697985.jpg') ?>">
+				</a>
+			</div>
+			<div class="col-lg">
+				<a href="https://www.youtube.com/channel/UCffHrfpeGIw4dlLCs-IEGDg">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
+				</a>
+			</div>
+			<div class="col-lg">
+				<a href="https://www.facebook.com/Sakofah.Islam.Savings/">
+					<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
+				</a>
+			</div>
 		</div>
 	</div>
-</div>

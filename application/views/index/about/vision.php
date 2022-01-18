@@ -1,6 +1,6 @@
 <div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
 	<div class="container my-3">
-		<div class="card">
+		<!-- <div class="card">
 			<div class="card-body">
 				<h1 class="text-center text-success">วิสัยทัศน์</h1>
 				<p class="text-center">สหกรณ์อิสลามษะกอฟะฮ จำกัด จะเป็นศูนย์กลาง การบริการทางการเงิน<br>ที่ปลอดดอกเบี้ย และมีสวัสดิการทางสังคม<br>ด้วยระบบที่มีคุณภาพและมาตรฐาน</p>
@@ -27,6 +27,7 @@
 				<p class="text-left text-dark">18.ขอหรือรับความช่วยเหลือทางวิชาการจากทางราชการ หน่วยงานของต่างประเทศ หรือบุคคลอื่นใด</p>
 				<p class="text-left text-dark">19.ดำเนินกิจการอย่างอื่นบรรดาที่เกี่ยวกับหรือเนื่องในการจัดให้สำเร็จตามวัตถุประสงค์ของสหกรณ์</p>
 			</div>
-		</div>
+		</div> -->
+		<img class="img-fluid" src="<?php echo base_url('picture/280506.jpg') ?>" />
 	</div>
 </div>
