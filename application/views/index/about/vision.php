@@ -28,6 +28,9 @@
 				<p class="text-left text-dark">19.ดำเนินกิจการอย่างอื่นบรรดาที่เกี่ยวกับหรือเนื่องในการจัดให้สำเร็จตามวัตถุประสงค์ของสหกรณ์</p>
 			</div>
 		</div> -->
-		<img class="img-fluid" src="<?php echo base_url('picture/280506.jpg') ?>" />
+		<div class="text-center">
+			<img class="img-fluid w-100" data-mdb-toggle="animation" data-mdb-animation="zoom-in" data-mdb-animation-start="onLoad" src="<?php echo base_url('picture/280506.jpg') ?>" />
+		</div>
 	</div>
 </div>
+

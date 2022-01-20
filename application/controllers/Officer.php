@@ -514,7 +514,7 @@ class Officer extends CI_Controller
 			$result = $this->officer_model->selectpicture($newsnumber);
 			if ($result) {
 				foreach ($result->result() as $row) {
-					unlink('uploads/images/' . $row->picturename);
+					unlink('uploads/' . $row->picturename);
 				}
 				$result = $this->officer_model->deletepicture($newsnumber);
 				if ($result) {
