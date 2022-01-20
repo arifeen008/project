@@ -25,6 +25,7 @@ class Index extends CI_Controller
 	{
 		$data['data'] = $this->officer_model->get_news_data($newsnumber);
 		$data['picture'] = $this->officer_model->get_newspicture($newsnumber);
+		$data['side_data'] = $this->officer_model->get_sidenewsdata($newsnumber);
 		$title['title'] = $data['data']->title . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");

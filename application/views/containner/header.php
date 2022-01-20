@@ -14,6 +14,16 @@
 		display: block;
 	}
 
+	.dropdown-menu {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+
 	.dropdown>.dropdown-toggle:active {
 		/*Without this, clicking will make it sticky*/
 		pointer-events: none;
@@ -21,7 +31,7 @@
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="<?php echo site_url('index') ?>"><img src="<?php echo base_url('picture/logo-web.jpg'); ?>" width="250"></a>
+		<a class="navbar-brand" href="<?php echo site_url('index') ?>"><img src="<?php echo base_url('picture/logo-web1.jpg'); ?>"></a>
 		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<i class="fas fa-bars text-dark"></i>
 		</button>
@@ -39,18 +49,19 @@
 		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
 			<i class="fas fa-bars"></i>
 		</button>
-		<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+		<div class="collapse navbar-collapse justify-content-end" id="navbarCenteredExample">
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo site_url('index') ?>">
-						<p style="font-family: 'Chonburi', cursive;color:black;">หน้าหลัก</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">หน้าหลัก |</p>
 					</a>
 				</li>
+
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">เกี่ยวกับเรา</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">เกี่ยวกับเรา |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/history') ?>">ประวัติความเป็นมา</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/vision') ?>">วิสัยทัศน์ พันธกิจ วัตถุประสงค์</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/board') ?>">คณะกรรมการและผู้บริหาร</a></li>
@@ -59,9 +70,9 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">บริการของสหกรณ์</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">บริการของสหกรณ์ |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/register') ?>">สมัครสมาชิก</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/deposit') ?>">บริการเงินฝาก</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/credit') ?>">บริการสินเชื่อ</a></li>
@@ -69,9 +80,9 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">สวัสดิการของสมาชิก</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">สวัสดิการของสมาชิก |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/marry') ?>">สวัสดิการแต่งงาน</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/maternity') ?>">สวัสดิการคลอดบุตร</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/oldage') ?>">สวัสดิการเงินสมทบยามชรา</a></li>
@@ -81,9 +92,9 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">ข่าวสาร/อัพเดต</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">ข่าวสาร/อัพเดต |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
 						<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">ข่าวสาร/กิจกรรมความเคลื่อนไหว</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/calendar') ?>">ปฏิทินสหกรณ์</a></li>
@@ -91,9 +102,9 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">โครงการของสหกรณ์</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">โครงการของสหกรณ์ |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/stadium') ?>">โครงการสนามหญ้าเทียม SKF Stadium</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/village') ?>">โครงการหมู่บ้านษะกอฟะฮ์</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/gasstation') ?>">โครงการปั้มน้ำมันเซลล์</a></li>
@@ -103,9 +114,9 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">ดาวน์โหลด</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;">ดาวน์โหลด |</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/document') ?>">เอกสารสำหรับสมาชิก</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/report') ?>">รายงานกิจการ</a></li>
 					</ul>
@@ -114,7 +125,7 @@
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<p style="font-family: 'Chonburi', cursive;color:black;">ติดต่อเรา</p>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/1Ze7m2Q6Jr25YafvvBhpU9BiVXpwMNrWwvmWs6yJjTDY/viewform?edit_requested=true">แบบประเมินการให้บริการ</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/withus') ?>">ร่วมงานกับเรา</a></li>
 					</ul>

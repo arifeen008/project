@@ -6,19 +6,19 @@ include_once("application/libraries/Thaidate.php");
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
 			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<!-- <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button> -->
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="<?php echo base_url('picture/305-1.jpg') ?>" class="d-block w-100" />
 			</div>
-			<!-- <div class="carousel-item">
-					<img src="https://mdbootstrap.com/img/new/slides/042.jpg" class="d-block w-100" />
-				</div>
-				<div class="carousel-item">
-					<img src="https://mdbootstrap.com/img/new/slides/043.jpg" class="d-block w-100" />
-				</div> -->
+			<div class="carousel-item">
+				<img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
+			</div>
+			<div class="carousel-item">
+				<img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
+			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -30,7 +30,7 @@ include_once("application/libraries/Thaidate.php");
 		</button>
 	</div>
 </div>
-<!-- <div class="container-fluid"> -->
+
 <header>
 	<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
 		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -100,7 +100,7 @@ include_once("application/libraries/Thaidate.php");
 		</section>
 	</div>
 </footer>
-<!-- </div> -->
+
 <div class="container my-3">
 	<div class="row">
 		<div class="col">
@@ -154,36 +154,34 @@ include_once("application/libraries/Thaidate.php");
 						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img" />
 						<div class="card-img-overlay">
 							<p style="font-family: 'Chonburi', cursive;color:white;" class="card-title mb-4 h4">รายงานสถานการณ์ COVID-19 ประจำวัน</p>
-							<!-- <div class="card-body"> -->
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
-								</div>
-								<div class="d-flex justify-content-between align-items-center">
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
-									<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
-								</div>
-							<!-- </div> -->
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
+								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
+							</div>
 						</div>
 					</div>
 				</div>

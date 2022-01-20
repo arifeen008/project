@@ -318,7 +318,20 @@ class Officer_model extends CI_Model
 		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
-		$db2->order_by('dateupload', 'DESC');
+		$db2->order_by('dateupload', 'ASC');
+		$db2->limit(6);
+		$result = $db2->get('news');
+		return $result;
+	}
+
+	public function get_sidenewsdata($newsnumber)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->where('news.newsnumber !=', $newsnumber);
+		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
+		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'ASC');
 		$db2->limit(6);
 		$result = $db2->get('news');
 		return $result;

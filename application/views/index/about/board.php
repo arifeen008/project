@@ -1,9 +1,9 @@
 <div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
-	<div class="container-fluid my-3">
+	<div class="container my-3">
 		<div class="card">
 			<ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
 				<li class="nav-item" role="presentation">
-					<a class="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true"><h6>บอร์ดก่อตั้ง</h6></a>
+					<a class="nav-link text-success active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true"><h6>บอร์ดก่อตั้ง</h6></a>
 				</li>
 				<li class="nav-item" role="presentation">
 					<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false"><h6>คณะกรรมการและผู้บริหาร</h6></a>

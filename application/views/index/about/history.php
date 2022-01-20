@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 	.main-timeline {
 		position: relative
 	}
@@ -263,88 +263,255 @@
 		}
 	}
 </style>
-<div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
-	<div class="container">
-		<h1 class="mt-5 text-dark" align="center">ประวัติความเป็นมา</h1>
+
+<div class="container">
+	<p style="font-family: 'Chonburi', cursive;color:black;" class="mt-5 text-center h1">ประวัติความเป็นมา</p>
+	<div class="main-timeline">
+		<div class="timeline">
+			<div class="icon"></div>
+			<div class="date-content">
+				<div class="date-outer">
+					<span class="date">
+						<span class="month text-dark">พ.ศ.</span>
+						<span class="year text-dark">2535</span>
+					</span>
+				</div>
+			</div>
+			<div class="timeline-content">
+				<p class="description note note-success text-dark">
+					คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน
+				</p>
+			</div>
+		</div>
+		<div class="timeline">
+			<div class="icon"></div>
+			<div class="date-content">
+				<div class="date-outer">
+					<span class="date">
+						<span class="month text-dark">พ.ศ.</span>
+						<span class="year text-dark">2538</span>
+					</span>
+				</div>
+			</div>
+			<div class="timeline-content">
+				<p class="description note note-success text-dark">
+					หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538
+				</p>
+			</div>
+		</div>
+		<div class="timeline">
+			<div class="icon"></div>
+			<div class="date-content">
+				<div class="date-outer">
+					<span class="date">
+						<span class="month text-dark">พ.ศ.</span>
+						<span class="year text-dark">2542</span>
+					</span>
+				</div>
+			</div>
+			<div class="timeline-content">
+				<p class="description note note-success text-dark">
+					ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่
+				</p>
+			</div>
+		</div>
+		<div class="timeline">
+			<div class="icon"></div>
+			<div class="date-content">
+				<div class="date-outer">
+					<span class="date">
+						<span class="month text-dark">พ.ศ.</span>
+						<span class="year text-dark">2552</span>
+					</span>
+				</div>
+			</div>
+			<div class="timeline-content">
+				<p class="description note note-success text-dark">
+					ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)
+				</p>
+			</div>
+		</div>
+		<div class="timeline">
+			<div class="icon"></div>
+			<div class="date-content">
+				<div class="date-outer">
+					<span class="date">
+						<span class="month text-dark">พ.ศ.</span>
+						<span class="year text-dark">ปัจจุบัน</span>
+					</span>
+				</div>
+			</div>
+			<div class="timeline-content">
+				<p class="description note note-success text-dark">
+					สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่
+				</p>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<style>
+	/* The actual timeline (the vertical ruler) */
+	.main-timeline {
+		position: relative;
+	}
+
+	/* The actual timeline (the vertical ruler) */
+	.main-timeline::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		background-color: #939597;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		margin-left: -3px;
+	}
+
+	/* Container around content */
+	.timeline {
+		position: relative;
+		background-color: inherit;
+		width: 50%;
+	}
+
+	/* The circles on the timeline */
+	.timeline::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		right: -13px;
+		background-color: #ebf435;
+		border: 5px solid #25d321;
+		top: 15px;
+		border-radius: 50%;
+		z-index: 1;
+	}
+
+	/* Place the container to the left */
+	.left {
+		padding: 0px 40px 20px 0px;
+		left: 0;
+	}
+
+	/* Place the container to the right */
+	.right {
+		padding: 0px 0px 20px 40px;
+		left: 50%;
+	}
+
+	/* Add arrows to the left container (pointing right) */
+	.left::before {
+		content: " ";
+		position: absolute;
+		top: 18px;
+		z-index: 1;
+		right: 30px;
+		border: medium solid white;
+		border-width: 10px 0 10px 10px;
+		border-color: transparent transparent transparent white;
+	}
+
+	/* Add arrows to the right container (pointing left) */
+	.right::before {
+		content: " ";
+		position: absolute;
+		top: 18px;
+		z-index: 1;
+		left: 30px;
+		border: medium solid white;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+	}
+
+	/* Fix the circle for containers on the right side */
+	.right::after {
+		left: -12px;
+	}
+
+	/* Media queries - Responsive timeline on screens less than 600px wide */
+	@media screen and (max-width: 600px) {
+
+		/* Place the timelime to the left */
+		.main-timeline::after {
+			left: 31px;
+		}
+
+		/* Full-width containers */
+		.timeline {
+			width: 100%;
+			padding-left: 70px;
+			padding-right: 25px;
+		}
+
+		/* Make sure that all arrows are pointing leftwards */
+		.timeline::before {
+			left: 60px;
+			border: medium solid white;
+			border-width: 10px 10px 10px 0;
+			border-color: transparent white transparent transparent;
+		}
+
+		/* Make sure all circles are at the same spot */
+		.left::after,
+		.right::after {
+			left: 18px;
+		}
+
+		.left::before {
+			right: auto;
+		}
+
+		/* Make all right containers behave like the left ones */
+		.right {
+			left: 0%;
+		}
+	}
+</style>
+
+<div class="container my-5">
+	<p style="font-family: 'Chonburi', cursive;color:black;" class="h1">ประวัติความเป็นมา</p>
+	<div class="container py-5">
 		<div class="main-timeline">
-			<div class="timeline">
-				<div class="icon"></div>
-				<div class="date-content">
-					<div class="date-outer">
-						<span class="date">
-							<span class="month text-dark">พ.ศ.</span>
-							<span class="year text-dark">2535</span>
-						</span>
+			<div class="timeline left">
+				<div class="card">
+					<div class="card-body p-4">
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">ปัจจุบัน</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่</p>
 					</div>
-				</div>
-				<div class="timeline-content">
-					<p class="description note note-success text-dark">
-						คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน
-					</p>
 				</div>
 			</div>
-			<div class="timeline">
-				<div class="icon"></div>
-				<div class="date-content">
-					<div class="date-outer">
-						<span class="date">
-							<span class="month text-dark">พ.ศ.</span>
-							<span class="year text-dark">2538</span>
-						</span>
+			<div class="timeline right">
+				<div class="card">
+					<div class="card-body p-4">
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2552</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)</p>
 					</div>
-				</div>
-				<div class="timeline-content">
-					<p class="description note note-success text-dark">
-						หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538
-					</p>
 				</div>
 			</div>
-			<div class="timeline">
-				<div class="icon"></div>
-				<div class="date-content">
-					<div class="date-outer">
-						<span class="date">
-							<span class="month text-dark">พ.ศ.</span>
-							<span class="year text-dark">2542</span>
-						</span>
+			<div class="timeline left">
+				<div class="card">
+					<div class="card-body p-4">
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2542</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่</p>
 					</div>
-				</div>
-				<div class="timeline-content">
-					<p class="description note note-success text-dark">
-						ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่
-					</p>
 				</div>
 			</div>
-			<div class="timeline">
-				<div class="icon"></div>
-				<div class="date-content">
-					<div class="date-outer">
-						<span class="date">
-							<span class="month text-dark">พ.ศ.</span>
-							<span class="year text-dark">2552</span>
-						</span>
+			<div class="timeline right">
+				<div class="card">
+					<div class="card-body p-4">
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2538</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538</p>
 					</div>
-				</div>
-				<div class="timeline-content">
-					<p class="description note note-success text-dark">
-						ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)
-					</p>
 				</div>
 			</div>
-			<div class="timeline">
-				<div class="icon"></div>
-				<div class="date-content">
-					<div class="date-outer">
-						<span class="date">
-							<span class="month text-dark">พ.ศ.</span>
-							<span class="year text-dark">ปัจจุบัน</span>
-						</span>
+			<div class="timeline left">
+				<div class="card">
+					<div class="card-body p-4">
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2535</p>
+						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน</p>
 					</div>
-				</div>
-				<div class="timeline-content">
-					<p class="description note note-success text-dark">
-						สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่
-					</p>
 				</div>
 			</div>
 		</div>
