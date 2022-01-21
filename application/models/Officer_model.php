@@ -279,6 +279,27 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
+	public function get_number_share_capital()
+	{
+		$this->db->select_sum('SHR_SUM_BTH ');
+		$query = $this->db->get('SHR_MEM');
+		return $query->row();
+	}
+
+	public function get_number_deposit()
+	{
+		$this->db->select_sum('LAST_DEP');
+		$query = $this->db->get('BK_H_SAVINGACCOUNT');
+		return $query->row();
+	}
+
+	public function get_number_member()
+	{
+		$this->db->select('count(MEM_ID) as MEM_ID');
+		$query = $this->db->get('MEM_H_MEMBER');
+		return $query->row();
+	}
+
 	public function uploadpicture($newsnumber, $uploadStatus, $date)
 	{
 		$db2 = $this->load->database('db2', TRUE);

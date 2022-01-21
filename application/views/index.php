@@ -196,7 +196,7 @@ include_once("application/libraries/Thaidate.php");
 				ข่าวประชาสัมพันธ์
 			</p>
 			<div class="row">
-				<?php foreach ($result->result() as $row) { ?>
+				<?php foreach ($list_news->result() as $row) { ?>
 					<div class="col-md-4">
 						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
 							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="100" class="card-img-top" />
@@ -223,15 +223,15 @@ include_once("application/libraries/Thaidate.php");
 			<p style="font-family: 'Chonburi', cursive;" class="text-center h5 text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
 			<div class="row text-center">
 				<div class="col-md-4">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">1,081.59</b>
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>
 					<p style="font-family: 'Chonburi', cursive;color:black;">ทุนเรือนหุ้น (ล้านบาท)</p>
 				</div>
 				<div class="col-md-4">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">1,156.98</b>
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($deposit->LAST_DEP)  ?></b>
 					<p style="font-family: 'Chonburi', cursive;color:black;">เงินฝาก (ล้านบาท)</p>
 				</div>
 				<div class="col-md-4">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">32,801</b>
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($member->MEM_ID)  ?></b>
 					<p style="font-family: 'Chonburi', cursive;color:black;">จำนวนสมาชิก (คน)</p>
 				</div>
 			</div>

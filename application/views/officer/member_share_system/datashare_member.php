@@ -17,8 +17,8 @@ include_once("application/libraries/Thaidate.php");
 				<tr align="center">
 					<td><?= $resume->MEM_ID ?></td>
 					<td><?= $resume->BR_NAME ?></td>
-					<td><?= $resume->SHR_SUM_BTH ?></td>
-					<td><?= $resume->POINT_SHR  ?></td>
+					<td><?= number_format($resume->SHR_SUM_BTH, 2) ?></td>
+					<td><?= number_format($resume->POINT_SHR, 2)  ?></td>
 				</tr>
 			</table>
 			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">

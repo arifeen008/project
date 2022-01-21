@@ -70,7 +70,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer");
 		$this->load->view("officer/deposit_system/deposit_system");
-		$this->load->view("containner/script_deposit");
+		$this->load->view("containner/script");
 	}
 
 	public function depositreport_summary()

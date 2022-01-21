@@ -33,29 +33,11 @@
 						<input type="password" id="form2Example2" name="password" class="form-control" />
 						<label class="form-label" for="form2Example2">รหัสผ่าน</label>
 					</div>
-					<div class="row mb-4">
-						<div class="col d-flex justify-content-center">
-							<div class="form-check">
-								<input class="form-check-input bg-success" type="checkbox" value="" id="form2Example3" checked />
-								<label class="form-check-label" for="form2Example3">
-									จดจำฉัน
-								</label>
-							</div>
-						</div>
-						<!-- <div class="col">
-							<a href="#">ลืมรหัสผ่าน</a>
-						</div> -->
-					</div>
 					<button type="submit" class="btn btn-success btn-block mb-4">
-						เข้าสู่ระบบ
+						<p style="font-family: 'Chonburi', cursive;color:black;">เข้าสู่ระบบ</p>
 					</button>
-					<!-- <div class="text-center">
-						<p>ลืมสมัคร ? <a href="#">สมัครสมาชิกเจ้าหน้าที่</a></p>	
-					</div> -->
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-
-

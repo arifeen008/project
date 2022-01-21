@@ -11,7 +11,10 @@ class Index extends CI_Controller
 	public function index()
 	{
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
-		$data['result'] = $this->officer_model->get_list_news();
+		$data['list_news'] = $this->officer_model->get_list_news();
+		$data['share_capital'] = $this->officer_model->get_number_share_capital();
+		$data['deposit'] = $this->officer_model->get_number_deposit();
+		$data['member'] = $this->officer_model->get_number_member();
 		$data['covid_data'] = json_decode($covid, true);
 		$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);

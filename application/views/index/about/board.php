@@ -1,39 +1,47 @@
-<div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');">
-	<div class="container my-3">
-		<div class="card">
-			<ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-				<li class="nav-item" role="presentation">
-					<a class="nav-link text-success active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true"><h6>บอร์ดก่อตั้ง</h6></a>
-				</li>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false"><h6>คณะกรรมการและผู้บริหาร</h6></a>
-				</li>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab" aria-controls="ex3-tabs-3" aria-selected="false"><h6>ผู้บริหาร</h6></a>
-				</li>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-4" role="tab" aria-controls="ex3-tabs-4" aria-selected="false"><h6>ที่ปรึกษา</h6></a>
-				</li>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-5" role="tab" aria-controls="ex3-tabs-5" aria-selected="false"><h6>ทำเนียบสหกรณ์</h6></a>
-				</li>
-			</ul>
-			<div class="tab-content" id="ex2-content">
-				<div class="tab-pane fade show active" id="ex3-tabs-1" role="tabpanel" aria-labelledby="ex3-tab-1">
-					<img src="<?php echo base_url('picture\บอร์ดก่อตั้ง.jpg') ?>" style="width: 100%;">
-				</div>
-				<div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-					<img src="<?php echo base_url('picture\บอร์ดกรรมการ.jpg') ?>" style="width: 100%;">
-				</div>
-				<div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-					<img src="<?php echo base_url('picture\บอร์ดผู้บริหาร.jpg') ?>" style="width: 100%;">
-				</div>
-				<div class="tab-pane fade" id="ex3-tabs-4" role="tabpanel" aria-labelledby="ex3-tab-4">
-					<img src="<?php echo base_url('picture\บอร์ดที่ปรึกษา1.jpg') ?>" style="width: 100%;">
-				</div>
-				<div class="tab-pane fade" id="ex3-tabs-5" role="tabpanel" aria-labelledby="ex3-tab-5">
-					<img src="<?php echo base_url('picture\ทำเนียบสหกรณ์.jpg') ?>" style="width: 100%;">
-				</div>
+<div class="container my-3">
+	<div class="card">
+		<ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+			<li class="nav-item" role="presentation">
+				<a class="nav-link text-success active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true">
+					<h6>บอร์ดก่อตั้ง</h6>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false">
+					<h6>คณะกรรมการผู้บริหาร</h6>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab" aria-controls="ex3-tabs-3" aria-selected="false">
+					<h6>ผู้บริหาร</h6>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-4" role="tab" aria-controls="ex3-tabs-4" aria-selected="false">
+					<h6>ที่ปรึกษา</h6>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-5" role="tab" aria-controls="ex3-tabs-5" aria-selected="false">
+					<h6>ทำเนียบสหกรณ์</h6>
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="ex2-content">
+			<div class="tab-pane fade show active" id="ex3-tabs-1" role="tabpanel" aria-labelledby="ex3-tab-1">
+				<img src="<?php echo base_url('picture\บอร์ดก่อตั้ง.jpg') ?>" style="width: 100%;">
+			</div>
+			<div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
+				<img src="<?php echo base_url('picture\บอร์ดกรรมการ.jpg') ?>" style="width: 100%;">
+			</div>
+			<div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
+				<img src="<?php echo base_url('picture\บอร์ดผู้บริหาร.jpg') ?>" style="width: 100%;">
+			</div>
+			<div class="tab-pane fade" id="ex3-tabs-4" role="tabpanel" aria-labelledby="ex3-tab-4">
+				<img src="<?php echo base_url('picture\บอร์ดที่ปรึกษา1.jpg') ?>" style="width: 100%;">
+			</div>
+			<div class="tab-pane fade" id="ex3-tabs-5" role="tabpanel" aria-labelledby="ex3-tab-5">
+				<img src="<?php echo base_url('picture\ทำเนียบสหกรณ์.jpg') ?>" style="width: 100%;">
 			</div>
 		</div>
 	</div>
