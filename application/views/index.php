@@ -107,7 +107,7 @@ include_once("application/libraries/Thaidate.php");
 			<div class="row">
 				<div class="col-md-6 mb-3">
 					<div class="card border border-success">
-						<a href="<?php echo site_url('index/register') ?>" class="card-body " data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/register') ?>" class="card-body " data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-registered fa-4x"></i>
 								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">สมัครสมาชิก</p>
@@ -117,7 +117,7 @@ include_once("application/libraries/Thaidate.php");
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card border border-success">
-						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-hand-holding-usd fa-4x"></i>
 								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">บริการเงินฝาก</p>
@@ -127,7 +127,7 @@ include_once("application/libraries/Thaidate.php");
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card border border-success">
-						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-credit-card fa-4x"></i>
 								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">บริการสินเชื่อ</p>
@@ -137,7 +137,7 @@ include_once("application/libraries/Thaidate.php");
 				</div>
 				<div class="col-md-6 mb-3">
 					<div class="card border border-success">
-						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada">
+						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file-alt fa-4x"></i>
 								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">เอกสาร</p>
@@ -224,15 +224,15 @@ include_once("application/libraries/Thaidate.php");
 			<div class="row text-center">
 				<div class="col-md-4">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;">ทุนเรือนหุ้น (ล้านบาท)</p>
+					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">ทุนเรือนหุ้น</p>
 				</div>
 				<div class="col-md-4">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($deposit->LAST_DEP)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;">เงินฝาก (ล้านบาท)</p>
+					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">เงินฝาก</p>
 				</div>
 				<div class="col-md-4">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($member->MEM_ID)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;">จำนวนสมาชิก (คน)</p>
+					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">จำนวนสมาชิก</p>
 				</div>
 			</div>
 		</div>

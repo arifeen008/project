@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-6 d-flex justify-content-start">
 				<div class="footer-copyright text-center">© 2019 Copyright:
-					<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+					<a href="https://sakofahislamic.com/"> sakofahislamic.com</a>
 				</div>
 			</div>
 			<div class="col-md-6 d-flex justify-content-end">

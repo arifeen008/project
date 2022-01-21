@@ -18,7 +18,7 @@
 		display: none;
 		position: absolute;
 		right: 0;
-		background-color: #f9f9f9;
+		background: linear-gradient(to left, #ffffff, #25d321);
 		min-width: 160px;
 		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 		z-index: 1;
@@ -39,7 +39,7 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			</ul>
 			<span class="navbar-text">
-				ภาษา&nbsp;&nbsp; <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
+				ภาษา<button type="button" class="btn btn-outline-success ms-3" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
 			</span>
 		</div>
 	</div>
@@ -56,7 +56,6 @@
 						<p style="font-family: 'Chonburi', cursive;color:black;">หน้าหลัก |</p>
 					</a>
 				</li>
-
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<p style="font-family: 'Chonburi', cursive;color:black;">เกี่ยวกับเรา |</p>
