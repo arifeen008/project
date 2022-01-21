@@ -5,18 +5,18 @@ include_once("application/libraries/Thaidate.php");
 	<div class="row">
 		<div class="col-9">
 			<div class="card">
-				<p class="text-dark text-center my-2 h2"><?php echo $data->title ?></p>
 				<div class="card-body">
-					<div class="lightbox">
+					<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center my-2 h3"><?php echo $data->title ?></p>
+					<div class="lightbox" data-mdb-zoom-level="0.25">
 						<div class="row">
 							<?php foreach ($picture->result() as $row) { ?>
 								<div class="col-lg-4">
-									<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" data-mdb-img="<?php echo base_url('uploads') ?>/<?= $row->picturename ?>" class="w-100 shadow-1-strong my-2 rounded" />
+									<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" data-mdb-img="<?php echo base_url('uploads') ?>/<?= $row->picturename ?>" width="auto" height="250px" class="w-100 shadow-1-strong rounded mb-2" />
 								</div>
 							<?php } ?>
 						</div>
 					</div>
-					<p class="text-dark text-break prewrap my-2" id=""><?php echo $data->description ?></p>
+					<p style="font-family: 'Sarabun',Extra-light 200;color:black;" class="my-2"><?php echo $data->description ?></p>
 					<small class="text-mute"><?php echo thaidate('j F Y ', strtotime($data->dateupload))  ?></small>
 				</div>
 			</div>
@@ -25,10 +25,10 @@ include_once("application/libraries/Thaidate.php");
 			<?php foreach ($side_data->result() as $row) { ?>
 				<div class="col-12">
 					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2" style="width: 18rem;">
-						<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" class="card-img-top" />
+						<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="150px" class="card-img-top" />
 						<div class="card-body">
-							<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
-							<p class="card-text text-dark text-truncate"><?= $row->description ?></p>
+							<h5 style="font-family: 'Sarabun',Extra-light 200;color:black;" class="text-truncate"><?= $row->title ?></h5>
+							<p style="font-family: 'Sarabun',Extra-light 200;color:black;max-width: 300px" class="card-text text-dark text-truncate"><?= $row->description ?></p>
 						</div>
 					</a>
 				</div>

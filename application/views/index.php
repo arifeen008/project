@@ -1,7 +1,6 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-
 <div class="containner-fluid">
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
@@ -198,8 +197,8 @@ include_once("application/libraries/Thaidate.php");
 			<div class="row">
 				<?php foreach ($list_news->result() as $row) { ?>
 					<div class="col-md-4">
-						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
-							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="100" class="card-img-top" />
+						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
+							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
 							<div class="card-body">
 								<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
 								<p class="card-text text-dark text-truncate">
@@ -270,6 +269,4 @@ include_once("application/libraries/Thaidate.php");
 			<img class="rounded mx-auto d-block" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
 		</a>
 	</div>
-</div>
-</div>
 </div>

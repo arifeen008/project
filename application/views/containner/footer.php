@@ -34,7 +34,7 @@
 						<label class="form-label" for="form2Example2">รหัสผ่าน</label>
 					</div>
 					<button type="submit" class="btn btn-success btn-block mb-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;">เข้าสู่ระบบ</p>
+						<div style="font-family: 'Chonburi', cursive;color:black;">เข้าสู่ระบบ</div>
 					</button>
 				</form>
 			</div>
