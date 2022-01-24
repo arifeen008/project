@@ -31,12 +31,12 @@ include_once("application/libraries/Thaidate.php");
 </div>
 
 <header>
-	<div class="p-5 text-center bg-image" style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg');height: 400px;">
+	<div class="p-5 text-center bg-image" style="background-image: url('picture/fbc14309b9d3e131a4f7db7c23bdb0ba.jpg');height: 60vh">
 		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
 			<div class="d-flex justify-content-center align-items-center h-100">
 				<div class="text-white">
-					<h1 class="mb-3">สหกรณ์อิสลามษะกอฟะฮ จำกัด</h1>
-					<h4 class="mb-3">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h4>
+					<h1 style="font-family: 'Sarabun',Extra-light 200;" class="mb-3">สหกรณ์อิสลามษะกอฟะฮ จำกัด</h1>
+					<h4 style="font-family: 'Sarabun',Extra-light 200;" class="mb-3">ระดมทุน หนุนธุรกิจ นำชีวิต พ้นดอกเบี้ย</h4>
 				</div>
 			</div>
 		</div>
@@ -49,48 +49,48 @@ include_once("application/libraries/Thaidate.php");
 			<div class="row">
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/f61cada1ba0a6f9bf3f48bb505b189cf.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/111.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/72aec7dd5a288470c38d01d5352dbfb1.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/112.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/2db4190d7ba6f0ee8240c0bd3fe196da.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/114.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/1152f13a7d791d2696e6cd76b5a9beea.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/115.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/7876aafe13a85a0bd20dc961d79b5747.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-12 mb-4 mb-md-0">
 					<div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-						<img src="https://mdbootstrap.com/img/new/fluid/city/116.jpg" class="w-100" />
-						<a href="#!">
+						<img src="<?php echo base_url('picture/b81e4c6d0646fa998feb7198f16a7ac9.jpg') ?>" class="w-100" />
+						<a href="#">
 							<div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
 						</a>
 					</div>

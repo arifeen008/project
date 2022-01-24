@@ -1,9 +1,10 @@
 <div class="container-lg mt-5">
 	<div class="row">
+		<p style="font-family: 'Chonburi', cursive;color:black;font-size:50px" class="text-center">สาขาสหกรณ์</p>
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__1776271462.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__1776271462.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -21,7 +22,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/36643.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/36643.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -39,7 +40,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__1776271465.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__1776271465.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -58,7 +59,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__177627147.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__177627147.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -76,7 +77,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__177627144.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__177627144.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -94,7 +95,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/qwasd.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/qwasd.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -112,7 +113,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__5791781.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__5791781.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -130,7 +131,7 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__5791781.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__5791785.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
@@ -148,16 +149,16 @@
 		<div class="col-md-4 my-2">
 			<div class="card">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-					<img src="<?php echo base_url('picture/S__5791781.jpg') ?>" class="img-fluid" />
+					<img src="<?php echo base_url('picture/S__5791781.jpg') ?>" width="auto" height="100px" class="img-fluid" />
 					<a href="#!">
 						<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 					</a>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title">รถเคลื่อนที่</h5>
+					<h5 class="card-title">S__5791785</h5>
 					<p class="card-text">
-						เลขที่ 329/29-30 หมู่ที่ 2 ตำบลท่าทองใหม่ อำเภอกาญจนดิษฐ์ จังหวัดสุราษฏร์ธานี 84290
-					<p>โทร.077-227-403</p>
+						S__5791785
+					<p>S__5791785</p>
 					</p>
 					<a href="tel:077227403" class="btn btn-success btn-rounded">โทรศัพท์</a>
 				</div>
@@ -182,7 +183,7 @@
 		</div>
 	</div>
 
-	<div class="card mb-2">
+	<div class="card">
 		<div class="card-header">
 			<h1 class="text-danger">หน่วยบริการที่ 2</h1><strong>เขตอำเภอคลองท่อม - ทรายขาว - เกาะลันตา</strong>
 		</div>
