@@ -477,40 +477,40 @@
 			<div class="timeline left">
 				<div class="card">
 					<div class="card-body p-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">ปัจจุบัน</p>
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่</p>
+						<p class="h3 text-dark">ปัจจุบัน</p>
+						<p class="mb-0 text-dark">สหกรณ์อิสลามษะกอฟะฮ จำกัด ได้ย้ายมา สนง.ใหญ่ มาอยู่ที่ 291 ม.1 ต.คลองยาง อ.เกาะลันตา จ.กระบี่ มีทั้งหมด 7 สาขา และ 2 หน่วยบริการเคลื่อนที่</p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline right">
 				<div class="card">
 					<div class="card-body p-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2552</p>
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)</p>
+						<p class="h3 text-dark">2552</p>
+						<p class="mb-0 text-dark">ได้ย้ายมาอยู่ที่ 119/9-10 ถ.กระบี่ ต.ปากน้ำ อ.เมือง จ.กระบี่ <br> (ใกล้สามแยกวิทยาลัยเทคนิคกระบี่)</p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline left">
-				<div class="card">
+				<div class="card text-dark">
 					<div class="card-body p-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2542</p>
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่</p>
+						<p class="text-dark h3">2542</p>
+						<p class="text-darkmb-0">ได้ขยายสาขามาเปิดกิจการ ที่ อ.เมืองกระบี่ โดยชั้นร้านอาหารอับดุลเลาะฮ์ เป็นสำนักงานใหญ่</p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline right">
-				<div class="card">
+				<div class="card text-dark">
 					<div class="card-body p-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2538</p>
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538</p>
+						<p class="h3">2538</p>
+						<p class="mb-0">หลังจากกองทุนฯ มีความเข้มแข็งในระดับหนึ่ง คณะบุคคลดังกล่าว ดำเนินการจดทะเบียน จากกองทุนมาเป็นสหกรณ์ โดยใช้ชื่อว่า "สหกรณ์ออมทรัพย์ษะกอฟะฮอิสลาม จำกัด" เมื่อวันที่ 7 กุมภาพันธ์ พ.ศ.2538</p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline left">
-				<div class="card">
+				<div class="card text-dark">
 					<div class="card-body p-4">
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="h3">2535</p>
-						<p style="font-family: 'Chonburi', cursive;color:black;" class="mb-0">คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน</p>
+						<p class="h3">2535</p>
+						<p class="mb-0">คณะบุคคลร่วมกันจัดตั้ง "กองทุนออมทรัพย์ษะกอฟะฮ" ขึ้นที่ ต.คลองยาง อ.เกาะลันตา จ.กระบี่โดยระดมทุนเพื่อช่วยเหลือซึ่งกันและกัน</p>
 					</div>
 				</div>
 			</div>

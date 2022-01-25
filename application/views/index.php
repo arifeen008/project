@@ -109,7 +109,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/register') ?>" class="card-body " data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-registered fa-4x"></i>
-								<p class="text-center text-dark h3">สมัครสมาชิก</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">สมัครสมาชิก</p>
 							</p>
 						</a>
 					</div>
@@ -119,7 +119,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-hand-holding-usd fa-4x"></i>
-								<p class="text-center text-dark h3">บริการเงินฝาก</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">บริการเงินฝาก</p>
 							</p>
 						</a>
 					</div>
@@ -129,7 +129,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-credit-card fa-4x"></i>
-								<p class="text-center text-dark h3">บริการสินเชื่อ</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">บริการสินเชื่อ</p>
 							</p>
 						</a>
 					</div>
@@ -139,7 +139,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file-alt fa-4x"></i>
-								<p class="text-center text-dark h3">เอกสาร</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">เอกสาร</p>
 							</p>
 						</a>
 					</div>
@@ -151,35 +151,35 @@ include_once("application/libraries/Thaidate.php");
 				<div class="col-md-12">
 					<div class="card">
 						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img opacity-25" />
-						<div class="card-img-overlay">
-							<p class="card-title text-dark mb-4 h4">รายงานสถานการณ์ COVID-19 ประจำวัน</p>
+						<div class="card-body mx-2 card-img-overlay">
+							<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;">รายงานสถานการณ์ COVID-19 ประจำวัน</p>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
-								<p class="card-text text-dark h5"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
 							</div>
 							<div class="d-flex justify-content-between">
-								<p class="card-text text-dark h5"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
-								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
 							</div>
 						</div>
 					</div>
@@ -191,7 +191,7 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">
-			<p class="text-center text-dark h1">
+			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center h1">
 				ข่าวประชาสัมพันธ์
 			</p>
 			<div class="row">
@@ -218,8 +218,8 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">
-			<p class="text-center text-dark h1 my-3">สถานะการเงิน</p>
-			<p class="text-center h5 text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
+			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center text-dark h1 my-3">สถานะการเงิน</p>
+			<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-center text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
 			<div class="row text-center">
 				<div class="col-md-6">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>

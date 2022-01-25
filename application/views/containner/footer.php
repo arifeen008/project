@@ -33,7 +33,7 @@
 						<input type="password" id="form2Example2" name="password" class="form-control" />
 						<label class="form-label" for="form2Example2">รหัสผ่าน</label>
 					</div>
-					<button type="submit" style="background-color: #25d321;" class="btn btn-block mb-4">
+					<button type="submit" style="background-color: #25d321;" class="btn btn-block">
 						<b class="text-dark">เข้าสู่ระบบ</b>
 					</button>
 				</form>

@@ -1,8 +1,20 @@
 <div class="col-lg-9 text-dark">
 	<div class="card my-3">
 		<div class="card-body">
-			<h5 class="card-title">ข้อมูลสมาชิก</h5>
-			<form action="<?php echo site_url('officer/listdata_member') ?>" method="post" class="row g-3">
+			<h5 class="card-title">ค้นหาข้อมูลสมาชิก</h5>
+			<form action="<?php echo site_url('officer/search_data_member') ?>" method="post" class="row g-3">
+				<div class="col-md-6">
+					<div class="form-outline">
+						<input type="text" name="id_card" id="form12" maxlength="13" minlength="13" class="form-control" />
+						<label class="form-label" for="form12">เลขบัตรประชาชน</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-outline">
+						<input type="text" name="mem_id" id="form12" class="form-control" />
+						<label class="form-label" for="form12">เลขสมาชิก</label>
+					</div>
+				</div>
 				<div class="col-md-6">
 					<div class="form-outline">
 						<input type="text" name="fname" id="form12" class="form-control" />
@@ -37,7 +49,7 @@
 		</div>
 	</div>
 
-	<div class="card my-3">
+	<!-- <div class="card my-3">
 		<div class="card-body">
 			<h5 class="card-title">ข้อมูลใบเสร็จหุ้นสมาชิก</h5>
 			<form action="<?php echo site_url('officer/list_datashare_member') ?>" method="post" class="row g-3">
@@ -78,5 +90,5 @@
 				</div>
 			</form>
 		</div>
-	</div>
+	</div> -->
 </div>
