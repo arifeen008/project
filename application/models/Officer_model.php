@@ -59,13 +59,26 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function credit_member($mem_id, $branch_number)
+	public function opened_credit_member($mem_id, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
 		$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
 		$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
+		$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
+		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
+		$result = $this->db->get('LOAN_M_CONTACT');
+		return $result;
+	}
+
+	public function closed_credit_member($mem_id, $branch_number)
+	{
+		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
+		$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
+		$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
+		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
+		$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '4');
 		$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
 		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 		$result = $this->db->get('LOAN_M_CONTACT');
@@ -98,7 +111,7 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function loan_select($code, $branch_number)
+	public function opened_loan_select($code, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
 		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
@@ -109,7 +122,7 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 
-	public function loan_details($code, $branch_number)
+	public function opened_loan_details($code, $branch_number)
 	{
 		$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
 		$this->db->where('LOAN_M_PAYDEPT.CODE', $code);
@@ -269,7 +282,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('SHR_T_SHARE');
 		return $result;
 	}
-	
+
 	// public function datashare_member($mem_id, $branch_number)
 	// {
 	// 	$this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');

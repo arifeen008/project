@@ -9,15 +9,6 @@
 		/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		background: linear-gradient(to top, #ffffff, #25d321)
 	}
-
-	.dropdown:hover>.dropdown-menu {
-		display: block;
-	}
-
-	.dropdown>.dropdown-toggle:active {
-		/*Without this, clicking will make it sticky*/
-		pointer-events: none;
-	}
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
@@ -39,14 +30,15 @@
 	<div class="container-fluid">
 		<div class="collapse navbar-collapse" id="navbarCenteredExample">
 			<ul class="navbar-nav mb-2 mb-lg-0">
-				<a class="navbar-brand" href="#">
+				<div class="navbar-brand" href="#">
 					<h4 class="text-dark">เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
-				</a>
+				</div>
+			</ul>
 		</div>
 		<ul class="nav justify-content-end">
 			<span class="navbar-text">
 				<li class="nav-item dropdown">
-					<a class="nav-link text-dark" href="#" role="button" data-mdb-toggle="dropdown" data-mdb-display="static" aria-expanded="false">
+					<a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-mdb-toggle="dropdown" data-mdb-display="static" aria-expanded="false">
 						<i class="fas fa-user me-3"></i><?php echo $USER_NAME ?>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end">

@@ -11,21 +11,21 @@ include_once("application/libraries/Thaidate.php");
 				<tbody>
 					<tr>
 						<td>เลขที่สัญญา</td>
-						<td><?php echo $loan_select->LCONT_ID ?></td>
+						<td><?php echo $opened_loan_select->LCONT_ID ?></td>
 					</tr>
 					<tr>
 						<td>ชื่อสัญญา</td>
-						<td><?php if ($loan_select->L_TYPE_CODE === "1" && $loan_select->LSUB_CODE === "1") {
+						<td><?php if ($opened_loan_select->L_TYPE_CODE === "1" && $opened_loan_select->LSUB_CODE === "1") {
 								echo ' ฉุกเฉิน';
-							} elseif ($loan_select->L_TYPE_CODE === "2" && $loan_select->LSUB_CODE === "1") {
+							} elseif ($opened_loan_select->L_TYPE_CODE === "2" && $opened_loan_select->LSUB_CODE === "1") {
 								echo ' สามัญ ';
-							} elseif ($loan_select->L_TYPE_CODE === "3" && $loan_select->LSUB_CODE === "1") {
+							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "1") {
 								echo ' พิเศษ';
-							} elseif ($loan_select->L_TYPE_CODE === "3" && $loan_select->LSUB_CODE === "2") {
+							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "2") {
 								echo ' โครงการ';
-							} elseif ($loan_select->L_TYPE_CODE === "2" && $loan_select->LSUB_CODE === "2") {
+							} elseif ($opened_loan_select->L_TYPE_CODE === "2" && $opened_loan_select->LSUB_CODE === "2") {
 								echo ' สามัญฉุกเฉิน';
-							} elseif ($loan_select->L_TYPE_CODE === "3" && $loan_select->LSUB_CODE === "3") {
+							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "3") {
 								echo ' โครงการสินทรัพย์';
 							} else {
 								echo 'เจ้าหน้าที่';
@@ -34,23 +34,23 @@ include_once("application/libraries/Thaidate.php");
 					</tr>
 					<tr>
 						<td>วันที่ทำสัญญา</td>
-						<td><?php echo thaidate('j M Y ', strtotime($loan_select->LCONT_DATE)) ?></td>
+						<td><?php echo thaidate('j M Y ', strtotime($opened_loan_select->LCONT_DATE)) ?></td>
 					</tr>
 					<tr>
 						<td>วันที่หมดสัญญา</td>
-						<td><?php echo thaidate('j M Y ', strtotime($loan_select->END_PAYDEPT)) ?></td>
+						<td><?php echo thaidate('j M Y ', strtotime($opened_loan_select->END_PAYDEPT)) ?></td>
 					</tr>
 					<tr>
 						<td>ยอดอนุมัติสินเชื่อ</td>
-						<td><?php echo number_format($loan_select->LCONT_APPROVE_SAL, 2) ?></td>
+						<td><?php echo number_format($opened_loan_select->LCONT_APPROVE_SAL, 2) ?></td>
 					</tr>
 					<tr>
 						<td>จำนวนงวดคงเหลือ</td>
-						<td><?php echo $loan_select->LCONT_AMOUNT_INST ?></td>
+						<td><?php echo $opened_loan_select->LCONT_AMOUNT_INST ?></td>
 					</tr>
 					<tr>
 						<td>จำนวนเงินคงเหลือ</td>
-						<td><?php echo number_format($loan_select->LCONT_AMOUNT_SAL, 2) ?> บาท</td>
+						<td><?php echo number_format($opened_loan_select->LCONT_AMOUNT_SAL, 2) ?> บาท</td>
 					</tr>
 				</tbody>
 			</table>
@@ -65,7 +65,7 @@ include_once("application/libraries/Thaidate.php");
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($loan_details->result() as $row) { ?>
+						<?php foreach ($opened_loan_details->result() as $row) { ?>
 							<tr>
 								<td><?= thaidate('j M Y ', strtotime($row->LPD_DATE)) ?></td>
 								<td><?= $row->LPD_NUM_INST ?></td>
