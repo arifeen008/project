@@ -246,7 +246,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function search_data_member($mem_id, $branch_number)
+	public function data_member($mem_id, $branch_number)
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
@@ -259,7 +259,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("officer/member_share_system/search_data_member", $data);
+		$this->load->view("officer/member_share_system/data_member", $data);
 		$this->load->view("containner/script");
 	}
 

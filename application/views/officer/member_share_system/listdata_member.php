@@ -21,7 +21,7 @@
 								<td><?= $row->FNAME ?></td>
 								<td><?= $row->LNAME ?></td>
 								<td><?= $row->BR_NAME; ?></td>
-								<td><a href="<?php echo site_url('officer/search_data_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
+								<td><a href="<?php echo site_url('officer/data_member/' . $row->MEM_ID . '/' . $row->BR_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>
