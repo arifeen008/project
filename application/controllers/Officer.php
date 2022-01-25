@@ -149,6 +149,30 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
+	public function cooperative_regulation()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/cooperative_regulation/cooperative_regulation");
+		$this->load->view("containner/script");
+	}
+
+	public function cooperative_rules()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/cooperative_rules/cooperative_rules");
+		$this->load->view("containner/script");
+	}
+
 	public function credit_officer($mem_id, $branch_number)
 	{
 		$user_id = $this->session->userdata('USER_ID');
@@ -222,18 +246,47 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-
-
-	public function seedata_member($mem_id, $branch_number)
+	public function search_data_member($mem_id, $branch_number)
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->officer_model->seedata_member($mem_id, $branch_number);
+		$data['data_member'] = $this->officer_model->seedata_member($mem_id, $branch_number);
+		$data['deposit_member'] = $this->officer_model->deposit_member($mem_id, $branch_number);
+		$data['credit_member'] = $this->officer_model->credit_member($mem_id, $branch_number);
+		$data['stock_select'] = $this->officer_model->stock_select($mem_id, $branch_number);
+		$data['stock_details'] = $this->officer_model->stock_details($mem_id, $branch_number);
 		$title['title'] = "สมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer");
-		$this->load->view("officer/member_share_system/seedata_member", $data);
+		$this->load->view("officer/member_share_system/search_data_member", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function account_details($account_number)
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['account_details'] = $this->officer_model->account_details($account_number);
+		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/member_share_system/account_details", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function loan_details($code,$branch_number)
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['loan_select'] = $this->officer_model->loan_select($code,$branch_number);
+		$data['loan_details'] = $this->officer_model->loan_details($code,$branch_number);
+		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer");
+		$this->load->view("officer/member_share_system/loan_details", $data);
 		$this->load->view("containner/script");
 	}
 

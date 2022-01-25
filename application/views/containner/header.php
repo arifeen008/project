@@ -53,12 +53,12 @@
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo site_url('index') ?>">
-						<p style="font-family: 'Chonburi', cursive;color:black;">หน้าหลัก |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">หน้าหลัก |</p>
 					</a>
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">เกี่ยวกับเรา |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">เกี่ยวกับเรา |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/history') ?>">ประวัติความเป็นมา</a></li>
@@ -69,7 +69,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">บริการของสหกรณ์ |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">บริการของสหกรณ์ |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/register') ?>">สมัครสมาชิก</a></li>
@@ -79,7 +79,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">สวัสดิการของสมาชิก |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">สวัสดิการของสมาชิก |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/marry') ?>">สวัสดิการแต่งงาน</a></li>
@@ -91,7 +91,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">ข่าวสาร/อัพเดต |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">ข่าวสาร/อัพเดต |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
@@ -101,7 +101,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">โครงการของสหกรณ์ |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">โครงการของสหกรณ์ |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/stadium') ?>">โครงการสนามหญ้าเทียม SKF Stadium</a></li>
@@ -113,7 +113,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">ดาวน์โหลด |</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">ดาวน์โหลด |</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/document') ?>">เอกสารสำหรับสมาชิก</a></li>
@@ -122,7 +122,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Chonburi', cursive;color:black;">ติดต่อเรา</p>
+						<p style="font-family: 'Sarabun',Extra-light 200;color:black;">ติดต่อเรา</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/1Ze7m2Q6Jr25YafvvBhpU9BiVXpwMNrWwvmWs6yJjTDY/viewform?edit_requested=true">แบบประเมินการให้บริการ</a></li>

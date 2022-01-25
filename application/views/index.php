@@ -109,7 +109,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/register') ?>" class="card-body " data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-registered fa-4x"></i>
-								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">สมัครสมาชิก</p>
+								<p class="text-center text-dark h3">สมัครสมาชิก</p>
 							</p>
 						</a>
 					</div>
@@ -119,7 +119,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/deposit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-hand-holding-usd fa-4x"></i>
-								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">บริการเงินฝาก</p>
+								<p class="text-center text-dark h3">บริการเงินฝาก</p>
 							</p>
 						</a>
 					</div>
@@ -129,7 +129,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/credit') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="far fa-credit-card fa-4x"></i>
-								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">บริการสินเชื่อ</p>
+								<p class="text-center text-dark h3">บริการสินเชื่อ</p>
 							</p>
 						</a>
 					</div>
@@ -139,7 +139,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/document') ?>" class="card-body" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse">
 							<p class="card-text text-center text-dark">
 								<i class="fas fa-file-alt fa-4x"></i>
-								<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h3">เอกสาร</p>
+								<p class="text-center text-dark h3">เอกสาร</p>
 							</p>
 						</a>
 					</div>
@@ -149,37 +149,37 @@ include_once("application/libraries/Thaidate.php");
 		<div class="col">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="card text-dark">
-						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img" />
+					<div class="card">
+						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img opacity-25" />
 						<div class="card-img-overlay">
-							<p style="font-family: 'Chonburi', cursive;color:white;" class="card-title mb-4 h4">รายงานสถานการณ์ COVID-19 ประจำวัน</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
+							<p class="card-title text-dark mb-4 h4">รายงานสถานการณ์ COVID-19 ประจำวัน</p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-calendar me-3"></i>วันแถลง</p>
+								<p class="card-text text-dark h5"><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
 							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
-								<p style="font-family: 'Chonburi', cursive;color:white;" class="card-text"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
+							<div class="d-flex justify-content-between">
+								<p class="card-text text-dark h5"><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
+								<p class="card-text text-dark h5"><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
 							</div>
 						</div>
 					</div>
@@ -191,12 +191,12 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">
-			<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h1">
+			<p class="text-center text-dark h1">
 				ข่าวประชาสัมพันธ์
 			</p>
 			<div class="row">
 				<?php foreach ($list_news->result() as $row) { ?>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
 							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
 							<div class="card-body">
@@ -218,20 +218,16 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">
-			<p style="font-family: 'Chonburi', cursive;color:black;" class="text-center h1 my-3">สถานะการเงิน</p>
-			<p style="font-family: 'Chonburi', cursive;" class="text-center h5 text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
+			<p class="text-center text-dark h1 my-3">สถานะการเงิน</p>
+			<p class="text-center h5 text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
 			<div class="row text-center">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">ทุนเรือนหุ้น</p>
+					<p class="text-dark h3">ทุนเรือนหุ้น</p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($deposit->LAST_DEP)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">เงินฝาก</p>
-				</div>
-				<div class="col-md-4">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($member->MEM_ID)  ?></b>
-					<p style="font-family: 'Chonburi', cursive;color:black;font-size:20px">จำนวนสมาชิก</p>
+					<p class="text-dark h3">เงินฝาก</p>
 				</div>
 			</div>
 		</div>
