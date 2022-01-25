@@ -59,20 +59,6 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-6 mb-2">
-					<div class="card">
-						<a href="<?php echo base_url(); ?>file\form\จังหวัดกระบี่_0.jpg" target="_blank" class="btn btn-outline-success btn-block btn-lg" data-mdb-ripple-color="#000000">
-							<p style="font-family: 'Chonburi', cursive;color:black;">ปฏิทินรอมาดอนจังหวัดกระบี่.jpg<i class="fas fa-download ms-1"></i></p>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6 mb-2">
-					<div class="card">
-						<a href="<?php echo base_url(); ?>file\form\จังหวัดสุราษร์ธานี.jpg" target="_blank" class="btn btn-outline-success btn-block btn-lg" data-mdb-ripple-color="#000000">
-							<p style="font-family: 'Chonburi', cursive;color:black;"> ปฏิทินรอมาดอนจังหวัดสุราษร์ธานี.jpg<i class="fas fa-download ms-1"></i></p>
-						</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
