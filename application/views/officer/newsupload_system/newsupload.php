@@ -11,13 +11,13 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-outline">
-						<input type="date" class="form-control" name="date" id="exampleDatepicker11" required />
+						<input type="date" name="date" id="exampleDatepicker11" required />
 						<label for="exampleDatepicker11" class="form-label">เลือกวันที่</label>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="form-outline">
-						<textarea class="form-control" name="description" id="textAreaExample" rows="4" required></textarea>
+						<textarea class="form-control" name="description" id="detail" rows="4" required></textarea>		
 						<label class="form-label" for="textAreaExample">รายละเอียด</label>
 					</div>
 				</div>

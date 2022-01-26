@@ -8,12 +8,12 @@
 		<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px" class="text-center mt-3">บริการสินเชื่อสหกรณ์</p>
 		<div class="col-3">
 			<div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				<a class="nav-link active" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-1" data-mdb-toggle="pill" href="#ex3-pills-1" role="tab" aria-controls="ex3-pills-1" aria-selected="true">สินเชื่อ</a>
-				<a class="nav-link" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-2" data-mdb-toggle="pill" href="#ex3-pills-2" role="tab" aria-controls="ex3-pills-2" aria-selected="false">สินเชื่อฉุกเฉิน (ก็อรดุลหะซัน)</a>
-				<a class="nav-link" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-3" data-mdb-toggle="pill" href="#ex3-pills-3" role="tab" aria-controls="ex3-pills-3" aria-selected="false">สินเชื่อสามัญฉุกเฉิน</a>
-				<a class="nav-link" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-4" data-mdb-toggle="pill" href="#ex3-pills-4" role="tab" aria-controls="ex3-pills-4" aria-selected="false">สินเชื่อสามัญ</a>
-				<a class="nav-link" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-5" data-mdb-toggle="pill" href="#ex3-pills-5" role="tab" aria-controls="ex3-pills-5" aria-selected="false">สินเชื่อพิเศษ</a>
-				<a class="nav-link" style="font-family:'Chonburi';font-size: 15px;color:black;" id="ex3-tab-6" data-mdb-toggle="pill" href="#ex3-pills-6" role="tab" aria-controls="ex3-pills-6" aria-selected="false">สินเชื่อโครงการ สินทรัพย์</a>
+				<a class="nav-link text-dark active" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-1" data-mdb-toggle="pill" href="#ex3-pills-1" role="tab" aria-controls="ex3-pills-1" aria-selected="true">สินเชื่อ</a>
+				<a class="nav-link text-dark" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-2" data-mdb-toggle="pill" href="#ex3-pills-2" role="tab" aria-controls="ex3-pills-2" aria-selected="false">สินเชื่อฉุกเฉิน (ก็อรดุลหะซัน)</a>
+				<a class="nav-link text-dark" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-3" data-mdb-toggle="pill" href="#ex3-pills-3" role="tab" aria-controls="ex3-pills-3" aria-selected="false">สินเชื่อสามัญฉุกเฉิน</a>
+				<a class="nav-link text-dark" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-4" data-mdb-toggle="pill" href="#ex3-pills-4" role="tab" aria-controls="ex3-pills-4" aria-selected="false">สินเชื่อสามัญ</a>
+				<a class="nav-link text-dark" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-5" data-mdb-toggle="pill" href="#ex3-pills-5" role="tab" aria-controls="ex3-pills-5" aria-selected="false">สินเชื่อพิเศษ</a>
+				<a class="nav-link text-dark" style="font-family: 'Sarabun', cursive;font-size: 18px;" id="ex3-tab-6" data-mdb-toggle="pill" href="#ex3-pills-6" role="tab" aria-controls="ex3-pills-6" aria-selected="false">สินเชื่อโครงการ สินทรัพย์</a>
 			</div>
 		</div>
 		<div class="col-9">

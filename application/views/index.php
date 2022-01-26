@@ -223,11 +223,11 @@ include_once("application/libraries/Thaidate.php");
 			<div class="row text-center">
 				<div class="col-md-6">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>
-					<p class="text-dark h3">ทุนเรือนหุ้น</p>
+					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark h3">ทุนเรือนหุ้น</p>
 				</div>
 				<div class="col-md-6">
 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($deposit->LAST_DEP)  ?></b>
-					<p class="text-dark h3">เงินฝาก</p>
+					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">เงินฝาก</p>
 				</div>
 			</div>
 		</div>
