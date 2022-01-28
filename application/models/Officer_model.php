@@ -43,7 +43,7 @@ class Officer_model extends CI_Model
 
 	public function deposit_member($mem_id, $branch_number)
 	{
-		$this->db->select('ACCOUNT_NO,ACCOUNT_NAME,LAST_DEP,LAST_WDL');
+		$this->db->select('ACCOUNT_NO,ACCOUNT_NAME,BALANCE');
 		$this->db->where('MEM_ID', $mem_id);
 		$this->db->where('BR_NO', $branch_number);
 		$result = $this->db->get('BK_H_SAVINGACCOUNT');

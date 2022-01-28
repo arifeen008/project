@@ -1,15 +1,19 @@
 <footer class="text-lg-start py-2" style="background-color: #25d321;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 d-flex justify-content-start">
+			<div class="col-md-4 d-flex justify-content-start">
 				<div class="footer-copyright text-center">© 2019 Copyright:
 					<a href="https://sakofahislamic.com/"> sakofahislamic.com</a>
 				</div>
 			</div>
-			<div class="col-md-6 d-flex justify-content-end">
-				<div class="col-md-6 d-flex justify-content-end">
-					<button class="btn btn-outline text-light" data-mdb-toggle="modal" data-mdb-target="#exampleModal"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
+			<div class="col-md-4 d-flex justify-content-between">
+				<div class="text-center text-dark">ยอดผู้เข้าชม: 30,000
 				</div>
+			</div>
+			<div class="col-md-4 d-flex justify-content-end">
+				<!-- <div class="col-md-4 d-flex justify-content-end"> -->
+					<button class="btn btn-outline text-light" data-mdb-toggle="modal" data-mdb-target="#exampleModal"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>

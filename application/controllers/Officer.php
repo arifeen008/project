@@ -45,7 +45,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ระบบทะเบียนสมาชิกและหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "ระบบค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -58,7 +58,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ระบบทะเบียนสมาชิกและหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -71,7 +71,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ระบบทะเบียนสมาชิกและหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "ผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -84,7 +84,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ระบบทะเบียนสมาชิกและหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "กิจกรรมพัฒนาบุคลากร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -191,7 +191,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "ระเบียบเจ้าหน้าที่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -204,7 +204,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$title['title'] = "ข้อบังคับสหกรณ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -559,7 +559,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/newsupload_system/newsupload");
-		$this->load->view("containner/script_editer.php");
+		$this->load->view("containner/script_editer");
 	}
 
 	public function uploadnews_system()
@@ -666,7 +666,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/newsupload_system/editnews", $news);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_editer");
 	}
 
 	public function updatenews()

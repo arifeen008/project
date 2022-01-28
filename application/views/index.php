@@ -1,6 +1,15 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
+<style>
+	.transaction {
+		display: -webkit-box;
+		/* max-width: 200px; */
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>
 <div class="containner-fluid">
 	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 		<div class="carousel-indicators">
@@ -200,10 +209,7 @@ include_once("application/libraries/Thaidate.php");
 						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
 							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
 							<div class="card-body">
-								<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
-								<p class="card-text text-dark text-truncate">
-									<?= $row->description ?>
-								</p>
+								<p style="font-family: 'Sarabun'" class="card-title text-dark transaction"><?= $row->title ?></p>
 								<p class="card-text">
 									<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
 								</p>
@@ -221,13 +227,17 @@ include_once("application/libraries/Thaidate.php");
 			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center text-dark h1 my-3">สถานะการเงิน</p>
 			<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-center text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
 			<div class="row text-center">
-				<div class="col-md-6">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($share_capital->SHR_SUM_BTH)  ?></b>
-					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark h3">ทุนเรือนหุ้น</p>
+				<div class="col-md-4">
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">220,370,250</b>
+					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark h3">ทุนเรือนหุ้น(ล้านบาท)</p>
 				</div>
-				<div class="col-md-6">
-					<b style="font-family: 'Chonburi', cursive;" class="text-success h1"><?php echo number_format($deposit->LAST_DEP)  ?></b>
-					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">เงินฝาก</p>
+				<div class="col-md-4">
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">572,333,378.14</b>
+					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">เงินฝาก(ล้านบาท)</p>
+				</div>
+				<div class="col-md-4">
+					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">13,533</b>
+					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">จำนวนสมาชิก(คน)</p>
 				</div>
 			</div>
 		</div>

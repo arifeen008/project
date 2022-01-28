@@ -77,8 +77,7 @@ include_once("application/libraries/Thaidate.php");
 								<tr>
 									<th>เลขบัญชี</th>
 									<th>ชื่อบัญชี</th>
-									<th>ฝากลาสุด</th>
-									<th>ถอนล่าสุด</th>
+									<th>ยอดคงเหลือ</th>
 									<th></th>
 								</tr>
 							</thead>
@@ -87,8 +86,7 @@ include_once("application/libraries/Thaidate.php");
 									<tr>
 										<td><?= BankAccount($row->ACCOUNT_NO) ?></td>
 										<td><?= $row->ACCOUNT_NAME ?></td>
-										<td><?= $row->LAST_DEP ?></td>
-										<td><?= $row->LAST_WDL; ?></td>
+										<td><?= number_format($row->BALANCE, 2) ?></td>
 										<td><a href="<?php echo site_url('officer/account_details/' . $row->ACCOUNT_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
 									</tr>
 								<?php } ?>

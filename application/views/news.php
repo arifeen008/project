@@ -1,6 +1,15 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
+<style>
+	.transaction {
+		display: -webkit-box;
+		/* max-width: 200px; */
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>
 <div class="container my-3">
 	<div class="row">
 		<div class="col-9">
@@ -23,12 +32,11 @@ include_once("application/libraries/Thaidate.php");
 		</div>
 		<div class="col-3">
 			<?php foreach ($side_data->result() as $row) { ?>
-				<div class="col-12">
+				<div class="col-md-12">
 					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2" style="width: 18rem;">
 						<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="150px" class="card-img-top" />
 						<div class="card-body">
-							<h5 style="font-family: 'Sarabun',Extra-light 200;color:black;" class="text-truncate"><?= $row->title ?></h5>
-							<p style="font-family: 'Sarabun',Extra-light 200;color:black;max-width: 300px" class="card-text text-dark text-truncate"><?= $row->description ?></p>
+							<p class="text-dark transaction" style="font-family: 'Sarabun';"><?= $row->title ?></p>
 						</div>
 					</a>
 				</div>

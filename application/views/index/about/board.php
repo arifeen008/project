@@ -7,21 +7,21 @@
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false">
+				<a class="nav-link text-success" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false">
 					<h6>คณะกรรมการผู้บริหาร</h6>
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab" aria-controls="ex3-tabs-3" aria-selected="false">
+				<a class="nav-link text-success" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-3" role="tab" aria-controls="ex3-tabs-3" aria-selected="false">
 					<h6>ผู้บริหาร</h6>
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-4" role="tab" aria-controls="ex3-tabs-4" aria-selected="false">
+				<a class="nav-link text-success" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-4" role="tab" aria-controls="ex3-tabs-4" aria-selected="false">
 					<h6>ที่ปรึกษา</h6>
 				</a>
 			</li>
-			<li class="nav-item" role="presentation">
+			<li class="nav-item text-success" role="presentation">
 				<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-5" role="tab" aria-controls="ex3-tabs-5" aria-selected="false">
 					<h6>ทำเนียบสหกรณ์</h6>
 				</a>
@@ -32,7 +32,7 @@
 				<img src="<?php echo base_url('picture\บอร์ดก่อตั้ง.jpg') ?>" style="width: 100%;">
 			</div>
 			<div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-				<img src="<?php echo base_url('picture\บอร์ดกรรมการ.jpg') ?>" style="width: 100%;">
+				<img src="<?php echo base_url('picture\บอร์ดกรรมการ 65.jpg') ?>" style="width: 100%;">
 			</div>
 			<div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
 				<img src="<?php echo base_url('picture\บอร์ดผู้บริหาร.jpg') ?>" style="width: 100%;">

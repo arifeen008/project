@@ -17,14 +17,15 @@
 				</div>
 				<input type="hidden" class="form-control" name="newsnumber" value="<?php echo $newsnumber ?>" />
 				<div class="col-md-12">
+					<label class="form-label" for="textArea">รายละเอียด :</label>
 					<div class="form-outline">
-						<textarea class="form-control" name="description" id="textArea" rows="4"><?php echo $description ?></textarea>
-						<label class="form-label" for="textArea">รายละเอียด</label>
+						<textarea class="form-control" name="description" id="detail" rows="4"><?php echo $description ?></textarea>
+
 					</div>
 				</div>
 				<div class="col-12">
 					<button type="submit" value="upload" class="btn btn-success">ตกลง</button>
-					<button type="clear" class="btn btn-success">clear</button>
+					<a href="<?php echo site_url('officer/uploadnews_system')?>" class="btn btn-danger">ยกเลิก</a>
 				</div>
 			</form>
 		</div>

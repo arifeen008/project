@@ -3,22 +3,28 @@
 		<div class="card-body text-dark">
 			<h5 class="card-title border-bottom">อัพโหลดข่าวสาร</h5>
 			<form action="<?php echo site_url('officer/upload') ?>" method="post" enctype="multipart/form-data" class="row g-3">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-outline">
 						<input type="text" name="title" id="form12" class="form-control" required />
 						<label class="form-label" for="form12">หัวข้อ</label>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-outline">
-						<input type="date" name="date" id="exampleDatepicker11" required />
+						<input type="date" class="form-control" name="date" id="exampleDatepicker11" required />
 						<label for="exampleDatepicker11" class="form-label">เลือกวันที่</label>
 					</div>
 				</div>
-				<div class="col-md-12">
+				<div class="col-md-4">
 					<div class="form-outline">
-						<textarea class="form-control" name="description" id="detail" rows="4" required></textarea>		
-						<label class="form-label" for="textAreaExample">รายละเอียด</label>
+						<input type="date" class="form-control" name="date" id="exampleDatepicker11" required />
+						<label for="exampleDatepicker11" class="form-label">เลือกประเภทข่าว</label>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<label class="form-label" for="detail">รายละเอียด :</label>
+					<div class="form-outline">
+						<textarea class="form-control" name="description" id="detail" rows="4" required></textarea>
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -28,7 +34,7 @@
 				<small>ห้ามอัพรูปเกินทั้งหมด 40 MB</small>
 				<div class="col-12">
 					<button type="submit" value="upload" class="btn btn-success">อัพโหลด</button>
-					<button type="clear"  class="btn btn-success">clear</button>
+					<a href="<?php echo site_url('officer/uploadnews_system')?>" class="btn btn-danger">ยกเลิก</a>
 				</div>
 			</form>
 		</div>

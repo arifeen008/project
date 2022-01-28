@@ -1,7 +1,15 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-
+<style>
+	.transaction {
+		display: -webkit-box;
+		/* max-width: 200px; */
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>
 <div class="container my-2">
 	
 	<div class="row">
@@ -11,10 +19,7 @@ include_once("application/libraries/Thaidate.php");
 				<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
 					<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
 					<div class="card-body">
-						<h5 class="card-title text-dark text-truncate"><?= $row->title ?></h5>
-						<p class="card-text text-dark text-truncate">
-							<?= $row->description ?>
-						</p>
+						<h5 style="font-family: 'Sarabun'" class="card-title text-dark transaction"><?= $row->title ?></h5>
 						<p class="card-text">
 							<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
 						</p>
