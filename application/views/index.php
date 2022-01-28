@@ -1,5 +1,6 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
+$isActive = 1;
 ?>
 <style>
 	.transaction {
@@ -198,29 +199,112 @@ include_once("application/libraries/Thaidate.php");
 	</div>
 </div>
 <div class="container my-3">
-	<div class="card border border-success">
-		<div class="card-body">
-			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center h1">
-				ข่าวประชาสัมพันธ์
-			</p>
-			<div class="row">
-				<?php foreach ($list_news->result() as $row) { ?>
-					<div class="col-md-3">
-						<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
-							<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
-							<div class="card-body">
-								<p style="font-family: 'Sarabun'" class="card-title text-dark transaction"><?= $row->title ?></p>
-								<p class="card-text">
-									<small class="text-muted"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></small>
-								</p>
-							</div>
-						</a>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<h5 class="card-title">ข่าวประชาสัมพันธ์</h5>
+				<div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="3" aria-label="Slide 4"></button>
 					</div>
-				<?php } ?>
+					<div class="carousel-inner">
+						<?php foreach ($list_news as $row) { ?>
+							<?php if ($isActive == 1) { ?>
+								<div class="carousel-item active">
+									<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>">
+										<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" class="d-block w-100"/>
+										<div class="carousel-caption d-none d-md-block">
+											<h5><?= $row->title ?></h5>
+										</div>
+									</a>
+								</div>
+							<?php $isActive = 0;
+							} else { ?>
+								<div class="carousel-item">
+									<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>">
+										<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" class="d-block w-100" />
+										<div class="carousel-caption d-none d-md-block">
+											<h5><?= $row->title ?></h5>
+										</div>
+									</a>
+								</div>
+							<?php }  ?>
+						<?php } ?>
+					</div>
+					<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<h5 class="card-title">สวัสดิการสมาชิก</h5>
+				<div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+						<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="3" aria-label="Slide 4"></button>
+					</div>
+					<div class="carousel-inner">
+						<?php foreach ($list_news as $row) { ?>
+							<?php if ($isActive == 1) { ?>
+								<div class="carousel-item active">
+									<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>">
+										<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" class="d-block w-100"  />
+										<div class="carousel-caption d-none d-md-block">
+											<h5><?= $row->title ?></h5>
+										</div>
+									</a>
+								</div>
+							<?php $isActive = 0;
+							} else { ?>
+								<div class="carousel-item">
+									<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>">
+										<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" class="d-block w-100" />
+										<div class="carousel-caption d-none d-md-block">
+											<h5><?= $row->title ?></h5>
+										</div>
+									</a>
+								</div>
+							<?php }  ?>
+						<?php } ?>
+					</div>
+					<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<h5 class="card-title">สินเชื่อฮาลาล</h5>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<h5 class="card-title">มูลนิธิษะกอฟะฮ</h5>
 			</div>
 		</div>
 	</div>
+
 </div>
+
+
 <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">

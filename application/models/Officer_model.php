@@ -390,27 +390,6 @@ class Officer_model extends CI_Model
 	// 	return $result;
 	// }
 
-	public function get_number_share_capital()
-	{
-		$this->db->select_sum('SHR_SUM_BTH ');
-		$query = $this->db->get('SHR_MEM');
-		return $query->row();
-	}
-
-	public function get_number_deposit()
-	{
-		$this->db->select_sum('LAST_DEP');
-		$query = $this->db->get('BK_H_SAVINGACCOUNT');
-		return $query->row();
-	}
-
-	// public function get_number_member()
-	// {
-	// 	$this->db->select('count(MEM_ID) as MEM_ID');
-	// 	$query = $this->db->get('MEM_H_MEMBER');
-	// 	return $query->row();
-	// }
-
 	public function uploadpicture($newsnumber, $uploadStatus, $date)
 	{
 		$db2 = $this->load->database('db2', TRUE);
@@ -422,11 +401,12 @@ class Officer_model extends CI_Model
 		$db2->insert('picture', $data);
 	}
 
-	public function uploadnews($newsnumber, $title, $description, $date, $dateupload)
+	public function uploadnews($newsnumber, $title, $description, $news_type, $date, $dateupload)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
 			'newsnumber' => $newsnumber,
+			'news_typeid' => $news_type,
 			'title' => $title,
 			'description' => $description,
 			'date' => $date,
@@ -451,9 +431,9 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(8);
+		$db2->limit(4);
 		$result = $db2->get('news');
-		return $result;
+		return $result->result();
 	}
 
 	public function get_sidenewsdata($newsnumber)
@@ -481,8 +461,9 @@ class Officer_model extends CI_Model
 	public function get_news_upload()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('newsnumber,title,description,date,dateupload');
-		$db2->order_by('dateupload', 'DESC');
+		$db2->select('news.newsnumber,newstype.news_typename,news.title,news.date,news.dateupload');
+		$db2->join('newstype','news.news_typeid = newstype.news_typeid');
+		$db2->order_by('news.dateupload', 'DESC');
 		$result = $db2->get('news');
 		return $result;
 	}
@@ -513,10 +494,11 @@ class Officer_model extends CI_Model
 		return $result->row();
 	}
 
-	public function updatenews($newsnumber, $title, $date, $description)
+	public function updatenews($newsnumber, $news_type, $title, $date, $description)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
+			'news_typeid' => $news_type,
 			'title' => $title,
 			'description' => $description,
 			'dateupload' => $date

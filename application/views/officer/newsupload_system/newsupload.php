@@ -16,10 +16,13 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="form-outline">
-						<input type="date" class="form-control" name="date" id="exampleDatepicker11" required />
-						<label for="exampleDatepicker11" class="form-label">เลือกประเภทข่าว</label>
-					</div>
+					<select class="select" name="news_type">
+						<option value="1">ประชาสัมพันธ์</option>
+						<option value="2">สวัสดิการ</option>
+						<option value="3">สินเชื่อฮาลาล</option>
+						<option value="4">มูลนิธิษะกอฟะฮ</option>
+					</select>
+					<label class="form-label select-label">เลือกประเภทข่าว</label>
 				</div>
 				<div class="col-md-12">
 					<label class="form-label" for="detail">รายละเอียด :</label>

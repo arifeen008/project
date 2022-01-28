@@ -581,6 +581,7 @@ class Officer extends CI_Controller
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
 		$description = $this->input->post('description');
+		$news_type = $this->input->post('news_type');
 
 		do {
 			$newsnumber = rand(10, 10000);
@@ -607,7 +608,7 @@ class Officer extends CI_Controller
 			}
 		}
 
-		$this->officer_model->uploadnews($newsnumber, $title, $description, date('Y-m-d H:i:s'), $date);
+		$this->officer_model->uploadnews($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
 
 		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
 		redirect('officer/uploadnews_system', 'refresh');
@@ -675,7 +676,8 @@ class Officer extends CI_Controller
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
 		$description = $this->input->post('description');
-		$result = $this->officer_model->updatenews($newsnumber, $title, $date, $description);
+		$news_type = $this->input->post('news_type');
+		$result = $this->officer_model->updatenews($newsnumber, $news_type, $title, $date, $description);
 		if ($result) {
 			echo "<script>alert('แก้ไขเรียบร้อย');</script>";
 			redirect('officer/uploadnews_system', 'refresh');

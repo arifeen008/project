@@ -12,9 +12,10 @@ include_once("application/libraries/Thaidate.php");
 						<tr>
 							<th>รหัสข่าว</th>
 							<th>หัวข้อ</th>
-							<th>รายละเอียด</th>
+							<th>ประเภทข่าว</th>
 							<th>เวลาอัพโหลด</th>
-							<th></th>
+							<th>แก้ไข</th>
+							<th>ลบ</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -22,9 +23,10 @@ include_once("application/libraries/Thaidate.php");
 							<tr>
 								<td><?= $row->newsnumber ?></td>
 								<td><?= $row->title  ?></td>
-								<td><?= $row->description  ?></td>
+								<td><?= $row->news_typename  ?></td>
 								<td><?= thaidate('j M Y ', strtotime($row->dateupload))   ?></td>
-								<td><a href="<?php echo site_url('officer/editnews/' . $row->newsnumber) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a><a href="<?php echo site_url('officer/deletenews/' . $row->newsnumber) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
+								<td><a href="<?php echo site_url('officer/editnews/' . $row->newsnumber) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a></td>
+								<td><a href="<?php echo site_url('officer/deletenews/' . $row->newsnumber) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>
