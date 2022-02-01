@@ -12,13 +12,13 @@
 			</div>
 			<div class="col-md-4 d-flex justify-content-end">
 				<!-- <div class="col-md-4 d-flex justify-content-end"> -->
-					<button class="btn btn-outline text-light" data-mdb-toggle="modal" data-mdb-target="#exampleModal"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
+					<button class="btn btn-outline text-light" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
 				<!-- </div> -->
 			</div>
 		</div>
 	</div>
 </footer>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="accessToAgent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog mx-0 mx-sm-auto">
 		<div class="modal-content">
 			<div class="modal-header" style="background-color: #25d321;">

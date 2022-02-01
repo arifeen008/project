@@ -21,8 +21,8 @@
 					<h6>ที่ปรึกษา</h6>
 				</a>
 			</li>
-			<li class="nav-item text-success" role="presentation">
-				<a class="nav-link" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-5" role="tab" aria-controls="ex3-tabs-5" aria-selected="false">
+			<li class="nav-item" role="presentation">
+				<a class="nav-link text-success" id="ex3-tab-3" data-mdb-toggle="tab" href="#ex3-tabs-5" role="tab" aria-controls="ex3-tabs-5" aria-selected="false">
 					<h6>ทำเนียบสหกรณ์</h6>
 				</a>
 			</li>
@@ -46,3 +46,4 @@
 		</div>
 	</div>
 </div>
+

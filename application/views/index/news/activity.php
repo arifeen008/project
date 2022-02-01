@@ -16,8 +16,8 @@ include_once("application/libraries/Thaidate.php");
 	<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px;" class="mt-2">ข่าวสาร/กิจกรรมความเคลื่อนไหว</p>
 		<?php foreach ($result->result() as $row) { ?>
 			<div class="col-md-3 mb-2">
-				<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2">
-					<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="250px" class="card-img-top" />
+				<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card hover-shadow my-2">
+					<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="200px" class="card-img-top" />
 					<div class="card-body">
 						<h5 style="font-family: 'Sarabun'" class="card-title text-dark transaction"><?= $row->title ?></h5>
 						<p class="card-text">
