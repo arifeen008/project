@@ -2,7 +2,7 @@
 	<div class="row">
 		<p style="font-family: 'Sarabun', cursive;color:black;font-size:50px" class="text-center">ที่ตั้งสาขาและจุดบริการสหกรณ์</p>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__1776271462.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สาขา สำนักงานใหญ่(คลองยาง)</h5>
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/36643.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สำนักงาน สาขากระบี่</h5>
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__177627147.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สำนักงาน สาขาอ่าวลึก</h5>
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/47037.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สำนักงาน สาขาเกาะลันตา</h5>
@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/228620.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สำนักงาน สาขาคลองท่อม</h5>
@@ -57,7 +57,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__6094852.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">สำนักงาน สาขาห้วยลึก</h5>
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__53215240.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">จุดบริการกาญจนดิษฐ์</h5>
@@ -79,7 +79,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/8475.jpg') ?>" height="100%" width="100%" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">จุดบริการต้นทวย</h5>
@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__5046906.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">รถโมบายเคลื่อนที่ 1</h5>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<img src="<?php echo base_url('picture/S__17891338.jpg') ?>" class="card-img-top" />
 				<div class="card-body">
 					<h5 class="card-title">รถโมบายเคลื่อนที่ 2</h5>
@@ -110,7 +110,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="card mb-2">
+	<div class="card hover-shadow mb-2">
 		<div class="card-header">
 			<h1 class="text-danger">รถโมบายเคลื่อนที่ 1</h1><strong>เขตอำเภอเมืองกระบี่/เหนือคลอง</strong>
 		</div>
@@ -119,7 +119,7 @@
 			<img src="<?php echo base_url('picture/310-1.jpg') ?>" width="100%">
 		</div>
 	</div>
-	<div class="card mb-2">
+	<div class="card hover-shadow mb-2">
 		<div class="card-header">
 			<h1 class="text-danger">รถโมบายเคลื่อนที่ 2</h1><strong>เขตอำเภอคลองท่อม/เกาะลันตา</strong>
 		</div>
