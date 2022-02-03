@@ -492,9 +492,7 @@ class Officer extends CI_Controller
 		$date = $this->input->post('date');
 		$config['upload_path']          = 'file/ประกาศภายใน';
 		$config['allowed_types']        = 'pdf';
-
 		$this->load->library('upload', $config);
-
 		if (!$this->upload->do_upload('uploadFile')) {
 			echo "<script>alert('import failed');</script>";
 			redirect('officer/internal_announcement', 'refresh');
