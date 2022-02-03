@@ -57,12 +57,14 @@ class Officer extends CI_Controller
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data['result'] = $this->officer_model->get_internalfile();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/internal_announcement/internal_announcement");
+		$this->load->view("officer/internal_announcement/internal_announcement", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -92,100 +94,6 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	// public function deposit_system()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$USER_ID = $this->session->userdata('USER_ID');
-	// 	$data = $this->officer_model->data_officer($USER_ID);
-	// 	$title['title'] = "ระบบเงินฝาก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/deposit_system/deposit_system");
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function depositreport_summary()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$branch_number = $this->session->userdata('BR_NO');
-	// 	$startdate = $this->input->post('startdate');
-	// 	$enddate = $this->input->post('enddate');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->depositreport_summary($startdate, $enddate, $user_id, $branch_number);
-	// 	$title['title'] = "เงินฝากพนักงานประจำวัน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);	
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/deposit_system/depositreport_summary", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function list_deposit_member()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$account_number = $this->input->post('account_number');
-	// 	$mem_id = $this->input->post('mem_id');
-	// 	$fname = $this->input->post('fname');
-	// 	$lname = $this->input->post('lname');
-	// 	$branch_number = $this->input->post('branch_number');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->list_deposit_member($account_number, $mem_id, $fname, $lname, $branch_number);
-	// 	$title['title'] = "ค้นหาเงินฝากในบัญชีสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);		
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/deposit_system/list_deposit_member", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function deposit_member_detail($account_number)
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->deposit_member_detail($account_number);
-	// 	$title['title'] = "เงินฝากในบัญชีสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);	
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/deposit_system/deposit_member_detail", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function credit_system()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$USER_ID = $this->session->userdata('USER_ID');
-	// 	$data1 = $this->officer_model->data_officer($USER_ID);
-	// 	$title['title'] = "ระบบงานสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data1);		
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/credit_system");
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function listcredit_member()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$mem_id = $this->input->post('mem_id');
-	// 	$branch_number = $this->input->post('branch_number');
-	// 	$fname = $this->input->post('fname');
-	// 	$lname = $this->input->post('lname');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
-	// 	$title['title'] = "ค้นหายอดสินเชื่อในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/listdatacredit_member", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
 	public function cooperative_regulation()
 	{
 		$user_id = $this->session->userdata('USER_ID');
@@ -211,84 +119,6 @@ class Officer extends CI_Controller
 		$this->load->view("officer/cooperative_rules/cooperative_rules");
 		$this->load->view("containner/script");
 	}
-
-	// public function credit_officer($mem_id, $branch_number)
-	// {
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
-	// 	$data['result'] = $this->officer_model->credit_officer($mem_id, $branch_number);
-	// 	$title['title'] = "สินเชื่อคุณ" . $data['name']->FNAME . " " . $data['name']->FNAME . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/credit_officer", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function credit_officer_detail($code, $br_no)
-	// {
-	// 	$USER_ID = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($USER_ID);
-	// 	$data['select'] = $this->officer_model->credit_officer_select($code, $br_no);
-	// 	$data['result'] = $this->officer_model->credit_officer_detail($code, $br_no);
-	// 	$title['title'] = "รายละเอียดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/credit_officer_detail", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function listclosedcredit_member()
-	// {
-	// 	$mem_id = $this->input->post('mem_id');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$branch_number = $this->input->post('branch_number');
-	// 	$fname = $this->input->post('fname');
-	// 	$lname = $this->input->post('lname');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->listcredit_member($mem_id, $branch_number, $fname, $lname);
-	// 	$title['title'] = "ค้นหายอดสินเชื่อที่ปิดแล้วในสมุดของบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/listclosedcredit_member", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function closed_credit_officer($mem_id, $branch_number)
-	// {
-	// 	$USER_ID = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($USER_ID);
-	// 	$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
-	// 	$data['result'] = $this->officer_model->checkcredit_officer($mem_id, $branch_number);
-	// 	$title['title'] = "สินเชื่อคุณ" . $data['name']->FNAME . " " . $data['name']->FNAME . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);	
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/closed_credit_officer", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function closedcredit_officer_detail($code, $branch_number)
-	// {
-	// 	$USER_ID = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($USER_ID);
-	// 	$data['select'] = $this->officer_model->checkcredit_officer_select($code, $branch_number);
-	// 	$data['result'] = $this->officer_model->checkcredit_officer_detail($code, $branch_number);
-	// 	$title['title'] = "รายละเอียดสินเชื่อที่ปิดแล้ว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/credit_system/closed_credit_officer_detail", $data);
-	// 	$this->load->view("containner/script");
-	// }
 
 	public function search_data_member()
 	{
@@ -403,51 +233,6 @@ class Officer extends CI_Controller
 		$this->load->view("officer/search_member/datashare_member", $data);
 		$this->load->view("containner/script");
 	}
-
-	// public function takaful_system()
-	// {
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$title['title'] = "ระบบกองทุนตะกาฟุล สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/head");
-	// 	$this->load->view("containner/header_officer", $data_officer);	
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/takaful_system/takaful_system");
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function takaful_member()
-	// {
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$mem_id = $this->input->post('mem_id');
-	// 	$branch_number = $this->input->post('branch_number');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['name'] = $this->officer_model->data_member($mem_id, $branch_number);
-	// 	$data['result'] = $this->officer_model->welfare_member($mem_id, $branch_number);
-	// 	$this->load->view("containner/head");
-	// 	$this->load->view("containner/header_officer", $data_officer);	
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/takaful_system/takaful_member", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// =========================================================================================================================================================================
-
-	// public function reportmember_system()
-	// {
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$title['title'] = "ระบบรายงานสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);		
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/report_member_system/report_member_system");
-	// 	$this->load->view("containner/script");
-	// }
 
 	// public function searchreport_member()
 	// {
@@ -684,6 +469,40 @@ class Officer extends CI_Controller
 		} else {
 			echo "<script>alert('แก้ไขไม่สำเร็จ');</script>";
 			redirect('officer/editnews/' . $newsnumber, 'refresh');
+		}
+	}
+
+
+	public function import_internal_declaration()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/internal_announcement/import_internal_declaration");
+		$this->load->view("containner/script");
+	}
+
+	public function upload_internalfile()
+	{
+		$title = $this->input->post('title');
+		$date = $this->input->post('date');
+		$config['upload_path']          = 'file/ประกาศภายใน';
+		$config['allowed_types']        = 'pdf';
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('uploadFile')) {
+			echo "<script>alert('import failed');</script>";
+			redirect('officer/internal_announcement', 'refresh');
+		} else {
+			$uploadFile = $this->upload->data('file_name');
+			$this->officer_model->upload_internalfile($title, $date, $uploadFile);
+			echo "<script>alert('import success');</script>";
+			redirect('officer/internal_announcement', 'refresh');
 		}
 	}
 }

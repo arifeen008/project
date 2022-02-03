@@ -431,7 +431,7 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(4);
+		$db2->limit(8);
 		$result = $db2->get('news');
 		return $result->result();
 	}
@@ -462,7 +462,7 @@ class Officer_model extends CI_Model
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->select('news.newsnumber,newstype.news_typename,news.title,news.date,news.dateupload');
-		$db2->join('newstype','news.news_typeid = newstype.news_typeid');
+		$db2->join('newstype', 'news.news_typeid = newstype.news_typeid');
 		$db2->order_by('news.dateupload', 'DESC');
 		$result = $db2->get('news');
 		return $result;
@@ -535,5 +535,25 @@ class Officer_model extends CI_Model
 		$db2->order_by('dateupload', 'DESC');
 		$result = $db2->get('news');
 		return $result;
+	}
+
+	public function upload_internalfile($title, $date, $uploadFile)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'title' => $title,
+			'date' => $date,
+			'uploadFile' => $uploadFile
+		);
+		$db2->insert('internal_announcement', $data);
+	}
+
+	public function get_internalfile()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('title,date,uploadfile');
+		$db2->order_by('date', 'DESC');
+		$result = $db2->get('internal_announcement');
+		return $result->result();
 	}
 }

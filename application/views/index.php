@@ -175,7 +175,7 @@ include_once("application/libraries/Thaidate.php");
 	</div>
 </div>
 
-<div class="container my-3">
+<!-- <div class="container my-3">
 	<div class="card border border-success">
 		<div class="card-body">
 			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center text-dark h1 my-3">สถานะการเงิน</p>
@@ -196,37 +196,47 @@ include_once("application/libraries/Thaidate.php");
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="row my-3">
 	<div class="col-lg">
 		<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051633262.jpg') ?>">
 		</a>
 	</div>
 	<div class="col-lg">
 		<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
 		</a>
 	</div>
 	<div class="col-lg">
 		<a href="https://www.facebook.com/Jiraphat1705/">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
 		</a>
 	</div>
 	<div class="col-lg">
 		<a href="https://www.facebook.com/%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%A5%E0%B9%8C-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-110341583984620/?modal=admin_todo_tour">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/shellKrabi.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/shellKrabi.jpg') ?>">
 		</a>
 	</div>
 	<div class="col-lg">
 		<a href="https://www.youtube.com/channel/UCffHrfpeGIw4dlLCs-IEGDg">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051728377.jpg') ?>">
 		</a>
 	</div>
 	<div class="col-lg">
 		<a href="https://www.facebook.com/Sakofah.Islam.Savings/">
-			<img class="rounded mx-auto d-block hover-shadow" width="140" height="140" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051745671.jpg') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/watch/UmmahChannel.Fan/">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/logo-ummah-channel.png') ?>">
+		</a>
+	</div>
+	<div class="col-lg">
+		<a href="https://www.facebook.com/Southern-Coffee-%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%B2%E0%B8%87-100245865097067">
+			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/SOUTHERN-COFFEE-LOGO.png') ?>">
 		</a>
 	</div>
 </div>

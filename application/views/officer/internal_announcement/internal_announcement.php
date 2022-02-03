@@ -1,5 +1,12 @@
+<?php
+include_once("application/libraries/thaidate-functions.php");
+include_once("application/libraries/Thaidate.php");
+?>
 <div class="col-lg-9">
 	<div class="card my-3">
+		<?php if ($level_code == 'P') { ?>
+			<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
+		<?php	} ?>
 		<div class="lightbox">
 			<div class="card-body">
 				<div class="row">
@@ -16,11 +23,25 @@
 		</div>
 	</div>
 	<div class="card my-3">
-		<a href="<?php echo base_url(); ?>file\สอษ.026-ุ64 การเก็บรักษาเงินสดประจำวัน(2564).pdf" target="_blank" class="btn btn-outline-dark btn-lg mx-2" data-mdb-ripple-color="#000000">
-			<div class="d-flex justify-content-between">
-				<b class="text-dark">ประกาศคำสั่ง ที่ สอษ. 26 / 2564 เรื่อง กำหนดการเก็บรักษาเงินสดประจำวันและเงินฝากธนาคาร พ.ศ.2564</b>
-				<i class="fas fa-download"></i>
-			</div>
-		</a>
+		<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+			<table>
+				<thead>
+					<tr>
+						<th>ประกาศ</th>
+						<th>วันที่</th>
+						<th>ดาวน์โหลด</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($result as $row) { ?>
+						<tr>
+							<td><?= $row->title ?></td>
+							<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
+							<td><a href="<?php echo base_url('file/ประกาศภายใน/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
