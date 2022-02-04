@@ -11,11 +11,8 @@ class Index extends CI_Controller
 	public function index()
 	{
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
-		$data['list_news'] = $this->officer_model->get_list_news();
-		// $data['share_capital'] = $this->officer_model->get_number_share_capital();
-		// $data['deposit'] = $this->officer_model->get_number_deposit();
-		// $data['member'] = $this->officer_model->get_number_member();
 		$data['covid_data'] = json_decode($covid, true);
+		$data['list_news'] = $this->officer_model->get_list_news();
 		$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
@@ -64,6 +61,116 @@ class Index extends CI_Controller
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/office");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function klongyang()
+	{
+		$title['title'] = "สาขา สำนักงานใหญ่(คลองยาง) สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/klongyang");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function krabi()
+	{
+		$title['title'] = "สำนักงาน สาขากระบี่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/krabi");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function aoluk()
+	{
+		$title['title'] = "สำนักงาน สาขาอ่าวลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/aoluk");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function kohlanta()
+	{
+		$title['title'] = "สำนักงาน สาขาเกาะลันตา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/kohlanta");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function klongthom()
+	{
+		$title['title'] = "สำนักงาน สาขาคลองท่อม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/klongthom");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function huayluk()
+	{
+		$title['title'] = "สำนักงาน สาขาห้วยลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/huayluk");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function karnjanadid()
+	{
+		$title['title'] = "จุดบริการกาญจนดิษฐ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/karnjanadid");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function thontuay()
+	{
+		$title['title'] = "จุดบริการต้นทวย สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/thontuay");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function mobile1()
+	{
+		$title['title'] = "รถโมบายเคลื่อนที่ 1 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/mobile1");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function mobile2()
+	{
+		$title['title'] = "รถโมบายเคลื่อนที่ 2 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head");
+		$this->load->view("containner/header");
+		$this->load->view("index/about/branch/mobile2");
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
