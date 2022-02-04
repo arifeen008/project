@@ -33,7 +33,7 @@ include_once("application/libraries/Thaidate.php");
 		<div class="col-3">
 			<?php foreach ($side_data->result() as $row) { ?>
 				<div class="col-md-12">
-					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card my-2" style="width: 18rem;">
+					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card hover-shadow my-2" style="width: 18rem;">
 						<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="150px" class="card-img-top" />
 						<div class="card-body">
 							<p class="text-dark transaction" style="font-family: 'Sarabun';"><?= $row->title ?></p>

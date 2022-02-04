@@ -424,14 +424,54 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function get_list_news()
+	public function get_news_information()
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->where('news.news_typeid', '1');
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(8);
+		$db2->limit(6);
+		$result = $db2->get('news');
+		return $result->result();
+	}
+
+	public function get_news_welfare()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->where('news.news_typeid', '2');
+		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
+		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'DESC');
+		$db2->limit(3);
+		$result = $db2->get('news');
+		return $result->result();
+	}
+
+	public function get_news_credit()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->where('news.news_typeid', '3');
+		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
+		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'DESC');
+		$db2->limit(1);
+		$result = $db2->get('news');
+		return $result->result();
+	}
+
+	public function get_news_foundation()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$db2->where('news.news_typeid', '4');
+		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
+		$db2->group_by('news.newsnumber');
+		$db2->order_by('dateupload', 'DESC');
+		$db2->limit(2);
 		$result = $db2->get('news');
 		return $result->result();
 	}

@@ -12,7 +12,10 @@ class Index extends CI_Controller
 	{
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
 		$data['covid_data'] = json_decode($covid, true);
-		$data['list_news'] = $this->officer_model->get_list_news();
+		$data['news_information'] = $this->officer_model->get_news_information();
+		$data['news_welfare'] = $this->officer_model->get_news_welfare();
+		$data['news_credit'] = $this->officer_model->get_news_credit();
+		$data['news_foundation'] = $this->officer_model->get_news_foundation();
 		$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
