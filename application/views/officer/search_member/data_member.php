@@ -10,7 +10,7 @@ include_once("application/libraries/Thaidate.php");
 				</button>
 			</h2>
 			<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
-				<div class="accordion-body">
+				<div class="accordion-body" style="font-family: 'Sarabun';color: black;">
 					<div class="row">
 						<div class="col-md-6 my-2">
 							ชื่อ : <?php echo $data_member->FNAME ?>
@@ -25,11 +25,7 @@ include_once("application/libraries/Thaidate.php");
 							วันเกิด : <?php echo thaidate('j F Y ', strtotime($data_member->DMY_BIRTH))  ?>
 						</div>
 						<div class="col-md-6 my-2">
-							เพศ : <?php if ($data_member->SEX === "1") {
-										echo "ชาย";
-									} else {
-										echo "หญิง";
-									} ?>
+							เพศ : <?php echo (($data_member->SEX == "1") ? "ชาย" : "หญิง") ?>
 						</div>
 						<div class="col-md-6 my-2">
 							ชื่อบิดา : <?php echo $data_member->FATHER ?>
@@ -41,7 +37,7 @@ include_once("application/libraries/Thaidate.php");
 							สถานะ : <?php echo $data_member->MARRIAGE_STATUS ?>
 						</div>
 						<div class="col-md-6 my-2">
-							กรุ๊ปเลือด : <?php echo $data_member->BLO_GROUP ?>
+							กรุ๊ปเลือด : <?php echo (($data_member->BLO_GROUP != null) ? $data_member->BLO_GROUP : " -") ?>
 						</div>
 						<div class="col-md-6 my-2">
 							เลขที่บ้าน : <?php echo $data_member->ADDRESS ?>
@@ -53,10 +49,10 @@ include_once("application/libraries/Thaidate.php");
 							ตำบล : <?php echo $data_member->TUMBOL ?>
 						</div>
 						<div class="col-md-6 my-2">
-							LINE ID : <?php echo $data_member->LINE_ID ?>
+							LINE ID : <?php echo (($data_member->LINE_ID != null) ? $data_member->LINE_ID : " -") ?>
 						</div>
 						<div class="col-md-6 my-2">
-							EMAIL : <?php echo $data_member->EMAIL ?>
+							EMAIL :<?php echo (($data_member->EMAIL != null) ? $data_member->EMAIL : " -") ?>
 						</div>
 						<div class="col-md-6 my-2">
 							โทรศัพท์ : <?php echo $data_member->MOBILE_TEL ?>
@@ -78,7 +74,7 @@ include_once("application/libraries/Thaidate.php");
 									<th>เลขบัญชี</th>
 									<th>ชื่อบัญชี</th>
 									<th>ยอดคงเหลือ</th>
-									<th></th>
+									<th>รายละเอียด</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -212,7 +208,7 @@ include_once("application/libraries/Thaidate.php");
 				</div>
 			</div>
 			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingThree">
+				<h2 class="accordion-header" id="headingFour">
 					<button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
 						<b class="text-dark">หุ้น</b>
 					</button>
@@ -226,7 +222,6 @@ include_once("application/libraries/Thaidate.php");
 								<td>เงินคงเหลือ</td>
 								<td>คะแนนสะสมคงเหลือ</td>
 							</tr>
-
 							<tr align="center">
 								<td><?= $stock_select->MEM_ID ?></td>
 								<td><?= $stock_select->BR_NAME ?></td>
@@ -263,6 +258,31 @@ include_once("application/libraries/Thaidate.php");
 					</div>
 				</div>
 			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingSix">
+					<button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+						<b class="text-dark">เงินปันผล</b>
+					</button>
+				</h2>
+				<div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
+					<div class="accordion-body">
+						<table class="table table-bordered">
+							<tr align="center">
+								<td>ปี</td>
+								<td>วันที่รับเงิน</td>
+								<td>จำนวนเงิน</td>
+								<td>รายละเอียด</td>
+							</tr>
+							<tr align="center">
+								<td><?= $dividend->SHR_YEAR ?></td>
+								<td><?= thaidate('j M Y ', strtotime($dividend->SHR_OUT_DATE)) ?></td>
+								<td><?= number_format($stock_select->DIVIDEND_PAY, 2) ?></td>
+								<td><button type="button" class="btn btn-primary">Button</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</div>
+</div>

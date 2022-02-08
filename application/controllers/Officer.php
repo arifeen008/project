@@ -150,6 +150,7 @@ class Officer extends CI_Controller
 		$data['closed_credit_member'] = $this->officer_model->closed_credit_member($mem_id, $branch_number);
 		$data['stock_select'] = $this->officer_model->stock_select($mem_id, $branch_number);
 		$data['stock_details'] = $this->officer_model->stock_details($mem_id, $branch_number);
+		$data['dividend'] = $this->officer_model->dividend_member($mem_id, $branch_number);
 		$title['title'] = "สมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);

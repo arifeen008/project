@@ -155,6 +155,16 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
+	public function dividend_member($mem_id, $branch_number)
+	{
+		$this->db->select('SHR_YEAR,DIVIDEND_PAY,SHR_OUT_DATE');
+		$this->db->where('MEM_ID', $mem_id);
+		$this->db->where('BR_NO', $branch_number);
+		$this->db->where('SHR_YEAR', '2021');
+		$result = $this->db->get('SHR_PAY_DIVIDEND');
+		return $result->row();
+	}
+
 	// public function credit_officer_detail($code, $branch_number)
 	// {
 	// 	$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');

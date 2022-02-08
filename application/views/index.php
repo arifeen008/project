@@ -161,7 +161,7 @@
  				<div class="row">
  					<div class="col-md-6">
  						<div class="card hover-shadow my-2">
- 							<h5 class="card-title text-center text-dark my-3">ข่าวประชาสัมพันธ์</h5>
+ 							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;">ข่าวประชาสัมพันธ์</b>
  							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -199,7 +199,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card hover-shadow my-2">
- 							<h5 class="card-title text-center text-dark my-3">สวัสดิการสมาชิก</h5>
+ 							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;">สวัสดิการสมาชิก</b>
  							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -237,7 +237,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card hover-shadow my-2">
- 							<h5 class="card-title text-center text-dark my-3">สินเชื่อฮาลาล</h5>
+ 							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;">สินเชื่อฮาลาล</b>
  							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -275,7 +275,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card hover-shadow my-2">
- 							<h5 class="card-title text-center text-dark my-3">มูลนิธิษะกอฟะฮ</h5>
+ 							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;">มูลนิธิษะกอฟะฮ</b>
  							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
