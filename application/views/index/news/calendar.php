@@ -52,7 +52,7 @@
 					<img src="<?php echo base_url('picture/cal_m09.jpg') ?>" class="mb-2" style="width: 100%;">
 				</div>
 				<div class="tab-pane fade <?php echo ((idate('m') == "10") ? "show active" : "") ?>" id="v-pills-10" role="tabpanel" aria-labelledby="10">
-					<img src="<?php echo base_url('picture/cal_m010.jpg') ?>" class="mb-2" style="width: 100%;">
+					<img src="<?php echo base_url('picture/cal_m10.jpg') ?>" class="mb-2" style="width: 100%;">
 				</div>
 				<div class="tab-pane fade <?php echo ((idate('m') == "11") ? "show active" : "") ?>" id="v-pills-11" role="tabpanel" aria-labelledby="11">
 					<img src="<?php echo base_url('picture/cal_m11.jpg') ?>" class="mb-2" style="width: 100%;">
