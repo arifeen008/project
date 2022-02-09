@@ -66,6 +66,13 @@
  	</div>
  </div>
 
+ <div class="container">
+ 	<div class="bg-image">
+ 		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
+ 	</div>
+ </div>
+
+
  <div class="container my-3">
  	<div class="row">
  		<div class="col">

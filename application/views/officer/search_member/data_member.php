@@ -266,20 +266,26 @@ include_once("application/libraries/Thaidate.php");
 				</h2>
 				<div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
 					<div class="accordion-body">
-						<table class="table table-bordered">
-							<tr align="center">
-								<td>ปี</td>
-								<td>วันที่รับเงิน</td>
-								<td>จำนวนเงิน</td>
-								<td>รายละเอียด</td>
-							</tr>
-							<tr align="center">
-								<td><?= $dividend->SHR_YEAR ?></td>
-								<td><?= thaidate('j M Y ', strtotime($dividend->SHR_OUT_DATE)) ?></td>
-								<td><?= number_format($stock_select->DIVIDEND_PAY, 2) ?></td>
-								<td><button type="button" class="btn btn-primary">Button</button></td>
-							</tr>
-						</table>
+						<?php if ($dividend != null) { ?>
+							<table class="table table-bordered">
+								<tr align="center">
+									<td>ปี</td>
+									<td>วันที่รับเงิน</td>
+									<td>จำนวนเงิน</td>
+									<td>สาขาที่รับ</td>
+								</tr>
+								<tr align="center">
+									<td><?php echo thaidate('Y', strtotime($dividend->SHR_YEAR)) ?></td>
+									<td><?php echo thaidate('j M Y ', strtotime($dividend->SHR_COME_DIV))  ?></td>
+									<td><?php echo number_format($dividend->SHR_COME_DIV, 2)  ?></td>
+									<td><?php echo $dividend->BR_NAME ?></td>
+								</tr>
+							</table>
+						<?php }else{ ?>
+							<div class="h-100 d-flex justify-content-center align-items-center">
+								<b class="text-dark">ไม่มีข้อมูล</ิ>
+							</div>
+					<?php	} ?>
 					</div>
 				</div>
 			</div>

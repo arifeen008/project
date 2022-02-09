@@ -19,27 +19,27 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 
-	public function data_member($mem_id, $branch_number)
-	{
-		$this->db->select('MEM_ID,BR_NO,FNAME,LNAME');
-		$this->db->where('MEM_ID', $mem_id);
-		$this->db->where('BR_NO', $branch_number);
-		$query = $this->db->get('MEM_H_MEMBER');
-		return $query->row();
-	}
+	// public function data_member($mem_id, $branch_number)
+	// {
+	// 	$this->db->select('MEM_ID,BR_NO,FNAME,LNAME');
+	// 	$this->db->where('MEM_ID', $mem_id);
+	// 	$this->db->where('BR_NO', $branch_number);
+	// 	$query = $this->db->get('MEM_H_MEMBER');
+	// 	return $query->row();
+	// }
 
-	public function depositreport_summary($startdate, $enddate, $user_id, $branch_number)
-	{
-		$this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
-		$this->db->where('USER_ID', $user_id);
-		$this->db->where('F_BRNO', $branch_number);
-		$this->db->where('F_DATE >=', $startdate);
-		$this->db->where('F_DATE <=', $enddate);
-		$this->db->group_by('F_DATE');
-		$this->db->order_by('F_DATE', 'DESC');
-		$result = $this->db->get('BK_T_FINANCE');
-		return $result;
-	}
+	// public function depositreport_summary($startdate, $enddate, $user_id, $branch_number)
+	// {
+	// 	$this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
+	// 	$this->db->where('USER_ID', $user_id);
+	// 	$this->db->where('F_BRNO', $branch_number);
+	// 	$this->db->where('F_DATE >=', $startdate);
+	// 	$this->db->where('F_DATE <=', $enddate);
+	// 	$this->db->group_by('F_DATE');
+	// 	$this->db->order_by('F_DATE', 'DESC');
+	// 	$result = $this->db->get('BK_T_FINANCE');
+	// 	return $result;
+	// }
 
 	public function deposit_member($mem_id, $branch_number)
 	{
@@ -157,11 +157,13 @@ class Officer_model extends CI_Model
 
 	public function dividend_member($mem_id, $branch_number)
 	{
-		$this->db->select('SHR_YEAR,DIVIDEND_PAY,SHR_OUT_DATE');
-		$this->db->where('MEM_ID', $mem_id);
-		$this->db->where('BR_NO', $branch_number);
-		$this->db->where('SHR_YEAR', '2021');
-		$result = $this->db->get('SHR_PAY_DIVIDEND');
+		$this->db->select('SHR_MEM_PROCESS.SHR_COME_DIV,SHR_PAY_DIVIDEND.SHR_OUT_DATE,SHR_PAY_DIVIDEND.BR_NO_PAY,SHR_PAY_DIVIDEND.SHR_YEAR,BK_M_BRANCH.BR_NAME');
+		$this->db->where('SHR_MEM_PROCESS.MEM_ID', $mem_id);
+		$this->db->where('SHR_MEM_PROCESS.BR_NO', $branch_number);
+		$this->db->where('SHR_PAY_DIVIDEND.SHR_YEAR', '2021');
+		$this->db->join('SHR_PAY_DIVIDEND', ' SHR_MEM_PROCESS.MEM_ID = SHR_PAY_DIVIDEND.MEM_ID AND SHR_MEM_PROCESS.BR_NO = SHR_PAY_DIVIDEND.BR_NO ');
+		$this->db->join('BK_M_BRANCH', 'SHR_MEM_PROCESS.BR_NO = BK_M_BRANCH.BR_NO');
+		$result = $this->db->get('SHR_MEM_PROCESS');
 		return $result->row();
 	}
 
