@@ -68,26 +68,32 @@ include_once("application/libraries/Thaidate.php");
 				</h2>
 				<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
 					<div class="accordion-body">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>เลขบัญชี</th>
-									<th>ชื่อบัญชี</th>
-									<th>ยอดคงเหลือ</th>
-									<th>รายละเอียด</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php foreach ($deposit_member->result() as $row) { ?>
+						<div class="form-outline mb-4">
+							<input type="text" class="form-control" id="datatable-search-input" />
+							<label class="form-label" for="datatable-search-input">ค้นหาชื่อบัญชี</label>
+						</div>
+						<div id="datatable" class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+							<table>
+								<thead>
 									<tr>
-										<td><?= BankAccount($row->ACCOUNT_NO) ?></td>
-										<td><?= $row->ACCOUNT_NAME ?></td>
-										<td><?= number_format($row->BALANCE, 2) ?></td>
-										<td><a href="<?php echo site_url('officer/account_details/' . $row->ACCOUNT_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
+										<th>เลขบัญชี</th>
+										<th>ชื่อบัญชี</th>
+										<th>ยอดคงเหลือ</th>
+										<th>รายละเอียด</th>
 									</tr>
-								<?php } ?>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<?php foreach ($deposit_member->result() as $row) { ?>
+										<tr>
+											<td><?= BankAccount($row->ACCOUNT_NO) ?></td>
+											<td><?= $row->ACCOUNT_NAME ?></td>
+											<td><?= number_format($row->BALANCE, 2) ?></td>
+											<td><a href="<?php echo site_url('officer/account_details/' . $row->ACCOUNT_NO) ?>" class="btn btn-info"><i class="fas fa-file-alt"></i></a></td>
+										</tr>
+									<?php } ?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -276,16 +282,16 @@ include_once("application/libraries/Thaidate.php");
 								</tr>
 								<tr align="center">
 									<td><?php echo thaidate('Y', strtotime($dividend->SHR_YEAR)) ?></td>
-									<td><?php echo thaidate('j M Y ', strtotime($dividend->SHR_COME_DIV))  ?></td>
-									<td><?php echo number_format($dividend->SHR_COME_DIV, 2)  ?></td>
+									<td><?php echo thaidate('j M Y ', strtotime($dividend->SHR_OUT_DATE))  ?></td>
+									<td><?php echo number_format($dividend->SHR_SUMUP_DIV, 2)  ?></td>
 									<td><?php echo $dividend->BR_NAME ?></td>
 								</tr>
 							</table>
-						<?php }else{ ?>
+						<?php } else { ?>
 							<div class="h-100 d-flex justify-content-center align-items-center">
-								<b class="text-dark">ไม่มีข้อมูล</ิ>
+								<b class="text-dark">ยังไม่ได้รับเงินปันผล</ิ>
 							</div>
-					<?php	} ?>
+						<?php	} ?>
 					</div>
 				</div>
 			</div>

@@ -20,6 +20,9 @@
 			<div class="tab-content" id="v-pills-tabContent">
 				<div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel" aria-labelledby="ex3-tab-1">
 					<img src="<?php echo base_url('picture/มูรอบะหมายถึง.jpg') ?>" style="width: 100%;">
+					<div class="ratio ratio-16x9 my-3">
+						<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
+					</div>
 				</div>
 				<div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
 					<img src="<?php echo base_url('picture/สินเชื่อกอดดุลฮะซัน.jpg') ?>" alt="สินเชื่อกอดดุลฮะซัน" style="width: 100%;">

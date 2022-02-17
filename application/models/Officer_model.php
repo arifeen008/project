@@ -157,13 +157,13 @@ class Officer_model extends CI_Model
 
 	public function dividend_member($mem_id, $branch_number)
 	{
-		$this->db->select('SHR_MEM_PROCESS.SHR_COME_DIV,SHR_PAY_DIVIDEND.SHR_OUT_DATE,SHR_PAY_DIVIDEND.BR_NO_PAY,SHR_PAY_DIVIDEND.SHR_YEAR,BK_M_BRANCH.BR_NAME');
-		$this->db->where('SHR_MEM_PROCESS.MEM_ID', $mem_id);
-		$this->db->where('SHR_MEM_PROCESS.BR_NO', $branch_number);
+		$this->db->select('SHR_PAY_DIVIDEND.SHR_YEAR,SHR_PAY_DIVIDEND.SHR_SUMUP_DIV,SHR_PAY_DIVIDEND.SHR_OUT_DATE,SHR_PAY_DIVIDEND.BR_NO_PAY,BK_M_BRANCH.BR_NAME');
+		$this->db->where('SHR_PAY_DIVIDEND.MEM_ID', $mem_id);
+		$this->db->where('SHR_PAY_DIVIDEND.BR_NO', $branch_number);
 		$this->db->where('SHR_PAY_DIVIDEND.SHR_YEAR', '2021');
-		$this->db->join('SHR_PAY_DIVIDEND', ' SHR_MEM_PROCESS.MEM_ID = SHR_PAY_DIVIDEND.MEM_ID AND SHR_MEM_PROCESS.BR_NO = SHR_PAY_DIVIDEND.BR_NO ');
-		$this->db->join('BK_M_BRANCH', 'SHR_MEM_PROCESS.BR_NO = BK_M_BRANCH.BR_NO');
-		$result = $this->db->get('SHR_MEM_PROCESS');
+		$this->db->join('SHR_MEM_PROCESS', ' SHR_MEM_PROCESS.MEM_ID = SHR_PAY_DIVIDEND.MEM_ID AND SHR_MEM_PROCESS.BR_NO = SHR_PAY_DIVIDEND.BR_NO ');
+		$this->db->join('BK_M_BRANCH', 'SHR_PAY_DIVIDEND.BR_NO_PAY = BK_M_BRANCH.BR_NO');
+		$result = $this->db->get('SHR_PAY_DIVIDEND');
 		return $result->row();
 	}
 
@@ -444,7 +444,7 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(6);
+		$db2->limit(8);
 		$result = $db2->get('news');
 		return $result->result();
 	}
@@ -457,7 +457,7 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(3);
+		$db2->limit(8);
 		$result = $db2->get('news');
 		return $result->result();
 	}
@@ -470,7 +470,7 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(1);
+		$db2->limit(8);
 		$result = $db2->get('news');
 		return $result->result();
 	}
@@ -483,7 +483,7 @@ class Officer_model extends CI_Model
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
 		$db2->order_by('dateupload', 'DESC');
-		$db2->limit(2);
+		$db2->limit(8);
 		$result = $db2->get('news');
 		return $result->result();
 	}

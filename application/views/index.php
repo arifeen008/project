@@ -71,7 +71,11 @@
  		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
  	</div>
  </div>
-
+ <div class="container my-2">
+ 	<div class="ratio ratio-16x9 my-3">
+ 		<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
+ 	</div>
+ </div>
 
  <div class="container my-3">
  	<div class="row">
@@ -171,14 +175,9 @@
  							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;">ข่าวประชาสัมพันธ์</b>
  							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1" aria-label="Slide 2"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2" aria-label="Slide 3"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="3" aria-label="Slide 4"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="4" aria-label="Slide 5"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="5" aria-label="Slide 6"></button>
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="6" aria-label="Slide 7"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="7" aria-label="Slide 8"></button> -->
+ 									<?php for ($i = 1; $i <= count($news_information); $i++) { ?>
+ 										<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
+ 									<?php } ?>
  								</div>
  								<div class="carousel-inner">
  									<?php foreach ($news_information as $row) { ?>
@@ -209,14 +208,9 @@
  							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;">สวัสดิการสมาชิก</b>
  							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
- 									<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="1" aria-label="Slide 2"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="2" aria-label="Slide 3"></button>
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="3" aria-label="Slide 4"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="4" aria-label="Slide 5"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="5" aria-label="Slide 6"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="6" aria-label="Slide 7"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="7" aria-label="Slide 8"></button> -->
+ 									<?php for ($i = 1; $i <= count($news_welfare); $i++) { ?>
+ 										<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
+ 									<?php } ?>
  								</div>
  								<div class="carousel-inner">
  									<?php foreach ($news_welfare as $row) { ?>
@@ -247,14 +241,9 @@
  							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;">สินเชื่อฮาลาล</b>
  							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
- 									<button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="1" aria-label="Slide 2"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="2" aria-label="Slide 3"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="3" aria-label="Slide 4"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="4" aria-label="Slide 5"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="5" aria-label="Slide 6"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="6" aria-label="Slide 7"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="7" aria-label="Slide 8"></button> -->
+ 									<?php for ($i = 1; $i <= count($news_credit); $i++) { ?>
+ 										<button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
+ 									<?php } ?>
  								</div>
  								<div class="carousel-inner">
  									<?php foreach ($news_credit as $row) { ?>
@@ -285,14 +274,9 @@
  							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;">มูลนิธิษะกอฟะฮ</b>
  							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
- 									<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
- 									<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="1" aria-label="Slide 2"></button>
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="2" aria-label="Slide 3"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="3" aria-label="Slide 4"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="4" aria-label="Slide 5"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="5" aria-label="Slide 6"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="6" aria-label="Slide 7"></button> -->
- 									<!-- <button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="7" aria-label="Slide 8"></button>butt -->
+ 									<?php for ($i = 1; $i <= count($news_foundation); $i++) { ?>
+ 										<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
+ 									<?php } ?>
  								</div>
  								<div class="carousel-inner">
  									<?php foreach ($news_foundation as $row) { ?>
@@ -355,6 +339,16 @@
  		</div>
  	</div>
  </div>
+ <div class="container my-3">
+ 	<div class="card">
+ 		<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b>วารสารออนไลน์</b></p>
+ 		<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+ 	</div>
+ </div>
+
+ <!-- <div class="container my-3">
+ 	<iframe src="https://www.facebook.com/UmmahChannel.Fan/videos/342061214465132" width="auto" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+ </div> -->
  <!-- <div class="container my-3">
  	<div class="card border border-success">
  		<div class="card-body">
