@@ -6,10 +6,7 @@
 					<a href="https://sakofahislamic.com/"> sakofahislamic.com</a>
 				</div>
 			</div>
-			<div class="col-md-4 d-flex justify-content-between">
-				<div class="text-center text-dark">ยอดผู้เข้าชม: 30,000
-				</div>
-			</div>
+			<div class="col-md-4"></div>
 			<div class="col-md-4 d-flex justify-content-end">
 				<button class="btn btn-outline text-light" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
 			</div>
