@@ -25,6 +25,7 @@
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+ 			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="3" aria-label="Slide 4"></button>
  		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
@@ -35,6 +36,9 @@
  			</div>
  			<div class="carousel-item">
  				<img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
+ 			</div>
+ 			<div class="carousel-item">
+ 				<img src="<?php echo base_url('picture/ค่านิยมเว็บ.jpg') ?>" class="d-block w-100" />
  			</div>
  		</div>
  		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
@@ -67,8 +71,20 @@
  </div>
 
  <div class="container">
- 	<div class="bg-image">
+ 	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
+ 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">ดูรายละเอียด</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog">
+ 			<div class="modal-content">
+ 				<div class="lightbox">
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/315-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/315-1.jpg') ?>" class="w-100" /></div>
+ 				</div>
+ 			</div>
+ 		</div>
  	</div>
  </div>
  <div class="container my-2">
