@@ -281,7 +281,7 @@ include_once("application/libraries/Thaidate.php");
 									<td>สาขาที่รับ</td>
 								</tr>
 								<tr align="center">
-									<td><?php echo thaidate('Y', strtotime($dividend->SHR_YEAR)) ?></td>
+									<td><?php echo $dividend->SHR_YEAR + 543 ?></td>
 									<td><?php echo thaidate('j M Y ', strtotime($dividend->SHR_OUT_DATE))  ?></td>
 									<td><?php echo number_format($dividend->SHR_SUMUP_DIV, 2)  ?></td>
 									<td><?php echo $dividend->BR_NAME ?></td>

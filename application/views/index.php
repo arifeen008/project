@@ -28,13 +28,13 @@
  		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
-			 <img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
+ 				<img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
-			 <img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
+ 				<img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
-			 <img src="<?php echo base_url('picture/ค่านิยมเว็บ.jpg') ?>" class="d-block w-100" />
+ 				<img src="<?php echo base_url('picture/ค่านิยมเว็บ.jpg') ?>" class="d-block w-100" />
  			</div>
  		</div>
  		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
@@ -83,12 +83,7 @@
  		</div>
  	</div>
  </div>
- <div class="container my-2">
- 	<div class="ratio ratio-16x9 my-3">
- 		<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
- 	</div>
- </div>
-
+ 
  <div class="container my-3">
  	<div class="row">
  		<div class="col">
@@ -318,6 +313,9 @@
  			</div>
  		</div>
  		<div class="col-md-4">
+ 			<div class="ratio ratio-16x9 my-3">
+ 				<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
+ 			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
