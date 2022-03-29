@@ -65,7 +65,6 @@
  		</div>
  	</div>
  </div>
-
  <div class="container">
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
@@ -83,7 +82,23 @@
  		</div>
  	</div>
  </div>
- 
+ <div class="container">
+ 	<div class="bg-image hover-overlay">
+ 		<img src="<?php echo base_url('picture/316-1.jpg') ?>" class="w-100" />
+ 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">คลิกเลย</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog">
+ 			<div class="modal-content">
+ 				<div class="lightbox">
+ 					<div class="modal-body"><a download="picture/316.jpg" href="<?php echo base_url('picture/316.jpg') ?>"><img src="<?php echo base_url('picture/316.jpg') ?>" data-mdb-img="<?php echo base_url('picture/316.jpg') ?>" class="w-100" /></a></div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
  <div class="container my-3">
  	<div class="row">
  		<div class="col">
@@ -315,6 +330,9 @@
  		<div class="col-md-4">
  			<div class="ratio ratio-16x9 my-3">
  				<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
+ 			</div>
+ 			<div class="ratio ratio-16x9 my-3">
+ 				<iframe src="https://www.youtube.com/embed/SV7IdDXAX0A" title="YouTube video" allowfullscreen></iframe>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
