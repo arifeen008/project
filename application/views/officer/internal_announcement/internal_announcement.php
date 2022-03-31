@@ -3,11 +3,11 @@ include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
 <div class="col-lg-9">
-	<div class="my-3">
+	<div class="card my-3">
 		<?php if ($level_code == 'P') { ?>
 			<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
 		<?php	} ?>
-		<!-- <div class="lightbox">
+		<div class="lightbox">
 			<div class="card-body">
 				<div class="row">
 					<div class="col-md-6 my-2">
@@ -20,7 +20,7 @@ include_once("application/libraries/Thaidate.php");
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 	<div class="card my-3">
 		<h5 class="card-title text-dark">ประกาศฝ่ายบุคคล</h5>
