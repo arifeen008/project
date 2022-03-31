@@ -590,21 +590,33 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function upload_internalfile($title, $date, $uploadFile)
+	public function upload_internalfile($title, $date, $uploadFile, $type_announcement)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
 			'title' => $title,
 			'date' => $date,
-			'uploadFile' => $uploadFile
+			'uploadFile' => $uploadFile,
+			'type_announcement' => $type_announcement
 		);
 		$db2->insert('internal_announcement', $data);
 	}
 
-	public function get_internalfile()
+	public function get_internalfile_hr()
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->select('title,date,uploadfile');
+		$db2->where('type_announcement', 1);
+		$db2->order_by('date', 'DESC');
+		$result = $db2->get('internal_announcement');
+		return $result->result();
+	}
+
+	public function get_internalfile_ho()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('title,date,uploadfile');
+		$db2->where('type_announcement', 2);
 		$db2->order_by('date', 'DESC');
 		$result = $db2->get('internal_announcement');
 		return $result->result();

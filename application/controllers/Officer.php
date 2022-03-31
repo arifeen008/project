@@ -58,7 +58,8 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data['result'] = $this->officer_model->get_internalfile();
+		$data['hr'] = $this->officer_model->get_internalfile_hr();
+		$data['ho'] = $this->officer_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
@@ -491,6 +492,7 @@ class Officer extends CI_Controller
 	{
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
+		$type_announcement = $this->input->post('type_announcement');
 		$config['upload_path']          = 'file/ประกาศภายใน';
 		$config['allowed_types']        = 'pdf';
 		$this->load->library('upload', $config);
@@ -499,7 +501,7 @@ class Officer extends CI_Controller
 			redirect('officer/internal_announcement', 'refresh');
 		} else {
 			$uploadFile = $this->upload->data('file_name');
-			$this->officer_model->upload_internalfile($title, $date, $uploadFile);
+			$this->officer_model->upload_internalfile($title, $date, $uploadFile, $type_announcement);
 			echo "<script>alert('import success');</script>";
 			redirect('officer/internal_announcement', 'refresh');
 		}

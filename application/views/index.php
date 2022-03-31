@@ -47,7 +47,11 @@
  		</button>
  	</div>
  </div>
-
+ <div class="container">
+ 	<div class="bg-image">
+ 		<img src="<?php echo base_url('picture/325-1.jpg') ?>" class="w-100 h-75" />
+ 	</div>
+ </div>
  <div class="container">
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/bannerเพิ่มฮัจย์-อุมเราะห์.gif') ?>" class="w-100 h-75" />
@@ -93,7 +97,7 @@
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
- 					<div class="modal-body"><a download="picture/316.jpg" href="<?php echo base_url('picture/316.jpg') ?>"><img src="<?php echo base_url('picture/316.jpg') ?>" data-mdb-img="<?php echo base_url('picture/316.jpg') ?>" class="w-100" /></a></div>
+ 					<div class="modal-body"><a download="picture/316.jpg" href="<?php echo base_url('picture/316.jpg') ?>"><img src="<?php echo base_url('picture/316.jpg') ?>" title="ปฏิทินรอมาฏอน 2565" alt="ปฏิทินรอมาฏอน 2565" data-mdb-img="<?php echo base_url('picture/316.jpg') ?>" class="w-100" /></a></div>
  				</div>
  			</div>
  		</div>
