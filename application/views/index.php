@@ -203,7 +203,7 @@
  		</div>
  	</div>
  </div>
- <div class="container my-3">
+ <!-- <div class="container my-3">
  	<div class="row">
  		<?php foreach ($google_news as $row) { ?>
  			<div class="col-md-3">
@@ -218,8 +218,7 @@
  			</div>
  		<?php } ?>
  	</div>
-
- </div>
+ </div> -->
  <div class="container my-3">
  	<div class="row" style="font-family: 'Sarabun';">
  		<div class="col-md-8">
