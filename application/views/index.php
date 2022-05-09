@@ -375,8 +375,8 @@
 
  <!-- <div class="container my-3">
  	<iframe src="https://www.facebook.com/UmmahChannel.Fan/videos/342061214465132" width="auto" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
- </div> -->
- <!-- <div class="container my-3">
+ </div>
+ <div class="container my-3">
  	<div class="card border border-success">
  		<div class="card-body">
  			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center text-dark h1 my-3">สถานะการเงิน</p>
