@@ -66,23 +66,6 @@
  </div>
  <div class="container">
  	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/bannerเพิ่มฮัจย์-อุมเราะห์.gif') ?>" class="w-100 h-75" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal">ดูรายละเอียด</div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/312.jpg') ?>" data-mdb-img="<?php echo base_url('picture/312.jpg') ?>" class="w-100" /></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
  			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">ดูรายละเอียด</div>
@@ -98,23 +81,7 @@
  		</div>
  	</div>
  </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/316-1.jpg') ?>" class="w-100" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">คลิกเลย</div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><a download="picture/316.jpg" href="<?php echo base_url('picture/316.jpg') ?>"><img src="<?php echo base_url('picture/316.jpg') ?>" title="ปฏิทินรอมาฏอน 2565" alt="ปฏิทินรอมาฏอน 2565" data-mdb-img="<?php echo base_url('picture/316.jpg') ?>" class="w-100" /></a></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
+
  <div class="container my-3">
  	<div class="row">
  		<div class="col">
