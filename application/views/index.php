@@ -49,6 +49,23 @@
  </div>
  <div class="container">
  	<div class="bg-image hover-overlay">
+ 		<img src="<?php echo base_url('picture/345-1.jpg') ?>" class="w-100 h-75" />
+ 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">ดูรายละเอียด</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog">
+ 			<div class="modal-content">
+ 				<div class="lightbox">
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/271-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/271-1.jpg') ?>" class="w-100" /></div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="container">
+ 	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/325-1.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
  			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal0">ดูรายละเอียด</div>
@@ -177,9 +194,9 @@
  				<div class="card">
  					<img src="" class="card-img-top"/>
  					<div class="card-body">
- 						<h5 class="card-title"><?php echo $row->results['title'] ?></h5>
- 						<p class="card-text"><?php echo $row->description ?></p>
- 						<a href="#!" class="btn btn-primary">Button</a>
+ 						<h5 class="card-title"><?php echo $row->results->title ?></h5>
+ 						<p class="card-text"><?php echo $row['results']->title ?></p>
+ 						<!-- <a href="#" class="btn btn-primary">Button</a> -->
  					</div>
  				</div>
  			</div>
