@@ -189,7 +189,7 @@
  </div>
  <div class="container my-3">
  	<div class="row justify-content-evenly">
- 		<?php foreach ($google_news->results as $row) { ?>
+ 		<?php foreach (array_slice($google_news->results,0,8)  as $row) { ?>
  			<div class="col-lg-3 col-md-12">
  				<a href="<?php echo $row->link ?>" class="card hover-shadow mb-3">
  					<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 150px;" class="card-img-top" />
