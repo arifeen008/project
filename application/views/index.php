@@ -187,22 +187,20 @@
  		</div>
  	</div>
  </div>
- <!-- <div class="container my-3">
- 	<div class="row">
- 		<?php foreach ($google_news as $row) { ?>
- 			<div class="col-md-3">
- 				<div class="card">
- 					<img src="" class="card-img-top"/>
+ <div class="container my-3">
+ 	<div class="row justify-content-evenly">
+ 		<?php foreach ($google_news->results as $row) { ?>
+ 			<div class="col-lg-3 col-md-12">
+ 				<a href="<?php echo $row->link ?>" class="card hover-shadow mb-3">
+ 					<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 150px;" class="card-img-top" />
  					<div class="card-body">
- 						<h5 class="card-title"><?php echo $row->results->title ?></h5>
- 						<p class="card-text"><?php echo $row['results']->title ?></p>
- 						<!-- <a href="#" class="btn btn-primary">Button</a> -->
+ 						<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
  					</div>
- 				</div>
+ 				</a>
  			</div>
  		<?php } ?>
  	</div>
- </div> -->
+ </div>
  <div class="container my-3">
  	<div class="row" style="font-family: 'Sarabun';">
  		<div class="col-md-8">
