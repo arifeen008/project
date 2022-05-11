@@ -474,7 +474,6 @@ class Officer extends CI_Controller
 		}
 	}
 
-
 	public function import_internal_declaration()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
@@ -494,7 +493,7 @@ class Officer extends CI_Controller
 		$date = $this->input->post('date');
 		$type_announcement = $this->input->post('type_announcement');
 		$config['upload_path']          = 'file/ประกาศภายใน';
-		$config['allowed_types']        = 'pdf';
+		$config['allowed_types']        = 'pdf|doc|docx';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('uploadFile')) {
 			echo "<script>alert('import failed');</script>";
