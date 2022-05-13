@@ -11,6 +11,10 @@
 						</div>
 					</a>
 				</div>
+				<div class="card mt-2">
+					<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b>ระเบียบสหกรณ์</b></p>
+					<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/haqcj/sfqo/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	</div>

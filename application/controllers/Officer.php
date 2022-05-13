@@ -505,4 +505,30 @@ class Officer extends CI_Controller
 			redirect('officer/internal_announcement', 'refresh');
 		}
 	}
+
+	public function creditupload_system()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/creditupload_system/searchcredit");
+		$this->load->view("containner/script");
+	}
+
+	public function uploadcreditfile()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/creditupload_system/uploadcreditfile");
+		$this->load->view("containner/script");
+	}
 }

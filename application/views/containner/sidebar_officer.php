@@ -11,10 +11,13 @@
 				<a href="<?php echo site_url('officer/cooperative_regulation') ?>" class="list-group-item list-group-item-action"><i class="fas fa-border-all me-4"></i>ระเบียบเจ้าหน้าที่</a>
 				<a href="<?php echo site_url('officer/annual_performance') ?>" class="list-group-item list-group-item-action"><i class="fas fa-award me-4"></i>ผลการดำเนินงานประจำปี 2565</a>
 				<a href="<?php echo site_url('officer/human_resource_development_activities') ?>" class="list-group-item list-group-item-action"><i class="fas fa-chart-line me-4"></i>กิจกรรมพัฒนาบุคลากร</a>
-				<?php if ($level_code === 'C') { ?>
+				<?php if ($level_code === 'P') { ?>
 					<a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true"><i class="far fa-star me-4"></i>รายงานประจำวัน</a>
 					<a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true"><i class="far fa-moon me-4"></i>รายงานประจำเดือน</a>
 					<a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true"><i class="far fa-sun me-4"></i>รายงานประจำปี</a>
+				<?php	} ?>
+				<?php if ($level_code === 'P') { ?>
+					<a href="<?php echo site_url('officer/creditupload_system') ?>" class="list-group-item list-group-item-action"><i class="fas fa-credit-card me-4"></i>ระบบอัพโหลดสินเชื่อ</a>
 				<?php	} ?>
 			</div>
 		</div>
