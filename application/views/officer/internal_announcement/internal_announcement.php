@@ -38,7 +38,7 @@ include_once("application/libraries/Thaidate.php");
 						<tr>
 							<td><?= $row->title ?></td>
 							<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-							<td><a href="<?php echo base_url('file/ประกาศภายใน/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+							<td><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 						</tr>
 					<?php } ?>
 				</tbody>
@@ -61,7 +61,7 @@ include_once("application/libraries/Thaidate.php");
 						<tr>
 							<td><?= $row->title ?></td>
 							<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-							<td><a href="<?php echo base_url('file/ประกาศภายใน/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+							<td><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 						</tr>
 					<?php } ?>
 				</tbody>
