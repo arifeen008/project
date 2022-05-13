@@ -13,14 +13,14 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <select class="select">
+                        <select class="select" name="year">
                             <option value="2564">2564</option>
                             <option value="2565">2565</option>
                         </select>
                         <label class="form-label select-label">ปีสัญญา</label>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <select class="select">
+                        <select class="select" name="branch">
                             <option value="klongyang">คลองยาง</option>
                             <option value="krabi">กระบี่</option>
                             <option value="aoluk">อ่าวลึก</option>
@@ -32,12 +32,12 @@
                         <label class="form-label select-label">สาขา</label>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <select class="select">
+                        <select class="select" name="type">
                             <option value="shukshen">ฉุกเฉิน</option>
                             <option value="samanshukshen">สามัญฉุกเฉิน</option>
                             <option value="saman">สามัญ</option>
                             <option value="phisede">พิเศษ</option>
-                            <option value="phisede">พิเศษโครงการ</option>
+                            <option value="phisedekrongkarn">พิเศษโครงการ</option>
                             <option value="krongkarnsinsub">โครงการสินทรัพย์</option>
                             <option value="sawadekarnjaohnatee">สวัสดิการเจ้าหน้าที่</option>
                         </select>

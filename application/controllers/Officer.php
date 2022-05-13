@@ -531,4 +531,92 @@ class Officer extends CI_Controller
 		$this->load->view("officer/creditupload_system/uploadcreditfile");
 		$this->load->view("containner/script");
 	}
+
+	public function uploadFileCredit()
+	{
+		$lcon_id = $this->input->post('lcon_id');
+		$year = $this->input->post('year');
+		$branch = $this->input->post('branch');
+		$type = $this->input->post('type');
+		switch ($type) {
+			case "samanshukshen":
+				$precis_type = "สฉ.";
+				break;
+			case "saman":
+				$precis_type = "ส.";
+				break;
+			case "phisede":
+				$precis_type = "พ.";
+				break;
+			case "phisedekrongkarn":
+				$precis_type = "พค.";
+				break;
+			case "krongkarnsinsub":
+				$precis_type = "คส.";
+				break;
+			case "sawadekarnjaohnatee":
+				$precis_type = "จ.";
+				break;
+			default:
+				$precis_type = "ฉ.";
+		}
+		switch ($type) {
+			case "samanshukshen":
+				$fullprecis_type = "สามัญฉุกเฉิน";
+				break;
+			case "saman":
+				$fullprecis_type = "สามัญ";
+				break;
+			case "phisede":
+				$fullprecis_type = "พิเศษ";
+				break;
+			case "phisedekrongkarn":
+				$fullprecis_type = "พิเศษโครงการ";
+				break;
+			case "krongkarnsinsub":
+				$fullprecis_type = "โครงการสินทรัพย์";
+				break;
+			case "sawadekarnjaohnatee":
+				$fullprecis_type = "สวัสดิการเจ้าหน้าที่";
+				break;
+			default:
+				$fullprecis_type = "ฉุกเฉิน";
+		}
+		switch ($branch) {
+			case "krabi":
+				$precis_branch = "กระบี่";
+				break;
+			case "klongyang":
+				$precis_branch = "คลองยาง";
+				break;
+			case "aoluk":
+				$precis_branch = "อ่าวลึก";
+				break;
+			case "kohlanta":
+				$precis_branch = "เกาะลันตา";
+				break;
+			case "klongthom":
+				$precis_branch = "คลองท่อม";
+				break;
+			case "huyluk":
+				$precis_branch = "ห้วยลึก";
+				break;
+			default:
+				$precis_branch = "กาญจนดิษฐ์";
+		}
+		$fulllcont_id = $precis_type . $lcon_id . '/' . $year;
+		$config['file_name']          = $fulllcont_id;
+		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
+		$config['allowed_types']        = 'pdf';
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('creditFile')) {
+			echo "<script>alert('อัพโหลดไฟล์ ไม่สำเร็จ');</script>";
+			redirect('officer/internal_announcement', 'refresh');
+		} else {
+			$uploadFile = $this->upload->data('file_name');
+			$this->officer_model->uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_type, $precis_branch);
+			echo "<script>alert('อัพโหลดไฟล์สำเร็จ');</script>";
+			redirect('officer/internal_announcement', 'refresh');
+		}
+	}
 }
