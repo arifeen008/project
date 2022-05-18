@@ -708,8 +708,18 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/creditupload_system/searchcredit");
 		$this->load->view("officer/creditupload_system/listcredit", $data);
 		$this->load->view("containner/script");
+	}
+
+	public function delete_credit($credit_id)
+	{
+		$result = $this->officer_model->select_credit($credit_id);
+		if ($result) {
+			unlink($result->path . '/' . $result->file_name);
+			$this->officer_model->delete_credit($credit_id);
+			echo "<script>alert('ลบสำเร็จ');</script>";
+			redirect('officer/searchcredit');
+		}
 	}
 }
