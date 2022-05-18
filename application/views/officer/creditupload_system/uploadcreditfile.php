@@ -2,12 +2,11 @@
     <div class="card my-3">
         <div class="card-body text-dark">
             <h5 class="card-title border-bottom">อัพโหลดไฟล์สินเชื่อ</h5>
-            <form action="<?php echo site_url('officer/uploadcreditfile') ?>" method="post" enctype="multipart/form-data">
-                <!-- 2 column grid layout with text inputs for the first and last names -->
+            <form action="<?php echo site_url('officer/uploadFileCredit') ?>" method="post" enctype="multipart/form-data">
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form14" class="form-control" data-mdb-showcounter="true" maxlength="6" placeholder="ใส่ตัวเลข 6 หลัก เช่น 00014" />
+                            <input type="text" id="form14" class="form-control" name="lcon_id" data-mdb-showcounter="true" maxlength="6" minlength="6" placeholder="ใส่ตัวเลข 6 หลัก เช่น 00014" />
                             <label class="form-label" for="form14">เลขที่สัญญา</label>
                             <div class="form-helper"></div>
                         </div>
@@ -47,7 +46,7 @@
                         <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
                         <input type="file" name="creditFile" class="form-control" id="customFile" />
                     </div>
-                    <button type="submit" class="btn btn-primary bg-gradient btn-block"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
+                    <button type="submit" class="btn btn-success bg-gradient btn-block"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
                 </div>
             </form>
         </div>

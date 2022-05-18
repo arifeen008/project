@@ -61,12 +61,13 @@ class Officer_model extends CI_Model
 
 	public function opened_credit_member($mem_id, $branch_number)
 	{
-		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
+		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
 		$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
 		$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
 		$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
+		$this->db->join('LOAN_M_SUB_NAME', ' LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_SUB_NAME.LSUB_CODE = LOAN_M_CONTACT.LSUB_CODE');
 		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 		$result = $this->db->get('LOAN_M_CONTACT');
 		return $result;
@@ -74,12 +75,13 @@ class Officer_model extends CI_Model
 
 	public function closed_credit_member($mem_id, $branch_number)
 	{
-		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
+		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
 		$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
 		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
 		$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '4');
 		$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
+		$this->db->join('LOAN_M_SUB_NAME', ' LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_SUB_NAME.LSUB_CODE = LOAN_M_CONTACT.LSUB_CODE');
 		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 		$result = $this->db->get('LOAN_M_CONTACT');
 		return $result;
@@ -619,6 +621,34 @@ class Officer_model extends CI_Model
 		$db2->where('type_announcement', 2);
 		$db2->order_by('date', 'DESC');
 		$result = $db2->get('internal_announcement');
+		return $result->result();
+	}
+
+	public function uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'fulllcont_id' => $fulllcont_id,
+			'fullprecis_type' => $fullprecis_type,
+			'precis_branch' => $precis_branch,
+			'year' => $year,
+			'file_name' => $file_name,
+			'path' => $path,
+			'name_upload' => $username,
+			'date_upload' => $date
+		);
+		$db2->insert('credit_upload', $data);
+	}
+
+	public function searchcredit($fulllcont_id, $fullprecis_type, $precis_branch, $year)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('*');
+		$db2->where('fulllcont_id', $fulllcont_id);
+		$db2->where('fullprecis_type', $fullprecis_type);
+		$db2->where('precis_branch', $precis_branch);
+		$db2->where('year', $year);
+		$result = $db2->get('credit_upload');
 		return $result->result();
 	}
 }

@@ -1,36 +1,31 @@
 <?php include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-<div class="col-lg-9">
-	<div class="card my-3">
-		<div class="card-body text-dark">
-			<h5 class="card-title border-bottom">รายการข่าวสาร</h5>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
-				<table>
-					<thead>
-						<tr>
-							<th>รหัสข่าว</th>
-							<th>หัวข้อ</th>
-							<th>ประเภทข่าว</th>
-							<th>เวลาอัพโหลด</th>
-							<th>แก้ไข</th>
-							<th>ลบ</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($result->result() as $row) { ?>
-							<tr>
-								<td><?= $row->newsnumber ?></td>
-								<td><?= $row->title  ?></td>
-								<td><?= $row->news_typename  ?></td>
-								<td><?= thaidate('j M Y ', strtotime($row->dateupload))   ?></td>
-								<td><a href="<?php echo site_url('officer/editnews/' . $row->newsnumber) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a></td>
-								<td><a href="<?php echo site_url('officer/deletenews/' . $row->newsnumber) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
-							</tr>
-						<?php } ?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+	<table>
+		<thead>
+			<tr>
+				<th>เลขที่สัญญา</th>
+				<th>ชื่อสัญญา</th>
+				<th>สาขา</th>
+				<th>ปี</th>
+				<th>ไฟล์ดาวโหลด</th>
+				<th>ผู้อัพโหลด</th>
+				<th>วันที่อัพโหลด</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($result as $row) { ?>
+				<tr>
+					<td><?= $row->fulllcont_id ?></td>
+					<td><?= $row->fullprecis_type  ?></td>
+					<td><?= $row->precis_branch  ?></td>
+					<td><?= $row->year   ?></td>
+					<td><a href="<?php echo base_url($row->path . '/' . $row->file_name) ?>" target="_blank" class="btn btn-primary" ><i class="fas fa-file-download"></i></a></td>
+					<td><?= $row->name_upload  ?></td>
+					<td><?= thaidate('j M Y ', strtotime($row->date_Upload))  ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
 </div>
