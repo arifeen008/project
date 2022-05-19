@@ -620,9 +620,16 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
 			$date = date('Y-m-d H:i:s');
-			$this->officer_model->uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
-			echo "<script>alert('อัพโหลดไฟล์สินเชื่อสำเร็จ');</script>";
-			redirect('officer/uploadcreditfile', 'refresh');
+			$result = $this->officer_model->uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
+			if($result){
+				echo "<script>alert('อัพโหลดไฟล์สินเชื่อสำเร็จ');</script>";
+				redirect('officer/uploadcreditfile', 'refresh');
+			}
+			else{
+				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
+				redirect('officer/uploadcreditfile', 'refresh');
+			}
+			
 		}
 	}
 
@@ -632,29 +639,6 @@ class Officer extends CI_Controller
 		$year = $this->input->post('year');
 		$branch = $this->input->post('branch');
 		$type = $this->input->post('type');
-
-		switch ($type) {
-			case "samanshukshen":
-				$precis_type = "สฉ.";
-				break;
-			case "saman":
-				$precis_type = "ส.";
-				break;
-			case "phisede":
-				$precis_type = "พ.";
-				break;
-			case "phisedekrongkarn":
-				$precis_type = "ค.";
-				break;
-			case "krongkarnsinsub":
-				$precis_type = "คส.";
-				break;
-			case "sawadekarnjaohnatee":
-				$precis_type = "จท.";
-				break;
-			default:
-				$precis_type = "ฉ.";
-		}
 		switch ($type) {
 			case "samanshukshen":
 				$fullprecis_type = "สามัญฉุกเฉิน";
@@ -699,11 +683,10 @@ class Officer extends CI_Controller
 			default:
 				$precis_branch = "กาญจนดิษฐ์";
 		}
-		$fulllcont_id = $precis_type . $lcon_id . '/' . $year;
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['result'] = $this->officer_model->searchcredit($fulllcont_id, $fullprecis_type, $precis_branch, $year);
+		$data['result'] = $this->officer_model->searchcredit($lcon_id, $fullprecis_type, $precis_branch, $year);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
@@ -719,7 +702,7 @@ class Officer extends CI_Controller
 			unlink($result->path . '/' . $result->file_name);
 			$this->officer_model->delete_credit($credit_id);
 			echo "<script>alert('ลบสำเร็จ');</script>";
-			redirect('officer/searchcredit');
+			redirect('officer/creditupload_system', 'refresh');
 		}
 	}
 }

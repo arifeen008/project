@@ -640,10 +640,10 @@ class Officer_model extends CI_Model
 		$db2->insert('credit_upload', $data);
 	}
 
-	public function searchcredit($fulllcont_id, $fullprecis_type, $precis_branch, $year)
+	public function searchcredit($lcon_id, $fullprecis_type, $precis_branch, $year)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->like('fulllcont_id', $fulllcont_id);
+		$db2->like('fulllcont_id', $lcon_id);
 		$db2->where('fullprecis_type', $fullprecis_type);
 		$db2->where('precis_branch', $precis_branch);
 		$db2->where('year', $year);
