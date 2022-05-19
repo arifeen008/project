@@ -621,15 +621,13 @@ class Officer extends CI_Controller
 			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
 			$date = date('Y-m-d H:i:s');
 			$result = $this->officer_model->uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
-			if($result){
+			if ($result) {
+				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
+				redirect('officer/uploadcreditfile', 'refresh');
+			} else {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อสำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
 			}
-			else{
-				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
-				redirect('officer/uploadcreditfile', 'refresh');
-			}
-			
 		}
 	}
 
