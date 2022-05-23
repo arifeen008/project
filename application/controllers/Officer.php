@@ -534,6 +534,9 @@ class Officer extends CI_Controller
 
 	public function uploadFileCredit()
 	{
+		$mem_id = $this->input->post('mem_id');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
 		$username = $this->session->userdata('USER_NAME');
 		$lcon_id = $this->input->post('lcon_id');
 		$year = $this->input->post('year');
@@ -620,7 +623,7 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
 			$date = date('Y-m-d H:i:s');
-			$result = $this->officer_model->uploadFileCredit($fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
+			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
@@ -633,6 +636,9 @@ class Officer extends CI_Controller
 
 	public function searchcredit()
 	{
+		$mem_id = $this->input->post('mem_id');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
 		$lcon_id = $this->input->post('lcon_id');
 		$year = $this->input->post('year');
 		$branch = $this->input->post('branch');
@@ -684,7 +690,7 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['result'] = $this->officer_model->searchcredit($lcon_id, $fullprecis_type, $precis_branch, $year);
+		$data['result'] = $this->officer_model->searchcredit($mem_id, $fname, $lname, $lcon_id, $fullprecis_type, $precis_branch, $year);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);

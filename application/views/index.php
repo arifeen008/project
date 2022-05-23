@@ -187,27 +187,14 @@
  		</div>
  	</div>
  </div>
- <div class="container my-3">
- 	<div class="row justify-content-evenly">
- 		<?php foreach (array_slice($google_news->results,0,8)  as $row) { ?>
- 			<div class="col-lg-3 col-md-12">
- 				<a href="<?php echo $row->link ?>" class="card hover-shadow mb-3">
- 					<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 150px;" class="card-img-top" />
- 					<div class="card-body">
- 						<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
- 					</div>
- 				</a>
- 			</div>
- 		<?php } ?>
- 	</div>
- </div>
+
  <div class="container my-3">
  	<div class="row" style="font-family: 'Sarabun';">
  		<div class="col-md-8">
  			<div class="card">
  				<div class="row">
  					<div class="col-md-6">
- 						<div class="card hover-shadow my-2">
+ 						<div class="card my-2">
  							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;">ข่าวประชาสัมพันธ์</b>
  							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
@@ -240,7 +227,7 @@
  						</div>
  					</div>
  					<div class="col-md-6">
- 						<div class="card hover-shadow my-2">
+ 						<div class="card my-2">
  							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;">สวัสดิการสมาชิก</b>
  							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
@@ -273,7 +260,7 @@
  						</div>
  					</div>
  					<div class="col-md-6">
- 						<div class="card hover-shadow my-2">
+ 						<div class="card my-2">
  							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;">สินเชื่อฮาลาล</b>
  							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
@@ -306,7 +293,7 @@
  						</div>
  					</div>
  					<div class="col-md-6">
- 						<div class="card hover-shadow my-2">
+ 						<div class="card my-2">
  							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;">มูลนิธิษะกอฟะฮ</b>
  							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
@@ -338,9 +325,27 @@
  							</div>
  						</div>
  					</div>
+ 					<div class="col-md-12">
+ 						<div class="card">
+ 							<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;">ข่าวสาร</b>
+ 							<div class="row">
+ 								<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
+ 									<div class="col-md-3">
+ 										<a href="<?php echo $row->link ?>" class="card hover-shadow mb-3">
+ 											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
+ 											<div class="card-body">
+ 												<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
+ 											</div>
+ 										</a>
+ 									</div>
+ 								<?php } ?>
+ 							</div>
+ 						</div>
+ 					</div>
  				</div>
  			</div>
  		</div>
+
  		<div class="col-md-4">
  			<div class="ratio ratio-16x9 my-3">
  				<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>

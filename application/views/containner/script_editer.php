@@ -2,7 +2,6 @@
 <script type="text/javascript" src=<?php echo base_url('ckeditor/ckeditor.js') ?>></script>
 <script>
 	CKEDITOR.replace('detail');
-
 	function CKupdate() {
 		for (instance in CKEDITOR.instances)
 			CKEDITOR.instances[instance].updateElement();

@@ -149,6 +149,22 @@
 							</a></li>
 					</ul>
 				</li>
+				<!-- <li class="nav-item dropdown mx-2">
+					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บริหารสินทรัพย์ |</p>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
+						<li><a class="dropdown-item" href="#">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"></p>
+							</a></li>
+						<li><a class="dropdown-item" href="#">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"></p>
+							</a></li>
+						<li><a class="dropdown-item" href="#">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"></p>
+							</a></li>
+					</ul>
+				</li> -->
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ดาวน์โหลด |</p>

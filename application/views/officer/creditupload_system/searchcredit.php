@@ -5,6 +5,27 @@
             <h5 class="card-title border-bottom">ค้นหาสินเชื่อ</h5>
             <form action="<?php echo site_url('officer/searchcredit') ?>" method="post">
                 <div class="row mt-4 mb-4">
+                    <div class="col-md-12 mb-4">
+                        <div class="form-outline">
+                            <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id" />
+                            <label class="form-label" for="form14">เลขที่สมาชิก</label>
+                            <div class="form-helper"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input type="text" id="form14" class="form-control" name="fname" />
+                            <label class="form-label" for="form14">ชื่อ</label>
+                            <div class="form-helper"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input type="text" id="form14" class="form-control" name="lname" />
+                            <label class="form-label" for="form14">นามสกุล</label>
+                            <div class="form-helper"></div>
+                        </div>
+                    </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
                             <input type="text" name="lcon_id" id="form14" class="form-control" />

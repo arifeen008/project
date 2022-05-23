@@ -8,7 +8,28 @@
         </div>
         <form action="<?php echo site_url('officer/uploadFileCredit') ?>" method="post" enctype="multipart/form-data">
             <div class="row mx-2 mb-2">
-                <div class="col">
+                <div class="col-md-12 mb-4">
+                    <div class="form-outline">
+                        <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id"/>
+                        <label class="form-label" for="form14">เลขที่สมาชิก</label>
+                        <div class="form-helper"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                        <input type="text" id="form14" class="form-control" name="fname"/>
+                        <label class="form-label" for="form14">ชื่อ</label>
+                        <div class="form-helper"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                        <input type="text" id="form14" class="form-control" name="lname"/>
+                        <label class="form-label" for="form14">นามสกุล</label>
+                        <div class="form-helper"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
                     <div class="form-outline">
                         <input type="text" id="form14" class="form-control" name="lcon_id" data-mdb-showcounter="true" maxlength="6" minlength="6" placeholder="ใส่ตัวเลข 6 หลัก เช่น 00014" />
                         <label class="form-label" for="form14">เลขที่สัญญา</label>
