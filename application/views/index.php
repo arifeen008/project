@@ -392,7 +392,6 @@
  		<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  	</div>
  </div>
-
  <!-- <div class="container my-3">
  	<iframe src="https://www.facebook.com/UmmahChannel.Fan/videos/342061214465132" width="auto" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
  </div>
@@ -418,7 +417,6 @@
  		</div>
  	</div>
  </div> -->
-
  <div class="row my-3">
  	<div class="col-lg">
  		<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">
