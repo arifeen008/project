@@ -183,7 +183,7 @@
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ติดต่อเรา</p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/1Ze7m2Q6Jr25YafvvBhpU9BiVXpwMNrWwvmWs6yJjTDY/viewform?edit_requested=true">
+						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc5Q_cOtT_flOmSk1E5CWuw88pzEZGpEpZu5rhwgHjlKkfeHQ/viewform?usp=sf_link">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">แบบประเมินการให้บริการ</p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/withus') ?>">
