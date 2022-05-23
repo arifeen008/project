@@ -5,5 +5,5 @@
 		instance.search(e.target.value);
 	});
 </script>
-<script type="text/javascript" src="https://counter9.stat.ovh/private/counter.js?c=a2adez8kb5trm5uhzf3etg1bgm2z1pre&down=async" async></script>
-<noscript><a href="https://www.freecounterstat.com" title="website counters"><img src="https://counter9.stat.ovh/private/freecounterstat.php?c=a2adez8kb5trm5uhzf3etg1bgm2z1pre" border="0" title="website counters" alt="website counters"></a></noscript>
+<script type="text/javascript" src="https://counter9.stat.ovh/private/counter.js?c=3wrcpuf5jgrke9993w3x3p7wsppfre13&down=async" async></script>
+<noscript><a href="https://www.freecounterstat.com" title="free hit counter"><img src="https://counter9.stat.ovh/private/freecounterstat.php?c=3wrcpuf5jgrke9993w3x3p7wsppfre13" border="0" title="free hit counter" alt="free hit counter"></a></noscript>

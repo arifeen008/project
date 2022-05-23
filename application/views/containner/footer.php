@@ -7,7 +7,7 @@
 						<div>จำนวนผู้เข้าชมเว็บไซต์ :</div>
 					</div>
 					<div class="col-md-6">
-						<div id="sfca2adez8kb5trm5uhzf3etg1bgm2z1pre"></div>
+						<div id="sfc3wrcpuf5jgrke9993w3x3p7wsppfre13"></div>
 					</div>
 				</div>
 			</div>
