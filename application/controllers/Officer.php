@@ -69,17 +69,62 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function annual_performance()
+	public function performance()
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data['result'] = $this->officer_model->get_document();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/annual_performance/annual_performance");
+		$this->load->view("officer/performance/performance", $data);
 		$this->load->view("containner/script");
+	}
+
+	public function upload_document()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "ระบบอัพโหลดผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/performance/upload_document");
+		$this->load->view("containner/script");
+	}
+
+	public function uploadDocumentFile()
+	{
+		$document_name = $this->input->post('document_name');
+		$config['upload_path']          = 'file/performance/';
+		$config['allowed_types']        = 'csv|xlsx';
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('documentFile')) {
+			$error = $this->upload->display_errors();
+			echo "<script>alert('$error');</script>";
+			redirect('officer/performance', 'refresh');
+		} else {
+			$file_name = $this->upload->data('file_name');
+			$path = 'file/perfomance/';
+			$date = date('Y-m-d H:i:s');
+			$this->officer_model->uploadDocumentFile($document_name, $file_name, $path, $date);
+			echo "<script>alert('Upload document success');</script>";
+			redirect('officer/performance', 'refresh');
+		}
+	}
+
+	public function delete_document($performance_id)
+	{
+		$result = $this->officer_model->select_document($performance_id);
+		if ($result) {
+			unlink($result->path . $result->file_name);
+			$this->officer_model->delete_document($performance_id);
+			echo "<script>alert('Delete success');</script>";
+			redirect('officer/performance', 'refresh');
+		}
 	}
 
 	public function human_resource_development_activities()

@@ -672,4 +672,39 @@ class Officer_model extends CI_Model
 		$result = $db2->delete('credit_upload');
 		return $result;
 	}
+
+	public function get_document()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$result = $db2->get('performance');
+		return $result->result();
+	}
+
+	public function uploadDocumentFile($document_name, $file_name, $path, $date)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'document_name' => $document_name,
+			'file_name' => $file_name,
+			'path' => $path,	
+			'date' => $date
+		);
+		$db2->insert('performance', $data);
+	}
+
+	public function select_document($performance_id)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('performance_id', $performance_id);
+		$result = $db2->get('performance');
+		return $result->row();
+	}
+
+	public function delete_document($performance_id)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('performance_id', $performance_id);
+		$result = $db2->delete('performance');
+		return $result;
+	}
 }
