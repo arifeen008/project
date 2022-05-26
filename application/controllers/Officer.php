@@ -120,11 +120,19 @@ class Officer extends CI_Controller
 	{
 		$result = $this->officer_model->select_document($performance_id);
 		if ($result) {
-			unlink($result->path . $result->file_name);
+			// delete_files($result->path . '/' . $result->file_name);
+			unlink($result->path  . '/' . $result->file_name);
 			$this->officer_model->delete_document($performance_id);
 			echo "<script>alert('Delete success');</script>";
 			redirect('officer/performance', 'refresh');
 		}
+	}
+
+	public function download_document($performance_id)
+	{
+		$result = $this->officer_model->select_document($performance_id);
+		$data = file_get_contents(base_url('file/performance/' . $result->file_name));
+		force_download($result->file_name, $data);
 	}
 
 	public function human_resource_development_activities()
@@ -653,7 +661,7 @@ class Officer extends CI_Controller
 			default:
 				$precis_branch = "กาญจนดิษฐ์";
 		}
-		$fulllcont_id = $precis_type . $lcon_id . '/' . $year;
+		$fullcont_id = $precis_type . $lcon_id . '/' . $year;
 		$new_name = $_FILES["userfiles"]['name'];
 		$config['file_name'] = $new_name;
 		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
@@ -668,7 +676,7 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
 			$date = date('Y-m-d H:i:s');
-			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
+			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fullcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
@@ -753,5 +761,12 @@ class Officer extends CI_Controller
 			echo "<script>alert('ลบสำเร็จ');</script>";
 			redirect('officer/creditupload_system', 'refresh');
 		}
+	}
+
+	public function download_credit($credit_id)
+	{
+		$result = $this->officer_model->select_credit($credit_id);
+		$data = file_get_contents(base_url($result->path . '/' . $result->file_name));
+		force_download($result->fullcont_id . '.pdf', $data);
 	}
 }

@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-md-12 mb-4">
                     <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
-                    <input type="file" name="creditFile" class="form-control" id="customFile" />
+                    <input type="file" name="creditFile" class="form-control" id="customFile" accept=".pdf" />
                 </div>
                 <button type="submit" class="btn btn-success bg-gradient btn-block"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
             </div>

@@ -624,14 +624,14 @@ class Officer_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadFileCredit($mem_id, $fname, $lname, $fulllcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date)
+	public function uploadFileCredit($mem_id, $fname, $lname, $fullcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
 			'mem_id' => $mem_id,
 			'fname' => $fname,
 			'lname' => $lname,
-			'fulllcont_id' => $fulllcont_id,
+			'fullcont_id' => $fullcont_id,
 			'fullprecis_type' => $fullprecis_type,
 			'precis_branch' => $precis_branch,
 			'year' => $year,
@@ -649,7 +649,7 @@ class Officer_model extends CI_Model
 		$db2->where('mem_id', $mem_id);
 		$db2->like('fname', $fname);
 		$db2->like('lname', $lname);
-		$db2->like('fulllcont_id', $lcon_id);
+		$db2->like('fullcont_id', $lcon_id);
 		$db2->where('fullprecis_type', $fullprecis_type);
 		$db2->where('precis_branch', $precis_branch);
 		$db2->where('year', $year);

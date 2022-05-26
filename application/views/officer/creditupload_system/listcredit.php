@@ -27,7 +27,7 @@ $i = 1;
 								<td><?= $row->fullprecis_type  ?></td>
 								<td><?= $row->precis_branch  ?></td>
 								<td><?= $row->year   ?></td>
-								<td><a href="<?php echo base_url($row->path . '/' . $row->file_name) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+								<td><a href="<?php echo site_url('officer/download_credit/'. $row->credit_id) ?>" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 								<td><?= $row->name_upload  ?></td>
 								<td><?= thaidate('j M Y ', strtotime($row->date_Upload))  ?></td>
 								<td>

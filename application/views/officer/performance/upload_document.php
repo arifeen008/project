@@ -12,7 +12,7 @@
             </div>
             <div class="mb-4 mx-4">
                 <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
-                <input type="file" name="documentFile" class="form-control" id="customFile" />
+                <input type="file" name="documentFile" class="form-control" id="customFile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
             </div>
             <button type="submit" class="ms-4 mb-4 btn btn-primary">อัพโหลด</button>
         </form>

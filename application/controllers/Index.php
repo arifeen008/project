@@ -381,4 +381,14 @@ class Index extends CI_Controller
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
+
+	public function real_estate_sale()
+	{
+		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/real_estate/real_estate_sale");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
 }
