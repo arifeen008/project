@@ -100,7 +100,8 @@ class Officer extends CI_Controller
 	{
 		$document_name = $this->input->post('document_name');
 		$config['upload_path']          = 'file/performance/';
-		$config['allowed_types']        = 'csv|xlsx';
+		$config['allowed_types']        = 'csv|xlsx|xls';
+		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('documentFile')) {
 			$error = $this->upload->display_errors();
@@ -120,11 +121,14 @@ class Officer extends CI_Controller
 	{
 		$result = $this->officer_model->select_document($performance_id);
 		if ($result) {
-			// delete_files($result->path . '/' . $result->file_name);
-			unlink($result->path  . '/' . $result->file_name);
-			$this->officer_model->delete_document($performance_id);
-			echo "<script>alert('Delete success');</script>";
-			redirect('officer/performance', 'refresh');
+			if (!unlink('file/performance/' . $result->file_name)) {
+				echo "<script>alert('Delete unsuccess');</script>";
+				redirect('officer/performance', 'refresh');
+			} else {
+				$this->officer_model->delete_document($performance_id);
+				echo "<script>alert('Delete success');</script>";
+				redirect('officer/performance', 'refresh');
+			}
 		}
 	}
 
@@ -132,7 +136,7 @@ class Officer extends CI_Controller
 	{
 		$result = $this->officer_model->select_document($performance_id);
 		$data = file_get_contents(base_url('file/performance/' . $result->file_name));
-		force_download($result->file_name, $data);
+		force_download($result->document_name . '.xlsx', $data);
 	}
 
 	public function human_resource_development_activities()
@@ -756,10 +760,15 @@ class Officer extends CI_Controller
 	{
 		$result = $this->officer_model->select_credit($credit_id);
 		if ($result) {
-			unlink($result->path . '/' . $result->file_name);
-			$this->officer_model->delete_credit($credit_id);
-			echo "<script>alert('ลบสำเร็จ');</script>";
-			redirect('officer/creditupload_system', 'refresh');
+			if(!unlink($result->path . '/' . $result->file_name)){
+				echo "<script>alert('Delete unsuccess');</script>";
+				redirect('officer/creditupload_system', 'refresh');
+			}
+			else{
+				$this->officer_model->delete_credit($credit_id);
+				echo "<script>alert('ลบสำเร็จ');</script>";
+				redirect('officer/creditupload_system', 'refresh');
+			}						
 		}
 	}
 
