@@ -155,14 +155,14 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/real_estate_sale') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ขายอสังหาริมทรัพย์</p>
-							</a></li>
-						<!-- <li><a class="dropdown-item" href="#">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"></p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บ้านพร้อมที่ดิน/ทาวน์โฮม</p>
 							</a></li>
 						<li><a class="dropdown-item" href="#">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"></p>
-							</a></li> -->
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ที่ดินเปล่า</p>
+							</a></li>
+						<li><a class="dropdown-item" href="#">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">คอนโด</p>
+							</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">

@@ -19,12 +19,13 @@
                 </div>
             </div>
             <div class="col-xl-4 offset-xl-1 text-center text-dark">
+                <img src="<?php echo base_url('picture/357-3.jpg') ?>" width="auto" height="150" class="mb-4">
                 <h2 class="fw-bold mb-5 pb-2">ขายทาวน์โฮม มือสอง</h2>
                 <p class="lead fw-normal text-dark mb-5">
                     พิกัดใกล้กับโลตัส กระบี่
                 </p>
                 <p class="lead fw-normal text-dark mb-5">
-                    2ชั้น 2 ห้องนอน 2 ห้องน้ำ
+                    2 ชั้น 2 ห้องนอน 2 ห้องน้ำ
                     บ้านคุณภาพดี ทำเลดี ราคาถูกใจ <br> เริ่มต้นที่ 2.89 ล้าน
                 </p>
                 <p class="lead fw-normal text-dark mb-0 mb-xl-5">
