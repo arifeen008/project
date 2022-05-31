@@ -157,7 +157,7 @@
 						<li><a class="dropdown-item" href="<?php echo site_url('index/real_estate_sale') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บ้านพร้อมที่ดิน/ทาวน์โฮม</p>
 							</a></li>
-						<li><a class="dropdown-item" href="#">
+						<li><a class="dropdown-item" href="<?php echo site_url('index/vacant') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ที่ดินเปล่า</p>
 							</a></li>
 						<li><a class="dropdown-item" href="#">

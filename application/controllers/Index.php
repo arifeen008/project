@@ -387,7 +387,17 @@ class Index extends CI_Controller
 		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
-		$this->load->view("index/real_estate/real_estate_sale");
+		$this->load->view("index/asset/real_estate_sale");
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function vacant()
+	{
+		$title['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/asset/vacant");
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
