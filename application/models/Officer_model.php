@@ -740,4 +740,61 @@ class Officer_model extends CI_Model
 		);
 		$db2->insert('asset_picture', $data);
 	}
+
+	public function get_asset()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->join('asset_type', 'asset_type.asset_type = asset.asset_type');
+		$result = $db2->get('asset');
+		return $result->result();
+	}
+
+	public function get_list_estate()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
+		$db2->where('asset.asset_type', 1);
+		$db2->join('asset_picture', 'asset_picture.asset_number = asset.asset_number');
+		$db2->group_by('asset.asset_number');
+		$result = $db2->get('asset');
+		return $result->result();
+	}
+
+	public function get_list_vacant()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
+		$db2->where('asset.asset_type', 2);
+		$db2->join('asset_picture', 'asset_picture.asset_number = asset.asset_number');
+		$db2->group_by('asset.asset_number');
+		$result = $db2->get('asset');
+		return $result->result();
+	}
+
+	public function get_list_condo()
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
+		$db2->where('asset.asset_type', 3);
+		$db2->join('asset_picture', 'asset_picture.asset_number = asset.asset_number');
+		$db2->group_by('asset.asset_number');
+		$result = $db2->get('asset');
+		return $result->result();
+	}
+
+	public function get_asset_data($asset_number)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('asset_number', $asset_number);
+		$result = $db2->get('asset');
+		return $result->row();
+	}
+
+	public function get_assetpicture($asset_number)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('asset_number', $asset_number);
+		$result = $db2->get('asset_picture');
+		return $result->result();
+	}
 }

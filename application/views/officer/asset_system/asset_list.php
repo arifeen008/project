@@ -10,15 +10,21 @@ include_once("application/libraries/Thaidate.php");
                 <table>
                     <thead>
                         <tr>
-                            <th>ชื่อเอกสาร</th>
-                            <th>ไฟล์</th>
+                            <th>ประเภท</th>
+                            <th>ชื่อ</th>
+                            <th>รายละเอียด</th>
+                            <th>วันที่</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($result as $row) { ?>
+                            <tr>
+                                <td><?= $row->asset_name ?></td>
+                                <td><?= $row->title ?></td>
+                                <td><?= $row->description1 ?></td>
+                                <td><?= thaidate('j M Y ', strtotime($row->date)) ?></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

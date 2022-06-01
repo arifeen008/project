@@ -461,12 +461,7 @@ class Officer extends CI_Controller
 
 	function uploadFile($name)
 	{
-		$uploadPath = 'uploads/';
-		if (!is_dir($uploadPath)) {
-			mkdir($uploadPath, 0777, TRUE);
-		}
-
-		$config['upload_path'] = $uploadPath;
+		$config['upload_path'] = 'uploads/';
 		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
 		$config['encrypt_name'] = TRUE;
 
@@ -783,13 +778,13 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data = $this->officer_model->data_officer($USER_ID);
-		$listnews['result'] = $this->officer_model->get_news_upload();
+		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$data['result'] = $this->officer_model->get_asset();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/asset_system/asset_list");
+		$this->load->view("officer/asset_system/asset_list", $data);
 		$this->load->view("containner/script");
 	}
 
@@ -797,11 +792,10 @@ class Officer extends CI_Controller
 	{
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data = $this->officer_model->data_officer($USER_ID);
-		$listnews['result'] = $this->officer_model->get_news_upload();
+		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/asset_system/uploadasset_system");
 		$this->load->view("containner/script");
@@ -819,6 +813,8 @@ class Officer extends CI_Controller
 			$result = $this->officer_model->checkasset_number($asset_number);
 			$num = $result->num_rows();
 		} while ($num > 0);
+		$countUploadedFiles = 0;
+		$countErrorUploadFiles = 0;
 		$countFiles = count($_FILES['asset_pictures']['name']);
 		for ($i = 0; $i < $countFiles; $i++) {
 			$_FILES['asset_picture']['name'] = $_FILES['asset_pictures']['name'][$i];
@@ -827,7 +823,13 @@ class Officer extends CI_Controller
 			$_FILES['asset_picture']['tmp_name'] = $_FILES['asset_pictures']['tmp_name'][$i];
 			$_FILES['asset_picture']['error'] = $_FILES['asset_pictures']['error'][$i];
 			$uploadStatus = $this->uploadFile('asset_picture');
-			$this->officer_model->upload_asset_picture($asset_number, $uploadStatus);
+
+			if ($uploadStatus != false) {
+				$countUploadedFiles++;
+				$this->officer_model->upload_asset_picture($asset_number, $uploadStatus);
+			} else {
+				$countErrorUploadFiles++;
+			}
 		}
 		$this->officer_model->asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, date('Y-m-d H:i:s'));
 		echo "<script>alert('Import success');</script>";
@@ -836,12 +838,10 @@ class Officer extends CI_Controller
 
 	function uploadAsset_picture($name)
 	{
-		$config['upload_path'] = 'uploads/asset_pictures/';
-		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
-		$config['encrypt_name'] = TRUE;
-
+		$config['upload_path'] = 'uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['encrypt_name'] = true;
 		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
 		if ($this->upload->do_upload($name)) {
 			$fileData = $this->upload->data();
 			return $fileData['file_name'];

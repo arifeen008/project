@@ -11,7 +11,7 @@ class Index extends CI_Controller
 	public function index()
 	{
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
-		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');		
+		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
 		$data['google_news'] = json_decode($news);
 		$data['covid_data'] = json_decode($covid, true);
 		$data['news_information'] = $this->officer_model->get_news_information();
@@ -382,22 +382,71 @@ class Index extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function real_estate_sale()
+	public function real_estate_sale_list()
 	{
+		$data['result'] = $this->officer_model->get_list_estate();
 		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
-		$this->load->view("index/asset/real_estate_sale/real_estate_sale");
+		$this->load->view("index/asset/real_estate_sale/real_estate_sale_list", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
 
-	public function vacant()
+	public function real_estate_sale($asset_number)
 	{
+		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['data'] = $this->officer_model->get_asset_data($asset_number);
+		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/asset/real_estate_sale/real_estate_sale", $data);
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function vacant_list()
+	{
+		$data['result'] = $this->officer_model->get_list_vacant();
 		$title['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header");
-		$this->load->view("index/asset/vacant/vacant");
+		$this->load->view("index/asset/vacant/vacant_list", $data);
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function vacant($asset_number)
+	{
+		$title['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['data'] = $this->officer_model->get_asset_data($asset_number);
+		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/asset/vacant/vacant", $data);
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function condo_list()
+	{
+		$data['result'] = $this->officer_model->get_list_condo();
+		$title['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/asset/vacant/vacant_list", $data);
+		$this->load->view("containner/footer");
+		$this->load->view("containner/script");
+	}
+
+	public function condo($asset_number)
+	{
+		$title['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['data'] = $this->officer_model->get_asset_data($asset_number);
+		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header");
+		$this->load->view("index/asset/condo/condo",$data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
