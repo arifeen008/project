@@ -761,15 +761,14 @@ class Officer extends CI_Controller
 	{
 		$result = $this->officer_model->select_credit($credit_id);
 		if ($result) {
-			if(!unlink($result->path . '/' . $result->file_name)){
+			if (!unlink($result->path . '/' . $result->file_name)) {
 				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/creditupload_system', 'refresh');
-			}
-			else{
+			} else {
 				$this->officer_model->delete_credit($credit_id);
 				echo "<script>alert('ลบสำเร็จ');</script>";
 				redirect('officer/creditupload_system', 'refresh');
-			}						
+			}
 		}
 	}
 
@@ -778,5 +777,76 @@ class Officer extends CI_Controller
 		$result = $this->officer_model->select_credit($credit_id);
 		$data = file_get_contents(base_url($result->path . '/' . $result->file_name));
 		force_download($result->fullcont_id . '.pdf', $data);
+	}
+
+	public function uploadasset_system()
+	{
+		$USER_ID = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$listnews['result'] = $this->officer_model->get_news_upload();
+		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/asset_system/asset_list");
+		$this->load->view("containner/script");
+	}
+
+	public function upload_asset()
+	{
+		$USER_ID = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data = $this->officer_model->data_officer($USER_ID);
+		$listnews['result'] = $this->officer_model->get_news_upload();
+		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/asset_system/uploadasset_system");
+		$this->load->view("containner/script");
+	}
+
+	public function asset_upload()
+	{
+		$title = $this->input->post('title');
+		$description1 = $this->input->post('description1');
+		$description2 = $this->input->post('description2');
+		$contact = $this->input->post('contact');
+		$asset_type = $this->input->post('asset_type');
+		do {
+			$asset_number = rand(10, 10000);
+			$result = $this->officer_model->checkasset_number($asset_number);
+			$num = $result->num_rows();
+		} while ($num > 0);
+		$countFiles = count($_FILES['asset_pictures']['name']);
+		for ($i = 0; $i < $countFiles; $i++) {
+			$_FILES['asset_picture']['name'] = $_FILES['asset_pictures']['name'][$i];
+			$_FILES['asset_picture']['type'] = $_FILES['asset_pictures']['type'][$i];
+			$_FILES['asset_picture']['size'] = $_FILES['asset_pictures']['size'][$i];
+			$_FILES['asset_picture']['tmp_name'] = $_FILES['asset_pictures']['tmp_name'][$i];
+			$_FILES['asset_picture']['error'] = $_FILES['asset_pictures']['error'][$i];
+			$uploadStatus = $this->uploadFile('asset_picture');
+			$this->officer_model->upload_asset_picture($asset_number, $uploadStatus);
+		}
+		$this->officer_model->asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, date('Y-m-d H:i:s'));
+		echo "<script>alert('Import success');</script>";
+		redirect('officer/upload_asset', 'refresh');
+	}
+
+	function uploadAsset_picture($name)
+	{
+		$config['upload_path'] = 'uploads/asset_pictures/';
+		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+		if ($this->upload->do_upload($name)) {
+			$fileData = $this->upload->data();
+			return $fileData['file_name'];
+		} else {
+			return false;
+		}
 	}
 }

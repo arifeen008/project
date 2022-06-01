@@ -432,7 +432,6 @@ class Officer_model extends CI_Model
 	public function checknewsnumber($newsnumber)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('newsnumber');
 		$db2->where('newsnumber', $newsnumber);
 		$result = $db2->get('news');
 		return $result;
@@ -686,7 +685,7 @@ class Officer_model extends CI_Model
 		$data = array(
 			'document_name' => $document_name,
 			'file_name' => $file_name,
-			'path' => $path,	
+			'path' => $path,
 			'date' => $date
 		);
 		$db2->insert('performance', $data);
@@ -706,5 +705,39 @@ class Officer_model extends CI_Model
 		$db2->where('performance_id', $performance_id);
 		$result = $db2->delete('performance');
 		return $result;
+	}
+
+	public function checkasset_number($asset_number)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('asset_number', $asset_number);
+		$result = $db2->get('asset');
+		return $result;
+	}
+
+	public function asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, $date)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'asset_number' => $asset_number,
+			'title' => $title,
+			'asset_type' => $asset_type,
+			'title' => $title,
+			'description1' => $description1,
+			'description2' => $description2,
+			'contact' => $contact,
+			'date' => $date
+		);
+		$db2->insert('asset', $data);
+	}
+
+	public function upload_asset_picture($asset_number, $uploadStatus)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$data = array(
+			'asset_number' => $asset_number,
+			'picture_name' => $uploadStatus
+		);
+		$db2->insert('asset_picture', $data);
 	}
 }

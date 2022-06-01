@@ -16,6 +16,9 @@
 					<a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true"><i class="far fa-moon me-4"></i>รายงานประจำเดือน</a>
 					<a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true"><i class="far fa-sun me-4"></i>รายงานประจำปี</a>
 				<?php	} ?>
-					<a href="<?php echo site_url('officer/creditupload_system') ?>" class="list-group-item list-group-item-action"><i class="fas fa-credit-card me-4"></i>ระบบอัพโหลดสินเชื่อ</a>
+				<a href="<?php echo site_url('officer/creditupload_system') ?>" class="list-group-item list-group-item-action"><i class="fas fa-credit-card me-4"></i>อัพโหลดสินเชื่อ</a>
+				<?php if ($level_code === 'P') { ?>
+					<a href="<?php echo site_url('officer/uploadasset_system') ?>" class="list-group-item list-group-item-action"><i class="fas fa-newspaper me-4"></i>อัพโหลดสินทรัพย์</a>
+				<?php	} ?>
 			</div>
 		</div>
