@@ -585,7 +585,7 @@ class Officer_model extends CI_Model
 		$db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
 		$db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$db2->group_by('news.newsnumber');
-		$db2->order_by('dateupload', 'DESC');
+		$db2->order_by('dateupload', 'desc');
 		$db2->limit(20);
 		$result = $db2->get('news');
 		return $result;
