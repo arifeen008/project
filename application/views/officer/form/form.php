@@ -17,7 +17,7 @@ include_once("application/libraries/Thaidate.php");
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hr as $row) { ?>
+                    <?php foreach ($result as $row) { ?>
                         <tr>
                             <td><?= $row->title ?></td>
                             <td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>

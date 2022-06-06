@@ -527,6 +527,27 @@ class Officer extends CI_Controller
 		}
 	}
 
+	public function form()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data['result'] = $this->officer_model->get_internalfile_hr();
+		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/form/form", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function download_form($internal_id)
+	{
+		$result = $this->officer_model->select_form($internal_id);
+		$data = file_get_contents(base_url('/file/inside_publish/'.$result->uploadfile));
+		force_download($result->title . '.pdf', $data);
+	}
+
 	public function import_internal_declaration()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
@@ -547,6 +568,7 @@ class Officer extends CI_Controller
 		$type_announcement = $this->input->post('type_announcement');
 		$config['upload_path']          = 'file/inside_publish';
 		$config['allowed_types']        = 'pdf';
+		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('uploadFile')) {
 			echo "<script>alert('import failed');</script>";
@@ -848,26 +870,5 @@ class Officer extends CI_Controller
 		} else {
 			return false;
 		}
-	}
-
-	public function form()
-	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data['hr'] = $this->officer_model->get_internalfile_hr();
-		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/form/form", $data);
-		$this->load->view("containner/script");
-	}
-
-	public function download_form($internal_id)
-	{
-		$result = $this->officer_model->select_form($internal_id);
-		$data = file_get_contents(base_url('file/inside_publish/'.$result->uploadfile));
-		force_download($result->title . '.pdf', $data);
 	}
 }
