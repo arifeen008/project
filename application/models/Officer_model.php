@@ -624,7 +624,7 @@ class Officer_model extends CI_Model
 	public function get_internalfile_ho()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('title,date,uploadfile');
+		$db2->select('internal_id,title,date,uploadfile');
 		$db2->where('type_announcement', 2);
 		$db2->order_by('date', 'DESC');
 		$result = $db2->get('internal_announcement');

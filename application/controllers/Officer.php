@@ -58,7 +58,6 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data['hr'] = $this->officer_model->get_internalfile_hr();
 		$data['ho'] = $this->officer_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";

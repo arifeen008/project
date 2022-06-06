@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-12">
 					<label for="formFileMultiple" class="form-label">อัพโหลดไฟล์</label>
-					<input class="form-control form-control-lg" type="file" name="uploadFile" id="formFileMultiple" />
+					<input class="form-control form-control-lg" type="file" name="uploadFile" accept=".pdf" id="formFileMultiple" />
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-success">อัพโหลด</button>

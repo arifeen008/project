@@ -23,29 +23,6 @@ include_once("application/libraries/Thaidate.php");
 		</div>
 	</div>
 	<div class="card my-3">
-		<h5 class="card-title text-dark">ประกาศฝ่ายบุคคล</h5>
-		<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
-			<table>
-				<thead>
-					<tr>
-						<th>ประกาศ</th>
-						<th>วันที่</th>
-						<th>ดาวน์โหลด</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($hr as $row) { ?>
-						<tr>
-							<td><?= $row->title ?></td>
-							<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-							<td><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
-						</tr>
-					<?php } ?>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="card my-3">
 		<h5 class="card-title text-dark">ประกาศสำนักงานใหญ่</h5>
 		<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
 			<table>
@@ -61,7 +38,7 @@ include_once("application/libraries/Thaidate.php");
 						<tr>
 							<td><?= $row->title ?></td>
 							<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-							<td><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+							<td><a href="<?php echo site_url('officer/download_form/' . $row->internal_id) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 						</tr>
 					<?php } ?>
 				</tbody>
