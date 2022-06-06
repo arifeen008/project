@@ -849,4 +849,25 @@ class Officer extends CI_Controller
 			return false;
 		}
 	}
+
+	public function form()
+	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$USER_ID = $this->session->userdata('USER_ID');
+		$data['hr'] = $this->officer_model->get_internalfile_hr();
+		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/form/form", $data);
+		$this->load->view("containner/script");
+	}
+
+	public function download_form($internal_id)
+	{
+		$result = $this->officer_model->select_form($internal_id);
+		$data = file_get_contents(base_url('file/inside_publish/'.$result->uploadfile));
+		force_download($result->title . '.pdf', $data);
+	}
 }

@@ -603,10 +603,18 @@ class Officer_model extends CI_Model
 		$db2->insert('internal_announcement', $data);
 	}
 
+	public function select_form($internal_id)
+	{
+		$db2 = $this->load->database('db2', TRUE);
+		$db2->where('internal_id', $internal_id);
+		$result = $db2->get('internal_announcement');
+		return $result->row();
+	}
+
 	public function get_internalfile_hr()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('title,date,uploadfile');
+		$db2->select('internal_id,title,date,uploadfile');
 		$db2->where('type_announcement', 1);
 		$db2->order_by('date', 'DESC');
 		$result = $db2->get('internal_announcement');
