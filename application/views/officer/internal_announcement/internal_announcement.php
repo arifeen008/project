@@ -24,13 +24,13 @@ include_once("application/libraries/Thaidate.php");
 	</div>
 	<div class="card my-3">
 		<h5 class="card-title text-dark">ประกาศสำนักงานใหญ่</h5>
-		<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+		<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 			<table>
 				<thead>
 					<tr>
-						<th>ประกาศ</th>
-						<th>วันที่</th>
-						<th>ดาวน์โหลด</th>
+						<th data-mdb-sort="false">ประกาศ</th>
+						<th data-mdb-sort="false">วันที่</th>
+						<th data-mdb-sort="false">ดาวน์โหลด</th>
 					</tr>
 				</thead>
 				<tbody>

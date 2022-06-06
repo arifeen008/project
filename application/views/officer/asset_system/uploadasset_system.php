@@ -2,7 +2,7 @@
     <div class="card my-3">
         <div class="card-body text-dark">
             <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                <h5>นำเข้าสินทรัพย์</h5>
+                <h5 class="text-uppercase">upload</h5>
             </div>
         </div>
         <form action="<?php echo site_url('officer/asset_upload') ?>" method="post" enctype="multipart/form-data">
@@ -40,14 +40,12 @@
                     </select>
                     <label class="form-label select-label">ประเภท</label>
                 </div>
-                <div class="col-md-12 mb-4">
+                <div class="col-md-12 mb-2">
                     <label for="formFileMultiple" class="form-label">รูปภาพนำเข้า</label>
                     <input class="form-control" type="file" name="asset_pictures[]" id="formFileMultiple" multiple />
                 </div>
             </div>
-            <button type="submit" class="ms-4 mb-4 btn btn-primary">อัพโหลด</button>
-            <button type="reset" class="mb-4 btn btn-warning">clear</button>
-            <a href="#" class="mb-4 btn btn-danger">back</a>
+            <button type="submit" class="ms-4 mb-4 btn btn-primary text-uppercase">upload</button>
         </form>
     </div>
 </div>

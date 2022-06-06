@@ -4,16 +4,16 @@ include_once("application/libraries/Thaidate.php");
 <div class="col-lg-9">
     <div class="card my-3">
         <div class="card-body text-dark">
-            <div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/upload_asset') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มเอกสาร</a></div>
-            <h5 class="card-title border-bottom">ผลการดำเนินงานประจำปี</h5>
-            <div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+            <div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/upload_asset') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>upload</a></div>
+            <h5 class="card-title pb-2 border-bottom">สินทรัพย์</h5>
+            <div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
                 <table>
                     <thead>
                         <tr>
-                            <th>ประเภท</th>
-                            <th>ชื่อ</th>
-                            <th>รายละเอียด</th>
-                            <th>วันที่</th>
+                            <th data-mdb-sort="false">ประเภท</th>
+                            <th data-mdb-sort="false">ชื่อ</th>
+                            <th data-mdb-sort="false">รายละเอียด</th>
+                            <th data-mdb-sort="false">วันที่</th>
                         </tr>
                     </thead>
                     <tbody>

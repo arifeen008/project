@@ -76,10 +76,10 @@ include_once("application/libraries/Thaidate.php");
 							<table>
 								<thead>
 									<tr>
-										<th>เลขบัญชี</th>
-										<th>ชื่อบัญชี</th>
-										<th>ยอดคงเหลือ</th>
-										<th>รายละเอียด</th>
+										<th data-mdb-sort="false">เลขบัญชี</th>
+										<th data-mdb-sort="false">ชื่อบัญชี</th>
+										<th data-mdb-sort="false">ยอดคงเหลือ</th>
+										<th data-mdb-sort="false">รายละเอียด</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -105,18 +105,18 @@ include_once("application/libraries/Thaidate.php");
 				</h2>
 				<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
 					<div class="accordion-body">
-						<div class="datatable" data-mdb-hover="true" data-mdb-bordered="true" data-mdb-full-pagination="true">
+						<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 							<table>
 								<thead>
 									<tr>
-										<th>เลขที่สัญญา</ะ>
-										<th>ชื่อสัญญา</th>
-										<th>วันที่ทำสัญญา</td>
-										<th>วันที่หมดสัญญา</th>
-										<th>ยอดอนุมัติสินเชื่อ</th>
-										<th>จำนวนงวดคงเหลือ</th>
-										<th>ยอดคงเหลือ</th>
-										<th>รายละเอียด</th>
+										<th data-mdb-sort="false">เลขที่สัญญา</ะ>
+										<th data-mdb-sort="false">ชื่อสัญญา</th>
+										<th data-mdb-sort="false">วันที่ทำสัญญา</td>
+										<th data-mdb-sort="false">วันที่หมดสัญญา</th>
+										<th data-mdb-sort="false">ยอดอนุมัติสินเชื่อ</th>
+										<th data-mdb-sort="false">จำนวนงวดคงเหลือ</th>
+										<th data-mdb-sort="false">ยอดคงเหลือ</th>
+										<th data-mdb-sort="false">รายละเอียด</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -146,18 +146,18 @@ include_once("application/libraries/Thaidate.php");
 				</h2>
 				<div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
 					<div class="accordion-body">
-						<div class="datatable" data-mdb-hover="true" data-mdb-bordered="true" data-mdb-full-pagination="true">
+						<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 							<table>
 								<thead>
 									<tr>
-										<th>เลขที่สัญญา</ะ>
-										<th>ชื่อสัญญา</th>
-										<th>วันที่ทำสัญญา</td>
-										<th>วันที่หมดสัญญา</th>
-										<th>ยอดอนุมัติสินเชื่อ</th>
-										<th>จำนวนงวดคงเหลือ</th>
-										<th>ยอดคงเหลือ</th>
-										<th>รายละเอียด</th>
+										<th data-mdb-sort="false">เลขที่สัญญา</ะ>
+										<th data-mdb-sort="false">ชื่อสัญญา</th>
+										<th data-mdb-sort="false">วันที่ทำสัญญา</td>
+										<th data-mdb-sort="false">วันที่หมดสัญญา</th>
+										<th data-mdb-sort="false">ยอดอนุมัติสินเชื่อ</th>
+										<th data-mdb-sort="false">จำนวนงวดคงเหลือ</th>
+										<th data-mdb-sort="false">ยอดคงเหลือ</th>
+										<th data-mdb-sort="false">รายละเอียด</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -188,29 +188,29 @@ include_once("application/libraries/Thaidate.php");
 				<div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
 					<div class="accordion-body">
 						<table class="table table-bordered">
-							<tr align="center">
+							<tr class="text-center">
 								<td>เลขที่สมาชิก</td>
 								<td>สาขาที่สังกัด</td>
 								<td>เงินคงเหลือ</td>
 								<td>คะแนนสะสมคงเหลือ</td>
 							</tr>
-							<tr align="center">
+							<tr class="text-center">
 								<td><?= $stock_select->MEM_ID ?></td>
 								<td><?= $stock_select->BR_NAME ?></td>
 								<td><?= number_format($stock_select->SHR_SUM_BTH, 2) ?></td>
 								<td><?= number_format($stock_select->POINT_SHR, 2)  ?></td>
 							</tr>
 						</table>
-						<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+						<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 							<table>
 								<thead>
 									<tr>
-										<th>เลขที่ใบเสร็จ</th>
-										<th>ประเภทหุ้น</th>
-										<th>จำนวนหุ้น</th>
-										<th>จำนวนเงิน</th>
-										<th>วันที่ทำรายการ</th>
-										<th>จำนวนเงินคงเหลือ</th>
+										<th data-mdb-sort="false">เลขที่ใบเสร็จ</th>
+										<th data-mdb-sort="false">ประเภทหุ้น</th>
+										<th data-mdb-sort="false">จำนวนหุ้น</th>
+										<th data-mdb-sort="false">จำนวนเงิน</th>
+										<th data-mdb-sort="false">วันที่ทำรายการ</th>
+										<th data-mdb-sort="false">จำนวนเงินคงเหลือ</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -240,13 +240,13 @@ include_once("application/libraries/Thaidate.php");
 					<div class="accordion-body">
 						<?php if ($dividend != null) { ?>
 							<table class="table table-bordered">
-								<tr align="center">
+								<tr class="text-center">
 									<td>ปี</td>
 									<td>วันที่รับเงิน</td>
 									<td>จำนวนเงิน</td>
 									<td>สาขาที่รับ</td>
 								</tr>
-								<tr align="center">
+								<tr class="text-center">
 									<td><?php echo $dividend->SHR_YEAR + 543 ?></td>
 									<td><?php echo thaidate('j M Y ', strtotime($dividend->SHR_OUT_DATE))  ?></td>
 									<td><?php echo number_format($dividend->SHR_SUMUP_DIV, 2)  ?></td>

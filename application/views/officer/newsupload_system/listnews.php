@@ -4,18 +4,18 @@ include_once("application/libraries/Thaidate.php");
 <div class="col-lg-9">
 	<div class="card my-3">
 		<div class="card-body text-dark">
-			<h5 class="card-title border-bottom">รายการข่าวสาร</h5>
-			<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/newsupload') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+		<div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/newsupload') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>เพิ่มข่าวสาร</a></div>
+			<h5 class="card-title pb-2 border-bottom">รายการข่าวสาร</h5>
+			<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 				<table>
 					<thead>
 						<tr>
-							<th>รหัสข่าว</th>
-							<th>หัวข้อ</th>
-							<th>ประเภทข่าว</th>
-							<th>เวลาอัพโหลด</th>
-							<th>แก้ไข</th>
-							<th>ลบ</th>
+							<th data-mdb-sort="false">รหัสข่าว</th>
+							<th data-mdb-sort="false">หัวข้อ</th>
+							<th data-mdb-sort="false">ประเภทข่าว</th>
+							<th data-mdb-sort="false">เวลาอัพโหลด</th>
+							<th data-mdb-sort="false">แก้ไข</th>
+							<th data-mdb-sort="false">ลบ</th>
 						</tr>
 					</thead>
 					<tbody>

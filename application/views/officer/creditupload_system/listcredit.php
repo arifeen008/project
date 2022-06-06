@@ -6,18 +6,18 @@ $i = 1;
 	<div class="card mt-4">
 		<div class="card-body">
 			<h4 class="card-title text-dark">รายการสินเชื่อ</h4>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+			<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 				<table>
 					<thead>
 						<tr>
-							<th>เลขที่สัญญา</th>
-							<th>ชื่อสัญญา</th>
-							<th>สาขา</th>
-							<th>ปี</th>
-							<th>ไฟล์ดาวโหลด</th>
-							<th>ผู้อัพโหลด</th>
-							<th>วันที่อัพโหลด</th>
-							<th>ลบ</th>
+							<th data-mdb-sort="false">เลขที่สัญญา</th>
+							<th data-mdb-sort="false">ชื่อสัญญา</th>
+							<th data-mdb-sort="false">สาขา</th>
+							<th data-mdb-sort="false">ปี</th>
+							<th data-mdb-sort="false">ไฟล์ดาวโหลด</th>
+							<th data-mdb-sort="false">ผู้อัพโหลด</th>
+							<th data-mdb-sort="false">วันที่อัพโหลด</th>
+							<th data-mdb-sort="false">ลบ</th>
 						</tr>
 					</thead>
 					<tbody>

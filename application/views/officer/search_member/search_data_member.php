@@ -2,19 +2,18 @@
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h1 class="card-title border-bottom">รายชื่อสมาชิกที่ค้นหา</h1>
-			<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+			<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 				<table>
 					<thead>
 						<tr>
-							<th>เลขที่สมาชิก</th>
-							<th>ชื่อ</th>
-							<th>นามสกุล</th>
-							<th>สาขา</th>
-							<th></th>
+							<th data-mdb-sort="false">เลขที่สมาชิก</th>
+							<th data-mdb-sort="false">ชื่อ</th>
+							<th data-mdb-sort="false">นามสกุล</th>
+							<th data-mdb-sort="false">สาขา</th>
+							<th data-mdb-sort="false">ดูข้อมูล</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php $i = 1 ?>
 						<?php foreach ($result->result() as $row) { ?>
 							<tr>
 								<td><?= $row->MEM_ID ?></td>
