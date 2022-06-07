@@ -514,8 +514,8 @@ class Officer_model extends CI_Model
 	public function get_news_upload()
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->select('news.newsnumber,newstype.news_typename,news.title,news.date,news.dateupload');
-		$db2->join('newstype', 'news.news_typeid = newstype.news_typeid');
+		$db2->select('news.newsnumber,news_type.news_typename,news.title,news.date,news.dateupload');
+		$db2->join('news_type', 'news.news_typeid = news_type.news_typeid');
 		$db2->order_by('news.dateupload', 'DESC');
 		$result = $db2->get('news');
 		return $result;

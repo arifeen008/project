@@ -5,6 +5,7 @@ class Index extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		check_lang();
 		$this->load->model('officer_model');
 	}
 
@@ -18,9 +19,10 @@ class Index extends CI_Controller
 		$data['news_welfare'] = $this->officer_model->get_news_welfare();
 		$data['news_credit'] = $this->officer_model->get_news_credit();
 		$data['news_foundation'] = $this->officer_model->get_news_foundation();
-		$title['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header");
+		$data['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['language'] = $this->session->userdata('language');
+		$this->load->view("containner/head", $data);
+		$this->load->view("containner/header",$data);
 		$this->load->view("index", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
@@ -28,11 +30,12 @@ class Index extends CI_Controller
 
 	public function news($newsnumber)
 	{
+		$data['language'] = $this->session->userdata('language');
 		$data['data'] = $this->officer_model->get_news_data($newsnumber);
 		$data['picture'] = $this->officer_model->get_newspicture($newsnumber);
 		$data['side_data'] = $this->officer_model->get_sidenewsdata($newsnumber);
-		$title['title'] = $data['data']->title . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = $data['data']->title . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("news", $data);
 		$this->load->view("containner/footer");
@@ -41,8 +44,8 @@ class Index extends CI_Controller
 
 	public function board()
 	{
-		$title['title'] = "คณะกรรมการผู้บริหาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "คณะกรรมการผู้บริหาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/about/board");
 		$this->load->view("containner/footer");
@@ -51,8 +54,8 @@ class Index extends CI_Controller
 
 	public function history()
 	{
-		$title['title'] = "ประวัติความเป็นมา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ประวัติความเป็นมา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/about/history");
 		$this->load->view("containner/footer");
@@ -61,8 +64,8 @@ class Index extends CI_Controller
 
 	public function office()
 	{
-		$title['title'] = "สำนักงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/office");
@@ -72,8 +75,8 @@ class Index extends CI_Controller
 
 	public function klongyang()
 	{
-		$title['title'] = "สาขา สำนักงานใหญ่(คลองยาง) สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สาขา สำนักงานใหญ่(คลองยาง) สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/klongyang");
@@ -83,8 +86,8 @@ class Index extends CI_Controller
 
 	public function krabi()
 	{
-		$title['title'] = "สำนักงาน สาขากระบี่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สาขากระบี่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/krabi");
@@ -94,8 +97,8 @@ class Index extends CI_Controller
 
 	public function aoluk()
 	{
-		$title['title'] = "สำนักงาน สาขาอ่าวลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สาขาอ่าวลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/aoluk");
@@ -105,8 +108,8 @@ class Index extends CI_Controller
 
 	public function kohlanta()
 	{
-		$title['title'] = "สำนักงาน สาขาเกาะลันตา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สาขาเกาะลันตา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/kohlanta");
@@ -116,8 +119,8 @@ class Index extends CI_Controller
 
 	public function klongthom()
 	{
-		$title['title'] = "สำนักงาน สาขาคลองท่อม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สาขาคลองท่อม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/klongthom");
@@ -127,8 +130,8 @@ class Index extends CI_Controller
 
 	public function huayluk()
 	{
-		$title['title'] = "สำนักงาน สาขาห้วยลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สำนักงาน สาขาห้วยลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/huayluk");
@@ -138,8 +141,8 @@ class Index extends CI_Controller
 
 	public function karnjanadid()
 	{
-		$title['title'] = "จุดบริการกาญจนดิษฐ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "จุดบริการกาญจนดิษฐ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/karnjanadid");
@@ -149,8 +152,8 @@ class Index extends CI_Controller
 
 	public function thontuay()
 	{
-		$title['title'] = "จุดบริการต้นทวย สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "จุดบริการต้นทวย สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/thontuay");
@@ -160,8 +163,8 @@ class Index extends CI_Controller
 
 	public function mobile1()
 	{
-		$title['title'] = "รถโมบายเคลื่อนที่ 1 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "รถโมบายเคลื่อนที่ 1 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/mobile1");
@@ -171,8 +174,8 @@ class Index extends CI_Controller
 
 	public function mobile2()
 	{
-		$title['title'] = "รถโมบายเคลื่อนที่ 2 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "รถโมบายเคลื่อนที่ 2 สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/branch/mobile2");
@@ -182,8 +185,8 @@ class Index extends CI_Controller
 
 	public function vision()
 	{
-		$title['title'] = "วิสัยทัศน์ พันธกิจ วัตถุประสงค์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "วิสัยทัศน์ พันธกิจ วัตถุประสงค์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
 		$this->load->view("index/about/vision");
@@ -193,8 +196,8 @@ class Index extends CI_Controller
 
 	public function register()
 	{
-		$title['title'] = "สมัครสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สมัครสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/service/register");
 		$this->load->view("containner/footer");
@@ -203,8 +206,8 @@ class Index extends CI_Controller
 
 	public function deposit()
 	{
-		$title['title'] = "บริการเงินฝาก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "บริการเงินฝาก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/service/deposit");
 		$this->load->view("containner/footer");
@@ -213,8 +216,8 @@ class Index extends CI_Controller
 
 	public function credit()
 	{
-		$title['title'] = "บริการสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "บริการสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/service/credit");
 		$this->load->view("containner/footer");
@@ -223,8 +226,8 @@ class Index extends CI_Controller
 
 	public function marry()
 	{
-		$title['title'] = "สวัสดิการแต่งงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สวัสดิการแต่งงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/marry");
 		$this->load->view("containner/footer");
@@ -233,8 +236,8 @@ class Index extends CI_Controller
 
 	public function maternity()
 	{
-		$title['title'] = "สวัสดิการคลอดบุตร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สวัสดิการคลอดบุตร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/maternity");
 		$this->load->view("containner/footer");
@@ -243,8 +246,8 @@ class Index extends CI_Controller
 
 	public function oldage()
 	{
-		$title['title'] = "สวัสดิการเงินสมทบยามชรา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สวัสดิการเงินสมทบยามชรา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/oldage");
 		$this->load->view("containner/footer");
@@ -253,8 +256,8 @@ class Index extends CI_Controller
 
 	public function medical()
 	{
-		$title['title'] = "สวัสดิการช่วยเหลือค่ารักษาพยาบาล สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สวัสดิการช่วยเหลือค่ารักษาพยาบาล สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/medical");
 		$this->load->view("containner/footer");
@@ -263,8 +266,8 @@ class Index extends CI_Controller
 
 	public function dead()
 	{
-		$title['title'] = "สวัสดิการเสียชีวิต สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "สวัสดิการเสียชีวิต สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/welfare/dead");
 		$this->load->view("containner/footer");
@@ -273,8 +276,8 @@ class Index extends CI_Controller
 
 	public function promotion()
 	{
-		$title['title'] = "โปรโมชั่น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โปรโมชั่น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/news/promotion");
 		$this->load->view("containner/footer");
@@ -284,8 +287,8 @@ class Index extends CI_Controller
 	public function activity()
 	{
 		$data['result'] = $this->officer_model->get_list_activity();
-		$title['title'] = "ข่าวสาร/กิจกรรมความเคลื่อนไหว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ข่าวสาร/กิจกรรมความเคลื่อนไหว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/news/activity", $data);
 		$this->load->view("containner/footer");
@@ -294,8 +297,8 @@ class Index extends CI_Controller
 
 	public function calendar()
 	{
-		$title['title'] = "ปฏิทิน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ปฏิทิน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/news/calendar");
 		$this->load->view("containner/footer");
@@ -304,8 +307,8 @@ class Index extends CI_Controller
 
 	public function stadium()
 	{
-		$title['title'] = "โครงการสนามหญ้าเทียม SKF Stadium สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โครงการสนามหญ้าเทียม SKF Stadium สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/project/stadium");
 		$this->load->view("containner/footer");
@@ -314,8 +317,8 @@ class Index extends CI_Controller
 
 	public function village()
 	{
-		$title['title'] = "โครงการหมู่บ้านษะกอฟะฮ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โครงการหมู่บ้านษะกอฟะฮ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/project/village");
 		$this->load->view("containner/footer");
@@ -324,8 +327,8 @@ class Index extends CI_Controller
 
 	public function gasstation()
 	{
-		$title['title'] = "โครงการปั้มน้ำมันเซลล์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โครงการปั้มน้ำมันเซลล์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/project/gasstation");
 		$this->load->view("containner/footer");
@@ -334,8 +337,8 @@ class Index extends CI_Controller
 
 	public function orphan()
 	{
-		$title['title'] = "โครงการอุปถัมภ์เลี้ยงดูเด็กกำพร้า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โครงการอุปถัมภ์เลี้ยงดูเด็กกำพร้า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/project/orphan");
 		$this->load->view("containner/footer");
@@ -344,8 +347,8 @@ class Index extends CI_Controller
 
 	public function sakofahmarket()
 	{
-		$title['title'] = "โครงการ Sakofah Market สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "โครงการ Sakofah Market สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/project/sakofahmarket");
 		$this->load->view("containner/footer");
@@ -354,8 +357,8 @@ class Index extends CI_Controller
 
 	public function document()
 	{
-		$title['title'] = "รายงานกิจการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "รายงานกิจการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/download/document");
 		$this->load->view("containner/footer");
@@ -364,8 +367,8 @@ class Index extends CI_Controller
 
 	public function report()
 	{
-		$title['title'] = "เอกสารสำหรับสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "เอกสารสำหรับสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/download/report");
 		$this->load->view("containner/footer");
@@ -374,8 +377,8 @@ class Index extends CI_Controller
 
 	public function withus()
 	{
-		$title['title'] = "ร่วมงานกับเรา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ร่วมงานกับเรา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/contact/withus");
 		$this->load->view("containner/footer");
@@ -385,8 +388,8 @@ class Index extends CI_Controller
 	public function real_estate_sale_list()
 	{
 		$data['result'] = $this->officer_model->get_list_estate();
-		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/real_estate_sale/real_estate_sale_list", $data);
 		$this->load->view("containner/footer");
@@ -395,10 +398,10 @@ class Index extends CI_Controller
 
 	public function real_estate_sale($asset_number)
 	{
-		$title['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$data['data'] = $this->officer_model->get_asset_data($asset_number);
 		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
-		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/real_estate_sale/real_estate_sale", $data);
 		$this->load->view("containner/footer");
@@ -408,8 +411,8 @@ class Index extends CI_Controller
 	public function vacant_list()
 	{
 		$data['result'] = $this->officer_model->get_list_vacant();
-		$title['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/vacant/vacant_list", $data);
 		$this->load->view("containner/footer");
@@ -418,10 +421,10 @@ class Index extends CI_Controller
 
 	public function vacant($asset_number)
 	{
-		$title['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$data['data'] = $this->officer_model->get_asset_data($asset_number);
 		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
-		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/vacant/vacant", $data);
 		$this->load->view("containner/footer");
@@ -431,8 +434,8 @@ class Index extends CI_Controller
 	public function condo_list()
 	{
 		$data['result'] = $this->officer_model->get_list_condo();
-		$title['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
+		$data['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/vacant/vacant_list", $data);
 		$this->load->view("containner/footer");
@@ -441,10 +444,10 @@ class Index extends CI_Controller
 
 	public function condo($asset_number)
 	{
-		$title['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$data['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$data['data'] = $this->officer_model->get_asset_data($asset_number);
 		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
-		$this->load->view("containner/head", $title);
+		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
 		$this->load->view("index/asset/condo/condo",$data);
 		$this->load->view("containner/footer");

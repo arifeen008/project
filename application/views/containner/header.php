@@ -39,7 +39,9 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			</ul>
 			<span class="navbar-text">
-				ภาษา<button type="button" class="btn btn-outline-success ms-3" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
+				<div class="d-inline-flex p-1"><?php echo lang('lang') ?></div>
+				<a href="?lang=th" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark"><?php echo lang('lang_th') ?></a>
+				<a href="?lang=en" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark"><?php echo lang('lang_en') ?></a>
 			</span>
 		</div>
 	</div>
@@ -52,13 +54,13 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarCenteredExample">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo site_url('index') ?>">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">หน้าหลัก |</p>
+					<a class="nav-link border-end" href="<?php echo site_url('index') ?>">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_home') ?> </p>
 					</a>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">เกี่ยวกับเรา |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_about') ?> </p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/history') ?>">
@@ -76,8 +78,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บริการของสหกรณ์ |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_service') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/register') ?>">
@@ -92,8 +94,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการของสมาชิก |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_welfare') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/marry') ?>">
@@ -114,8 +116,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ข่าวสาร/อัพเดต |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_news') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
@@ -128,8 +130,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการของสหกรณ์ |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_project') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/stadium') ?>">
@@ -150,8 +152,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บริหารสินทรัพย์ |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_asset') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/real_estate_sale_list') ?>">
@@ -166,8 +168,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
-					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ดาวน์โหลด |</p>
+					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_download') ?> </p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/document') ?>">
@@ -180,7 +182,7 @@
 				</li>
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ติดต่อเรา</p>
+						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_contact') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSeKfqui-MFOwjuBGgl98Aa26sK2QUCX3mtcblNDuwPPU-l2ow/viewform?usp=sf_link">
