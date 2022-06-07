@@ -2,6 +2,7 @@
 
 class Officer_model extends CI_Model
 {
+	// ล็อกอินเจ้าหน้าที่
 	public function fetch_user_login($user_id, $password)
 	{
 		$this->db->where('USER_ID', $user_id);
@@ -9,7 +10,7 @@ class Officer_model extends CI_Model
 		$query = $this->db->get('BK_H_TELLER_CONTROL');
 		return $query->row();
 	}
-
+	// ดึงข้อมูลเจ้าหน้าที่
 	public function data_officer($user_id)
 	{
 		$this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
@@ -41,6 +42,7 @@ class Officer_model extends CI_Model
 	// 	return $result;
 	// }
 
+	// ดึงข้อมูลเงินฝากสมาชิก
 	public function deposit_member($mem_id, $branch_number)
 	{
 		$this->db->select('ACCOUNT_NO,ACCOUNT_NAME,BALANCE');
@@ -49,7 +51,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('BK_H_SAVINGACCOUNT');
 		return $result;
 	}
-
+	// รายละเอียดบัญชี
 	public function account_details($account_number)
 	{
 		$this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
