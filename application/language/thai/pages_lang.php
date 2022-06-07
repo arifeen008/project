@@ -2,7 +2,6 @@
 $lang['lang'] = 'ภาษา';
 $lang['lang_th'] = 'TH';
 $lang['lang_en'] = 'EN';
-
 // header
 $lang['header_home'] = 'หน้าหลัก';
 $lang['header_about'] = 'เกี่ยวกับเรา';
