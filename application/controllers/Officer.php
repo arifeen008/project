@@ -543,7 +543,7 @@ class Officer extends CI_Controller
 	public function download_form($internal_id)
 	{
 		$result = $this->officer_model->select_form($internal_id);
-		$data = file_get_contents(base_url('/file/inside_publish/'.$result->uploadfile));
+		$data = file_get_contents(base_url('/file/inside_publish/' . $result->uploadfile));
 		force_download($result->title . '.pdf', $data);
 	}
 
@@ -635,7 +635,7 @@ class Officer extends CI_Controller
 			case "sawadekarnjaohnatee":
 				$precis_type = "จท.";
 				break;
-			default:
+			case "shukshen":
 				$precis_type = "ฉ.";
 		}
 		switch ($type) {
@@ -657,7 +657,7 @@ class Officer extends CI_Controller
 			case "sawadekarnjaohnatee":
 				$fullprecis_type = "สวัสดิการเจ้าหน้าที่";
 				break;
-			default:
+			case "shukshen":
 				$fullprecis_type = "ฉุกเฉิน";
 		}
 		switch ($branch) {
@@ -667,7 +667,7 @@ class Officer extends CI_Controller
 			case "klongyang":
 				$precis_branch = "คลองยาง";
 				break;
-			case "aoluk":
+			case "aoluek":
 				$precis_branch = "อ่าวลึก";
 				break;
 			case "kohlanta":
@@ -676,10 +676,10 @@ class Officer extends CI_Controller
 			case "klongthom":
 				$precis_branch = "คลองท่อม";
 				break;
-			case "huyluk":
+			case "huyluek":
 				$precis_branch = "ห้วยลึก";
 				break;
-			default:
+			case "kanchanadit":
 				$precis_branch = "กาญจนดิษฐ์";
 		}
 		$fullcont_id = $precis_type . $lcon_id . '/' . $year;
@@ -746,7 +746,7 @@ class Officer extends CI_Controller
 			case "klongyang":
 				$precis_branch = "คลองยาง";
 				break;
-			case "aoluk":
+			case "aoluek":
 				$precis_branch = "อ่าวลึก";
 				break;
 			case "kohlanta":
@@ -755,7 +755,7 @@ class Officer extends CI_Controller
 			case "klongthom":
 				$precis_branch = "คลองท่อม";
 				break;
-			case "huyluk":
+			case "huyluek":
 				$precis_branch = "ห้วยลึก";
 				break;
 			default:

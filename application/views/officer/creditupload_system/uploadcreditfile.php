@@ -47,11 +47,11 @@
                     <select class="select" name="branch">
                         <option value="klongyang">คลองยาง</option>
                         <option value="krabi">กระบี่</option>
-                        <option value="aoluk">อ่าวลึก</option>
+                        <option value="aoluek">อ่าวลึก</option>
                         <option value="kohlanta">เกาะลันตา</option>
                         <option value="klongthom">คลองท่อม</option>
-                        <option value="huyluk">ห้วยลึก</option>
-                        <option value="karnjanadit">กาญจนดิษฐ์</option>
+                        <option value="huyluek">ห้วยลึก</option>
+                        <option value="kanchanadit">กาญจนดิษฐ์</option>
                     </select>
                     <label class="form-label select-label">สาขา</label>
                 </div>

@@ -95,13 +95,13 @@ class Index extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function aoluk()
+	public function aoluek()
 	{
 		$data['title'] = "สำนักงาน สาขาอ่าวลึก สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/head");
 		$this->load->view("containner/header");
-		$this->load->view("index/about/branch/aoluk");
+		$this->load->view("index/about/branch/aoluek");
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}

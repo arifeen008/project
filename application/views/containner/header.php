@@ -64,16 +64,16 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/history') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ประวัติความเป็นมา</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_history') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/vision') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">วิสัยทัศน์ พันธกิจ วัตถุประสงค์</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_vision') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/board') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">คณะกรรมการและผู้บริหาร</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_board') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/office') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สำนักงาน</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_office') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -83,13 +83,13 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/register') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สมัครสมาชิก</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_register') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/deposit') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บริการเงินฝาก</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_deposit') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/credit') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บริการสินเชื่อ</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_credit') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -99,19 +99,19 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/marry') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการแต่งงาน</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_marry') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/maternity') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการคลอดบุตร</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_maternity') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/oldage') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการเงินสมทบยามชรา</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_oldage') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/medical') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการช่วยเหลือค่ารักษาพยาบาล</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_medical') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/dead') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">สวัสดิการเสียชีวิต</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_dead') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -122,10 +122,10 @@
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
 						<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ข่าวสาร/กิจกรรมความเคลื่อนไหว</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_activity') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/calendar') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ปฏิทินสหกรณ์</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_calendar') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -135,19 +135,19 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/stadium') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการสนามหญ้าเทียม SKF Stadium</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_stadium') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/village') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการหมู่บ้านษะกอฟะฮ์</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_village') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/gasstation') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการปั้มน้ำมันเซลล์</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_gasstation') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/orphan') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการศูนย์อุปถัมภ์เลี้ยงดูเด็กกำพร้า</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_orphan') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/sakofahmarket') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">โครงการ Sakofah Market</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_sakofahmarket') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -157,13 +157,13 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/real_estate_sale_list') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">บ้านพร้อมที่ดิน/ทาวน์โฮม</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_estate') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/vacant_list') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ที่ดินเปล่า</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_vulcant') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/condo_list') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">คอนโด</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_condo') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -173,10 +173,10 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="<?php echo site_url('index/document') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">เอกสารสำหรับสมาชิก</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_document') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/report') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">รายงานกิจการ</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_report') ?></p>
 							</a></li>
 					</ul>
 				</li>
@@ -186,10 +186,10 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSeKfqui-MFOwjuBGgl98Aa26sK2QUCX3mtcblNDuwPPU-l2ow/viewform?usp=sf_link">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">แบบประเมินการให้บริการ</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_form') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/withus') ?>">
-								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ร่วมงานกับเรา</p>
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_withus') ?></p>
 							</a></li>
 					</ul>
 				</li>

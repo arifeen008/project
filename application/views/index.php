@@ -51,7 +51,7 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/345-1.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">ดูรายละเอียด</div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
  	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,7 +68,7 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/325-1.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal0">ดูรายละเอียด</div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal0"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
  	<div class="modal fade" id="exampleModal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,7 +85,7 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">ดูรายละเอียด</div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
  	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -108,7 +108,7 @@
  						<a href="<?php echo site_url('index/register') ?>" class="card-body">
  							<p class="card-text text-center text-dark">
  								<i class="far fa-registered fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">สมัครสมาชิก</p>
+ 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_register') ?></p>
  							</p>
  						</a>
  					</div>
@@ -118,7 +118,7 @@
  						<a href="<?php echo site_url('index/deposit') ?>" class="card-body">
  							<p class="card-text text-center text-dark">
  								<i class="fas fa-hand-holding-usd fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">บริการเงินฝาก</p>
+ 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_deposit') ?></p>
  							</p>
  						</a>
  					</div>
@@ -128,7 +128,7 @@
  						<a href="<?php echo site_url('index/credit') ?>" class="card-body">
  							<p class="card-text text-center text-dark">
  								<i class="far fa-credit-card fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">บริการสินเชื่อ</p>
+ 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_credit') ?></p>
  							</p>
  						</a>
  					</div>
@@ -138,7 +138,7 @@
  						<a href="<?php echo site_url('index/document') ?>" class="card-body">
  							<p class="card-text text-center text-dark">
  								<i class="fas fa-file-alt fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 25px;" class="text-center text-dark h3">เอกสาร</p>
+ 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_document') ?></p>
  							</p>
  						</a>
  					</div>
@@ -151,34 +151,34 @@
  					<div class="card hover-shadow">
  						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img opacity-25" />
  						<div class="card-body mx-2 card-img-overlay" style="font-family: 'Sarabun', cursive;color:black;">
- 							<h4 class="text-center mb-3">รายงานสถานการณ์ COVID-19 ประจำวัน</h4>
+ 							<h4 class="text-center mb-3"><?php echo lang('covid_report') ?></h4>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-calendar me-3"></i>วันแถลง</p>
+ 								<p><i class="fas fa-calendar me-3"></i><?php echo lang('covid_date') ?></p>
  								<p><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-clinic-medical me-2"></i>จำนวนผู้ป่วยรายใหม่</p>
- 								<p><?php echo number_format($covid_data[0]['new_case']) . ' ราย' ?></p>
+ 								<p><i class="fas fa-clinic-medical me-2"></i><?php echo lang('covid_new_case') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_case']) . ' ' . lang('covid_people') ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="far fa-hospital me-3"></i>จำนวนผู้ป่วยสะสม</p>
- 								<p><?php echo number_format($covid_data[0]['total_case']) . ' ราย' ?></p>
+ 								<p><i class="far fa-hospital me-3"></i><?php echo lang('covid_total_case') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_case']) . ' ' . lang('covid_people') ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-skull-crossbones me-3"></i>จำนวนผู้ป่วยเสียชีวิตรายใหม่</p>
- 								<p><?php echo number_format($covid_data[0]['new_death']) . ' ราย' ?></p>
+ 								<p><i class="fas fa-skull-crossbones me-3"></i><?php echo lang('covid_new_death') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_death']) . ' ' . lang('covid_people') ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-book-dead me-3"></i>จำนวนผู้ป่วยเสียชีวิตสะสม</p>
- 								<p><?php echo number_format($covid_data[0]['total_death']) . ' ราย' ?></p>
+ 								<p><i class="fas fa-book-dead me-3"></i><?php echo lang('covid_total_death') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_death']) . ' ' . lang('covid_people') ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-medkit me-3"></i>จำนวนผู้ป่วยรักษาหายรายใหม่</p>
- 								<p><?php echo number_format($covid_data[0]['new_recovered']) . ' ราย' ?></p>
+ 								<p><i class="fas fa-medkit me-3"></i><?php echo lang('covid_new_recovered') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_recovered']) . ' ' . lang('covid_people') ?></p>
  							</div>
  							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-pills me-3"></i>จำนวนผู้ป่วยรักษาหายสะสม</p>
- 								<p><?php echo number_format($covid_data[0]['total_recovered']) . ' ราย' ?></p>
+ 								<p><i class="fas fa-pills me-3"></i><?php echo lang('covid_total_recovered') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_recovered']) . ' ' . lang('covid_people') ?> </p>
  							</div>
  						</div>
  					</div>
@@ -195,7 +195,7 @@
  				<div class="row">
  					<div class="col-md-6">
  						<div class="card my-2">
- 							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;">ข่าวประชาสัมพันธ์</b>
+ 							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;"><?php echo lang('news_information') ?></b>
  							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<?php for ($i = 1; $i <= count($news_information); $i++) { ?>
@@ -228,7 +228,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card my-2">
- 							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;">สวัสดิการสมาชิก</b>
+ 							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;"><?php echo lang('news_welfare') ?></b>
  							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<?php for ($i = 1; $i <= count($news_welfare); $i++) { ?>
@@ -261,7 +261,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card my-2">
- 							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;">สินเชื่อฮาลาล</b>
+ 							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;"><?php echo lang('news_halal_credit') ?></b>
  							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<?php for ($i = 1; $i <= count($news_credit); $i++) { ?>
@@ -294,7 +294,7 @@
  					</div>
  					<div class="col-md-6">
  						<div class="card my-2">
- 							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;">มูลนิธิษะกอฟะฮ</b>
+ 							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;"><?php echo lang('news_foundation') ?></b>
  							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
  								<div class="carousel-indicators">
  									<?php for ($i = 1; $i <= count($news_foundation); $i++) { ?>
@@ -327,7 +327,7 @@
  					</div>
  					<div class="col-md-12">
  						<div class="card">
- 							<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;">ข่าวสาร</b>
+ 							<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;"><?php echo lang('news_news') ?></b>
  							<div class="row">
  								<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
  									<div class="col-md-3">
@@ -356,31 +356,31 @@
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';">กรมที่ดิน</p>
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('department_of_Lands') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.moac.go.th/site-home">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/กระทรวงเกษตรและสหกรณ์.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';">กระทรวงเกษตรและสหกรณ์</p>
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_agriculture_and_cooperatives') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://krabi.cad.go.th/main.php?filename=index">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';">กรมตรวจบัญชีสหกรณ์กระบี่</p>
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_cooperative_auditing_department') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';">สำนักงานสหกรณ์จังหวัดกระบี่</p>
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_provincial_cooperative_office') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';">กระทรวงแรงงาน</p>
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_labor') ?></p>
  				</a>
  			</div>
  		</div>
@@ -388,7 +388,7 @@
  </div>
  <div class="container my-3">
  	<div class="card">
- 		<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b>วารสารออนไลน์</b></p>
+ 		<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
  		<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  	</div>
  </div>
