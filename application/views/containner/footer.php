@@ -32,14 +32,14 @@
 				<form action="<?php echo site_url('officer/login_officer') ?>" method="post">
 					<div class="form-outline mb-4">
 						<input type="text" id="form2Example1" name="user_id" class="form-control" />
-						<label class="form-label" for="form2Example1">รหัสเจ้าหน้าที่</label>
+						<label class="form-label" for="form2Example1"><?php echo lang('username') ?></label>
 					</div>
 					<div class="form-outline mb-4">
 						<input type="password" id="form2Example2" name="password" class="form-control" />
-						<label class="form-label" for="form2Example2">รหัสผ่าน</label>
+						<label class="form-label" for="form2Example2"><?php echo lang('password') ?></label>
 					</div>
 					<button type="submit" style="background-color: #25d321;" class="btn btn-block">
-						<b class="text-dark">เข้าสู่ระบบ</b>
+						<b class="text-dark"><?php echo lang('login') ?></b>
 					</button>
 				</form>
 			</div>

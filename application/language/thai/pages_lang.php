@@ -2,6 +2,10 @@
 $lang['lang'] = 'ภาษา';
 $lang['lang_th'] = 'TH';
 $lang['lang_en'] = 'EN';
+// login
+$lang['username'] = 'Username';
+$lang['password'] = 'Password';
+$lang['login'] = 'Login';
 // header
 $lang['header_home'] = 'หน้าหลัก';
 $lang['header_about'] = 'เกี่ยวกับเรา';
