@@ -392,31 +392,6 @@
  		<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  	</div>
  </div>
- <!-- <div class="container my-3">
- 	<iframe src="https://www.facebook.com/UmmahChannel.Fan/videos/342061214465132" width="auto" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
- </div>
- <div class="container my-3">
- 	<div class="card border border-success">
- 		<div class="card-body">
- 			<p style="font-family: 'Sarabun', cursive;color:black;font-size: 35px;" class="text-center text-dark h1 my-3">สถานะการเงิน</p>
- 			<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-center text-mute my-3">ข้อมูล ณ มกราคม 2565 </p>
- 			<div class="row text-center">
- 				<div class="col-md-4">
- 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">220,370,250</b>
- 					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark h3">ทุนเรือนหุ้น(ล้านบาท)</p>
- 				</div>
- 				<div class="col-md-4">
- 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">572,333,378.14</b>
- 					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">เงินฝาก(ล้านบาท)</p>
- 				</div>
- 				<div class="col-md-4">
- 					<b style="font-family: 'Chonburi', cursive;" class="text-success h1">13,533</b>
- 					<p style="font-family: 'Sarabun', cursive;font-size: 20px;" class="text-dark">จำนวนสมาชิก(คน)</p>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div> -->
  <div class="row my-3">
  	<div class="col-lg">
  		<a href="https://www.facebook.com/Sakofah.Wittayaphat.School/?ref=bookmarks">

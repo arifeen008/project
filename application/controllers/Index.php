@@ -20,7 +20,7 @@ class Index extends CI_Controller
 		$data['news_credit'] = $this->officer_model->get_news_credit();
 		$data['news_foundation'] = $this->officer_model->get_news_foundation();
 		$data['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$data['language'] = $this->session->userdata('language');
+		// $data['language'] = $this->session->userdata('language');
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header",$data);
 		$this->load->view("index", $data);

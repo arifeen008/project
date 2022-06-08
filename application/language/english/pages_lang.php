@@ -12,6 +12,9 @@ $lang['header_project'] = 'Peoject';
 $lang['header_asset'] = 'Asset';
 $lang['header_download'] = 'Download';
 $lang['header_contact'] = 'Contact';
+// footer
+$lang['number_visiter'] = 'Number visitors';
+$lang['staff_login'] = 'Staff login';
 // dropdown list
 $lang['dropdown_history'] = 'History';
 $lang['dropdown_vision'] = 'Vision, Mission, Objective';
@@ -107,3 +110,7 @@ $lang['address_kanchanadit'] = 'No. 329/29-30, Village No. 2, Tha Thong Mai Subd
 $lang['address_thontuay'] = '123/2 Village No. 1, Khlong Kham Subdistrict, Nuea Khlong District, Krabi Province 81130';
 $lang['address_mobile1'] = 'Mueang Krabi District / Nuea Khlong';
 $lang['address_mobile2'] = 'Khlong Thom District / Koh Lanta';
+// asset
+$lang['townhome'] = 'House with land/Townhome'; 
+$lang['vacant'] = 'Vacant';
+$lang['condo'] = 'Condo';

@@ -13,7 +13,7 @@ include_once("application/libraries/Thaidate.php");
 <div class="container my-2">
 	
 	<div class="row">
-	<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px;" class="mt-2">บ้านพร้อมที่ดิน/ทาวโฮม</p>
+	<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px;" class="mt-2"><?php echo lang('townhome') ?></p>
 		<?php foreach ($result as $row) { ?>
 			<div class="col-md-3 mb-2">
 				<a href="<?php echo site_url('index/real_estate_sale/' . $row->asset_number) ?>" class="card hover-shadow my-2">

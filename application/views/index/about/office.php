@@ -2,7 +2,7 @@
 	<div class="row">
 		<p style="font-family: 'Sarabun', cursive;color:black;font-size:50px" class="text-center"><?php echo lang('position') ?></p>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__1776271462.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/klongyang') ?>">
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/36643.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/krabi') ?>">
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__177627147.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/aoluek') ?>">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/47037.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/kohlanta') ?>">
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/228620.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/klongthom') ?>">
@@ -102,7 +102,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__6094852.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/huayluk') ?>">
@@ -122,7 +122,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__53215240.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/karnjanadid') ?>">
@@ -142,7 +142,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/8475.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/thontuay') ?>">
@@ -162,7 +162,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__5046906.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/mobile1') ?>">
@@ -181,7 +181,7 @@
 			</div>
 		</div>
 		<div class="col-md-4 my-2">
-			<div class="card">
+			<div class="card hover-shadow">
 				<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 					<img src="<?php echo base_url('picture/S__17891338.jpg') ?>" class="img-fluid" />
 					<a href="<?php echo site_url('index/mobile2') ?>">

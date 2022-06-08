@@ -4,7 +4,7 @@
 			<div class="col-md-4">
 				<div class="row">
 					<div class="col-md-6">
-						<div>จำนวนผู้เข้าชมเว็บไซต์ :</div>
+						<div><?php echo lang('number_visiter') ?> :</div>
 					</div>
 					<div class="col-md-6">
 						<div id="sfc3wrcpuf5jgrke9993w3x3p7wsppfre13"></div>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="col-md-4"></div>
 			<div class="col-md-4 d-flex justify-content-end">
-				<button class="btn text-light" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-building me-3"></i>เข้าสู่ระบบเจ้าหน้าที่</button>
+				<button class="btn text-light" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-building me-3"></i><?php echo lang('staff_login') ?></button>
 			</div>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 	<div class="modal-dialog mx-0 mx-sm-auto">
 		<div class="modal-content">
 			<div class="modal-header" style="background-color: #25d321;">
-				<h5 class="modal-title text-light" id="accessToAgent">เข้าสู่ระบบเจ้าหน้าที่</h5>
+				<h5 class="modal-title text-light" id="accessToAgent"><?php echo lang('staff_login') ?></h5>
 				<button type="button" class="close" data-mdb-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
