@@ -11,6 +11,7 @@ class Index extends CI_Controller
 
 	public function index()
 	{
+		$data['language'] = $this->session->userdata('language');
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
 		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
 		$data['google_news'] = json_decode($news);
@@ -21,7 +22,7 @@ class Index extends CI_Controller
 		$data['news_foundation'] = $this->officer_model->get_news_foundation();
 		$data['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
-		$this->load->view("containner/header",$data);
+		$this->load->view("containner/header", $data);
 		$this->load->view("index", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
@@ -447,7 +448,7 @@ class Index extends CI_Controller
 		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header");
-		$this->load->view("index/asset/condo/condo",$data);
+		$this->load->view("index/asset/condo/condo", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
 	}
