@@ -543,7 +543,7 @@ class Officer extends CI_Controller
 	public function download_form($internal_id)
 	{
 		$result = $this->officer_model->select_form($internal_id);
-		$data = file_get_contents(base_url('/file/inside_publish/' . $result->uploadfile));
+		$data = file_get_contents(base_url('file/inside_publish/' . $result->uploadfile));
 		force_download($result->title . '.pdf', $data);
 	}
 
