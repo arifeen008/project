@@ -11,7 +11,6 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		$data['language'] = $this->session->userdata('language');
 		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
 		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
 		$data['google_news'] = json_decode($news);
@@ -30,7 +29,6 @@ class Index extends CI_Controller
 
 	public function news($newsnumber)
 	{
-		$data['language'] = $this->session->userdata('language');
 		$data['data'] = $this->officer_model->get_news_data($newsnumber);
 		$data['picture'] = $this->officer_model->get_newspicture($newsnumber);
 		$data['side_data'] = $this->officer_model->get_sidenewsdata($newsnumber);
