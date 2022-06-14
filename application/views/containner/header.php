@@ -39,9 +39,9 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			</ul>
 			<span class="navbar-text">
-				<div class="d-inline-flex p-1"><?php echo lang('lang') ?></div>
-				<a href="?lang=th" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark"><?php echo lang('lang_th') ?></a>
-				<a href="?lang=en" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark"><?php echo lang('lang_en') ?></a>
+				<div class="d-inline-flex p-1">ภาษา</div>
+				<a href="?lang=th" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark">TH</a>
+				<a href="?lang=en" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark">EN</a>
 			</span>
 		</div>
 	</div>

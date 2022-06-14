@@ -10,7 +10,9 @@ if (!function_exists('check_lang')) {
 
         if (!$CI->session->userdata('language')) {
             $CI->session->set_userdata('language', 'th');
-        } else {
+            $CI->lang->load('pages', 'thai');
+        } 
+        else {
             switch ($CI->session->userdata('language')) {
                 case 'th':
                     $CI->lang->load('pages', 'thai');
