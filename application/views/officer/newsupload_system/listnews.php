@@ -10,7 +10,6 @@ include_once("application/libraries/Thaidate.php");
 				<table>
 					<thead>
 						<tr>
-							<th data-mdb-sort="false">รหัสข่าว</th>
 							<th data-mdb-sort="false">หัวข้อ</th>
 							<th data-mdb-sort="false">ประเภทข่าว</th>
 							<th data-mdb-sort="false">เวลาอัพโหลด</th>
@@ -21,7 +20,6 @@ include_once("application/libraries/Thaidate.php");
 					<tbody>
 						<?php foreach ($result->result() as $row) { ?>
 							<tr>
-								<td><?= $row->newsnumber ?></td>
 								<td><?= $row->title  ?></td>
 								<td><?= $row->news_typename  ?></td>
 								<td><?= thaidate('j M Y ', strtotime($row->dateupload))   ?></td>
