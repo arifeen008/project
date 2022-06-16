@@ -404,7 +404,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/newsupload_system/newsupload");
-		$this->load->view("containner/script_editer");
+		$this->load->view("containner/script");
 	}
 
 	public function uploadnews_system()
@@ -507,7 +507,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/newsupload_system/editnews", $news);
-		$this->load->view("containner/script_editer");
+		$this->load->view("containner/script");
 	}
 
 	public function updatenews()
