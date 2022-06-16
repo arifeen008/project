@@ -10,21 +10,21 @@
             <div class="row mx-2 mb-2">
                 <div class="col-md-12 mb-4">
                     <div class="form-outline">
-                        <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id"/>
+                        <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id" />
                         <label class="form-label" for="form14">เลขที่สมาชิก</label>
                         <div class="form-helper"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                        <input type="text" id="form14" class="form-control" name="fname"/>
+                        <input type="text" id="form14" class="form-control" name="fname" />
                         <label class="form-label" for="form14">ชื่อ</label>
                         <div class="form-helper"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                        <input type="text" id="form14" class="form-control" name="lname"/>
+                        <input type="text" id="form14" class="form-control" name="lname" />
                         <label class="form-label" for="form14">นามสกุล</label>
                         <div class="form-helper"></div>
                     </div>
@@ -45,25 +45,27 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <select class="select" name="branch">
-                        <option value="klongyang">คลองยาง</option>
-                        <option value="krabi">กระบี่</option>
-                        <option value="aoluek">อ่าวลึก</option>
-                        <option value="kohlanta">เกาะลันตา</option>
-                        <option value="klongthom">คลองท่อม</option>
-                        <option value="huyluek">ห้วยลึก</option>
-                        <option value="kanchanadit">กาญจนดิษฐ์</option>
+                        <option value="000">สำนักงานใหญ่</option>
+                        <option value="001">กระบี่</option>
+                        <option value="002">คลองยาง</option>
+                        <option value="003">อ่าวลึก</option>
+                        <option value="004">กาญจนดิษฐ์</option>
+                        <option value="005">คลองท่อม</option>
+                        <option value="006">อ่าวนาง</option>
+                        <option value="007">ห้วยลึก</option>
+                        <option value="008">เกาะลันตา</option>
                     </select>
                     <label class="form-label select-label">สาขา</label>
                 </div>
                 <div class="col-md-6 mb-4">
                     <select class="select" name="type">
-                        <option value="shukshen">ฉุกเฉิน</option>
-                        <option value="samanshukshen">สามัญฉุกเฉิน</option>
-                        <option value="saman">สามัญ</option>
-                        <option value="phisede">พิเศษ</option>
-                        <option value="phisedekrongkarn">พิเศษโครงการ</option>
-                        <option value="krongkarnsinsub">โครงการสินทรัพย์</option>
-                        <option value="sawadekarnjaohnatee">สวัสดิการเจ้าหน้าที่</option>
+                        <option value="1">ฉุกเฉิน</option>
+                        <option value="2">สามัญฉุกเฉิน</option>
+                        <option value="3">สามัญ</option>
+                        <option value="4">พิเศษ</option>
+                        <option value="5">พิเศษโครงการ</option>
+                        <option value="6">โครงการสินทรัพย์</option>
+                        <option value="7">สวัสดิการเจ้าหน้าที่</option>
                     </select>
                     <label class="form-label select-label">ประเภทสัญญา</label>
                 </div>
@@ -71,7 +73,7 @@
                     <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
                     <input type="file" name="creditFile" class="form-control" id="customFile" accept=".pdf" />
                 </div>
-                <button type="submit" class="btn btn-success bg-gradient btn-block"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
             </div>
         </form>
     </div>

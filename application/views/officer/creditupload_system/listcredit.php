@@ -11,9 +11,9 @@ $i = 1;
 					<thead>
 						<tr>
 							<th data-mdb-sort="false">เลขที่สัญญา</th>
-							<th data-mdb-sort="false">ชื่อสัญญา</th>
-							<th data-mdb-sort="false">สาขา</th>
 							<th data-mdb-sort="false">ปี</th>
+							<th data-mdb-sort="false">สาขา</th>
+							<th data-mdb-sort="false">ประเภท</th>
 							<th data-mdb-sort="false">ไฟล์ดาวโหลด</th>
 							<th data-mdb-sort="false">ผู้อัพโหลด</th>
 							<th data-mdb-sort="false">วันที่อัพโหลด</th>
@@ -23,11 +23,11 @@ $i = 1;
 					<tbody>
 						<?php foreach ($result as $row) { ?>
 							<tr>
-								<td><?= $row->fulllcont_id ?></td>
-								<td><?= $row->fullprecis_type  ?></td>
-								<td><?= $row->precis_branch  ?></td>
+								<td><?= $row->fullcont_id ?></td>
 								<td><?= $row->year   ?></td>
-								<td><a href="<?php echo site_url('officer/download_credit/'. $row->credit_id) ?>" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
+								<td><?= $row->branch   ?></td>
+								<td><?= $row->type   ?></td>
+								<td><a href="<?php echo site_url('officer/download_credit/' . $row->credit_id) ?>" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 								<td><?= $row->name_upload  ?></td>
 								<td><?= thaidate('j M Y ', strtotime($row->date_Upload))  ?></td>
 								<td>

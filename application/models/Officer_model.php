@@ -633,7 +633,7 @@ class Officer_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadFileCredit($mem_id, $fname, $lname, $fullcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date)
+	public function uploadFileCredit($mem_id, $fname, $lname, $fullcont_id,  $year, $branch, $type, $file_name, $path, $username, $date)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
@@ -641,9 +641,9 @@ class Officer_model extends CI_Model
 			'fname' => $fname,
 			'lname' => $lname,
 			'fullcont_id' => $fullcont_id,
-			'fullprecis_type' => $fullprecis_type,
-			'precis_branch' => $precis_branch,
 			'year' => $year,
+			'branch' => $branch,
+			'type' => $type,
 			'file_name' => $file_name,
 			'path' => $path,
 			'name_upload' => $username,
@@ -652,16 +652,16 @@ class Officer_model extends CI_Model
 		$db2->insert('credit_upload', $data);
 	}
 
-	public function searchcredit($mem_id, $fname, $lname, $lcon_id, $fullprecis_type, $precis_branch, $year)
+	public function searchCredit($mem_id, $fname, $lname, $fullcont_id, $year, $branch, $type)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->where('mem_id', $mem_id);
+		$db2->like('mem_id', $mem_id);
 		$db2->like('fname', $fname);
 		$db2->like('lname', $lname);
-		$db2->like('fullcont_id', $lcon_id);
-		$db2->where('fullprecis_type', $fullprecis_type);
-		$db2->where('precis_branch', $precis_branch);
+		$db2->like('fullcont_id', $fullcont_id);
 		$db2->where('year', $year);
+		$db2->where('branch', $branch);
+		$db2->where('type', $type);
 		$result = $db2->get('credit_upload');
 		return $result->result();
 	}

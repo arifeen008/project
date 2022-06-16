@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <input type="text" name="lcon_id" id="form14" class="form-control" />
+                            <input type="text" name="fullcont_id" id="form14" class="form-control" />
                             <label class="form-label" for="form14">เลขที่สัญญา</label>
                             <div class="form-helper"></div>
                         </div>
@@ -42,25 +42,27 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <select class="select" name="branch">
-                            <option value="klongyang">คลองยาง</option>
-                            <option value="krabi">กระบี่</option>
-                            <option value="aoluek">อ่าวลึก</option>
-                            <option value="kohlanta">เกาะลันตา</option>
-                            <option value="klongthom">คลองท่อม</option>
-                            <option value="huyluek">ห้วยลึก</option>
-                            <option value="kanchanadit">กาญจนดิษฐ์</option>
+                            <option value="000">สำนักงานใหญ่</option>
+                            <option value="001">กระบี่</option>
+                            <option value="002">คลองยาง</option>
+                            <option value="003">อ่าวลึก</option>
+                            <option value="004">กาญจนดิษฐ์</option>
+                            <option value="005">คลองท่อม</option>
+                            <option value="006">อ่าวนาง</option>
+                            <option value="007">ห้วยลึก</option>
+                            <option value="008">เกาะลันตา</option>
                         </select>
                         <label class="form-label select-label">สาขา</label>
                     </div>
                     <div class="col-md-6 mb-4">
                         <select class="select" name="type">
-                            <option value="shukshen">ฉุกเฉิน</option>
-                            <option value="samanshukshen">สามัญฉุกเฉิน</option>
-                            <option value="saman">สามัญ</option>
-                            <option value="phisede">พิเศษ</option>
-                            <option value="phisedekrongkarn">พิเศษโครงการ</option>
-                            <option value="krongkarnsinsub">โครงการสินทรัพย์</option>
-                            <option value="sawadekarnjaohnatee">สวัสดิการเจ้าหน้าที่</option>
+                            <option value="1">ฉุกเฉิน</option>
+                            <option value="2">สามัญฉุกเฉิน</option>
+                            <option value="3">สามัญ</option>
+                            <option value="4">พิเศษ</option>
+                            <option value="5">พิเศษโครงการ</option>
+                            <option value="6">โครงการสินทรัพย์</option>
+                            <option value="7">สวัสดิการเจ้าหน้าที่</option>
                         </select>
                         <label class="form-label select-label">ประเภทสัญญา</label>
                     </div>

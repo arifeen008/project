@@ -618,70 +618,27 @@ class Officer extends CI_Controller
 		$branch = $this->input->post('branch');
 		$type = $this->input->post('type');
 		switch ($type) {
-			case "samanshukshen":
+			case "1":
+				$precis_type = "ฉ.";
+				break;
+			case "2":
 				$precis_type = "สฉ.";
 				break;
-			case "saman":
+			case "3":
 				$precis_type = "ส.";
 				break;
-			case "phisede":
+			case "4":
 				$precis_type = "พ.";
 				break;
-			case "phisedekrongkarn":
+			case "5":
 				$precis_type = "ค.";
 				break;
-			case "krongkarnsinsub":
+			case "6":
 				$precis_type = "คส.";
 				break;
-			case "sawadekarnjaohnatee":
+			case "7":
 				$precis_type = "จท.";
 				break;
-			case "shukshen":
-				$precis_type = "ฉ.";
-		}
-		switch ($type) {
-			case "samanshukshen":
-				$fullprecis_type = "สามัญฉุกเฉิน";
-				break;
-			case "saman":
-				$fullprecis_type = "สามัญ";
-				break;
-			case "phisede":
-				$fullprecis_type = "พิเศษ";
-				break;
-			case "phisedekrongkarn":
-				$fullprecis_type = "พิเศษโครงการ";
-				break;
-			case "krongkarnsinsub":
-				$fullprecis_type = "โครงการสินทรัพย์";
-				break;
-			case "sawadekarnjaohnatee":
-				$fullprecis_type = "สวัสดิการเจ้าหน้าที่";
-				break;
-			case "shukshen":
-				$fullprecis_type = "ฉุกเฉิน";
-		}
-		switch ($branch) {
-			case "krabi":
-				$precis_branch = "กระบี่";
-				break;
-			case "klongyang":
-				$precis_branch = "คลองยาง";
-				break;
-			case "aoluek":
-				$precis_branch = "อ่าวลึก";
-				break;
-			case "kohlanta":
-				$precis_branch = "เกาะลันตา";
-				break;
-			case "klongthom":
-				$precis_branch = "คลองท่อม";
-				break;
-			case "huyluek":
-				$precis_branch = "ห้วยลึก";
-				break;
-			case "kanchanadit":
-				$precis_branch = "กาญจนดิษฐ์";
 		}
 		$fullcont_id = $precis_type . $lcon_id . '/' . $year;
 		$new_name = $_FILES["userfiles"]['name'];
@@ -697,8 +654,8 @@ class Officer extends CI_Controller
 		} else {
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
-			$date = date('Y-m-d H:i:s');
-			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fullcont_id, $fullprecis_type, $precis_branch, $year, $file_name, $path, $username, $date);
+			$date = date('Y-m-d');
+			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fullcont_id,  $year, $branch, $type, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
@@ -714,58 +671,14 @@ class Officer extends CI_Controller
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
-		$lcon_id = $this->input->post('lcon_id');
+		$fullcont_id = $this->input->post('fullcont_id');
 		$year = $this->input->post('year');
 		$branch = $this->input->post('branch');
 		$type = $this->input->post('type');
-		switch ($type) {
-			case "samanshukshen":
-				$fullprecis_type = "สามัญฉุกเฉิน";
-				break;
-			case "saman":
-				$fullprecis_type = "สามัญ";
-				break;
-			case "phisede":
-				$fullprecis_type = "พิเศษ";
-				break;
-			case "phisedekrongkarn":
-				$fullprecis_type = "พิเศษโครงการ";
-				break;
-			case "krongkarnsinsub":
-				$fullprecis_type = "โครงการสินทรัพย์";
-				break;
-			case "sawadekarnjaohnatee":
-				$fullprecis_type = "สวัสดิการเจ้าหน้าที่";
-				break;
-			default:
-				$fullprecis_type = "ฉุกเฉิน";
-		}
-		switch ($branch) {
-			case "krabi":
-				$precis_branch = "กระบี่";
-				break;
-			case "klongyang":
-				$precis_branch = "คลองยาง";
-				break;
-			case "aoluek":
-				$precis_branch = "อ่าวลึก";
-				break;
-			case "kohlanta":
-				$precis_branch = "เกาะลันตา";
-				break;
-			case "klongthom":
-				$precis_branch = "คลองท่อม";
-				break;
-			case "huyluek":
-				$precis_branch = "ห้วยลึก";
-				break;
-			default:
-				$precis_branch = "กาญจนดิษฐ์";
-		}
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['result'] = $this->officer_model->searchcredit($mem_id, $fname, $lname, $lcon_id, $fullprecis_type, $precis_branch, $year);
+		$data['result'] = $this->officer_model->searchCredit($mem_id, $fname, $lname, $fullcont_id, $year, $branch, $type);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
