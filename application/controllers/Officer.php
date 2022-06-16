@@ -5,7 +5,7 @@ class Officer extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		check_lang();
+		include('application/helpers/sweetalert.php');
 		$this->load->model('officer_model');
 	}
 
@@ -455,9 +455,7 @@ class Officer extends CI_Controller
 
 		$this->officer_model->uploadnews($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
 
-		// echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
-		// echo "<script>swal ( "Oops" ,  "Something went wrong!" ,  "error" );</script>";
-		echo "<script>swal( 'Oops' ,  'Something went wrong!' ,  'error' );</script>";
+		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
 		redirect('officer/uploadnews_system', 'refresh');
 	}
 
