@@ -455,7 +455,9 @@ class Officer extends CI_Controller
 
 		$this->officer_model->uploadnews($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
 
-		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
+		// echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
+		// echo "<script>swal ( "Oops" ,  "Something went wrong!" ,  "error" );</script>";
+		echo "<script>swal( 'Oops' ,  'Something went wrong!' ,  'error' );</script>";
 		redirect('officer/uploadnews_system', 'refresh');
 	}
 

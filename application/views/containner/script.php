@@ -1,7 +1,10 @@
 <script type="text/javascript" src=<?php echo base_url('mdb5pro/js/mdb.min.js') ?>></script>
 <script type="text/javascript" src=<?php echo base_url('ckeditor/ckeditor.js') ?>></script>
+<!-- <script type="text/javascript" src="sweetalert2.all.min.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 	CKEDITOR.replace('detail');
+
 	function CKupdate() {
 		for (instance in CKEDITOR.instances)
 			CKEDITOR.instances[instance].updateElement();
