@@ -10,22 +10,6 @@
 		background: linear-gradient(to top, #ffffff, #25d321)
 	}
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="<?php echo site_url('index') ?>"><img src="<?php echo base_url('picture/logo-web1.jpg'); ?>"></a>
-		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-			<i class="fas fa-bars"></i>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-			</ul>
-			<span class="navbar-text">
-				ภาษา <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">EN</button> | <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">TH</button>
-			</span>
-		</div>
-	</div>
-</nav>
 <nav class="navbar navbar-expand-lg gradient-custom sticky-top">
 	<div class="container-fluid">
 		<div class="collapse navbar-collapse" id="navbarCenteredExample">

@@ -7,26 +7,23 @@
             </div>
         </div>
         <form action="<?php echo site_url('officer/uploadFileCredit') ?>" method="post" enctype="multipart/form-data">
-            <div class="row mx-2 mb-2">
+            <div class="row mx-2">
                 <div class="col-md-12 mb-4">
                     <div class="form-outline">
                         <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id" />
                         <label class="form-label" for="form14">เลขที่สมาชิก</label>
-                        <div class="form-helper"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="form-outline">
                         <input type="text" id="form14" class="form-control" name="fname" />
                         <label class="form-label" for="form14">ชื่อ</label>
-                        <div class="form-helper"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="form-outline">
                         <input type="text" id="form14" class="form-control" name="lname" />
                         <label class="form-label" for="form14">นามสกุล</label>
-                        <div class="form-helper"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -73,8 +70,8 @@
                     <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
                     <input type="file" name="creditFile" class="form-control" id="customFile" accept=".pdf" />
                 </div>
-                <button type="submit" class="btn btn-success"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
             </div>
+            <button type="submit" class="btn btn-success ms-4 mb-3"><i class="fas fa-upload me-4"></i>อัพโหลดไฟล์</button>
         </form>
     </div>
 </div>
