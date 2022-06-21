@@ -3,9 +3,9 @@ $lang['lang'] = 'ภาษา';
 $lang['lang_th'] = 'TH';
 $lang['lang_en'] = 'EN';
 // login
-$lang['username'] = 'Username';
-$lang['password'] = 'Password';
-$lang['login'] = 'Login';
+$lang['username'] = 'ชื่อผู้ใช้';
+$lang['password'] = 'รหัสผ่าน';
+$lang['login'] = 'เข้าสู่ระบบ';
 // header
 $lang['header_home'] = 'หน้าหลัก';
 $lang['header_about'] = 'เกี่ยวกับเรา';
