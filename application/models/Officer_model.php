@@ -60,7 +60,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('BK_T_FINANCE');
 		return $result;
 	}
-
+	// สินเชื่อที่เปิดอยู่
 	public function opened_credit_member($mem_id, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
@@ -74,7 +74,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('LOAN_M_CONTACT');
 		return $result;
 	}
-
+	// สินเชื่อที่ปิดแล้ว
 	public function closed_credit_member($mem_id, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
@@ -300,6 +300,7 @@ class Officer_model extends CI_Model
 	// 	return $result;
 	// }
 
+	// เงินหุ้น
 	public function stock_select($mem_id, $branch_number)
 	{
 		$this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
@@ -309,7 +310,7 @@ class Officer_model extends CI_Model
 		$query = $this->db->get('SHR_MEM');
 		return $query->row();
 	}
-
+	// รายละเอียดเงินหุ้น
 	public function stock_details($mem_id, $branch_number)
 	{
 		$this->db->select('SHR_T_SHARE.SLIP_NO,SHR_TBL.SHR_NA,SHR_T_SHARE.TMP_SHARE_QTY,SHR_T_SHARE.TMP_SHARE_BHT,SHR_T_SHARE.TMP_DATE_TODAY,SHR_T_SHARE.SHR_SUM_BTH');
