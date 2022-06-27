@@ -15,22 +15,7 @@ include_once("application/libraries/Thaidate.php");
 					</tr>
 					<tr>
 						<td>ชื่อสัญญา</td>
-						<td><?php if ($opened_loan_select->L_TYPE_CODE === "1" && $opened_loan_select->LSUB_CODE === "1") {
-								echo ' ฉุกเฉิน';
-							} elseif ($opened_loan_select->L_TYPE_CODE === "2" && $opened_loan_select->LSUB_CODE === "1") {
-								echo ' สามัญ ';
-							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "1") {
-								echo ' พิเศษ';
-							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "2") {
-								echo ' โครงการ';
-							} elseif ($opened_loan_select->L_TYPE_CODE === "2" && $opened_loan_select->LSUB_CODE === "2") {
-								echo ' สามัญฉุกเฉิน';
-							} elseif ($opened_loan_select->L_TYPE_CODE === "3" && $opened_loan_select->LSUB_CODE === "3") {
-								echo ' โครงการสินทรัพย์';
-							} else {
-								echo 'เจ้าหน้าที่';
-							}
-							?></td>
+						<td><?php echo $opened_loan_select->LSUB_NAME ?></td>
 					</tr>
 					<tr>
 						<td>วันที่ทำสัญญา</td>
