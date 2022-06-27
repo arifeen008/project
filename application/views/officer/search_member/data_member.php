@@ -2,7 +2,7 @@
 include_once("application/libraries/Thaidate.php");
 ?>
 <div class="col-lg-9">
-	<div class="accordion my-3" id="accordionPanelsStayOpenExample">
+	<div class="accordion my-3">
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="headingOne">
 				<button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -10,7 +10,7 @@ include_once("application/libraries/Thaidate.php");
 				</button>
 			</h2>
 			<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
-				<div class="accordion-body" style="font-family: 'Sarabun';color: black;">
+				<div class="accordion-body">
 					<div class="row">
 						<div class="col-md-6 my-2">
 							ชื่อ : <?php echo $data_member->FNAME ?>
