@@ -305,11 +305,23 @@ class Officer_model extends CI_Model
 	// เงินหุ้น
 	public function stock_select($mem_id, $branch_number)
 	{
-		$this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR');
+		$this->db->select('SHR_MEM.MEM_ID,BK_M_BRANCH.BR_NAME,SHR_MEM.SHR_SUM_BTH,SHR_MEM.POINT_SHR,WEL_H_MEMBER.MEM_AGE_OLD');
 		$this->db->where('SHR_MEM.MEM_ID', $mem_id);
 		$this->db->where('SHR_MEM.BR_NO', $branch_number);
 		$this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = SHR_MEM.BR_NO');
+		$this->db->join('WEL_H_MEMBER', 'WEL_H_MEMBER.BR_NO = SHR_MEM.BR_NO AND WEL_H_MEMBER.MEM_ID = SHR_MEM.MEM_ID');
 		$query = $this->db->get('SHR_MEM');
+		return $query->row();
+	}
+
+	// อายุการเป็นสมาชิก
+	public function stock_age($mem_id, $branch_number)
+	{
+		$this->db->select_sum('SHR_ADV_COUNT');
+		$this->db->where('MEM_ID', $mem_id);
+		$this->db->where('BR_NO', $branch_number);
+		$this->db->where('TMP_DATE_REC >=', '2019/07/01');
+		$query = $this->db->get('SHR_T_SHARE');
 		return $query->row();
 	}
 	// รายละเอียดเงินหุ้น

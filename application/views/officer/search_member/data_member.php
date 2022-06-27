@@ -192,12 +192,14 @@ include_once("application/libraries/Thaidate.php");
 								<td>เลขที่สมาชิก</td>
 								<td>สาขาที่สังกัด</td>
 								<td>เงินคงเหลือ</td>
+								<td>อายุการเป็นสมาชิก</td>
 								<td>คะแนนสะสมคงเหลือ</td>
 							</tr>
 							<tr class="text-center">
 								<td><?= $stock_select->MEM_ID ?></td>
 								<td><?= $stock_select->BR_NAME ?></td>
 								<td><?= number_format($stock_select->SHR_SUM_BTH, 2) ?></td>
+								<td><?= $stock_select->MEM_AGE_OLD+$stock_age->SHR_ADV_COUNT.' เดือน' ?></td>
 								<td><?= number_format($stock_select->POINT_SHR, 2)  ?></td>
 							</tr>
 						</table>
