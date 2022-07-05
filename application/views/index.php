@@ -1,9 +1,6 @@
  <?php include_once("application/libraries/thaidate-functions.php");
 	include_once("application/libraries/Thaidate.php");
-	$isActive = 1;
-	$isActive2 = 1;
-	$isActive3 = 1;
-	$isActive4 = 1; ?>
+	?>
  <style>
  	html,
  	body {
@@ -13,7 +10,6 @@
 
  	.transaction {
  		display: -webkit-box;
- 		/* max-width: 200px; */
  		-webkit-line-clamp: 2;
  		-webkit-box-orient: vertical;
  		overflow: hidden;
@@ -203,7 +199,8 @@
  									<?php } ?>
  								</div>
  								<div class="carousel-inner">
- 									<?php foreach ($news_information as $row) { ?>
+ 									<?php $isActive = 1;
+										foreach ($news_information as $row) { ?>
  										<div class="carousel-item <?php echo (($isActive == "1") ? "active" : "") ?>">
  											<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
  												<img src="<?php echo base_url('uploads/' . $row->picturename) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picturename ?>" />
@@ -236,7 +233,8 @@
  									<?php } ?>
  								</div>
  								<div class="carousel-inner">
- 									<?php foreach ($news_welfare as $row) { ?>
+ 									<?php $isActive2 = 1;
+										foreach ($news_welfare as $row) { ?>
  										<div class="carousel-item <?php echo (($isActive2 == "1") ? "active" : "") ?>">
  											<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
  												<img src="<?php echo base_url('uploads/' . $row->picturename) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picturename ?>" />
@@ -269,7 +267,8 @@
  									<?php } ?>
  								</div>
  								<div class="carousel-inner">
- 									<?php foreach ($news_credit as $row) { ?>
+ 									<?php $isActive3 = 1;
+										foreach ($news_credit as $row) { ?>
  										<div class="carousel-item <?php echo (($isActive3 == "1") ? "active" : "") ?>">
  											<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
  												<img src="<?php echo base_url('uploads/' . $row->picturename) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picturename ?>" />
@@ -302,7 +301,8 @@
  									<?php } ?>
  								</div>
  								<div class="carousel-inner">
- 									<?php foreach ($news_foundation as $row) { ?>
+ 									<?php $isActive4 = 1;
+										foreach ($news_foundation as $row) { ?>
  										<div class="carousel-item <?php echo (($isActive4 == "1") ? "active" : "") ?>">
  											<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card">
  												<img src="<?php echo base_url('uploads/' . $row->picturename) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picturename ?>" />
