@@ -4,7 +4,6 @@ include_once("application/libraries/Thaidate.php");
 <style>
 	.transaction {
 		display: -webkit-box;
-		/* max-width: 200px; */
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
