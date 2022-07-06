@@ -83,7 +83,7 @@
  </div>
  <div class="container">
  	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/banner-อิสติกอมะฮ.gif') ?>" class="w-100" />
+ 		<img src="<?php echo base_url('picture/375-1.gif') ?>" class="w-100" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
  			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><?php echo lang('banner_detail') ?></div>
  		</div>
@@ -92,7 +92,7 @@
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/315-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/315-1.jpg') ?>" class="w-100" /></div>
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/375.jpg') ?>" data-mdb-img="<?php echo base_url('picture/375.jpg') ?>" class="w-100" /></div>
  				</div>
  			</div>
  		</div>
