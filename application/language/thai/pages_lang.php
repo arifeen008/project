@@ -64,7 +64,7 @@ $lang['news_foundation'] = 'มูลนิธิษะกอฟะฮ';
 $lang['news_news'] = 'ข่าวสาร';
 $lang['news_online_journal'] = 'วารสารออนไลน์';
 // banner
-$lang['banner_detail'] = 'See detail';
+$lang['banner_detail'] = 'ดูรายละเอียด';
 // Organization
 $lang['department_of_Lands'] = 'กรมที่ดิน';
 $lang['ministry_of_agriculture_and_cooperatives'] = 'กระทรวงเกษตรและสหกรณ์';
