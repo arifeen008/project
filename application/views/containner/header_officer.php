@@ -12,7 +12,7 @@
 </style>
 <nav class="navbar navbar-expand-lg gradient-custom sticky-top">
 	<div class="container-fluid">
-		<div class="collapse navbar-collapse" id="navbarCenteredExample">
+		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<div class="navbar-brand" href="#">
 					<h4 class="text-dark">เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
@@ -34,6 +34,5 @@
 				</li>
 			</span>
 		</ul>
-
 	</div>
 </nav>
