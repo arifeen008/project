@@ -1,4 +1,4 @@
-<div class="col-lg-9">
+<main id="content">
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h1 class="card-title border-bottom">รายชื่อสมาชิกที่ค้นหา</h1>
@@ -29,4 +29,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</main>

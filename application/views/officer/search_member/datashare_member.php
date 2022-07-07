@@ -2,7 +2,7 @@
 include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-<div class="col-lg-9">
+<main id="content">
 	<div class="card my-3">
 		<div class="card-body text-dark">
 			<h1 class="card-title border-bottom">ข้อมูลหุ้น</h1>
@@ -49,4 +49,4 @@ include_once("application/libraries/Thaidate.php");
 			</div>
 		</div>
 	</div>
-</div>
+</main>

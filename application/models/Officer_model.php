@@ -648,7 +648,7 @@ class Officer_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadFileCredit($mem_id, $fname, $lname, $fullcont_id,  $year, $branch, $type, $file_name, $path, $username, $date)
+	public function upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$data = array(
@@ -656,9 +656,9 @@ class Officer_model extends CI_Model
 			'fname' => $fname,
 			'lname' => $lname,
 			'fullcont_id' => $fullcont_id,
+			'branch_id' => $branch_id,
+			'credit_id' => $credit_id,
 			'year' => $year,
-			'branch' => $branch,
-			'type' => $type,
 			'file_name' => $file_name,
 			'path' => $path,
 			'name_upload' => $username,
@@ -667,32 +667,35 @@ class Officer_model extends CI_Model
 		$db2->insert('credit_upload', $data);
 	}
 
-	public function searchCredit($mem_id, $fname, $lname, $fullcont_id, $year, $branch, $type)
+	public function search_credit($mem_id, $fname, $lname, $fullcont_id, $year, $branch_id, $credit_id)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->like('mem_id', $mem_id);
-		$db2->like('fname', $fname);
-		$db2->like('lname', $lname);
-		$db2->like('fullcont_id', $fullcont_id);
-		$db2->where('year', $year);
-		$db2->where('branch', $branch);
-		$db2->where('type', $type);
+		$db2->select('credit_upload.id_credit,credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,credit_upload.path,credit_upload.name_upload,credit_upload.date_upload,credit_upload.year,branch_name.name_branch,credit_type.credit_name');
+		$db2->where('credit_upload.mem_id', $mem_id);
+		$db2->like('credit_upload.fname', $fname);
+		$db2->like('credit_upload.lname', $lname);
+		$db2->like('credit_upload.fullcont_id', $fullcont_id);
+		$db2->where('credit_upload.year', $year);
+		$db2->where('credit_upload.branch_id', $branch_id);
+		$db2->where('credit_upload.credit_id', $credit_id);
+		$db2->join('credit_type', 'credit_type.credit_id = credit_upload.credit_id');
+		$db2->join('branch_name', 'branch_name.branch_id = credit_upload.branch_id');
 		$result = $db2->get('credit_upload');
 		return $result->result();
 	}
 
-	public function select_credit($credit_id)
+	public function select_credit($id_credit)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->where('credit_id', $credit_id);
+		$db2->where('id_credit ', $id_credit);
 		$result = $db2->get('credit_upload');
 		return $result->row();
 	}
 
-	public function delete_credit($credit_id)
+	public function delete_credit($id_credit)
 	{
 		$db2 = $this->load->database('db2', TRUE);
-		$db2->where('credit_id', $credit_id);
+		$db2->where('id_credit ', $id_credit);
 		$result = $db2->delete('credit_upload');
 		return $result;
 	}

@@ -616,9 +616,9 @@ class Officer extends CI_Controller
 		$username = $this->session->userdata('USER_NAME');
 		$lcon_id = $this->input->post('lcon_id');
 		$year = $this->input->post('year');
-		$branch = $this->input->post('branch');
-		$type = $this->input->post('type');
-		switch ($type) {
+		$branch_id = $this->input->post('branch_id');
+		$credit_id = $this->input->post('credit_id');
+		switch ($credit_id) {
 			case "1":
 				$precis_type = "ฉ.";
 				break;
@@ -644,7 +644,7 @@ class Officer extends CI_Controller
 		$fullcont_id = $precis_type . $lcon_id . '/' . $year;
 		$new_name = $_FILES["userfiles"]['name'];
 		$config['file_name'] = $new_name;
-		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
+		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
 		$config['allowed_types']        = 'pdf';
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
@@ -654,9 +654,9 @@ class Officer extends CI_Controller
 			redirect('officer/uploadcreditfile', 'refresh');
 		} else {
 			$file_name = $this->upload->data('file_name');
-			$path = 'file/credit_folder/' . $year . '/' . $branch . '/' . $type;
+			$path = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
 			$date = date('Y-m-d');
-			$result = $this->officer_model->uploadFileCredit($mem_id, $fname, $lname, $fullcont_id,  $year, $branch, $type, $file_name, $path, $username, $date);
+			$result = $this->officer_model->upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
@@ -667,20 +667,20 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function searchcredit()
+	public function search_credit()
 	{
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$fullcont_id = $this->input->post('fullcont_id');
 		$year = $this->input->post('year');
-		$branch = $this->input->post('branch');
-		$type = $this->input->post('type');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['result'] = $this->officer_model->searchCredit($mem_id, $fname, $lname, $fullcont_id, $year, $branch, $type);
-		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$branch_id = $this->input->post('branch_id');
+		$credit_id = $this->input->post('credit_id');	
+		$user_id = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->officer_model->search_credit($mem_id, $fname, $lname, $fullcont_id, $year, $branch_id, $credit_id);
+		$title['title'] = "ค้นหาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
@@ -688,15 +688,15 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function delete_credit($credit_id)
+	public function delete_credit($id_credit )
 	{
-		$result = $this->officer_model->select_credit($credit_id);
+		$result = $this->officer_model->select_credit($id_credit );
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
 				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			} else {
-				$this->officer_model->delete_credit($credit_id);
+				$this->officer_model->delete_credit($id_credit );
 				echo "<script>alert('ลบสำเร็จ');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			}

@@ -1,18 +1,13 @@
-<style>
+<!-- <style>
 	.gradient-custom {
-		/* fallback for old browsers */
 		background: #ffffff;
-
-		/* Chrome 10-25, Safari 5.1-6 */
 		background: -webkit-linear-gradient(to top, #ffffff, #25d321);
-
-		/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		background: linear-gradient(to top, #ffffff, #25d321)
 	}
 </style>
 <nav class="navbar navbar-expand-lg gradient-custom sticky-top">
 	<div class="container-fluid">
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse" id="navbarCenteredExample">
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<div class="navbar-brand" href="#">
 					<h4 class="text-dark">เจ้าหน้าที่ระดับ <?php echo $LEVEL_CODE ?></h4>
@@ -35,4 +30,26 @@
 			</span>
 		</ul>
 	</div>
-</nav>
+</nav> -->
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+		<div class="container-fluid">
+			<button data-mdb-toggle="sidenav" data-mdb-target="#sidenav" class="btn shadow-0 p-0 me-3 d-block d-xxl-none" aria-controls="#sidenav" aria-haspopup="true">
+				<i class="fas fa-bars fa-lg"></i>
+			</button>
+			<ul class="navbar-nav ms-auto d-flex flex-row">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+						<div class="text-dark"><?php echo $USER_NAME ?><i class="fas fa-user mx-3" loading="lazy"></i></div>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+						<li><a class="dropdown-item" href="#">โปรไฟล์ของฉัน</a></li>
+						<li><a class="dropdown-item" href="#">ตั้งค่า</a></li>
+						<li><a class="dropdown-item" href="<?php echo site_url('officer/logout_officer') ?>">ออกจากระบบ</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>

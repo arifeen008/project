@@ -1,21 +1,23 @@
-<div class="col-lg-9">
-	<div class="card my-3">
-		<b class="text-center text-dark h2 my-3">ข้อบังคับสหกรณ์ปี 2565</b>
-		<div class="row">
-			<div class="col-md-12 mb-2">
-				<div class="card">
-					<a href="<?php echo base_url('file/cooperative_rules/ข้อบังคับสหกรณ์(รวมทุกฉบับ).pdf'); ?>" target="_blank" class="btn btn-outline-dark btn-lg mx-2" data-mdb-ripple-color="#000000">
-						<div class="d-flex justify-content-between">
-							<b class="text-dark">ข้อบังคับสหกรณ์(รวมทุกฉบับ).pdf</b>
-							<i class="fas fa-download ms-1"></i>
-						</div>
-					</a>
-				</div>
-				<div class="card mt-2">
-					<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b>ระเบียบสหกรณ์</b></p>
-					<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/haqcj/sfqo/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+<main id="content" style="margin-top: 10px">
+	<div class="container pt-4 pt-lg-5">
+		<div class="card my-3">
+			<b class="text-center text-dark h2 my-3">ข้อบังคับสหกรณ์ปี 2565</b>
+			<div class="row">
+				<div class="col-md-12 mb-2">
+					<div class="card">
+						<a href="<?php echo base_url('file/cooperative_rules/ข้อบังคับสหกรณ์(รวมทุกฉบับ).pdf'); ?>" target="_blank" class="btn btn-outline-dark btn-lg mx-2" data-mdb-ripple-color="#000000">
+							<div class="d-flex justify-content-between">
+								<b class="text-dark">ข้อบังคับสหกรณ์(รวมทุกฉบับ).pdf</b>
+								<i class="fas fa-download ms-1"></i>
+							</div>
+						</a>
+					</div>
+					<div class="card mt-2">
+						<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b>ระเบียบสหกรณ์</b></p>
+						<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/haqcj/sfqo/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</main>

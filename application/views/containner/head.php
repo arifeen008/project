@@ -12,6 +12,5 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<?php header("Cache-Control: public, max-age=1000, s-maxage=1000"); ?>
 </head>
