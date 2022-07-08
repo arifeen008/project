@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href=<?php echo base_url('mdb5pro/css/mdb.min.css'); ?> type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 	<?php header("Cache-Control: public, max-age=1000, s-maxage=1000"); ?>
 </head>
