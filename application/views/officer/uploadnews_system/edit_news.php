@@ -3,7 +3,7 @@
 		<div class="card my-3">
 			<div class="card-body text-dark">
 				<h5 class="card-title border-bottom">อัพโหลดข่าวสาร</h5>
-				<form action="<?php echo site_url('officer/updatenews') ?>" method="post" class="row g-3">
+				<form action="<?php echo site_url('officer/update_news') ?>" method="post" class="row g-3">
 					<div class="col-md-4">
 						<div class="form-outline">
 							<input type="text" name="title" id="form12" value="<?php echo $title ?>" class="form-control" />

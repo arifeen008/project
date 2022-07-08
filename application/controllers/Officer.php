@@ -5,7 +5,6 @@ class Officer extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		include('application/helpers/sweetalert.php');
 		$this->load->model('officer_model');
 	}
 
@@ -216,7 +215,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/data_member", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_data_member");
 	}
 
 	public function account_details($account_number)
@@ -295,107 +294,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	// public function searchreport_member()
-	// {
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$branch_number = $this->input->post('branch_number');
-	// 	$start = $this->input->post('start');
-	// 	$to = $this->input->post('to');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->searchreport_member($branch_number, $start, $to);
-	// 	$data['variable'] = array(
-	// 		'branch_number' => $branch_number,
-	// 		'start' => $start,
-	// 		'to' => $to
-	// 	);
-	// 	$title['title'] = "รายงานสมาชิกหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);		
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/report_member_system/searchreport_member", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function reportexcel_member($branch_number, $start, $to)
-	// {
-	// 	$this->load->library('excel');
-	// 	$object = new PHPExcel();
-	// 	$object->setActiveSheetIndex(0);
-	// 	$table_columns = array("สาขา", "ชื่อ", "สกุล", "จำนวนเงินหุ้น", "จำนวนเงินฝาก", "เบอร์โทร");
-	// 	$column = 0;
-	// 	foreach ($table_columns as $field) {
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
-	// 		$column++;
-	// 	}
-	// 	$data = $this->officer_model->searchreport_member($branch_number, $start, $to);
-	// 	$excel_row = 2;
-
-	// 	foreach ($data->result() as $row) {
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->BR_NAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->FNAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->LNAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, number_format($row->SHR_SUM_BTH, 2));
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, number_format($row->BALANCE, 2));
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->MOBILE_TEL);
-	// 		$excel_row++;
-	// 	}
-	// 	$object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
-	// 	header('Content-Type: application/vnd.ms-excel');
-	// 	header('Content-Disposition: attachment;filename="Export Data.xls"');
-	// 	$object_writer->save('php://output');
-	// }
-
-	// public function searchreport_member_allbranch()
-	// {
-	// 	$user_id = $this->session->userdata('USER_ID');
-	// 	$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-	// 	$start = $this->input->post('start');
-	// 	$to = $this->input->post('to');
-	// 	$data_officer = $this->officer_model->data_officer($user_id);
-	// 	$data['result'] = $this->officer_model->searchreport_member_allbranch($start, $to);
-	// 	$data['variable'] = array(
-	// 		'start' => $start,
-	// 		'to' => $to
-	// 	);
-	// 	$title['title'] = "รายงานสมาชิกหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-	// 	$this->load->view("containner/head", $title);
-	// 	$this->load->view("containner/header_officer", $data_officer);		
-	// 	$this->load->view("containner/sidebar_officer", $level_code);
-	// 	$this->load->view("officer/report_member_system/searchreport_member_allbranch", $data);
-	// 	$this->load->view("containner/script");
-	// }
-
-	// public function reportexcel_member_allbranch($start, $to)
-	// {
-	// 	$this->load->library('excel');
-	// 	$object = new PHPExcel();
-	// 	$object->setActiveSheetIndex(0);
-	// 	$table_columns = array("สาขา", "ชื่อ", "สกุล", "จำนวนเงินหุ้น", "จำนวนเงินฝาก", "เบอร์โทร");
-	// 	$column = 0;
-	// 	foreach ($table_columns as $field) {
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
-	// 		$column++;
-	// 	}
-	// 	$data = $this->officer_model->searchreport_member_allbranch($start, $to);
-	// 	$excel_row = 2;
-
-	// 	foreach ($data->result() as $row) {
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->BR_NAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->FNAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->LNAME);
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, number_format($row->SHR_SUM_BTH, 2));
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, number_format($row->BALANCE, 2));
-	// 		$object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->MOBILE_TEL);
-	// 		$excel_row++;
-	// 	}
-	// 	$object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel5');
-	// 	header('Content-Type: application/vnd.ms-excel');
-	// 	header('Content-Disposition: attachment;filename="Export Data.xls"');
-	// 	$object_writer->save('php://output');
-	// }
-
-	public function newsupload()
+	public function upload_news()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
@@ -404,8 +303,8 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/newsupload_system/newsupload");
-		$this->load->view("containner/script");
+		$this->load->view("officer/uploadnews_system/upload_news");
+		$this->load->view("containner/script_news");
 	}
 
 	public function uploadnews_system()
@@ -413,12 +312,12 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data = $this->officer_model->data_officer($USER_ID);
-		$listnews['result'] = $this->officer_model->get_news_upload();
+		$table_news['result'] = $this->officer_model->get_news_upload();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/newsupload_system/listnews", $listnews);
+		$this->load->view("officer/uploadnews_system/table_news", $table_news);
 		$this->load->view("containner/script");
 	}
 
@@ -476,7 +375,7 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function deletenews($newsnumber)
+	public function delete_news($newsnumber)
 	{
 		$result = $this->officer_model->deletenews($newsnumber);
 		if ($result) {
@@ -497,7 +396,7 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function editnews($newsnumber)
+	public function edit_news($newsnumber)
 	{
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
@@ -507,11 +406,11 @@ class Officer extends CI_Controller
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/newsupload_system/editnews", $news);
-		$this->load->view("containner/script");
+		$this->load->view("officer/uploadnews_system/edit_news", $news);
+		$this->load->view("containner/script_news");
 	}
 
-	public function updatenews()
+	public function update_news()
 	{
 		$newsnumber = $this->input->post('newsnumber');
 		$title = $this->input->post('title');

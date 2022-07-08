@@ -70,10 +70,10 @@ include_once("application/libraries/Thaidate.php");
 					<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
 						<div class="accordion-body">
 							<div class="form-outline mb-4">
-								<input type="text" class="form-control" id="datatable-search-input" />
+								<input type="text" class="form-control" id="searchAccountdeposit" />
 								<label class="form-label" for="datatable-search-input">ค้นหาชื่อบัญชี</label>
 							</div>
-							<div id="datatable" class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+							<div id="datatableDeposit" class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
 								<table>
 									<thead>
 										<tr>
