@@ -2,8 +2,8 @@
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
 			<div class="card-body text-dark">
-				<h1 class="card-title border-bottom">รายชื่อสมาชิกที่ค้นหา</h1>
-				<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+				<b class="card-title h2">รายชื่อสมาชิกที่ค้นหา</b>
+				<div class="datatable my-3" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>
 						<thead>
 							<tr>

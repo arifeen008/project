@@ -262,38 +262,6 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
-	public function list_datashare_member()
-	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$fname = $this->input->post('fname');
-		$lname = $this->input->post('lname');
-		$branch_number = $this->input->post('branch_number');
-		$data['result'] = $this->officer_model->list_datashare_member($fname, $lname, $branch_number);
-		$title['title'] = "รายชื่อสมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/search_member/list_datashare_member", $data);
-		$this->load->view("containner/script");
-	}
-
-	public function datashare_member($mem_id, $branch_number)
-	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['resume'] = $this->officer_model->share_member($mem_id, $branch_number);
-		$data['result'] = $this->officer_model->datashare_member($mem_id, $branch_number);
-		$title['title'] = "ข้อมูลหุ้น สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/search_member/datashare_member", $data);
-		$this->load->view("containner/script");
-	}
-
 	public function upload_news()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');

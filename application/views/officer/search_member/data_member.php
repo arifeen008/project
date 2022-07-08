@@ -73,7 +73,7 @@ include_once("application/libraries/Thaidate.php");
 								<input type="text" class="form-control" id="searchAccountdeposit" />
 								<label class="form-label" for="datatable-search-input">ค้นหาชื่อบัญชี</label>
 							</div>
-							<div id="datatableDeposit" class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+							<div id="datatableDeposit" class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 								<table>
 									<thead>
 										<tr>
@@ -106,7 +106,7 @@ include_once("application/libraries/Thaidate.php");
 					</h2>
 					<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
 						<div class="accordion-body">
-							<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+							<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 								<table>
 									<thead>
 										<tr>
@@ -147,7 +147,7 @@ include_once("application/libraries/Thaidate.php");
 					</h2>
 					<div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
 						<div class="accordion-body">
-							<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+							<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 								<table>
 									<thead>
 										<tr>
@@ -204,7 +204,7 @@ include_once("application/libraries/Thaidate.php");
 									<td><?= number_format($stock_select->POINT_SHR, 2)  ?></td>
 								</tr>
 							</table>
-							<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+							<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 								<table>
 									<thead>
 										<tr>

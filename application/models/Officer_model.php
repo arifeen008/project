@@ -20,29 +20,7 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 
-	// public function data_member($mem_id, $branch_number)
-	// {
-	// 	$this->db->select('MEM_ID,BR_NO,FNAME,LNAME');
-	// 	$this->db->where('MEM_ID', $mem_id);
-	// 	$this->db->where('BR_NO', $branch_number);
-	// 	$query = $this->db->get('MEM_H_MEMBER');
-	// 	return $query->row();
-	// }
-
-	// public function depositreport_summary($startdate, $enddate, $user_id, $branch_number)
-	// {
-	// 	$this->db->select('F_DATE,F_DEP,F_WDL,F_BALANCE');
-	// 	$this->db->where('USER_ID', $user_id);
-	// 	$this->db->where('F_BRNO', $branch_number);
-	// 	$this->db->where('F_DATE >=', $startdate);
-	// 	$this->db->where('F_DATE <=', $enddate);
-	// 	$this->db->group_by('F_DATE');
-	// 	$this->db->order_by('F_DATE', 'DESC');
-	// 	$result = $this->db->get('BK_T_FINANCE');
-	// 	return $result;
-	// }
-
-	// ดึงข้อมูลเงินฝากสมาชิก
+	// ดึงข้อมูลบัญชีเงินฝากสมาชิก
 	public function deposit_member($mem_id, $branch_number)
 	{
 		$this->db->select('ACCOUNT_NO,ACCOUNT_NAME,BALANCE');
@@ -51,7 +29,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('BK_H_SAVINGACCOUNT');
 		return $result;
 	}
-	// รายละเอียดบัญชี
+	// รายละเอียดบัญชีเงินฝาก
 	public function account_details($account_number)
 	{
 		$this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
@@ -89,32 +67,32 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
-	public function listcredit_member($mem_id, $branch_number, $fname, $lname)
-	{
-		$this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
-		$this->db->like('MEM_H_MEMBER.MEM_ID', $mem_id);
-		$this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
-		$this->db->like('MEM_H_MEMBER.FNAME', $fname);
-		$this->db->like('MEM_H_MEMBER.LNAME', $lname);
-		$this->db->join('BK_M_BRANCH', 'MEM_H_MEMBER.BR_NO = BK_M_BRANCH.BR_NO');
-		$this->db->order_by('MEM_H_MEMBER.FNAME', 'ASC');
-		$result = $this->db->get('MEM_H_MEMBER');
-		return $result;
-	}
+	// public function listcredit_member($mem_id, $branch_number, $fname, $lname)
+	// {
+	// 	$this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
+	// 	$this->db->like('MEM_H_MEMBER.MEM_ID', $mem_id);
+	// 	$this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
+	// 	$this->db->like('MEM_H_MEMBER.FNAME', $fname);
+	// 	$this->db->like('MEM_H_MEMBER.LNAME', $lname);
+	// 	$this->db->join('BK_M_BRANCH', 'MEM_H_MEMBER.BR_NO = BK_M_BRANCH.BR_NO');
+	// 	$this->db->order_by('MEM_H_MEMBER.FNAME', 'ASC');
+	// 	$result = $this->db->get('MEM_H_MEMBER');
+	// 	return $result;
+	// }
 
-	public function credit_officer($mem_id, $branch_number)
-	{
-		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
-		$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
-		$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
-		$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
-		$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
-		$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
-		$result = $this->db->get('LOAN_M_CONTACT');
-		return $result;
-	}
-
+	// public function credit_officer($mem_id, $branch_number)
+	// {
+	// 	$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.BR_NO,LOAN_M_CONTACT.CODE,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
+	// 	$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
+	// 	$this->db->where('LOAN_M_REGISTER.MEM_ID', $mem_id);
+	// 	$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
+	// 	$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '1');
+	// 	$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
+	// 	$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
+	// 	$result = $this->db->get('LOAN_M_CONTACT');
+	// 	return $result;
+	// }
+	// สินเชื่อที่เปิด 
 	public function opened_loan_select($code, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
@@ -126,7 +104,7 @@ class Officer_model extends CI_Model
 		$query = $this->db->get('LOAN_M_CONTACT');
 		return $query->row();
 	}
-
+	// รายละเอียดสินเชื่อที่เปิดอยู่ 
 	public function opened_loan_details($code, $branch_number)
 	{
 		$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
@@ -137,7 +115,7 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('LOAN_M_PAYDEPT');
 		return $result;
 	}
-
+	//  สินเชื่อที่ปิดแล้ว 
 	public function closed_loan_select($code, $branch_number)
 	{
 		$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT,LOAN_M_SUB_NAME.LSUB_NAME');
@@ -150,6 +128,7 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 
+	// รายละเอียดสินเชื่อที่ปิดไปแล้ว 
 	public function closed_loan_details($code, $branch_number)
 	{
 		$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
@@ -161,6 +140,7 @@ class Officer_model extends CI_Model
 		return $result;
 	}
 
+	// เงินปันผล 
 	public function dividend_member($mem_id, $branch_number)
 	{
 		$this->db->select('SHR_PAY_DIVIDEND.SHR_YEAR,SHR_PAY_DIVIDEND.SHR_SUMUP_DIV,SHR_PAY_DIVIDEND.SHR_OUT_DATE,SHR_PAY_DIVIDEND.BR_NO_PAY,BK_M_BRANCH.BR_NAME');
@@ -172,135 +152,6 @@ class Officer_model extends CI_Model
 		$result = $this->db->get('SHR_PAY_DIVIDEND');
 		return $result->row();
 	}
-
-	// public function credit_officer_detail($code, $branch_number)
-	// {
-	// 	$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
-	// 	$this->db->where('LOAN_M_PAYDEPT.CODE', $code);
-	// 	$this->db->where('LOAN_M_PAYDEPT.BR_NO', $branch_number);
-	// 	$this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
-	// 	$this->db->order_by('LPD_DATE', 'ASC');
-	// 	$result = $this->db->get('LOAN_M_PAYDEPT');
-	// 	return $result;
-	// }
-
-	// public function credit_officer_select($code, $BR_NO)
-	// {
-	// 	$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
-	// 	$this->db->where('LOAN_M_CONTACT.BR_NO', $BR_NO);
-	// 	$this->db->where('LOAN_M_REGISTER.BR_NO', $BR_NO);
-	// 	$this->db->where('LOAN_M_REGISTER.CODE', $code);
-	// 	$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-	// 	$query = $this->db->get('LOAN_M_CONTACT');
-	// 	return $query->row();
-	// }
-
-	// public function checkcredit_officer($mem_id, $branch_number)
-	// {
-	// 	$this->db->select('LCONT_ID,L_TYPE_CODE,LSUB_CODE,LCONT_DATE,LCONT_APPROVE_SAL,LCONT_AMOUNT_SAL,CODE,BR_NO');
-	// 	$this->db->where('LOAN_M_CONTACT.MEM_ID', $mem_id);
-	// 	$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
-	// 	$this->db->where('LOAN_M_CONTACT.LCONT_STATUS_FLAG', '4');
-	// 	$this->db->order_by('LCONT_DATE', 'ASC');
-	// 	$result = $this->db->get('LOAN_M_CONTACT');
-	// 	return $result;
-	// }
-
-	// public function checkcredit_officer_select($code, $branch_number)
-	// {
-	// 	$this->db->select('LOAN_M_CONTACT.LCONT_ID,LOAN_M_CONTACT.L_TYPE_CODE,LOAN_M_CONTACT.LSUB_CODE,LOAN_M_CONTACT.LCONT_DATE,LOAN_M_CONTACT.LCONT_APPROVE_SAL,LOAN_M_CONTACT.LCONT_AMOUNT_INST,LOAN_M_CONTACT.LCONT_AMOUNT_SAL,LOAN_M_REGISTER.END_PAYDEPT');
-	// 	$this->db->where('LOAN_M_CONTACT.BR_NO', $branch_number);
-	// 	$this->db->where('LOAN_M_REGISTER.BR_NO', $branch_number);
-	// 	$this->db->where('LOAN_M_REGISTER.CODE', $code);
-	// 	$this->db->join('LOAN_M_REGISTER', ' LOAN_M_REGISTER.CODE = LOAN_M_CONTACT.CODE ');
-	// 	$query = $this->db->get('LOAN_M_CONTACT');
-	// 	return $query->row();
-	// }
-
-	// public function checkcredit_officer_detail($code, $branch_number)
-	// {
-	// 	$this->db->select('LPD_DATE,SUM_SAL,LCONT_BAL_AMOUNT,LPD_NUM_INST');
-	// 	$this->db->where('LOAN_M_PAYDEPT.CODE', $code);
-	// 	$this->db->where('LOAN_M_PAYDEPT.BR_NO', $branch_number);
-	// 	$this->db->where('LOAN_M_PAYDEPT.LPD_NUM_INST >', '0');
-	// 	$this->db->order_by('LPD_DATE', 'ASC');
-	// 	$result = $this->db->get('LOAN_M_PAYDEPT');
-	// 	return $result;
-	// }
-
-	// public function deposittype()
-	// {
-	// 	$this->db->select('ACC_TYPE,ACC_DESC');
-	// 	$this->db->order_by('ACC_TYPE', 'ASC');
-	// 	$result = $this->db->get('BK_M_ACC_TYPE');
-	// 	return $result;
-	// }
-
-	// public function sum_deposit_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
-	// {
-	// 	$this->db->select_sum('BK_T_FINANCE.F_DEP');
-	// 	$this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-	// 	$this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-	// 	$this->db->where('BK_T_FINANCE.F_DATE >=', $startdate);
-	// 	$this->db->where('BK_T_FINANCE.F_DATE <=', $enddate);
-	// 	$this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-	// 	$this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-	// 	$this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-	// 	$this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-	// 	$this->db->order_by('BK_T_FINANCE.F_DATE', 'asc');
-	// 	$result = $this->db->get('BK_H_TELLER_CONTROL');
-	// 	return $result->row();
-	// }
-
-	// public function sum_withdraw_summary($startdate, $enddate, $USER_ID, $ACC_TYPE)
-	// {
-	// 	$this->db->select_sum('BK_T_FINANCE.F_WDL');
-	// 	$this->db->where('BK_H_TELLER_CONTROL.USER_ID', $USER_ID);
-	// 	$this->db->where('BK_H_SAVINGACCOUNT.ACC_TYPE', $ACC_TYPE);
-	// 	$this->db->where('BK_T_FINANCE.F_DATE >=', $startdate);
-	// 	$this->db->where('BK_T_FINANCE.F_DATE <=', $enddate);
-	// 	$this->db->join('BK_T_FINANCE', 'BK_T_FINANCE.USER_ID = BK_H_TELLER_CONTROL.USER_ID');
-	// 	$this->db->join('BK_H_SAVINGACCOUNT', 'BK_T_FINANCE.F_FROM_ACC = BK_H_SAVINGACCOUNT.ACCOUNT_NO');
-	// 	$this->db->join('BK_M_ACC_TYPE', 'BK_H_SAVINGACCOUNT.ACC_TYPE = BK_M_ACC_TYPE.ACC_TYPE');
-	// 	$this->db->join('BK_M_TRANSCODE', 'BK_M_TRANSCODE.TRANS_CODE = BK_T_FINANCE.TRANS_CODE');
-	// 	$this->db->order_by('BK_T_FINANCE.F_DATE', 'ASC');
-	// 	$result = $this->db->get('BK_H_TELLER_CONTROL');
-	// 	return $result->row();
-	// }
-
-	// public function list_deposit_member($account_number, $mem_id, $fname, $lname, $branch_number)
-	// {
-	// 	$this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,BK_H_SAVINGACCOUNT.ACCOUNT_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
-	// 	$this->db->like('BK_H_SAVINGACCOUNT.ACCOUNT_NO', $account_number);
-	// 	$this->db->like('MEM_H_MEMBER.MEM_ID', $mem_id);
-	// 	$this->db->like('MEM_H_MEMBER.BR_NO', $branch_number);
-	// 	$this->db->like('MEM_H_MEMBER.FNAME', $fname);
-	// 	$this->db->like('MEM_H_MEMBER.LNAME', $lname);
-	// 	$this->db->join('BK_M_BRANCH', 'BK_H_SAVINGACCOUNT.BR_NO = BK_M_BRANCH.BR_NO');
-	// 	$this->db->join('MEM_H_MEMBER', 'MEM_H_MEMBER.MEM_ID = BK_H_SAVINGACCOUNT.MEM_ID AND MEM_H_MEMBER.BR_NO = BK_H_SAVINGACCOUNT.BR_NO');
-	// 	$result = $this->db->get('BK_H_SAVINGACCOUNT');
-	// 	return $result;
-	// }
-
-	// public function deposit_member_detail($account_number)
-	// {
-	// 	$this->db->select('F_TIME,F_DEP,F_WDL,F_BALANCE');
-	// 	$this->db->where('F_FROM_ACC', $account_number);
-	// 	$this->db->order_by('F_TIME', 'ASC');
-	// 	$result = $this->db->get('BK_T_FINANCE');
-	// 	return $result;
-	// }
-
-	// public function list_datashare_member($fname, $lname, $branch_number)
-	// {
-	// 	$this->db->select('MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO,MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME');
-	// 	$this->db->like('MEM_H_MEMBER.FNAME', $fname);
-	// 	$this->db->like('MEM_H_MEMBER.LNAME', $lname);
-	// 	$this->db->where('MEM_H_MEMBER.BR_NO', $branch_number);
-	// 	$this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = MEM_H_MEMBER.BR_NO');
-	// 	$result = $this->db->get('MEM_H_MEMBER');
-	// 	return $result;
-	// }
 
 	// เงินหุ้น
 	public function stock_select($mem_id, $branch_number)
@@ -357,6 +208,7 @@ class Officer_model extends CI_Model
 	// 	return $query->row();
 	// }
 
+	// ข้อมูลสมาชิก 
 	public function personal_data_member($mem_id, $branch_number)
 	{
 		$this->db->select('FNAME,LNAME,ID_CARD,DMY_BIRTH,SEX,FATHER,MOTHER,MARRIAGE_STATUS,BLO_GROUP,ADDRESS,MOO_ADDR,TUMBOL,LINE_ID,EMAIL,MOBILE_TEL');
@@ -366,6 +218,7 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 
+	// ค้นหาข้อมูลสมาชิก 
 	public function search_data_member($id_card, $mem_id, $fname, $lname, $branch_number)
 	{
 		$this->db->select('MEM_H_MEMBER.FNAME,MEM_H_MEMBER.LNAME,BK_M_BRANCH.BR_NAME,MEM_H_MEMBER.MEM_ID,MEM_H_MEMBER.BR_NO');

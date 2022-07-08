@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
 			<div class="card-body text-dark">
-				<h1 class="card-title border-bottom">รายละเอียดสินเชื่อ</h1>
+				<b class="card-title h2">รายละเอียดสินเชื่อ <?php echo $closed_loan_select->LCONT_ID ?></b>
 				<table class="table table-borderless">
 					<tbody>
 						<tr>
@@ -40,14 +40,14 @@ include_once("application/libraries/Thaidate.php");
 						</tr>
 					</tbody>
 				</table>
-				<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+				<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>
 						<thead>
 							<tr>
-								<th>วันที่</th>
-								<th>งวดที่</th>
-								<th>ยอดชำระ</th>
-								<th>ยอดคงเหลือ</th>
+								<th data-mdb-sort="false">วันที่</th>
+								<th data-mdb-sort="false">งวดที่</th>
+								<th data-mdb-sort="false">ยอดชำระ</th>
+								<th data-mdb-sort="false">ยอดคงเหลือ</th>
 							</tr>
 						</thead>
 						<tbody>

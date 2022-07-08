@@ -7,15 +7,15 @@ include_once("application/libraries/Thaidate.php");
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
 			<div class="card-body text-dark">
-				<h1 class="card-title border-bottom">ยอดเงินในบัญชี</h1>
-				<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+				<b class="card-title h2">ยอดเงินในบัญชี</b>
+				<div class="datatable my-3" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>
 						<thead>
 							<tr>
-								<th>วันที่</th>
-								<th>เงินฝาก</th>
-								<th>เงินถอน</th>
-								<th>ยอดเงินคงเหลือ</th>
+								<th data-mdb-sort="false">วันที่</th>
+								<th data-mdb-sort="false">เงินฝาก</th>
+								<th data-mdb-sort="false">เงินถอน</th>
+								<th data-mdb-sort="false">ยอดเงินคงเหลือ</th>
 							</tr>
 						</thead>
 						<tbody>
