@@ -4,7 +4,7 @@ include_once("application/libraries/Thaidate.php");
 ?>
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
-		<div class="card my-4">
+		<div class="card my-3">
 			<h5 class="card-title text-dark">ประกาศสำนักงานใหญ่</h5>
 			<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
 				<table>

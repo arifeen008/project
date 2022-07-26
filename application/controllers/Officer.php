@@ -289,6 +289,20 @@ class Officer extends CI_Controller
 		$this->load->view("containner/script");
 	}
 
+	public function random_wheels()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "สุ่มชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("containner/head", $title);
+		$this->load->view("containner/header_officer", $data_officer);
+		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("officer/random_wheels/random_wheels");
+		$this->load->view("containner/script");
+	}
+
+
 	function upload()
 	{
 		$title = $this->input->post('title');
