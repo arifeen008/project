@@ -88,7 +88,7 @@
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/401.jpg') ?>" data-mdb-img="<?php echo base_url('picture/375.jpg') ?>" class="w-100" /></div>
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/401.jpg') ?>" data-mdb-img="<?php echo base_url('picture/401.jpg') ?>" class="w-100" /></div>
  				</div>
  			</div>
  		</div>
