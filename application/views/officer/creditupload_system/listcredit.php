@@ -7,7 +7,7 @@ $i = 1;
 		<div class="card mt-4">
 			<div class="card-body">
 				<h4 class="card-title text-dark">รายการสินเชื่อ</h4>
-				<div class="datatable" data-mdb-bordered="true" data-mdb-striped="true">
+				<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>
 						<thead>
 							<tr>
@@ -15,6 +15,8 @@ $i = 1;
 								<th data-mdb-sort="false">ปี</th>
 								<th data-mdb-sort="false">สาขา</th>
 								<th data-mdb-sort="false">ประเภท</th>
+								<th data-mdb-sort="false">ชื่อ</th>
+								<th data-mdb-sort="false">สกุล</th>
 								<th data-mdb-sort="false">ไฟล์ดาวโหลด</th>
 								<th data-mdb-sort="false">ผู้อัพโหลด</th>
 								<th data-mdb-sort="false">วันที่อัพโหลด</th>
@@ -28,6 +30,8 @@ $i = 1;
 									<td><?= $row->year   ?></td>
 									<td><?= $row->name_branch   ?></td>
 									<td><?= $row->credit_name   ?></td>
+									<td><?= $row->fname   ?></td>
+									<td><?= $row->lname   ?></td>
 									<td><a href="<?php echo site_url('officer/download_credit/' . $row->id_credit ) ?>" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 									<td><?= $row->name_upload  ?></td>
 									<td><?= thaidate('j M Y ', strtotime($row->date_Upload))  ?></td>

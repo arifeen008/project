@@ -7,7 +7,7 @@
                 </div>
                 <form action="<?php echo site_url('officer/search_credit') ?>" method="post">
                     <div class="row mt-4">
-                        <div class="col-md-12 mb-4">
+                        <!-- <div class="col-md-12 mb-4">
                             <div class="form-outline">
                                 <input type="text" id="form14" class="form-control" minlength="5" maxlength="5" name="mem_id" />
                                 <label class="form-label" for="form14">เลขที่สมาชิก</label>
@@ -27,14 +27,17 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
-                                <input type="text" id="form14" class="form-control" name="fullcont_id"/>
+                                <input type="text" id="form14" class="form-control" name="fullcont_id" />
                                 <label class="form-label" for="form14">เลขที่สัญญา</label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-6 mb-4">
                             <select class="select" name="year">
-                                <option value="2564">2564</option>
-                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                                <option value="2569">2569</option>
+                                <option value="2570">2570</option>
                             </select>
                             <label class="form-label select-label">ปีสัญญา</label>
                         </div>

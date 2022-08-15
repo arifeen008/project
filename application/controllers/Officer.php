@@ -551,16 +551,16 @@ class Officer extends CI_Controller
 	public function search_credit()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$mem_id = $this->input->post('mem_id');
-		$fname = $this->input->post('fname');
-		$lname = $this->input->post('lname');
-		$fullcont_id = $this->input->post('fullcont_id');
+		// $mem_id = $this->input->post('mem_id');
+		// $fname = $this->input->post('fname');
+		// $lname = $this->input->post('lname');
+		// $fullcont_id = $this->input->post('fullcont_id');
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
 		$credit_id = $this->input->post('credit_id');	
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->officer_model->search_credit($mem_id, $fname, $lname, $fullcont_id, $year, $branch_id, $credit_id);
+		$data['result'] = $this->officer_model->search_credit($year, $branch_id, $credit_id);
 		$title['title'] = "ค้นหาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);

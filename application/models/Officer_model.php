@@ -50,7 +50,7 @@ class Officer_model extends CI_Model
 		$this->db->join('LOAN_M_SUB_NAME', ' LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_SUB_NAME.LSUB_CODE = LOAN_M_CONTACT.LSUB_CODE');
 		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 		$result = $this->db->get('LOAN_M_CONTACT');
-		return $result;
+		return $result ;
 	}
 	// สินเชื่อที่ปิดแล้ว
 	public function closed_credit_member($mem_id, $branch_number)
@@ -433,14 +433,10 @@ class Officer_model extends CI_Model
 		$db2->insert('credit_upload', $data);
 	}
 
-	public function search_credit($mem_id, $fname, $lname, $fullcont_id, $year, $branch_id, $credit_id)
+	public function search_credit($year, $branch_id, $credit_id)
 	{
 		$db2 = $this->load->database('db2', TRUE);
 		$db2->select('credit_upload.id_credit,credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,credit_upload.path,credit_upload.name_upload,credit_upload.date_upload,credit_upload.year,branch_name.name_branch,credit_type.credit_name');
-		$db2->where('credit_upload.mem_id', $mem_id);
-		$db2->like('credit_upload.fname', $fname);
-		$db2->like('credit_upload.lname', $lname);
-		$db2->like('credit_upload.fullcont_id', $fullcont_id);
 		$db2->where('credit_upload.year', $year);
 		$db2->where('credit_upload.branch_id', $branch_id);
 		$db2->where('credit_upload.credit_id', $credit_id);

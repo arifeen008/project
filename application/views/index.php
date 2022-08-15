@@ -62,7 +62,7 @@
  </div>
  <div class="container">
  	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/325-1.jpg') ?>" class="w-100 h-75" />
+ 		<img src="<?php echo base_url('picture/325-3.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(39, 221, 42, 0.5), rgba(27, 130, 182, 0.5)100%);">
  			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal0"><?php echo lang('banner_detail') ?></div>
  		</div>
@@ -71,7 +71,7 @@
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/325.jpg') ?>" data-mdb-img="<?php echo base_url('picture/325.jpg') ?>" class="w-100" /></div>
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/325-2.jpg') ?>" data-mdb-img="<?php echo base_url('picture/325-2.jpg') ?>" class="w-100" /></div>
  				</div>
  			</div>
  		</div>

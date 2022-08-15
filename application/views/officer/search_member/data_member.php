@@ -121,6 +121,7 @@ include_once("application/libraries/Thaidate.php");
 										</tr>
 									</thead>
 									<tbody>
+									
 										<?php foreach ($opened_credit_member->result() as $row) { ?>
 											<tr>
 												<td><?= $row->LCONT_ID ?></td>
