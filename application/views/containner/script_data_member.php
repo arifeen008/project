@@ -1,5 +1,4 @@
 <script type="text/javascript" src=<?php echo base_url('mdb5pro/js/mdb.min.js') ?>></script>
-
 <script>
   const instance = new mdb.Datatable(document.getElementById('datatableDeposit'))
   document.getElementById('searchAccountdeposit').addEventListener('input', (e) => {

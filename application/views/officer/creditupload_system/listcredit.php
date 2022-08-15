@@ -34,7 +34,7 @@ $i = 1;
 									<td><?= $row->lname   ?></td>
 									<td><a href="<?php echo site_url('officer/download_credit/' . $row->id_credit ) ?>" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
 									<td><?= $row->name_upload  ?></td>
-									<td><?= thaidate('j M Y ', strtotime($row->date_Upload))  ?></td>
+									<td><?= thaidate('j M Y ', strtotime($row->date_upload))  ?></td>
 									<td>
 										<button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#exampleModal<?php echo $i ?>">
 											<i class="fas fa-dumpster"></i>
