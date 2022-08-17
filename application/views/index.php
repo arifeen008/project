@@ -47,10 +47,10 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/345-1.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3"><?php echo lang('banner_detail') ?></div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal1"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
- 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
@@ -64,10 +64,10 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/325-3.jpg') ?>" class="w-100 h-75" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(39, 221, 42, 0.5), rgba(27, 130, 182, 0.5)100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal0"><?php echo lang('banner_detail') ?></div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
- 	<div class="modal fade" id="exampleModal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
@@ -81,14 +81,48 @@
  	<div class="bg-image hover-overlay">
  		<img src="<?php echo base_url('picture/401-1.gif') ?>" class="w-100" />
  		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><?php echo lang('banner_detail') ?></div>
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3"><?php echo lang('banner_detail') ?></div>
  		</div>
  	</div>
- 	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  		<div class="modal-dialog">
  			<div class="modal-content">
  				<div class="lightbox">
  					<div class="modal-body"><img src="<?php echo base_url('picture/401.jpg') ?>" data-mdb-img="<?php echo base_url('picture/401.jpg') ?>" class="w-100" /></div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="container">
+ 	<div class="bg-image hover-overlay">
+ 		<img src="<?php echo base_url('picture/388-1.jpg') ?>" class="w-100" />
+ 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(246, 211, 101, 0.5), rgba(253, 160, 133, 0.5) 100%);">
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal4"><?php echo lang('banner_detail') ?></div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog">
+ 			<div class="modal-content">
+ 				<div class="lightbox">
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/388.jpg') ?>" data-mdb-img="<?php echo base_url('picture/388.jpg') ?>" class="w-100" /></div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="container">
+ 	<div class="bg-image hover-overlay">
+ 		<img src="<?php echo base_url('picture/389-1.jpg') ?>" class="w-100" />
+ 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(253, 203, 241, 0.5), rgba(230, 222, 233, 0.5) 100%);">
+ 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal5"><?php echo lang('banner_detail') ?></div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog">
+ 			<div class="modal-content">
+ 				<div class="lightbox">
+ 					<div class="modal-body"><img src="<?php echo base_url('picture/389.jpg') ?>" data-mdb-img="<?php echo base_url('picture/389.jpg') ?>" class="w-100" /></div>
  				</div>
  			</div>
  		</div>

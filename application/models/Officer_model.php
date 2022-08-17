@@ -442,6 +442,7 @@ class Officer_model extends CI_Model
 		$db2->where('credit_upload.credit_id', $credit_id);
 		$db2->join('credit_type', 'credit_type.credit_id = credit_upload.credit_id');
 		$db2->join('branch_name', 'branch_name.branch_id = credit_upload.branch_id');
+		$db2->order_by('date_upload', 'desc');
 		$result = $db2->get('credit_upload');
 		return $result->result();
 	}
