@@ -59,7 +59,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data['ho'] = $this->officer_model->get_internalfile_ho();
+		$data['ho'] = $this->news_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
@@ -74,7 +74,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data['code'] = $this->session->userdata('LEVEL_CODE');
-		$data['result'] = $this->officer_model->get_document();
+		$data['result'] = $this->news_model->get_document();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
@@ -112,7 +112,7 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/perfomance/';
 			$date = date('Y-m-d H:i:s');
-			$this->officer_model->uploadDocumentFile($document_name, $file_name, $path, $date);
+			$this->news_model->uploadDocumentFile($document_name, $file_name, $path, $date);
 			echo "<script>alert('Upload document success');</script>";
 			redirect('officer/performance', 'refresh');
 		}
@@ -120,7 +120,7 @@ class Officer extends CI_Controller
 
 	public function delete_document($performance_id)
 	{
-		$result = $this->officer_model->select_document($performance_id);
+		$result = $this->news_model->select_document($performance_id);
 		if ($result) {
 			if (!unlink('file/performance/' . $result->file_name)) {
 				echo "<script>alert('Delete unsuccess');</script>";
@@ -135,7 +135,7 @@ class Officer extends CI_Controller
 
 	public function download_document($performance_id)
 	{
-		$result = $this->officer_model->select_document($performance_id);
+		$result = $this->news_model->select_document($performance_id);
 		$data = file_get_contents(base_url('file/performance/' . $result->file_name));
 		force_download($result->document_name . '.xlsx', $data);
 	}
@@ -281,7 +281,7 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data = $this->officer_model->data_officer($USER_ID);
-		$table_news['result'] = $this->officer_model->news_model();
+		$table_news['result'] = $this->news_model->get_news_upload();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -400,8 +400,8 @@ class Officer extends CI_Controller
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
+		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['result'] = $this->news_model->get_internalfile_hr();
-		$data_officer = $this->news_model->data_officer($USER_ID);
 		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
@@ -421,7 +421,7 @@ class Officer extends CI_Controller
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->news_model->data_officer($USER_ID);
+		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -478,10 +478,10 @@ class Officer extends CI_Controller
 
 	public function uploadFileCredit()
 	{
+		$username = $this->session->userdata('USER_NAME');
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
-		$username = $this->session->userdata('USER_NAME');
 		$lcon_id = $this->input->post('lcon_id');
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
@@ -538,10 +538,6 @@ class Officer extends CI_Controller
 	public function search_credit()
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		// $mem_id = $this->input->post('mem_id');
-		// $fname = $this->input->post('fname');
-		// $lname = $this->input->post('lname');
-		// $fullcont_id = $this->input->post('fullcont_id');
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
 		$credit_id = $this->input->post('credit_id');	
