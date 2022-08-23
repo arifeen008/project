@@ -6,6 +6,7 @@ class Officer extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('officer_model');
+		$this->load->model('news_model');
 	}
 
 	public function login_officer()
@@ -280,7 +281,7 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data = $this->officer_model->data_officer($USER_ID);
-		$table_news['result'] = $this->officer_model->get_news_upload();
+		$table_news['result'] = $this->officer_model->news_model();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -288,20 +289,6 @@ class Officer extends CI_Controller
 		$this->load->view("officer/uploadnews_system/table_news", $table_news);
 		$this->load->view("containner/script");
 	}
-
-	public function random_wheels()
-	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "สุ่มชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
-		$this->load->view("officer/random_wheels/random_wheels");
-		$this->load->view("containner/script");
-	}
-
 
 	function upload()
 	{
@@ -312,7 +299,7 @@ class Officer extends CI_Controller
 
 		do {
 			$newsnumber = rand(10, 10000);
-			$result = $this->officer_model->checknewsnumber($newsnumber);
+			$result = $this->news_model->check_newsnumber($newsnumber);
 			$num = $result->num_rows();
 		} while ($num > 0);
 
@@ -329,13 +316,13 @@ class Officer extends CI_Controller
 			$uploadStatus = $this->uploadFile('uploadFile');
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
-				$this->officer_model->uploadpicture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
+				$this->news_model->upload_picture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
 			} else {
 				$countErrorUploadFiles++;
 			}
 		}
 
-		$this->officer_model->uploadnews($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
+		$this->news_model->upload_news($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
 
 		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
 		redirect('officer/uploadnews_system', 'refresh');
@@ -359,14 +346,14 @@ class Officer extends CI_Controller
 
 	public function delete_news($newsnumber)
 	{
-		$result = $this->officer_model->deletenews($newsnumber);
+		$result = $this->news_model->deletenews($newsnumber);
 		if ($result) {
-			$result = $this->officer_model->selectpicture($newsnumber);
+			$result = $this->news_model->selectpicture($newsnumber);
 			if ($result) {
 				foreach ($result->result() as $row) {
 					unlink('uploads/' . $row->picturename);
 				}
-				$result = $this->officer_model->deletepicture($newsnumber);
+				$result = $this->news_model->deletepicture($newsnumber);
 				if ($result) {
 					echo "<script>alert('ลบสำเร็จ');</script>";
 					redirect('officer/uploadnews_system', 'refresh');
@@ -383,7 +370,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data = $this->officer_model->data_officer($user_id);
-		$news = $this->officer_model->selectnews($newsnumber);
+		$news = $this->news_model->selectnews($newsnumber);
 		$title['title'] = "แก้ไขข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -399,7 +386,7 @@ class Officer extends CI_Controller
 		$date = $this->input->post('date');
 		$description = $this->input->post('description');
 		$news_type = $this->input->post('news_type');
-		$result = $this->officer_model->updatenews($newsnumber, $news_type, $title, $date, $description);
+		$result = $this->news_model->updatenews($newsnumber, $news_type, $title, $date, $description);
 		if ($result) {
 			echo "<script>alert('แก้ไขเรียบร้อย');</script>";
 			redirect('officer/uploadnews_system', 'refresh');
@@ -413,8 +400,8 @@ class Officer extends CI_Controller
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
-		$data['result'] = $this->officer_model->get_internalfile_hr();
-		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$data['result'] = $this->news_model->get_internalfile_hr();
+		$data_officer = $this->news_model->data_officer($USER_ID);
 		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
@@ -425,7 +412,7 @@ class Officer extends CI_Controller
 
 	public function download_form($internal_id)
 	{
-		$result = $this->officer_model->select_form($internal_id);
+		$result = $this->news_model->select_form($internal_id);
 		$data = file_get_contents(base_url('file/inside_publish/' . $result->uploadfile));
 		force_download($result->title . '.pdf', $data);
 	}
@@ -434,7 +421,7 @@ class Officer extends CI_Controller
 	{
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$data = $this->news_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data);
@@ -457,7 +444,7 @@ class Officer extends CI_Controller
 			redirect('officer/internal_announcement', 'refresh');
 		} else {
 			$uploadFile = $this->upload->data('file_name');
-			$this->officer_model->upload_internalfile($title, $date, $uploadFile, $type_announcement);
+			$this->news_model->upload_internalfile($title, $date, $uploadFile, $type_announcement);
 			echo "<script>alert('import success');</script>";
 			redirect('officer/internal_announcement', 'refresh');
 		}
@@ -537,7 +524,7 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
 			$date = date('Y-m-d');
-			$result = $this->officer_model->upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
+			$result = $this->news_model->upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
@@ -560,7 +547,7 @@ class Officer extends CI_Controller
 		$credit_id = $this->input->post('credit_id');	
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->officer_model->search_credit($year, $branch_id, $credit_id);
+		$data['result'] = $this->news_model->search_credit($year, $branch_id, $credit_id);
 		$title['title'] = "ค้นหาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
@@ -571,13 +558,13 @@ class Officer extends CI_Controller
 
 	public function delete_credit($id_credit )
 	{
-		$result = $this->officer_model->select_credit($id_credit );
+		$result = $this->news_model->select_credit($id_credit );
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
 				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			} else {
-				$this->officer_model->delete_credit($id_credit );
+				$this->news_model->delete_credit($id_credit );
 				echo "<script>alert('ลบสำเร็จ');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			}
@@ -586,7 +573,7 @@ class Officer extends CI_Controller
 
 	public function download_credit($credit_id)
 	{
-		$result = $this->officer_model->select_credit($credit_id);
+		$result = $this->news_model->select_credit($credit_id);
 		$data = file_get_contents(base_url($result->path . '/' . $result->file_name));
 		force_download($result->fullcont_id . '.pdf', $data);
 	}
@@ -596,7 +583,7 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
-		$data['result'] = $this->officer_model->get_asset();
+		$data['result'] = $this->news_model->get_asset();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $title);
 		$this->load->view("containner/header_officer", $data_officer);
@@ -627,7 +614,7 @@ class Officer extends CI_Controller
 		$asset_type = $this->input->post('asset_type');
 		do {
 			$asset_number = rand(10, 10000);
-			$result = $this->officer_model->checkasset_number($asset_number);
+			$result = $this->news_model->checkasset_number($asset_number);
 			$num = $result->num_rows();
 		} while ($num > 0);
 		$countUploadedFiles = 0;
@@ -643,12 +630,12 @@ class Officer extends CI_Controller
 
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
-				$this->officer_model->upload_asset_picture($asset_number, $uploadStatus);
+				$this->news_model->upload_asset_picture($asset_number, $uploadStatus);
 			} else {
 				$countErrorUploadFiles++;
 			}
 		}
-		$this->officer_model->asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, date('Y-m-d H:i:s'));
+		$this->news_model->asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, date('Y-m-d H:i:s'));
 		echo "<script>alert('Import success');</script>";
 		redirect('officer/upload_asset', 'refresh');
 	}

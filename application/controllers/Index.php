@@ -6,7 +6,7 @@ class Index extends CI_Controller
 	{
 		parent::__construct();
 		check_lang();
-		$this->load->model('officer_model');
+		$this->load->model('news_model');
 	}
 
 	public function index()
@@ -15,10 +15,10 @@ class Index extends CI_Controller
 		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
 		$data['google_news'] = json_decode($news);
 		$data['covid_data'] = json_decode($covid, true);
-		$data['news_information'] = $this->officer_model->get_news_information();
-		$data['news_welfare'] = $this->officer_model->get_news_welfare();
-		$data['news_credit'] = $this->officer_model->get_news_credit();
-		$data['news_foundation'] = $this->officer_model->get_news_foundation();
+		$data['news_information'] = $this->news_model->get_news_information();
+		$data['news_welfare'] = $this->news_model->get_news_welfare();
+		$data['news_credit'] = $this->news_model->get_news_credit();
+		$data['news_foundation'] = $this->news_model->get_news_foundation();
 		$data['title'] = "สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index", $data);
@@ -29,9 +29,9 @@ class Index extends CI_Controller
 
 	public function news($newsnumber)
 	{
-		$data['data'] = $this->officer_model->get_news_data($newsnumber);
-		$data['picture'] = $this->officer_model->get_newspicture($newsnumber);
-		$data['side_data'] = $this->officer_model->get_sidenewsdata($newsnumber);
+		$data['data'] = $this->news_model->get_news_data($newsnumber);
+		$data['picture'] = $this->news_model->get_newspicture($newsnumber);
+		$data['side_data'] = $this->news_model->get_sidenewsdata($newsnumber);
 		$data['title'] = $data['data']->title . " สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
@@ -284,7 +284,7 @@ class Index extends CI_Controller
 
 	public function activity()
 	{
-		$data['result'] = $this->officer_model->get_list_activity();
+		$data['result'] = $this->news_model->get_list_activity();
 		$data['title'] = "ข่าวสาร/กิจกรรมความเคลื่อนไหว สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
@@ -385,7 +385,7 @@ class Index extends CI_Controller
 
 	public function real_estate_sale_list()
 	{
-		$data['result'] = $this->officer_model->get_list_estate();
+		$data['result'] = $this->news_model->get_list_estate();
 		$data['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
@@ -397,8 +397,8 @@ class Index extends CI_Controller
 	public function real_estate_sale($asset_number)
 	{
 		$data['title'] = "ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$data['data'] = $this->officer_model->get_asset_data($asset_number);
-		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$data['data'] = $this->news_model->get_asset_data($asset_number);
+		$data['picture'] = $this->news_model->get_assetpicture($asset_number);
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
 		$this->load->view("index/asset/real_estate_sale/real_estate_sale", $data);
@@ -408,7 +408,7 @@ class Index extends CI_Controller
 
 	public function vacant_list()
 	{
-		$data['result'] = $this->officer_model->get_list_vacant();
+		$data['result'] = $this->news_model->get_list_vacant();
 		$data['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
@@ -420,8 +420,8 @@ class Index extends CI_Controller
 	public function vacant($asset_number)
 	{
 		$data['title'] = "ที่ดินเปล่า สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$data['data'] = $this->officer_model->get_asset_data($asset_number);
-		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$data['data'] = $this->news_model->get_asset_data($asset_number);
+		$data['picture'] = $this->news_model->get_assetpicture($asset_number);
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
 		$this->load->view("index/asset/vacant/vacant", $data);
@@ -431,7 +431,7 @@ class Index extends CI_Controller
 
 	public function condo_list()
 	{
-		$data['result'] = $this->officer_model->get_list_condo();
+		$data['result'] = $this->news_model->get_list_condo();
 		$data['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
@@ -443,8 +443,8 @@ class Index extends CI_Controller
 	public function condo($asset_number)
 	{
 		$data['title'] = "คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$data['data'] = $this->officer_model->get_asset_data($asset_number);
-		$data['picture'] = $this->officer_model->get_assetpicture($asset_number);
+		$data['data'] = $this->news_model->get_asset_data($asset_number);
+		$data['picture'] = $this->news_model->get_assetpicture($asset_number);
 		$this->load->view("containner/head", $data);
 		$this->load->view("containner/header_index");
 		$this->load->view("index/asset/condo/condo", $data);

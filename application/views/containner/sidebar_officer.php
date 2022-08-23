@@ -32,12 +32,6 @@
  			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span></a>
  		</li>
- 		<?php if ($level_code === 'P') { ?>
- 			<li class="sidenav-item">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/random_wheels') ?>">
-				 <i class="fas fa-globe me-3"></i><span>สุ่มชื่อ</span></a>
- 			</li>
- 		<?php	} ?>
  		<li class="sidenav-item">
  			<a class="sidenav-link"><i class="fas fa-file-upload me-3"></i><span>ระบบอัพโหลด</span></a>
  			<ul class="sidenav-collapse">
