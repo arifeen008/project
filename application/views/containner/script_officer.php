@@ -6,6 +6,13 @@
   });
 </script>
 <script>
+  CKEDITOR.replace('detail');
+  function CKupdate() {
+    for (instance in CKEDITOR.instances)
+      CKEDITOR.instances[instance].updateElement();
+  }
+</script>
+<script>
   const sidenav = document.getElementById("sidenav");
   const sidenavInstance = mdb.Sidenav.getInstance(sidenav);
   let innerWidth = null;

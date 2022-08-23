@@ -28,7 +28,7 @@ class Officer extends CI_Controller
 			$this->load->view("containner/header_officer", $data);
 			$this->load->view("containner/sidebar_officer", $level_code);
 			$this->load->view("officer/search_member/search_member");
-			$this->load->view("containner/script");
+			$this->load->view("containner/script_officer");
 		} else {
 			echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
 			redirect('index/index', 'refresh');
@@ -51,7 +51,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/search_member");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function internal_announcement()
@@ -66,7 +66,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/internal_announcement/internal_announcement", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function performance()
@@ -81,7 +81,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/performance/performance", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function upload_document()
@@ -94,7 +94,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/performance/upload_document");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function uploadDocumentFile()
@@ -150,7 +150,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/human_resource_development_activities/human_resource_development_activities");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function cooperative_regulation()
@@ -163,7 +163,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/cooperative_regulation/cooperative_regulation");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function cooperative_rules()
@@ -176,7 +176,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/cooperative_rules/cooperative_rules");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function search_data_member()
@@ -195,7 +195,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/search_data_member", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function data_member($mem_id, $branch_number)
@@ -230,7 +230,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/account_details", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function opened_loan_details($code, $branch_number)
@@ -245,7 +245,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/opened_loan_details", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function closed_loan_details($code, $branch_number)
@@ -260,7 +260,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/closed_loan_details", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function upload_news()
@@ -273,7 +273,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/upload_news");
-		$this->load->view("containner/script_news");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function uploadnews_system()
@@ -287,7 +287,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/table_news", $table_news);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	function upload()
@@ -376,7 +376,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/edit_news", $news);
-		$this->load->view("containner/script_news");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function update_news()
@@ -407,7 +407,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/form/form", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function download_form($internal_id)
@@ -427,7 +427,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/internal_announcement/import_internal_declaration");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function upload_internalfile()
@@ -460,7 +460,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/searchcredit");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function uploadcreditfile()
@@ -473,7 +473,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/uploadcreditfile");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function uploadFileCredit()
@@ -549,7 +549,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/listcredit", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function delete_credit($id_credit )
@@ -585,7 +585,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/asset_system/asset_list", $data);
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function upload_asset()
@@ -598,7 +598,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/asset_system/uploadasset_system");
-		$this->load->view("containner/script");
+		$this->load->view("containner/script_officer");
 	}
 
 	public function asset_upload()
