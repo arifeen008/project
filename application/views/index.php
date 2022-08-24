@@ -1,6 +1,5 @@
  <?php include_once("application/libraries/thaidate-functions.php");
-	include_once("application/libraries/Thaidate.php");
-	?>
+	include_once("application/libraries/Thaidate.php"); ?>
  <style>
  	html,
  	body {
@@ -15,6 +14,7 @@
  		overflow: hidden;
  	}
  </style>
+ 
  <div style="width: 100%;">
  	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
  		<div class="carousel-indicators">
