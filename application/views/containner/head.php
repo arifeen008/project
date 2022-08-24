@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7M3HX122N"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
