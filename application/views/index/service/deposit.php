@@ -166,3 +166,9 @@
 		</div>
 	</div>
 </div>
+<div class="fixed-action-btn">
+	<a class="btn btn-floating btn-primary btn-lg" href="#" style="background-color: #00ff00;">
+		<i class="fas fa-arrow-up"></i>
+	</a>
+	<ul class="list-unstyled"></ul>
+</div>
