@@ -19,3 +19,9 @@
   setMode();
   window.addEventListener("resize", setMode);
 </script>
+<script>
+  const instance = new mdb.Datatable(document.getElementById('datatableDeposit'))
+  document.getElementById('searchAccountdeposit').addEventListener('input', (e) => {
+    instance.search(e.target.value);
+  });
+</script>

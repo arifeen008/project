@@ -24,7 +24,7 @@ include_once("application/libraries/Thaidate.php");
 							<?php } ?>
 						</div>
 					</div>
-					<p style="font-family: 'Sarabun',Extra-light 200;color:black;" class="my-2"><?php echo $data->description ?></p>
+					<h5 style="font-family: 'Sarabun';" class="text-dark my-2"><?php echo $data->description ?></h5>
 					<small class="text-mute"><?php echo thaidate('j F Y ', strtotime($data->dateupload))  ?></small>
 				</div>
 			</div>

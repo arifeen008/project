@@ -216,7 +216,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data_officer);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/data_member", $data);
-		$this->load->view("containner/script_data_member");
+		$this->load->view("containner/script_data");
 	}
 
 	public function account_details($account_number)
@@ -273,7 +273,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/upload_news");
-		$this->load->view("containner/script_officer");
+		$this->load->view("containner/script_news");
 	}
 
 	public function uploadnews_system()
@@ -376,7 +376,7 @@ class Officer extends CI_Controller
 		$this->load->view("containner/header_officer", $data);
 		$this->load->view("containner/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/edit_news", $news);
-		$this->load->view("containner/script_officer");
+		$this->load->view("containner/script_news");
 	}
 
 	public function update_news()
