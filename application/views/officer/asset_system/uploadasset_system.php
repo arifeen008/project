@@ -3,7 +3,7 @@
         <div class="card my-3">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h5 class="text-uppercase">upload</h5>
+                    <h5 class="text-uppercase">อัพโหลดสินทรัพย์</h5>
                 </div>
             </div>
             <form action="<?php echo site_url('officer/asset_upload') ?>" method="post" enctype="multipart/form-data">

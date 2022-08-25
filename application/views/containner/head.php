@@ -14,12 +14,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
 	<script>
 		window.dataLayer = window.dataLayer || [];
-
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-
 		gtag('config', 'G-Y7M3HX122N');
 	</script>
 	<?php header("Cache-Control: public, max-age=1000, s-maxage=1000"); ?>

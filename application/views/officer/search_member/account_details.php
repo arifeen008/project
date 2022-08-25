@@ -2,7 +2,6 @@
 include_once("application/libraries/thaidate-functions.php");
 include_once("application/libraries/Thaidate.php");
 ?>
-
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
