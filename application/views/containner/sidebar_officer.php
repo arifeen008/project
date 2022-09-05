@@ -1,5 +1,5 @@
  <nav id="sidenav" class="sidenav d-flex flex-column align-items-between" data-mdb-color="success" data-mdb-mode="side" data-mdb-hidden="false" data-mdb-accordion="true" data-mdb-content="#content">
- 	<ul class="sidenav-menu">
+ 	<ul class="sidenav-menu text-dark">
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/search_member') ?>">
  				<i class="fas fa-user-alt me-3"></i><span>ค้นหาสมาชิก</span></a>
@@ -31,6 +31,10 @@
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span></a>
+ 		</li>
+		 <li class="sidenav-item">
+ 			<a class="sidenav-link" href="#">
+			 <i class="fas fa-air-freshener me-3"></i><span>ทำเนียบบุคลากร</span></a>
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link"><i class="fas fa-file-upload me-3"></i><span>ระบบอัพโหลด</span></a>
