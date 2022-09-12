@@ -11,10 +11,12 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		$covid = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');
 		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
+		$gold_price = file_get_contents('http://www.thaigold.info/RealTimeDataV2/gtdata_.txt');
+		$exchange_rate = file_get_contents('https://api.apilayer.com/exchangerates_data/convert?to=THB&from=USD&amount=1&apikey=1cJ0S3e7iPeCRHZhfKELrK2oawD8swqh');
 		$data['google_news'] = json_decode($news);
-		$data['covid_data'] = json_decode($covid, true);
+		$data['gold_price'] = json_decode($gold_price);
+		$data['exchange_rate'] = json_decode($exchange_rate);
 		$data['news_information'] = $this->news_model->get_news_information();
 		$data['news_welfare'] = $this->news_model->get_news_welfare();
 		$data['news_credit'] = $this->news_model->get_news_credit();
@@ -25,6 +27,7 @@ class Index extends CI_Controller
 		$this->load->view("index", $data);
 		$this->load->view("containner/footer");
 		$this->load->view("containner/script");
+		// $this->load->view('test');
 	}
 
 	public function news($newsnumber)

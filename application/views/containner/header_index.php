@@ -124,7 +124,7 @@
 							</a></li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown mx-2">
+				<!-- <li class="nav-item dropdown mx-2">
 					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_project') ?></p>
 					</a>
@@ -145,7 +145,7 @@
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_sakofahmarket') ?></p>
 							</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li class="nav-item dropdown mx-2">
 					<a class="nav-link border-end" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_asset') ?></p>

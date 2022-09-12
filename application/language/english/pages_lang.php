@@ -71,6 +71,7 @@ $lang['ministry_of_agriculture_and_cooperatives'] = 'Ministry of Agriculture and
 $lang['krabi_cooperative_auditing_department'] = 'Krabi Cooperative Auditing Department';
 $lang['krabi_provincial_cooperative_office'] = 'Krabi Provincial Cooperative Office';
 $lang['ministry_of_labor'] = 'Ministry of Labor';
+$lang['cooperative_promotion_department'] = 'Cooperative Promotion Department';
 // history
 $lang['history'] = 'History';
 $lang['present'] = 'Present';

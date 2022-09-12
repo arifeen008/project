@@ -71,6 +71,7 @@ $lang['ministry_of_agriculture_and_cooperatives'] = 'กระทรวงเก
 $lang['krabi_cooperative_auditing_department'] = 'กรมตรวจบัญชีสหกรณ์กระบี่';
 $lang['krabi_provincial_cooperative_office'] = 'สำนักงานสหกรณ์จังหวัดกระบี่';
 $lang['ministry_of_labor'] = 'กระทรวงแรงงาน';
+$lang['cooperative_promotion_department'] = 'กรมส่งเสริมสหกรณ์';
 // history
 $lang['history'] = 'ประวัติความเป็นมา';
 $lang['present'] = 'ปัจจุบัน';

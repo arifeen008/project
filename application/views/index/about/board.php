@@ -35,7 +35,7 @@
 				<img src="<?php echo base_url('picture\บอร์ดกรรมการ 65.jpg') ?>" style="width: 100%;">
 			</div>
 			<div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-				<img src="<?php echo base_url('picture\บอร์ดผู้บริหาร.jpg') ?>" style="width: 100%;">
+				<img src="<?php echo base_url('picture\344-A4.jpg') ?>" style="width: 100%;">
 			</div>
 			<div class="tab-pane fade" id="ex3-tabs-4" role="tabpanel" aria-labelledby="ex3-tab-4">
 				<img src="<?php echo base_url('picture\บอร์ดที่ปรึกษา1.jpg') ?>" style="width: 100%;">

@@ -14,7 +14,7 @@
  		overflow: hidden;
  	}
  </style>
- 
+
  <div style="width: 100%;">
  	<div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
  		<div class="carousel-indicators">
@@ -43,181 +43,103 @@
  		</button>
  	</div>
  </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/345-1.jpg') ?>" class="w-100 h-75" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(29, 237, 198, 0.5),rgba(91, 14, 214, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal1"><?php echo lang('banner_detail') ?></div>
+ <div class="container mt-4">
+ 	<div id="carouselBanner" class="carousel slide carousel-dark" data-mdb-ride="carouselBanner">
+ 		<div class="carousel-indicators">
+ 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+ 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+ 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="2" aria-label="Slide 3"></button>
  		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
+ 		<div class="carousel-inner">
+ 			<div class="carousel-item active" data-mdb-interval="5000">
  				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/345.jpg') ?>" data-mdb-img="<?php echo base_url('picture/345.jpg') ?>" class="w-100" /></div>
+ 					<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/345.jpg') ?>" class="d-block w-100" />
+ 				</div>
+ 			</div>
+ 			<div class="carousel-item" data-mdb-interval="5000">
+ 				<div class="lightbox">
+ 					<img src="<?php echo base_url('picture/388-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/388.jpg') ?>" class="d-block w-100" />
+ 				</div>
+ 			</div>
+ 			<div class="carousel-item" data-mdb-interval="5000">
+ 				<div class="lightbox">
+ 					<img src="<?php echo base_url('picture/389-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/389.jpg') ?>" class="d-block w-100" />
  				</div>
  			</div>
  		</div>
+ 		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBanner" data-mdb-slide="prev">
+ 			<span class="carousel-control-prev-icon" aria-hidden="false"></span>
+ 			<span class="visually-hidden">Previous</span>
+ 		</button>
+ 		<button class="carousel-control-next" type="button" data-mdb-target="#carouselBanner" data-mdb-slide="next">
+ 			<span class="carousel-control-next-icon" aria-hidden="false"></span>
+ 			<span class="visually-hidden">Next</span>
+ 		</button>
  	</div>
  </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/325-3.jpg') ?>" class="w-100 h-75" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(39, 221, 42, 0.5), rgba(27, 130, 182, 0.5)100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><?php echo lang('banner_detail') ?></div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/325-2.jpg') ?>" data-mdb-img="<?php echo base_url('picture/325-2.jpg') ?>" class="w-100" /></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/401-1.gif') ?>" class="w-100" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(141, 211, 115, 0.5), rgba(255, 255, 255, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal3"><?php echo lang('banner_detail') ?></div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/401.jpg') ?>" data-mdb-img="<?php echo base_url('picture/401.jpg') ?>" class="w-100" /></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/388-1.jpg') ?>" class="w-100" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(246, 211, 101, 0.5), rgba(253, 160, 133, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal4"><?php echo lang('banner_detail') ?></div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/388.jpg') ?>" data-mdb-img="<?php echo base_url('picture/388.jpg') ?>" class="w-100" /></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
- <div class="container">
- 	<div class="bg-image hover-overlay">
- 		<img src="<?php echo base_url('picture/389-1.jpg') ?>" class="w-100" />
- 		<div class="mask text-center" style="background: linear-gradient(45deg,rgba(253, 203, 241, 0.5), rgba(230, 222, 233, 0.5) 100%);">
- 			<div class="h-100 d-flex justify-content-center align-items-center h1" style="font-family: 'Sarabun';font-size: 50px;align-items: center;height: 400px;color:black" data-mdb-toggle="modal" data-mdb-target="#exampleModal5"><?php echo lang('banner_detail') ?></div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog">
- 			<div class="modal-content">
- 				<div class="lightbox">
- 					<div class="modal-body"><img src="<?php echo base_url('picture/389.jpg') ?>" data-mdb-img="<?php echo base_url('picture/389.jpg') ?>" class="w-100" /></div>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </div>
-
- <div class="container my-3">
+ <div class="container mt-3">
  	<div class="row">
  		<div class="col">
  			<div class="row">
- 				<div class="col-md-6 mb-3">
- 					<div class="card hover-shadow border border-success">
- 						<a href="<?php echo site_url('index/register') ?>" class="card-body">
- 							<p class="card-text text-center text-dark">
- 								<i class="far fa-registered fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_register') ?></p>
- 							</p>
- 						</a>
- 					</div>
+ 				<div class="col-md-6">
+ 					<a href="<?php echo site_url('index/register') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
+ 						<img src="<?php echo base_url('picture/433.png') ?>">
+ 					</a>
  				</div>
- 				<div class="col-md-6 mb-3">
- 					<div class="card hover-shadow border border-success">
- 						<a href="<?php echo site_url('index/deposit') ?>" class="card-body">
- 							<p class="card-text text-center text-dark">
- 								<i class="fas fa-hand-holding-usd fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_deposit') ?></p>
- 							</p>
- 						</a>
- 					</div>
+ 				<div class="col-md-6">
+ 					<a href="<?php echo site_url('index/deposit') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
+ 						<img src="<?php echo base_url('picture/433-1.png') ?>">
+ 					</a>
  				</div>
- 				<div class="col-md-6 mb-3">
- 					<div class="card hover-shadow border border-success">
- 						<a href="<?php echo site_url('index/credit') ?>" class="card-body">
- 							<p class="card-text text-center text-dark">
- 								<i class="far fa-credit-card fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_credit') ?></p>
- 							</p>
- 						</a>
- 					</div>
+ 				<div class="col-md-6">
+ 					<a href="<?php echo site_url('index/credit') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
+ 						<img src="<?php echo base_url('picture/433-2.png') ?>">
+ 					</a>
  				</div>
- 				<div class="col-md-6 mb-3">
- 					<div class="card hover-shadow border border-success">
- 						<a href="<?php echo site_url('index/document') ?>" class="card-body">
- 							<p class="card-text text-center text-dark">
- 								<i class="fas fa-file-alt fa-4x"></i>
- 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 20px;" class="text-center text-dark h3"><?php echo lang('dropdown_document') ?></p>
- 							</p>
- 						</a>
- 					</div>
+ 				<div class="col-md-6">
+ 					<a href="<?php echo site_url('index/document') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
+ 						<img src="<?php echo base_url('picture/433-3.png') ?>">
+ 					</a>
  				</div>
  			</div>
  		</div>
  		<div class="col">
- 			<div class="row">
- 				<div class="col-md-12">
- 					<div class="card hover-shadow">
- 						<img src="<?php echo base_url('picture/covid.jpg') ?>" class="card-img opacity-25" />
- 						<div class="card-body mx-2 card-img-overlay" style="font-family: 'Sarabun', cursive;color:black;">
- 							<h4 class="text-center mb-3"><?php echo lang('covid_report') ?></h4>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-calendar me-3"></i><?php echo lang('covid_date') ?></p>
- 								<p><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-clinic-medical me-2"></i><?php echo lang('covid_new_case') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_case']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="far fa-hospital me-3"></i><?php echo lang('covid_total_case') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_case']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-skull-crossbones me-3"></i><?php echo lang('covid_new_death') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_death']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-book-dead me-3"></i><?php echo lang('covid_total_death') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_death']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-medkit me-3"></i><?php echo lang('covid_new_recovered') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_recovered']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-pills me-3"></i><?php echo lang('covid_total_recovered') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_recovered']) . ' ' . lang('covid_people') ?> </p>
- 							</div>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
+ 			<b class="text-dark" style="font-family: 'Kanit';font-size: 18px;">ราคาทองคำ ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) . ' เวลา ' . $gold_price[0]->ask  ?></b>
+ 			<table class="table table-bordered">
+ 				<thead>
+ 					<tr>
+ 						<th scope="col">รายการ</th>
+ 						<th scope="col">รับซื้อ</th>
+ 						<th scope="col">ขายออก</th>
+ 						<th scope="col">+/-</th>
+
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<?php foreach (array_slice($gold_price, 1, 4) as $row) { ?>
+ 						<tr>
+ 							<td><?= $row->name ?></td>
+ 							<td><?= number_format($row->bid, 2) ?></td>
+ 							<td><?= number_format($row->ask, 2) ?></td>
+ 							<td><?= $row->diff ?></td>
+ 						</tr>
+ 					<?php	} ?>
+ 				</tbody>
+ 			</table>
+ 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
+ 			<table class="table table-bordered">
+ 				<tr>
+ 					<th><i class="flag flag-us"></i> $USD</td>
+ 					<td><?= number_format($exchange_rate->query->amount, 2) ?></td>
+ 				</tr>
+ 				<tr>
+ 					<th><i class="flag flag-th"></i> ฿THB</th>
+ 					<td><?= number_format($exchange_rate->result, 4) ?></td>
+ 				</tr>
+ 			</table>
  		</div>
  	</div>
  </div>
-
  <div class="container my-3">
  	<div class="row" style="font-family: 'Sarabun';">
  		<div class="col-md-8">
@@ -412,14 +334,21 @@
  				</a>
  			</div>
  			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
+ 				<a target="_blank" class="hover-shadow" href="https://www.mol.go.th/">
  					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_labor') ?></p>
+ 				</a>
+ 			</div>
+ 			<div class="card mb-2">
+ 				<a target="_blank" class="hover-shadow" href="https://www.cpd.go.th/index.php">
+ 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/logo_cpd_big.png') ?>">
+ 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
  				</a>
  			</div>
  		</div>
  	</div>
  </div>
+
  <div class="container my-3">
  	<div class="card">
  		<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
