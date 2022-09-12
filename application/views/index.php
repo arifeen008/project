@@ -104,7 +104,7 @@
  			</div>
  		</div>
  		<div class="col">
- 			<b class="text-dark" style="font-family: 'Kanit';font-size: 18px;">ราคาทองคำ ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) . ' เวลา ' . $gold_price[0]->ask  ?></b>
+ 			<!-- <b class="text-dark" style="font-family: 'Kanit';font-size: 18px;">ราคาทองคำ ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) . ' เวลา ' . $gold_price[0]->ask  ?></b>
  			<table class="table table-bordered">
  				<thead>
  					<tr>
@@ -116,7 +116,7 @@
  					</tr>
  				</thead>
  				<tbody>
- 					<?php foreach (array_slice($gold_price, 1, 4) as $row) { ?>
+ 					<?php foreach (array_slice($gold_price, 4, 1) as $row) { ?>
  						<tr>
  							<td><?= $row->name ?></td>
  							<td><?= number_format($row->bid, 2) ?></td>
@@ -136,7 +136,44 @@
  					<th><i class="flag flag-th"></i> ฿THB</th>
  					<td><?= number_format($exchange_rate->result, 4) ?></td>
  				</tr>
- 			</table>
+ 			</table> -->
+ 			<div class="row">
+ 				<div class="col-md-12">
+ 					<div class="card hover-shadow">
+ 						<div class="card-body mx-2" style="font-family: 'Sarabun', cursive;color:black;">
+ 							<h4 class="text-center mb-3"><?php echo lang('covid_report') ?></h4>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-calendar me-3"></i><?php echo lang('covid_date') ?></p>
+ 								<p><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-clinic-medical me-2"></i><?php echo lang('covid_new_case') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_case']) . ' ' . lang('covid_people') ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="far fa-hospital me-3"></i><?php echo lang('covid_total_case') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_case']) . ' ' . lang('covid_people') ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-skull-crossbones me-3"></i><?php echo lang('covid_new_death') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_death']) . ' ' . lang('covid_people') ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-book-dead me-3"></i><?php echo lang('covid_total_death') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_death']) . ' ' . lang('covid_people') ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-medkit me-3"></i><?php echo lang('covid_new_recovered') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['new_recovered']) . ' ' . lang('covid_people') ?></p>
+ 							</div>
+ 							<div class="d-flex justify-content-between">
+ 								<p><i class="fas fa-pills me-3"></i><?php echo lang('covid_total_recovered') ?></p>
+ 								<p><?php echo number_format($covid_data[0]['total_recovered']) . ' ' . lang('covid_people') ?> </p>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
  		</div>
  	</div>
  </div>
