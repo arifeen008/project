@@ -139,7 +139,7 @@
  			</table> -->
  			<div class="row">
  				<div class="col-md-12">
- 					<div class="card hover-shadow">
+ 					<div class="card border border-success hover-shadow">
  						<div class="card-body mx-2" style="font-family: 'Sarabun', cursive;color:black;">
  							<h4 class="text-center mb-3"><?php echo lang('covid_report') ?></h4>
  							<div class="d-flex justify-content-between">
@@ -378,7 +378,7 @@
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.cpd.go.th/index.php">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/logo_cpd_big.png') ?>">
+ 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/กรมส่งเสริมสหกรณ์.png') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
  				</a>
  			</div>
