@@ -348,37 +348,37 @@
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('department_of_Lands') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.moac.go.th/site-home">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/กระทรวงเกษตรและสหกรณ์.png') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กระทรวงเกษตรและสหกรณ์.png') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_agriculture_and_cooperatives') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://krabi.cad.go.th/main.php?filename=index">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_cooperative_auditing_department') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_provincial_cooperative_office') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.mol.go.th/">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_labor') ?></p>
  				</a>
  			</div>
  			<div class="card mb-2">
  				<a target="_blank" class="hover-shadow" href="https://www.cpd.go.th/index.php">
- 					<img class="rounded mx-auto d-block " width="120" height="120" src="<?php echo base_url('picture/กรมส่งเสริมสหกรณ์.png') ?>">
+ 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กรมส่งเสริมสหกรณ์.png') ?>">
  					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
  				</a>
  			</div>
