@@ -103,47 +103,47 @@
 	}
 </style>
 
-<div class="container my-5">
-	<p style="font-family: 'Chonburi', cursive;color:black;" class="h1"><?php echo lang('history') ?></p>
+<div class="container my-5" data-mdb-toggle="animation" data-mdb-animation="zoom-in" data-mdb-animation-start="onLoad">
+	<b style="font-family: 'Kanit';" class="h1 text-dark"><?php echo lang('history') ?></b>
 	<div class="container py-5">
 		<div class="main-timeline">
 			<div class="timeline left">
 				<div class="card hover-shadow">
 					<div class="card-body p-4">
-						<p class="h3 text-dark"><?php echo lang('present') ?></p>
-						<p class="mb-0 text-dark"><?php echo lang('history1') ?></p>
+						<p style="font-family: 'Kanit';" class="h3 text-dark"><?php echo lang('present') ?></p>
+						<p style="font-family: 'Kanit';" class="mb-0 text-dark"><?php echo lang('history1') ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline right">
 				<div class="card hover-shadow">
 					<div class="card-body p-4">
-						<p class="h3 text-dark"><?php echo lang('2552') ?></p>
-						<p class="mb-0 text-dark"><?php echo lang('history2') ?></p>
+						<p style="font-family: 'Kanit';" class="h3 text-dark"><?php echo lang('2552') ?></p>
+						<p style="font-family: 'Kanit';" class="mb-0 text-dark"><?php echo lang('history2') ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline left">
 				<div class="card hover-shadow">
 					<div class="card-body p-4">
-						<p class="text-dark h3"><?php echo lang('2542') ?></p>
-						<p class="text-dark mb-0"><?php echo lang('history3') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark h3"><?php echo lang('2542') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark mb-0"><?php echo lang('history3') ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline right">
 				<div class="card hover-shadow">
 					<div class="card-body p-4">
-						<p class="text-dark h3"><?php echo lang('2538') ?></p>
-						<p class="text-dark mb-0"><?php echo lang('history4') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark h3"><?php echo lang('2538') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark mb-0"><?php echo lang('history4') ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="timeline left">
 				<div class="card hover-shadow">
 					<div class="card-body p-4">
-						<p class="text-dark h3"><?php echo lang('2535') ?></p>
-						<p class="text-dark mb-0"><?php echo lang('history5') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark h3"><?php echo lang('2535') ?></p>
+						<p style="font-family: 'Kanit';" class="text-dark mb-0"><?php echo lang('history5') ?></p>
 					</div>
 				</div>
 			</div>

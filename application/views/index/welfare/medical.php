@@ -1,2 +1,4 @@
-<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="fade-in-up" src="<?php echo base_url('picture/สวัสดิการช่วยเหลือค่ารักษาพยาบาล.jpg') ?>" alt="" style="width: 100%;">
-<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="fade-in-up" src="<?php echo base_url('picture/พยาบาล.jpg') ?>" alt="" style="width: 100%;">
+<div class="container mt-1" data-mdb-toggle="animation" data-mdb-animation="zoom-in" data-mdb-animation-start="onLoad">
+    <img src="<?php echo base_url('picture/สวัสดิการช่วยเหลือค่ารักษาพยาบาล.jpg') ?>" style="width: 100%;">
+    <img src="<?php echo base_url('picture/พยาบาล.jpg') ?>" style="width: 100%;">
+</div>

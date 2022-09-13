@@ -1,2 +1,4 @@
-<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="pulse" src="<?php echo base_url('picture/สวัสดิการเสียชีวิต.jpg') ?>" alt="" style="width: 100%;">
-<img data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation-show-on-load="false" data-mdb-animation="pulse" src="<?php echo base_url('picture/ตาย1.jpg') ?>" alt="" style="width: 100%;">
+<div class="container mt-1" data-mdb-toggle="animation" data-mdb-animation="zoom-in" data-mdb-animation-start="onLoad">
+    <img src="<?php echo base_url('picture/สวัสดิการเสียชีวิต.jpg') ?>" style="width: 100%;">
+    <img src="<?php echo base_url('picture/ตาย1.jpg') ?>" style="width: 100%;">
+</div>
