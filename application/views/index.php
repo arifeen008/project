@@ -104,73 +104,48 @@
  			</div>
  		</div>
  		<div class="col">
- 			<!-- <b class="text-dark" style="font-family: 'Kanit';font-size: 18px;">ราคาทองคำ ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) . ' เวลา ' . $gold_price[0]->ask  ?></b>
- 			<table class="table table-bordered">
- 				<thead>
- 					<tr>
- 						<th scope="col">รายการ</th>
- 						<th scope="col">รับซื้อ</th>
- 						<th scope="col">ขายออก</th>
- 						<th scope="col">+/-</th>
-
- 					</tr>
- 				</thead>
- 				<tbody>
- 					<?php foreach (array_slice($gold_price, 4, 1) as $row) { ?>
- 						<tr>
- 							<td><?= $row->name ?></td>
- 							<td><?= number_format($row->bid, 2) ?></td>
- 							<td><?= number_format($row->ask, 2) ?></td>
- 							<td><?= $row->diff ?></td>
- 						</tr>
- 					<?php	} ?>
- 				</tbody>
- 			</table>
- 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
- 			<table class="table table-bordered">
- 				<tr>
- 					<th><i class="flag flag-us"></i> $USD</td>
- 					<td><?= number_format($exchange_rate->query->amount, 2) ?></td>
- 				</tr>
- 				<tr>
- 					<th><i class="flag flag-th"></i> ฿THB</th>
- 					<td><?= number_format($exchange_rate->result, 4) ?></td>
- 				</tr>
- 			</table> -->
- 			<div class="row">
+ 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงินต่อ 1 บาท ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
+ 			<div class="row" style="font-family: 'Kanit';font-size: 16px;">
  				<div class="col-md-12">
- 					<div class="card border border-success hover-shadow">
- 						<div class="card-body mx-2" style="font-family: 'Sarabun', cursive;color:black;">
- 							<h4 class="text-center mb-3"><?php echo lang('covid_report') ?></h4>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-calendar me-3"></i><?php echo lang('covid_date') ?></p>
- 								<p><?php echo thaidate('j F พ.ศ. Y ', strtotime($covid_data[0]['txn_date'])) ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-clinic-medical me-2"></i><?php echo lang('covid_new_case') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_case']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="far fa-hospital me-3"></i><?php echo lang('covid_total_case') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_case']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-skull-crossbones me-3"></i><?php echo lang('covid_new_death') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_death']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-book-dead me-3"></i><?php echo lang('covid_total_death') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_death']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-medkit me-3"></i><?php echo lang('covid_new_recovered') ?></p>
- 								<p><?php echo number_format($covid_data[0]['new_recovered']) . ' ' . lang('covid_people') ?></p>
- 							</div>
- 							<div class="d-flex justify-content-between">
- 								<p><i class="fas fa-pills me-3"></i><?php echo lang('covid_total_recovered') ?></p>
- 								<p><?php echo number_format($covid_data[0]['total_recovered']) . ' ' . lang('covid_people') ?> </p>
- 							</div>
- 						</div>
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-saudi-arabia me-3"></i>ซาอุดิอารเบีย</p>
+ 						<p><?= number_format($exchange_rate->rates->SAR, 2) ?> เรียล</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-singapore me-3"></i>สิงคโปร์</p>
+ 						<p><?= number_format($exchange_rate->rates->SGD, 2) ?> ดอลลาร์สิงค์โป</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-malaysia me-3"></i>มาเลเซีย</p>
+ 						<p><?= number_format($exchange_rate->rates->MYR, 2) ?> ริงกิต</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-laos me-3"></i>ลาว</p>
+ 						<p><?= number_format($exchange_rate->rates->LAK, 2) ?> กีบ</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-burma me-3"></i>พม่า</p>
+ 						<p><?= number_format($exchange_rate->rates->MMK, 2) ?> จัด</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-japan me-3"></i>ญี่ปุ่น</p>
+ 						<p><?= number_format($exchange_rate->rates->JPY, 2) ?> เยน</p>
+ 					</div>
+ 				</div>
+ 				<div class="col-md-12">
+ 					<div class="d-flex justify-content-between">
+ 						<p><i class="flag flag-united-states me-3"></i>สหรัฐอเมริกา</p>
+ 						<p><?= number_format($exchange_rate->rates->USD, 2) ?> ดอลลาร์สหรัฐ</p>
  					</div>
  				</div>
  			</div>
@@ -399,7 +374,7 @@
  		</a>
  	</div>
  	<div class="col-sm">
- 		<a href="https://www.facebook.com/pages/category/Nonprofit-Organization/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546/">
+ 		<a href="https://www.facebook.com/profile.php?id=100083121019673">
  			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
  		</a>
  	</div>
