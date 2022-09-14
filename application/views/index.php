@@ -104,12 +104,12 @@
  			</div>
  		</div>
  		<div class="col">
- 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงินต่อ 1 บาท ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
+ 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงินต่อ 1 ดอลลาร์สหรัฐ ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
  			<div class="row" style="font-family: 'Kanit';font-size: 16px;">
  				<div class="col-md-12">
  					<div class="d-flex justify-content-between">
- 						<p><i class="flag flag-saudi-arabia me-3"></i>ซาอุดิอารเบีย</p>
- 						<p><?= number_format($exchange_rate->rates->SAR, 2) ?> เรียล</p>
+ 						<p><i class="flag flag-thailand me-3"></i>ไทย</p>
+ 						<p><?= number_format($exchange_rate->rates->THB, 2) ?> บาท</p>
  					</div>
  				</div>
  				<div class="col-md-12">
@@ -144,8 +144,8 @@
  				</div>
  				<div class="col-md-12">
  					<div class="d-flex justify-content-between">
- 						<p><i class="flag flag-united-states me-3"></i>สหรัฐอเมริกา</p>
- 						<p><?= number_format($exchange_rate->rates->USD, 2) ?> ดอลลาร์สหรัฐ</p>
+ 						<p><i class="flag flag-saudi-arabia me-3"></i>ซาอุดิอารเบีย</p>
+ 						<p><?= number_format($exchange_rate->rates->SAR, 2) ?> เรียล</p>
  					</div>
  				</div>
  			</div>
