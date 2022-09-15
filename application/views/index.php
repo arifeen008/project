@@ -104,35 +104,56 @@
  			</div>
  		</div>
  		<div class="col">
- 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงินต่อ 1 ดอลลาร์สหรัฐ ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
- 			<table class="table table-bordered text-center">
+ 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
+ 			<table class="table table-borderless text-center text-dark" style="font-family: 'Kanit';font-size: 14px;">
  				<tr>
- 					<td><i class="flag flag-thailand me-3"></i>ไทย</td>
- 					<td><?php echo number_format($exchange_rate->rates->THB, 4) ?>&nbsp;&nbsp;บาท</td>
+ 					<td></td>
+ 					<td>ประเทศ</td>
+ 					<td>สกุลเงิน</td>
+ 					<td>ค่าเงิน</td>
  				</tr>
  				<tr>
- 					<td><i class="flag flag-singapore me-3"></i>สิงคโปร์</td>
- 					<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?> &nbsp;&nbsp;ดอลลาร์สิงค์โป</td>
+ 					<td><i class="flag flag-thailand"></i></td>
+ 					<td>ไทย</td>
+ 					<td>THB</td>
+ 					<td><?php echo number_format($exchange_rate->rates->THB, 4) ?></td>
  				</tr>
  				<tr>
- 					<td><i class="flag flag-malaysia me-3"></i>มาเลเซีย</td>
- 					<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?> &nbsp;&nbsp;ริงกิต</td>
+ 					<td><i class="flag flag-singapore"></i></td>
+ 					<td>สิงคโปร์</td>
+ 					<td>SGD</td>
+ 					<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?></td>
+
  				</tr>
  				<tr>
- 					<td><i class="flag flag-laos me-3"></i>ลาว</td>
- 					<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?>&nbsp;&nbsp; กีบ</td>
+ 					<td><i class="flag flag-malaysia"></i></td>
+ 					<td>มาเลเซีย</td>
+ 					<td>MYR</td>
+ 					<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?></td>
  				</tr>
  				<tr>
- 					<td><i class="flag flag-burma me-3"></i>พม่า</td>
- 					<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?>&nbsp;&nbsp; จัด</td>
+ 					<td><i class="flag flag-laos"></i></td>
+ 					<td>ลาว</td>
+ 					<td>LAK</td>
+ 					<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?></td>
  				</tr>
  				<tr>
- 					<td><i class="flag flag-japan me-3"></i>ญี่ปุ่น</td>
- 					<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?>&nbsp;&nbsp; เยน</td>
+ 					<td><i class="flag flag-burma"></i></td>
+ 					<td>พม่า</td>
+ 					<td>MMK</td>
+ 					<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?></td>
  				</tr>
  				<tr>
- 					<td><i class="flag flag-saudi-arabia me-3"></i>ซาอุดิอารเบีย</td>
- 					<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?>&nbsp;&nbsp; เรียล</td>
+ 					<td><i class="flag flag-japan"></i></td>
+ 					<td>ญี่ปุ่น</td>
+ 					<td>JPY</td>
+ 					<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?></td>
+ 				</tr>
+ 				<tr>
+ 					<td><i class="flag flag-saudi-arabia"></i></td>
+ 					<td>ซาอุดิอารเบีย</td>
+ 					<td>SAR</td>
+ 					<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?></td>
  				</tr>
  			</table>
  		</div>
