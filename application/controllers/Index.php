@@ -305,7 +305,7 @@ class Index extends CI_Controller
 
 	public function pray_time()
 	{
-		$pray_time = file_get_contents('http://api.aladhan.com/v1/calendarByAddress?address=krabi,Bangkok&method=2&month=09&year=2022');
+		$pray_time = file_get_contents('http://api.aladhan.com/v1/calendarByAddress?address=krabi,Thailand&method=2&month=09&year=2022');
 		$data['pray_time'] = json_decode($pray_time);
 		$title['title'] = 'เวลาละหมาด สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$this->load->view('containner/head', $title);
