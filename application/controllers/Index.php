@@ -11,7 +11,7 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');	
+		$news = file_get_contents('https://newsdata.io/api/1/news?apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&country=th&domain=naewna');
 		$data['google_news'] = json_decode($news);
 		$exchange_rate = file_get_contents('https://api.exchangerate.host/latest?base=USD&symbols=SAR,SGD,MYR,LAK,MMK,JPY,THB');
 		$data['exchange_rate'] = json_decode($exchange_rate);
@@ -299,6 +299,18 @@ class Index extends CI_Controller
 		$this->load->view('containner/head', $data);
 		$this->load->view('containner/header_index');
 		$this->load->view('index/news/calendar');
+		$this->load->view('containner/footer');
+		$this->load->view('containner/script');
+	}
+
+	public function pray_time()
+	{
+		$pray_time = file_get_contents('http://api.aladhan.com/v1/calendarByAddress?address=krabi,Bangkok&method=2&month=09&year=2022');
+		$data['pray_time'] = json_decode($pray_time);
+		$title['title'] = 'เวลาละหมาด สหกรณ์อิสลามษะกอฟะฮ จำกัด';
+		$this->load->view('containner/head', $title);
+		$this->load->view('containner/header_index');
+		$this->load->view('index/news/pray_time', $data);
 		$this->load->view('containner/footer');
 		$this->load->view('containner/script');
 	}

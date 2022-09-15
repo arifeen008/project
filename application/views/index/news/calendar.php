@@ -1,9 +1,9 @@
-<img src="<?php echo base_url('picture/cover-web.jpg') ?>" class="mb-2" style="width: 100%;">
 <style>
 	.nav-pills .nav-link.active {
 		background-color: #25d321;
 	}
 </style>
+<img src="<?php echo base_url('picture/cover-web.jpg') ?>" class="mb-2" style="width: 100%;">
 <div class="container my-2">
 	<div class="row">
 		<div class="col-3">

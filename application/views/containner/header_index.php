@@ -115,13 +115,15 @@
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_news') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/promotion') ?>">โปรโมชั่น</a></li> -->
 						<li><a class="dropdown-item" href="<?php echo site_url('index/activity') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_activity') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/calendar') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_calendar') ?></p>
 							</a></li>
+						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/pray_time') ?>">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">เวลาละหมาด</p>
+							</a></li> -->
 					</ul>
 				</li>
 				<!-- <li class="nav-item dropdown mx-2">

@@ -79,31 +79,37 @@
  </div>
  <div class="container mt-3">
  	<div class="row">
- 		<div class="col">
+ 		<div class="col-md-5">
  			<div class="row">
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/register') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
- 						<img src="<?php echo base_url('picture/433.png') ?>">
+ 						<img src="<?php echo base_url('picture/433.png') ?>" class="w-100">
  					</a>
  				</div>
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/deposit') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
- 						<img src="<?php echo base_url('picture/433-1.png') ?>">
+ 						<img src="<?php echo base_url('picture/433-1.png') ?>" class="w-100">
  					</a>
  				</div>
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/credit') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
- 						<img src="<?php echo base_url('picture/433-2.png') ?>">
+ 						<img src="<?php echo base_url('picture/433-2.png') ?>" class="w-100">
  					</a>
  				</div>
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/document') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
- 						<img src="<?php echo base_url('picture/433-3.png') ?>">
+ 						<img src="<?php echo base_url('picture/433-3.png') ?>" class="w-100">
  					</a>
  				</div>
+ 				<div class="col-md-12">
+ 					<div class="ratio ratio-21x9">
+ 						<iframe width="400px" height="74px" src="https://prayertime.muslimthaipost.com/solaat.php?TAcHwxO2RBVVRPO21BVVRPO3lBVVRPOzQwMDs3NDsjMDA4MDAwOyMwMDgwMDA7IzAwODAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyMwMDAwMDA7IzAwMDAwMDsjMDAwMDAwOzs7Ozs7Ozs7Ozs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsyOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
+ 					</div>
+ 				</div>
  			</div>
+
  		</div>
- 		<div class="col">
+ 		<div class="col-md-7">
  			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
  			<table class="table table-borderless text-center text-dark" style="font-family: 'Kanit';font-size: 14px;">
  				<tr>
