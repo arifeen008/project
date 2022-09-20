@@ -80,7 +80,7 @@
  <div class="container mt-3">
  	<div class="row">
  		<div class="col-md-5">
- 			<div class="row">
+ 			<div class="row mt-5">
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/register') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
  						<img src="<?php echo base_url('picture/433.png') ?>" class="w-100">
@@ -101,19 +101,17 @@
  						<img src="<?php echo base_url('picture/433-3.png') ?>" class="w-100">
  					</a>
  				</div>
- 				<div class="col-md-12">
- 					<div class="ratio ratio-21x9">
- 						<iframe width="400px" height="74px" src="https://prayertime.muslimthaipost.com/solaat.php?TAcHwxO2RBVVRPO21BVVRPO3lBVVRPOzQwMDs3NDsjMDA4MDAwOyMwMDgwMDA7IzAwODAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyMwMDAwMDA7IzAwMDAwMDsjMDAwMDAwOzs7Ozs7Ozs7Ozs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsyOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
- 					</div>
- 				</div>
+ 				<!-- <div class="col-md-12">
+ 					
+ 				</div> -->
  			</div>
 
  		</div>
  		<div class="col-md-7">
  			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
- 			<table class="table table-borderless text-center text-dark" style="font-family: 'Kanit';font-size: 14px;">
+ 			<table class="table table-bordered border-success text-center text-dark" style="font-family: 'Kanit';font-size: 14px;">
  				<tr>
- 					<td></td>
+ 					<td>#</td>
  					<td>ประเทศ</td>
  					<td>สกุลเงิน</td>
  					<td>ค่าเงิน</td>
@@ -328,6 +326,10 @@
  		</div>
 
  		<div class="col-md-4">
+ 			<div class="text-center" style="font-family: 'Kanit';">เวลาละหมาด</div>
+ 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?TkcHwxO2RBVVRPO21BVVRPO3lBVVRPOzEzMzsxOTY7IzAwMzNDQzsjRkYwMDAwOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjMDAwMDAwOyMwMDAwMDA7IzAwMDAwMDsxOzs7MTs7OzE7OzsxOzs7Ozs7OzI7MDswO3BkfFBTOzE7OzE7MS4yO2M2Mw==" frameborder=0 scrolling=no></iframe>
+ 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?DccHwxNTtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7I0ZGMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
+ 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  			<div class="ratio ratio-16x9 my-3">
  				<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
  			</div>
