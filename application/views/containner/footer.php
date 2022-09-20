@@ -4,7 +4,7 @@
 			<div class="col-md-4">
 				<div class="row">
 					<div class="col-md-6">
-						<div><?php echo lang('number_visiter') ?> :</div>
+						<b class="h5 text-dark" style="font-family: 'Kanit';"><?php echo lang('number_visiter') ?> :</b>
 					</div>
 					<div class="col-md-6">
 						<div id="sfc3wrcpuf5jgrke9993w3x3p7wsppfre13"></div>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="col-md-4"></div>
 			<div class="col-md-4 d-flex justify-content-end">
-				<button class="btn text-light" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-building me-3"></i><?php echo lang('staff_login') ?></button>
+				<button type="button" class="btn btn-success" style="font-family: 'Kanit';" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-key me-3"></i><?php echo lang('staff_login') ?></button>
 			</div>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 	<div class="modal-dialog mx-0 mx-sm-auto">
 		<div class="modal-content">
 			<div class="modal-header" style="background-color: #25d321;">
-				<h5 class="modal-title text-light" id="accessToAgent"><?php echo lang('staff_login') ?></h5>
+				<h4 class="modal-title text-light" id="accessToAgent" style="font-family: 'Kanit';"><?php echo lang('staff_login') ?></h4>
 				<button type="button" class="close" data-mdb-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -38,8 +38,8 @@
 						<input type="password" id="form2Example2" name="password" class="form-control" />
 						<label class="form-label" for="form2Example2"><?php echo lang('password') ?></label>
 					</div>
-					<button type="submit" style="background-color: #25d321;" class="btn btn-block">
-						<b class="text-dark"><?php echo lang('login') ?></b>
+					<button type="submit" style="background-color: #25d321;" class="btn btn-block text-light">
+						<b style="font-family: 'Kanit';" class="h5"><?php echo lang('login') ?></b>
 					</button>
 				</form>
 			</div>
