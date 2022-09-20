@@ -11,9 +11,7 @@ include_once("application/libraries/Thaidate.php");
 	}
 </style>
 <div class="container my-2">
-	
-	<div class="row">
-	<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px;" class="mt-2"><?php echo lang('vacant') ?></p>
+	<h3 style="font-family: 'Kanit';" class="text-dark mt-2"><?php echo lang('vacant') ?></h3>
 		<?php foreach ($result as $row) { ?>
 			<div class="col-md-3 mb-2">
 				<a href="<?php echo site_url('index/vacant/' . $row->asset_number) ?>" class="card hover-shadow my-2">

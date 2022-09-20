@@ -395,25 +395,25 @@ class Index extends CI_Controller
 		$this->load->view('containner/script');
 	}
 
-	public function real_estate_sale_list()
+	public function home_list()
 	{
 		$data['result'] = $this->news_model->get_list_estate();
 		$data['title'] = 'ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$this->load->view('containner/head', $data);
 		$this->load->view('containner/header_index');
-		$this->load->view('index/asset/real_estate_sale/real_estate_sale_list', $data);
+		$this->load->view('index/asset/home/home_list', $data);
 		$this->load->view('containner/footer');
 		$this->load->view('containner/script');
 	}
 
-	public function real_estate_sale($asset_number)
+	public function home($asset_number)
 	{
 		$data['title'] = 'ขายอสังหาริมทรัพย์ สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$data['data'] = $this->news_model->get_asset_data($asset_number);
 		$data['picture'] = $this->news_model->get_assetpicture($asset_number);
 		$this->load->view('containner/head', $data);
 		$this->load->view('containner/header_index');
-		$this->load->view('index/asset/real_estate_sale/real_estate_sale', $data);
+		$this->load->view('index/asset/home/home', $data);
 		$this->load->view('containner/footer');
 		$this->load->view('containner/script');
 	}
@@ -447,7 +447,7 @@ class Index extends CI_Controller
 		$data['title'] = 'คอนโด สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$this->load->view('containner/head', $data);
 		$this->load->view('containner/header_index');
-		$this->load->view('index/asset/vacant/vacant_list', $data);
+		$this->load->view('index/asset/condo/condo_list', $data);
 		$this->load->view('containner/footer');
 		$this->load->view('containner/script');
 	}

@@ -153,7 +153,7 @@
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_asset') ?></p>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-						<li><a class="dropdown-item" href="<?php echo site_url('index/real_estate_sale_list') ?>">
+						<li><a class="dropdown-item" href="<?php echo site_url('index/home_list') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_estate') ?></p>
 							</a></li>
 						<li><a class="dropdown-item" href="<?php echo site_url('index/vacant_list') ?>">

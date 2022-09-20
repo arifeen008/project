@@ -326,7 +326,7 @@
  		</div>
 
  		<div class="col-md-4">
- 			<div class="text-center" style="font-family: 'Kanit';">เวลาละหมาด</div>
+ 			<h3 class="text-center text-dark" style="font-family: 'Kanit';">เวลาละหมาด</h3>
  			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?TkcHwxO2RBVVRPO21BVVRPO3lBVVRPOzEzMzsxOTY7IzAwMzNDQzsjRkYwMDAwOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjMDAwMDAwOyMwMDAwMDA7IzAwMDAwMDsxOzs7MTs7OzE7OzsxOzs7Ozs7OzI7MDswO3BkfFBTOzE7OzE7MS4yO2M2Mw==" frameborder=0 scrolling=no></iframe>
  			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?DccHwxNTtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7I0ZGMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>

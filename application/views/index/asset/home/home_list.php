@@ -11,12 +11,10 @@ include_once("application/libraries/Thaidate.php");
 	}
 </style>
 <div class="container my-2">
-	
-	<div class="row">
-	<p style="font-family: 'Chonburi', cursive;color:black;font-size:30px;" class="mt-2"><?php echo lang('townhome') ?></p>
+	<h3 style="font-family: 'Kanit';" class="text-dark mt-2"><?php echo lang('townhome') ?></h3>
 		<?php foreach ($result as $row) { ?>
 			<div class="col-md-3 mb-2">
-				<a href="<?php echo site_url('index/real_estate_sale/' . $row->asset_number) ?>" class="card hover-shadow my-2">
+				<a href="<?php echo site_url('index/home/' . $row->asset_number) ?>" class="card hover-shadow my-2">
 					<img src="<?php echo base_url('uploads/') ?><?= $row->picture_name ?>" width="auto" height="200px" class="card-img-top" />
 					<div class="card-body">
 						<h5 style="font-family: 'Sarabun'" class="card-title text-dark transaction"><?= $row->title ?></h5>
