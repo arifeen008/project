@@ -108,7 +108,7 @@
  			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
  				<thead>
  					<tr>
- 						<td scope="col">#</td>
+ 						<td scope="col">ธง</td>
  						<td scope="col">ประเทศ</td>
  						<td scope="col">สกุลเงิน</td>
  						<td scope="col">ค่าเงิน</td>
@@ -116,44 +116,44 @@
  				</thead>
  				<tbody>
  					<tr>
- 						<td><i class="flag flag-thailand"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-thailand-96.png') ?>" class="w-25"></td>
  						<td>ไทย</td>
  						<td>THB</td>
  						<td><?php echo number_format($exchange_rate->rates->THB, 4) ?></td>
  					</tr>
  					<tr>
- 						<td><i class="flag flag-singapore"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-singapore-96.png') ?>" class="w-25"></td>
  						<td>สิงคโปร์</td>
  						<td>SGD</td>
  						<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?></td>
 
  					</tr>
  					<tr>
- 						<td><i class="flag flag-malaysia"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-malaysia-96.png') ?>" class="w-25"></td>
  						<td>มาเลเซีย</td>
  						<td>MYR</td>
  						<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?></td>
  					</tr>
  					<tr>
- 						<td><i class="flag flag-laos"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-laos-96.png') ?>" class="w-25"></td>
  						<td>ลาว</td>
  						<td>LAK</td>
  						<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?></td>
  					</tr>
  					<tr>
- 						<td><i class="flag flag-burma"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-myanmar-96.png') ?>" class="w-25"></td>
  						<td>พม่า</td>
  						<td>MMK</td>
  						<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?></td>
  					</tr>
  					<tr>
- 						<td><i class="flag flag-japan"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-japan-96.png') ?>" class="w-25"></td>
  						<td>ญี่ปุ่น</td>
  						<td>JPY</td>
  						<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?></td>
  					</tr>
  					<tr>
- 						<td><i class="flag flag-saudi-arabia"></i></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-saudi-arabia-96.png') ?>" class="w-25"></td>
  						<td>ซาอุดิอารเบีย</td>
  						<td>SAR</td>
  						<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?></td>
@@ -327,8 +327,6 @@
  						</div>
  					</div>
  				</div>
-
-
  			</div>
  			<div class="col-md-3">
  				<h3 class="text-center text-dark" style="font-family: 'Kanit';">เวลาละหมาด</h3>
