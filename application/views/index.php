@@ -101,72 +101,71 @@
  						<img src="<?php echo base_url('picture/433-3.png') ?>" class="w-100">
  					</a>
  				</div>
- 				<!-- <div class="col-md-12">
- 					
- 				</div> -->
  			</div>
-
  		</div>
  		<div class="col-md-7">
  			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
- 			<table class="table table-bordered border-success text-center text-dark" style="font-family: 'Kanit';font-size: 14px;">
- 				<tr>
- 					<td>#</td>
- 					<td>ประเทศ</td>
- 					<td>สกุลเงิน</td>
- 					<td>ค่าเงิน</td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-thailand"></i></td>
- 					<td>ไทย</td>
- 					<td>THB</td>
- 					<td><?php echo number_format($exchange_rate->rates->THB, 4) ?></td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-singapore"></i></td>
- 					<td>สิงคโปร์</td>
- 					<td>SGD</td>
- 					<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?></td>
+ 			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
+ 				<thead>
+ 					<tr>
+ 						<td scope="col">#</td>
+ 						<td scope="col">ประเทศ</td>
+ 						<td scope="col">สกุลเงิน</td>
+ 						<td scope="col">ค่าเงิน</td>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<tr>
+ 						<td><i class="flag flag-thailand"></i></td>
+ 						<td>ไทย</td>
+ 						<td>THB</td>
+ 						<td><?php echo number_format($exchange_rate->rates->THB, 4) ?></td>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-singapore"></i></td>
+ 						<td>สิงคโปร์</td>
+ 						<td>SGD</td>
+ 						<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?></td>
 
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-malaysia"></i></td>
- 					<td>มาเลเซีย</td>
- 					<td>MYR</td>
- 					<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?></td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-laos"></i></td>
- 					<td>ลาว</td>
- 					<td>LAK</td>
- 					<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?></td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-burma"></i></td>
- 					<td>พม่า</td>
- 					<td>MMK</td>
- 					<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?></td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-japan"></i></td>
- 					<td>ญี่ปุ่น</td>
- 					<td>JPY</td>
- 					<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?></td>
- 				</tr>
- 				<tr>
- 					<td><i class="flag flag-saudi-arabia"></i></td>
- 					<td>ซาอุดิอารเบีย</td>
- 					<td>SAR</td>
- 					<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?></td>
- 				</tr>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-malaysia"></i></td>
+ 						<td>มาเลเซีย</td>
+ 						<td>MYR</td>
+ 						<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?></td>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-laos"></i></td>
+ 						<td>ลาว</td>
+ 						<td>LAK</td>
+ 						<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?></td>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-burma"></i></td>
+ 						<td>พม่า</td>
+ 						<td>MMK</td>
+ 						<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?></td>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-japan"></i></td>
+ 						<td>ญี่ปุ่น</td>
+ 						<td>JPY</td>
+ 						<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?></td>
+ 					</tr>
+ 					<tr>
+ 						<td><i class="flag flag-saudi-arabia"></i></td>
+ 						<td>ซาอุดิอารเบีย</td>
+ 						<td>SAR</td>
+ 						<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?></td>
+ 					</tr>
+ 				</tbody>
  			</table>
  		</div>
  	</div>
- </div>
- <div class="container my-3">
- 	<div class="row" style="font-family: 'Sarabun';">
- 		<div class="col-md-8">
- 			<div class="card">
+
+ 	<div class="container">
+ 		<div class="row" style="font-family: 'Sarabun';">
+ 			<div class="col-md-9">
  				<div class="row">
  					<div class="col-md-6">
  						<div class="card my-2">
@@ -306,80 +305,83 @@
  					</div>
  					<div class="col-md-12">
  						<div class="card">
- 							<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;"><?php echo lang('news_news') ?></b>
- 							<div class="row">
- 								<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
- 									<div class="col-md-3">
- 										<a href="<?php echo $row->link ?>" class="card hover-shadow mb-3">
- 											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
- 											<div class="card-body">
- 												<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
- 											</div>
- 										</a>
- 									</div>
- 								<?php } ?>
- 							</div>
+ 						<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;"><?php echo lang('news_news') ?></b>
+ 						<div class="row">
+ 							<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
+ 								<div class="col-md-3">
+ 									<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
+ 										<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
+ 										<div class="card-body">
+ 											<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
+ 										</div>
+ 									</a>
+ 								</div>
+ 							<?php } ?>
+ 						</div>
+ 						</div>
+ 					</div>
+ 					<div class="col-md-12">
+ 						<div class="card mt-2">
+ 						<p class="text-dark border-bottom border-info mx-2 mt-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
+ 						<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  						</div>
  					</div>
  				</div>
+
+
+ 			</div>
+ 			<div class="col-md-3">
+ 				<h3 class="text-center text-dark" style="font-family: 'Kanit';">เวลาละหมาด</h3>
+ 				<div class="text-center">
+ 					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?TkcHwxO2RBVVRPO21BVVRPO3lBVVRPOzEzMzsxOTY7IzAwMzNDQzsjRkYwMDAwOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjMDAwMDAwOyMwMDAwMDA7IzAwMDAwMDsxOzs7MTs7OzE7OzsxOzs7Ozs7OzI7MDswO3BkfFBTOzE7OzE7MS4yO2M2Mw==" frameborder=0 scrolling=no></iframe>
+ 					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?DccHwxNTtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7I0ZGMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
+ 					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
+ 					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jgcHwyMjtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7IzAwMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
+ 				</div>
+ 				<div class="ratio ratio-16x9 my-3">
+ 					<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
+ 				</div>
+ 				<div class="ratio ratio-16x9 my-3">
+ 					<iframe src="https://www.youtube.com/embed/SV7IdDXAX0A" title="YouTube video" allowfullscreen></iframe>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('department_of_Lands') ?></p>
+ 					</a>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://www.moac.go.th/site-home">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กระทรวงเกษตรและสหกรณ์.png') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_agriculture_and_cooperatives') ?></p>
+ 					</a>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://krabi.cad.go.th/main.php?filename=index">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_cooperative_auditing_department') ?></p>
+ 					</a>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_provincial_cooperative_office') ?></p>
+ 					</a>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://www.mol.go.th/">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_labor') ?></p>
+ 					</a>
+ 				</div>
+ 				<div class="card mb-2">
+ 					<a target="_blank" class="hover-shadow" href="https://www.cpd.go.th/index.php">
+ 						<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กรมส่งเสริมสหกรณ์.png') ?>">
+ 						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
+ 					</a>
+ 				</div>
  			</div>
  		</div>
-
- 		<div class="col-md-4">
- 			<h3 class="text-center text-dark" style="font-family: 'Kanit';">เวลาละหมาด</h3>
- 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?TkcHwxO2RBVVRPO21BVVRPO3lBVVRPOzEzMzsxOTY7IzAwMzNDQzsjRkYwMDAwOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjMDAwMDAwOyMwMDAwMDA7IzAwMDAwMDsxOzs7MTs7OzE7OzsxOzs7Ozs7OzI7MDswO3BkfFBTOzE7OzE7MS4yO2M2Mw==" frameborder=0 scrolling=no></iframe>
- 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?DccHwxNTtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7I0ZGMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
- 			<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
- 			<div class="ratio ratio-16x9 my-3">
- 				<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
- 			</div>
- 			<div class="ratio ratio-16x9 my-3">
- 				<iframe src="https://www.youtube.com/embed/SV7IdDXAX0A" title="YouTube video" allowfullscreen></iframe>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://www.dol.go.th/Pages/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B5%E0%B9%88----.aspx">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตรากรมที่ดิน.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('department_of_Lands') ?></p>
- 				</a>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://www.moac.go.th/site-home">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กระทรวงเกษตรและสหกรณ์.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_agriculture_and_cooperatives') ?></p>
- 				</a>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://krabi.cad.go.th/main.php?filename=index">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_cooperative_auditing_department') ?></p>
- 				</a>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://web.cpd.go.th/krabi/">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('krabi_provincial_cooperative_office') ?></p>
- 				</a>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://www.mol.go.th/">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('ministry_of_labor') ?></p>
- 				</a>
- 			</div>
- 			<div class="card mb-2">
- 				<a target="_blank" class="hover-shadow" href="https://www.cpd.go.th/index.php">
- 					<img class="rounded mx-auto d-block" width="120" height="120" src="<?php echo base_url('picture/กรมส่งเสริมสหกรณ์.png') ?>">
- 					<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
- 				</a>
- 			</div>
- 		</div>
- 	</div>
- </div>
-
- <div class="container my-3">
- 	<div class="card">
- 		<p class="card-title text-dark border-bottom border-info mx-2 my-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
- 		<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  	</div>
  </div>
  <div class="row my-3">
