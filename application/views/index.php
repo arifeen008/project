@@ -108,7 +108,7 @@
  			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
  				<thead>
  					<tr>
- 						<td scope="col">ธง</td>
+ 						<td scope="col">ธงประจำชาติ</td>
  						<td scope="col">ประเทศ</td>
  						<td scope="col">สกุลเงิน</td>
  						<td scope="col">ค่าเงิน</td>
