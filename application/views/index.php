@@ -389,12 +389,12 @@
  		</a>
  	</div>
  	<div class="col-sm">
- 		<a href="https://www.facebook.com/profile.php?id=100083121019673">
+ 		<a href="https://www.facebook.com/%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%99%E0%B8%B4%E0%B8%98%E0%B8%B4%E0%B8%A9%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9F%E0%B8%B0%E0%B8%AE-705240033014546">
  			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051648982.jpg') ?>">
  		</a>
  	</div>
  	<div class="col-sm">
- 		<a href="https://www.facebook.com/Jiraphat1705/">
+ 		<a href="https://www.facebook.com/profile.php?id=100083121019673">
  			<img class="rounded mx-auto d-block hover-shadow" width="120" height="120" src="<?php echo base_url('picture/crop-1588051777775.jpg') ?>">
  		</a>
  	</div>
