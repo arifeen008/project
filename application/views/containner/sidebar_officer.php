@@ -3,10 +3,11 @@
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/search_member') ?>">
  				<i class="fas fa-user-alt me-3"></i><span>ค้นหาสมาชิก</span></a>
+ 			</a>
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/creditupload_system') ?>">
- 				<i class="fab fa-bitcoin me-3"></i><span>สินเชื่อ</span></a>
+			 <i class="fas fa-coins me-3"></i><span>สินเชื่อ</span></a>
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/internal_announcement') ?>">
@@ -22,7 +23,7 @@
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/form') ?>">
- 				<i class="fas fa-info me-3"></i><span>แบบฟอร์มต่างๆ</span></a>
+ 				<i class="fas fa-info me-3"></i><span>แบบฟอร์มเจ้าหน้าที่</span></a>
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/performance') ?>">
@@ -32,28 +33,28 @@
  			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span></a>
  		</li>
-		 <li class="sidenav-item">
+ 		<li class="sidenav-item">
  			<a class="sidenav-link" href="#">
-			 <i class="fas fa-air-freshener me-3"></i><span>ทำเนียบบุคลากร</span></a>
+ 				<i class="fas fa-air-freshener me-3"></i><span>ทำเนียบบุคลากร</span></a>
  		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link"><i class="fas fa-file-upload me-3"></i><span>ระบบอัพโหลด</span></a>
  			<ul class="sidenav-collapse">
  				<li class="sidenav-item">
- 					<a href="<?php echo site_url('officer/uploadcreditfile') ?>" class="sidenav-link"><i class="fas fa-credit-card me-4"></i>อัพโหลดสินเชื่อ</a>
+ 					<a href="<?php echo site_url('officer/uploadcreditfile') ?>" class="sidenav-link"><i class="fas fa-credit-card me-3"></i>อัพโหลดสินเชื่อ</a>
  				</li>
  				<?php if ($level_code === 'P') { ?>
  					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/uploadasset_system') ?>" class="sidenav-link"><i class="fas fa-home me-4"></i>อัพโหลดสินทรัพย์</a>
+ 						<a href="<?php echo site_url('officer/uploadasset_system') ?>" class="sidenav-link"><i class="fas fa-home me-3"></i>อัพโหลดสินทรัพย์</a>
  					</li>
  					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/uploadnews_system') ?>" class="sidenav-link"><i class="fas fa-newspaper me-4"></i>อัพโหลดข่าวสาร</a>
+ 						<a href="<?php echo site_url('officer/uploadnews_system') ?>" class="sidenav-link"><i class="fas fa-newspaper me-3"></i>อัพโหลดข่าวสาร</a>
  					</li>
  					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/upload_document') ?>" class="sidenav-link"><i class="fas fa-dice-d6 me-4"></i>ผลการดำเนินงานประจำปี</a>
+ 						<a href="<?php echo site_url('officer/upload_document') ?>" class="sidenav-link"><i class="fas fa-dice-d6 me-3"></i>ผลการดำเนินงานประจำปี</a>
  					</li>
  					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="sidenav-link"><i class="fas fa-microphone-alt me-4"></i>อัพโหลดประกาศ</a>
+ 						<a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="sidenav-link"><i class="fas fa-microphone-alt me-3"></i>อัพโหลดประกาศ</a>
  					</li>
  				<?php	} ?>
  			</ul>

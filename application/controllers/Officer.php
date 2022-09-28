@@ -440,13 +440,13 @@ class Officer extends CI_Controller
 		$config['encrypt_name']        = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('uploadFile')) {
-			echo "<script>alert('import failed');</script>";
+			echo "<script>alert('อัพโหลดไม่สำเร็จ');</script>";
 			redirect('officer/internal_announcement', 'refresh');
 		} else {
 			$uploadFile = $this->upload->data('file_name');
 			$this->news_model->upload_internalfile($title, $date, $uploadFile, $type_announcement);
-			echo "<script>alert('import success');</script>";
-			redirect('officer/internal_announcement', 'refresh');
+			echo "<script>alert('อัพโหลดสำเร็จ');</script>";
+			redirect('officer/import_internal_declaration', 'refresh');
 		}
 	}
 

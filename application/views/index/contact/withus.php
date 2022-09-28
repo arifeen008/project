@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<!-- <div class="container mt-3">
 	<div class="card">
 		<div class="card-body text-center">
 			<p style="font-family: 'Chonburi', cursive;color:black;font-size: 40px;">ร่วมงานกับเรา</p>
@@ -7,7 +7,7 @@
 			</a>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- <div class="container mt-5">
 	<section>
@@ -29,3 +29,20 @@
 		</div>
 	</section>
 </div> -->
+
+<!--Section: Design Block-->
+<section>
+
+	<div class="bg-image bg-fixed text-center" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20%2824%29.jpg'); height: 100vh;">
+		<div class="mask" style="background-color: rgba(63,81,181,.3);">
+			<div class="d-flex justify-content-center align-items-center h-100">
+				<div data-mdb-toggle="animation" data-mdb-animation="fade-in" data-mdb-animation-start="onLoad" class="text-white">
+					<p class="display-6 mb-5" style="font-family: 'Kanit';">ร่วมงานกับเรา</p>
+					<a class="btn btn-outline-light" role="button" href="<?php echo base_url('file/form/ใบสมัครงาน.pdf') ?>" style="font-family: 'Kanit';">ดาวน์โหลดใบสมัครงาน</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<!--Section: Design Block-->
