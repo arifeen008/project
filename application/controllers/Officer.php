@@ -649,17 +649,4 @@ class Officer extends CI_Controller
 			return false;
 		}
 	}
-
-	public function structure()
-	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "โครงสร้างสหกรณ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("container/head", $title);
-		$this->load->view("container/header_officer", $data_officer);
-		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/structure/structure");
-		$this->load->view("container/script_officer");
-	}
 }
