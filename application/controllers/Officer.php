@@ -24,11 +24,11 @@ class Officer extends CI_Controller
 			$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 			$data = $this->officer_model->data_officer($user_id);
 			$title['title'] = "ระบบผู้จัดการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-			$this->load->view("containner/head", $title);
-			$this->load->view("containner/header_officer", $data);
-			$this->load->view("containner/sidebar_officer", $level_code);
+			$this->load->view("container/head", $title);
+			$this->load->view("container/header_officer", $data);
+			$this->load->view("container/sidebar_officer", $level_code);
 			$this->load->view("officer/search_member/search_member");
-			$this->load->view("containner/script_officer");
+			$this->load->view("container/script_officer");
 		} else {
 			echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
 			redirect('index/index', 'refresh');
@@ -47,11 +47,11 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/search_member");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function internal_announcement()
@@ -62,11 +62,11 @@ class Officer extends CI_Controller
 		$data['ho'] = $this->news_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/internal_announcement/internal_announcement", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function performance()
@@ -77,11 +77,11 @@ class Officer extends CI_Controller
 		$data['result'] = $this->news_model->get_document();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/performance/performance", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function upload_document()
@@ -90,11 +90,11 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/performance/upload_document");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function uploadDocumentFile()
@@ -146,11 +146,11 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "กิจกรรมพัฒนาบุคลากร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/human_resource_development_activities/human_resource_development_activities");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function cooperative_regulation()
@@ -159,11 +159,11 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระเบียบเจ้าหน้าที่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/cooperative_regulation/cooperative_regulation");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function cooperative_rules()
@@ -172,11 +172,11 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ข้อบังคับสหกรณ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/cooperative_rules/cooperative_rules");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function search_data_member()
@@ -191,11 +191,11 @@ class Officer extends CI_Controller
 		$branch_number = $this->input->post('branch_number');
 		$data['result'] = $this->officer_model->search_data_member($id_card, $mem_id, $fname, $lname, $branch_number);
 		$title['title'] = "รายชื่อสมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/search_data_member", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function data_member($mem_id, $branch_number)
@@ -212,11 +212,11 @@ class Officer extends CI_Controller
 		$data['stock_details'] = $this->officer_model->stock_details($mem_id, $branch_number);
 		$data['dividend'] = $this->officer_model->dividend_member($mem_id, $branch_number);
 		$title['title'] = "สมาชิกที่ค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/data_member", $data);
-		$this->load->view("containner/script_data");
+		$this->load->view("container/script_data");
 	}
 
 	public function account_details($account_number)
@@ -226,11 +226,11 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['account_details'] = $this->officer_model->account_details($account_number);
 		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/account_details", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function opened_loan_details($code, $branch_number)
@@ -241,11 +241,11 @@ class Officer extends CI_Controller
 		$data['opened_loan_select'] = $this->officer_model->opened_loan_select($code, $branch_number);
 		$data['opened_loan_details'] = $this->officer_model->opened_loan_details($code, $branch_number);
 		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/opened_loan_details", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function closed_loan_details($code, $branch_number)
@@ -256,11 +256,11 @@ class Officer extends CI_Controller
 		$data['closed_loan_select'] = $this->officer_model->closed_loan_select($code, $branch_number);
 		$data['closed_loan_details'] = $this->officer_model->closed_loan_details($code, $branch_number);
 		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/search_member/closed_loan_details", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function upload_news()
@@ -269,11 +269,11 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/upload_news");
-		$this->load->view("containner/script_news");
+		$this->load->view("container/script_news");
 	}
 
 	public function uploadnews_system()
@@ -283,11 +283,11 @@ class Officer extends CI_Controller
 		$data = $this->officer_model->data_officer($USER_ID);
 		$table_news['result'] = $this->news_model->get_news_upload();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/table_news", $table_news);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	function upload()
@@ -372,11 +372,11 @@ class Officer extends CI_Controller
 		$data = $this->officer_model->data_officer($user_id);
 		$news = $this->news_model->selectnews($newsnumber);
 		$title['title'] = "แก้ไขข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/uploadnews_system/edit_news", $news);
-		$this->load->view("containner/script_news");
+		$this->load->view("container/script_news");
 	}
 
 	public function update_news()
@@ -403,11 +403,11 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['result'] = $this->news_model->get_internalfile_hr();
 		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/form/form", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function download_form($internal_id)
@@ -423,11 +423,11 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/internal_announcement/import_internal_declaration");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function upload_internalfile()
@@ -456,11 +456,11 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/searchcredit");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function uploadcreditfile()
@@ -469,11 +469,11 @@ class Officer extends CI_Controller
 		$USER_ID = $this->session->userdata('USER_ID');
 		$data = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/uploadcreditfile");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function uploadFileCredit()
@@ -545,11 +545,11 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->search_credit($year, $branch_id, $credit_id);
 		$title['title'] = "ค้นหาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/creditupload_system/listcredit", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function delete_credit($id_credit )
@@ -581,11 +581,11 @@ class Officer extends CI_Controller
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$data['result'] = $this->news_model->get_asset();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/asset_system/asset_list", $data);
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function upload_asset()
@@ -594,11 +594,11 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($USER_ID);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/asset_system/uploadasset_system");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 
 	public function asset_upload()
@@ -656,10 +656,10 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "โครงสร้างสหกรณ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
-		$this->load->view("containner/head", $title);
-		$this->load->view("containner/header_officer", $data_officer);
-		$this->load->view("containner/sidebar_officer", $level_code);
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/structure/structure");
-		$this->load->view("containner/script_officer");
+		$this->load->view("container/script_officer");
 	}
 }

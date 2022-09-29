@@ -24,6 +24,7 @@ $lang['dropdown_history'] = 'History';
 $lang['dropdown_vision'] = 'Vision, Mission, Objective';
 $lang['dropdown_board'] = 'Board of Directors and Executives';
 $lang['dropdown_office'] = 'Office';
+$lang['dropdown_structure'] = 'Structure';
 $lang['dropdown_register'] = 'Register';
 $lang['dropdown_deposit'] = 'Deposit service';
 $lang['dropdown_credit'] = 'Credit service';

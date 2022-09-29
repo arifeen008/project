@@ -70,6 +70,9 @@
 						<li><a class="dropdown-item" href="<?php echo site_url('index/office') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_office') ?></p>
 							</a></li>
+							<li><a class="dropdown-item" href="<?php echo site_url('index/structure') ?>">
+								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_structure') ?></p>
+							</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">

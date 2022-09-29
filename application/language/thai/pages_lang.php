@@ -24,6 +24,7 @@ $lang['dropdown_history'] = 'ประวัติความเป็นมา
 $lang['dropdown_vision'] = 'วิสัยทัศน์ พันธกิจ วัตถุประสงค์';
 $lang['dropdown_board'] = 'คณะกรรมการและผู้บริหาร';
 $lang['dropdown_office'] = 'สำนักงาน';
+$lang['dropdown_structure'] = 'โครงสร้างสหกรณ์';
 $lang['dropdown_register'] = 'สมัครสมาชิก';
 $lang['dropdown_deposit'] = 'บริการเงินฝาก';
 $lang['dropdown_credit'] = 'บริการสินเชื่อ';
