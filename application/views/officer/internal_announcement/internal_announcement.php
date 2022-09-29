@@ -6,27 +6,25 @@ include_once("application/libraries/Thaidate.php");
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
 			<div class="card-body">
-				<h5 class="card-title text-dark">ประกาศสำนักงานใหญ่</h5>
-				<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
-					<table>
-						<thead>
+				<h2 style="font-family: 'Kanit';" class="card-title text-dark">ประกาศสำนักงานใหญ่</h2>
+				<table class="table table-hover table-borderless">
+					<thead>
+						<tr>
+							<th class="text-center">ประกาศ</th>
+							<th class="text-center">วันที่</th>
+							<th class="text-center">ดาวน์โหลด</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($ho as $row) { ?>
 							<tr>
-								<th data-mdb-sort="false">ประกาศ</th>
-								<th data-mdb-sort="false">วันที่</th>
-								<th data-mdb-sort="false">ดาวน์โหลด</th>
+								<td><?= $row->title ?></td>
+								<td class="text-center"><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
+								<td class="text-center"><a href="<?php echo site_url('officer/download_form/' . $row->internal_id) ?>" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark"><i class="fas fa-file-download"></i></a></td>
 							</tr>
-						</thead>
-						<tbody>
-							<?php foreach ($ho as $row) { ?>
-								<tr>
-									<td><?= $row->title ?></td>
-									<td><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-									<td><a href="<?php echo site_url('officer/download_form/' . $row->internal_id) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download"></i></a></td>
-								</tr>
-							<?php } ?>
-						</tbody>
-					</table>
-				</div>
+						<?php } ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
