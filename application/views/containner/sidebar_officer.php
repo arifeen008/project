@@ -29,6 +29,10 @@
  			<a class="sidenav-link" href="<?php echo site_url('officer/performance') ?>">
  				<i class="fas fa-award fa-fw me-3"></i><span>ผลการดำเนินงานประจำปี</span></a>
  		</li>
+		 <li class="sidenav-item">
+ 			<a class="sidenav-link" href="<?php echo site_url('officer/structure') ?>">
+			 <i class="fas fa-sitemap me-3"></i><span>โครงสร้างสหกรณ์</span></a>
+ 		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span></a>

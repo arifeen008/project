@@ -1,4 +1,4 @@
-<div class="containner-fluid">
+<div data-mdb-toggle="animation" data-mdb-animation="fade-in" data-mdb-animation-start="onLoad" class="containner-fluid">
 	<img src="<?php echo base_url('picture/410.jpg') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" alt="บริการเงินฝาก" style="width: 100%;">
 	<div class="row">
 		<div class="col-md-3 mt-3">
