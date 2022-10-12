@@ -104,7 +104,7 @@
  			</div>
  		</div>
  		<div class="col-md-7">
- 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime($exchange_rate->date)) ?> </b>
+ 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) ?> </b>
  			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
  				<thead>
  					<tr>
@@ -116,47 +116,47 @@
  				</thead>
  				<tbody>
  					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-thailand-96.png') ?>" class="w-25"></td>
- 						<td>ไทย</td>
- 						<td>THB</td>
- 						<td><?php echo number_format($exchange_rate->rates->THB, 4) ?></td>
+ 						<td><img src="<?php echo base_url('picture/icons8-usa-96.png') ?>" class="w-25"></td>
+ 						<td>อเมริกา</td>
+ 						<td>USD</td>
+ 						<td><?php echo number_format($usd->info->rate, 4) ?></td>
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-singapore-96.png') ?>" class="w-25"></td>
  						<td>สิงคโปร์</td>
  						<td>SGD</td>
- 						<td><?php echo number_format($exchange_rate->rates->SGD, 4) ?></td>
+ 						<td><?php echo number_format($sgd->info->rate, 4) ?></td>
 
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-malaysia-96.png') ?>" class="w-25"></td>
  						<td>มาเลเซีย</td>
  						<td>MYR</td>
- 						<td><?php echo number_format($exchange_rate->rates->MYR, 4) ?></td>
+ 						<td><?php echo number_format($myr->info->rate, 4) ?></td>
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-laos-96.png') ?>" class="w-25"></td>
  						<td>ลาว</td>
  						<td>LAK</td>
- 						<td><?php echo number_format($exchange_rate->rates->LAK, 4) ?></td>
+ 						<td><?php echo number_format($lak->info->rate, 4) ?></td>
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-myanmar-96.png') ?>" class="w-25"></td>
  						<td>พม่า</td>
  						<td>MMK</td>
- 						<td><?php echo number_format($exchange_rate->rates->MMK, 4) ?></td>
+ 						<td><?php echo number_format($mmk->info->rate, 4) ?></td>
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-japan-96.png') ?>" class="w-25"></td>
  						<td>ญี่ปุ่น</td>
  						<td>JPY</td>
- 						<td><?php echo number_format($exchange_rate->rates->JPY, 4) ?></td>
+ 						<td><?php echo number_format($jpy->info->rate, 4) ?></td>
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-saudi-arabia-96.png') ?>" class="w-25"></td>
  						<td>ซาอุดิอารเบีย</td>
  						<td>SAR</td>
- 						<td><?php echo number_format($exchange_rate->rates->SAR, 4) ?></td>
+ 						<td><?php echo number_format($sar->info->rate, 4) ?></td>
  					</tr>
  				</tbody>
  			</table>
@@ -305,25 +305,25 @@
  					</div>
  					<div class="col-md-12">
  						<div class="card">
- 						<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;"><?php echo lang('news_news') ?></b>
- 						<div class="row">
- 							<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
- 								<div class="col-md-3">
- 									<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
- 										<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
- 										<div class="card-body">
- 											<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
- 										</div>
- 									</a>
- 								</div>
- 							<?php } ?>
- 						</div>
+ 							<b class="card-title text-dark border-bottom border-secondary mx-2" style="font-size: large;"><?php echo lang('news_news') ?></b>
+ 							<div class="row">
+ 								<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
+ 									<div class="col-md-3">
+ 										<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
+ 											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
+ 											<div class="card-body">
+ 												<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
+ 											</div>
+ 										</a>
+ 									</div>
+ 								<?php } ?>
+ 							</div>
  						</div>
  					</div>
  					<div class="col-md-12">
  						<div class="card mt-2">
- 						<p class="text-dark border-bottom border-info mx-2 mt-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
- 						<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+ 							<p class="text-dark border-bottom border-info mx-2 mt-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
+ 							<iframe class="mb-3 mx-2" style="width: auto;height: 500px;" src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
  						</div>
  					</div>
  				</div>
