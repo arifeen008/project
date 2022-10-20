@@ -49,22 +49,20 @@
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="1" aria-label="Slide 2"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+ 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="3" aria-label="Slide 4"></button>
  		</div>
  		<div class="carousel-inner">
- 			<div class="carousel-item active" data-mdb-interval="5000">
- 				<div class="lightbox">
- 					<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/345.jpg') ?>" class="d-block w-100" />
- 				</div>
+ 			<div class="carousel-item active">
+ 				<img src="<?php echo base_url('picture/450.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal0" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item" data-mdb-interval="5000">
- 				<div class="lightbox">
- 					<img src="<?php echo base_url('picture/388-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/388.jpg') ?>" class="d-block w-100" />
- 				</div>
+ 			<div class="carousel-item">
+ 				<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal1" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item" data-mdb-interval="5000">
- 				<div class="lightbox">
- 					<img src="<?php echo base_url('picture/389-1.jpg') ?>" data-mdb-img="<?php echo base_url('picture/389.jpg') ?>" class="d-block w-100" />
- 				</div>
+ 			<div class="carousel-item">
+ 				<img src="<?php echo base_url('picture/388-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal2" class="d-block w-100" />
+ 			</div>
+ 			<div class="carousel-item">
+ 				<img src="<?php echo base_url('picture/389-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal3" class="d-block w-100" />
  			</div>
  		</div>
  		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBanner" data-mdb-slide="prev">
@@ -75,6 +73,38 @@
  			<span class="carousel-control-next-icon" aria-hidden="false"></span>
  			<span class="visually-hidden">Next</span>
  		</button>
+ 	</div>
+ 	<div class="modal fade" id="Modal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog modal-dialog-centered">
+ 			<div class="modal-content">
+ 				<div class="modal-body">
+ 					<div class="ratio ratio-16x9">
+ 						<iframe src="https://www.youtube.com/embed/Wjw0Eovdgg0" title="YouTube video" allowfullscreen></iframe>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog modal-dialog-centered">
+ 			<div class="modal-content">
+ 				<div class="modal-body"><img src="<?php echo base_url('picture/345.jpg') ?>" class="img-fluid"></div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog modal-dialog-centered">
+ 			<div class="modal-content">
+ 				<div class="modal-body"><img src="<?php echo base_url('picture/388.jpg') ?>" class="img-fluid"></div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 		<div class="modal-dialog modal-dialog-centered">
+ 			<div class="modal-content">
+ 				<div class="modal-body"><img src="<?php echo base_url('picture/389.jpg') ?>" class="img-fluid"></div>
+ 			</div>
+ 		</div>
  	</div>
  </div>
  <div class="container mt-3">
