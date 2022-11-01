@@ -340,7 +340,7 @@
  								<?php foreach (array_slice($google_news->results, 0, 8)  as $row) { ?>
  									<div class="col-md-3">
  										<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
- 											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 130px;" class="card-img-top" />
+ 											<img src="<?php echo $row->image_url ?>" class="card-img-top" />
  											<div class="card-body">
  												<p class="card-text text-dark transaction"><?php echo $row->title ?></p>
  											</div>
