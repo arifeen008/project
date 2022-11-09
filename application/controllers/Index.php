@@ -11,7 +11,6 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		// $news = file_get_contents('https://newsapi.org/v2/everything?domains=thairath.co.th&apiKey=bc74328f17e34af5ab6e944debefe95b&pageSize=8');
 		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=thairath&page=8');
 		// $usd = file_get_contents('https://api.exchangerate.host/convert?from=USD&to=THB');
 		// $sgd = file_get_contents('https://api.exchangerate.host/convert?from=SGD&to=THB');
@@ -37,7 +36,7 @@ class Index extends CI_Controller
 		$this->load->view('container/header_index', $data);
 		$this->load->view('index', $data);
 		$this->load->view('container/footer');
-		$this->load->view('container/script');
+		$this->load->view('container/script_index');
 	}
 
 	public function news($newsnumber)
