@@ -11,22 +11,22 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		// $news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=thairath&page=8');
-		// $usd = file_get_contents('https://api.exchangerate.host/convert?from=USD&to=THB');
-		// $sgd = file_get_contents('https://api.exchangerate.host/convert?from=SGD&to=THB');
-		// $myr = file_get_contents('https://api.exchangerate.host/convert?from=MYR&to=THB');
-		// $lak = file_get_contents('https://api.exchangerate.host/convert?from=LAK&to=THB');
-		// $mmk = file_get_contents('https://api.exchangerate.host/convert?from=MMK&to=THB');
-		// $jpy = file_get_contents('https://api.exchangerate.host/convert?from=JPY&to=THB');
-		// $sar = file_get_contents('https://api.exchangerate.host/convert?from=SAR&to=THB');
-		// $data['google_news'] = json_decode($news);
-		// $data['usd'] = json_decode($usd);
-		// $data['sgd'] = json_decode($sgd);
-		// $data['myr'] = json_decode($myr);
-		// $data['lak'] = json_decode($lak);
-		// $data['mmk'] = json_decode($mmk);
-		// $data['jpy'] = json_decode($jpy);
-		// $data['sar'] = json_decode($sar);
+		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=thairath&page=8');
+		$usd = file_get_contents('https://api.exchangerate.host/convert?from=USD&to=THB');
+		$sgd = file_get_contents('https://api.exchangerate.host/convert?from=SGD&to=THB');
+		$myr = file_get_contents('https://api.exchangerate.host/convert?from=MYR&to=THB');
+		$lak = file_get_contents('https://api.exchangerate.host/convert?from=LAK&to=THB');
+		$mmk = file_get_contents('https://api.exchangerate.host/convert?from=MMK&to=THB');
+		$jpy = file_get_contents('https://api.exchangerate.host/convert?from=JPY&to=THB');
+		$sar = file_get_contents('https://api.exchangerate.host/convert?from=SAR&to=THB');
+		$data['google_news'] = json_decode($news);
+		$data['usd'] = json_decode($usd);
+		$data['sgd'] = json_decode($sgd);
+		$data['myr'] = json_decode($myr);
+		$data['lak'] = json_decode($lak);
+		$data['mmk'] = json_decode($mmk);
+		$data['jpy'] = json_decode($jpy);
+		$data['sar'] = json_decode($sar);
 		$data['news_information'] = $this->news_model->get_news_information();
 		$data['news_welfare'] = $this->news_model->get_news_welfare();
 		$data['news_credit'] = $this->news_model->get_news_credit();

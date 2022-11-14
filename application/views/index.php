@@ -408,10 +408,7 @@
  						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
  					</a>
  				</div>
- 				<div class="card mb-2">
- 					<p class="text-center text-success" style="font-family: 'Sarabun';"><?php echo lang('number_visiter') ?></p>
- 					<div id="sfc3wrcpuf5jgrke9993w3x3p7wsppfre13"></div>
- 				</div>
+ 				
  			</div>
  		</div>
  	</div>

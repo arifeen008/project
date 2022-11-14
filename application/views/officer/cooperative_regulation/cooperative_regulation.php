@@ -22,7 +22,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="col-md-12 mb-2">
+			<!-- <div class="col-md-12 mb-2">
 				<div class="card">
 					<a href="<?php echo base_url('file/cooperative_regulation/ว่าด้วยการใช้ทุนสะสมเพื่อพัฒนากิจการสหก.pdf'); ?>" target="_blank" class="btn btn-lg mx-2" data-mdb-ripple-color="#000000">
 						<div class="d-flex justify-content-between">
@@ -31,7 +31,7 @@
 						</div>
 					</a>
 				</div>
-			</div>
+			</div> -->
 			<div class="col-md-12 mb-2">
 				<div class="card">
 					<a href="<?php echo base_url('file/cooperative_regulation/ว่าด้วยการใช้ทุนสาธารณประโยชน์.pdf'); ?>" target="_blank" class="btn btn-lg mx-2" data-mdb-ripple-color="#000000">

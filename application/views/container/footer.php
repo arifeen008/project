@@ -1,7 +1,13 @@
 <footer class="text-lg-start py-2" style="background-color: #25d321;">
-		<div class="d-flex flex-row-reverse">
-			<button type="button" class="btn btn-success me-3" style="font-family: 'Kanit';" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-key me-3"></i><?php echo lang('staff_login') ?></button>
+	<div class="container">
+		<div class="d-flex justify-content-between">
+			<div class="d-flex justify-content-start">
+				<p class="text-center text-dark me-3" style="font-family: 'Sarabun';"><?php echo lang('number_visiter') ?> : </p>
+				<div id="sfcztuzqjbzpcw33tndqftw9nlble2rfqju"></div>
+			</div>
+			<div class="d-flex justify-content-end"><button type="button" class="btn btn-success me-3" style="font-family: 'Kanit';" data-mdb-toggle="modal" data-mdb-target="#accessToAgent"><i class="fas fa-key me-3"></i><?php echo lang('staff_login') ?></button></div>
 		</div>
+	</div>
 </footer>
 
 <div class="modal fade" id="accessToAgent" tabindex="-1" aria-labelledby="accessToAgent" aria-hidden="true">
@@ -30,4 +36,4 @@
 			</div>
 		</div>
 	</div>
-</div> 
+</div>
