@@ -12,7 +12,7 @@ include_once("application/libraries/Thaidate.php");
 				</h2>
 				<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
 					<div class="accordion-body">
-						<div class="row">
+						<div class="row text-dark" style="font-family: 'Kanit';">
 							<div class="col-md-6 my-2">
 								ชื่อ : <?php echo $data_member->FNAME ?>
 							</div>

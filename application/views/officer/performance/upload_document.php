@@ -2,8 +2,8 @@
     <div class="container pt-4 pt-lg-5">
         <div class="card my-3">
             <div class="card-body text-dark">
-                <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h5>อัพโหลดเอกสาร</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 style="font-family: 'Kanit'">อัพโหลดเอกสาร</h3>
                 </div>
             </div>
             <form action="<?php echo site_url('officer/uploadDocumentFile') ?>" method="post" enctype="multipart/form-data">

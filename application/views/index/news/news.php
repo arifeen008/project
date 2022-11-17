@@ -14,7 +14,7 @@ include_once("application/libraries/Thaidate.php");
 		<div class="col-md-9">
 			<div class="card">
 				<div class="card-body">
-					<p style="font-family: 'Kanit';" class="text-dark my-2 h4"><?php echo $data->title ?></p>
+					<p style="font-family: 'Kanit';" class="text-dark text-center my-2 h4"><?php echo $data->title ?></p>
 					<div class="lightbox">
 						<div class="row">
 							<?php foreach ($picture->result() as $row) { ?>

@@ -391,7 +391,7 @@
  						<p class="text-center text-primary" style="font-family: 'Sarabun';"><?php echo lang('cooperative_promotion_department') ?></p>
  					</a>
  				</div>
- 				
+
  			</div>
  		</div>
  	</div>

@@ -5,8 +5,8 @@ include_once("application/libraries/Thaidate.php");
     <div class="container pt-4 pt-lg-5">
         <div class="card my-3">
             <div class="card-body text-dark">
-                <div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/upload_asset') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>อัพโหลดสินทรัพย์</a></div>
-                <h5 class="card-title pb-2 border-bottom">สินทรัพย์</h5>
+                <div class="d-flex flex-row-reverse"><a href="<?php echo site_url('officer/upload_asset') ?>" class="btn btn-success">เพิ่มสินทรัพย์</a></div>
+                <h3 class="card-title" style="font-family: 'Kanit'">สินทรัพย์</h3>
                 <div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
                     <table>
                         <thead>

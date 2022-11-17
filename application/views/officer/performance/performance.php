@@ -5,8 +5,8 @@ include_once("application/libraries/Thaidate.php");
 	<div class="container pt-4 pt-lg-5">
 		<div class="card my-3">
 			<div class="card-body text-dark">
-				<h5 class="card-title border-bottom">ผลการดำเนินงานประจำปี</h5>
-				<div class="datatable" data-mdb-hover="true" data-mdb-full-pagination="true">
+				<h3 class="card-title" style="font-family: 'Kanit'">ผลการดำเนินงานประจำปี</h3>
+				<div class="datatable" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>
 						<thead>
 							<tr>
