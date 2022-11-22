@@ -50,7 +50,7 @@ class Officer_model extends CI_Model
 		$this->db->join('LOAN_M_SUB_NAME', ' LOAN_M_SUB_NAME.L_TYPE_CODE = LOAN_M_CONTACT.L_TYPE_CODE AND LOAN_M_SUB_NAME.LSUB_CODE = LOAN_M_CONTACT.LSUB_CODE');
 		$this->db->order_by('LOAN_M_CONTACT.LCONT_DATE', 'ASC');
 		$result = $this->db->get('LOAN_M_CONTACT');
-		return $result ;
+		return $result;
 	}
 	// สินเชื่อที่ปิดแล้ว
 	public function closed_credit_member($mem_id, $branch_number)
