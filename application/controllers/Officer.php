@@ -540,7 +540,7 @@ class Officer extends CI_Controller
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
-		$credit_id = $this->input->post('credit_id');	
+		$credit_id = $this->input->post('credit_id');
 		$user_id = $this->session->userdata('USER_ID');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->search_credit($year, $branch_id, $credit_id);
@@ -552,15 +552,15 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
-	public function delete_credit($id_credit )
+	public function delete_credit($id_credit)
 	{
-		$result = $this->news_model->select_credit($id_credit );
+		$result = $this->news_model->select_credit($id_credit);
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
 				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			} else {
-				$this->news_model->delete_credit($id_credit );
+				$this->news_model->delete_credit($id_credit);
 				echo "<script>alert('ลบสำเร็จ');</script>";
 				redirect('officer/creditupload_system', 'refresh');
 			}
