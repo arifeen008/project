@@ -4,7 +4,7 @@ include_once("application/libraries/Thaidate.php");
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
 		<div class="accordion my-3">
-			<div class="accordion-item">
+			<div class="accordion-item" style="font-family: 'Sarabun';">
 				<h2 class="accordion-header" id="headingOne">
 					<button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
 						<b class="text-dark">ข้อมูลส่วนตัว</b>

@@ -1,6 +1,6 @@
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
-		<div class="card my-3">
+		<div class="card my-3" style="font-family: 'Sarabun';">
 			<div class="card-body">
 				<h5 class="card-title">ค้นหาข้อมูลสมาชิก</h5>
 				<form action="<?php echo site_url('officer/search_data_member') ?>" method="post" class="row g-3">

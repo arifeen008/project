@@ -5,7 +5,7 @@ $i = 1;
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
 		<div class="card mt-4">
-			<div class="card-body">
+			<div class="card-body" style="font-family: 'Sarabun';">
 				<h3 class="card-title text-dark mb-3" style="font-family: 'Kanit'">รายการสินเชื่อ</h3>
 				<div class="datatable text-center" data-mdb-borderless="true" data-mdb-sm="true">
 					<table>

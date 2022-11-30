@@ -1,9 +1,9 @@
 <main id="content" style="margin-top: 10px">
     <div class="container pt-4 pt-lg-5">
-        <div class="card my-3">
+        <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h3 style="font-family: 'Kanit'">อัพโหลดสินทรัพย์</h3>
+                    <h3>อัพโหลดสินทรัพย์</h3>
                 </div>
             </div>
             <form action="<?php echo site_url('officer/asset_upload') ?>" method="post" enctype="multipart/form-data">
@@ -46,7 +46,8 @@
                         <input class="form-control" type="file" name="asset_pictures[]" id="formFileMultiple" multiple />
                     </div>
                 </div>
-                <button type="submit" class="ms-4 mb-4 btn btn-primary text-uppercase">upload</button>
+                <button type="submit" class="ms-4 mb-4 btn btn-success">อัพโหลด</button>
+                <button type="clear" class="ms-2 mb-4 btn btn-danger">ยกเลิก</button>
             </form>
         </div>
     </div>

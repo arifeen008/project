@@ -1,8 +1,8 @@
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
-		<div class="card my-3">
+		<div class="card my-3" style="font-family: 'Sarabun';">
 			<div class="card-body text-dark">
-				<h3 class="card-title mb-3" style="font-family: 'Kanit'">ประกาศ</h3>
+				<h3 class="card-title mb-3">ประกาศ</h3>
 				<form action="<?php echo site_url('officer/upload_internalfile') ?>" method="post" enctype="multipart/form-data" class="row g-3">
 					<div class="col-md-6">
 						<div class="form-outline">

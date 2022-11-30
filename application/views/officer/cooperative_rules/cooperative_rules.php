@@ -1,12 +1,12 @@
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
-		<div class="card my-3">
+		<div class="card my-3" style="font-family: 'Sarabun';">
 			<b class="text-center text-dark h2 my-3">ข้อบังคับสหกรณ์ปี 2565</b>
 			<div class="col-md-12 mx-2 my-2">
 				<div class="card mx-2 my-2">
 					<a href="<?php echo base_url('file/cooperative_rules/ข้อบังคับสหกรณ์(รวมทุกฉบับ).pdf'); ?>" target="_blank" class="btn btn-block btn-lg">
 						<div class="d-flex justify-content-between">
-							<b style="font-family: 'Kanit';" class="text-dark">ข้อบังคับสหกรณ์(รวมทุกฉบับ)</b>
+							<b class="text-dark">ข้อบังคับสหกรณ์(รวมทุกฉบับ)</b>
 							<i class="fas fa-download"></i>
 						</div>
 					</a>

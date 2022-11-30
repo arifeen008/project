@@ -5,7 +5,7 @@ include_once("application/libraries/Thaidate.php");
 
 <main id="content" style="margin-top: 10px">
 	<div class="container pt-4 pt-lg-5">
-		<div class="card my-3">
+		<div class="card my-3" style="font-family: 'Sarabun';">
 			<div class="card-body text-dark">
 				<b class="card-title h2">รายละเอียดสินเชื่อ <?php echo $opened_loan_select->LCONT_ID ?></b>
 				<table class="table table-borderless">

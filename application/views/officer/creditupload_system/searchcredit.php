@@ -1,9 +1,9 @@
 <main id="content" style="margin-top: 10px">
     <div class="container pt-4 pt-lg-5">
-        <div class="card my-3">
+        <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title">
-                    <b class="h3" style="font-family: 'Kanit'">ค้นหาสินเชื่อ</b>
+                    <b class="h3">ค้นหาสินเชื่อ</b>
                 </div>
                 <form action="<?php echo site_url('officer/search_credit') ?>" method="post">
                     <div class="row mt-4">
