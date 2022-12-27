@@ -152,15 +152,13 @@
  		<div class="col-md-7">
  			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) ?> </b>
  			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
- 				<thead>
- 					<tr>
- 						<td scope="col">ธงประจำชาติ</td>
- 						<td scope="col">ประเทศ</td>
- 						<td scope="col">สกุลเงิน</td>
- 						<td scope="col">ค่าเงิน</td>
- 					</tr>
- 				</thead>
  				<tbody>
+ 					<tr>
+ 						<td>ธงประจำชาติ</td>
+ 						<td>ประเทศ</td>
+ 						<td>สกุลเงิน</td>
+ 						<td>ค่าเงิน</td>
+ 					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-usa-96.png') ?>" class="w-25"></td>
  						<td>อเมริกา</td>
@@ -172,7 +170,6 @@
  						<td>สิงคโปร์</td>
  						<td>SGD</td>
  						<td><?php echo number_format($sgd->info->rate, 4) ?></td>
-
  					</tr>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-malaysia-96.png') ?>" class="w-25"></td>
