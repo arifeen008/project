@@ -21,16 +21,11 @@
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
- 			<!-- <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="3" aria-label="Slide 4"></button> -->
- 		</div>
  		<div class="carousel-inner">
- 			<!-- <div class="carousel-item active">
- 				<img src="<?php echo base_url('picture/S__23076868.jpg') ?>" class="d-block w-100" />
- 			</div> -->
  			<div class="carousel-item active">
  				<img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item">
+ 			<div class="carousel-item active">
  				<img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
