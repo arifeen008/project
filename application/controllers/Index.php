@@ -12,6 +12,7 @@ class Index extends CI_Controller
 	public function index()
 	{
 		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang');
+		$data['google_news'] = json_decode($news);
 		// $usd = file_get_contents('https://api.exchangerate.host/convert?from=USD&to=THB');
 		// $sgd = file_get_contents('https://api.exchangerate.host/convert?from=SGD&to=THB');
 		// $myr = file_get_contents('https://api.exchangerate.host/convert?from=MYR&to=THB');
@@ -19,7 +20,6 @@ class Index extends CI_Controller
 		// $mmk = file_get_contents('https://api.exchangerate.host/convert?from=MMK&to=THB');
 		// $jpy = file_get_contents('https://api.exchangerate.host/convert?from=JPY&to=THB');
 		// $sar = file_get_contents('https://api.exchangerate.host/convert?from=SAR&to=THB');
-		$data['google_news'] = json_decode($news);	
 		// $data['usd'] = json_decode($usd);
 		// $data['sgd'] = json_decode($sgd);
 		// $data['myr'] = json_decode($myr);

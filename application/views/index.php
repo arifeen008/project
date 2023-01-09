@@ -21,11 +21,12 @@
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
  			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+ 		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
  				<img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item active">
+ 			<div class="carousel-item">
  				<img src="<?php echo base_url('picture/309-1.jpg') ?>" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
@@ -53,9 +54,9 @@
  		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
- 				<img src="<?php echo base_url('picture/460.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal4" class="d-block w-100" />
+ 				<img src="<?php echo base_url('picture/466.jpg') ?>" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item">
+ 			<div class="carousel-item ">
  				<img src="<?php echo base_url('picture/450.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal0" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
