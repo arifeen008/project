@@ -26,7 +26,7 @@
 			<img src="<?php echo base_url('picture\บอร์ดก่อตั้ง.jpg') ?>" style="width: 100%;">
 		</div>
 		<div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-			<img src="<?php echo base_url('picture\บอร์ดกรรมการ 65.jpg') ?>" style="width: 100%;">
+			<img src="<?php echo base_url('picture\กรรมการชุดที่ 25.jpg') ?>" style="width: 100%;">
 		</div>
 		<div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
 			<img src="<?php echo base_url('picture\344-A4.jpg') ?>" style="width: 100%;">
