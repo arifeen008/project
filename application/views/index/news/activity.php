@@ -11,7 +11,6 @@ include_once("application/libraries/Thaidate.php");
 	}
 </style>
 <div class="container my-2">
-	
 	<div class="row">
 	<p style="font-family: 'Kanit';" class="text-dark mt-2 h2">ข่าวสาร/กิจกรรมความเคลื่อนไหว</p>
 		<?php foreach ($result->result() as $row) { ?>
