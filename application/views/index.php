@@ -375,6 +375,9 @@
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jgcHwyMjtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7IzAwMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  				</div>
+				 <div class="ratio ratio-16x9 my-3">
+ 					<iframe src="https://www.youtube.com/embed/m0o5aStUkYg" title="YouTube video" allowfullscreen></iframe>
+ 				</div>
  				<div class="ratio ratio-16x9 my-3">
  					<iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video" allowfullscreen></iframe>
  				</div>
