@@ -126,7 +126,7 @@ class Officer extends CI_Controller
 				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/performance', 'refresh');
 			} else {
-				$this->officer_model->delete_document($performance_id);
+				$this->news_model->delete_document($performance_id);
 				echo "<script>alert('Delete success');</script>";
 				redirect('officer/performance', 'refresh');
 			}
