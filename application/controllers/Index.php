@@ -215,6 +215,17 @@ class Index extends CI_Controller
 		$this->load->view('container/script');
 	}
 
+	public function result()
+	{
+		$data['title'] = 'ผลการดำเนินงาน สหกรณ์อิสลามษะกอฟะฮ จำกัด';
+		$this->load->view('container/head', $data);
+		$this->load->view('container/head');
+		$this->load->view('container/header_index');
+		$this->load->view('index/about/result');
+		$this->load->view('container/footer');
+		$this->load->view('container/script_result');
+	}
+
 	public function register()
 	{
 		$data['title'] = 'สมัครสมาชิก สหกรณ์อิสลามษะกอฟะฮ จำกัด';
