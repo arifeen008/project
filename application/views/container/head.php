@@ -15,6 +15,7 @@
 	<script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
+
 		function gtag() {
 			dataLayer.push(arguments);
 		}

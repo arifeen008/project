@@ -9,8 +9,10 @@
       datasets: [{
         label: 'จำนวนสมาชิก',
         data: [3120, 1956, 1792, 2217, 1119, 1422, 1727],
-        // backgroundColor : 'black',
-        // borderColor :'white'
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
       }]
     },
   };
@@ -32,6 +34,10 @@
       datasets: [{
         label: 'ทำได้',
         data: [97, 24, 7, 16, 4, 39, 55],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
       }],
     },
   };
@@ -53,6 +59,10 @@
       datasets: [{
         label: 'เป้าเงิน',
         data: [116000, 617200, 311430, 1898800, 116850, 1081000, 2298910],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
       }],
     },
   };
@@ -74,6 +84,10 @@
       datasets: [{
         label: 'เป้าเงิน',
         data: [170100, 512900, 113800, 36200, 56400, 215500, 128900],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
       }],
     },
   };
@@ -95,7 +109,12 @@
       datasets: [{
         label: 'เป้าเงิน',
         data: [-122874, -26100, -78150, -55071, -216853, 84805, 445900],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
       }],
+
     },
   };
   const optionhadjumrahBar = {
@@ -109,9 +128,65 @@
     }
   }
 
+  const istigomahBar = {
+    type: "bar",
+    data: {
+      labels: ["กระบี่", "คลองยาง", "อ่าวลึก", "กาญจนดิษฐ์", "คลองท่อม", "ห้วยลึก", "เกาะลันตา"],
+      datasets: [{
+        label: "ทำได้",
+        data: [-13691000, -270000, 3203500, 497000, 200000, 290000, -730000],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
+      }, ],
+    },
+  };
+
+  const optionistigomahBar = {
+    options: {
+      title: {
+        display: true,
+        text: "เงินฝากประเกทอิส12 และ24 ระยะเวลา 1 ปี ปีบัญชี 2566",
+        fontSize: 25,
+        fontColor: 'black'
+      }
+    }
+  }
+
+  const takafulBar = {
+    type: "bar",
+    data: {
+      labels: ["กระบี่", "คลองยาง", "อ่าวลึก", "กาญจนดิษฐ์", "คลองท่อม",
+        "ห้วยลึก", "เกาะลันตา"
+      ],
+      datasets: [{
+        label: "รวม 4 ไตรมาส",
+        data: [1027, 562, 1264, 395, 306, 445, 375],
+        backgroundColor: ["rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(66,133,244,1)", "rgba(66,133,244,1)",
+          "rgba(67,135,244,1)", "rgba(66,133,244,1)", "rgba(66,133,244,1)"
+        ],
+      }, ],
+    },
+  };
+
+  const optiontakafulBar = {
+    options: {
+      title: {
+        display: true,
+        text: "ตะกาฟุล 2566 นับเฉพาะสมาชิกสามัญ",
+        fontSize: 25,
+        fontColor: 'black'
+      }
+    }
+  }
+
   new mdb.Chart(document.getElementById('member-balance'), memberBar, optionmemberBar);
   new mdb.Chart(document.getElementById('target-member'), accountmemberBar, optionaccountmemberBar);
   new mdb.Chart(document.getElementById('shared-bar'), sharedBar, optionsharedBar);
   new mdb.Chart(document.getElementById('education-bar'), educationBar, optioneducationBar);
   new mdb.Chart(document.getElementById('hadjumrah-bar'), hadjumrahBar, optionhadjumrahBar);
+  new mdb.Chart(document.getElementById('istigomah-bar'), istigomahBar, optionistigomahBar);
+  new mdb.Chart(document.getElementById('takaful-bar'), takafulBar, optiontakafulBar);
 </script>
