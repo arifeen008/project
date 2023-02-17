@@ -148,13 +148,15 @@
  		<div class="col-md-7">
  			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) ?> </b>
  			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
- 				<tbody>
+ 				<thead>
  					<tr>
- 						<td>ธงประจำชาติ</td>
- 						<td>ประเทศ</td>
- 						<td>สกุลเงิน</td>
- 						<td>ค่าเงิน</td>
+ 						<th>ธงประจำชาติ</th>
+ 						<th>ประเทศ</th>
+ 						<th>สกุลเงิน</th>
+ 						<th>ค่าเงิน</th>
  					</tr>
+ 				</thead>
+ 				<tbody>
  					<tr>
  						<td><img src="<?php echo base_url('picture/icons8-usa-96.png') ?>" class="w-25"></td>
  						<td>อเมริกา</td>
@@ -375,7 +377,7 @@
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jUcHw2NztkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMENDRkY7I0ZGMDAwMDsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?jgcHwyMjtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7IzAwMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
  				</div>
-				 <div class="ratio ratio-16x9 my-3">
+ 				<div class="ratio ratio-16x9 my-3">
  					<iframe src="https://www.youtube.com/embed/m0o5aStUkYg" title="YouTube video" allowfullscreen></iframe>
  				</div>
  				<div class="ratio ratio-16x9 my-3">

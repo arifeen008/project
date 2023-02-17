@@ -321,9 +321,7 @@ class Officer extends CI_Controller
 				$countErrorUploadFiles++;
 			}
 		}
-
 		$this->news_model->upload_news($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
-
 		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
 		redirect('officer/uploadnews_system', 'refresh');
 	}

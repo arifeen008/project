@@ -73,9 +73,9 @@
 						<li><a class="dropdown-item" href="<?php echo site_url('index/structure') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('dropdown_structure') ?></p>
 							</a></li>
-						<li><a class="dropdown-item" href="<?php echo site_url('index/result') ?>">
+						<!-- <li><a class="dropdown-item" href="<?php echo site_url('index/result') ?>">
 								<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;">ผลการดำเนินงาน</p>
-							</a></li>
+							</a></li> -->
 					</ul>
 				</li>
 				<li class="nav-item dropdown mx-2">
