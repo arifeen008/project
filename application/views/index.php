@@ -121,8 +121,8 @@
  </div>
  <div class="container mt-3">
  	<div class="row">
- 		<div class="col-md-5">
- 			<div class="row mt-5">
+ 		<div class="col-sm-8">
+ 			<div class="row h-100 d-flex justify-content-center align-items-center">
  				<div class="col-md-6">
  					<a href="<?php echo site_url('index/register') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="pulse" class="card hover-shadow">
  						<img src="<?php echo base_url('picture/433.png') ?>" class="w-100">
@@ -145,65 +145,12 @@
  				</div>
  			</div>
  		</div>
- 		<div class="col-md-7">
- 			<b class="text-dark mt-2" style="font-family: 'Kanit';font-size: 18px;"> อัตราการแลกเปลี่ยนสกุลเงิน ณ วันที่ <?php echo thaidate('j M Y ', strtotime(date('Y-m-d'))) ?> </b>
- 			<table class="table table-sm table-bordered border-success fw-bold text-center text-dark">
- 				<thead>
- 					<tr>
- 						<th>ธงประจำชาติ</th>
- 						<th>ประเทศ</th>
- 						<th>สกุลเงิน</th>
- 						<th>ค่าเงิน</th>
- 					</tr>
- 				</thead>
- 				<tbody>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-usa-96.png') ?>" class="w-25"></td>
- 						<td>อเมริกา</td>
- 						<td>USD</td>
- 						<td><?php echo number_format($usd->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-singapore-96.png') ?>" class="w-25"></td>
- 						<td>สิงคโปร์</td>
- 						<td>SGD</td>
- 						<td><?php echo number_format($sgd->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-malaysia-96.png') ?>" class="w-25"></td>
- 						<td>มาเลเซีย</td>
- 						<td>MYR</td>
- 						<td><?php echo number_format($myr->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-laos-96.png') ?>" class="w-25"></td>
- 						<td>ลาว</td>
- 						<td>LAK</td>
- 						<td><?php echo number_format($lak->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-myanmar-96.png') ?>" class="w-25"></td>
- 						<td>พม่า</td>
- 						<td>MMK</td>
- 						<td><?php echo number_format($mmk->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-japan-96.png') ?>" class="w-25"></td>
- 						<td>ญี่ปุ่น</td>
- 						<td>JPY</td>
- 						<td><?php echo number_format($jpy->info->rate, 4) ?></td>
- 					</tr>
- 					<tr>
- 						<td><img src="<?php echo base_url('picture/icons8-saudi-arabia-96.png') ?>" class="w-25"></td>
- 						<td>ซาอุดิอารเบีย</td>
- 						<td>SAR</td>
- 						<td><?php echo number_format($sar->info->rate, 4) ?></td>
- 					</tr>
- 				</tbody>
- 			</table>
+ 		<div class="col-sm-4">
+ 			<div class="d-flex flex-row-reverse">
+ 				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSakofah.Islam.Savings%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+ 			</div>
  		</div>
  	</div>
-
  	<div class="container">
  		<div class="row" style="font-family: 'Sarabun';">
  			<div class="col-md-9">
@@ -370,7 +317,7 @@
  				</div>
  			</div>
  			<div class="col-md-3">
- 				<h3 class="text-center text-dark" style="font-family: 'Kanit';">เวลาละหมาด</h3>
+ 				<h3 class="text-center text-dark mt-2" style="font-family: 'Kanit';">เวลาละหมาด</h3>
  				<div class="text-center">
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?TkcHwxO2RBVVRPO21BVVRPO3lBVVRPOzEzMzsxOTY7IzAwMzNDQzsjRkYwMDAwOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjMDAwMDAwOyMwMDAwMDA7IzAwMDAwMDsxOzs7MTs7OzE7OzsxOzs7Ozs7OzI7MDswO3BkfFBTOzE7OzE7MS4yO2M2Mw==" frameborder=0 scrolling=no></iframe>
  					<iframe width="133px" height="196px" src="https://prayertime.muslimthaipost.com/solaat.php?DccHwxNTtkQVVUTzttQVVUTzt5QVVUTzsxMzM7MTk2OyMwMEZGMDA7I0ZGMzM5OTsjRkZGRkZGOyNGRkZGRkY7I0ZGRkZGRjsjRkZGRkZGOyNGRkZGRkY7IzAwMDAwMDsjMDAwMDAwOyMwMDAwMDA7MTs7OzE7OzsxOzs7MTs7Ozs7OzsyOzA7MDtwZHxQUzsxOzsxOzEuMjtjNjM=" frameborder=0 scrolling=no></iframe>
