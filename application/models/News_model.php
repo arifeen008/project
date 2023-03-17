@@ -167,15 +167,29 @@ class News_model extends CI_Model
 		return $result;
 	}
 
-	public function get_list_activity()
+	public function get_list_activity($limit, $start)
 	{
 		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
 		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
 		$this->db2->group_by('news.newsnumber');
 		$this->db2->order_by('dateupload', 'desc');
-		$this->db2->limit(20);
+		$this->db2->limit($limit, $start);
 		$result = $this->db2->get('news');
 		return $result;
+	}
+
+	public function getAllNews()
+	{
+		return $this->db2->count_all('news');
+	}
+
+	public function get_students($limit, $start)
+	{
+		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload');
+		$this->db2->order_by('dateupload', 'desc');
+		$this->db2->limit($limit, $start);
+		$query = $this->db2->get('news');
+		return $query->result();
 	}
 
 	public function upload_internalfile($title, $date, $uploadFile, $type_announcement)

@@ -304,8 +304,36 @@ class Index extends CI_Controller
 
 	public function activity()
 	{
-		$data['result'] = $this->news_model->get_list_activity();
+		$config = array();
+		$config['base_url'] = base_url('index/activity');
+		$config['total_rows'] = $this->news_model->getAllNews();
+		$config['per_page'] = 20;
+		$config['uri_segment'] = 3;
+	
+		$config['full_tag_open'] = '<nav aria-label="Page navigation"><ul class="pagination pagination-circle justify-content-center">';
+		$config['full_tag_close'] = '</ul></nav>';
+		$config['first_link'] = 'หน้าแรก';
+		$config['last_link'] = 'หน้าสุดท้าย';
+		$config['first_tag_open'] = '<li class="page-item"><span class="page-link">';
+		$config['first_tag_close'] = '</span></li>';
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="page-item"><span class="page-link">';
+		$config['prev_tag_close'] = '</span></li>';
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li class="page-item"><span class="page-link">';
+		$config['next_tag_close'] = '</span></li>';
+		$config['last_tag_open'] = '<li class="page-item"><span class="page-link">';
+		$config['last_tag_close'] = '</span></li>';
+		$config['cur_tag_open'] = '<li class="page-item active" aria-current="page"><span class="page-link" href="#">';
+		$config['cur_tag_close'] = '</span></li>';
+		$config['num_tag_open'] = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close'] = '</span></li>';
+
+		$this->pagination->initialize($config);
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$data['title'] = 'ข่าวสาร/กิจกรรมความเคลื่อนไหว สหกรณ์อิสลามษะกอฟะฮ จำกัด';
+		$data['links'] = $this->pagination->create_links();
+		$data['result'] = $this->news_model->get_list_activity($config['per_page'], $page);
 		$this->load->view('container/head', $data);
 		$this->load->view('container/header_index');
 		$this->load->view('index/news/activity', $data);
