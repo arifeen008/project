@@ -14,7 +14,6 @@ class Index extends CI_Controller
 		$title['title'] = 'สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$this->load->view('container/head', $title);
 		$this->load->view('firstpage');
-		$this->load->view('container/script_index');
 	}
 
 	public function firstpage()
