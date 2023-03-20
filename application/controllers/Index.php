@@ -11,6 +11,14 @@ class Index extends CI_Controller
 
 	public function index()
 	{
+		$title['title'] = 'สหกรณ์อิสลามษะกอฟะฮ จำกัด';
+		$this->load->view('container/head', $title);
+		$this->load->view('firstpage');
+		$this->load->view('container/script_index');
+	}
+
+	public function firstpage()
+	{
 		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang');
 		$data['google_news'] = json_decode($news);
 		$data['news_information'] = $this->news_model->get_news_information();
@@ -309,7 +317,7 @@ class Index extends CI_Controller
 		$config['total_rows'] = $this->news_model->getAllNews();
 		$config['per_page'] = 20;
 		$config['uri_segment'] = 3;
-	
+
 		$config['full_tag_open'] = '<nav aria-label="Page navigation"><ul class="pagination pagination-circle justify-content-center">';
 		$config['full_tag_close'] = '</ul></nav>';
 		$config['first_link'] = 'หน้าแรก';
