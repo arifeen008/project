@@ -35,8 +35,8 @@
 			</ul>
 			<span class="navbar-text">
 				<div class="d-inline-flex p-1 text-dark">ภาษา</div>
-				<a href="?lang=th" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark">TH</a>
-				<a href="?lang=en" class="btn btn-outline-success mx-2" data-mdb-ripple-color="dark">EN</a>
+				<a href="?lang=th" class="btn btn-outline-success mx-2" data-mdb-ripple-color="primary">TH</a>
+				<a href="?lang=en" class="btn btn-outline-success mx-2" data-mdb-ripple-color="primary">EN</a>
 			</span>
 		</div>
 	</div>

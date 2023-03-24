@@ -17,6 +17,9 @@
                             <div class="carousel-item">
                                 <img src="<?php echo base_url('picture/โปรรับรอมฎอน.jpg') ?>" class="d-block w-75"/>
                             </div>
+                            <div class="carousel-item">
+                                <img src="<?php echo base_url('picture/481.jpg') ?>" class="d-block w-75"/>
+                            </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
