@@ -20,7 +20,7 @@ include_once("application/libraries/Thaidate.php");
 							<tr>
 								<td><?= $row->title ?></td>
 								<td class="text-center"><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-								<td class="text-center"><a href="<?php echo site_url('officer/download_form/' . $row->internal_id) ?>" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark"><i class="fas fa-file-download"></i></a></td>
+								<td><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile); ?>" target="_blank" class="btn btn-outline-success" data-mdb-ripple-color="success">download</td>
 							</tr>
 						<?php } ?>
 					</tbody>
