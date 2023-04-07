@@ -15,6 +15,9 @@
                                 <img src="<?php echo base_url('picture/833155.jpg') ?>" class="d-block w-100" />
                             </div>
                             <div class="carousel-item">
+                                <img src="<?php echo base_url('picture/วันหยุดวันจักรี.jpg')?>" class="d-block w-100" />
+                            </div>
+                            <div class="carousel-item">
                                 <img src="<?php echo base_url('picture/โปรรับรอมฎอน.jpg') ?>" class="d-block w-75" />
                             </div>
                             <div class="carousel-item">
@@ -35,7 +38,3 @@
         </div>
     </div>
 </section>
-
-<!-- <div class="carousel-item">
-    <img src="picture/วันหยุดวันจักรี.jpg" class="d-block w-75" />
-</div> -->
