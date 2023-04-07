@@ -25,9 +25,6 @@
 							<img src="<?php echo base_url('picture/fd4fc7d9f37022fceac53a2d7faf06e4.jpg') ?>" class="d-block w-100" />
 						</div>
 						<div class="carousel-item">
-							<img src="<?php echo base_url('picture/8517c630f9285afe019335595b39120e.jpg') ?>" class="d-block w-100" />
-						</div>
-						<div class="carousel-item">
 							<img src="<?php echo base_url('picture/05aaf299b5e821ff90cfe79dbe7fe499.jpg') ?>" class="d-block w-100" />
 						</div>
 						<div class="carousel-item">
