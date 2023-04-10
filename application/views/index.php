@@ -51,6 +51,7 @@
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="2" aria-label="Slide 3"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="3" aria-label="Slide 4"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="4" aria-label="Slide 5"></button>
+ 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="5" aria-label="Slide 6"></button>
  		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
@@ -58,6 +59,9 @@
  			</div>
  			<div class="carousel-item ">
  				<img src="<?php echo base_url('picture/450.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal0" class="d-block w-100" />
+ 			</div>
+ 			<div class="carousel-item ">
+ 				<img src="<?php echo base_url('picture/490.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal0" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
  				<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal1" class="d-block w-100" />
