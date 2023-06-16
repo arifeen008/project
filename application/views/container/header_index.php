@@ -49,7 +49,7 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarCenteredExample">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link border-end" href="<?php echo site_url('index/firstpage') ?>">
+					<a class="nav-link border-end" href="<?php echo site_url('index') ?>">
 						<p style="font-family: 'Sarabun', cursive;color:black;font-size: 18px;"><?php echo lang('header_home') ?> </p>
 					</a>
 				</li>
