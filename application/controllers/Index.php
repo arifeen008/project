@@ -9,14 +9,6 @@ class Index extends CI_Controller
 		$this->load->model('news_model');
 	}
 
-	// public function index()
-	// {
-	// 	$title['title'] = 'สหกรณ์อิสลามษะกอฟะฮ จำกัด';
-	// 	$this->load->view('container/head', $title);
-	// 	$this->load->view('firstpage');
-	// 	$this->load->view('container/script');
-	// }
-
 	public function index()
 	{
 		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang');
