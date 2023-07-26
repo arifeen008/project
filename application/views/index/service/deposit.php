@@ -18,9 +18,9 @@
 					<div class="col-md-4 my-3">
 						<a href="#deposit-3"><img src="<?php echo base_url('picture/413.png') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada" style="width: 100%;"></a>
 					</div>
-					<div class="col-md-4 my-3">
+					<!-- <div class="col-md-4 my-3">
 						<a href="#deposit-4"><img src="<?php echo base_url('picture/414.png') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada" style="width: 100%;"></a>
-					</div>
+					</div> -->
 					<div class="col-md-4 my-3">
 						<a href="#deposit-5"><img src="<?php echo base_url('picture/415.png') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation-reset="true" data-mdb-animation="tada" style="width: 100%;"></a>
 					</div>
@@ -90,14 +90,14 @@
 					</ol>
 					<p class="text-success h1 my-3" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="font-family: 'Kanit';color:#70AD47">เงื่อนไขการให้บริการ</p>
 					<ol class="list-group list-group-numbered" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up">
-						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">เปิดบัญชีครั้งแรกตั้งแต่ 500 / 1,000 / 1,500 บาท</li>
-						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">ฝากเป็นประจำทุกๆเดือน ตั้งแต่ 500 / 1,000 / 1,500 บาท</li>
-						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">ฝากต่อเนื่องครบ 5 ปี สหกรณ์ฯ จะสมทบทุนการศึกษาให้ 3,000 / 6,000 / 9,000 บาท</li>
+						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">เปิดบัญชีครั้งแรกตั้งแต่ 200 / 500 / 1,000 / 1,500 บาท</li>
+						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">ฝากเป็นประจำทุกๆเดือน ตั้งแต่ 200 / 500 / 1,000 / 1,500 บาท</li>
+						<li class="list-group-item border-0" style="font-family: 'Kanit';font-size: 18px;">ฝากต่อเนื่องครบ 5 ปี สหกรณ์ฯ จะสมทบทุนการศึกษาให้ 1,200 / 3,000 / 6,000 / 9,000 บาท</li>
 					</ol>
 				</div>
 			</div>
 		</div>
-		<div class="my-5" id="deposit-4">
+		<!-- <div class="my-5" id="deposit-4">
 			<img src="<?php echo base_url('picture/420.jpg') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="width: 100%;">
 			<div class="row my-3">
 				<div class="col-md-4">
@@ -121,7 +121,7 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="my-5" id="deposit-5">
 			<img src="<?php echo base_url('picture/421.jpg') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="width: 100%;">
 			<div class="row my-3">

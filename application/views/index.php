@@ -52,8 +52,6 @@
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="3" aria-label="Slide 4"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="4" aria-label="Slide 5"></button>
  			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="5" aria-label="Slide 6"></button>
- 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="6" aria-label="Slide 7"></button>
- 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="7" aria-label="Slide 8"></button>
  		</div>
  		<div class="carousel-inner">
  			<div class="carousel-item active">
@@ -68,14 +66,8 @@
  			<div class="carousel-item ">
  				<img src="<?php echo base_url('picture/450.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal0" class="d-block w-100" />
  			</div>
- 			<div class="carousel-item ">
- 				<img src="<?php echo base_url('picture/490.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal" class="d-block w-100" />
- 			</div>
  			<div class="carousel-item">
  				<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal1" class="d-block w-100" />
- 			</div>
- 			<div class="carousel-item">
- 				<img src="<?php echo base_url('picture/388-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal2" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
  				<img src="<?php echo base_url('picture/389-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal3" class="d-block w-100" />
@@ -109,24 +101,10 @@
  			</div>
  		</div>
  	</div>
- 	<div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog modal-dialog-centered modal-lg">
- 			<div class="modal-content">
- 				<div class="modal-body"><img src="<?php echo base_url('picture/388.jpg') ?>" class="img-fluid"></div>
- 			</div>
- 		</div>
- 	</div>
  	<div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  		<div class="modal-dialog modal-dialog-centered modal-lg">
  			<div class="modal-content">
  				<div class="modal-body"><img src="<?php echo base_url('picture/389.jpg') ?>" class="img-fluid"></div>
- 			</div>
- 		</div>
- 	</div>
- 	<div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 		<div class="modal-dialog modal-dialog-centered modal-lg">
- 			<div class="modal-content">
- 				<div class="modal-body"><img src="<?php echo base_url('picture/S__23076868.jpg') ?>" class="img-fluid"></div>
  			</div>
  		</div>
  	</div>
