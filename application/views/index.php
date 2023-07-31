@@ -70,7 +70,7 @@
  				<img src="<?php echo base_url('picture/345-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal1" class="d-block w-100" />
  			</div>
  			<div class="carousel-item">
- 				<img src="<?php echo base_url('picture/389-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal3" class="d-block w-100" />
+ 				<img src="<?php echo base_url('picture/520-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal3" class="d-block w-100" />
  			</div>
 
  		</div>
@@ -104,7 +104,7 @@
  	<div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  		<div class="modal-dialog modal-dialog-centered modal-lg">
  			<div class="modal-content">
- 				<div class="modal-body"><img src="<?php echo base_url('picture/389.jpg') ?>" class="img-fluid"></div>
+ 				<div class="modal-body"><img src="<?php echo base_url('picture/520.jpg') ?>" class="img-fluid"></div>
  			</div>
  		</div>
  	</div>
