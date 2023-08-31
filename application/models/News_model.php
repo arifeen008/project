@@ -228,13 +228,13 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date)
+	public function upload_creditfile($mem_id, $fname, $lname, $lcon_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date)
 	{
 		$data = array(
 			'mem_id' => $mem_id,
 			'fname' => $fname,
 			'lname' => $lname,
-			'fullcont_id' => $fullcont_id,
+			'fullcont_id' => $lcon_id,
 			'branch_id' => $branch_id,
 			'credit_id' => $credit_id,
 			'year' => $year,

@@ -545,30 +545,6 @@ class Officer extends CI_Controller
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
 		$credit_id = $this->input->post('credit_id');
-		switch ($credit_id) {
-			case "1":
-				$precis_type = "ฉ.";
-				break;
-			case "2":
-				$precis_type = "สฉ.";
-				break;
-			case "3":
-				$precis_type = "ส.";
-				break;
-			case "4":
-				$precis_type = "พ.";
-				break;
-			case "5":
-				$precis_type = "ค.";
-				break;
-			case "6":
-				$precis_type = "คส.";
-				break;
-			case "7":
-				$precis_type = "จท.";
-				break;
-		}
-		$fullcont_id = $precis_type . $lcon_id . '/' . $year;
 		$new_name = $_FILES["userfiles"]['name'];
 		$config['file_name'] = $new_name;
 		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
@@ -583,7 +559,7 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
 			$date = date('Y-m-d');
-			$result = $this->news_model->upload_creditfile($mem_id, $fname, $lname, $fullcont_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
+			$result = $this->news_model->upload_creditfile($mem_id, $fname, $lname, $lcon_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
 			if ($result) {
 				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
 				redirect('officer/uploadcreditfile', 'refresh');
