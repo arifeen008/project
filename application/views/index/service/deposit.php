@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="my-5" id="deposit-3">
-			<img src="<?php echo base_url('picture/419.jpg') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="width: 100%;">
+			<img src="<?php echo base_url('picture/419-1.jpg') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="width: 100%;">
 			<div class="row my-3">
 				<div class="col-md-4">
 					<img src="<?php echo base_url('picture/S__11649201.png') ?>" data-mdb-toggle="animation" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat" data-mdb-animation="fade-in-up" style="width: 100%;">

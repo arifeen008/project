@@ -428,6 +428,67 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
+	public function credit_consider()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/credit_consider");
+		$this->load->view("container/script_officer");
+	}
+
+	public function uploadcredit_consider()
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/uploadcredit_consider");
+		$this->load->view("container/script_officer");
+	}
+
+	public function uploadcreditfile_consider()
+	{
+		$username = $this->session->userdata('USER_NAME');
+		$mem_id = $this->input->post('mem_id');
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$lcon_id = $this->input->post('lcon_id');
+		$year = $this->input->post('year');
+		$branch_id = $this->input->post('branch_id');
+		$credit_id = $this->input->post('credit_id');
+		$new_name = $_FILES["userfiles"]['name'];
+		$config['file_name'] = $new_name;
+		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
+		$config['allowed_types']        = 'pdf';
+		$config['encrypt_name']        = false;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('creditFile')) {
+			$error = $this->upload->display_errors();
+			echo "<script>alert('$error');</script>";
+			redirect('officer/uploadcreditfile', 'refresh');
+		} else {
+			$file_name = $this->upload->data('file_name');
+			$path = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
+			$date = date('Y-m-d');
+			$result = $this->news_model->upload_creditfile($mem_id, $fname, $lname,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
+			if ($result) {
+				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
+				redirect('officer/uploadcreditfile', 'refresh');
+			} else {
+				echo "<script>alert('อัพโหลดไฟล์สินเชื่อสำเร็จ');</script>";
+				redirect('officer/uploadcreditfile', 'refresh');
+			}
+		}
+	}
+
 	public function upload_internalfile()
 	{
 		$title = $this->input->post('title');

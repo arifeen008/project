@@ -40,6 +40,13 @@
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span>
  			</a>
  		</li> -->
+ 		<?php if ($level_code === 'P') { ?>
+ 			<li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider') ?>">
+ 					<span>ระบบพิจารณาสินเชื่อ</span>
+ 				</a>
+ 			</li>
+ 		<?php	} ?>
  		<li class="sidenav-item">
  			<a class="sidenav-link">
  				<span>ระบบอัพโหลด</span>
