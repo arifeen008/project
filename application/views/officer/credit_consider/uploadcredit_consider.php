@@ -28,7 +28,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
                                 <input type="text" id="form14" class="form-control" name="lcon_id" placeholder="ตัวอย่าง ฉ.0000001/2566" />
-                                <label class="form-label" for="form14">เลขที่สัญญา</label>
+                                <label class="form-label" for="form14">เลขที่คำขอสินเชื่อ</label>
                                 <div class="form-helper"></div>
                             </div>
                         </div>
