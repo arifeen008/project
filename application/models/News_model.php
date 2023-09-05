@@ -402,6 +402,6 @@ class News_model extends CI_Model
 			'date' =>  $date,
 			'status' => $status
 		);
-		$this->db2->insert('performance', $data);
+		$this->db2->insert('credit_consider', $data);
 	}
 }

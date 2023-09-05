@@ -5,7 +5,7 @@
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
                     <h3>พิจารณาสินเชื่อ</h3>
                 </div>
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="<?php echo site_url('officer/uploadcreditfile_consider') ?>" method="post" enctype="multipart/form-data">
                     <div class="row mx-2">
                         <div class="col-md-12 mb-4">
                             <div class="form-outline">

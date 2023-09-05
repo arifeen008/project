@@ -465,20 +465,18 @@ class Officer extends CI_Controller
 		$branch_id = $this->input->post('branch_id');
 		$loan_id = $this->input->post('loan_id');
 		$status = '01';
-		$new_name = $_FILES["userfiles"]['name'];
-		$config['file_name'] = $new_name;
+		
 		$config['upload_path']          = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 		$config['allowed_types']        = 'pdf';
-		$config['encrypt_name']        = false;
 		$this->load->library('upload', $config);
-		if (!$this->upload->do_upload('creditFile')) {
+		if (!$this->upload->do_upload('loanFile')) {
 			$error = $this->upload->display_errors();
 			echo "<script>alert('$error');</script>";
-			redirect('officer/uploadcreditfile', 'refresh');
+			redirect('officer/uploadcredit_consider', 'refresh');
 		} else {
 			$file_name = $this->upload->data('file_name');
-			$path = 'file/credit_folder/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
-			$date = date('Y-m-d');
+			$path = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
+			$date = date('Y-m-d H:i:s');
 			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
 				echo "<script>alert('Upload Success');</script>";
