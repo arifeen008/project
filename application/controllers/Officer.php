@@ -465,7 +465,6 @@ class Officer extends CI_Controller
 		$branch_id = $this->input->post('branch_id');
 		$loan_id = $this->input->post('loan_id');
 		$status = '01';
-		
 		$config['upload_path']          = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 		$config['allowed_types']        = 'pdf';
 		$this->load->library('upload', $config);
