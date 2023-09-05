@@ -386,7 +386,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $path, $file_name, $date)
+	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status)
 	{
 		$data = array(
 			'username' => $username,
@@ -399,7 +399,8 @@ class News_model extends CI_Model
 			'loan_id' =>  $loan_id,
 			'path' =>  $path,
 			'file_name' =>  $file_name,
-			'date' =>  $date
+			'date' =>  $date,
+			'status' => $status
 		);
 		$this->db2->insert('performance', $data);
 	}
