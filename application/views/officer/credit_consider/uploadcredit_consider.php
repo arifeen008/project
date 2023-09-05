@@ -42,7 +42,7 @@
                             </select>
                             <label class="form-label select-label">ปีสัญญา</label>
                         </div>
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-12 mb-4">
                             <select class="select" name="branch_id">
                                 <option value="000">สำนักงานใหญ่</option>
                                 <option value="001">กระบี่</option>
@@ -55,6 +55,18 @@
                                 <option value="008">เกาะลันตา</option>
                             </select>
                             <label class="form-label select-label">สาขา</label>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <select class="select" name="credit_id">
+                                <option value="1">ฉุกเฉิน</option>
+                                <option value="2">สามัญฉุกเฉิน</option>
+                                <option value="3">สามัญ</option>
+                                <option value="4">พิเศษ</option>
+                                <option value="5">พิเศษโครงการ</option>
+                                <option value="6">โครงการสินทรัพย์</option>
+                                <option value="7">สวัสดิการเจ้าหน้าที่</option>
+                            </select>
+                            <label class="form-label select-label">ประเภทสัญญา</label>
                         </div>
                         <div class="col-md-6 mb-4">
                             <select class="select" name="credit_id">
