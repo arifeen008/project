@@ -385,4 +385,22 @@ class News_model extends CI_Model
 		$result = $this->db2->get('asset_picture');
 		return $result->result();
 	}
+
+	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $path, $file_name, $date)
+	{
+		$data = array(
+			'username' => $username,
+			'mem_id' => $mem_id,
+			'fname' => $fname,
+			'lname' =>  $lname,
+			'lnumber_id' =>  $lnumber_id,
+			'loan_year' =>  $loan_year,
+			'branch_id' =>  $branch_id,
+			'loan_id' =>  $loan_id,
+			'path' =>  $path,
+			'file_name' =>  $file_name,
+			'date' =>  $date
+		);
+		$this->db2->insert('performance', $data);
+	}
 }

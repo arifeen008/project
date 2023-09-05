@@ -27,13 +27,13 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
-                                <input type="text" id="form14" class="form-control" name="lcon_id" placeholder="ตัวอย่าง ฉ.0000001/2566" />
+                                <input type="text" id="form14" class="form-control" name="lnumber_id" placeholder="ตัวอย่าง ฉ.0000001/2566" />
                                 <label class="form-label" for="form14">เลขที่คำขอสินเชื่อ</label>
                                 <div class="form-helper"></div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <select class="select" name="year">
+                            <select class="select" name="loan_year">
                                 <option value="2566">2566</option>
                                 <option value="2567">2567</option>
                                 <option value="2568">2568</option>
@@ -57,7 +57,7 @@
                             <label class="form-label select-label">สาขา</label>
                         </div>
                         <div class="col-md-12 mb-4">
-                            <select class="select" name="credit_id">
+                            <select class="select" name="loan_id">
                                 <option value="1">ฉุกเฉิน</option>
                                 <option value="2">สามัญฉุกเฉิน</option>
                                 <option value="3">สามัญ</option>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-md-12 mb-4">
                             <label class="form-label" for="customFile">อัพโหลดไฟล์</label>
-                            <input type="file" name="creditFile" class="form-control" id="customFile" accept=".pdf" />
+                            <input type="file" name="loanFile" class="form-control" id="customFile" accept=".pdf" />
                         </div>
                         <button type="submit" class="btn btn-primary btn-block mb-2">ตกลง</button>
                     </div>

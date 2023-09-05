@@ -460,13 +460,14 @@ class Officer extends CI_Controller
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
-		$lcon_id = $this->input->post('lcon_id');
-		$year = $this->input->post('year');
+		$lnumber_id = $this->input->post('lnumber_id');
+		$loan_year = $this->input->post('loan_year');
 		$branch_id = $this->input->post('branch_id');
-		$credit_id = $this->input->post('credit_id');
+		$loan_id = $this->input->post('loan_id');
+		$status = '01';
 		$new_name = $_FILES["userfiles"]['name'];
 		$config['file_name'] = $new_name;
-		$config['upload_path']          = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
+		$config['upload_path']          = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 		$config['allowed_types']        = 'pdf';
 		$config['encrypt_name']        = false;
 		$this->load->library('upload', $config);
@@ -476,15 +477,15 @@ class Officer extends CI_Controller
 			redirect('officer/uploadcreditfile', 'refresh');
 		} else {
 			$file_name = $this->upload->data('file_name');
-			$path = 'file/credit_folder/' . $year . '/' . $branch_id . '/' . $credit_id;
+			$path = 'file/credit_folder/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 			$date = date('Y-m-d');
-			$result = $this->news_model->upload_creditfile($mem_id, $fname, $lname,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date);
+			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
-				echo "<script>alert('อัพโหลดไฟล์สินเชื่อไม่สำเร็จ');</script>";
-				redirect('officer/uploadcreditfile', 'refresh');
+				echo "<script>alert('Upload Success');</script>";
+				redirect('officer/credit_consider', 'refresh');
 			} else {
-				echo "<script>alert('อัพโหลดไฟล์สินเชื่อสำเร็จ');</script>";
-				redirect('officer/uploadcreditfile', 'refresh');
+				echo "<script>alert('Upload Unsuccess');</script>";
+				redirect('officer/uploadcredit_consider', 'refresh');
 			}
 		}
 	}
