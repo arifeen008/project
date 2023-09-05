@@ -9,47 +9,41 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>id</th>
+                            <th>username</th>
+                            <th>mem_id</th>
+                            <th>fname</th>
+                            <th>lname</th>
+                            <th>lnumber_id</th>
+                            <th>loan_year</th>
+                            <th>branch_id</th>
+                            <th>loan_id</th>
+                            <!-- <th>path</th> -->
+                            <th>file_name</th>
+                            <th>date</th>
+                            <th>status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011-04-25</td>
-                            <td>$320,800</td>
-                        </tr>
+                            <?php foreach ($result as $row) { ?>
                         <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011-07-25</td>
-                            <td>$170,750</td>
+                            <td><?= $row->id ?></td>
+                            <td><?= $row->username   ?></td>
+                            <td><?= $row->mem_id   ?></td>
+                            <td><?= $row->fname   ?></td>
+                            <td><?= $row->lname   ?></td>
+                            <td><?= $row->lnumber_id   ?></td>
+                            <td><?= $row->loan_year  ?></td> 
+                            <td><?= $row->branch_id  ?></td>     
+                            <td><?= $row->loan_id  ?></td>     
+                            <!-- <td><?= $row->path  ?></td>      -->
+                            <td><?= $row->file_name  ?></td>     
+                            <td><?= $row->date  ?></td>     
+                            <td><?= $row->status  ?></td>                                 
                         </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009-01-12</td>
-                            <td>$86,000</td>
-                        </tr>   
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011-01-25</td>
-                            <td>$112,000</td>
-                        </tr>
+                    <?php  } ?>
+                    </tr>
                     </tbody>
                 </table>
             </div>

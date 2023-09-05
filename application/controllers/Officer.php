@@ -433,11 +433,12 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('USER_ID');
 		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
 		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_credit_consider();
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/credit_consider");
+		$this->load->view("officer/credit_consider/credit_consider", $data);
 		$this->load->view("container/script_officer");
 	}
 
@@ -478,11 +479,11 @@ class Officer extends CI_Controller
 			$date = date('Y-m-d H:i:s');
 			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
-				echo "<script>alert('Upload Success');</script>";
-				redirect('officer/credit_consider', 'refresh');
-			} else {
 				echo "<script>alert('Upload Unsuccess');</script>";
 				redirect('officer/uploadcredit_consider', 'refresh');
+			} else {
+				echo "<script>alert('Upload Success');</script>";
+				redirect('officer/credit_consider', 'refresh');
 			}
 		}
 	}

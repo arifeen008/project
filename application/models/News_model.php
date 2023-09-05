@@ -404,4 +404,10 @@ class News_model extends CI_Model
 		);
 		$this->db2->insert('credit_consider', $data);
 	}
+
+	public function get_credit_consider()
+	{
+		$result = $this->db2->get('credit_consider');
+		return $result->result();
+	}
 }
