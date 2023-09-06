@@ -38,7 +38,6 @@
         </div>
     </div>
 </main>
-
 <script>
     function sweetalert() {
         Swal.fire('ข้อมูลสินเชื่อ <?php echo $result->fname . "    " . $result->lname ?>')
@@ -55,14 +54,9 @@
             cancelButtonText: 'ยกเลิก'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "<?php echo site_url('officer/credit_consider2')?>"
-                Swal.fire(
-                    'อนุมัติ !',
-                    'อนุมัติสำเร็จ',
-                    'success'
-                )
+                window.location.href = "<?php echo base_url('officer/credit_consider2')?>"
+                Swal.fire('อนุมัติ !','','success')
             }
-
         })
     }
 </script>
