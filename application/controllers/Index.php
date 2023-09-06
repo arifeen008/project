@@ -25,6 +25,14 @@ class Index extends CI_Controller
 		$this->load->view('container/script_index');
 	}
 
+	public function login_page()
+	{
+		$title['title'] = "เข้าสู่ระบบ";
+		$this->load->view("container/head", $title);
+		$this->load->view("login");
+		$this->load->view("container/script_officer");
+	}
+
 	public function news($newsnumber)
 	{
 		$data['data'] = $this->news_model->get_news_data($newsnumber);

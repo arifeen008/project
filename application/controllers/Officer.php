@@ -1,10 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 session_start();
+// if(!$session){
+// 	redirect('index/index');
+// }
 class Officer extends CI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->load->model('officer_model');
 		$this->load->model('news_model');
 	}
@@ -454,7 +458,7 @@ class Officer extends CI_Controller
 		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/credit_consider/credit_consider2", $data);
 		$this->load->view("container/script_officer");
-	} 
+	}
 
 	public function credit_consider_detail($credit_consider_id)
 	{
