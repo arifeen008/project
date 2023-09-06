@@ -5,7 +5,6 @@
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
                     <h3>พิจารณาสินเชื่อ</h3>
                 </div>
-                <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/uploadcredit_consider') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>ส่งสินเชื่อ</a></div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -13,7 +12,6 @@
                             <th>username</th>
                             <th>mem_id</th>
                             <th>fname</th>
-                            <th>lname</th>
                             <th>lnumber_id</th>
                             <th>loan_year</th>
                             <th>branch_id</th>
@@ -21,6 +19,7 @@
                             <th>file_name</th>
                             <th>date</th>
                             <th>status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,15 +29,15 @@
                             <td><?= $row->id ?></td>
                             <td><?= $row->username   ?></td>
                             <td><?= $row->mem_id   ?></td>
-                            <td><?= $row->fname   ?></td>
-                            <td><?= $row->lname   ?></td>
+                            <td><?= $row->fname . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
                             <td><?= $row->loan_year  ?></td> 
                             <td><?= $row->branch_id  ?></td>     
                             <td><?= $row->loan_id  ?></td>     
                             <td><?= $row->file_name  ?></td>     
                             <td><?= $row->date  ?></td>     
-                            <td><?= $row->status  ?></td>                                 
+                            <td><?= $row->status  ?></td>     
+                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>                            
                         </tr>
                     <?php  } ?>
                     </tr>

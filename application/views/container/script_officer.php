@@ -21,3 +21,4 @@
   setMode();
   window.addEventListener("resize", setMode);
 </script>
+

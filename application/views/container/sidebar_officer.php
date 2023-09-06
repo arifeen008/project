@@ -46,6 +46,16 @@
  					<span>ระบบพิจารณาสินเชื่อ</span>
  				</a>
  			</li>
+			 <li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider2') ?>">
+ 					<span>ระบบพิจารณาสินเชื่อ 2</span>
+ 				</a>
+ 			</li>
+			 <li class="sidenav-item">
+ 				<a class="sidenav-link" href="#">
+ 					<span>ระบบพิจารณาสินเชื่อ 3</span>
+ 				</a>
+ 			</li>
  		<?php	} ?>
  		<li class="sidenav-item">
  			<a class="sidenav-link">

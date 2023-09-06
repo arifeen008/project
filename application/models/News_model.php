@@ -410,4 +410,11 @@ class News_model extends CI_Model
 		$result = $this->db2->get('credit_consider');
 		return $result->result();
 	}
+
+	public function get_credit_consider_detail($credit_consider_id)
+	{
+		$this->db2->where('id', $credit_consider_id);
+		$result = $this->db2->get('credit_consider');
+		return $result->row();
+	}
 }
