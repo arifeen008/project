@@ -54,8 +54,8 @@
             cancelButtonText: 'ยกเลิก'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "<?php echo base_url('officer/credit_consider2')?>"
-                Swal.fire('อนุมัติ !','','success')
+                window.location.href = "<?php echo base_url('officer/credit_consider2') ?>"
+                Swal.fire('อนุมัติ !', '', 'success')
             }
         })
     }
