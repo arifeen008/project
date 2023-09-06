@@ -476,7 +476,7 @@ class Officer extends CI_Controller
 		} else {
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
-			$date = date('Y-m-d H:i:s');
+			$date = date('Y-m-d');
 			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
 				echo "<script>alert('Upload Unsuccess');</script>";
