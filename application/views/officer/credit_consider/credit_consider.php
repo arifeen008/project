@@ -48,18 +48,3 @@
         </div>
     </div>
 </main>
-<script>
-    <?php if ($this->session->flashdata('success')) { ?>
-        Swal.fire(
-            'สำเร็จ',
-            'เพิ่มสินเชื่อแล้ว',
-            'success'
-        );
-    <?php } else { ?>
-        Swal.fire(
-            'Error !',
-            $error,
-            'error'
-        );
-    <?php } ?>
-</script>

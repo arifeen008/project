@@ -460,12 +460,6 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
-	public function accept_credit_consider()
-	{
-		$this->session->set_flashdata('success', true);
-		redirect('officer/credit_consider2', 'refresh');
-	}
-
 	public function credit_consider_detail($credit_consider_id)
 	{
 		$user_id = $this->session->userdata('USER_ID');

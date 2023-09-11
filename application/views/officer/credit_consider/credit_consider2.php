@@ -31,13 +31,13 @@
                             <td><?= $row->mem_id   ?></td>
                             <td><?= $row->fname . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
-                            <td><?= $row->loan_year  ?></td> 
-                            <td><?= $row->branch_id  ?></td>     
-                            <td><?= $row->loan_id  ?></td>     
-                            <td><?= $row->file_name  ?></td>     
-                            <td><?= $row->date  ?></td>     
-                            <td><?= $row->status  ?></td>     
-                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>                            
+                            <td><?= $row->loan_year  ?></td>
+                            <td><?= $row->branch_id  ?></td>
+                            <td><?= $row->loan_id  ?></td>
+                            <td><?= $row->file_name  ?></td>
+                            <td><?= $row->date  ?></td>
+                            <td><?= $row->status  ?></td>
+                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
                         </tr>
                     <?php  } ?>
                     </tr>
@@ -47,18 +47,13 @@
         </div>
     </div>
 </main>
+
 <script>
     <?php if ($this->session->flashdata('success')) { ?>
         Swal.fire(
             'สำเร็จ',
-            'อนุมัติสินเชื่อแล้ว',
+            <?= $this->session->flashdata('success'); ?>,
             'success'
-        );
-    <?php } else { ?>
-        Swal.fire(
-            'Error !',
-            $error,
-            'error'
         );
     <?php } ?>
 </script>
