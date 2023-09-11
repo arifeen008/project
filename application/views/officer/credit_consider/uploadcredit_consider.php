@@ -79,3 +79,12 @@
         </div>
     </div>
 </main>
+<script>
+    <?php if ($this->session->flashdata($error)) : ?>
+        Swal.fire(
+            'Error',
+             $error,
+            'error'
+        );
+    <?php endif ?>
+</script>

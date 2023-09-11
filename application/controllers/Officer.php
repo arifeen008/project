@@ -460,6 +460,12 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
+	public function accept_credit_consider()
+	{
+		$this->session->set_flashdata('success', true);
+		redirect('officer/credit_consider2', 'refresh');
+	}
+
 	public function credit_consider_detail($credit_consider_id)
 	{
 		$user_id = $this->session->userdata('USER_ID');
@@ -503,7 +509,7 @@ class Officer extends CI_Controller
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('loanFile')) {
 			$error = $this->upload->display_errors();
-			echo "<script>alert('$error');</script>";
+			$this->session->set_flashdata($error, true);
 			redirect('officer/uploadcredit_consider', 'refresh');
 		} else {
 			$file_name = $this->upload->data('file_name');
@@ -511,13 +517,26 @@ class Officer extends CI_Controller
 			$date = date('Y-m-d');
 			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
-				echo "<script>alert('Upload Unsuccess');</script>";
+				$this->session->set_flashdata('error', true);
 				redirect('officer/uploadcredit_consider', 'refresh');
 			} else {
-				echo "<script>alert('Upload Success');</script>";
+				$this->session->set_flashdata('success', true);
 				redirect('officer/credit_consider', 'refresh');
 			}
 		}
+	}
+
+	public function credit_consider_detail2($id)
+	{
+		$user_id = $this->session->userdata('USER_ID');
+		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "พิจารณาสินเชื่อ";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/credit_consider_detail2", $id);
+		$this->load->view("container/script_officer");
 	}
 
 	public function upload_internalfile()
