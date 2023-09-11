@@ -1,14 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-session_start();
-// if(!$session){
-// 	redirect('index/index');
-// }
+
 class Officer extends CI_Controller
 {
+	
 	function __construct()
 	{
 		parent::__construct();
-
+		session_start();
 		$this->load->model('officer_model');
 		$this->load->model('news_model');
 	}
@@ -514,7 +512,7 @@ class Officer extends CI_Controller
 				$this->session->set_flashdata('error', true);
 				redirect('officer/uploadcredit_consider', 'refresh');
 			} else {
-				$this->session->set_flashdata('success', true);
+				$this->session->set_flashdata('success', 'upload success');
 				redirect('officer/credit_consider', 'refresh');
 			}
 		}
@@ -531,6 +529,22 @@ class Officer extends CI_Controller
 		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/credit_consider/credit_consider_detail2", $id);
 		$this->load->view("container/script_officer");
+	}
+
+	public function delete_credit_consider($id)
+	{
+		$result = $this->news_model->select_credit_consider($id);
+		if ($result) {
+			if (!unlink($result->path . '/' . $result->file_name)) {
+				$this->news_model->delete_credit_consider($id);
+				// $this->session->set_flashdata('deleteunsuccess');
+				redirect('officer/credit_consider2', 'refresh');
+			} else {
+				$this->news_model->delete_credit_consider($id);
+				// $this->session->set_flashdata('deletesuccess');
+				redirect('officer/credit_consider2', 'refresh');
+			}
+		}
 	}
 
 	public function upload_internalfile()

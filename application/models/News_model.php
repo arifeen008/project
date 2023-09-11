@@ -417,4 +417,17 @@ class News_model extends CI_Model
 		$result = $this->db2->get('credit_consider');
 		return $result->row();
 	}
+
+	public function select_credit_consider($id)
+	{
+		$result = $this->db2->get('credit_consider');
+		return $result->row();
+	}
+
+	public function delete_credit_consider($id)
+	{
+		$this->db2->where('id', $id);
+		$result = $this->db2->delete('credit_consider');
+		return $result;
+	}
 }

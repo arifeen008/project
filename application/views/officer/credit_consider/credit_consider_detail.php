@@ -35,7 +35,7 @@
                     <h3 class="align-self-center me-auto"> <a href="<?php echo base_url($result->path . '/' . $result->file_name) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download me-3"></i>ดูเอกสาร</a></h3>
                     <button type="button" class="btn btn-success h3 ms-3" onclick="acceptcredit()">อนุมัติ</button>                 
                     <button type="button" class="btn btn-danger h3 ms-3"><i class="fas fa-skull-crossbones me-2"></i>ปฏิเสธ</button>
-
+                    <a href="<?php echo site_url('officer/delete_credit_consider/' . $result->id ) ?>" class="btn btn-danger h3 ms-3"><i class="fas fa-skull-crossbones me-2"></i>ลบ</a>
                 </div>
             </div>
         </div>

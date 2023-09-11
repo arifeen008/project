@@ -5,6 +5,11 @@
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
                     <h3>พิจารณาสินเชื่อ</h3>
                 </div>
+                <?php if ($this->session->flashdata('success')) : ?>
+                    <div class="alert" role="alert" data-mdb-color="success">
+                        <?= $this->session->flashdata('success') ?>
+                    </div>
+                <?php endif ?>
                 <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/uploadcredit_consider') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>ส่งสินเชื่อ</a></div>
                 <table class="table table-bordered">
                     <thead>
