@@ -11,17 +11,18 @@ class Officer extends CI_Controller
 
 	public function login_officer()
 	{
+		session_start();
 		$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
 		if (!empty($result)) {
 			$session = array(
-				'USER_ID' => $result->USER_ID,
-				'LEVEL_CODE' => $result->LEVEL_CODE,
-				'BR_NO' => $result->BR_NO,
-				'USER_NAME' => $result->USER_NAME
+				'user_id' => $result->USER_ID,
+				'level_code' => $result->LEVEL_CODE,
+				'br_no' => $result->BR_NO,
+				'user_name' => $result->USER_NAME
 			);
 			$this->session->set_userdata($session);
-			$user_id = $this->session->userdata('USER_ID');
-			$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+			$user_id = $this->session->userdata('user_id');
+			$level_code['level_code'] = $this->session->userdata('level_code');
 			$data = $this->officer_model->data_officer($user_id);
 			$title['title'] = "ระบบผู้จัดการ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 			$this->load->view("container/head", $title);
@@ -30,21 +31,21 @@ class Officer extends CI_Controller
 			$this->load->view("officer/search_member/search_member");
 			$this->load->view("container/script_officer");
 		} else {
-			echo "<script>alert('คุณใส่ Email หรือ Password ไม่ถูกต้อง');</script>";
-			redirect('index/index', 'refresh');
+			$this->session->set_flashdata('error', 'Email or password are wrong');
+			redirect('index/login_page', 'refresh');
 		}
 	}
 
 	public function logout_officer()
 	{
-		$this->session->unset_userdata(array('USER_ID', 'LEVEL_CODE', 'BR_NO', 'USER_NAME'));
-		redirect('index', 'refresh');
+		$this->session->unset_userdata(array('user_id', 'level_code', 'br_no', 'user_name'));
+		redirect('index/login_page', 'refresh');
 	}
 
 	public function search_member()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบค้นหา สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -56,9 +57,9 @@ class Officer extends CI_Controller
 
 	public function internal_announcement()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data['level_code'] = $this->session->userdata('level_code');
 		$data['ho'] = $this->news_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -71,9 +72,9 @@ class Officer extends CI_Controller
 
 	public function performance()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data['code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data['code'] = $this->session->userdata('level_code');
 		$data['result'] = $this->news_model->get_document();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -86,9 +87,9 @@ class Officer extends CI_Controller
 
 	public function upload_document()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดผลการดำเนินงานประจำปี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -142,8 +143,8 @@ class Officer extends CI_Controller
 
 	public function human_resource_development_activities()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "กิจกรรมพัฒนาบุคลากร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -155,8 +156,8 @@ class Officer extends CI_Controller
 
 	public function cooperative_regulation()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระเบียบเจ้าหน้าที่ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -168,8 +169,8 @@ class Officer extends CI_Controller
 
 	public function cooperative_rules()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ข้อบังคับสหกรณ์ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -181,8 +182,8 @@ class Officer extends CI_Controller
 
 	public function search_data_member()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$id_card = $this->input->post('id_card');
 		$mem_id = $this->input->post('mem_id');
@@ -200,8 +201,8 @@ class Officer extends CI_Controller
 
 	public function data_member($mem_id, $branch_number)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['data_member'] = $this->officer_model->personal_data_member($mem_id, $branch_number);
 		$data['deposit_member'] = $this->officer_model->deposit_member($mem_id, $branch_number);
@@ -221,8 +222,8 @@ class Officer extends CI_Controller
 
 	public function account_details($account_number)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['account_details'] = $this->officer_model->account_details($account_number);
 		$title['title'] = "รายละเอียดบัญชี สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -235,8 +236,8 @@ class Officer extends CI_Controller
 
 	public function opened_loan_details($code, $branch_number)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['opened_loan_select'] = $this->officer_model->opened_loan_select($code, $branch_number);
 		$data['opened_loan_details'] = $this->officer_model->opened_loan_details($code, $branch_number);
@@ -250,8 +251,8 @@ class Officer extends CI_Controller
 
 	public function closed_loan_details($code, $branch_number)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['closed_loan_select'] = $this->officer_model->closed_loan_select($code, $branch_number);
 		$data['closed_loan_details'] = $this->officer_model->closed_loan_details($code, $branch_number);
@@ -265,9 +266,9 @@ class Officer extends CI_Controller
 
 	public function upload_news()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -278,9 +279,9 @@ class Officer extends CI_Controller
 
 	public function uploadnews_system()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data = $this->officer_model->data_officer($user_id);
 		$table_news['result'] = $this->news_model->get_news_upload();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -365,8 +366,8 @@ class Officer extends CI_Controller
 
 	public function edit_news($newsnumber)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data = $this->officer_model->data_officer($user_id);
 		$news = $this->news_model->selectnews($newsnumber);
 		$title['title'] = "แก้ไขข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -396,9 +397,9 @@ class Officer extends CI_Controller
 
 	public function form()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->get_internalfile_hr();
 		$title['title'] = "แบบฟอร์ม สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -417,9 +418,9 @@ class Officer extends CI_Controller
 
 	public function import_internal_declaration()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -430,8 +431,8 @@ class Officer extends CI_Controller
 
 	public function credit_consider()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->get_credit_consider();
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -444,8 +445,8 @@ class Officer extends CI_Controller
 
 	public function credit_consider2()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->get_credit_consider();
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -458,8 +459,8 @@ class Officer extends CI_Controller
 
 	public function credit_consider_detail($credit_consider_id)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->get_credit_consider_detail($credit_consider_id);
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -472,8 +473,8 @@ class Officer extends CI_Controller
 
 	public function uploadcredit_consider()
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -485,7 +486,7 @@ class Officer extends CI_Controller
 
 	public function uploadcreditfile_consider()
 	{
-		$username = $this->session->userdata('USER_NAME');
+		$username = $this->session->userdata('user_name');
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -507,7 +508,7 @@ class Officer extends CI_Controller
 			$date = date('Y-m-d');
 			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status);
 			if ($result) {
-				$this->session->set_flashdata('error', true);
+				$this->session->set_flashdata('error', 'Something Wrong');
 				redirect('officer/uploadcredit_consider', 'refresh');
 			} else {
 				$this->session->set_flashdata('success', 'upload success');
@@ -518,8 +519,8 @@ class Officer extends CI_Controller
 
 	public function credit_consider_detail2($id)
 	{
-		$user_id = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "พิจารณาสินเชื่อ";
 		$this->load->view("container/head", $title);
@@ -567,9 +568,9 @@ class Officer extends CI_Controller
 
 	public function creditupload_system()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -580,9 +581,9 @@ class Officer extends CI_Controller
 
 	public function uploadcreditfile()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$USER_ID = $this->session->userdata('USER_ID');
-		$data = $this->officer_model->data_officer($USER_ID);
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$user_id = $this->session->userdata('user_id');
+		$data = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -593,7 +594,7 @@ class Officer extends CI_Controller
 
 	public function uploadFileCredit()
 	{
-		$username = $this->session->userdata('USER_NAME');
+		$username = $this->session->userdata('user_name');
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -628,11 +629,11 @@ class Officer extends CI_Controller
 
 	public function search_credit()
 	{
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
+		$level_code['level_code'] = $this->session->userdata('level_code');
 		$year = $this->input->post('year');
 		$branch_id = $this->input->post('branch_id');
 		$credit_id = $this->input->post('credit_id');
-		$user_id = $this->session->userdata('USER_ID');
+		$user_id = $this->session->userdata('user_id');
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->search_credit($year, $branch_id, $credit_id);
 		$title['title'] = "ค้นหาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
@@ -667,9 +668,9 @@ class Officer extends CI_Controller
 
 	public function uploadasset_system()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
 		$data['result'] = $this->news_model->get_asset();
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -681,9 +682,9 @@ class Officer extends CI_Controller
 
 	public function upload_asset()
 	{
-		$USER_ID = $this->session->userdata('USER_ID');
-		$level_code['level_code'] = $this->session->userdata('LEVEL_CODE');
-		$data_officer = $this->officer_model->data_officer($USER_ID);
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ระบบอัพโหลดข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
