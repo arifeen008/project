@@ -14,16 +14,15 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>id</th>
+                            <!-- <th>id</th> -->
                             <th>username</th>
                             <th>mem_id</th>
                             <th>fname</th>
-                            <th>lname</th>
                             <th>lnumber_id</th>
-                            <th>loan_year</th>
-                            <th>branch_id</th>
-                            <th>loan_id</th>
-                            <th>file_name</th>
+                            <!-- <th>loan_year</th> -->
+                            <!-- <th>branch_id</th> -->
+                            <!-- <th>loan_id</th> -->
+                            <!-- <th>file_name</th> -->
                             <th>date</th>
                             <th>status</th>
                         </tr>
@@ -32,16 +31,15 @@
                         <tr>
                             <?php foreach ($result as $row) { ?>
                         <tr>
-                            <td><?= $row->id ?></td>
+                            <!-- <td><?= $row->id ?></td> -->
                             <td><?= $row->username   ?></td>
                             <td><?= $row->mem_id   ?></td>
-                            <td><?= $row->fname   ?></td>
-                            <td><?= $row->lname   ?></td>
+                            <td><?= $row->fname . " " . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
-                            <td><?= $row->loan_year  ?></td>
-                            <td><?= $row->branch_id  ?></td>
-                            <td><?= $row->loan_id  ?></td>
-                            <td><?= $row->file_name  ?></td>
+                            <!-- <td><?= $row->loan_year  ?></td> -->
+                            <!-- <td><?= $row->branch_id  ?></td> -->
+                            <!-- <td><?= $row->loan_id  ?></td> -->
+                            <!-- <td><?= $row->file_name  ?></td> -->
                             <td><?= $row->date  ?></td>
                             <td><?= $row->status  ?></td>
                         </tr>

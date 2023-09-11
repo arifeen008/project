@@ -2,11 +2,9 @@
 
 class Officer extends CI_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();
-		session_start();
 		$this->load->model('officer_model');
 		$this->load->model('news_model');
 	}
