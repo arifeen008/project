@@ -386,8 +386,9 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status_id)
+	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id)
 	{
+		date_default_timezone_set('Asia/Bangkok');
 		$data = array(
 			'username' => $username,
 			'mem_id' => $mem_id,
@@ -399,7 +400,7 @@ class News_model extends CI_Model
 			'loan_id' =>  $loan_id,
 			'path' =>  $path,
 			'file_name' =>  $file_name,
-			'date' =>  $date,
+			'date' =>  date('Y-m-d H:i:s'),
 			'status_id' => $status_id
 		);
 		$this->db2->insert('credit_consider', $data);
@@ -407,17 +408,17 @@ class News_model extends CI_Model
 		return $insert_id;
 	}
 
-	public function add_credit_consider_process($return_id, $date, $status_id)
+	public function add_credit_consider_process($return_id, $status_id)
 	{
+		date_default_timezone_set('Asia/Bangkok');
 		$data = array(
 			'credit_consider_id' => $return_id,
-			'date' =>  $date,
+			'date' =>  date('Y-m-d H:i:s'),
 			'status_id' => $status_id
 		);
 		$result = $this->db2->insert('credit_consider_process', $data);
 		return $result;
 	}
-
 
 	public function get_credit_consider()
 	{
@@ -430,8 +431,9 @@ class News_model extends CI_Model
 
 	public function get_credit_consider_process($credit_consider_id)
 	{
-		$this->db2->where('credit_consider_id', $credit_consider_id);
-		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
+		$this->db2->select('credit_consider_process.date,status_credit.status_name');
+		$this->db2->where('credit_consider_process.credit_consider_id', $credit_consider_id);
+		$this->db2->join('status_credit', 'credit_consider_process.status_id = status_credit.status_id');
 		$result = $this->db2->get('credit_consider_process');
 		return $result->result();
 	}
@@ -454,6 +456,43 @@ class News_model extends CI_Model
 	{
 		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$result = $this->db2->delete('credit_consider');
+		return $result;
+	}
+
+	public function delete_credit_consider_process($credit_consider_id)
+	{
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$result = $this->db2->delete('credit_consider_process');
+		return $result;
+	}
+
+	public function accept_credit_consider($credit_consider_id)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '02');
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '02'
+		);
+		$result = $this->db2->insert('credit_consider_process', $data);
+		return $result;
+	}
+
+	public function reject_credit_consider($credit_consider_id)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '03');
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '03'
+		);
+		$result = $this->db2->insert('credit_consider_process', $data);
 		return $result;
 	}
 }

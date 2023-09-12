@@ -730,22 +730,21 @@ class Officer extends CI_Controller
 		} else {
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
-			$date = date('Y-m-d');
-			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status_id);
-			$result = $this->news_model->add_credit_consider_process($return_id, $date, $status_id);
+			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id);
+			$result = $this->news_model->add_credit_consider_process($return_id, $status_id);
 			if ($result === TRUE) {
-				$this->session->set_flashdata('error', 'Something Wrong');
-				echo "<script>alert('Error');</script>";
-				redirect('officer/uploadcredit_consider', 'refresh');	
-			} else {
-				$this->session->set_flashdata("success", "upload success");	
+				$this->session->set_flashdata("success", "upload success");
 				echo "<script>alert('Success');</script>";
 				redirect('officer/credit_consider', 'refresh');
+			} else {
+				$this->session->set_flashdata('error', 'Something Wrong');
+				echo "<script>alert('Error');</script>";
+				redirect('officer/uploadcredit_consider', 'refresh');
 			}
 		}
 	}
 
-	public function credit_consider_detail2($id)
+	public function credit_consider_detail2($credit_consider_id)
 	{
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
@@ -754,20 +753,36 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/credit_consider_detail2", $id);
+		$this->load->view("officer/credit_consider/credit_consider_detail2", $credit_consider_id);
 		$this->load->view("container/script_officer");
 	}
 
-	public function delete_credit_consider($id)
+	public function accept_credit_consider($credit_consider_id)
 	{
-		$result = $this->news_model->select_credit_consider($id);
+		$this->news_model->accept_credit_consider($credit_consider_id);
+		$this->session->set_flashdata('success','Accept credit success');
+		redirect('officer/credit_consider2','refresh');
+	}
+
+	public function reject_credit_consider($credit_consider_id)
+	{
+		$this->news_model->reject_credit_consider($credit_consider_id);
+		$this->session->set_flashdata('success','Accept credit success');
+		redirect('officer/credit_consider2','refresh');
+	}
+
+	public function delete_credit_consider($credit_consider_id)
+	{
+		$result = $this->news_model->select_credit_consider($credit_consider_id);
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
-				$this->news_model->delete_credit_consider($id);
+				$this->news_model->delete_credit_consider($credit_consider_id);
+				$this->news_model->delete_credit_consider_process($credit_consider_id);
 				$this->session->set_flashdata('error', 'Cannot Delete it !');
 				redirect('officer/credit_consider2', 'refresh');
 			} else {
-				$this->news_model->delete_credit_consider($id);
+				$this->news_model->delete_credit_consider($credit_consider_id);
+				$this->news_model->delete_credit_consider_process($credit_consider_id);
 				$this->session->set_flashdata('success', 'Delete Success');
 				redirect('officer/credit_consider2', 'refresh');
 			}
