@@ -431,6 +431,7 @@ class News_model extends CI_Model
 	public function get_credit_consider_process($credit_consider_id)
 	{
 		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
 		$result = $this->db2->get('credit_consider_process');
 		return $result->result();
 	}
