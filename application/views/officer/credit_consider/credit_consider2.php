@@ -8,17 +8,15 @@
                 <table class="table table-bordered text-center">
                     <thead class="bg-light">
                         <tr>
-                            <!-- <th>id</th>
-                            <th>username</th> -->
+
                             <th>mem_id</th>
                             <th>fname</th>
                             <th>lnumber_id</th>
                             <th>loan_year</th>
                             <th>branch_id</th>
                             <th>loan_id</th>
-                            <!-- <th>file_name</th> -->
                             <th>date</th>
-                            <!-- <th>status</th> -->
+                            <th>status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -26,17 +24,14 @@
                         <tr>
                             <?php foreach ($result as $row) { ?>
                         <tr>
-                            <!-- <td><?= $row->id ?></td>
-                            <td><?= $row->username   ?></td> -->
                             <td><?= $row->mem_id   ?></td>
                             <td><?= $row->fname . " " . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
                             <td><?= $row->loan_year  ?></td>
                             <td><?= $row->branch_id  ?></td>
                             <td><?= $row->loan_id  ?></td>
-                            <!-- <td><?= $row->file_name  ?></td> -->
                             <td><?= $row->date  ?></td>
-                            <!-- <td><?= $row->status  ?></td> -->
+                            <td><?= $row->status  ?></td>
                             <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->credit_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
                         </tr>
                     <?php  } ?>
