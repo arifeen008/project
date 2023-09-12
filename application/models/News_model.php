@@ -386,7 +386,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status)
+	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status_id)
 	{
 		$data = array(
 			'username' => $username,
@@ -400,20 +400,30 @@ class News_model extends CI_Model
 			'path' =>  $path,
 			'file_name' =>  $file_name,
 			'date' =>  $date,
-			'status' => $status
+			'status_id' => $status_id
 		);
 		$this->db2->insert('credit_consider', $data);
 	}
 
 	public function get_credit_consider()
 	{
+		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
+		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
 		$result = $this->db2->get('credit_consider');
+		return $result->result();
+	}
+
+	public function get_credit_consider_process($credit_id)
+	{
+		$this->db2->where('credit_id', $credit_id);
+		$result = $this->db2->get('credit_consider_process');
 		return $result->result();
 	}
 
 	public function get_credit_consider_detail($credit_consider_id)
 	{
-		$this->db2->where('id', $credit_consider_id);
+		$this->db2->where('credit_id', $credit_consider_id);
 		$result = $this->db2->get('credit_consider');
 		return $result->row();
 	}
@@ -424,9 +434,9 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
-	public function delete_credit_consider($id)
+	public function delete_credit_consider($credit_id)
 	{
-		$this->db2->where('id', $id);
+		$this->db2->where('credit_id', $credit_id);
 		$result = $this->db2->delete('credit_consider');
 		return $result;
 	}

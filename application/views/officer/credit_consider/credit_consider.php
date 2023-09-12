@@ -8,35 +8,25 @@
                 <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/uploadcredit_consider') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>ส่งสินเชื่อ</a></div>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
-                            <!-- <th>id</th> -->
-                            <th>username</th>
-                            <th>mem_id</th>
-                            <th>fname</th>
-                            <th>lnumber_id</th>
-                            <!-- <th>loan_year</th> -->
-                            <!-- <th>branch_id</th> -->
-                            <!-- <th>loan_id</th> -->
-                            <!-- <th>file_name</th> -->
-                            <th>date</th>
-                            <th>status</th>
+                        <tr class="text-center">
+                            <th>รหัสสมาชิก</th>
+                            <th>ชื่อ - สกุล</th>
+                            <th>เลขสินเชื่อ</th>
+                            <th>วันที่</th>
+                            <th>สถานะ</th>
+                            <th>ติดตามสถานะ</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <?php foreach ($result as $row) { ?>
                         <tr>
-                            <!-- <td><?= $row->id ?></td> -->
-                            <td><?= $row->username   ?></td>
                             <td><?= $row->mem_id   ?></td>
                             <td><?= $row->fname . " " . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
-                            <!-- <td><?= $row->loan_year  ?></td> -->
-                            <!-- <td><?= $row->branch_id  ?></td> -->
-                            <!-- <td><?= $row->loan_id  ?></td> -->
-                            <!-- <td><?= $row->file_name  ?></td> -->
                             <td><?= $row->date  ?></td>
-                            <td><?= $row->status  ?></td>
+                            <td><?= $row->status_name  ?></td>
+                            <td class="text-center"><a class="btn text-white" style="background-color: #3b5998;" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_id) ?>" role="button"><i class="fab fa-algolia"></i></a></td>
                         </tr>
                     <?php  } ?>
                     </tr>
