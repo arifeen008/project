@@ -8,8 +8,8 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="text-center">
-                            <td>date</td>
-                            <td>status</td>
+                            <td>วันที่</td>
+                            <td>สถานะ</td>
                         </tr>
                     </thead>
                     <tbody>

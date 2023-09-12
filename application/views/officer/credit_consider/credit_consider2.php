@@ -9,14 +9,14 @@
                     <thead class="bg-light">
                         <tr>
 
-                            <th>mem_id</th>
-                            <th>fname</th>
-                            <th>lnumber_id</th>
-                            <th>loan_year</th>
-                            <th>branch_id</th>
-                            <th>loan_id</th>
-                            <th>date</th>
-                            <th>status</th>
+                            <th>รหัสสมาชิก</th>
+                            <th>ชื่อ-สกุล</th>
+                            <th>เลขสินเชื่อ</th>
+                            <th>ปี</th>
+                            <th>สาขา</th>
+                            <th>ประเภท</th>
+                            <th>วันที่</th>
+                            <th>สถานะ</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -28,11 +28,11 @@
                             <td><?= $row->fname . " " . $row->lname  ?></td>
                             <td><?= $row->lnumber_id   ?></td>
                             <td><?= $row->loan_year  ?></td>
-                            <td><?= $row->branch_id  ?></td>
-                            <td><?= $row->loan_id  ?></td>
+                            <td><?= $row->name_branch  ?></td>
+                            <td><?= $row->credit_name  ?></td>
                             <td><?= $row->date  ?></td>
-                            <td><?= $row->status  ?></td>
-                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->credit_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
+                            <td><?= $row->status_name  ?></td>
+                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->credit_consider_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
                         </tr>
                     <?php  } ?>
                     </tr>

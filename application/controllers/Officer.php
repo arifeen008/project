@@ -640,12 +640,12 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
-	public function credit_consider_process($id)
+	public function credit_consider_process($credit_consider_id)
 	{
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->news_model->get_credit_consider_process($id);
+		$data['result'] = $this->news_model->get_credit_consider_process($credit_consider_id);
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
@@ -731,12 +731,15 @@ class Officer extends CI_Controller
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 			$date = date('Y-m-d');
-			$result = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status_id);
-			if ($result) {
+			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $date, $status_id);
+			$result = $this->news_model->add_credit_consider_process($return_id, $date, $status_id);
+			if ($result === TRUE) {
 				$this->session->set_flashdata('error', 'Something Wrong');
-				redirect('officer/uploadcredit_consider', 'refresh');
+				echo "<script>alert('Error');</script>";
+				redirect('officer/uploadcredit_consider', 'refresh');	
 			} else {
-				$this->session->set_flashdata("success", "upload success");
+				$this->session->set_flashdata("success", "upload success");	
+				echo "<script>alert('Success');</script>";
 				redirect('officer/credit_consider', 'refresh');
 			}
 		}
@@ -761,11 +764,11 @@ class Officer extends CI_Controller
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
 				$this->news_model->delete_credit_consider($id);
-				$this->session->set_flashdata('error','Cannot Delete it !');
+				$this->session->set_flashdata('error', 'Cannot Delete it !');
 				redirect('officer/credit_consider2', 'refresh');
 			} else {
 				$this->news_model->delete_credit_consider($id);
-				$this->session->set_flashdata('success','Delete Success');
+				$this->session->set_flashdata('success', 'Delete Success');
 				redirect('officer/credit_consider2', 'refresh');
 			}
 		}

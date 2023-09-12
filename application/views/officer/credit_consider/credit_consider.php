@@ -26,7 +26,7 @@
                             <td><?= $row->lnumber_id   ?></td>
                             <td><?= $row->date  ?></td>
                             <td><?= $row->status_name  ?></td>
-                            <td class="text-center"><a class="btn text-white" style="background-color: #3b5998;" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_id) ?>" role="button"><i class="fab fa-algolia"></i></a></td>
+                            <td class="text-center"><a class="btn text-white" style="background-color: #3b5998;" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_consider_id) ?>" role="button"><i class="fab fa-algolia"></i></a></td>
                         </tr>
                     <?php  } ?>
                     </tr>

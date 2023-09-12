@@ -403,7 +403,21 @@ class News_model extends CI_Model
 			'status_id' => $status_id
 		);
 		$this->db2->insert('credit_consider', $data);
+		$insert_id = $this->db2->insert_id();
+		return $insert_id;
 	}
+
+	public function add_credit_consider_process($return_id, $date, $status_id)
+	{
+		$data = array(
+			'credit_consider_id' => $return_id,
+			'date' =>  $date,
+			'status_id' => $status_id
+		);
+		$result = $this->db2->insert('credit_consider_process', $data);
+		return $result;
+	}
+
 
 	public function get_credit_consider()
 	{
@@ -414,29 +428,30 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function get_credit_consider_process($credit_id)
+	public function get_credit_consider_process($credit_consider_id)
 	{
-		$this->db2->where('credit_id', $credit_id);
+		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$result = $this->db2->get('credit_consider_process');
 		return $result->result();
 	}
 
 	public function get_credit_consider_detail($credit_consider_id)
 	{
-		$this->db2->where('credit_id', $credit_consider_id);
+		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$result = $this->db2->get('credit_consider');
 		return $result->row();
 	}
 
-	public function select_credit_consider($id)
+	public function select_credit_consider($credit_consider_id)
 	{
+		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$result = $this->db2->get('credit_consider');
 		return $result->row();
 	}
 
-	public function delete_credit_consider($credit_id)
+	public function delete_credit_consider($credit_consider_id)
 	{
-		$this->db2->where('credit_id', $credit_id);
+		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$result = $this->db2->delete('credit_consider');
 		return $result;
 	}

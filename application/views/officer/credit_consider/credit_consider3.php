@@ -37,7 +37,7 @@
                             <!-- <td><?= $row->file_name  ?></td> -->
                             <td><?= $row->date  ?></td>
                             <!-- <td><?= $row->status  ?></td> -->
-                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->credit_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
+                            <td><a href="<?php echo site_url('officer/credit_consider_detail/' . $row->credit_consider_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success">ดูรายละเอียด</button></td>
                         </tr>
                     <?php  } ?>
                     </tr>
