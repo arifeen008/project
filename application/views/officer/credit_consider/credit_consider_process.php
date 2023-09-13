@@ -16,7 +16,7 @@
                         <?php foreach ($result as $row) { ?>
                             <tr>
                                 <td><?= $row->date  ?></td>
-                                <td><?= $row->status_name  ?></td>
+                                <td><strong><?= $row->status_name ?></strong></td>
                             </tr>
                         <?php  } ?>
                         </tr>

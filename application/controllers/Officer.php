@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-
 class Officer extends CI_Controller
 {
 	function __construct()
@@ -11,7 +10,6 @@ class Officer extends CI_Controller
 
 	public function login_officer()
 	{
-		session_start();
 		$result = $this->officer_model->fetch_user_login($this->input->post('user_id'), $this->input->post('password'));
 		if (!empty($result)) {
 			$session = array(
@@ -32,6 +30,7 @@ class Officer extends CI_Controller
 			$this->load->view("container/script_officer");
 		} else {
 			$this->session->set_flashdata('error', 'Email or password are wrong');
+			// console.log($session);
 			redirect('index/login_page', 'refresh');
 		}
 	}
@@ -696,6 +695,19 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
+	public function credit_consider_detail2($credit_consider_id)
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$title['title'] = "พิจารณาสินเชื่อ";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/credit_consider_detail2", $credit_consider_id);
+		$this->load->view("container/script_officer");
+	}
+
 	public function uploadcredit_consider()
 	{
 		$user_id = $this->session->userdata('user_id');
@@ -744,31 +756,18 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function credit_consider_detail2($credit_consider_id)
-	{
-		$user_id = $this->session->userdata('user_id');
-		$level_code['level_code'] = $this->session->userdata('level_code');
-		$data_officer = $this->officer_model->data_officer($user_id);
-		$title['title'] = "พิจารณาสินเชื่อ";
-		$this->load->view("container/head", $title);
-		$this->load->view("container/header_officer", $data_officer);
-		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/credit_consider_detail2", $credit_consider_id);
-		$this->load->view("container/script_officer");
-	}
-
 	public function accept_credit_consider($credit_consider_id)
 	{
 		$this->news_model->accept_credit_consider($credit_consider_id);
-		$this->session->set_flashdata('success','Accept credit success');
-		redirect('officer/credit_consider2','refresh');
+		$this->session->set_flashdata('success', 'Accept credit success');
+		redirect('officer/credit_consider2', 'refresh');
 	}
 
 	public function reject_credit_consider($credit_consider_id)
 	{
 		$this->news_model->reject_credit_consider($credit_consider_id);
-		$this->session->set_flashdata('success','Accept credit success');
-		redirect('officer/credit_consider2','refresh');
+		$this->session->set_flashdata('success', 'Accept credit success');
+		redirect('officer/credit_consider2', 'refresh');
 	}
 
 	public function delete_credit_consider($credit_consider_id)
