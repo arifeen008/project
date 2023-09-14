@@ -16,7 +16,6 @@
                             <th>ประเภท</th>
                             <th>วันที่</th>
                             <th>สถานะ</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

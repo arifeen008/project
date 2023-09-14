@@ -30,7 +30,6 @@ class Officer extends CI_Controller
 			$this->load->view("container/script_officer");
 		} else {
 			$this->session->set_flashdata('error', 'Email or password are wrong');
-			// console.log($session);
 			redirect('index/login_page', 'refresh');
 		}
 	}
@@ -111,7 +110,7 @@ class Officer extends CI_Controller
 		} else {
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/perfomance/';
-			$date = date('Y-m-d H:i:s');
+			$date = date('Y-m-d');
 			$this->news_model->uploadDocumentFile($document_name, $file_name, $path, $date);
 			echo "<script>alert('Upload document success');</script>";
 			redirect('officer/performance', 'refresh');
@@ -316,7 +315,7 @@ class Officer extends CI_Controller
 			$uploadStatus = $this->uploadFile('uploadFile');
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
-				$this->news_model->upload_picture($newsnumber, $uploadStatus, date('Y-m-d H:i:s'));
+				$this->news_model->upload_picture($newsnumber, $uploadStatus, date('Y-m-d'));
 			} else {
 				$countErrorUploadFiles++;
 			}
@@ -765,8 +764,9 @@ class Officer extends CI_Controller
 
 	public function reject_credit_consider($credit_consider_id)
 	{
-		$this->news_model->reject_credit_consider($credit_consider_id);
-		$this->session->set_flashdata('success', 'Accept credit success');
+		$note = $this->input->post('note');
+		$this->news_model->reject_credit_consider($credit_consider_id, $note);
+		$this->session->set_flashdata('success', 'Reject credit success');
 		redirect('officer/credit_consider2', 'refresh');
 	}
 
@@ -786,5 +786,68 @@ class Officer extends CI_Controller
 				redirect('officer/credit_consider2', 'refresh');
 			}
 		}
+	}
+
+	public function admincredit_consider()
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_status_credit_consider();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/admin/admincredit_consider", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function status_form_add()
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_status_credit_consider();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/admin/status_form_add");
+		$this->load->view("container/script_officer");
+	}
+
+	public function status_form_edit($status_id)
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_status($status_id);
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/admin/status_form_edit", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function add_status()
+	{
+		$status_name = $this->input->post('status_name');
+		$this->news_model->add_status($status_name);
+		redirect('officer/admincredit_consider', 'refresh');
+	}
+
+	public function update_status()
+	{
+		$status_id = $this->input->post('status_id');
+		$status_name = $this->input->post('status_name');
+		$this->news_model->update_status($status_id, $status_name);
+		redirect('officer/admincredit_consider', 'refresh');
+	}
+
+	public function delete_status($status_id)
+	{
+		$this->news_model->delete_status($status_id);
+		redirect('officer/admincredit_consider', 'refresh');
 	}
 }

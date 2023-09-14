@@ -52,8 +52,13 @@
  				</a>
  			</li>
 			 <li class="sidenav-item">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
+ 				<a class="sidenav-link" href="#!">
  					<span>ระบบพิจารณาสินเชื่อ 3</span>
+ 				</a>
+ 			</li>
+			 <li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/admincredit_consider') ?>">
+ 					<span>Admin ระบบพิจารณาสินเชื่อ</span>
  				</a>
  			</li>
  		<?php	} ?>

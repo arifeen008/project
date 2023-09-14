@@ -476,24 +476,60 @@ class News_model extends CI_Model
 		$data = array(
 			'credit_consider_id' => $credit_consider_id,
 			'date' => date('Y-m-d H:i:s'),
-			'status_id' => '02'
+			'status_id' => '2'
 		);
 		$result = $this->db2->insert('credit_consider_process', $data);
 		return $result;
 	}
 
-	public function reject_credit_consider($credit_consider_id)
+	public function reject_credit_consider($credit_consider_id, $note)
 	{
 		date_default_timezone_set('Asia/Bangkok');
 		$this->db2->set('status_id', '03');
+		$this->db2->set('note', $note);
 		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$this->db2->update('credit_consider');
 		$data = array(
 			'credit_consider_id' => $credit_consider_id,
 			'date' => date('Y-m-d H:i:s'),
-			'status_id' => '03'
+			'status_id' => '3'
 		);
-		$result = $this->db2->insert('credit_consider_process', $data);
-		return $result;
+		$this->db2->insert('credit_consider_process', $data);
+	}
+
+	public function get_status_credit_consider()
+	{
+		$result = $this->db2->get('status_credit');
+		return $result->result();
+	}
+
+	public function get_status($status_id)
+	{
+		$this->db2->where('status_id', $status_id);
+		$result = $this->db2->get('status_credit');
+		return $result->row();
+	}
+
+	public function add_status($status_name)
+	{
+		$data = array(
+			'status_name' => $status_name
+		);
+		$this->db2->insert('status_credit', $data);
+	}
+
+	public function update_status($status_id, $status_name)
+	{
+		$this->db2->where('status_id', $status_id);
+		$data = array(
+			'status_name' => $status_name
+		);
+		$this->db2->update('status_credit', $data);
+	}
+
+	public function delete_status($status_id)
+	{
+		$this->db2->where('status_id', $status_id);
+		$this->db2->delete('status_credit');
 	}
 }

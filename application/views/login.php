@@ -54,7 +54,7 @@
                         </div>
                         <a href="#!" style="font-family: 'Kanit';" data-mdb-toggle="tooltip" title="ลืมรหัสผ่าน">ลืมรหัสผ่าน</a>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" style="font-family: 'Kanit';"><?php echo lang('login') ?></button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" style="font-family: 'Kanit';"><?php echo lang('login') ?></button>
                 </form>
             </div>
         </div>

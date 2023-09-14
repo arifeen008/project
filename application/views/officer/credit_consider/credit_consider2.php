@@ -5,10 +5,9 @@
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
                     <h3>พิจารณาสินเชื่อ 2</h3>
                 </div>
-                <table class="table table-bordered text-center">
-                    <thead class="bg-light">
+                <table class="table table-hover align-middle mb-0 bg-white">
+                    <thead class="bg-light text-center">
                         <tr>
-
                             <th>รหัสสมาชิก</th>
                             <th>ชื่อ-สกุล</th>
                             <th>เลขสินเชื่อ</th>
@@ -20,7 +19,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <tr>
                             <?php foreach ($result as $row) { ?>
                         <tr>

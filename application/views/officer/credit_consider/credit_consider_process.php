@@ -5,14 +5,14 @@
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
                     <h3>ประวัติ</h3>
                 </div>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="text-center">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light text-center">
+                        <tr>
                             <td>วันที่</td>
                             <td>สถานะ</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php foreach ($result as $row) { ?>
                             <tr>
                                 <td><?= $row->date  ?></td>
