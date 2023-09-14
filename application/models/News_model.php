@@ -441,7 +441,9 @@ class News_model extends CI_Model
 
 	public function get_credit_consider_detail($credit_consider_id)
 	{
-		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->where('credit_consider.credit_consider_id', $credit_consider_id);
+		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
 		$result = $this->db2->get('credit_consider');
 		return $result->row();
 	}

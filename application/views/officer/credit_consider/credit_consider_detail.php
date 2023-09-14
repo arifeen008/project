@@ -6,29 +6,24 @@
                     <h3>พิจารณาข้อมูลสินเชื่อข้อมูลสินเชื่อ <?php echo $result->fname . "    " . $result->lname ?></h3>
                 </div>
                 <div class="row">
+                
                     <div class="col-6 my-2">
-                        id : <?php echo $result->credit_consider_id ?>
+                        ชื่อ : <?php echo $result->fname."   ".$result->lname ?>
                     </div>
                     <div class="col-6 my-2">
-                        ชื่อ : <?php echo $result->fname ?>
+                        ผู้ส่งสินเชื่อ : <?php echo $result->username ?>
                     </div>
                     <div class="col-6 my-2">
-                        นามสกุล : <?php echo $result->lname ?>
+                        เลขสินเชื่อ : <?php echo $result->lnumber_id ?>
                     </div>
                     <div class="col-6 my-2">
-                        username : <?php echo $result->username ?>
+                        ปี : <?php echo $result->loan_year ?>
                     </div>
                     <div class="col-6 my-2">
-                        lnumber_id : <?php echo $result->lnumber_id ?>
+                        สาขา : <?php echo $result->name_branch ?>
                     </div>
                     <div class="col-6 my-2">
-                        loan_year : <?php echo $result->loan_year ?>
-                    </div>
-                    <div class="col-6 my-2">
-                        branch_id : <?php echo $result->branch_id ?>
-                    </div>
-                    <div class="col-6 my-2">
-                        loan_id : <?php echo $result->loan_id ?>
+                        ประเภทสินเชื่อ : <?php echo $result->credit_name ?>
                     </div>
                 </div>
                 <div class="h-100 d-flex justify-content-center align-items-center">

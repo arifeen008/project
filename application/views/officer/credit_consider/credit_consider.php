@@ -1,3 +1,7 @@
+<?php
+include_once("application/libraries/thaidate-functions.php");
+include_once("application/libraries/Thaidate.php");
+?>
 <main id="content" style="margin-top: 10px">
     <div class="container pt-4 pt-lg-5">
         <div class="card my-3" style="font-family: 'Sarabun';">
@@ -8,12 +12,10 @@
                 <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/uploadcredit_consider') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>ส่งสินเชื่อ</a></div>
                 <table class="table table-hover align-middle mb-0 bg-white">
                     <thead class="bg-light">
-                        <tr class="text-center">
+                        <tr>
                             <th>รหัสสมาชิก</th>
                             <th>ชื่อ - สกุล</th>
                             <th>เลขสินเชื่อ</th>
-                            <th>สาขา</th>
-                            <th>ประเภท</th>
                             <th>วันที่</th>
                             <th>สถานะ</th>
                             <th>ติดตามสถานะ</th>
@@ -21,21 +23,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <?php foreach ($result as $row) { ?>
-                        <tr class="text-center">
-                            <td><?= $row->mem_id   ?></td>
-                            <td><?= $row->fname . " " . $row->lname  ?></td>
-                            <td><?= $row->lnumber_id   ?></td>
-                            <td><?= $row->name_branch  ?></td>
-                            <td><?= $row->credit_name  ?></td>
-                            <td><?= $row->date  ?></td>
-                            <td><?= $row->status_name  ?></td>
-                            <td><a class="btn btn-outline-success" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_consider_id) ?>"><i class="fab fa-algolia"></i></a></td>
-                            <td><?= $row->note ?></td>
-                        </tr>
-                    <?php  } ?>
-                    </tr>
+                        <?php foreach ($result as $row) { ?>
+                            <tr>
+                                <td><?= $row->mem_id   ?></td>
+                                <td><?= $row->fname . " " . $row->lname  ?></td>
+                                <td>
+                                    <p class="fw-normal mb-1"><?= $row->lnumber_id   ?></p>
+                                    <p class="text-muted mb-1"><?= $row->name_branch  ?></p>
+                                    <p class="text-muted mb-1"><?= $row->credit_name  ?></p>
+                                </td>
+                                <td>
+                                    <p><?= thaidate('j M Y ', strtotime($row->date))?></p>
+                                    <p><?= thaidate('H:i', strtotime($row->date)) ?></p>
+                                </td>
+                                <td><span class="badge badge-success rounded-pill d-inline"><?= $row->status_name  ?></span></td>
+                                <td>
+                                    <a class="btn btn-outline-success" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_consider_id) ?>"><i class="fab fa-algolia"></i></a>
+                                </td>
+                                <td> <?= ($row->note == NULL ? "-" : $row->note)  ?></td>
+                            </tr>
+                        <?php  } ?>
                     </tbody>
                 </table>
             </div>
