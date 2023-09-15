@@ -315,13 +315,14 @@ class Officer extends CI_Controller
 			$uploadStatus = $this->uploadFile('uploadFile');
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
-				$this->news_model->upload_picture($news_number, $uploadStatus, date('Y-m-d'));
+				$this->news_model->upload_picture($news_number, $uploadStatus);
 			} else {
 				$countErrorUploadFiles++;
 			}
 		}
-		$this->news_model->upload_picture_cover($news_number, $this->uploadFilecover('coverImage'));
-		$this->news_model->upload_news($news_number, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
+		$coverImage = $this->uploadFile('coverImage');
+		$this->news_model->upload_picture_cover($news_number, $coverImage);
+		$this->news_model->upload_news($news_number, $title, $description, $news_type, $date);
 		$this->session->set_flashdata('success', 'Upload news successfully');
 		redirect('officer/uploadnews_system', 'refresh');
 	}
@@ -342,39 +343,24 @@ class Officer extends CI_Controller
 		}
 	}
 
-	function uploadFilecover($name)
-	{
-		$config['upload_path'] = 'uploads/cover';
-		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
-		$config['encrypt_name'] = TRUE;
-
-		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
-		if ($this->upload->do_upload($name)) {
-			$fileData = $this->upload->data();
-			return $fileData['file_name'];
-		} else {
-			return false;
-		}
-	}
-
 	public function delete_news($news_number)
 	{
-		$result = $this->news_model->deletenews($news_number);
+		$result = $this->news_model->delete_news($news_number);
 		if ($result) {
 			$result = $this->news_model->selectpicture($news_number);
-			if ($result) {
-				foreach ($result->result() as $row) {
+			if ($result == TRUE) {
+				foreach ($result as $row) {
 					unlink('uploads/' . $row->picture_name);
 				}
-				$result = $this->news_model->deletepicture($news_number);
-				if ($result) {
-					echo "<script>alert('ลบสำเร็จ');</script>";
+				$this->news_model->deletepicture($news_number);
+				$this->news_model->deletepictureCover($news_number);
+				if ($result == TRUE) {
+					$this->session->set_flashdata('success', 'Delete success');
 					redirect('officer/uploadnews_system', 'refresh');
 				}
 			}
 		} else {
-			echo "<script>alert('ไม่ลบสำเร็จ');</script>";
+			$this->session->set_flashdata('error', 'Delete not success');
 			redirect('officer/uploadnews_system', 'refresh');
 		}
 	}
@@ -688,7 +674,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->news_model->get_credit_consider();
+		$data['result'] = $this->news_model->get_credit_consider3();
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
@@ -716,11 +702,12 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_credit_consider_detail($credit_consider_id);
 		$title['title'] = "พิจารณาสินเชื่อ";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/credit_consider_detail2", $credit_consider_id);
+		$this->load->view("officer/credit_consider/credit_consider_detail2", $data);
 		$this->load->view("container/script_officer");
 	}
 
@@ -784,6 +771,21 @@ class Officer extends CI_Controller
 		$this->session->set_flashdata('success', 'Reject credit success');
 		redirect('officer/credit_consider2', 'refresh');
 	}
+
+	// public function accept_credit_consider2($credit_consider_id)
+	// {
+	// 	$this->news_model->accept_credit_consider($credit_consider_id);
+	// 	$this->session->set_flashdata('success', 'Accept credit success');
+	// 	redirect('officer/credit_consider3', 'refresh');
+	// }
+
+	// public function reject_credit_consider2($credit_consider_id)
+	// {
+	// 	$note = $this->input->post('note');
+	// 	$this->news_model->reject_credit_consider($credit_consider_id, $note);
+	// 	$this->session->set_flashdata('success', 'Reject credit success');
+	// 	redirect('officer/credit_consider3', 'refresh');
+	// }
 
 	public function delete_credit_consider($credit_consider_id)
 	{
