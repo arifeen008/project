@@ -24,8 +24,8 @@ include_once("application/libraries/Thaidate.php");
 									<td><?= $row->title  ?></td>
 									<td><?= $row->news_typename  ?></td>
 									<td><?= thaidate('j M Y ', strtotime($row->dateupload))?></td>
-									<td><a href="<?php echo site_url('officer/edit_news/' . $row->newsnumber) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a></td>
-									<td><a href="<?php echo site_url('officer/delete_news/' . $row->newsnumber) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
+									<td><a href="<?php echo site_url('officer/edit_news/' . $row->news_number) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a></td>
+									<td><a href="<?php echo site_url('officer/delete_news/' . $row->news_number) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
 								</tr>
 							<?php } ?>
 						</tbody>

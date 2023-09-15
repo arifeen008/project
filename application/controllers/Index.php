@@ -33,11 +33,11 @@ class Index extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
-	public function news($newsnumber)
+	public function news($news_number)
 	{
-		$data['data'] = $this->news_model->get_news_data($newsnumber);
-		$data['picture'] = $this->news_model->get_newspicture($newsnumber);
-		$data['side_data'] = $this->news_model->get_sidenewsdata($newsnumber);
+		$data['data'] = $this->news_model->get_news_data($news_number);
+		$data['picture'] = $this->news_model->get_newspicture($news_number);
+		$data['side_data'] = $this->news_model->get_sidenewsdata($news_number);
 		$data['title'] = $data['data']->title . ' สหกรณ์อิสลามษะกอฟะฮ จำกัด';
 		$this->load->view('container/head', $data);
 		$this->load->view('container/header_index');

@@ -19,7 +19,7 @@ include_once("application/libraries/Thaidate.php");
 						<div class="row">
 							<?php foreach ($picture->result() as $row) { ?>
 								<div class="col-lg-4">
-									<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" data-mdb-img="<?php echo base_url('uploads') ?>/<?= $row->picturename ?>" width="auto" height="250px" class="w-100 shadow-1-strong rounded mb-2" />
+									<img src="<?php echo base_url('uploads/') ?><?= $row->picture_name ?>" data-mdb-img="<?php echo base_url('uploads') ?>/<?= $row->picture_name ?>" width="auto" height="250px" class="w-100 shadow-1-strong rounded mb-2" />
 								</div>
 							<?php } ?>
 						</div>
@@ -32,8 +32,8 @@ include_once("application/libraries/Thaidate.php");
 		<div class="col-md-3">
 			<?php foreach ($side_data->result() as $row) { ?>
 				<div class="col-md-12">
-					<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card hover-shadow my-2">
-						<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="150px" class="card-img-top" />
+					<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card hover-shadow my-2">
+						<img src="<?php echo base_url('uploads/') ?><?= $row->picture_name ?>" width="auto" height="150px" class="card-img-top" />
 						<div class="card-body">
 							<p class="text-dark transaction" style="font-family: 'Sarabun';"><?= $row->title ?></p>
 						</div>

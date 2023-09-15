@@ -46,12 +46,10 @@
             </div>
             <form action="<?php echo site_url('officer/reject_credit_consider/' . $result->credit_consider_id) ?>" method="post">
                 <div class="modal-body">
-
                     <div class="form-outline">
                         <textarea class="form-control" id="textAreaExample" name="note" rows="4" required></textarea>
                         <label class="form-label" for="textAreaExample">หมายเหตุ</label>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">ยกเลิก</button>
@@ -70,7 +68,7 @@
             title: 'ต้องการอนุมัติสินเชื่อนี้หรือไม่',
             showDenyButton: true,
             showCancelButton: false,
-            confirmButtonText: 'อนุมัติ',
+            confirmButtonText: 'ยืนยัน',
             denyButtonText: 'ปฏิเสธ',
         }).then((result) => {
             if (result.isConfirmed) {

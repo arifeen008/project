@@ -13,8 +13,8 @@ include_once("application/libraries/Thaidate.php"); ?>
 		<p style="font-family: 'Kanit';" class="text-dark mt-2 h2">ข่าวสาร/กิจกรรมความเคลื่อนไหว</p>
 		<?php foreach ($result->result() as $row) { ?>
 			<div class="col-md-3 mb-2">
-				<a href="<?php echo site_url('index/news/' . $row->newsnumber) ?>" class="card hover-shadow my-2">
-					<img src="<?php echo base_url('uploads/') ?><?= $row->picturename ?>" width="auto" height="150px" class="card-img-top" />
+				<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card hover-shadow my-2">
+					<img src="<?php echo base_url('uploads/') ?><?= $row->picture_name ?>" width="auto" height="150px" class="card-img-top" />
 					<div class="card-body">
 						<p style="font-family: 'Kanit';" class="card-title text-dark transaction"><?= $row->title ?></p>
 						<figcaption class="blockquote-footer mt-1">

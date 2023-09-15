@@ -8,20 +8,29 @@ class News_model extends CI_Model
 		$this->db2 = $this->load->database('db2', TRUE);
 	}
 
-	public function upload_picture($newsnumber, $uploadStatus, $dateupload)
+	public function upload_picture($news_number, $uploadStatus, $dateupload)
 	{
 		$data = array(
-			'newsnumber' => $newsnumber,
-			'picturename' => $uploadStatus,
+			'news_number' => $news_number,
+			'picture_name' => $uploadStatus,
 			'dateupload' => $dateupload
 		);
 		$this->db2->insert('picture', $data);
 	}
 
-	public function upload_news($newsnumber, $title, $description, $news_type, $date, $dateupload)
+	public function upload_picture_cover($news_number, $uploadStatus)
 	{
 		$data = array(
-			'newsnumber' => $newsnumber,
+			'news_number' => $news_number,
+			'picture_name' => $uploadStatus
+		);
+		$this->db2->insert('picture_cover', $data);
+	}
+
+	public function upload_news($news_number, $title, $description, $news_type, $date, $dateupload)
+	{
+		$data = array(
+			'news_number' => $news_number,
 			'news_typeid' => $news_type,
 			'title' => $title,
 			'description' => $description,
@@ -31,19 +40,19 @@ class News_model extends CI_Model
 		$this->db2->insert('news', $data);
 	}
 
-	public function check_newsnumber($newsnumber)
+	public function check_news_number($news_number)
 	{
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->get('news');
 		return $result;
 	}
 
 	public function get_news_information()
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
 		$this->db2->where('news.news_typeid', '1');
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
 		$this->db2->order_by('dateupload', 'DESC');
 		$this->db2->limit(8);
 		$result = $this->db2->get('news');
@@ -52,10 +61,10 @@ class News_model extends CI_Model
 
 	public function get_news_welfare()
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
 		$this->db2->where('news.news_typeid', '2');
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
 		$this->db2->order_by('dateupload', 'DESC');
 		$this->db2->limit(8);
 		$result = $this->db2->get('news');
@@ -64,10 +73,10 @@ class News_model extends CI_Model
 
 	public function get_news_credit()
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
 		$this->db2->where('news.news_typeid', '3');
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
 		$this->db2->order_by('dateupload', 'DESC');
 		$this->db2->limit(8);
 		$result = $this->db2->get('news');
@@ -76,69 +85,69 @@ class News_model extends CI_Model
 
 	public function get_news_foundation()
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
 		$this->db2->where('news.news_typeid', '4');
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
 		$this->db2->order_by('dateupload', 'DESC');
 		$this->db2->limit(8);
 		$result = $this->db2->get('news');
 		return $result->result();
 	}
 
-	public function get_sidenewsdata($newsnumber)
+	public function get_sidenewsdata($news_number)
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
-		$this->db2->where('news.newsnumber !=', $newsnumber);
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
-		$this->db2->order_by('dateupload', 'DESC');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
+		$this->db2->where('news.news_number !=', $news_number);
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
+		$this->db2->order_by('news.dateupload', 'DESC');
 		$this->db2->limit(6);
 		$result = $this->db2->get('news');
 		return $result;
 	}
 
-	public function get_news_data($newsnumber)
+	public function get_news_data($news_number)
 	{
 		$this->db2->select('title,description,date,dateupload');
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->get('news');
 		return $result->row();
 	}
 
 	public function get_news_upload()
 	{
-		$this->db2->select('news.newsnumber,news_type.news_typename,news.title,news.date,news.dateupload');
+		$this->db2->select('news.news_number,news_type.news_typename,news.title,news.date,news.dateupload');
 		$this->db2->join('news_type', 'news.news_typeid = news_type.news_typeid');
 		$this->db2->order_by('news.dateupload', 'DESC');
 		$result = $this->db2->get('news');
 		return $result;
 	}
 
-	public function get_newspicture($newsnumber)
+	public function get_newspicture($news_number)
 	{
-		$this->db2->select('newsnumber,picturename');
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->select('news_number,picture_name');
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->get('picture');
 		return $result;
 	}
 
-	public function deletenews($newsnumber)
+	public function deletenews($news_number)
 	{
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->delete('news');
 		return $result;
 	}
 
-	public function selectnews($newsnumber)
+	public function selectnews($news_number)
 	{
-		$this->db2->select('newsnumber,title,description,date,dateupload');
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->select('news_number,title,description,date,dateupload');
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->get('news');
 		return $result->row();
 	}
 
-	public function updatenews($newsnumber, $news_type, $title, $date, $description)
+	public function updatenews($news_number, $news_type, $title, $date, $description)
 	{
 		$data = array(
 			'news_typeid' => $news_type,
@@ -147,31 +156,31 @@ class News_model extends CI_Model
 			'dateupload' => $date
 		);
 
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->update('news', $data);
 		return $result;
 	}
 
-	public function selectpicture($newsnumber)
+	public function selectpicture($news_number)
 	{
-		$this->db2->select('picturename');
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->select('picture_name');
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->get('picture');
 		return $result;
 	}
 
-	public function deletepicture($newsnumber)
+	public function deletepicture($news_number)
 	{
-		$this->db2->where('newsnumber', $newsnumber);
+		$this->db2->where('news_number', $news_number);
 		$result = $this->db2->delete('picture');
 		return $result;
 	}
 
 	public function get_list_activity($limit, $start)
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload,picture.picturename');
-		$this->db2->join('picture', 'news.newsnumber = picture.newsnumber');
-		$this->db2->group_by('news.newsnumber');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
+		$this->db2->join('picture', 'news.news_number = picture.news_number');
+		$this->db2->group_by('news.news_number');
 		$this->db2->order_by('dateupload', 'desc');
 		$this->db2->limit($limit, $start);
 		$result = $this->db2->get('news');
@@ -185,7 +194,7 @@ class News_model extends CI_Model
 
 	public function get_students($limit, $start)
 	{
-		$this->db2->select('news.newsnumber,news.title,news.description,news.dateupload');
+		$this->db2->select('news.news_number,news.title,news.description,news.dateupload');
 		$this->db2->order_by('dateupload', 'desc');
 		$this->db2->limit($limit, $start);
 		$query = $this->db2->get('news');
@@ -420,8 +429,20 @@ class News_model extends CI_Model
 		return $result;
 	}
 
-	public function get_credit_consider()
+	public function get_credit_consider($username)
 	{
+		$this->db2->where('credit_consider.username', $username);
+		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
+		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
+		$this->db2->order_by('credit_consider.date', 'desc');
+		$result = $this->db2->get('credit_consider');
+		return $result->result();
+	}
+
+	public function get_credit_consider2()
+	{
+		$this->db2->where('credit_consider.status_id', 1);
 		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
 		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
 		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');

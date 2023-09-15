@@ -297,8 +297,8 @@ class Officer extends CI_Controller
 		$news_type = $this->input->post('news_type');
 
 		do {
-			$newsnumber = rand(10, 10000);
-			$result = $this->news_model->check_newsnumber($newsnumber);
+			$news_number = rand(10, 10000);
+			$result = $this->news_model->check_news_number($news_number);
 			$num = $result->num_rows();
 		} while ($num > 0);
 
@@ -315,13 +315,14 @@ class Officer extends CI_Controller
 			$uploadStatus = $this->uploadFile('uploadFile');
 			if ($uploadStatus != false) {
 				$countUploadedFiles++;
-				$this->news_model->upload_picture($newsnumber, $uploadStatus, date('Y-m-d'));
+				$this->news_model->upload_picture($news_number, $uploadStatus, date('Y-m-d'));
 			} else {
 				$countErrorUploadFiles++;
 			}
 		}
-		$this->news_model->upload_news($newsnumber, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
-		echo "<script>alert('อัพโหลดข่าวแล้ว');</script>";
+		$this->news_model->upload_picture_cover($news_number, $this->uploadFilecover('coverImage'));
+		$this->news_model->upload_news($news_number, $title, $description, $news_type, date('Y-m-d H:i:s'), $date);
+		$this->session->set_flashdata('success', 'Upload news successfully');
 		redirect('officer/uploadnews_system', 'refresh');
 	}
 
@@ -341,16 +342,32 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function delete_news($newsnumber)
+	function uploadFilecover($name)
 	{
-		$result = $this->news_model->deletenews($newsnumber);
+		$config['upload_path'] = 'uploads/cover';
+		$config['allowed_types'] = 'jpeg|JPEG|JPG|jpg|png|PNG';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+		if ($this->upload->do_upload($name)) {
+			$fileData = $this->upload->data();
+			return $fileData['file_name'];
+		} else {
+			return false;
+		}
+	}
+
+	public function delete_news($news_number)
+	{
+		$result = $this->news_model->deletenews($news_number);
 		if ($result) {
-			$result = $this->news_model->selectpicture($newsnumber);
+			$result = $this->news_model->selectpicture($news_number);
 			if ($result) {
 				foreach ($result->result() as $row) {
-					unlink('uploads/' . $row->picturename);
+					unlink('uploads/' . $row->picture_name);
 				}
-				$result = $this->news_model->deletepicture($newsnumber);
+				$result = $this->news_model->deletepicture($news_number);
 				if ($result) {
 					echo "<script>alert('ลบสำเร็จ');</script>";
 					redirect('officer/uploadnews_system', 'refresh');
@@ -362,12 +379,12 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function edit_news($newsnumber)
+	public function edit_news($news_number)
 	{
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data = $this->officer_model->data_officer($user_id);
-		$news = $this->news_model->selectnews($newsnumber);
+		$news = $this->news_model->selectnews($news_number);
 		$title['title'] = "แก้ไขข่าวสาร สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
@@ -378,18 +395,18 @@ class Officer extends CI_Controller
 
 	public function update_news()
 	{
-		$newsnumber = $this->input->post('newsnumber');
+		$news_number = $this->input->post('news_number');
 		$title = $this->input->post('title');
 		$date = $this->input->post('date');
 		$description = $this->input->post('description');
 		$news_type = $this->input->post('news_type');
-		$result = $this->news_model->updatenews($newsnumber, $news_type, $title, $date, $description);
+		$result = $this->news_model->updatenews($news_number, $news_type, $title, $date, $description);
 		if ($result) {
 			echo "<script>alert('แก้ไขเรียบร้อย');</script>";
 			redirect('officer/uploadnews_system', 'refresh');
 		} else {
 			echo "<script>alert('แก้ไขไม่สำเร็จ');</script>";
-			redirect('officer/editnews/' . $newsnumber, 'refresh');
+			redirect('officer/editnews/' . $news_number, 'refresh');
 		}
 	}
 
@@ -605,8 +622,7 @@ class Officer extends CI_Controller
 			}
 		}
 		$this->news_model->asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, date('Y-m-d H:i:s'));
-		echo "<script>alert('Import success');</script>";
-		// $this->session->set_flashdata('success','import success');
+		$this->session->set_flashdata('success', 'import success');
 		redirect('officer/upload_asset', 'refresh');
 	}
 
@@ -627,9 +643,10 @@ class Officer extends CI_Controller
 	public function credit_consider()
 	{
 		$user_id = $this->session->userdata('user_id');
+		$username = $this->session->userdata('user_name');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->news_model->get_credit_consider();
+		$data['result'] = $this->news_model->get_credit_consider($username);
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
@@ -657,7 +674,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data_officer = $this->officer_model->data_officer($user_id);
-		$data['result'] = $this->news_model->get_credit_consider();
+		$data['result'] = $this->news_model->get_credit_consider2();
 		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
@@ -730,7 +747,7 @@ class Officer extends CI_Controller
 		$loan_year = $this->input->post('loan_year');
 		$branch_id = $this->input->post('branch_id');
 		$loan_id = $this->input->post('loan_id');
-		$status_id = '01';
+		$status_id = '1';
 		$config['upload_path']          = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
 		$config['allowed_types']        = 'pdf';
 		$this->load->library('upload', $config);
@@ -744,12 +761,10 @@ class Officer extends CI_Controller
 			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id);
 			$result = $this->news_model->add_credit_consider_process($return_id, $status_id);
 			if ($result === TRUE) {
-				$this->session->set_flashdata("success", "upload success");
-				echo "<script>alert('Success');</script>";
+				$this->session->set_flashdata('success', 'upload success');
 				redirect('officer/credit_consider', 'refresh');
 			} else {
 				$this->session->set_flashdata('error', 'Something Wrong');
-				echo "<script>alert('Error');</script>";
 				redirect('officer/uploadcredit_consider', 'refresh');
 			}
 		}

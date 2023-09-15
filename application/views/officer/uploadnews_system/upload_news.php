@@ -32,6 +32,10 @@
 						</div>
 					</div>
 					<div class="col-md-12">
+						<label for="coverImage" class="form-label">ภาพหน้าปก</label>
+						<input class="form-control form-control-lg" type="file" name="coverImage" id="coverImage" />
+					</div>
+					<div class="col-md-12">
 						<label for="formFileMultiple" class="form-label">อัพโหลดไฟล์ภาพ</label>
 						<input class="form-control form-control-lg" type="file" name="uploadedFiles[]" id="formFileMultiple" multiple />
 					</div>

@@ -25,7 +25,7 @@
 						</select>
 						<label class="form-label select-label">เลือกประเภทข่าว</label>
 					</div>
-					<input type="hidden" class="form-control" name="newsnumber" value="<?php echo $newsnumber ?>" />
+					<input type="hidden" class="form-control" name="news_number" value="<?php echo $news_number ?>" />
 					<div class="col-md-12">
 						<label class="form-label" for="textArea">รายละเอียด :</label>
 						<div class="form-outline">

@@ -19,7 +19,7 @@ include_once("application/libraries/Thaidate.php");
                             <th>วันที่</th>
                             <th>สถานะ</th>
                             <th>ติดตามสถานะ</th>
-                            <th class="text-danger">หมายเหตุ*</th>
+                            <th class="text-center text-danger">หมายเหตุ*</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,16 +33,24 @@ include_once("application/libraries/Thaidate.php");
                                     <p class="text-muted mb-1"><?= $row->credit_name  ?></p>
                                 </td>
                                 <td>
-                                    <p><?= thaidate('j M Y ', strtotime($row->date))?></p>
+                                    <p><?= thaidate('j M Y ', strtotime($row->date)) ?></p>
                                     <p><?= thaidate('H:i', strtotime($row->date)) ?></p>
                                 </td>
                                 <td><span class="badge badge-success rounded-pill d-inline"><?= $row->status_name  ?></span></td>
                                 <td>
                                     <a class="btn btn-outline-success" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_consider_id) ?>"><i class="fab fa-algolia"></i></a>
                                 </td>
-                                <td> <?= ($row->note == NULL ? "-" : $row->note)  ?></td>
+                                <td class="text-center">
+                                    <?php if ($row->note) { ?>
+                                        <button type="button" class="btn btn-lg btn-danger" data-mdb-toggle="popover" title="หมายเหตุ*" data-mdb-content="<?= $row->note ?>">
+                                            <i class="fas fa-align-justify"></i>
+                                        </button>
+                                    <?php } else {  ?>
+                                      <h1>-</h1>
+                                    <?php } ?>
+                                </td>
                             </tr>
-                        <?php  } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
