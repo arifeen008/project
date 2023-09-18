@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-session_start();
+
 class Index extends CI_Controller
 {
 	function __construct()
