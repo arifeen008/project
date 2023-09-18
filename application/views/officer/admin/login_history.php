@@ -19,6 +19,7 @@ include_once("application/libraries/Thaidate.php");
                             <th class="text-center">IP ADDRESS</th>
                             <th class="text-center">Latitude</th>
                             <th class="text-center">Longtitude</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,7 @@ include_once("application/libraries/Thaidate.php");
                                 <td><?= $row->ip_address ?></td>
                                 <td><?= $row->lat ?></td>
                                 <td><?= $row->lng ?></td>
+                                <td><button type="button" class="btn btn-info"><i class="fas fa-chart-pie"></i></button></td>
                             </tr>
                         <?php  } ?>
                     </tbody>
