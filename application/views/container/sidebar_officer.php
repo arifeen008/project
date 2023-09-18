@@ -40,7 +40,7 @@
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span>
  			</a>
  		</li> -->
- 		<?php if ($level_code === 'P') { ?>
+ 		<?php if ($level_code === 'P') : ?>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider') ?>">
  					<span>ระบบพิจารณาสินเชื่อ</span>
@@ -56,23 +56,25 @@
  					<span>ระบบพิจารณาสินเชื่อ 3</span>
  				</a>
  			</li>
+ 		<?php endif ?>
+ 		<?php if ($level_code === 'P') : ?>
  			<li class="sidenav-item">
-
+ 				<a class="sidenav-link">
+ 					<span>ระบบ Admin</span>
+ 				</a>
+ 				<ul class="sidenav-collapse">
+ 					<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit_consider') ?>">
+ 						พิจารณาสินเชื่อ
+ 					</a>
+ 					<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit') ?>">
+ 						สินเชื่อ
+ 					</a>
+					 <a class="sidenav-link" href="<?php echo site_url('officer/login_history') ?>">
+ 						ประวัติการล็อกอิน
+ 					</a>
+ 				</ul>
  			</li>
- 		<?php	} ?>
- 		<li class="sidenav-item">
- 			<a class="sidenav-link">
- 				<span>ระบบ Admin</span>
- 			</a>
- 			<ul class="sidenav-collapse">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit_consider') ?>">
- 					พิจารณาสินเชื่อ
- 				</a>
- 				<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit') ?>">
- 					สินเชื่อ
- 				</a>
- 			</ul>
- 		</li>
+ 		<?php endif ?>
  		<li class="sidenav-item">
  			<a class="sidenav-link">
  				<span>ระบบอัพโหลด</span>
@@ -81,7 +83,7 @@
  				<li class="sidenav-item">
  					<a href="<?php echo site_url('officer/uploadcreditfile') ?>" class="sidenav-link">อัพโหลดสินเชื่อ</a>
  				</li>
- 				<?php if ($level_code === 'P') { ?>
+ 				<?php if ($level_code === 'P') : ?>
  					<li class="sidenav-item">
  						<a href="<?php echo site_url('officer/uploadasset_system') ?>" class="sidenav-link">อัพโหลดสินทรัพย์</a>
  					</li>
@@ -94,7 +96,7 @@
  					<li class="sidenav-item">
  						<a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="sidenav-link">อัพโหลดประกาศ</a>
  					</li>
- 				<?php	} ?>
+ 				<?php endif ?>
  			</ul>
  		</li>
  	</ul>

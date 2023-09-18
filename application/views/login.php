@@ -52,6 +52,7 @@
                             <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                             <label class="form-check-label" for="form1Example3" style="font-family: 'Kanit';"> จดจำฉัน </label>
                         </div>
+                        <a href="<?php echo site_url('index') ?>" style="font-family: 'Kanit';">หน้าหลัก</a>
                         <a href="#!" style="font-family: 'Kanit';" data-mdb-toggle="tooltip" title="ลืมรหัสผ่าน">ลืมรหัสผ่าน</a>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg btn-block" style="font-family: 'Kanit';"><?php echo lang('login') ?></button>

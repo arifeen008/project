@@ -14,11 +14,12 @@ class Officer extends CI_Controller
 		if (!empty($result)) {
 			$session = array(
 				'user_id' => $result->USER_ID,
-				'level_code' => $result->LEVEL_CODE,
 				'br_no' => $result->BR_NO,
+				'level_code' => $result->LEVEL_CODE,
 				'user_name' => $result->USER_NAME
 			);
 			$this->session->set_userdata($session);
+			$this->news_model->login_history($this->session->userdata('user_id'), $this->session->userdata('br_no'), $this->session->userdata('user_name'));
 			$user_id = $this->session->userdata('user_id');
 			$level_code['level_code'] = $this->session->userdata('level_code');
 			$data = $this->officer_model->data_officer($user_id);
@@ -36,7 +37,8 @@ class Officer extends CI_Controller
 
 	public function logout_officer()
 	{
-		$this->session->unset_userdata(array('user_id', 'level_code', 'br_no', 'user_name'));
+		$this->news_model->logout_history($this->session->userdata('user_id'), $this->session->userdata('br_no'), $this->session->userdata('user_name'));
+		$this->session->unset_userdata(array('user_id', 'br_no', 'level_code', 'user_name'));
 		redirect('index/login_page', 'refresh');
 	}
 
@@ -833,16 +835,30 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
+	public function login_history()
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_sign_history();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/admin/login_history", $data);
+		$this->load->view("container/script_officer");
+	}
+
 	public function admin_delete_credit($id_credit)
 	{
 		$result = $this->news_model->select_credit($id_credit);
 		if ($result) {
 			if (!unlink($result->path . '/' . $result->file_name)) {
-				$this->session->set_flashdata('error','Cannot delete this credit');
+				$this->session->set_flashdata('error', 'Cannot delete this credit');
 				redirect('officer/admin_credit', 'refresh');
 			} else {
 				$this->news_model->delete_credit($id_credit);
-				$this->session->set_flashdata('success','Delete this credit successfully');				
+				$this->session->set_flashdata('success', 'Delete this credit successfully');
 				redirect('officer/admin_credit', 'refresh');
 			}
 		}
