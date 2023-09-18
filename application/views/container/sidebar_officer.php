@@ -46,22 +46,33 @@
  					<span>ระบบพิจารณาสินเชื่อ</span>
  				</a>
  			</li>
-			 <li class="sidenav-item">
+ 			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider2') ?>">
  					<span>ระบบพิจารณาสินเชื่อ 2</span>
  				</a>
  			</li>
-			 <li class="sidenav-item">
+ 			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
  					<span>ระบบพิจารณาสินเชื่อ 3</span>
  				</a>
  			</li>
-			 <li class="sidenav-item">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/admincredit_consider') ?>">
- 					<span>Admin ระบบพิจารณาสินเชื่อ</span>
- 				</a>
+ 			<li class="sidenav-item">
+
  			</li>
  		<?php	} ?>
+ 		<li class="sidenav-item">
+ 			<a class="sidenav-link">
+ 				<span>ระบบ Admin</span>
+ 			</a>
+ 			<ul class="sidenav-collapse">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit_consider') ?>">
+ 					พิจารณาสินเชื่อ
+ 				</a>
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit') ?>">
+ 					สินเชื่อ
+ 				</a>
+ 			</ul>
+ 		</li>
  		<li class="sidenav-item">
  			<a class="sidenav-link">
  				<span>ระบบอัพโหลด</span>

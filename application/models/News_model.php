@@ -533,6 +533,15 @@ class News_model extends CI_Model
 		$this->db2->insert('credit_consider_process', $data);
 	}
 
+	public function get_credit()
+	{
+		$this->db2->select('credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,branch_name.name_branch,credit_type.credit_name,credit_upload.year,credit_upload.name_upload,credit_upload.date_upload,credit_upload.path,credit_upload.file_name,credit_upload.id_credit');
+		$this->db2->join('credit_type', 'credit_upload.credit_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_upload.branch_id = branch_name.branch_id');
+		$result = $this->db2->get('credit_upload');
+		return $result->result();
+	}
+
 	public function get_status_credit_consider()
 	{
 		$result = $this->db2->get('status_credit');

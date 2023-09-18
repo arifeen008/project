@@ -459,7 +459,7 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/creditupload_system/searchcredit");
+		$this->load->view("officer/creditupload_system/search_credit");
 		$this->load->view("container/script_officer");
 	}
 
@@ -524,7 +524,7 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/creditupload_system/listcredit", $data);
+		$this->load->view("officer/creditupload_system/list_credit", $data);
 		$this->load->view("container/script_officer");
 	}
 
@@ -805,7 +805,7 @@ class Officer extends CI_Controller
 		}
 	}
 
-	public function admincredit_consider()
+	public function admin_credit_consider()
 	{
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
@@ -815,8 +815,37 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/admin/admincredit_consider", $data);
+		$this->load->view("officer/admin/admin_credit_consider", $data);
 		$this->load->view("container/script_officer");
+	}
+
+	public function admin_credit()
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_credit();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/admin/admin_credit", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function admin_delete_credit($id_credit)
+	{
+		$result = $this->news_model->select_credit($id_credit);
+		if ($result) {
+			if (!unlink($result->path . '/' . $result->file_name)) {
+				$this->session->set_flashdata('error','Cannot delete this credit');
+				redirect('officer/admin_credit', 'refresh');
+			} else {
+				$this->news_model->delete_credit($id_credit);
+				$this->session->set_flashdata('success','Delete this credit successfully');				
+				redirect('officer/admin_credit', 'refresh');
+			}
+		}
 	}
 
 	public function status_form_add()
@@ -829,7 +858,7 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/admin/status_form_add");
+		$this->load->view("officer/admin/status_form_add");
 		$this->load->view("container/script_officer");
 	}
 
@@ -843,7 +872,7 @@ class Officer extends CI_Controller
 		$this->load->view("container/head", $title);
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
-		$this->load->view("officer/credit_consider/admin/status_form_edit", $data);
+		$this->load->view("officer/admin/status_form_edit", $data);
 		$this->load->view("container/script_officer");
 	}
 
