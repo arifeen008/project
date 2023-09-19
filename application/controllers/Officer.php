@@ -37,7 +37,7 @@ class Officer extends CI_Controller
 
 	public function logout_officer()
 	{
-		$this->news_model->logout_history($this->session->userdata('user_id'), $this->session->userdata('br_no'), $this->session->userdata('user_name'));
+		// $this->news_model->logout_history($this->session->userdata('user_id'), $this->session->userdata('br_no'), $this->session->userdata('user_name'));
 		$this->session->unset_userdata(array('user_id', 'br_no', 'level_code', 'user_name'));
 		redirect('index/login_page', 'refresh');
 	}
@@ -912,4 +912,5 @@ class Officer extends CI_Controller
 		$this->news_model->delete_status($status_id);
 		redirect('officer/admincredit_consider', 'refresh');
 	}
+
 }

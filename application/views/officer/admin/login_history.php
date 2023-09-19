@@ -18,7 +18,7 @@ include_once("application/libraries/Thaidate.php");
                             <th class="text-center">เวลาล็อกอิน</th>
                             <th class="text-center">IP ADDRESS</th>
                             <th class="text-center">Latitude</th>
-                            <th class="text-center">Longtitude</th>
+                            <th class="text-center">Longitude</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -30,8 +30,8 @@ include_once("application/libraries/Thaidate.php");
                                 <td><?= $row->user_name ?></td>
                                 <td><?= thaidate('j M Y H:i', strtotime($row->login_time)) ?></td>
                                 <td><?= $row->ip_address ?></td>
-                                <td><?= $row->lat ?></td>
-                                <td><?= $row->lng ?></td>
+                                <td><?= $row->latitude ?></td>
+                                <td><?= $row->longitude ?></td>
                                 <td><button type="button" class="btn btn-info"><i class="fas fa-chart-pie"></i></button></td>
                             </tr>
                         <?php  } ?>
