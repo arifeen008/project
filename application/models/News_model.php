@@ -48,25 +48,8 @@ class News_model extends CI_Model
 		$this->db2->insert('signin_history', $data);
 	}
 
-	// public function logout_history($user_id, $branch_id, $username)
-	// {
-	// 	date_default_timezone_set('Asia/Bangkok');
-	// 	$apiURL = json_decode(file_get_contents('https://freegeoip.app/json/'));
-	// 	$data = array(
-	// 		'user_id' => $user_id,
-	// 		'branch_id' => $branch_id,
-	// 		'user_name' => $username,
-	// 		'logout_time' =>  date('Y-m-d H:i:s'),
-	// 		'ip_address' =>  $apiURL->ip,
-	// 		'latitude' => $apiURL->latitude,
-	// 		'longitude' => $apiURL->longitude
-	// 	);
-	// 	$this->db2->insert('signin_history', $data);
-	// }
-
 	public function get_sign_history()
 	{
-		// $this->db2->where('login_time !=', NULL);
 		$this->db2->join('branch_name', 'signin_history.branch_id = branch_name.branch_id');
 		$result = $this->db2->get('signin_history');
 		return $result->result();
