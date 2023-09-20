@@ -33,9 +33,8 @@
                 </div>
                 <div class="h-100 d-flex justify-content-center align-items-center">
                     <h3 class="align-self-center me-auto"> <a href="<?php echo base_url($result->path . '/' . $result->file_name) ?>" target="_blank" class="btn btn-primary"><i class="fas fa-file-download me-3"></i>ดูเอกสาร</a></h3>
-                    <!-- <a href="<?php echo site_url('officer/accept_credit_consider2/' . $result->credit_consider_id) ?>" class="btn btn-success h3 ms-3 accept"><i class="fas fa-check me-2"></i>อนุมัติ</a>
+                    <a href="<?php echo site_url('officer/accept_credit_consider2/' . $result->credit_consider_id) ?>" class="btn btn-success h3 ms-3 accept"><i class="fas fa-check me-2"></i>อนุมัติ</a>
                     <a href="<?php echo site_url('officer/reject_credit_consider2/' . $result->credit_consider_id) ?>" class="btn btn-warning h3 ms-3"><i class="fas fa-skull-crossbones me-2"></i>ปฏิเสธ</a>
-                    <a href="<?php echo site_url('officer/delete_credit_consider/' . $result->credit_consider_id) ?>" class="btn btn-danger h3 ms-3"><i class="fas fa-trash me-2"></i>ลบ</a> -->
                 </div>
             </div>
         </div>
@@ -49,7 +48,7 @@
                 <h5 class="modal-title" id="exampleModalLabel">หมายเหตุ*</h5>
                 <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?php echo site_url('officer/reject_credit_consider/' . $result->credit_consider_id) ?>" method="post">
+            <form action="<?php echo site_url('officer/reject_credit_consider2/' . $result->credit_consider_id) ?>" method="post">
                 <div class="modal-body">
                     <div class="form-outline">
                         <textarea class="form-control" id="textAreaExample" name="note" rows="4" required></textarea>

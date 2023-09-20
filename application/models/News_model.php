@@ -502,10 +502,12 @@ class News_model extends CI_Model
 
 	public function get_credit_consider3()
 	{
-		$this->db2->where('credit_consider.status_id', 2);
+		$status_id = array(2, 4);
+		$this->db2->where_in('credit_consider.status_id', $status_id);
 		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
 		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
 		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
+		$this->db2->order_by('credit_consider.status_id', 'asc');
 		$result = $this->db2->get('credit_consider');
 		return $result->result();
 	}
@@ -553,7 +555,7 @@ class News_model extends CI_Model
 	public function accept_credit_consider($credit_consider_id)
 	{
 		date_default_timezone_set('Asia/Bangkok');
-		$this->db2->set('status_id', '02');
+		$this->db2->set('status_id', '2');
 		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$this->db2->update('credit_consider');
 		$data = array(
@@ -568,7 +570,7 @@ class News_model extends CI_Model
 	public function reject_credit_consider($credit_consider_id, $note)
 	{
 		date_default_timezone_set('Asia/Bangkok');
-		$this->db2->set('status_id', '03');
+		$this->db2->set('status_id', '3');
 		$this->db2->set('note', $note);
 		$this->db2->where('credit_consider_id', $credit_consider_id);
 		$this->db2->update('credit_consider');
@@ -576,6 +578,36 @@ class News_model extends CI_Model
 			'credit_consider_id' => $credit_consider_id,
 			'date' => date('Y-m-d H:i:s'),
 			'status_id' => '3'
+		);
+		$this->db2->insert('credit_consider_process', $data);
+	}
+
+	public function accept_credit_consider2($credit_consider_id)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '4');
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '4'
+		);
+		$result = $this->db2->insert('credit_consider_process', $data);
+		return $result;
+	}
+
+	public function reject_credit_consider2($credit_consider_id, $note)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '5');
+		$this->db2->set('note', $note);
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '5'
 		);
 		$this->db2->insert('credit_consider_process', $data);
 	}

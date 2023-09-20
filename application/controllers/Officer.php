@@ -774,20 +774,20 @@ class Officer extends CI_Controller
 		redirect('officer/credit_consider2', 'refresh');
 	}
 
-	// public function accept_credit_consider2($credit_consider_id)
-	// {
-	// 	$this->news_model->accept_credit_consider($credit_consider_id);
-	// 	$this->session->set_flashdata('success', 'Accept credit success');
-	// 	redirect('officer/credit_consider3', 'refresh');
-	// }
+	public function accept_credit_consider2($credit_consider_id)
+	{
+		$this->news_model->accept_credit_consider2($credit_consider_id);
+		$this->session->set_flashdata('success', 'Accept credit success');
+		redirect('officer/credit_consider3', 'refresh');
+	}
 
-	// public function reject_credit_consider2($credit_consider_id)
-	// {
-	// 	$note = $this->input->post('note');
-	// 	$this->news_model->reject_credit_consider($credit_consider_id, $note);
-	// 	$this->session->set_flashdata('success', 'Reject credit success');
-	// 	redirect('officer/credit_consider3', 'refresh');
-	// }
+	public function reject_credit_consider2($credit_consider_id)
+	{
+		$note = $this->input->post('note');
+		$this->news_model->reject_credit_consider2($credit_consider_id, $note);
+		$this->session->set_flashdata('success', 'Reject credit success');
+		redirect('officer/credit_consider3', 'refresh');
+	}
 
 	public function delete_credit_consider($credit_consider_id)
 	{
@@ -797,15 +797,51 @@ class Officer extends CI_Controller
 				$this->news_model->delete_credit_consider($credit_consider_id);
 				$this->news_model->delete_credit_consider_process($credit_consider_id);
 				$this->session->set_flashdata('error', 'Cannot Delete it !');
-				redirect('officer/credit_consider2', 'refresh');
+				redirect('officer/credit_consider', 'refresh');
 			} else {
 				$this->news_model->delete_credit_consider($credit_consider_id);
 				$this->news_model->delete_credit_consider_process($credit_consider_id);
 				$this->session->set_flashdata('success', 'Delete Success');
-				redirect('officer/credit_consider2', 'refresh');
+				redirect('officer/credit_consider', 'refresh');
 			}
 		}
 	}
+
+	// public function delete_credit_consider2($credit_consider_id)
+	// {
+	// 	$result = $this->news_model->select_credit_consider($credit_consider_id);
+	// 	if ($result) {
+	// 		if (!unlink($result->path . '/' . $result->file_name)) {
+	// 			$this->news_model->delete_credit_consider($credit_consider_id);
+	// 			$this->news_model->delete_credit_consider_process($credit_consider_id);
+	// 			$this->session->set_flashdata('error', 'Cannot Delete it !');
+	// 			redirect('officer/credit_consider2', 'refresh');
+	// 		} else {
+	// 			$this->news_model->delete_credit_consider($credit_consider_id);
+	// 			$this->news_model->delete_credit_consider_process($credit_consider_id);
+	// 			$this->session->set_flashdata('success', 'Delete Success');
+	// 			redirect('officer/credit_consider2', 'refresh');
+	// 		}
+	// 	}
+	// }
+
+	// public function delete_credit_consider3($credit_consider_id)
+	// {
+	// 	$result = $this->news_model->select_credit_consider($credit_consider_id);
+	// 	if ($result) {
+	// 		if (!unlink($result->path . '/' . $result->file_name)) {
+	// 			$this->news_model->delete_credit_consider($credit_consider_id);
+	// 			$this->news_model->delete_credit_consider_process($credit_consider_id);
+	// 			$this->session->set_flashdata('error', 'Cannot Delete it !');
+	// 			redirect('officer/credit_consider3', 'refresh');
+	// 		} else {
+	// 			$this->news_model->delete_credit_consider($credit_consider_id);
+	// 			$this->news_model->delete_credit_consider_process($credit_consider_id);
+	// 			$this->session->set_flashdata('success', 'Delete Success');
+	// 			redirect('officer/credit_consider3', 'refresh');
+	// 		}
+	// 	}
+	// }
 
 	public function admin_credit_consider()
 	{
@@ -896,7 +932,7 @@ class Officer extends CI_Controller
 	{
 		$status_name = $this->input->post('status_name');
 		$this->news_model->add_status($status_name);
-		redirect('officer/admincredit_consider', 'refresh');
+		redirect('officer/admin_credit_consider', 'refresh');
 	}
 
 	public function update_status()
@@ -904,13 +940,13 @@ class Officer extends CI_Controller
 		$status_id = $this->input->post('status_id');
 		$status_name = $this->input->post('status_name');
 		$this->news_model->update_status($status_id, $status_name);
-		redirect('officer/admincredit_consider', 'refresh');
+		redirect('officer/admin_credit_consider', 'refresh');
 	}
 
 	public function delete_status($status_id)
 	{
 		$this->news_model->delete_status($status_id);
-		redirect('officer/admincredit_consider', 'refresh');
+		redirect('officer/admin_credit_consider', 'refresh');
 	}
 
 }

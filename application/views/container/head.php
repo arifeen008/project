@@ -18,7 +18,7 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7M3HX122N"></script>
 	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-	<script>
+	<!-- <script>
 		window.dataLayer = window.dataLayer || [];
 
 		function gtag() {
@@ -27,6 +27,6 @@
 		gtag('js', new Date());
 
 		gtag('config', 'G-Y7M3HX122N');
-	</script>
+	</script> -->
 	<?php header("Cache-Control: public, max-age=1000, s-maxage=1000"); ?>
 </head>

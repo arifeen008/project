@@ -43,17 +43,17 @@
  		<?php if ($level_code === 'P') : ?>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider') ?>">
- 					<span>ระบบพิจารณาสินเชื่อ</span>
+ 					<span>พิจารณาสินเชื่อ</span>
  				</a>
  			</li>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider2') ?>">
- 					<span>ระบบพิจารณาสินเชื่อ 2</span>
+ 					<span>ฝ่ายวิเคราะห์</span>
  				</a>
  			</li>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
- 					<span>ระบบพิจารณาสินเชื่อ 3</span>
+ 					<span>ผู้จัดการใหญ่</span>
  				</a>
  			</li>
  		<?php endif ?>
