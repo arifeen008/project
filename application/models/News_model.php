@@ -24,7 +24,6 @@ class News_model extends CI_Model
 			'time_zone' => $apiURL->time_zone,
 			'latitude' => $apiURL->latitude,
 			'longitude' => $apiURL->longitude,
-			'metro_code' => $apiURL->metro_code,
 			'browser' => $this->agent->browser(),
 			'version' => $this->agent->version(),
 			'platform' => $this->agent->platform()
