@@ -21,10 +21,10 @@
                         ปี : <?php echo $result->loan_year ?>
                     </div>
                     <div class="col-6 my-2">
-                        สาขา : <?php echo $result->branch_id ?>
+                        สาขา : <?php echo $result->name_branch ?>
                     </div>
                     <div class="col-6 my-2">
-                        ประเภทสินเชื่อ : <?php echo $result->loan_id ?>
+                        ประเภทสินเชื่อ : <?php echo $result->credit_name ?>
                     </div>
                 </div>
                 <div class="h-100 d-flex justify-content-center align-items-center">
