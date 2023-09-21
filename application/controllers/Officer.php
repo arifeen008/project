@@ -732,7 +732,6 @@ class Officer extends CI_Controller
 		$mem_id = $this->input->post('mem_id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
-		$lnumber_id = $this->input->post('lnumber_id');
 		$loan_year = $this->input->post('loan_year');
 		$branch_id = $this->input->post('branch_id');
 		$loan_id = $this->input->post('loan_id');
@@ -747,10 +746,10 @@ class Officer extends CI_Controller
 		} else {
 			$file_name = $this->upload->data('file_name');
 			$path = 'file/credit_consider/' . $loan_year . '/' . $branch_id . '/' . $loan_id;
-			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id);
-			$result = $this->news_model->add_credit_consider_process($return_id, $status_id);
+			$return_id = $this->news_model->uploadcreditfile_consider($username, $mem_id, $fname, $lname,  $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id);
+			$result = $this->news_model->add_credit_consider_process($return_id, $status_id, $loan_id, $loan_year);
 			if ($result === TRUE) {
-				$this->session->set_flashdata('success', 'upload success');
+				$this->session->set_flashdata('success', 'Upload Success');
 				redirect('officer/credit_consider', 'refresh');
 			} else {
 				$this->session->set_flashdata('error', 'Something Wrong');
@@ -948,5 +947,4 @@ class Officer extends CI_Controller
 		$this->news_model->delete_status($status_id);
 		redirect('officer/admin_credit_consider', 'refresh');
 	}
-
 }

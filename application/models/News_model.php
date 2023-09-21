@@ -445,7 +445,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
-	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $lnumber_id, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id)
+	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id)
 	{
 		date_default_timezone_set('Asia/Bangkok');
 		$data = array(
@@ -453,7 +453,6 @@ class News_model extends CI_Model
 			'mem_id' => $mem_id,
 			'fname' => $fname,
 			'lname' =>  $lname,
-			'lnumber_id' =>  $lnumber_id,
 			'loan_year' =>  $loan_year,
 			'branch_id' =>  $branch_id,
 			'loan_id' =>  $loan_id,
@@ -467,9 +466,15 @@ class News_model extends CI_Model
 		return $insert_id;
 	}
 
-	public function add_credit_consider_process($return_id, $status_id)
+	public function add_credit_consider_process($return_id, $status_id, $loan_id, $loan_year)
 	{
 		date_default_timezone_set('Asia/Bangkok');
+		$code_loan = array('', 'ฉ.', 'สฉ.', 'ส.', 'พ.', 'พค.', 'คส.', 'จท.');
+		$this->db2->where('credit_consider_id', $return_id);
+		$credit_consider = array(
+			'lnumber_id' => $code_loan[$loan_id] . str_pad($return_id, 7, '0', STR_PAD_LEFT) . '/' . $loan_year
+		);
+		$this->db2->update('credit_consider', $credit_consider);
 		$data = array(
 			'credit_consider_id' => $return_id,
 			'date' =>  date('Y-m-d H:i:s'),
