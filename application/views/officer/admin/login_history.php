@@ -16,7 +16,8 @@ include_once("application/libraries/Thaidate.php");
                             <th class="text-center">รหัสสมาชิก</th>
                             <th class="text-center">สาขา</th>
                             <th class="text-center">ชื่อ</th>
-                            <th class="text-center">เวลาล็อกอิน</th>
+                            <th class="text-center">วันที่</th>
+                            <th class="text-center">เวลา</th>
                             <th class="text-center">IP ADDRESS</th>
                             <th></th>
                         </tr>
@@ -28,6 +29,7 @@ include_once("application/libraries/Thaidate.php");
                                 <td><?= $row->name_branch ?></td>
                                 <td><?= $row->user_name ?></td>
                                 <td><?= thaidate('j M Y', strtotime($row->login_time)) ?></td>
+                                <td><?= thaidate('H:i', strtotime($row->login_time)) ?></td>
                                 <td><?= $row->ip_address ?></td>
                                 <td><a href="<?php echo site_url('officer/login_history_person/'.$row->user_id.'/'.$row->branch_id) ?>" class="btn btn-info"><i class="fas fa-chart-pie"></i></a></td>
                             </tr>

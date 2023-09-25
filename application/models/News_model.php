@@ -10,8 +10,9 @@ class News_model extends CI_Model
 
 	public function visited_history()
 	{
+		date_default_timezone_set('Asia/Bangkok');
 		$data = array(
-			'visited_time' =>  date('Y-m-d'),
+			'visited_time' =>  date('Y-m-d H:i:sa'),
 			'ip_address' => $this->input->ip_address(),
 			'browser' => $this->agent->browser(),
 			'version' => $this->agent->version(),
@@ -27,7 +28,7 @@ class News_model extends CI_Model
 			'user_id' => $user_id,
 			'branch_id' => $branch_id,
 			'user_name' => $username,
-			'login_time' =>  date('Y-m-d'),
+			'login_time' =>  date('Y-m-d H:i:sa'),
 			'ip_address' => $this->input->ip_address(),
 			'browser' => $this->agent->browser(),
 			'version' => $this->agent->version(),
@@ -46,7 +47,6 @@ class News_model extends CI_Model
 
 	public function login_history_person($user_id, $branch_id)
 	{
-		// $this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.BR_NO,BK_H_TELLER_CONTROL.USER_NAME,BK_M_BRANCH.BR_NAME');
 		$this->db2->where('signin_history.user_id', $user_id);
 		$this->db2->where('signin_history.branch_id', $branch_id);
 		$this->db2->join('branch_name', 'signin_history.branch_id = branch_name.branch_id');

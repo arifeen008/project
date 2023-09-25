@@ -7,24 +7,29 @@ include_once("application/libraries/Thaidate.php");
         <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title mb-3">
-                    <h1>Admin ประวัติล็อกอิน</h1>
+                    <h1>Admin ประวัติล็อกอิน </h1>
                 </div>
+                <p class="h2 float-end"><?= $officer->USER_NAME ?></p>
                 <table id="datatable" class="table-border mb-3">
                     <thead>
                         <tr>
-                            <th>รหัสสมาชิก</th>
-                            <th>สาขา</th>
-                            <th>ชื่อ</th>
-                            <th></th>
+                            <th>วันที่</th>
+                            <th>เวลา</th>
+                            <th>IP ADDRESS</th>
+                            <th>browser</th>
+                            <th>version</th>
+                            <th>platform</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($result as $row) { ?>
                             <tr>
-                                <td><?= $row->user_id   ?></td>
-                                <td><?= $row->name_branch ?></td>
-                                <td><?= $row->user_name ?></td>
-                                <td><a href="<?php echo site_url('officer/login_history_person/' . $row->USER_ID . '/' . $row->BR_NO) ?>" class="btn btn-info"><i class="fas fa-chart-pie"></i></a></td>
+                                <td><?= thaidate('j M Y', strtotime($row->login_time)) ?></td>
+                                <td><?= thaidate('H:i', strtotime($row->login_time)) ?></td>
+                                <td><?= $row->ip_address ?></td>
+                                <td><?= $row->browser ?></td>
+                                <td><?= $row->version ?></td>
+                                <td><?= $row->platform ?></td>
                             </tr>
                         <?php  } ?>
                     </tbody>

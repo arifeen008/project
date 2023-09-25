@@ -11,10 +11,11 @@ class Officer_model extends CI_Model
 		return $query->row();
 	}
 	// ดึงข้อมูลเจ้าหน้าที่
-	public function data_officer($user_id)
+	public function data_officer($user_id,$br_no)
 	{
 		$this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.USER_NAME,BK_H_TELLER_CONTROL.LEVEL_CODE,BK_M_BRANCH.BR_NO,BK_M_BRANCH.BR_NAME');
 		$this->db->where('BK_H_TELLER_CONTROL.USER_ID', $user_id);
+		$this->db->where('BK_H_TELLER_CONTROL.BR_NO', $br_no);
 		$this->db->join('BK_M_BRANCH', 'BK_M_BRANCH.BR_NO = BK_H_TELLER_CONTROL.BR_NO');
 		$query = $this->db->get('BK_H_TELLER_CONTROL');
 		return $query->row();
