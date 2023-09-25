@@ -11,9 +11,7 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		$news = file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang');
-		$this->news_model->visited_history();
-		$data['google_news'] = json_decode($news);
+		$data['google_news'] = json_decode(file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang'));
 		$data['news_information'] = $this->news_model->get_news_information();
 		$data['news_welfare'] = $this->news_model->get_news_welfare();
 		$data['news_credit'] = $this->news_model->get_news_credit();
@@ -24,6 +22,7 @@ class Index extends CI_Controller
 		$this->load->view('index', $data);
 		$this->load->view('container/footer');
 		$this->load->view('container/script_index');
+		$this->news_model->visited_history();
 	}
 
 	public function login_page()

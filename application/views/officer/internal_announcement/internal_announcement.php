@@ -7,20 +7,20 @@ include_once("application/libraries/Thaidate.php");
 		<div class="card my-3" style="font-family: 'Sarabun';">
 			<div class="card-body">
 				<h2 class="card-title text-dark">ประกาศสำนักงานใหญ่</h2>
-				<table class="table table-bordered">
+				<table id="datatable">
 					<thead>
-						<tr class="text-center">
-							<th>ประกาศ</th>
-							<th>วันที่</th>
-							<th>ดาวน์โหลด</th>
+						<tr>
+							<th class="text-center">ประกาศ</th>
+							<th class="text-center">วันที่</th>
+							<th class="text-center">ดาวน์โหลด</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($ho as $row) { ?>
+						<?php foreach ($result as $row) { ?>
 							<tr>
 								<td><?= $row->title ?></td>
 								<td class="text-center"><?= thaidate('j M Y ', strtotime($row->date))  ?></td>
-								<td class="text-center"><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile); ?>" target="_blank" class="btn btn-outline-success" data-mdb-ripple-color="success">download</td>
+								<td class="text-center"><a href="<?php echo base_url('file/inside_publish/' . $row->uploadfile); ?>" target="_blank" class="btn btn-outline-success" data-mdb-ripple-color="success"><i class="fas fa-download"></i></td>
 							</tr>
 						<?php } ?>
 					</tbody>
@@ -29,3 +29,24 @@ include_once("application/libraries/Thaidate.php");
 		</div>
 	</div>
 </main>
+<script>
+    new DataTable('#datatable', {
+        searching: false,
+        ordering: false,
+        paging: false,
+        oLanguage: {
+            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+            "sZeroRecords": "ไม่มีข้อมูล",
+            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+            "sSearch": "ค้นหา :",
+            "oPaginate": {
+                "sFirst": "หน้าแรก",
+                "sPrevious": "ก่อนหน้า",
+                "sNext": "ถัดไป",
+                "sLast": "หน้าสุดท้าย"
+            }
+        }
+    });
+</script>

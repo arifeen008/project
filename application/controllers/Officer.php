@@ -60,7 +60,7 @@ class Officer extends CI_Controller
 		$user_id = $this->session->userdata('user_id');
 		$level_code['level_code'] = $this->session->userdata('level_code');
 		$data['level_code'] = $this->session->userdata('level_code');
-		$data['ho'] = $this->news_model->get_internalfile_ho();
+		$data['result'] = $this->news_model->get_internalfile_ho();
 		$data_officer = $this->officer_model->data_officer($user_id);
 		$title['title'] = "ประกาศภายใน สหกรณ์อิสลามษะกอฟะฮ จำกัด";
 		$this->load->view("container/head", $title);
@@ -946,5 +946,33 @@ class Officer extends CI_Controller
 	{
 		$this->news_model->delete_status($status_id);
 		redirect('officer/admin_credit_consider', 'refresh');
+	}
+
+	public function all_officer()
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->get_all_officer();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/admin/all_officer", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function login_history_person($user_id, $branch_id)
+	{
+		$user_id = $this->session->userdata('user_id');
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($user_id);
+		$data['result'] = $this->news_model->login_history_person($user_id, $branch_id);
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/admin/login_history_person", $data);
+		$this->load->view("container/script_officer");
 	}
 }

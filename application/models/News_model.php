@@ -10,20 +10,9 @@ class News_model extends CI_Model
 
 	public function visited_history()
 	{
-		date_default_timezone_set('Asia/Bangkok');
-		$apiURL = json_decode(file_get_contents('https://freegeoip.app/json/'));
 		$data = array(
-			'visited_time' =>  date('Y-m-d H:i:s'),
-			'ip_address' => $apiURL->ip,
-			'country_code' => $apiURL->country_code,
-			'country_name' => $apiURL->country_name,
-			'region_code' => $apiURL->region_code,
-			'region_name' => $apiURL->region_name,
-			'city' => $apiURL->city,
-			'zip_code' => $apiURL->zip_code,
-			'time_zone' => $apiURL->time_zone,
-			'latitude' => $apiURL->latitude,
-			'longitude' => $apiURL->longitude,
+			'visited_time' =>  date('Y-m-d'),
+			'ip_address' => $this->input->ip_address(),
 			'browser' => $this->agent->browser(),
 			'version' => $this->agent->version(),
 			'platform' => $this->agent->platform()
@@ -34,17 +23,35 @@ class News_model extends CI_Model
 	public function login_history($user_id, $branch_id, $username)
 	{
 		date_default_timezone_set('Asia/Bangkok');
-		$apiURL = json_decode(file_get_contents('https://freegeoip.app/json/'));
 		$data = array(
 			'user_id' => $user_id,
 			'branch_id' => $branch_id,
 			'user_name' => $username,
-			'login_time' =>  date('Y-m-d H:i:s'),
-			'ip_address' =>  $apiURL->ip,
-			'latitude' => $apiURL->latitude,
-			'longitude' => $apiURL->longitude
+			'login_time' =>  date('Y-m-d'),
+			'ip_address' => $this->input->ip_address(),
+			'browser' => $this->agent->browser(),
+			'version' => $this->agent->version(),
+			'platform' => $this->agent->platform()
 		);
 		$this->db2->insert('signin_history', $data);
+	}
+
+	public function get_all_officer()
+	{
+		$this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.BR_NO,BK_H_TELLER_CONTROL.USER_NAME,BK_M_BRANCH.BR_NAME');
+		$this->db->join('BK_M_BRANCH', 'BK_H_TELLER_CONTROL.BR_NO = BK_M_BRANCH.BR_NO');
+		$result = $this->db->get('BK_H_TELLER_CONTROL');
+		return $result->result();
+	}
+
+	public function login_history_person($user_id, $branch_id)
+	{
+		// $this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.BR_NO,BK_H_TELLER_CONTROL.USER_NAME,BK_M_BRANCH.BR_NAME');
+		$this->db2->where('signin_history.user_id', $user_id);
+		$this->db2->where('signin_history.branch_id', $branch_id);
+		$this->db2->join('branch_name', 'signin_history.branch_id = branch_name.branch_id');
+		$result = $this->db2->get('signin_history');
+		return $result->result();
 	}
 
 	public function get_sign_history()

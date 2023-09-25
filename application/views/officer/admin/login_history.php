@@ -9,6 +9,7 @@ include_once("application/libraries/Thaidate.php");
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title mb-3">
                     <h1>Admin ประวัติล็อกอิน</h1>
                 </div>
+                <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/all_officer') ?>" class="btn btn-success"><i class="fas fa-users me-2"></i>รายบุคคล</a></div>
                 <table id="datatable" class="table-border mb-3">
                     <thead>
                         <tr>
@@ -17,8 +18,6 @@ include_once("application/libraries/Thaidate.php");
                             <th class="text-center">ชื่อ</th>
                             <th class="text-center">เวลาล็อกอิน</th>
                             <th class="text-center">IP ADDRESS</th>
-                            <th class="text-center">Latitude</th>
-                            <th class="text-center">Longitude</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -28,11 +27,9 @@ include_once("application/libraries/Thaidate.php");
                                 <td><?= $row->user_id   ?></td>
                                 <td><?= $row->name_branch ?></td>
                                 <td><?= $row->user_name ?></td>
-                                <td><?= thaidate('j M Y H:i', strtotime($row->login_time)) ?></td>
+                                <td><?= thaidate('j M Y', strtotime($row->login_time)) ?></td>
                                 <td><?= $row->ip_address ?></td>
-                                <td><?= $row->latitude ?></td>
-                                <td><?= $row->longitude ?></td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-chart-pie"></i></button></td>
+                                <td><a href="<?php echo site_url('officer/login_history_person/'.$row->user_id.'/'.$row->branch_id) ?>" class="btn btn-info"><i class="fas fa-chart-pie"></i></a></td>
                             </tr>
                         <?php  } ?>
                     </tbody>
@@ -44,7 +41,7 @@ include_once("application/libraries/Thaidate.php");
 
 <script>
     new DataTable('#datatable', {
-        searching: true,
+        searching: false,
         ordering: false,
         paging: true,
         oLanguage: {
