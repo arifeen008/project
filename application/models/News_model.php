@@ -8,6 +8,7 @@ class News_model extends CI_Model
 		$this->db2 = $this->load->database('db2', TRUE);
 	}
 
+	// ประวัติผู้เข้าชมเว็บไซต์
 	public function visited_history()
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -20,7 +21,7 @@ class News_model extends CI_Model
 		);
 		$this->db2->insert('visited_history', $data);
 	}
-
+	// ประวัติล็อกอินเจ้าหน้าที่
 	public function login_history($user_id, $branch_id, $username)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -36,7 +37,7 @@ class News_model extends CI_Model
 		);
 		$this->db2->insert('signin_history', $data);
 	}
-
+	// ดึงข้อมูลเจ้าหน้าที่
 	public function get_all_officer()
 	{
 		$this->db->select('BK_H_TELLER_CONTROL.USER_ID,BK_H_TELLER_CONTROL.BR_NO,BK_H_TELLER_CONTROL.USER_NAME,BK_M_BRANCH.BR_NAME');
@@ -44,7 +45,7 @@ class News_model extends CI_Model
 		$result = $this->db->get('BK_H_TELLER_CONTROL');
 		return $result->result();
 	}
-
+	// ดึงข้อมูลเจ้าหน้าที่รายคน
 	public function login_history_person($user_id, $branch_id)
 	{
 		$this->db2->where('signin_history.user_id', $user_id);
@@ -54,6 +55,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข้อมูลล็อกอินเจ้าหน้าที่ทั้งหมด
 	public function get_sign_history()
 	{
 		$this->db2->join('branch_name', 'signin_history.branch_id = branch_name.branch_id');
@@ -61,6 +63,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// อัพรูป
 	public function upload_picture($news_number, $uploadStatus)
 	{
 		$data = array(
@@ -70,6 +73,7 @@ class News_model extends CI_Model
 		$this->db2->insert('picture', $data);
 	}
 
+	// อัพรูปหน้าปก
 	public function upload_picture_cover($news_number, $uploadStatus)
 	{
 		$data = array(
@@ -79,6 +83,7 @@ class News_model extends CI_Model
 		$this->db2->insert('picture_cover', $data);
 	}
 
+	// อัพข่าว
 	public function upload_news($news_number, $title, $description, $news_type, $dateupload)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -93,6 +98,7 @@ class News_model extends CI_Model
 		$this->db2->insert('news', $data);
 	}
 
+	// เช็คเลขข่าว
 	public function check_news_number($news_number)
 	{
 		$this->db2->where('news_number', $news_number);
@@ -100,6 +106,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงข่าวประชาสัมพันธ์
 	public function get_news_information()
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture_cover.picture_name');
@@ -111,6 +118,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข่าวสวัสดิการสมาชิก
 	public function get_news_welfare()
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture_cover.picture_name');
@@ -122,6 +130,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข่าวสินเชื่อ
 	public function get_news_credit()
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture_cover.picture_name');
@@ -133,6 +142,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข่าวมูลนิธิ
 	public function get_news_foundation()
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture_cover.picture_name');
@@ -144,6 +154,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข่าวข้างๆ
 	public function get_sidenewsdata($news_number)
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture_cover.picture_name');
@@ -155,6 +166,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงข่าวทั้งหมด
 	public function get_news_data($news_number)
 	{
 		$this->db2->select('title,description,date,dateupload');
@@ -163,6 +175,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ดึงข่าวที่อัพโหลดมา
 	public function get_news_upload()
 	{
 		$this->db2->select('news.news_number,news_type.news_typename,news.title,news.date,news.dateupload');
@@ -172,6 +185,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงภาพข่าวที่เลือก
 	public function get_newspicture($news_number)
 	{
 		$this->db2->select('news_number,picture_name');
@@ -180,6 +194,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// เลือกข่าว
 	public function selectnews($news_number)
 	{
 		$this->db2->select('news_number,title,description,date,dateupload');
@@ -188,6 +203,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// แก้ไขข่าว
 	public function updatenews($news_number, $news_type, $title, $date, $description)
 	{
 		$data = array(
@@ -202,7 +218,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
-
+	// ลบข่าว
 	public function delete_news($news_number)
 	{
 		$this->db2->where('news_number', $news_number);
@@ -210,7 +226,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
-
+	// เลือกรูป
 	public function selectpicture($news_number)
 	{
 		$this->db2->select('picture_name');
@@ -219,6 +235,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ลบรูป
 	public function deletepicture($news_number)
 	{
 		$this->db2->where('news_number', $news_number);
@@ -226,12 +243,14 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ลบรูปหน้าปก
 	public function deletepictureCover($news_number)
 	{
 		$this->db2->where('news_number', $news_number);
 		$this->db2->delete('picture_cover');
 	}
 
+	// ดึงข่าวหน้ากิจกรรม
 	public function get_list_activity($limit, $start)
 	{
 		$this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
@@ -243,20 +262,22 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// นับเลขข่าว
 	public function getAllNews()
 	{
 		return $this->db2->count_all('news');
 	}
 
-	public function get_students($limit, $start)
-	{
-		$this->db2->select('news.news_number,news.title,news.description,news.dateupload');
-		$this->db2->order_by('dateupload', 'desc');
-		$this->db2->limit($limit, $start);
-		$query = $this->db2->get('news');
-		return $query->result();
-	}
+	// public function get_students($limit, $start)
+	// {
+	// 	$this->db2->select('news.news_number,news.title,news.description,news.dateupload');
+	// 	$this->db2->order_by('dateupload', 'desc');
+	// 	$this->db2->limit($limit, $start);
+	// 	$query = $this->db2->get('news');
+	// 	return $query->result();
+	// }
 
+	// อัพโหลดประกาศ
 	public function upload_internalfile($title, $date, $uploadFile, $type_announcement)
 	{
 		$data = array(
@@ -268,6 +289,7 @@ class News_model extends CI_Model
 		$this->db2->insert('internal_announcement', $data);
 	}
 
+	// ดึงฟอร์ม
 	public function select_form($internal_id)
 	{
 		$this->db2->where('internal_id', $internal_id);
@@ -275,6 +297,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ดึงฟอร์มสำนักงาน
 	public function get_internalfile_hr()
 	{
 		$this->db2->select('internal_id,title,date,uploadfile');
@@ -284,6 +307,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงฟอร์มรายบุคคล
 	public function get_internalfile_ho()
 	{
 		$this->db2->select('internal_id,title,date,uploadfile');
@@ -293,6 +317,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// อัพสินเชื่อ
 	public function upload_creditfile($mem_id, $fname, $lname, $lcon_id,  $year, $branch_id, $credit_id, $file_name, $path, $username, $date)
 	{
 		$data = array(
@@ -311,6 +336,7 @@ class News_model extends CI_Model
 		$this->db2->insert('credit_upload', $data);
 	}
 
+	// ค้นหาสินเชื่อ
 	public function search_credit($year, $branch_id, $credit_id)
 	{
 		$this->db2->select('credit_upload.id_credit,credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,credit_upload.path,credit_upload.name_upload,credit_upload.date_upload,credit_upload.year,branch_name.name_branch,credit_type.credit_name');
@@ -320,10 +346,11 @@ class News_model extends CI_Model
 		$this->db2->join('credit_type', 'credit_type.credit_id = credit_upload.credit_id');
 		$this->db2->join('branch_name', 'branch_name.branch_id = credit_upload.branch_id');
 		$this->db2->order_by('date_upload', 'desc');
-		$result = $this->db2->get('credit_upload');
-		return $result->result();
+		$query = $this->db2->get('credit_upload');
+		return $query->result();
 	}
 
+	// เลือกสินเชื่อ
 	public function select_credit($id_credit)
 	{
 		$this->db2->where('id_credit', $id_credit);
@@ -331,6 +358,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ลบสินเชื่อ
 	public function delete_credit($id_credit)
 	{
 		$this->db2->where('id_credit', $id_credit);
@@ -338,12 +366,14 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงผลการดำเนินงาน
 	public function get_document()
 	{
 		$result = $this->db2->get('performance');
 		return $result->result();
 	}
 
+	// อัพโหลดผลการดำเนินงาน
 	public function uploadDocumentFile($document_name, $file_name, $path, $date)
 	{
 		$data = array(
@@ -355,6 +385,7 @@ class News_model extends CI_Model
 		$this->db2->insert('performance', $data);
 	}
 
+	// เลือกผลการดำเนินงาน
 	public function select_document($performance_id)
 	{
 		$this->db2->where('performance_id', $performance_id);
@@ -362,6 +393,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ลบผลการดำเนินงาน
 	public function delete_document($performance_id)
 	{
 		$this->db2->where('performance_id', $performance_id);
@@ -369,6 +401,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงสินทรัพย์
 	public function checkasset_number($asset_number)
 	{
 		$this->db2->where('asset_number', $asset_number);
@@ -376,6 +409,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// อัพโหลดสินทรัพย์
 	public function asset_upload($asset_number, $title, $description1, $description2, $contact, $asset_type, $date)
 	{
 		$data = array(
@@ -391,6 +425,7 @@ class News_model extends CI_Model
 		$this->db2->insert('asset', $data);
 	}
 
+	// อัพรูปสินเชื่อ
 	public function upload_asset_picture($asset_number, $uploadStatus)
 	{
 		$data = array(
@@ -400,6 +435,7 @@ class News_model extends CI_Model
 		$this->db2->insert('asset_picture', $data);
 	}
 
+	// ดึงสินเชื่อ
 	public function get_asset()
 	{
 		$this->db2->join('asset_type', 'asset_type.asset_type = asset.asset_type');
@@ -407,6 +443,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงบ้านพร้อมที่ดิน
 	public function get_list_estate()
 	{
 		$this->db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
@@ -417,6 +454,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงที่ดินเปล่า
 	public function get_list_vacant()
 	{
 		$this->db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
@@ -427,6 +465,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงคอนโด
 	public function get_list_condo()
 	{
 		$this->db2->select('asset.asset_number,asset.title,asset.description1,asset.date,asset_picture.picture_name');
@@ -437,6 +476,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข้อมูลสินทรัพย์
 	public function get_asset_data($asset_number)
 	{
 		$this->db2->where('asset_number', $asset_number);
@@ -444,6 +484,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ดึงรูปสินทรัพย์
 	public function get_assetpicture($asset_number)
 	{
 		$this->db2->where('asset_number', $asset_number);
@@ -451,6 +492,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// อัพไฟล์พิจารณาสินเชื่อ
 	public function uploadcreditfile_consider($username, $mem_id, $fname, $lname, $loan_year, $branch_id, $loan_id, $file_name, $path, $status_id)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -472,6 +514,7 @@ class News_model extends CI_Model
 		return $insert_id;
 	}
 
+	// เพิ่มประวัติพิจารณาสินเชื่อ
 	public function add_credit_consider_process($return_id, $status_id, $loan_id, $loan_year)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -490,6 +533,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ดึงข้อมูลพิจารณาสินเชื่อ
 	public function get_credit_consider($username)
 	{
 		$this->db2->where('credit_consider.username', $username);
@@ -501,6 +545,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข้อมูลพิจารณาสินเชื่อจากสาขา
 	public function get_credit_consider2()
 	{
 		$this->db2->where('credit_consider.status_id', 1);
@@ -511,6 +556,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงข้อมูลสินเชื่อของฝ่ายวิเคราะห์
 	public function get_credit_consider3()
 	{
 		$status_id = array(2, 4);
@@ -523,6 +569,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	//  ติดตามพิจารณาสินเชื่อ
 	public function get_credit_consider_process($credit_consider_id)
 	{
 		$this->db2->select('credit_consider_process.date,status_credit.status_name,credit_consider_process.status_id');
@@ -533,6 +580,7 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงรายละเอียดพิจารณาสินเชื่อ
 	public function get_credit_consider_detail($credit_consider_id)
 	{
 		$this->db2->where('credit_consider.credit_consider_id', $credit_consider_id);
@@ -542,6 +590,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// เลือกพิจารณาสินเชื่อ
 	public function select_credit_consider($credit_consider_id)
 	{
 		$this->db2->where('credit_consider_id', $credit_consider_id);
@@ -549,6 +598,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// ลบพิจารณาสินเชื่อ
 	public function delete_credit_consider($credit_consider_id)
 	{
 		$this->db2->where('credit_consider_id', $credit_consider_id);
@@ -556,6 +606,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ลบประวัติติดตามพิจารณาสินเชื่อ
 	public function delete_credit_consider_process($credit_consider_id)
 	{
 		$this->db2->where('credit_consider_id', $credit_consider_id);
@@ -563,6 +614,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// อนุมัติสินเชื่อ
 	public function accept_credit_consider($credit_consider_id)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -578,6 +630,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+	// ปฏิเสธสินเชื่อ
 	public function reject_credit_consider($credit_consider_id, $note)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -593,6 +646,7 @@ class News_model extends CI_Model
 		$this->db2->insert('credit_consider_process', $data);
 	}
 
+	// อนุมัติสินเชื่อ2
 	public function accept_credit_consider2($credit_consider_id)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -608,6 +662,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
+		// ปฏิเสธสินเชื่อ2
 	public function reject_credit_consider2($credit_consider_id, $note)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -623,6 +678,7 @@ class News_model extends CI_Model
 		$this->db2->insert('credit_consider_process', $data);
 	}
 
+	// ดึงสินเชื่อ
 	public function get_credit()
 	{
 		$this->db2->select('credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,branch_name.name_branch,credit_type.credit_name,credit_upload.year,credit_upload.name_upload,credit_upload.date_upload,credit_upload.path,credit_upload.file_name,credit_upload.id_credit');
@@ -632,12 +688,14 @@ class News_model extends CI_Model
 		return $result->result();
 	}
 
+	// ดึงสถานะพิจารณาสินเชื่อ
 	public function get_status_credit_consider()
 	{
 		$result = $this->db2->get('status_credit');
 		return $result->result();
 	}
 
+	// ดึงสถานะสินเชื่อ
 	public function get_status($status_id)
 	{
 		$this->db2->where('status_id', $status_id);
@@ -645,6 +703,7 @@ class News_model extends CI_Model
 		return $result->row();
 	}
 
+	// เพิ่มสถานะสินเชื่อ
 	public function add_status($status_name)
 	{
 		$data = array(
@@ -653,6 +712,7 @@ class News_model extends CI_Model
 		$this->db2->insert('status_credit', $data);
 	}
 
+	// แก้ไขสถานะสินเชื่อ
 	public function update_status($status_id, $status_name)
 	{
 		$this->db2->where('status_id', $status_id);
@@ -662,6 +722,7 @@ class News_model extends CI_Model
 		$this->db2->update('status_credit', $data);
 	}
 
+	// ลบสถานะสินเชื่อ
 	public function delete_status($status_id)
 	{
 		$this->db2->where('status_id', $status_id);

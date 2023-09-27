@@ -35,6 +35,11 @@
  				<span>ผลการดำเนินงาน</span>
  			</a>
  		</li>
+ 		<li class="sidenav-item">
+ 			<a class="sidenav-link" href="<?php echo site_url('officer/uploadcreditfile') ?>">
+ 				<span>อัพโหลดสินเชื่อ</span>
+ 			</a>
+ 		</li>
  		<!-- <li class="sidenav-item">
  			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span>
@@ -53,7 +58,7 @@
  			</li>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
- 					<span>ผู้จัดการใหญ่</span>
+ 					<span>กรรมการ</span>
  				</a>
  			</li>
  		<?php endif ?>
@@ -63,41 +68,29 @@
  					<span>ระบบ Admin</span>
  				</a>
  				<ul class="sidenav-collapse">
- 					<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit_consider') ?>">
- 						พิจารณาสินเชื่อ
- 					</a>
- 					<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit') ?>">
- 						สินเชื่อ
- 					</a>
-					 <a class="sidenav-link" href="<?php echo site_url('officer/login_history') ?>">
- 						ประวัติการล็อกอิน
- 					</a>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit_consider') ?>">พิจารณาสินเชื่อ</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/admin_credit') ?>">สินเชื่อ</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/login_history') ?>">ประวัติการล็อกอิน</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/uploadasset_system') ?>">อัพโหลดสินทรัพย์</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/uploadnews_system') ?>">อัพโหลดข่าวสาร</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/upload_document') ?>">อัพโหลดผลการดำเนินงาน</a>
+ 					</li>
+ 					<li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/import_internal_declaration') ?>">อัพโหลดประกาศ</a>
+ 					</li>
  				</ul>
  			</li>
  		<?php endif ?>
- 		<li class="sidenav-item">
- 			<a class="sidenav-link">
- 				<span>ระบบอัพโหลด</span>
- 			</a>
- 			<ul class="sidenav-collapse">
- 				<li class="sidenav-item">
- 					<a href="<?php echo site_url('officer/uploadcreditfile') ?>" class="sidenav-link">อัพโหลดสินเชื่อ</a>
- 				</li>
- 				<?php if ($level_code === 'P') : ?>
- 					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/uploadasset_system') ?>" class="sidenav-link">อัพโหลดสินทรัพย์</a>
- 					</li>
- 					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/uploadnews_system') ?>" class="sidenav-link">อัพโหลดข่าวสาร</a>
- 					</li>
- 					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/upload_document') ?>" class="sidenav-link">อัพโหลดผลการดำเนินงาน</a>
- 					</li>
- 					<li class="sidenav-item">
- 						<a href="<?php echo site_url('officer/import_internal_declaration') ?>" class="sidenav-link">อัพโหลดประกาศ</a>
- 					</li>
- 				<?php endif ?>
- 			</ul>
- 		</li>
  	</ul>
  </nav>
