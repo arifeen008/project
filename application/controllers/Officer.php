@@ -662,6 +662,32 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
+	public function credit_consider4()
+	{
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($this->session->userdata('user_id'), $this->session->userdata('br_no'));
+		$data['result'] = $this->news_model->get_credit_consider4();
+		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/credit_consider4", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function report_credit_consider()
+	{
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($this->session->userdata('user_id'), $this->session->userdata('br_no'));
+		$data['result'] = $this->news_model->get_report_credit_consider();
+		$title['title'] = "พิจารณาสินเชื่อ สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/report_credit_consider", $data);
+		$this->load->view("container/script_officer");
+	}
+
 	public function credit_consider_detail($credit_consider_id)
 	{
 		$level_code['level_code'] = $this->session->userdata('level_code');
@@ -685,6 +711,19 @@ class Officer extends CI_Controller
 		$this->load->view("container/header_officer", $data_officer);
 		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/credit_consider/credit_consider_detail2", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function credit_consider_detail3($credit_consider_id)
+	{
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($this->session->userdata('user_id'), $this->session->userdata('br_no'));
+		$data['result'] = $this->news_model->get_credit_consider_detail($credit_consider_id);
+		$title['title'] = "พิจารณาสินเชื่อ";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/credit_consider/credit_consider_detail3", $data);
 		$this->load->view("container/script_officer");
 	}
 
@@ -760,6 +799,21 @@ class Officer extends CI_Controller
 		$this->news_model->reject_credit_consider2($credit_consider_id, $note);
 		$this->session->set_flashdata('success', 'Reject credit success');
 		redirect('officer/credit_consider3', 'refresh');
+	}
+
+	public function accept_credit_consider3($credit_consider_id)
+	{
+		$this->news_model->accept_credit_consider3($credit_consider_id);
+		$this->session->set_flashdata('success', 'Accept credit success');
+		redirect('officer/credit_consider4', 'refresh');
+	}
+
+	public function reject_credit_consider3($credit_consider_id)
+	{
+		$note = $this->input->post('note');
+		$this->news_model->reject_credit_consider3($credit_consider_id, $note);
+		$this->session->set_flashdata('success', 'Reject credit success');
+		redirect('officer/credit_consider4', 'refresh');
 	}
 
 	public function delete_credit_consider($credit_consider_id)

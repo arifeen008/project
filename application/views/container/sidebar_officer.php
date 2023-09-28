@@ -45,23 +45,39 @@
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span>
  			</a>
  		</li> -->
- 		<?php if ($level_code === 'P') : ?>
+ 		<?php if ($level_code === 'E' || 'P') : ?>
  			<li class="sidenav-item">
  				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider') ?>">
- 					<span>พิจารณาสินเชื่อ</span>
- 				</a>
- 			</li>
- 			<li class="sidenav-item">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider2') ?>">
- 					<span>ฝ่ายวิเคราะห์</span>
- 				</a>
- 			</li>
- 			<li class="sidenav-item">
- 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
- 					<span>กรรมการ</span>
+ 					<span>ฝ่ายสินเชื่อสาขา</span>
  				</a>
  			</li>
  		<?php endif ?>
+		 <?php if ($level_code === 'CC' || 'P') : ?>
+ 			<li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider2') ?>">
+ 					<span>รับเอกสารสินเชื่อสาขา</span>
+ 				</a>
+ 			</li>
+ 		<?php endif ?>
+ 		<?php if ($level_code === 'CRM' || 'P') : ?>
+ 			<li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider3') ?>">
+ 					<span>ฝ่ายวิเคราะห์</span>
+ 				</a>
+ 			</li>
+ 		<?php endif ?>
+ 		<?php if ($level_code === 'M' || 'P') : ?>
+ 			<li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/credit_consider4') ?>">
+ 					<span>ผู้จัดการใหญ่</span>
+ 				</a>
+ 			</li>
+ 		<?php endif ?>
+		 <li class="sidenav-item">
+ 				<a class="sidenav-link" href="<?php echo site_url('officer/report_credit_consider') ?>">
+ 					<span>รายงานผลการติดตามยื่นขอสินเชื่อ</span>
+ 				</a>
+ 			</li>
  		<?php if ($level_code === 'P') : ?>
  			<li class="sidenav-item">
  				<a class="sidenav-link">

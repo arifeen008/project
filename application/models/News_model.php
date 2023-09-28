@@ -559,8 +559,21 @@ class News_model extends CI_Model
 	// ดึงข้อมูลสินเชื่อของฝ่ายวิเคราะห์
 	public function get_credit_consider3()
 	{
-		$status_id = array(2, 4);
-		$this->db2->where_in('credit_consider.status_id', $status_id);
+		// $status_id = array(2, 4);
+		$this->db2->where_in('credit_consider.status_id', 2);
+		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
+		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
+		$this->db2->order_by('credit_consider.status_id', 'asc');
+		$result = $this->db2->get('credit_consider');
+		return $result->result();
+	}
+
+	// ดึงข้อมูลสินเชื่อของฝ่ายวิเคราะห์
+	public function get_credit_consider4()
+	{
+		// $status_id = array(2, 4);
+		$this->db2->where_in('credit_consider.status_id', 4);
 		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
 		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
 		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
@@ -662,7 +675,7 @@ class News_model extends CI_Model
 		return $result;
 	}
 
-		// ปฏิเสธสินเชื่อ2
+	// ปฏิเสธสินเชื่อ2
 	public function reject_credit_consider2($credit_consider_id, $note)
 	{
 		date_default_timezone_set('Asia/Bangkok');
@@ -674,6 +687,38 @@ class News_model extends CI_Model
 			'credit_consider_id' => $credit_consider_id,
 			'date' => date('Y-m-d H:i:s'),
 			'status_id' => '5'
+		);
+		$this->db2->insert('credit_consider_process', $data);
+	}
+
+	// อนุมัติสินเชื่อ3
+	public function accept_credit_consider3($credit_consider_id)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '6');
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '6'
+		);
+		$result = $this->db2->insert('credit_consider_process', $data);
+		return $result;
+	}
+
+	// ปฏิเสธสินเชื่อ3
+	public function reject_credit_consider3($credit_consider_id, $note)
+	{
+		date_default_timezone_set('Asia/Bangkok');
+		$this->db2->set('status_id', '7');
+		$this->db2->set('note', $note);
+		$this->db2->where('credit_consider_id', $credit_consider_id);
+		$this->db2->update('credit_consider');
+		$data = array(
+			'credit_consider_id' => $credit_consider_id,
+			'date' => date('Y-m-d H:i:s'),
+			'status_id' => '7'
 		);
 		$this->db2->insert('credit_consider_process', $data);
 	}
@@ -727,5 +772,16 @@ class News_model extends CI_Model
 	{
 		$this->db2->where('status_id', $status_id);
 		$this->db2->delete('status_credit');
+	}
+
+	// ดึงสินเชื่อ
+	public function get_report_credit_consider()
+	{
+		// $this->db2->select('credit_upload.mem_id,credit_upload.fname,credit_upload.lname,credit_upload.fullcont_id,branch_name.name_branch,credit_type.credit_name,credit_upload.year,credit_upload.name_upload,credit_upload.date_upload,credit_upload.path,credit_upload.file_name,credit_upload.id_credit');
+		$this->db2->join('credit_type', 'credit_consider.loan_id = credit_type.credit_id');
+		$this->db2->join('branch_name', 'credit_consider.branch_id = branch_name.branch_id');
+		$this->db2->join('status_credit', 'credit_consider.status_id = status_credit.status_id');
+		$result = $this->db2->get('credit_consider');
+		return $result->result();
 	}
 }

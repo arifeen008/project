@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
         <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h3>พิจารณาสินเชื่อ</h3>
+                    <h3>ฝ่ายสินเชื่อสาขา</h3>
                 </div>
                 <div class="d-flex flex-row-reverse me-3 my-3"><a href="<?php echo site_url('officer/uploadcredit_consider') ?>" class="btn btn-success"><i class="fas fa-plus me-2"></i>ส่งสินเชื่อ</a></div>
                 <table id="datatable" class="table table-hover align-middle mb-0 bg-white">

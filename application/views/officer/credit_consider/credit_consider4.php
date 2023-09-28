@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
         <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h3>ฝ่ายวิเคราะห์</h3>
+                    <h3>ผู้จัดการใหญ่</h3>
                 </div>
 
                 <table id="datatable" class="table table-hover align-middle mb-0 bg-white">
@@ -38,7 +38,7 @@ include_once("application/libraries/Thaidate.php");
                                 </td>
                                 <td><span class="badge badge-success rounded-pill d-inline"><?= $row->status_name  ?></span></td>
                                 <td class="text-center">
-                                    <a href="<?php echo site_url('officer/credit_consider_detail2/' . $row->credit_consider_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success"><i class="fas fa-eye"></i></a>
+                                    <a href="<?php echo site_url('officer/credit_consider_detail3/' . $row->credit_consider_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                         <?php  } ?>

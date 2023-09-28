@@ -7,25 +7,24 @@ include_once("application/libraries/Thaidate.php");
         <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h3>ฝ่ายวิเคราะห์</h3>
+                    <h3>รายงานผลการติดตามยื่นขอสินเชื่อ</h3>
                 </div>
-
                 <table id="datatable" class="table table-hover align-middle mb-0 bg-white">
                     <thead class="bg-light">
                         <tr>
-                            <th>รหัสสมาชิก</th>
-                            <th>ชื่อ - สกุล</th>
-                            <th>เลขสินเชื่อ</th>
-                            <th>วันที่</th>
-                            <th>สถานะ</th>
+                            <th class="text-center">รหัสสมาชิก</th>
+                            <th class="text-center">ชื่อ - สกุล</th>
+                            <th class="text-center">เลขสินเชื่อ</th>
+                            <th class="text-center">วันที่</th>
+                            <th class="text-center">สถานะ</th>
                             <th class="text-center">รายละเอียด</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($result as $row) { ?>
                             <tr>
-                                <td><?= $row->mem_id   ?></td>
-                                <td><?= $row->fname . "  " . $row->lname  ?></td>
+                                <td class="text-center"><?= $row->mem_id   ?></td>
+                                <td class="text-center"><?= $row->fname . " " . $row->lname  ?></td>
                                 <td>
                                     <p class="fw-normal mb-1"><?= $row->lnumber_id   ?></p>
                                     <p class="fw-normal mb-1"><?= $row->name_branch  ?></p>
@@ -36,15 +35,15 @@ include_once("application/libraries/Thaidate.php");
                                     <p><?= thaidate('j M Y ', strtotime($row->date)) ?></p>
                                     <p><?= thaidate('H:i', strtotime($row->date)) ?></p>
                                 </td>
-                                <td><span class="badge badge-success rounded-pill d-inline"><?= $row->status_name  ?></span></td>
+                                <td class="text-center"><?= $row->status_name  ?></td>
                                 <td class="text-center">
-                                    <a href="<?php echo site_url('officer/credit_consider_detail2/' . $row->credit_consider_id) ?>" class="btn btn-outline-success" data-mdb-ripple-color="success"><i class="fas fa-eye"></i></a>
+                                    <a class="btn btn-outline-success" href="<?php echo site_url('officer/credit_consider_process/' . $row->credit_consider_id) ?>"><i class="fab fa-algolia"></i></a>
                                 </td>
+
                             </tr>
                         <?php  } ?>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>

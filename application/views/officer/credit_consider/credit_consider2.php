@@ -7,7 +7,7 @@ include_once("application/libraries/Thaidate.php");
         <div class="card my-3" style="font-family: 'Sarabun';">
             <div class="card-body text-dark">
                 <div class="d-flex justify-content-between align-items-center border-bottom card-title ">
-                    <h3>ฝ่ายวิเคราะห์สินเชื่อ</h3>
+                    <h3>รับเอกสารสินเชื่อสาขา</h3>
                 </div>
                 <table id="datatable" class="table table-hover align-middle mb-0 bg-white">
                     <thead class="bg-light">
