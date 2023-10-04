@@ -6,13 +6,12 @@ include_once("application/libraries/Thaidate.php");
 		<div class="card my-3" style="font-family: 'Sarabun';">
 			<div class="card-body text-dark">
 				<h3 class="card-title">ผลการดำเนินงานประจำปี</h3>
-				<table class="table table-bordered">
+				<table id="datatable">
 					<thead>
 						<tr>
 							<th class="text-center">ชื่อเอกสาร</th>
 							<th class="text-center">วันที่</th>
 							<th class="text-center">ดาวน์โหลด</th>
-							<!-- <th>ดาวน์โหลด</th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -20,8 +19,7 @@ include_once("application/libraries/Thaidate.php");
 							<tr>
 								<td><?= $row->document_name ?></td>
 								<td class="text-center"><?= thaidate('j M Y ', strtotime($row->date)) ?></td>
-								<td class="text-center"><a href="<?php echo base_url('file/performance/' . $row->file_name); ?>" target="_blank" class="btn btn-outline-success" data-mdb-ripple-color="success">download</td>
-								<!-- <td><a href="<?php echo site_url('officer/delete_document/' . $row->performance_id) ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td> -->
+								<td class="text-center"><a href="<?php echo base_url('file/performance/' . $row->file_name); ?>" target="_blank" class="btn btn-outline-success" data-mdb-ripple-color="success"><i class="fas fa-download"></i></td>
 							</tr>
 						<?php } ?>
 					</tbody>
@@ -30,3 +28,24 @@ include_once("application/libraries/Thaidate.php");
 		</div>
 	</div>
 </main>
+<script>
+    new DataTable('#datatable', {
+        searching: true,
+        ordering: false,
+        paging: true,
+        oLanguage: {
+            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+            "sZeroRecords": "ไม่มีข้อมูล",
+            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+            "sSearch": "ค้นหา :",
+            "oPaginate": {
+                "sFirst": "หน้าแรก",
+                "sPrevious": "ก่อนหน้า",
+                "sNext": "ถัดไป",
+                "sLast": "หน้าสุดท้าย"
+            }
+        }
+    });
+</script>

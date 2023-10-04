@@ -11,7 +11,7 @@
  			</a>
  		</li>
  		<li class="sidenav-item">
- 			<a class="sidenav-link" href="<?php echo site_url('officer/internal_announcement') ?>">
+ 			<a class="sidenav-link" href="<?php echo site_url('officer/publish') ?>">
  				<span>ประกาศภายใน</span>
  			</a>
  		</li>
@@ -21,7 +21,7 @@
  			</a>
  		</li>
  		<li class="sidenav-item">
- 			<a class="sidenav-link" href="<?php echo site_url('officer/cooperative_regulation') ?>">
+ 			<a class="sidenav-link" href="<?php echo site_url('officer/order') ?>">
  				<span>ระเบียบเจ้าหน้าที่</span>
  			</a>
  		</li>
@@ -41,7 +41,7 @@
  			</a>
  		</li>
  		<!-- <li class="sidenav-item">
- 			<a class="sidenav-link" href="<?php echo site_url('officer/human_resource_development_activities') ?>">
+ 			<a class="sidenav-link" href="<?php echo site_url('officer/hr_activities') ?>">
  				<i class="fas fa-chart-line me-3"></i><span>กิจกรรมพัฒนาบุคลากร</span>
  			</a>
  		</li> -->
@@ -103,7 +103,7 @@
  						<a class="sidenav-link" href="<?php echo site_url('officer/upload_document') ?>">อัพโหลดผลการดำเนินงาน</a>
  					</li>
  					<li class="sidenav-item">
- 						<a class="sidenav-link" href="<?php echo site_url('officer/import_internal_declaration') ?>">อัพโหลดประกาศ</a>
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/upload_publish') ?>">อัพโหลดประกาศ</a>
  					</li>
  				</ul>
  			</li>

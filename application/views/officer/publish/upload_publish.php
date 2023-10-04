@@ -16,16 +16,15 @@
 							<label for="exampleDatepicker11" class="form-label">เลือกวันที่</label>
 						</div>
 					</div>
-					<div class="col-md-12">
+					<div class="col-md-6">
 						<select class="select" name="type_announcement">
 							<option value="1">ฝ่ายบุคคล</option>
 							<option value="2">ฝ่ายสำนักงานใหญ่</option>
 						</select>
 						<label class="form-label select-label">ฝ่าย</label>
 					</div>
-					<div class="col-md-12">
-						<label for="formFileMultiple" class="form-label">อัพโหลดไฟล์</label>
-						<input class="form-control form-control-lg" type="file" name="uploadFile" accept=".pdf" id="formFileMultiple" />
+					<div class="col-md-6">
+						<input type="file" class="form-control" name="uploadFile" accept=".pdf" id="customFile" />
 					</div>
 					<div class="col-md-12">
 						<button type="submit" class="btn btn-success">อัพโหลด</button>
