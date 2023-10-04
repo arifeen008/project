@@ -25,7 +25,7 @@ include_once("application/libraries/Thaidate.php");
 								<td class="text-center"><?= $row->news_typename  ?></td>
 								<td class="text-center"><?= thaidate('j M Y ', strtotime($row->dateupload)) ?></td>
 								<td class="text-center"><a href="<?php echo site_url('officer/edit_news/' . $row->news_number) ?>" class="btn btn-warning me-3"><i class="fas fa-pen"></i></a></td>
-								<td class="text-center"><a href="<?php echo site_url('officer/delete_news/' . $row->news_number) ?>" class="btn btn-danger me-3"><i class="far fa-trash-alt"></i></a></td>
+								<td class="text-center"><a href="<?php echo site_url('officer/delete_news/' . $row->news_number) ?>" class="btn btn-danger delete me-3"><i class="far fa-trash-alt"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>
@@ -36,6 +36,25 @@ include_once("application/libraries/Thaidate.php");
 	</div>
 </main>
 <script>
+	$('.delete').on('click', function(e) {
+		e.preventDefault();
+		const href = $(this).attr('href');
+		Swal.fire({
+			title: 'ต้องการลบข่าวนี้หรือไม่',
+			showDenyButton: true,
+			showCancelButton: false,
+			confirmButtonText: 'ยืนยัน',
+			denyButtonText: 'ปฏิเสธ',
+		}).then((result) => {
+			if (result.isConfirmed) {
+				document.location.href = href;
+				Swal.fire('ลบแล้ว!', '', 'success')
+			} else if (result.isDenied) {
+				Swal.fire('ยกเลิก', '', 'info')
+			}
+		})
+	})
+
 	new DataTable('#datatable', {
 		searching: false,
 		ordering: false,
