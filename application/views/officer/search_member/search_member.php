@@ -39,6 +39,7 @@
 							<option value="006">สาขาอ่าวนาง</option>
 							<option value="007">สาขาห้วยลึก</option>
 							<option value="008">สาขาเกาะลันตา</option>
+							<option value="009">สาขาเหนือคลอง</option>
 						</select>
 						<label class="form-label select-label">สาขา</label>
 					</div>

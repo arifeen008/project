@@ -36,9 +36,13 @@
 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="4" aria-label="Slide 5"></button>
 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="5" aria-label="Slide 6"></button>
 			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="6" aria-label="Slide 7"></button>
+			<button type="button" data-mdb-target="#carouselBanner" data-mdb-slide-to="7" aria-label="Slide 8"></button>
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
+				<img src="<?php echo base_url('picture/548-1.jpg') ?>" data-mdb-toggle="modal" data-mdb-target="#Modal2" class="d-block w-100" />
+			</div>
+			<div class="carousel-item">
 				<a href="https://www.facebook.com/photo/?fbid=6768439563190770&set=a.185067664861359" target="_blank">
 					<img src="<?php echo base_url('picture/521-2.jpg') ?>" class="d-block w-100" />
 				</a>
@@ -87,6 +91,13 @@
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
 				<div class="modal-body"><img src="<?php echo base_url('picture/345.jpg') ?>" class="img-fluid"></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+				<div class="modal-body"><img src="<?php echo base_url('picture/548.jpg') ?>" class="img-fluid"></div>
 			</div>
 		</div>
 	</div>
