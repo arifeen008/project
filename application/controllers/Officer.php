@@ -1014,11 +1014,9 @@ class Officer extends CI_Controller
 		$result = $this->news_model->get_internalfile($internal_id);
 		if ($result) {
 			if (!unlink('file/inside_publish/' . $result->uploadfile)) {
-				echo "<script>alert('Delete unsuccess');</script>";
 				redirect('officer/edit_publish', 'refresh');
 			} else {
 				$this->news_model->delete_internalfile($internal_id);
-				echo "<script>alert('Delete success');</script>";
 				redirect('officer/edit_publish', 'refresh');
 			}
 		}
