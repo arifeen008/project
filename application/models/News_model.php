@@ -290,11 +290,19 @@ class News_model extends CI_Model
 	}
 
 	// ดึงฟอร์ม
-	public function select_form($internal_id)
+	public function get_internalfile($internal_id)
 	{
 		$this->db2->where('internal_id', $internal_id);
 		$result = $this->db2->get('internal_announcement');
 		return $result->row();
+	}
+
+	// ลบประกาศ
+	public function delete_internalfile($internal_id)
+	{
+		$this->db2->where('internal_id', $internal_id);
+		$result = $this->db2->delete('internal_announcement');
+		return $result;
 	}
 
 	// ดึงฟอร์มสำนักงาน
@@ -312,6 +320,14 @@ class News_model extends CI_Model
 	{
 		$this->db2->select('internal_id,title,date,uploadfile');
 		$this->db2->where('type_announcement', 2);
+		$this->db2->order_by('date', 'DESC');
+		$result = $this->db2->get('internal_announcement');
+		return $result->result();
+	}
+
+	public function internalfile()
+	{
+		$this->db2->select('internal_id,type_announcement,title,date,uploadfile');
 		$this->db2->order_by('date', 'DESC');
 		$result = $this->db2->get('internal_announcement');
 		return $result->result();

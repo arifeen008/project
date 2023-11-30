@@ -105,6 +105,9 @@
  					<li class="sidenav-item">
  						<a class="sidenav-link" href="<?php echo site_url('officer/upload_publish') ?>">อัพโหลดประกาศ</a>
  					</li>
+					 <li class="sidenav-item">
+ 						<a class="sidenav-link" href="<?php echo site_url('officer/edit_publish') ?>">แก้ไขประกาศ</a>
+ 					</li>
  				</ul>
  			</li>
  		<?php endif ?>

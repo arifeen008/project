@@ -398,7 +398,7 @@ class Officer extends CI_Controller
 
 	public function download_form($internal_id)
 	{
-		$result = $this->news_model->select_form($internal_id);
+		$result = $this->news_model->get_internalfile($internal_id);
 		$data = file_get_contents(base_url('file/inside_publish/' . $result->uploadfile));
 		force_download($result->title . '.pdf', $data);
 	}
@@ -994,5 +994,33 @@ class Officer extends CI_Controller
 		$this->load->view("container/sidebar_officer", $level_code);
 		$this->load->view("officer/admin/login_history_person", $data);
 		$this->load->view("container/script_officer");
+	}
+
+	public function edit_publish()
+	{
+		$level_code['level_code'] = $this->session->userdata('level_code');
+		$data_officer = $this->officer_model->data_officer($this->session->userdata('user_id'), $this->session->userdata('br_no'));
+		$data['result'] = $this->news_model->internalfile();
+		$title['title'] = "Admin สหกรณ์อิสลามษะกอฟะฮ จำกัด";
+		$this->load->view("container/head", $title);
+		$this->load->view("container/header_officer", $data_officer);
+		$this->load->view("container/sidebar_officer", $level_code);
+		$this->load->view("officer/admin/edit_publish", $data);
+		$this->load->view("container/script_officer");
+	}
+
+	public function delete_publish($internal_id)
+	{
+		$result = $this->news_model->get_internalfile($internal_id);
+		if ($result) {
+			if (!unlink('file/inside_publish/' . $result->uploadfile)) {
+				echo "<script>alert('Delete unsuccess');</script>";
+				redirect('officer/edit_publish', 'refresh');
+			} else {
+				$this->news_model->delete_internalfile($internal_id);
+				echo "<script>alert('Delete success');</script>";
+				redirect('officer/edit_publish', 'refresh');
+			}
+		}
 	}
 }
