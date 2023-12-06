@@ -426,12 +426,12 @@ class Officer extends CI_Controller
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('uploadFile')) {
 			echo "<script>alert('อัพโหลดไม่สำเร็จ');</script>";
-			redirect('officer/internal_announcement', 'refresh');
+			redirect('officer/upload_publish', 'refresh');
 		} else {
 			$uploadFile = $this->upload->data('file_name');
 			$this->news_model->upload_internalfile($title, $date, $uploadFile, $type_announcement);
 			echo "<script>alert('อัพโหลดสำเร็จ');</script>";
-			redirect('officer/publish', 'refresh');
+			redirect('officer/upload_publish', 'refresh');
 		}
 	}
 
