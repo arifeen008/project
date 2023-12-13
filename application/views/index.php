@@ -4,9 +4,13 @@
 			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1" aria-label="Slide 2"></button>
 			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="3" aria-label="Slide 4"></button>
 		</div>
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+		<div class="carousel-item active">
+				<img src="<?php echo base_url('picture/banner ผลการจัดระดับมาตรฐานสหกรณ์.jpg') ?>" class="d-block w-100" />
+			</div>
+			<div class="carousel-item">
 				<img src="<?php echo base_url('picture/267-1.jpg') ?>" class="d-block w-100" />
 			</div>
 			<div class="carousel-item">
@@ -150,23 +154,23 @@
 							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;"><?php echo lang('news_information') ?></b>
 							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
 								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_information); $i++) { ?>
+									<?php for ($i = 1; $i <= count($news_information); $i++) {?>
 										<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php } ?>
+									<?php }?>
 								</div>
 								<div class="carousel-inner">
 									<?php $isActive = 1;
-									foreach ($news_information as $row) { ?>
+foreach ($news_information as $row) {?>
 										<div class="carousel-item <?php echo (($isActive == "1") ? "active" : "") ?>">
 											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picture_name ?>" />
+												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
 												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?= $row->title ?></p> <br>
+													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
 												</div>
 											</a>
 										</div>
 									<?php $isActive = 0;
-									} ?>
+}?>
 								</div>
 								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -184,23 +188,23 @@
 							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;"><?php echo lang('news_welfare') ?></b>
 							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
 								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_welfare); $i++) { ?>
+									<?php for ($i = 1; $i <= count($news_welfare); $i++) {?>
 										<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php } ?>
+									<?php }?>
 								</div>
 								<div class="carousel-inner">
 									<?php $isActive2 = 1;
-									foreach ($news_welfare as $row) { ?>
+foreach ($news_welfare as $row) {?>
 										<div class="carousel-item <?php echo (($isActive2 == "1") ? "active" : "") ?>">
 											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picture_name ?>" />
+												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
 												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?= $row->title ?></p> <br>
+													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
 												</div>
 											</a>
 										</div>
 									<?php $isActive2 = 0;
-									} ?>
+}?>
 								</div>
 								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -218,23 +222,23 @@
 							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;"><?php echo lang('news_halal_credit') ?></b>
 							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
 								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_credit); $i++) { ?>
+									<?php for ($i = 1; $i <= count($news_credit); $i++) {?>
 										<button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php } ?>
+									<?php }?>
 								</div>
 								<div class="carousel-inner">
 									<?php $isActive3 = 1;
-									foreach ($news_credit as $row) { ?>
+foreach ($news_credit as $row) {?>
 										<div class="carousel-item <?php echo (($isActive3 == "1") ? "active" : "") ?>">
 											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picture_name ?>" />
+												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
 												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?= $row->title ?></p> <br>
+													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
 												</div>
 											</a>
 										</div>
 									<?php $isActive3 = 0;
-									} ?>
+}?>
 								</div>
 								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample3" data-mdb-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -252,23 +256,23 @@
 							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;"><?php echo lang('news_foundation') ?></b>
 							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
 								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_foundation); $i++) { ?>
+									<?php for ($i = 1; $i <= count($news_foundation); $i++) {?>
 										<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php } ?>
+									<?php }?>
 								</div>
 								<div class="carousel-inner">
 									<?php $isActive4 = 1;
-									foreach ($news_foundation as $row) { ?>
+foreach ($news_foundation as $row) {?>
 										<div class="carousel-item <?php echo (($isActive4 == "1") ? "active" : "") ?>">
 											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?= $row->picture_name ?>" />
+												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
 												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?= $row->title ?></p> <br>
+													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
 												</div>
 											</a>
 										</div>
 									<?php $isActive4 = 0;
-									} ?>
+}?>
 								</div>
 								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -285,7 +289,7 @@
 						<div class="card">
 							<b class="card-title text-dark border-bottom border-secondary mx-2">ข่าวสาร</b>
 							<div class="row">
-								<?php foreach (array_slice($google_news->results, 0, 8) as $row) { ?>
+								<?php foreach (array_slice($google_news->results, 0, 8) as $row) {?>
 									<div class="col-md-3">
 										<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
 											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 140px;" class="card-img-top" />
@@ -294,7 +298,7 @@
 											</div>
 										</a>
 									</div>
-								<?php } ?>
+								<?php }?>
 							</div>
 						</div>
 					</div>
