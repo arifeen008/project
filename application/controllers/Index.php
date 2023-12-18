@@ -11,7 +11,7 @@ class Index extends CI_Controller
 
 	public function index()
 	{
-		// $data['google_news'] = json_decode(file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang'));
+		$data['google_news'] = json_decode(file_get_contents('https://newsdata.io/api/1/news?country=th&apikey=pub_7046fa204ea984c89b7a98592308f3f28097&language=th&domain=banmuang'));
 		$data['news_information'] = $this->news_model->get_news_information();
 		$data['news_welfare'] = $this->news_model->get_news_welfare();
 		$data['news_credit'] = $this->news_model->get_news_credit();
