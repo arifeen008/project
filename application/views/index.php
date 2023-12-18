@@ -148,160 +148,6 @@
 	<div class="container">
 		<div class="row" style="font-family: 'Sarabun';">
 			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="card my-2">
-							<b class="card-title text-dark border-bottom border-primary mx-2 my-3" style="font-size: large;"><?php echo lang('news_information') ?></b>
-							<div id="carouselExampleCaptions" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
-								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_information); $i++) {?>
-										<button type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php }?>
-								</div>
-								<div class="carousel-inner">
-									<?php $isActive = 1;
-foreach ($news_information as $row) {?>
-										<div class="carousel-item <?php echo (($isActive == "1") ? "active" : "") ?>">
-											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
-												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
-												</div>
-											</a>
-										</div>
-									<?php $isActive = 0;
-}?>
-								</div>
-								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card my-2">
-							<b class="card-title text-dark border-bottom border-success mx-2 my-3" style="font-size: large;"><?php echo lang('news_welfare') ?></b>
-							<div id="carouselExampleCaptions2" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
-								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_welfare); $i++) {?>
-										<button type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php }?>
-								</div>
-								<div class="carousel-inner">
-									<?php $isActive2 = 1;
-foreach ($news_welfare as $row) {?>
-										<div class="carousel-item <?php echo (($isActive2 == "1") ? "active" : "") ?>">
-											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
-												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
-												</div>
-											</a>
-										</div>
-									<?php $isActive2 = 0;
-}?>
-								</div>
-								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions2" data-mdb-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card my-2">
-							<b class="card-title text-dark border-bottom border-warning mx-2 my-3" style="font-size: large;"><?php echo lang('news_halal_credit') ?></b>
-							<div id="carouselBasicExample3" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
-								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_credit); $i++) {?>
-										<button type="button" data-mdb-target="#carouselExampleCaptions3" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php }?>
-								</div>
-								<div class="carousel-inner">
-									<?php $isActive3 = 1;
-foreach ($news_credit as $row) {?>
-										<div class="carousel-item <?php echo (($isActive3 == "1") ? "active" : "") ?>">
-											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
-												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
-												</div>
-											</a>
-										</div>
-									<?php $isActive3 = 0;
-}?>
-								</div>
-								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample3" data-mdb-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample3" data-mdb-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card my-2">
-							<b class="card-title text-dark border-bottom border-danger mx-2 my-3" style="font-size: large;"><?php echo lang('news_foundation') ?></b>
-							<div id="carouselExampleCaptions4" class="carousel slide carousel-dark mx-2" data-mdb-ride="carousel">
-								<div class="carousel-indicators">
-									<?php for ($i = 1; $i <= count($news_foundation); $i++) {?>
-										<button type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide-to="<?php echo $i - 1 ?>" class="<?php echo (($i - 1 == 0) ? "active" : "false") ?>" aria-current="<?php echo (($i - 1 == 0) ? "true" : "false") ?>" aria-label="Slide <?php echo $i ?>"></button>
-									<?php }?>
-								</div>
-								<div class="carousel-inner">
-									<?php $isActive4 = 1;
-foreach ($news_foundation as $row) {?>
-										<div class="carousel-item <?php echo (($isActive4 == "1") ? "active" : "") ?>">
-											<a href="<?php echo site_url('index/news/' . $row->news_number) ?>" class="card">
-												<img src="<?php echo base_url('uploads/' . $row->picture_name) ?>" style="width: 100%;height:250px" class="card-img-top" alt="<?=$row->picture_name?>" />
-												<div class="card-body">
-													<p class="card-text text-dark text-truncate"><?=$row->title?></p> <br>
-												</div>
-											</a>
-										</div>
-									<?php $isActive4 = 0;
-}?>
-								</div>
-								<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions4" data-mdb-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="card">
-							<b class="card-title text-dark border-bottom border-secondary mx-2">ข่าวสาร</b>
-							<div class="row">
-								<?php foreach (array_slice($google_news->results, 0, 8) as $row) {?>
-									<div class="col-md-3">
-										<a href="<?php echo $row->link ?>" class="card hover-shadow mx-2 mb-1">
-											<img src="<?php echo $row->image_url ?>" style="width: 100%;height: 140px;" class="card-img-top" />
-											<div class="card-body">
-												<p class="card-text text-dark text-truncate"><?php echo $row->title ?></p>
-											</div>
-										</a>
-									</div>
-								<?php }?>
-							</div>
-						</div>
-					</div>
 					<div class="col-md-12">
 						<div class="card mt-2">
 							<p class="text-dark border-bottom border-info mx-2 mt-2" style="font-family: 'Sarabun';font-size: 20px;"><b><?php echo lang('news_online_journal') ?></b></p>
@@ -367,6 +213,86 @@ foreach ($news_foundation as $row) {?>
 			</div>
 		</div>
 	</div>
+	<div class="container">
+            <div class="row" style="font-family: 'Sarabun';">
+                <div class="col-md-9">
+                    <div class="card mt-2">
+                        <p class="text-dark border-bottom border-info mx-2 mt-2"
+                            style="font-family: 'Sarabun';font-size: 20px;"><b>วารสารออนไลน์</b></p>
+                        <iframe class="mb-3 mx-2" style="width: auto;height: 500px;"
+                            src="https://anyflip.com/bookcase/wueoy/" seamless="seamless" scrolling="no" frameborder="0"
+                            allowtransparency="true" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="text-center text-dark mt-2" style="font-family: 'Kanit';">เวลาละหมาด</h3>
+                    <div class="text-center">
+                        <iframe width="133px" height="196px" src="https://shorturl.asia/gvwxq" frameborder=0
+                            scrolling=no></iframe>
+                        <iframe width="133px" height="196px" src="https://shorturl.asia/oTkP5" frameborder=0
+                            scrolling=no></iframe>
+                        <iframe width="133px" height="196px" src="https://shorturl.asia/QDtN6" frameborder=0
+                            scrolling=no></iframe>
+                        <iframe width="133px" height="196px" src="https://shorturl.asia/NqJSA" frameborder=0
+                            scrolling=no></iframe>
+                    </div>
+                    <div class="ratio ratio-16x9 my-3">
+                        <iframe src="https://www.youtube.com/embed/m0o5aStUkYg" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="ratio ratio-16x9 my-3">
+                        <iframe src="https://www.youtube.com/embed/zzvuyxuuHPs" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="ratio ratio-16x9 my-3">
+                        <iframe src="https://www.youtube.com/embed/SV7IdDXAX0A" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/IKm8k">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/ตรากรมที่ดิน.png') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/VpM47">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/กระทรวงเกษตรและสหกรณ์.png') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/PRMAt">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/img_fd06b99e276ab69db92a5bae61228dc2.png') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/SCMmA">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/ตราสำนักงานสหกรณ์จังหวัดกระบี่.jpg') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/g56qA">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/img_12b077835cddf4f35d3a3c285545a815.jpg') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                    <div class="card mb-2">
+                        <a target="_blank" class="hover-shadow" href="https://shorturl.asia/uE52O">
+                            <img class="rounded mx-auto d-block" width="120" height="120"
+                                src="{{ url('picture/กรมส่งเสริมสหกรณ์.png') }}">
+                            <p class="text-center text-primary" style="font-family: 'Sarabun';">a</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 <div class="row my-3">
 	<div class="col-sm">
