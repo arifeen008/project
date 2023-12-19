@@ -84,12 +84,14 @@ class News_model extends CI_Model
     }
 
     // อัพข่าว
-    public function upload_news($news_number, $title, $description, $news_type, $dateupload)
+    public function upload_news($news_number, $title, $description, $news_type, $picture_name, $dateupload)
     {
         date_default_timezone_set('Asia/Bangkok');
         $data = array(
             'news_number' => $news_number,
             'news_typeid' => $news_type,
+            'path' => '/uploads',
+            'picture_name' => $picture_name,
             'title' => $title,
             'description' => $description,
             'date' => date('Y-m-d H:i:s'),
@@ -253,8 +255,7 @@ class News_model extends CI_Model
     // ดึงข่าวหน้ากิจกรรม
     public function get_list_activity($limit, $start)
     {
-        $this->db2->select('news.news_number,news.title,news.description,news.dateupload,picture.picture_name');
-        $this->db2->join('picture', 'news.news_number = picture.news_number');
+        $this->db2->select('news_number,title,description,dateupload,picture_name');
         $this->db2->group_by('news.news_number');
         $this->db2->order_by('dateupload', 'desc');
         $this->db2->limit($limit, $start);

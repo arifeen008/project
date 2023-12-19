@@ -277,10 +277,10 @@ class Officer extends CI_Controller
 		$this->load->view("container/script_officer");
 	}
 
-	function upload()
+	public function upload()
 	{
 		$title = $this->input->post('title');
-		$date = $this->input->post('date');
+		$dateupload = $this->input->post('date');
 		$description = $this->input->post('description');
 		$news_type = $this->input->post('news_type');
 
@@ -310,7 +310,7 @@ class Officer extends CI_Controller
 		}
 		$coverImage = $this->uploadFile('coverImage');
 		$this->news_model->upload_picture_cover($news_number, $coverImage);
-		$this->news_model->upload_news($news_number, $title, $description, $news_type, $date);
+		$this->news_model->upload_news($news_number, $title, $description, $news_type, $coverImage, $dateupload);
 		$this->session->set_flashdata('success', 'Upload news successfully');
 		redirect('officer/uploadnews_system', 'refresh');
 	}
