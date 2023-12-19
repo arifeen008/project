@@ -309,7 +309,7 @@ class Officer extends CI_Controller
 			}
 		}
 		$coverImage = $this->uploadFile('coverImage');
-		$this->news_model->upload_picture_cover($news_number, $coverImage);
+		// $this->news_model->upload_picture_cover($news_number, $coverImage);
 		$this->news_model->upload_news($news_number, $title, $description, $news_type, $coverImage, $dateupload);
 		$this->session->set_flashdata('success', 'Upload news successfully');
 		redirect('officer/uploadnews_system', 'refresh');

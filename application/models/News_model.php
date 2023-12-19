@@ -74,14 +74,14 @@ class News_model extends CI_Model
     }
 
     // อัพรูปหน้าปก
-    public function upload_picture_cover($news_number, $uploadStatus)
-    {
-        $data = array(
-            'news_number' => $news_number,
-            'picture_name' => $uploadStatus,
-        );
-        $this->db2->insert('picture_cover', $data);
-    }
+    // public function upload_picture_cover($news_number, $uploadStatus)
+    // {
+    //     $data = array(
+    //         'news_number' => $news_number,
+    //         'picture_name' => $uploadStatus,
+    //     );
+    //     $this->db2->insert('picture_cover', $data);
+    // }
 
     // อัพข่าว
     public function upload_news($news_number, $title, $description, $news_type, $picture_name, $dateupload)
